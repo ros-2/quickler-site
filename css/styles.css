@@ -83,12 +83,8 @@ nav {
 }
 
 .nav-name img {
-    height: 52px;
+    height: 44px;
     margin-right: 0;
-    border-radius: 4px;
-    background: white;
-    padding: 4px 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .nav-toggle {
@@ -1038,8 +1034,7 @@ footer .footer-note {
     }
 
     .nav-name img {
-        height: 44px;
-        padding: 3px 8px;
+        height: 36px;
     }
 
     .project-summary {
