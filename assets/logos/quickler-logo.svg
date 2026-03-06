@@ -1,18 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="52" role="img" aria-label="Quickler">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 44" height="44" role="img" aria-label="Quickler">
   <defs>
-    <linearGradient id="qgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Gradient for light-background use -->
+    <linearGradient id="ql-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%"   stop-color="#312E90"/>
       <stop offset="50%"  stop-color="#5B6FC1"/>
       <stop offset="100%" stop-color="#7B2880"/>
     </linearGradient>
   </defs>
-  <text
-    x="0"
-    y="40"
-    font-family="'DM Sans', 'Segoe UI', sans-serif"
-    font-weight="700"
-    font-size="42"
-    letter-spacing="-1"
-    fill="url(#qgrad)"
-  >Quickler</text>
+
+  <!-- White version (for use on gradient/dark nav) -->
+  <g class="logo-white">
+    <!-- Q ring -->
+    <circle cx="22" cy="21" r="13" fill="none" stroke="white" stroke-width="7" stroke-linecap="round"/>
+    <!-- Q tail -->
+    <line x1="30" y1="30" x2="38.5" y2="43" stroke="white" stroke-width="5.5" stroke-linecap="round"/>
+    <!-- wordmark -->
+    <text x="48" y="32"
+      font-family="'DM Sans','Segoe UI',Arial,sans-serif"
+      font-weight="700"
+      font-size="30"
+      letter-spacing="-0.4"
+      fill="white">uickler</text>
+  </g>
 </svg>
