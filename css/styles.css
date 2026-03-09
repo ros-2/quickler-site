@@ -32,6 +32,12 @@
     --radius-md: 22px;
     --radius-sm: 14px;
     --content-width: 1180px;
+    --page-gutter: clamp(12px, 2.8vw, 20px);
+    --section-space: clamp(60px, 8vw, 88px);
+    --section-space-tight: clamp(22px, 3.2vw, 34px);
+    --shell-padding: clamp(22px, 3vw, 36px);
+    --card-padding: clamp(20px, 2.5vw, 28px);
+    --hero-padding: clamp(24px, 5vw, 58px);
 }
 
 html {
@@ -40,6 +46,7 @@ html {
 
 body {
     min-height: 100vh;
+    min-height: 100svh;
     font-family: "Host Grotesk", "Segoe UI", sans-serif;
     background:
         radial-gradient(circle at top left, rgba(31, 99, 255, 0.18), transparent 26%),
@@ -120,11 +127,11 @@ button {
 
 nav {
     position: sticky;
-    top: 20px;
+    top: max(10px, env(safe-area-inset-top, 0px));
     z-index: 100;
-    width: min(calc(100% - 24px), 1160px);
-    margin: 20px auto 0;
-    padding: 12px 14px 12px 18px;
+    width: min(calc(100% - (var(--page-gutter) * 2)), 1160px);
+    margin: clamp(10px, 2vw, 20px) auto 0;
+    padding: clamp(10px, 1.6vw, 12px) clamp(12px, 1.8vw, 14px) clamp(10px, 1.6vw, 12px) clamp(14px, 2vw, 18px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -193,22 +200,22 @@ nav {
 }
 
 section {
-    width: min(calc(100% - 40px), var(--content-width));
+    width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
     margin: 0 auto;
-    padding: 88px 0;
+    padding: var(--section-space) 0;
 }
 
 body > section#top:first-of-type {
-    padding-top: 148px !important;
+    padding-top: clamp(112px, 16vw, 148px) !important;
 }
 
 .hero {
     display: grid;
     grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.95fr);
-    gap: 28px;
+    gap: clamp(18px, 2.8vw, 28px);
     align-items: stretch;
     min-height: auto;
-    padding-top: 70px;
+    padding-top: clamp(44px, 7vw, 70px);
 }
 
 .hero-content,
@@ -235,7 +242,7 @@ body > section#top:first-of-type {
 
 .hero-content {
     position: relative;
-    padding: 58px;
+    padding: var(--hero-padding);
     overflow: hidden;
 }
 
@@ -349,7 +356,7 @@ body > section#top:first-of-type {
         radial-gradient(circle at top left, rgba(94, 160, 255, 0.32), transparent 40%),
         radial-gradient(circle at 82% 88%, rgba(255, 46, 168, 0.28), transparent 28%);
     color: #f5f8ff;
-    padding: 40px;
+    padding: clamp(28px, 4vw, 40px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -460,7 +467,7 @@ body > section#top:first-of-type {
 .card-link,
 .contact-panel,
 .contact-form-shell {
-    padding: 28px;
+    padding: var(--card-padding);
     background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(248, 251, 255, 0.7)),
         var(--brand-gradient-soft);
@@ -749,8 +756,8 @@ body > section#top:first-of-type {
 }
 
 .cta-section {
-    width: min(calc(100% - 40px), var(--content-width));
-    padding-top: 28px;
+    width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
+    padding-top: var(--section-space-tight);
 }
 
 .cta-content {
@@ -790,7 +797,7 @@ body > section#top:first-of-type {
 }
 
 footer {
-    width: min(calc(100% - 40px), var(--content-width));
+    width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
     margin: 24px auto 44px;
     padding: 24px 0 0;
     border-top: 1px solid var(--line);
@@ -812,7 +819,7 @@ footer a {
 .detail-shell,
 .contact-panel,
 .contact-form-shell {
-    padding: 36px;
+    padding: var(--shell-padding);
 }
 
 .page-shell + .page-shell,
@@ -923,11 +930,11 @@ footer a {
 }
 
 .section-tight {
-    padding-top: 24px;
+    padding-top: var(--section-space-tight);
 }
 
 .section-proof {
-    padding-top: 34px;
+    padding-top: clamp(28px, 4vw, 34px);
 }
 
 .proof-header {
@@ -943,9 +950,8 @@ footer a {
 
 @media (max-width: 980px) {
     nav {
-        top: 14px;
-        margin-top: 14px;
-        width: min(calc(100% - 20px), 1160px);
+        top: max(10px, env(safe-area-inset-top, 0px));
+        margin-top: 12px;
     }
 
     .nav-toggle {
@@ -954,8 +960,8 @@ footer a {
 
     .nav-menu {
         position: fixed;
-        top: 84px;
-        right: 12px;
+        top: calc(70px + env(safe-area-inset-top, 0px));
+        right: var(--page-gutter);
         width: min(320px, calc(100vw - 24px));
         padding: 14px;
         border: 1px solid var(--line);
@@ -1022,8 +1028,7 @@ footer a {
     }
 
     section {
-        width: min(calc(100% - 28px), var(--content-width));
-        padding: 72px 0;
+        padding: clamp(56px, 10vw, 72px) 0;
     }
 
     body > section#top:first-of-type {
@@ -1075,11 +1080,6 @@ footer a {
         height: 32px;
     }
 
-    .hero {
-        gap: 18px;
-        padding-top: 52px;
-    }
-
     .hero-text {
         font-size: 1.05rem;
         margin-top: 18px;
@@ -1103,10 +1103,6 @@ footer a {
     .hero-points {
         margin-top: 22px;
         gap: 8px;
-    }
-
-    .impact-box {
-        padding: 30px 28px;
     }
 
     .impact-ratio {
@@ -1209,15 +1205,12 @@ footer a {
     }
 
     footer {
-        width: min(calc(100% - 28px), var(--content-width));
         margin-bottom: 34px;
     }
 }
 
 @media (max-width: 560px) {
     nav {
-        top: 10px;
-        margin-top: 10px;
         padding: 10px 12px 10px 14px;
     }
 
@@ -1227,15 +1220,14 @@ footer a {
     }
 
     .nav-menu {
-        top: 72px;
-        right: 10px;
-        left: 10px;
+        top: calc(62px + env(safe-area-inset-top, 0px));
+        right: var(--page-gutter);
+        left: var(--page-gutter);
         width: auto;
         border-radius: 22px;
     }
 
     section {
-        width: min(calc(100% - 22px), var(--content-width));
         padding: 60px 0;
     }
 
@@ -1311,9 +1303,50 @@ footer a {
     }
 
     footer {
-        width: min(calc(100% - 22px), var(--content-width));
         margin-top: 18px;
         margin-bottom: 26px;
         font-size: 0.88rem;
+    }
+}
+
+@media (min-width: 981px) and (max-width: 1200px) {
+    .hero {
+        grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    }
+
+    .card-link-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-height: 760px) and (min-width: 721px) {
+    nav {
+        position: static;
+        margin-top: 14px;
+    }
+
+    body > section#top:first-of-type {
+        padding-top: clamp(72px, 10vw, 108px) !important;
+    }
+
+    .hero {
+        padding-top: 28px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .benefit-card:hover,
+    .fit-card:hover,
+    .proof-card:hover,
+    .pricing-box:hover,
+    .card-link:hover,
+    .project-summary:hover {
+        transform: none;
+        box-shadow: var(--shadow-card);
+    }
+
+    .btn:hover,
+    .nav-menu a:hover {
+        transform: none;
     }
 }
