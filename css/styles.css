@@ -31,7 +31,7 @@
     --radius-lg: 32px;
     --radius-md: 22px;
     --radius-sm: 14px;
-    --content-width: 1180px;
+    --content-width: 1240px;
     --page-gutter: clamp(12px, 2.8vw, 20px);
     --section-space: clamp(60px, 8vw, 88px);
     --section-space-tight: clamp(22px, 3.2vw, 34px);
@@ -98,8 +98,8 @@ h3,
 }
 
 h1 {
-    font-size: clamp(2.9rem, 5.8vw, 5.6rem);
-    line-height: 0.98;
+    font-size: clamp(2.9rem, 5.2vw, 5rem);
+    line-height: 1;
     font-weight: 700;
 }
 
@@ -129,7 +129,7 @@ nav {
     position: sticky;
     top: max(10px, env(safe-area-inset-top, 0px));
     z-index: 100;
-    width: min(calc(100% - (var(--page-gutter) * 2)), 1160px);
+    width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
     margin: clamp(10px, 2vw, 20px) auto 0;
     padding: clamp(10px, 1.6vw, 12px) clamp(12px, 1.8vw, 14px) clamp(10px, 1.6vw, 12px) clamp(14px, 2vw, 18px);
     display: flex;
@@ -211,7 +211,7 @@ body > section#top:first-of-type {
 
 .hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.95fr);
+    grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.9fr);
     gap: clamp(18px, 2.8vw, 28px);
     align-items: stretch;
     min-height: auto;
@@ -305,7 +305,7 @@ body > section#top:first-of-type {
 
 .hero-text {
     font-size: 1.2rem;
-    max-width: 37rem;
+    max-width: 40rem;
     margin: 22px 0 10px;
 }
 
@@ -368,7 +368,7 @@ body > section#top:first-of-type {
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: rgba(232, 241, 255, 0.72);
-    max-width: 22ch;
+    max-width: 18ch;
 }
 
 .impact-ratio {
@@ -1316,6 +1316,44 @@ footer a {
 
     .card-link-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1201px) {
+    :root {
+        --content-width: 1380px;
+    }
+
+    nav {
+        padding: 12px 18px 12px 22px;
+    }
+
+    .nav-name img {
+        height: 42px;
+    }
+
+    .nav-menu a {
+        font-size: 0.98rem;
+        padding: 12px 16px;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1.92fr) minmax(300px, 0.72fr);
+        align-items: stretch;
+    }
+
+    .hero-content {
+        padding: clamp(36px, 4vw, 62px);
+    }
+
+    .hero-content h1 {
+        max-width: 12.2ch;
+        font-size: clamp(3rem, 4vw, 4.4rem);
+    }
+
+    .impact-box {
+        min-height: 0;
+        padding: 34px;
     }
 }
 
