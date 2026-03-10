@@ -370,6 +370,12 @@ body > section#top:first-of-type {
     border-radius: 4px;
 }
 
+.membership-badge-dacc img {
+    height: 18px;
+    filter: brightness(0) saturate(100%);
+    opacity: 0.78;
+}
+
 .membership-badge span {
     font-size: 0.84rem;
     font-weight: 600;
