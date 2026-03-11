@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://quickler.co/sitemap.xml
+
+# LLM-readable summary of this site
+# https://quickler.co/llms.txt

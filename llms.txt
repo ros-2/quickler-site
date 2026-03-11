@@ -1,0 +1,67 @@
+# Quickler Reports
+
+> Chat-first technical reporting product for survey teams, engineers, and compliance professionals. Capture site notes, photos, and voice on site — Quickler structures them into a near-finished report.
+
+## What Quickler Does
+
+Quickler Reports removes double-handling from technical report writing. Engineers capture information on site once through familiar chat-style input; Quickler structures and drafts the report underneath, leaving the engineer with a document that is mostly done.
+
+**Core workflow:**
+- On-site capture via chat (text, photos, voice)
+- Structured report drafting from unstructured field capture
+- Human review and sign-off before output
+- Routing to the correct format or stakeholder
+
+**Target users:** Structural engineers, surveyors, site inspectors, compliance teams — technical professionals who write the same types of reports repeatedly.
+
+## Current Stage
+
+Early pilot validation. Quickler is working with real technical teams to validate the first reporting niche and prove the capture-to-draft loop before full productisation.
+
+A consulting bridge still exists where it helps validate workflows or de-risk the product direction for early adopters.
+
+## Company
+
+**Legal name:** Quickler Ltd
+**Registered:** Companies House, Scotland (registered 2026-03-11)
+**Registered address:** 5 South Charlotte Street, Edinburgh, EH2 4AN
+**Founder:** Philip Ross
+**Operating base:** Dundee, Scotland, UK
+**Website:** https://quickler.co/
+**Contact:** philip@quickler.co
+**Demo:** https://demo.quickler.co/
+
+## Founder
+
+Philip Ross — BEng+MEng Electrical and Mechanical Engineering, University of Strathclyde. Previously at Dijuno, an AI analytics startup serving Coca-Cola and other major FMCG brands, where he developed expertise in LLM testing, prompt engineering, and Python automation.
+
+**Professional memberships:** Dundee & Angus Chamber of Commerce, Federation of Small Businesses
+
+## Background — Delivered Workflow Projects
+
+Before Quickler Reports, the company built bespoke workflow automation systems. Key outcomes:
+
+- 51.5 working days per year saved across all delivered projects
+- 12× average return on time invested (hours saved per hour built)
+- Systems built for charities, publishers, and commercial enterprises
+
+Project types: purchase order workflows, fundraising and grant automation, production tracking, sales data restructuring, till data processing.
+
+## Technologies
+
+Python, Flask, Typst, Google Apps Script, Claude (Anthropic), Looker Studio, Docker Compose
+
+## Key Pages
+
+- Homepage / product overview: https://quickler.co/
+- Product direction: https://quickler.co/pages/services.html
+- Case studies: https://quickler.co/pages/projects.html
+- About: https://quickler.co/pages/about.html
+- Contact / pilot enquiries: https://quickler.co/pages/contact.html
+- FAQ: https://quickler.co/pages/faq.html
+
+## Full Content
+
+For complete case study detail, product description, FAQ answers, and structured data:
+- Full text: https://quickler.co/llms-full.txt
+- Structured JSON: https://quickler.co/site.json

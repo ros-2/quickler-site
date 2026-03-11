@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-03-11",
+  "site": {
+    "name": "Quickler Reports",
+    "url": "https://quickler.co/",
+    "description": "Chat-first technical reporting product for survey teams, engineers, and compliance professionals. Capture site notes, photos, and voice on site — Quickler structures them into a near-finished report.",
+    "stage": "early_pilot",
+    "demo_url": "https://demo.quickler.co/",
+    "contact_email": "philip@quickler.co"
+  },
+  "company": {
+    "legal_name": "Quickler Ltd",
+    "registered": "2026-03-11",
+    "jurisdiction": "Scotland, UK",
+    "registered_address": {
+      "street": "5 South Charlotte Street",
+      "city": "Edinburgh",
+      "postcode": "EH2 4AN",
+      "country": "GB"
+    },
+    "operating_base": "Dundee, Scotland, UK",
+    "memberships": [
+      "Dundee & Angus Chamber of Commerce",
+      "Federation of Small Businesses"
+    ]
+  },
+  "founder": {
+    "name": "Philip Ross",
+    "location": "Dundee, Scotland",
+    "education": {
+      "degree": "BEng+MEng Electrical and Mechanical Engineering",
+      "institution": "University of Strathclyde"
+    },
+    "previous_roles": [
+      {
+        "company": "Dijuno",
+        "type": "AI analytics startup",
+        "notable_clients": ["Coca-Cola"],
+        "skills_gained": ["LLM testing", "prompt engineering", "Python automation"]
+      }
+    ],
+    "linkedin": "https://www.linkedin.com/in/philipross/"
+  },
+  "product": {
+    "name": "Quickler Reports",
+    "category": "chat-first technical reporting",
+    "target_users": [
+      "structural engineers",
+      "surveyors",
+      "site inspectors",
+      "compliance professionals",
+      "technical teams with repeated reporting workflows"
+    ],
+    "core_problem": "Technical teams capture information on site in rough form, then return to a desk and rewrite it into a formal report. Quickler closes that gap.",
+    "pillars": [
+      {
+        "name": "Chat-first capture",
+        "description": "Voice, photos, and text in a familiar chat workflow. No heavy app adoption burden on engineers. Natural capture during a live site visit."
+      },
+      {
+        "name": "Structured report drafting",
+        "description": "Turns site capture into a near-finished report. Fits repeated technical report structures. Reduces copy-paste and rewrite time."
+      },
+      {
+        "name": "Human review before send",
+        "description": "Engineer stays in control of the final output. Corrections can be made in plain language. Trust layer stays intact."
+      },
+      {
+        "name": "Routing and workflow underneath",
+        "description": "Reports go to the right destination after approval. Project context and naming handled automatically."
+      }
+    ],
+    "good_fit": [
+      "Technical teams that produce repeated site or inspection reports",
+      "Businesses where notes are captured on site and rewritten later at a desk",
+      "Leaders who want faster reporting without forcing staff into clumsy apps"
+    ],
+    "not_a_fit": [
+      "Teams looking for a broad enterprise platform from day one",
+      "Workflows with no repeated report structure at all",
+      "Use cases where trust, review, and evidence do not matter"
+    ]
+  },
+  "proof": {
+    "note": "Working days calculated on 7.5-hour basis (37.5-hour working week)",
+    "aggregate": {
+      "return_on_investment": "12x",
+      "total_build_hours": 33,
+      "total_days_saved_per_year": 51.5,
+      "projects_delivered": 6
+    },
+    "case_studies": [
+      {
+        "slug": "project-po-workflow-platform",
+        "url": "https://quickler.co/pages/project-po-workflow-platform.html",
+        "title": "PO Workflow Platform",
+        "client_type": "Quantum computing startup",
+        "delivered": "2026-02",
+        "build_hours": 36,
+        "days_saved_per_year": null,
+        "outcome": "End-to-end purchase order workflow with approvals, PDF generation, email routing, and document indexing.",
+        "detail": "Custom purchase order platform with guided form entry, saved vendors and addresses, and line-item memory. Approval routing by email, approver signature handling, branded PDF generation, and status tracking. Paperless indexing, history cloning, and setup automation."
+      },
+      {
+        "slug": "project-fundraising-charity",
+        "url": "https://quickler.co/pages/project-fundraising-charity.html",
+        "title": "Fundraising Automation",
+        "client_type": "Multi-million pound charitable enterprise",
+        "delivered": "2025-11",
+        "build_hours": 2,
+        "days_saved_per_year": 6.5,
+        "outcome": "Grant application time reduced from 8 hours to 10 minutes per application. 6.5 working days saved per year.",
+        "detail": "Built a system storing the charity's core information and creating draft grant forms automatically. Staff enter project needs, get matching funders, and start from pre-filled applications instead of blank pages."
+      },
+      {
+        "slug": "project-fundraising-small-charity",
+        "url": "https://quickler.co/pages/project-fundraising-small-charity.html",
+        "title": "Fundraising Automation — Small Charity",
+        "client_type": "Small local charity",
+        "delivered": "2025-12",
+        "build_hours": 0,
+        "days_saved_per_year": 5.5,
+        "outcome": "5.5 working days per year returned to core charitable work.",
+        "detail": "Process and tooling guidance eliminated roughly a week per year of repeat fundraising administration."
+      },
+      {
+        "slug": "project-production-tracking",
+        "url": "https://quickler.co/pages/project-production-tracking.html",
+        "title": "Production Tracking Streamlining",
+        "client_type": "Publishing house",
+        "delivered": "2025-11",
+        "build_hours": 4,
+        "days_saved_per_year": 14,
+        "outcome": "2 hours per week of status chasing eliminated. 14 working days saved per year.",
+        "detail": "Book status was scattered across 5 spreadsheets. Built one tracker showing each book's stage, owner, and deadline with visual signals for at-risk items."
+      },
+      {
+        "slug": "project-sales-data",
+        "url": "https://quickler.co/pages/project-sales-data.html",
+        "title": "Sales Data Restructuring",
+        "client_type": "Multi-million pound charitable enterprise",
+        "delivered": "2025-12",
+        "build_hours": 20,
+        "days_saved_per_year": 14,
+        "outcome": "2 hours saved per week. 14 working days per year. Reporting adopted again after being avoided.",
+        "detail": "Sales data trapped in 43,000 formulas across multiple spreadsheets. Rebuilt underlying data structure and moved calculations into Looker Studio for non-technical staff."
+      },
+      {
+        "slug": "project-till-data",
+        "url": "https://quickler.co/pages/project-till-data.html",
+        "title": "Till Data Automation",
+        "client_type": "Multi-million pound charitable enterprise",
+        "delivered": "2025-12",
+        "build_hours": 7,
+        "days_saved_per_year": 11.5,
+        "outcome": "100 minutes saved per week. 11.5 working days recovered per year.",
+        "detail": "Automated Google Sheets processing of raw till exports. Northern Ireland fully automatic, Scotland workflow reduced to ~20 minutes weekly."
+      }
+    ]
+  },
+  "technologies": [
+    "Python",
+    "Flask",
+    "Typst",
+    "Google Apps Script",
+    "Claude (Anthropic)",
+    "Looker Studio",
+    "Docker Compose",
+    "Google Sheets"
+  ],
+  "pages": [
+    { "title": "Homepage", "url": "https://quickler.co/" },
+    { "title": "Product Direction", "url": "https://quickler.co/pages/services.html" },
+    { "title": "Case Studies", "url": "https://quickler.co/pages/projects.html" },
+    { "title": "About", "url": "https://quickler.co/pages/about.html" },
+    { "title": "Contact", "url": "https://quickler.co/pages/contact.html" },
+    { "title": "FAQ", "url": "https://quickler.co/pages/faq.html" }
+  ],
+  "llm_resources": {
+    "summary": "https://quickler.co/llms.txt",
+    "full": "https://quickler.co/llms-full.txt",
+    "structured": "https://quickler.co/site.json"
+  }
+}

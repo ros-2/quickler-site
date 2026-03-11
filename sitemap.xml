@@ -1,35 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
   <url>
     <loc>https://quickler.co/</loc>
-    <lastmod>2025-12-11</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Core pages -->
   <url>
-    <loc>https://quickler.co/#projects</loc>
-    <lastmod>2025-12-11</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://quickler.co/pages/services.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quickler.co/pages/projects.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quickler.co/#about</loc>
-    <lastmod>2025-12-11</lastmod>
+    <loc>https://quickler.co/pages/about.html</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quickler.co/#process</loc>
-    <lastmod>2025-12-11</lastmod>
+    <loc>https://quickler.co/pages/contact.html</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quickler.co/#contact</loc>
-    <lastmod>2025-12-11</lastmod>
+    <loc>https://quickler.co/pages/faq.html</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://quickler.co/pages/products.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://quickler.co/pages/testimonials.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://quickler.co/pages/process.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://quickler.co/pages/about-detail.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Grant automation tool -->
+  <url>
+    <loc>https://quickler.co/pages/grant-automation.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Case study pages -->
+  <url>
+    <loc>https://quickler.co/pages/project-po-workflow-platform.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://quickler.co/pages/project-fundraising-charity.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://quickler.co/pages/project-fundraising-small-charity.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://quickler.co/pages/project-production-tracking.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://quickler.co/pages/project-sales-data.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://quickler.co/pages/project-till-data.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Legal -->
   <url>
     <loc>https://quickler.co/pages/privacy.html</loc>
     <lastmod>2026-03-10</lastmod>
@@ -42,4 +124,5 @@
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+
 </urlset>

@@ -1,0 +1,191 @@
+# Quickler Reports — Full Content
+
+> This file contains the complete text content of the Quickler website for LLM and AI agent consumption.
+> For a brief summary see: https://quickler.co/llms.txt
+> For structured data see: https://quickler.co/site.json
+
+---
+
+## Product Overview
+
+Quickler Reports is a chat-first technical reporting product being built for survey teams, structural engineers, site inspectors, and compliance professionals. It removes double-handling from technical report writing.
+
+The core problem: engineers capture information on site in rough form, then return to a desk and rewrite it into a formal report. Quickler closes that gap.
+
+**How it works:**
+- On-site capture through familiar chat input (text, photos, voice) — no heavy app adoption burden
+- Structured report drafting underneath — turns field capture into a near-finished document
+- Human review stays in the loop before final send — the engineer controls the output
+- Routing and workflow layer — reports go to the right destination after approval
+
+**Who it is for:**
+- Survey and inspection teams who capture observations on site and rebuild them into a formal report afterwards
+- Engineering and technical services who need consistent outputs and fewer missed details
+- Compliance-heavy work needing clear evidence trails and structured outputs
+- Leaders who want faster reporting without turning it into an untrusted black box
+
+**Who it is not for:**
+- Teams looking for a broad enterprise platform from day one
+- Workflows with no repeated report structure at all
+- Use cases where trust, review, and evidence do not matter
+
+**Current stage:** Early pilot validation. Working with real technical teams to validate the first reporting niche and prove the capture-to-draft loop before full productisation. A consulting bridge still exists where it helps validate workflows or de-risk the product direction.
+
+**Demo:** https://demo.quickler.co/
+
+---
+
+## Proof and Outcomes
+
+Quickler is product-led now, but grounded in real delivered workflow work rather than startup theatre.
+
+- **12×** — Annual return per hour invested across all delivered workflow systems
+- **51.5** — Working days saved per year across all delivered projects
+- **6** — Completed workflow systems delivered before moving to product direction
+- **33 hours** — Total build time across all delivered projects
+- Working days calculated on a 7.5-hour basis (37.5-hour working week)
+
+---
+
+## Case Studies
+
+### 1. PO Workflow Platform
+**Client type:** Quantum computing startup
+**Delivered:** February 2026
+**Build time:** 36 hours
+**Outcome:** End-to-end PO workflow
+
+Quickler built a custom purchase order platform with guided form entry, saved vendors and addresses, and line-item memory for faster repeat orders. Approval routing by email, approver signature handling, branded PDF generation, and status tracking were added so the workflow could move from pending to approved or denied without disappearing into inboxes. Paperless indexing links, history cloning, and setup automation were also integrated so new environments could start quickly with minimal manual steps.
+
+**URL:** https://quickler.co/pages/project-po-workflow-platform.html
+
+---
+
+### 2. Fundraising Automation
+**Client type:** Multi-million pound charitable enterprise
+**Delivered:** November 2025
+**Build time:** 2 hours
+**Time saved:** 6.5 working days per year
+
+Grant applications took a full day each because staff were repeatedly finding funders and re-entering the same charity information into similar forms. Quickler built a system that stored the charity's core information and created draft forms automatically. Staff could enter project needs, get matching funders, and start from pre-filled applications instead of blank pages. Eight hours dropped to roughly ten minutes. Across six forms per year, that translated into 6.5 working days returned to higher-value charitable work.
+
+**URL:** https://quickler.co/pages/project-fundraising-charity.html
+
+---
+
+### 3. Fundraising Automation — Small Charity
+**Client type:** Small local charity
+**Delivered:** December 2025
+**Build time:** 0 hours (process and tooling guidance)
+**Time saved:** 5.5 working days per year
+
+A busy charity worker was losing roughly a week per year to repeat fundraising administration that added no real value to the work itself. Introducing better tools and process support freed up 5.5 working days annually, giving that time back to the organisation's core charitable work.
+
+**URL:** https://quickler.co/pages/project-fundraising-small-charity.html
+
+---
+
+### 4. Production Tracking Streamlining
+**Client type:** Publishing house
+**Delivered:** November 2025
+**Build time:** 4 hours
+**Time saved:** 14 working days per year
+
+Book status information was scattered across five spreadsheets. Checking whether a book would meet its deadline meant searching multiple files and chasing several people for updates. Quickler built one tracker showing each book's stage, owner, and deadline, with clear visual signals for items at risk. Two hours per week of status chasing disappeared. The result was not just speed, but much clearer publishing operations.
+
+**URL:** https://quickler.co/pages/project-production-tracking.html
+
+---
+
+### 5. Sales Data Restructuring
+**Client type:** Multi-million pound charitable enterprise
+**Delivered:** December 2025
+**Build time:** 20 hours
+**Time saved:** 14 working days per year
+
+Sales data was trapped in 43,000 formulas across multiple spreadsheets, to the point that most staff stopped using the reporting because it was too hard to interpret reliably. Quickler rebuilt the underlying data structure and moved calculations into Looker Studio so non-technical staff could filter and understand performance quickly. The result was roughly two hours saved every week and a reporting setup people could actually use instead of avoid.
+
+**URL:** https://quickler.co/pages/project-sales-data.html
+
+---
+
+### 6. Till Data Automation
+**Client type:** Multi-million pound charitable enterprise
+**Delivered:** December 2025
+**Build time:** 7 hours
+**Time saved:** 11.5 working days per year
+
+Two staff members were spending time every week pulling till data, reformatting it, and loading it into the main tracking spreadsheet by hand. Quickler added automation in Google Sheets to process the raw exports and feed the main spreadsheet automatically. Northern Ireland became fully automatic and the Scotland workflow dropped to around twenty minutes weekly. The result was 100 minutes saved per week, or around 11.5 working days recovered each year.
+
+**URL:** https://quickler.co/pages/project-till-data.html
+
+---
+
+## Product Direction Detail
+
+**Four product pillars:**
+
+1. **Chat-first capture** — Voice, photos, and text in a familiar chat workflow. No heavy app adoption burden on engineers. Natural capture during a live site visit.
+
+2. **Structured report drafting** — Turns site capture into a near-finished report. Fits repeated technical report structures. Reduces copy-paste and rewrite time.
+
+3. **Human review before send** — Engineer stays in control of the final output. Corrections can be made in plain language. Trust layer stays intact.
+
+4. **Routing and workflow underneath** — Reports go to the right destination after approval. Project context and naming can be handled automatically. Workflow becomes the defensible layer, not just the model.
+
+**Current path into Quickler:**
+1. Understand the report workflow — map how the team currently captures, writes, reviews, and sends reports
+2. Validate the report shape — work from real examples so the output structure matches what the business actually needs
+3. Test the capture-to-draft loop — focus first on getting one reporting workflow working reliably end to end
+4. Expand only once it proves itself — widen to more report types, routing steps, or integrations after the core loop works
+
+---
+
+## Frequently Asked Questions
+
+**What kind of projects do you take on?**
+Repetitive data work, manual processes, and disconnected systems. Recent projects include retail data consolidation, grant writing automation, production tracking, and business planning research.
+
+**How long does a typical project take?**
+Two to three days for single-process automation; two to four weeks for complex integrations. Timeline confirmed after a scoping call.
+
+**Do you work remotely or on-site?**
+Primarily remote. Based in Scotland, available Scotland-wide. UK travel is possible with costs quoted separately.
+
+**What happens after delivery?**
+You receive documentation and training, and own all code and systems built. Optional ongoing support is available.
+
+**Do you work with charities?**
+Yes. Discounted project pricing is available for registered charities and non-profits.
+
+**What is your pricing?**
+Fixed project-based pricing agreed upfront. After initial contact and problem identification, you receive a clear quote with no surprises.
+
+---
+
+## Company
+
+**Legal name:** Quickler Ltd
+**Registered:** Companies House, Scotland (2026-03-11)
+**Company number:** Available on Companies House
+**Registered address:** 5 South Charlotte Street, Edinburgh, EH2 4AN
+**Operating base:** Dundee, Scotland, UK
+**Website:** https://quickler.co/
+**Contact:** philip@quickler.co
+**Professional memberships:** Dundee & Angus Chamber of Commerce, Federation of Small Businesses
+
+---
+
+## Founder
+
+**Philip Ross** — BEng+MEng Electrical and Mechanical Engineering, University of Strathclyde. Previously at Dijuno, an AI analytics startup serving Coca-Cola and other major FMCG brands. Built expertise in LLM testing, prompt engineering, and Python automation.
+
+Quickler was founded from direct experience of workflow friction: real systems built for real organisations, with measurable time savings. The product direction grew out of identifying the strongest repeated problem across those engagements — technical reporting that gets written twice.
+
+Background also includes AI cycling coach development, local-first software, and data-heavy applications.
+
+---
+
+## Technologies
+
+Python, Flask, Typst, Google Apps Script, Claude (Anthropic), Looker Studio, Docker Compose, Google Sheets automation

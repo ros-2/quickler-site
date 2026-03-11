@@ -1,35 +1,35 @@
-# Quickler – Automation Consulting
+# Quickler Reports
 
-> Automation consultant based in Dundee, Scotland helping organisations automate repetitive tasks with a 10× return on investment.
+> Quickler Ltd builds Quickler Reports, a chat-first technical reporting product for teams that capture information on site and rewrite it later into formal reports.
 
-## Services
+## Product
 
-I help organisations identify and automate repetitive manual tasks, building systems that deliver an average 10× return on time invested. Every hour I invest saves clients 10 hours of staff time annually.
+Quickler Reports helps technical teams turn site notes, photos, and voice into finished reports faster. It is designed for repeated reporting workflows where evidence is captured in the field and rewritten later at a desk.
 
-### Specializations
-- Process Automation
-- Data Processing Automation
-- Reporting Systems
-- Grant Writing Automation
-- Production Tracking Systems
+### Best-fit users
+- Structural engineers
+- Surveyors
+- Site inspectors
+- Compliance professionals
+- Technical teams with repeated reporting workflows
 
 ## Contact
 
-Based in Dundee, Scotland, UK
+Legal name: Quickler Ltd
+Registered office: 5 South Charlotte Street, Edinburgh, EH2 4AN
 Website: https://quickler.co/
-Contact form available at: https://quickler.co/#contact
+Contact page: https://quickler.co/pages/contact.html
 
-## Recent Projects
+## Proof
 
-- Fundraising Automation: Built system for charity to automate grant applications, saving 6 working days per year
-- Production Tracking: Created unified tracker for publishing house, saving 13 working days per year
-- Sales Data Restructuring: Rebuilt database for charitable enterprise, saving 13 working days per year
-- Till Data Automation: Automated sales data processing for charity shops, saving 11 working days per year
+- Delivered workflow projects have saved clients 51.5 working days per year in aggregate.
+- Average measured return on build time is 12x.
+- Previous delivered work includes reporting automation, production tracking, sales-data restructuring, and grant-application workflow improvements.
 
 ## Background
 
-Electrical and Mechanical Engineering degree from University of Strathclyde. Previously worked at Dijuno, an AI analytics startup serving companies including Coca-Cola, where I developed expertise in LLM testing, prompt engineering, and Python automation.
+Quickler Ltd was founded by Philip Ross. He studied Electrical and Mechanical Engineering at the University of Strathclyde and previously worked at Dijuno, where he built experience in LLM testing, prompt engineering, and Python automation.
 
 ## Technologies
 
-Google Applications Script, Python, Claude, Looker Studio, Custom GPTs
+Python, Flask, Typst, Google Apps Script, Claude, Looker Studio, Docker Compose
