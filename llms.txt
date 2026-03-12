@@ -1,10 +1,10 @@
 # Quickler Reports
 
-> Chat-first technical reporting product for survey teams, engineers, and compliance professionals. Capture site notes, photos, and voice on site — Quickler structures them into a near-finished report.
+> Chat-first reporting product for inspection, survey, site visit, compliance, and maintenance teams. Capture site notes, photos, and voice on site — Quickler structures them into a near-finished report.
 
 ## What Quickler Does
 
-Quickler Reports removes double-handling from technical report writing. Engineers capture information on site once through familiar chat-style input; Quickler structures and drafts the report underneath, leaving the engineer with a document that is mostly done.
+Quickler Reports removes double-handling from report writing in inspections, surveys, site visits, compliance work, and maintenance. Teams capture information on site once through familiar chat-style input; Quickler structures and drafts the report underneath, leaving the reviewer with a document that is mostly done.
 
 **Core workflow:**
 - On-site capture via chat (text, photos, voice)
@@ -12,7 +12,7 @@ Quickler Reports removes double-handling from technical report writing. Engineer
 - Human review and sign-off before output
 - Routing to the correct format or stakeholder
 
-**Target users:** Structural engineers, surveyors, site inspectors, compliance teams — technical professionals who write the same types of reports repeatedly.
+**Target users:** Inspection teams, surveyors, site visit teams, compliance teams, and maintenance teams who write the same types of reports repeatedly.
 
 ## Current Stage
 
@@ -22,10 +22,10 @@ The focus is now the reporting product itself: validating the first niche and ti
 
 ## Pilot Sign-Up
 
-Quickler is looking for a small number of initial teams with repeated reporting workflows.
+Quickler is looking for a small number of initial teams in inspections, surveys, site visits, compliance, and maintenance.
 
 **Best pilot fit:**
-- Your team writes similar reports repeatedly
+- Your team writes similar inspection, survey, site visit, compliance, or maintenance reports repeatedly
 - Notes, photos, voice, or forms are captured during the job
 - The formal report is still rebuilt later at a desk
 - You are willing to trial an early workflow and give feedback

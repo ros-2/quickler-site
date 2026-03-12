@@ -8,7 +8,7 @@
 
 ## Product Overview
 
-Quickler Reports is a chat-first technical reporting product being built for survey teams, structural engineers, site inspectors, and compliance professionals. It removes double-handling from technical report writing.
+Quickler Reports is a chat-first reporting product being built for inspection, survey, site visit, compliance, and maintenance teams. It removes double-handling from report writing.
 
 The core problem: engineers capture information on site in rough form, then return to a desk and rewrite it into a formal report. Quickler closes that gap.
 
@@ -20,7 +20,7 @@ The core problem: engineers capture information on site in rough form, then retu
 
 **Who it is for:**
 - Survey and inspection teams who capture observations on site and rebuild them into a formal report afterwards
-- Engineering and technical services who need consistent outputs and fewer missed details
+- Site visit and maintenance teams who need consistent outputs and fewer missed details
 - Compliance-heavy work needing clear evidence trails and structured outputs
 - Leaders who want faster reporting without turning it into an untrusted black box
 
@@ -31,7 +31,7 @@ The core problem: engineers capture information on site in rough form, then retu
 
 **Current stage:** Early pilot validation. Working with real technical teams to validate the first reporting niche and prove the capture-to-draft loop before full productisation. The focus is now the reporting product itself: validating the first niche and tightening the capture-to-report loop.
 
-**Pilot sign-up:** Quickler is looking for a small number of initial teams with repeated reporting workflows. The best fit is a team that captures notes, photos, voice, or forms during the job and still rewrites the final report later at a desk. Early teams get direct founder support and help shape the first strong product workflow. Apply at https://quickler.co/pages/contact.html
+**Pilot sign-up:** Quickler is looking for a small number of initial teams in inspections, surveys, site visits, compliance, and maintenance. The best fit is a team that captures notes, photos, voice, or forms during the job and still rewrites the final report later at a desk. Early teams get direct founder support and help shape the first strong product workflow. Apply at https://quickler.co/pages/contact.html
 
 **Demo:** https://demo.quickler.co/
 

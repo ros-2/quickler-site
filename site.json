@@ -4,7 +4,7 @@
   "site": {
     "name": "Quickler Reports",
     "url": "https://quickler.co/",
-    "description": "Early-pilot reporting product for technical and field-based teams. Capture site notes, photos, and voice on site — Quickler structures them into a near-finished report.",
+    "description": "Early-pilot reporting product for inspection, survey, site visit, compliance, and maintenance teams. Capture site notes, photos, and voice on site — Quickler structures them into a near-finished report.",
     "stage": "early_pilot",
     "demo_url": "https://demo.quickler.co/",
     "contact_email": "philip@quickler.co",
@@ -41,14 +41,14 @@
     "name": "Quickler Reports",
     "category": "chat-first technical reporting",
     "target_users": [
-      "structural engineers",
-      "surveyors",
-      "site inspectors",
-      "compliance professionals",
-      "technical teams with repeated reporting workflows"
+      "inspection teams",
+      "survey teams",
+      "site visit teams",
+      "compliance teams",
+      "maintenance teams"
     ],
-    "core_problem": "Technical teams capture information on site in rough form, then return to a desk and rewrite it into a formal report. Quickler closes that gap.",
-    "pilot_offer": "Quickler is looking for a small number of initial teams with repeated reporting workflows. Early teams get direct founder support and help shape the first strong product workflow.",
+    "core_problem": "Inspection, survey, site visit, compliance, and maintenance teams capture information on site in rough form, then return to a desk and rewrite it into a formal report. Quickler closes that gap.",
+    "pilot_offer": "Quickler is looking for a small number of initial teams in inspections, surveys, site visits, compliance, and maintenance. Early teams get direct founder support and help shape the first strong product workflow.",
     "pillars": [
       {
         "name": "Chat-first capture",
@@ -68,12 +68,12 @@
       }
     ],
     "good_fit": [
-      "Technical teams that produce repeated site or inspection reports",
+      "Inspection, survey, site visit, compliance, and maintenance teams that produce repeated reports",
       "Businesses where notes are captured on site and rewritten later at a desk",
       "Leaders who want faster reporting without forcing staff into clumsy apps"
     ],
     "pilot_qualification": [
-      "Your team writes similar reports repeatedly",
+      "Your team writes similar inspection, survey, site visit, compliance, or maintenance reports repeatedly",
       "Notes, photos, voice, or forms are captured during the job",
       "The final report is still rebuilt later at a desk",
       "You can trial an early workflow and give product feedback"
