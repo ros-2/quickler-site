@@ -32,6 +32,8 @@ Quickler is looking for a small number of initial teams in inspections, surveys,
 
 **Primary CTA:** Apply for an early pilot at https://quickler.co/pages/contact.html
 
+**Site goal:** The public site is designed to turn good-fit visitors into early pilot applicants. Case studies, product pages, and founder pages exist to support that decision, not as separate destination content.
+
 ## Company
 
 **Legal name:** Quickler Ltd
