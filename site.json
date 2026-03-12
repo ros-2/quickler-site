@@ -13,13 +13,7 @@
     "legal_name": "Quickler Ltd",
     "registered": "2026-03-11",
     "jurisdiction": "Scotland, UK",
-    "registered_address": {
-      "street": "5 South Charlotte Street",
-      "city": "Edinburgh",
-      "postcode": "EH2 4AN",
-      "country": "GB"
-    },
-    "operating_base": "Dundee, Scotland, UK",
+    "operating_base": "Edinburgh, Scotland, UK",
     "memberships": [
       "Dundee & Angus Chamber of Commerce",
       "Federation of Small Businesses"

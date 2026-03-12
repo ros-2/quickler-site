@@ -24,9 +24,9 @@ A consulting bridge still exists where it helps validate workflows or de-risk th
 
 **Legal name:** Quickler Ltd
 **Registered:** Companies House, Scotland (registered 2026-03-11)
-**Registered address:** 5 South Charlotte Street, Edinburgh, EH2 4AN
+**Registered address:** withheld from public site
 **Founder:** Philip Ross
-**Operating base:** Dundee, Scotland, UK
+**Operating base:** Edinburgh, Scotland, UK
 **Website:** https://quickler.co/
 **Contact:** philip@quickler.co
 **Demo:** https://demo.quickler.co/
