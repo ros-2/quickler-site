@@ -154,7 +154,7 @@ Then visit `http://localhost:8000`
 
 For enquiries about the website or Quickler Reports:
 - **Company:** Quickler Ltd
-- **Email:** philip@quickler.co
+- **Email:** philipross@quickler.co
 - **Website:** [https://quickler.co/](https://quickler.co/)
 - **Registered office:** 5 South Charlotte Street, Edinburgh, EH2 4AN
 
