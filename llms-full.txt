@@ -180,7 +180,7 @@ Fixed project-based pricing agreed upfront. After initial contact and problem id
 
 ## Founder
 
-**Philip Ross** — BEng+MEng Electrical and Mechanical Engineering, University of Strathclyde. Previously at Dijuno, an AI analytics startup serving Coca-Cola and other major FMCG brands. Built expertise in LLM testing, prompt engineering, and Python automation.
+**Philip Ross** — BEng Electrical and Mechanical Engineering, University of Strathclyde. Previously at Dijuno, an AI analytics startup serving Coca-Cola and other major FMCG brands. Built expertise in LLM testing, prompt engineering, and Python automation.
 
 Quickler was founded from direct experience of workflow friction: real systems built for real organisations, with measurable time savings. The product direction grew out of identifying the strongest repeated problem across those engagements — technical reporting that gets written twice.
 
