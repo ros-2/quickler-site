@@ -680,6 +680,134 @@ body > section#top:first-of-type {
     margin-top: 18px;
 }
 
+.invoice-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.invoice-showcase-card {
+    padding: var(--card-padding);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(248, 251, 255, 0.74)),
+        var(--brand-gradient-soft);
+    box-shadow: var(--shadow-card);
+}
+
+.invoice-showcase-title {
+    margin: 12px 0 10px;
+}
+
+.invoice-showcase-copy {
+    color: var(--ink);
+    margin-bottom: 18px;
+}
+
+.approval-demo {
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(24, 52, 132, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 28px rgba(18, 41, 111, 0.06);
+}
+
+.approval-demo-header,
+.approval-demo-row,
+.approval-demo-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.approval-demo-header {
+    margin-bottom: 18px;
+}
+
+.approval-demo-header strong,
+.approval-demo-value {
+    color: var(--ink-strong);
+}
+
+.approval-demo-header div {
+    display: grid;
+    gap: 4px;
+}
+
+.approval-demo-header span,
+.approval-demo-label {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+}
+
+.approval-demo-row {
+    padding: 10px 0;
+    border-top: 1px solid rgba(24, 52, 132, 0.08);
+}
+
+.approval-demo-row:first-of-type {
+    border-top: 0;
+}
+
+.approval-demo-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.approval-demo-pill-approved {
+    background: rgba(26, 165, 96, 0.12);
+    color: #1a7a4b;
+}
+
+.approval-demo-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.approval-demo-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(24, 52, 132, 0.12);
+    background: rgba(255, 255, 255, 0.82);
+    color: var(--ink);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.approval-demo-action-primary {
+    background: var(--brand-gradient);
+    color: #ffffff;
+    border-color: transparent;
+}
+
+.invoice-preview-figure {
+    margin: 0;
+}
+
+.invoice-preview-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+    border: 1px solid rgba(24, 52, 132, 0.1);
+    background: #ffffff;
+    box-shadow: 0 14px 32px rgba(18, 41, 111, 0.08);
+}
+
 .fork-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1540,7 +1668,8 @@ footer a {
     .home-pilot-steps,
     .home-proof-grid,
     .fork-grid,
-    .router-grid {
+    .router-grid,
+    .invoice-showcase-grid {
         grid-template-columns: 1fr;
     }
 
