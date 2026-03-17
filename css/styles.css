@@ -682,7 +682,7 @@ body > section#top:first-of-type {
 
 .invoice-showcase-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 18px;
     margin-top: 18px;
 }
@@ -806,6 +806,171 @@ body > section#top:first-of-type {
     border: 1px solid rgba(24, 52, 132, 0.1);
     background: #ffffff;
     box-shadow: 0 14px 32px rgba(18, 41, 111, 0.08);
+}
+
+.invoice-preview-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.invoice-preview-note {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+}
+
+.approval-email-preview {
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(24, 52, 132, 0.1);
+    background: #ffffff;
+    box-shadow: 0 12px 28px rgba(18, 41, 111, 0.06);
+}
+
+.approval-email-header,
+.approval-email-items-head,
+.approval-email-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.approval-email-header {
+    margin-bottom: 16px;
+}
+
+.approval-email-brand {
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.approval-email-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(249, 171, 0, 0.16);
+    color: #996100;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.approval-email-preview h4 {
+    margin: 0 0 8px;
+}
+
+.approval-email-subtitle {
+    margin: 0 0 16px;
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+}
+
+.approval-email-summary,
+.approval-email-items {
+    border: 1px solid rgba(24, 52, 132, 0.1);
+    border-radius: 18px;
+    background: rgba(248, 251, 255, 0.76);
+}
+
+.approval-email-summary {
+    display: grid;
+    gap: 0;
+    margin-bottom: 16px;
+}
+
+.approval-email-summary div {
+    padding: 10px 14px;
+    border-top: 1px solid rgba(24, 52, 132, 0.08);
+    color: var(--ink);
+}
+
+.approval-email-summary div:first-child,
+.approval-email-item:first-of-type {
+    border-top: 0;
+}
+
+.approval-email-items-head {
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.82);
+    color: var(--ink-soft);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.approval-email-item {
+    padding: 10px 14px;
+    border-top: 1px solid rgba(24, 52, 132, 0.08);
+    color: var(--ink);
+}
+
+.approval-email-actions {
+    margin-top: 16px;
+}
+
+.approval-email-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: var(--brand-gradient);
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 16px 28px rgba(47, 107, 255, 0.2);
+}
+
+.approval-email-footnote {
+    margin: 14px 0 0;
+    color: var(--ink-soft);
+    font-size: 0.84rem;
+}
+
+.report-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.report-photo-card {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 28px;
+    border: 1px solid rgba(24, 52, 132, 0.1);
+    background: #ffffff;
+    box-shadow: 0 14px 32px rgba(18, 41, 111, 0.08);
+}
+
+.report-photo-card img {
+    width: 100%;
+    height: clamp(260px, 34vw, 380px);
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.report-photo-card figcaption {
+    display: grid;
+    gap: 8px;
+    padding: 18px 20px 20px;
+    color: var(--muted);
+}
+
+.report-photo-card figcaption strong {
+    color: var(--ink);
+    font-size: 1rem;
+}
+
+.report-photo-card figcaption span {
+    line-height: 1.6;
 }
 
 .fork-grid {
@@ -1669,7 +1834,8 @@ footer a {
     .home-proof-grid,
     .fork-grid,
     .router-grid,
-    .invoice-showcase-grid {
+    .invoice-showcase-grid,
+    .report-photos-grid {
         grid-template-columns: 1fr;
     }
 

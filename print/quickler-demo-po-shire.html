@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quickler Demo Purchase Order</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 14mm;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #e9effd;
+            color: #0c1734;
+        }
+
+        .sheet {
+            width: 100%;
+            min-height: calc(297mm - 28mm);
+            padding: 28px 30px 24px;
+            background: #ffffff;
+            border: 1px solid #d7e0f8;
+            border-radius: 24px;
+        }
+
+        .topbar,
+        .meta-grid,
+        .line-head,
+        .line-row,
+        .totals-row,
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .topbar {
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+
+        .brand {
+            display: grid;
+            gap: 8px;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 34px;
+            letter-spacing: 0.04em;
+        }
+
+        .brand p,
+        .po-meta p,
+        .box p,
+        .notes p,
+        .footer p {
+            margin: 0;
+        }
+
+        .muted {
+            color: #67789e;
+        }
+
+        .po-meta {
+            text-align: right;
+            display: grid;
+            gap: 8px;
+            padding-top: 4px;
+        }
+
+        .po-meta strong {
+            color: #1a52d0;
+            font-size: 24px;
+        }
+
+        .meta-grid {
+            margin-bottom: 26px;
+        }
+
+        .box {
+            width: 48%;
+            padding: 18px 20px;
+            border: 1px solid #e1e8fa;
+            border-radius: 18px;
+            background: #f6f9ff;
+            display: grid;
+            gap: 8px;
+        }
+
+        .box h2,
+        .notes h2,
+        .totals h2 {
+            margin: 0 0 8px;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #67789e;
+        }
+
+        .box strong {
+            font-size: 22px;
+        }
+
+        .approved-pill {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: #e7f7ed;
+            color: #1e824c;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .lines {
+            margin-bottom: 26px;
+            border: 1px solid #e6ecfb;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .line-head {
+            padding: 14px 18px;
+            background: #f6f9ff;
+            color: #67789e;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .line-row {
+            padding: 16px 18px;
+            border-top: 1px solid #e6ecfb;
+            align-items: flex-start;
+        }
+
+        .line-desc {
+            width: 58%;
+            display: grid;
+            gap: 6px;
+        }
+
+        .line-desc strong {
+            font-size: 18px;
+        }
+
+        .line-num {
+            width: 12%;
+            text-align: right;
+        }
+
+        .line-total {
+            width: 18%;
+            text-align: right;
+            font-weight: 700;
+        }
+
+        .lower {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+
+        .notes {
+            width: 52%;
+            display: grid;
+            gap: 10px;
+        }
+
+        .totals {
+            width: 40%;
+            padding: 18px 20px;
+            border: 1px solid #dce5fa;
+            border-radius: 18px;
+            background: #f6f9ff;
+        }
+
+        .totals-row {
+            padding: 10px 0;
+            border-top: 1px solid #d6dff7;
+            align-items: center;
+        }
+
+        .totals-row:first-of-type {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .totals-row.total {
+            margin-top: 4px;
+            color: #1a52d0;
+            font-weight: 700;
+            font-size: 22px;
+        }
+
+        .signature-label {
+            margin-bottom: 8px;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #67789e;
+        }
+
+        .signature {
+            height: 54px;
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            align-items: flex-end;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <main class="sheet">
+        <section class="topbar">
+            <div class="brand">
+                <h1>PURCHASE ORDER</h1>
+                <p class="muted">Green Dragon Works Ltd</p>
+            </div>
+            <div class="po-meta">
+                <p><strong>PO-SHIRE-004</strong></p>
+                <p class="muted">14 February 2026</p>
+            </div>
+        </section>
+
+        <section class="meta-grid">
+            <div class="box">
+                <h2>Vendor</h2>
+                <p><strong>Second Breakfast Supplies Ltd</strong></p>
+                <p>12 Bagshot Row</p>
+                <p>Hobbiton, The Shire</p>
+            </div>
+            <div class="box">
+                <h2>Approver</h2>
+                <p><strong>Gandalf the Grey</strong></p>
+                <p>Steward</p>
+                <span class="approved-pill">Approved</span>
+            </div>
+        </section>
+
+        <section class="lines">
+            <div class="line-head">
+                <div class="line-desc">Description</div>
+                <div class="line-num">Qty</div>
+                <div class="line-num">Unit</div>
+                <div class="line-total">Total</div>
+            </div>
+
+            <div class="line-row">
+                <div class="line-desc">
+                    <strong>Lantern oil and waybread hampers</strong>
+                    <span class="muted">Packed for the East Road field team.</span>
+                </div>
+                <div class="line-num">4</div>
+                <div class="line-num">£180.00</div>
+                <div class="line-total">£720.00</div>
+            </div>
+
+            <div class="line-row">
+                <div class="line-desc">
+                    <strong>Mithril clasp repair kits</strong>
+                    <span class="muted">Set aside for archive chest repairs.</span>
+                </div>
+                <div class="line-num">2</div>
+                <div class="line-num">£132.00</div>
+                <div class="line-total">£264.00</div>
+            </div>
+
+            <div class="line-row">
+                <div class="line-desc">
+                    <strong>Pony courier and handling</strong>
+                    <span class="muted">Standard route via Bree.</span>
+                </div>
+                <div class="line-num">1</div>
+                <div class="line-num">£56.00</div>
+                <div class="line-total">£56.00</div>
+            </div>
+        </section>
+
+        <section class="lower">
+            <div class="notes">
+                <h2>Notes</h2>
+                <p>Approved for ranger stores and archive upkeep.</p>
+                <p>Demo PDF generated automatically from fictional workflow data.</p>
+            </div>
+
+            <div class="totals">
+                <div class="totals-row">
+                    <span class="muted">Subtotal</span>
+                    <strong>£1,040.00</strong>
+                </div>
+                <div class="totals-row">
+                    <span class="muted">VAT</span>
+                    <span>£208.00</span>
+                </div>
+                <div class="totals-row total">
+                    <span>TOTAL</span>
+                    <span>£1,248.00</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="signature-label">Signature</div>
+            <svg class="signature" viewBox="0 0 360 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 49C32 24 54 17 70 23C83 28 86 48 101 50C118 52 130 19 153 14C171 10 182 40 198 42C214 45 226 23 245 20C259 18 272 29 286 31C304 34 321 24 352 10" stroke="#1A52D0" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+        </section>
+
+        <section class="footer">
+            <p>Green Dragon Works Ltd</p>
+            <p class="muted">Fictional demo document generated for Quickler</p>
+        </section>
+    </main>
+</body>
+</html>

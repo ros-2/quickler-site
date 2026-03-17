@@ -135,6 +135,46 @@
         </div>
         <div class="invoice-showcase-grid">
             <article class="invoice-showcase-card">
+                <span class="card-link-kicker">Approval email</span>
+                <h3 class="invoice-showcase-title">The approver gets a clear decision email</h3>
+                <p class="invoice-showcase-copy">Instead of a vague forwarding chain, the approver gets a proper summary with the key details and one obvious next action.</p>
+
+                <div class="approval-email-preview" aria-label="Example purchase order approval email">
+                    <div class="approval-email-header">
+                        <span class="approval-email-brand">Green Dragon Works</span>
+                        <span class="approval-email-status">Pending</span>
+                    </div>
+                    <h4>Approval needed</h4>
+                    <p class="approval-email-subtitle">Hi Gandalf the Grey, please review PO-SHIRE-004.</p>
+                    <div class="approval-email-summary">
+                        <div><strong>Vendor:</strong> Second Breakfast Supplies Ltd</div>
+                        <div><strong>Bill to:</strong> Green Dragon Works Ltd</div>
+                        <div><strong>Ship to:</strong> Ranger Stores, Bree</div>
+                        <div><strong>Requested by:</strong> Frodo Baggins</div>
+                        <div><strong>Total:</strong> £1,248.00</div>
+                    </div>
+                    <div class="approval-email-items">
+                        <div class="approval-email-items-head">
+                            <span>Items</span>
+                            <span>Qty</span>
+                        </div>
+                        <div class="approval-email-item">
+                            <span>Lantern oil and waybread hampers</span>
+                            <span>4</span>
+                        </div>
+                        <div class="approval-email-item">
+                            <span>Mithril clasp repair kits</span>
+                            <span>2</span>
+                        </div>
+                    </div>
+                    <div class="approval-email-actions">
+                        <span class="approval-email-button">Decide now</span>
+                    </div>
+                    <p class="approval-email-footnote">Fictional demo content shown for illustration.</p>
+                </div>
+            </article>
+
+            <article class="invoice-showcase-card">
                 <span class="card-link-kicker">Example approval chain</span>
                 <h3 class="invoice-showcase-title">A proper chain, not a loose email trail</h3>
                 <p class="invoice-showcase-copy">This demo uses clearly fictional names and companies, but the workflow shape is the same: named approvers, clear status, generated PDFs, and proper filing links.</p>
@@ -174,6 +214,10 @@
                 <figure class="invoice-preview-figure">
                     <img src="/assets/photos/invoices/po-document-preview.svg" alt="Preview of a finished purchase order PDF produced by the workflow">
                 </figure>
+                <div class="invoice-preview-actions">
+                    <a class="btn btn-secondary" href="/assets/docs/quickler-demo-po-shire.pdf" download>Download demo PDF</a>
+                    <span class="invoice-preview-note">Made-up names and data, matching the page demo.</span>
+                </div>
             </article>
         </div>
     </section>

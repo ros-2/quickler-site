@@ -10,9 +10,12 @@
   <rect x="140" y="286" width="420" height="170" rx="20" fill="#F6F9FF"/>
   <rect x="140" y="286" width="420" height="170" rx="20" stroke="#E1E8FA" stroke-width="3"/>
   <text x="172" y="332" fill="#67789E" font-size="18" font-family="Arial, Helvetica, sans-serif" font-weight="700">VENDOR</text>
-  <text x="172" y="378" fill="#0C1734" font-size="28" font-family="Arial, Helvetica, sans-serif" font-weight="700">Second Breakfast Supplies Ltd</text>
-  <text x="172" y="416" fill="#213055" font-size="20" font-family="Arial, Helvetica, sans-serif">12 Bagshot Row</text>
-  <text x="172" y="446" fill="#213055" font-size="20" font-family="Arial, Helvetica, sans-serif">Hobbiton, The Shire</text>
+  <text x="172" y="374" fill="#0C1734" font-size="24" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    <tspan x="172" dy="0">Second Breakfast</tspan>
+    <tspan x="172" dy="30">Supplies Ltd</tspan>
+  </text>
+  <text x="172" y="432" fill="#213055" font-size="20" font-family="Arial, Helvetica, sans-serif">12 Bagshot Row</text>
+  <text x="172" y="458" fill="#213055" font-size="20" font-family="Arial, Helvetica, sans-serif">Hobbiton, The Shire</text>
 
   <rect x="596" y="286" width="378" height="170" rx="20" fill="#F6F9FF"/>
   <rect x="596" y="286" width="378" height="170" rx="20" stroke="#E1E8FA" stroke-width="3"/>
@@ -31,7 +34,7 @@
 
   <rect x="140" y="664" width="920" height="94" rx="18" fill="#FFFFFF"/>
   <rect x="140" y="664" width="920" height="94" rx="18" stroke="#E6ECFB" stroke-width="2"/>
-  <text x="172" y="714" fill="#0C1734" font-size="24" font-family="Arial, Helvetica, sans-serif" font-weight="700">Lantern oil and waybread hampers</text>
+  <text x="172" y="714" fill="#0C1734" font-size="22" font-family="Arial, Helvetica, sans-serif" font-weight="700">Lantern oil and waybread hampers</text>
   <text x="172" y="744" fill="#67789E" font-size="18" font-family="Arial, Helvetica, sans-serif">Packed for the East Road field team.</text>
   <text x="720" y="724" fill="#213055" font-size="24" font-family="Arial, Helvetica, sans-serif">4</text>
   <text x="804" y="724" fill="#213055" font-size="24" font-family="Arial, Helvetica, sans-serif">£180.00</text>
@@ -47,7 +50,7 @@
 
   <rect x="140" y="888" width="920" height="94" rx="18" fill="#FFFFFF"/>
   <rect x="140" y="888" width="920" height="94" rx="18" stroke="#E6ECFB" stroke-width="2"/>
-  <text x="172" y="938" fill="#0C1734" font-size="24" font-family="Arial, Helvetica, sans-serif" font-weight="700">Pony courier and handling</text>
+  <text x="172" y="938" fill="#0C1734" font-size="22" font-family="Arial, Helvetica, sans-serif" font-weight="700">Pony courier and handling</text>
   <text x="172" y="968" fill="#67789E" font-size="18" font-family="Arial, Helvetica, sans-serif">Standard route via Bree.</text>
   <text x="720" y="948" fill="#213055" font-size="24" font-family="Arial, Helvetica, sans-serif">1</text>
   <text x="804" y="948" fill="#213055" font-size="24" font-family="Arial, Helvetica, sans-serif">£56.00</text>
@@ -64,10 +67,10 @@
   <text x="894" y="1252" fill="#1A52D0" font-size="34" font-family="Arial, Helvetica, sans-serif" font-weight="700">£1,248.00</text>
 
   <text x="140" y="1118" fill="#67789E" font-size="18" font-family="Arial, Helvetica, sans-serif" font-weight="700">NOTES</text>
-  <text x="140" y="1162" fill="#213055" font-size="22" font-family="Arial, Helvetica, sans-serif">Approved for ranger stores and archive upkeep.</text>
-  <text x="140" y="1196" fill="#213055" font-size="22" font-family="Arial, Helvetica, sans-serif">Demo PDF generated automatically and filed to records.</text>
+  <text x="140" y="1162" fill="#213055" font-size="20" font-family="Arial, Helvetica, sans-serif">Approved for ranger stores and archive upkeep.</text>
+  <text x="140" y="1194" fill="#213055" font-size="20" font-family="Arial, Helvetica, sans-serif">Demo PDF generated automatically and filed to records.</text>
 
   <text x="140" y="1388" fill="#67789E" font-size="18" font-family="Arial, Helvetica, sans-serif" font-weight="700">SIGNATURE</text>
   <path d="M145 1452C178 1424 206 1408 228 1416C246 1422 250 1450 270 1453C293 1456 310 1410 342 1402C368 1396 383 1438 406 1441C428 1445 444 1415 470 1411" stroke="#1A52D0" stroke-width="7" stroke-linecap="round"/>
-  <text x="140" y="1496" fill="#213055" font-size="18" font-family="Arial, Helvetica, sans-serif">Green Dragon Works Ltd · Fictional demo generated from the PO workflow platform</text>
+  <text x="140" y="1496" fill="#213055" font-size="17" font-family="Arial, Helvetica, sans-serif">Green Dragon Works Ltd · Fictional demo generated from the PO workflow platform</text>
 </svg>
