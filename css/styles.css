@@ -942,7 +942,6 @@ body > section#top:first-of-type {
 
 .report-photo-card {
     margin: 0;
-    overflow: hidden;
     border-radius: 28px;
     border: 1px solid rgba(24, 52, 132, 0.1);
     background: #ffffff;
@@ -951,10 +950,13 @@ body > section#top:first-of-type {
 
 .report-photo-card img {
     width: 100%;
-    height: clamp(260px, 34vw, 380px);
+    height: auto;
+    max-height: 280px;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
+    padding: 16px 16px 0;
+    background: #f7faff;
 }
 
 .report-photo-card figcaption {
