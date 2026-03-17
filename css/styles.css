@@ -1357,6 +1357,14 @@ body > section#top:first-of-type {
     line-height: 1.6;
 }
 
+.form-feedback {
+    min-height: 1.6em;
+    margin-top: 14px;
+    color: var(--accent);
+    font-size: 0.94rem;
+    font-weight: 600;
+}
+
 .form-note a {
     color: var(--accent-mid);
     text-decoration: none;

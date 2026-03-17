@@ -1,27 +1,34 @@
-// Handle contact form submission
+// Handle async form submission for Quickler enquiry forms
 document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('contact-form-status');
+    const forms = document.querySelectorAll('form[data-async-form]');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
+    forms.forEach(function(form) {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            const form = e.target;
-            const submitBtn = document.getElementById('submit-btn');
-            const originalText = submitBtn.textContent;
+            const formStatus = form.querySelector('[id$="-status"]') || document.getElementById('contact-form-status');
+            const submitBtnSelector = form.dataset.submitButton || 'button[type="submit"]';
+            const submitBtn = form.querySelector(submitBtnSelector) || document.querySelector(submitBtnSelector);
+            const feedbackTarget = form.dataset.feedbackTarget ? document.querySelector(form.dataset.feedbackTarget) : null;
+            const originalText = submitBtn ? submitBtn.textContent : 'Send';
+            const successMessage = form.dataset.successMessage || 'Sent';
+            const successStatus = form.dataset.successStatus || 'Form submitted successfully';
+            const resetDelay = Number(form.dataset.resetDelay || 10000);
 
             form.dataset.formState = 'submitting';
             if (formStatus) {
                 formStatus.textContent = 'Submitting form';
             }
+            if (feedbackTarget) {
+                feedbackTarget.textContent = '';
+            }
 
-            // Show sending state
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
+            if (submitBtn) {
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+            }
 
             try {
-                // Submit to Formspree
                 const response = await fetch(form.action, {
                     method: 'POST',
                     body: new FormData(form),
@@ -30,57 +37,75 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
 
-                if (response.ok) {
-                    if (typeof window.gtag === 'function') {
-                        window.gtag('event', 'form_submit_success', {
-                            form_id: 'contact-form',
-                            page_path: window.location.pathname
-                        });
-                    }
-
-                    // Show sent state
-                    form.dataset.formState = 'success';
-                    if (formStatus) {
-                        formStatus.textContent = 'Form submitted successfully';
-                    }
-                    submitBtn.textContent = 'Sent! I\'ll reply within 24 hours';
-
-                    // Reset form after 10 seconds
-                    setTimeout(() => {
-                        form.reset();
-                        form.dataset.formState = 'idle';
-                        if (formStatus) {
-                            formStatus.textContent = 'Form ready';
-                        }
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }, 10000);
-                } else {
+                if (!response.ok) {
                     throw new Error('Form submission failed');
                 }
-            } catch (error) {
+
                 if (typeof window.gtag === 'function') {
-                    window.gtag('event', 'form_submit_error', {
-                        form_id: 'contact-form',
+                    window.gtag('event', 'form_submit_success', {
+                        form_id: form.id || form.dataset.asyncForm || 'quickler-form',
                         page_path: window.location.pathname
                     });
                 }
 
-                // Show error and reset
+                form.dataset.formState = 'success';
+                if (formStatus) {
+                    formStatus.textContent = successStatus;
+                }
+                if (submitBtn) {
+                    submitBtn.textContent = successMessage;
+                }
+                if (feedbackTarget) {
+                    feedbackTarget.textContent = successMessage;
+                }
+
+                setTimeout(() => {
+                    form.reset();
+                    form.dataset.formState = 'idle';
+                    if (formStatus) {
+                        formStatus.textContent = 'Form ready';
+                    }
+                    if (submitBtn) {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }
+                    if (feedbackTarget) {
+                        feedbackTarget.textContent = '';
+                    }
+                }, resetDelay);
+            } catch (error) {
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'form_submit_error', {
+                        form_id: form.id || form.dataset.asyncForm || 'quickler-form',
+                        page_path: window.location.pathname
+                    });
+                }
+
                 form.dataset.formState = 'error';
                 if (formStatus) {
                     formStatus.textContent = 'Form submission failed';
                 }
-                submitBtn.textContent = 'Failed - try again';
+                if (submitBtn) {
+                    submitBtn.textContent = 'Failed - try again';
+                }
+                if (feedbackTarget) {
+                    feedbackTarget.textContent = 'Failed - try again';
+                }
+
                 setTimeout(() => {
                     form.dataset.formState = 'idle';
                     if (formStatus) {
                         formStatus.textContent = 'Form ready';
                     }
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
+                    if (submitBtn) {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }
+                    if (feedbackTarget) {
+                        feedbackTarget.textContent = '';
+                    }
                 }, 3000);
             }
         });
-    }
+    });
 });

@@ -85,6 +85,23 @@
     <section class="section-tight">
         <div class="card-link-grid">
             <article class="card-link">
+                <span class="card-link-kicker">Option one</span>
+                <h3 class="card-link-title">Learn more first</h3>
+                <p class="card-link-copy">Read what this lane covers, what sort of work fits, and the kinds of operational problems it is meant to solve.</p>
+                <a href="#learn-more" class="btn btn-secondary">Learn more</a>
+            </article>
+            <article class="card-link">
+                <span class="card-link-kicker">Option two</span>
+                <h3 class="card-link-title">Describe the problem now</h3>
+                <p class="card-link-copy">Skip the longer reading and describe the awkward workflow straight away so Quickler can think about it properly.</p>
+                <a href="#describe-problem" class="btn btn-primary">Describe the problem now</a>
+            </article>
+        </div>
+    </section>
+
+    <section class="section-tight" id="learn-more">
+        <div class="card-link-grid">
+            <article class="card-link">
                 <span class="card-link-kicker">Typical problems</span>
                 <h3 class="card-link-title">Messy spreadsheets, repeated copying, and brittle handovers</h3>
                 <p class="card-link-copy">This is for businesses where the problem is not one missing feature, but the fact that the whole workflow is being held together by patience and workarounds.</p>
@@ -120,6 +137,54 @@
                 <h3>How to enquire well</h3>
                 <p>A strong enquiry explains the current workflow, where time is being wasted, who touches it now, and what “better” would look like in plain terms.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="section-tight" id="describe-problem">
+        <div class="section-header">
+            <div>
+                <p class="section-label">Describe The Problem</p>
+                <h2>Tell Quickler where the workflow is going wrong</h2>
+            </div>
+        </div>
+        <div class="contact-form-shell">
+            <form class="contact-form" id="custom-problem-form" action="https://formspree.io/f/mjknoeqd" method="POST" data-async-form="custom-problem" data-form-state="idle" data-success-message="We will have a think and get back to you soon." data-success-status="Custom problem sent" data-submit-button="#custom-problem-submit" data-feedback-target="#custom-problem-feedback">
+                <input type="hidden" name="lane" value="Custom">
+                <input type="hidden" name="entry_point" value="custom-page-problem-form">
+
+                <div class="form-group">
+                    <label for="custom-name">Your name</label>
+                    <input type="text" id="custom-name" name="name" placeholder="Jane Smith" autocomplete="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="custom-company">Company</label>
+                    <input type="text" id="custom-company" name="company" placeholder="Your company name" autocomplete="organization">
+                </div>
+
+                <div class="form-group">
+                    <label for="custom-email">Your email</label>
+                    <input type="email" id="custom-email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="custom-problem-summary">What is the problem?</label>
+                    <input type="text" id="custom-problem-summary" name="problem_summary" placeholder="For example: staff keep retyping the same information into three places" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="custom-message">A bit more detail</label>
+                    <textarea id="custom-message" name="message" placeholder="What happens now, who is involved, where does it go wrong, and what would a better version feel like?" required></textarea>
+                </div>
+
+                <p class="visually-hidden" id="custom-problem-status" aria-live="polite">Form ready</p>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary" id="custom-problem-submit">Send the problem</button>
+                </div>
+                <p class="form-feedback" id="custom-problem-feedback" aria-live="polite"></p>
+                <p class="form-note">By sending this form, you agree that Quickler may use the details you provide to review the problem and reply to you. See the <a href="/pages/privacy.html">Privacy Policy</a>.</p>
+            </form>
         </div>
     </section>
 
@@ -189,6 +254,7 @@
         </div>
         <p class="footer-note">Working days based on a 7.5-hour calculation (37.5-hour working week)</p>
     </footer>
+    <script src="/js/contact-form.js"></script>
     <script src="/js/analytics-events.js"></script>
 </body>
 </html>
