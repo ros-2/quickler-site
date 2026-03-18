@@ -1475,6 +1475,10 @@ body > section#top:first-of-type {
     text-align: center;
 }
 
+.cta-content .hero-actions {
+    justify-content: center;
+}
+
 .cta-content p {
     margin: 14px auto 0;
     color: var(--ink-soft);
