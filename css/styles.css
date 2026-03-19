@@ -290,6 +290,32 @@ section#top {
 
 .hero-content-wide {
     min-height: 0;
+    max-width: 1040px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-content-wide h1 {
+    max-width: 18ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content-wide .hero-text,
+.hero-content-wide .hero-credentials {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content-wide .hero-actions {
+    justify-content: center;
+}
+
+.hero-content-wide .hero-points {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }
 
 .router-main {
@@ -328,7 +354,7 @@ section#top {
 }
 
 .router-button {
-    min-height: clamp(220px, 38vw, 360px);
+    min-height: clamp(180px, 26vw, 250px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1485,9 +1511,11 @@ section#top {
 
 .cookie-banner {
     position: fixed;
-    right: clamp(12px, 2vw, 20px);
+    left: 50%;
+    right: auto;
     bottom: clamp(12px, 2vw, 20px);
-    width: min(420px, calc(100vw - 24px));
+    transform: translateX(-50%);
+    width: min(360px, calc(100vw - 24px));
     padding: 18px 18px 16px;
     border: 1px solid var(--line-strong);
     border-radius: 24px;
@@ -1530,6 +1558,7 @@ section#top {
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 16px;
+    justify-content: center;
 }
 
 .cookie-button {
@@ -1793,6 +1822,9 @@ footer a {
 }
 
 .proof-header {
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 26px;
     text-align: center;
 }
@@ -1814,7 +1846,7 @@ footer a {
 }
 
 .home-fit-grid {
-    grid-template-columns: minmax(340px, 1.2fr) repeat(2, minmax(0, 0.9fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .home-pilot-fit-grid {
@@ -1833,8 +1865,8 @@ footer a {
 
 .home-workflow-shell {
     display: grid;
-    grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.38fr);
-    gap: 18px;
+    grid-template-columns: 1fr;
+    gap: 20px;
     align-items: stretch;
 }
 
@@ -1846,6 +1878,9 @@ footer a {
     color: #f5f8ff;
     box-shadow: var(--shadow-card);
     padding: clamp(24px, 3vw, 34px);
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .home-workflow-intro h3 {
@@ -1855,7 +1890,9 @@ footer a {
 
 .home-workflow-intro p {
     color: rgba(232, 241, 255, 0.84);
-    max-width: 28rem;
+    max-width: 34rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .home-workflow-grid {
@@ -2027,6 +2064,7 @@ footer a {
     .cookie-banner {
         left: 12px;
         right: 12px;
+        transform: none;
         width: auto;
         bottom: 12px;
     }
