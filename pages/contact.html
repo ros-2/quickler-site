@@ -29,6 +29,37 @@
     <link rel="alternate" hreflang="x-default" href="https://quickler.co/pages/contact.html">
     <meta name="quickler:agent-entry" content="contact-form">
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "ContactPage",
+                "name": "Contact Quickler",
+                "url": "https://quickler.co/pages/contact.html",
+                "description": "Contact Quickler about repeated site reports, approvals, compliance paperwork, or custom workflow software."
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://quickler.co/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Contact",
+                        "item": "https://quickler.co/pages/contact.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
     <script type="application/json" id="agent-contact-map">
     {
         "page_type": "contact_form",
@@ -78,7 +109,8 @@
             <a href="/pages/invoices-po.html" data-agent-target="invoices-po">Invoices &amp; POs</a>
             <a href="/pages/custom.html" data-agent-target="custom">Custom</a>
             <a href="/pages/projects.html" data-agent-target="case-studies">Case Studies</a>
-            <a href="/pages/contact.html" data-agent-target="contact">Contact</a>
+            <a href="/pages/faq.html" data-agent-target="faq">FAQ</a>
+            <a href="/pages/contact.html" data-agent-target="contact" aria-current="page">Contact</a>
         </div>
     </nav>
 
@@ -160,7 +192,7 @@
     </section>
 
     <section class="section-tight" aria-labelledby="contact-next-steps-title">
-        <div class="card-link-grid">
+        <div class="balanced-grid-3">
             <article class="card-link">
                 <span class="card-link-kicker">After contact</span>
                 <h3 class="card-link-title" id="contact-next-steps-title">Quick fit review</h3>
@@ -176,6 +208,32 @@
                 <h3 class="card-link-title">One workflow first</h3>
                 <p class="card-link-copy">Whether it becomes a pilot or a custom build, one repeated workflow is a far better starting point than a vague request to sort everything out at once.</p>
             </article>
+        </div>
+    </section>
+
+    <section class="section-tight" aria-labelledby="contact-helpful-links-title">
+        <div class="section-header section-header-centered">
+            <div>
+                <p class="section-label">Helpful Before Contacting</p>
+                <h2 id="contact-helpful-links-title">If you want to sanity-check the fit first.</h2>
+            </div>
+        </div>
+        <div class="balanced-grid-3">
+            <a class="card-link" href="/pages/services.html">
+                <span class="card-link-kicker">Site Reports</span>
+                <h3 class="card-link-title">See the repeated site-reporting fit</h3>
+                <p class="card-link-copy">Best for workflows where staff visit a site, gather evidence, and still write the formal report later.</p>
+            </a>
+            <a class="card-link" href="/pages/projects.html">
+                <span class="card-link-kicker">Case Studies</span>
+                <h3 class="card-link-title">Read delivery proof first</h3>
+                <p class="card-link-copy">Use the case studies page if you want more confidence that Quickler understands structured workflows and admin-heavy business processes.</p>
+            </a>
+            <a class="card-link" href="/pages/faq.html">
+                <span class="card-link-kicker">FAQ</span>
+                <h3 class="card-link-title">Check the common questions</h3>
+                <p class="card-link-copy">A fast way to see current product stage, pilot expectations, and which workflows are the best early fit.</p>
+            </a>
         </div>
     </section>
     </main>

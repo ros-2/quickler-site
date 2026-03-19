@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/js/cookie-consent.js"></script>
+    <script src="/js/cookie-consent.js" defer></script>
 
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -12,8 +12,8 @@
 
     <title>Quickler | Software For Teams That Visit Sites And Still Write The Report Later</title>
     <meta name="title" content="Quickler | Software For Teams That Visit Sites And Still Write The Report Later">
-    <meta name="description" content="Quickler builds software for teams that capture notes, photos, and job evidence on site, then still spend hours turning it into reports, paperwork, approvals, and internal admin later.">
-    <meta name="keywords" content="site reporting software, field reporting software, inspection reporting software, maintenance report software, workflow automation, purchase order workflow software, Scotland, UK">
+    <meta name="description" content="Quickler builds software for site visits, inspections, maintenance jobs, compliance work, and other report-heavy workflows where notes, photos, and job evidence are captured first and the formal write-up happens later.">
+    <meta name="keywords" content="site reporting software, field reporting software, inspection reporting software, maintenance report software, compliance reporting workflow, field service reporting software, workflow automation, purchase order workflow software, Scotland, UK">
     <meta name="author" content="Philip Ross">
     <meta name="robots" content="index, follow">
 
@@ -61,6 +61,25 @@
                 "name": "Quickler",
                 "url": "https://quickler.co/",
                 "description": "Quickler builds software for businesses where the work happens on site or in operations first, and the report, approval, or admin write-up still happens later."
+            },
+            {
+                "@type": "Service",
+                "name": "Quickler workflow software",
+                "serviceType": "Site reporting, approval, and workflow software",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Quickler Ltd",
+                    "url": "https://quickler.co/"
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "United Kingdom"
+                },
+                "audience": {
+                    "@type": "Audience",
+                    "audienceType": "Field teams, inspectors, surveyors, maintenance teams, compliance teams, and operations teams"
+                },
+                "description": "Quickler helps teams capture job evidence once, structure it into the right workflow, and reduce the desk rewrite afterwards."
             },
             {
                 "@type": "ItemList",
@@ -136,11 +155,12 @@
             <span class="hamburger-line"></span>
         </button>
         <div class="nav-menu">
-            <a href="/">Home</a>
+            <a href="/" aria-current="page">Home</a>
             <a href="/pages/services.html">Site Reports</a>
             <a href="/pages/invoices-po.html">Invoices &amp; POs</a>
             <a href="/pages/custom.html">Custom</a>
             <a href="/pages/projects.html">Case Studies</a>
+            <a href="/pages/faq.html">FAQ</a>
             <a href="/pages/contact.html">Contact</a>
         </div>
     </nav>
@@ -239,6 +259,33 @@
             </div>
         </section>
 
+        <section class="section-tight" aria-labelledby="homepage-language-title">
+            <div class="section-header">
+                <div>
+                    <span class="section-label">Typical Workflows</span>
+                    <h2 id="homepage-language-title">The same problem gets described in different ways.</h2>
+                    <p>Some teams call this site reporting software. Others call it field reporting, inspection reporting, maintenance visit paperwork, compliance reporting, or just "the admin after the visit". Quickler is built for that shared pattern.</p>
+                </div>
+            </div>
+            <div class="card-link-grid">
+                <a class="card-link" href="/pages/services.html">
+                    <span class="card-link-kicker">Site reporting software</span>
+                    <h3 class="card-link-title">For inspections, surveys, maintenance visits, and compliance checks</h3>
+                    <p class="card-link-copy">Useful where someone visits a site, captures notes and photos, and still has to build the formal report or visit record afterwards.</p>
+                </a>
+                <a class="card-link" href="/pages/invoices-po.html">
+                    <span class="card-link-kicker">Approval workflow software</span>
+                    <h3 class="card-link-title">For invoice, purchase-order, and document approval flows</h3>
+                    <p class="card-link-copy">Useful where evidence, emails, PDFs, and approvals move through a repeated process that is still slower and messier than it should be.</p>
+                </a>
+                <a class="card-link" href="/pages/custom.html">
+                    <span class="card-link-kicker">Custom workflow software</span>
+                    <h3 class="card-link-title">For awkward internal systems that do not fit a standard package</h3>
+                    <p class="card-link-copy">Useful where the core problem is repeated operational friction, messy data handoffs, or too much admin wrapped around one business process.</p>
+                </a>
+            </div>
+        </section>
+
         <section class="cta-section" aria-labelledby="homepage-cta-title">
             <div class="cta-content">
                 <h2 id="homepage-cta-title">If your team does the visit first and the write-up later, Quickler is probably worth a look.</h2>
@@ -246,6 +293,7 @@
                 <div class="hero-actions">
                     <a href="/pages/contact.html" class="btn btn-primary" data-cta="homepage-cta-contact">Book a pilot conversation</a>
                     <a href="/pages/projects.html" class="btn btn-secondary" data-cta="homepage-cta-projects">See proof and case studies</a>
+                    <a href="/pages/faq.html" class="btn btn-secondary" data-cta="homepage-cta-faq">Read common questions</a>
                 </div>
             </div>
         </section>

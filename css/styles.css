@@ -715,6 +715,52 @@ section#top {
     gap: 18px;
 }
 
+.balanced-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.balanced-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.content-duo {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: 18px;
+    align-items: stretch;
+}
+
+.section-frame {
+    padding: var(--card-padding);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(248, 251, 255, 0.7)),
+        var(--brand-gradient-soft);
+    box-shadow: var(--shadow-card);
+    min-height: 100%;
+}
+
+.section-frame .section-header {
+    margin-bottom: 24px;
+}
+
+.section-header-centered {
+    max-width: 44rem;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.section-header-centered > div:first-child {
+    max-width: none;
+}
+
 .benefits-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -986,18 +1032,25 @@ section#top {
 
 .report-photos-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
-    justify-items: center;
+    align-items: start;
 }
 
 .report-photo-card {
     margin: 0;
-    width: min(100%, 460px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     border-radius: 28px;
     border: 1px solid rgba(24, 52, 132, 0.1);
     background: #ffffff;
     box-shadow: 0 14px 32px rgba(18, 41, 111, 0.08);
+}
+
+.report-photo-card picture {
+    display: block;
 }
 
 .report-photo-card img {
@@ -1015,6 +1068,7 @@ section#top {
     gap: 8px;
     padding: 18px 20px 20px;
     color: var(--muted);
+    flex: 1;
 }
 
 .report-photo-card figcaption strong {
@@ -1703,8 +1757,8 @@ footer a {
 .contact-grid {
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: 18px;
-    align-items: start;
+    gap: 24px;
+    align-items: stretch;
 }
 
 .contact-panel ul {
@@ -1723,6 +1777,11 @@ footer a {
 
 .contact-copy {
     max-width: 42rem;
+}
+
+.contact-panel,
+.contact-form-shell {
+    height: 100%;
 }
 
 .section-tight {
@@ -1892,6 +1951,9 @@ footer a {
     .home-fit-grid,
     .home-pilot-fit-grid,
     .home-use-case-grid,
+    .balanced-grid-3,
+    .balanced-grid-2,
+    .content-duo,
     .home-workflow-shell,
     .home-workflow-grid,
     .home-pilot-layout,
@@ -2267,8 +2329,13 @@ footer a {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .balanced-grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .home-workflow-shell,
-    .home-pilot-layout {
+    .home-pilot-layout,
+    .content-duo {
         grid-template-columns: 1fr;
     }
 
