@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/js/cookie-consent.js" defer></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Try Quickler | Live WhatsApp Demo</title>
+    <meta name="title" content="Try Quickler | Live WhatsApp Demo">
+    <meta name="description" content="Scan the QR code to try Quickler on WhatsApp. Record a site observation by voice, text, or photo and see a professional report generated automatically.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://quickler.co/pages/demo.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <style>
+        .demo-section {
+            min-height: calc(100vh - 120px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 24px;
+        }
+
+        .demo-inner {
+            max-width: 560px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .demo-inner .eyebrow {
+            margin-bottom: 20px;
+        }
+
+        .demo-inner h1 {
+            font-size: clamp(1.9rem, 5vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--heading, #0d1a3a);
+            margin-bottom: 16px;
+        }
+
+        .demo-inner .demo-sub {
+            font-size: 1.05rem;
+            color: #556;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .qr-card {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 36px 40px 28px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            background: var(--surface-card-strong);
+            backdrop-filter: blur(18px) saturate(140%);
+            box-shadow: var(--shadow-card);
+            margin-bottom: 36px;
+            width: 100%;
+        }
+
+        #qr-canvas {
+            width: 220px;
+            height: 220px;
+        }
+
+        #qr-canvas canvas,
+        #qr-canvas img {
+            width: 220px !important;
+            height: 220px !important;
+            border-radius: 8px;
+        }
+
+        .qr-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.04em;
+        }
+
+        .demo-or {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            color: #aab;
+            font-size: 0.8rem;
+        }
+
+        .demo-or::before,
+        .demo-or::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .demo-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .demo-bullets li {
+            padding: 5px 0 5px 24px;
+            font-size: 0.93rem;
+            color: #445;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .demo-bullets li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--brand-gradient);
+        }
+
+        .demo-back {
+            display: block;
+            margin-top: 28px;
+            font-size: 0.85rem;
+            color: #889;
+            text-decoration: none;
+        }
+
+        .demo-back:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 480px) {
+            .qr-card {
+                padding: 28px 20px 22px;
+            }
+
+            #qr-canvas {
+                width: 180px;
+                height: 180px;
+            }
+
+            #qr-canvas canvas,
+            #qr-canvas img {
+                width: 180px !important;
+                height: 180px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav aria-label="Primary" data-agent-role="primary-navigation">
+        <a href="/" class="nav-name">
+            <img src="/assets/logos/quickler-logo.svg" alt="Quickler" width="179" height="42">
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="nav-menu" data-agent-role="lane-navigation">
+            <a href="/" data-agent-target="home">Home</a>
+            <a href="/pages/services.html" data-agent-target="site-reports">Site Reports</a>
+            <a href="/pages/invoices-po.html" data-agent-target="invoices-po">Invoices &amp; POs</a>
+            <a href="/pages/custom.html" data-agent-target="custom">Custom</a>
+            <a href="/pages/projects.html" data-agent-target="case-studies">Case Studies</a>
+            <a href="/pages/faq.html" data-agent-target="faq">FAQ</a>
+            <a href="/pages/contact.html" data-agent-target="contact">Contact</a>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="demo-section">
+            <div class="demo-inner">
+                <span class="eyebrow">Live demo</span>
+                <h1>See a report built in real time.</h1>
+                <p class="demo-sub">Scan the code with your phone to open WhatsApp. Record a building in a couple of messages — by voice, text, or photo — and Quickler produces a professional PDF report automatically.</p>
+
+                <div class="qr-card">
+                    <div id="qr-canvas"></div>
+                    <span class="qr-label">Scan to open WhatsApp</span>
+                </div>
+
+                <div class="demo-or">or open on this device</div>
+
+                <a id="wa-link" href="#" class="btn btn-primary" style="margin-bottom: 16px;">
+                    Open in WhatsApp
+                </a>
+
+                <ul class="demo-bullets">
+                    <li>Takes about two minutes from start to PDF</li>
+                    <li>Record by voice note, text, or photo — no typing required</li>
+                    <li>Review and edit the draft before it is finalised</li>
+                    <li>Your details are stored only to send you the report and follow up</li>
+                </ul>
+
+                <a href="/" class="demo-back">← Back to quickler.co</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Quickler Ltd · <a href="https://find-and-update.company-information.service.gov.uk/company/SC882439" target="_blank" rel="noopener noreferrer">Company No. SC882439</a> · <a href="mailto:hello@quickler.co">hello@quickler.co</a> · <a href="/pages/legal.html">Legal</a> · <a href="/pages/privacy.html">Privacy</a> · <a href="/pages/terms.html">Terms</a> · <a href="/pages/cookies.html">Cookies</a> · <a href="#" data-cookie-settings>Cookie settings</a> · <a href="#main-content">Back to top ↑</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script>
+        // Update this number if the WhatsApp number changes
+        var WA_NUMBER = '14155238886';
+        var waUrl = 'https://wa.me/' + WA_NUMBER;
+
+        document.getElementById('wa-link').href = waUrl;
+
+        new QRCode(document.getElementById('qr-canvas'), {
+            text: waUrl,
+            width: 220,
+            height: 220,
+            colorDark: '#0d1a3a',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.M
+        });
+    </script>
+    <script src="/js/analytics-events.js"></script>
+</body>
+</html>
