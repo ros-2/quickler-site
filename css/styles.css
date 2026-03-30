@@ -757,21 +757,6 @@ section#top {
     align-items: stretch;
 }
 
-.homepage-video-section {
-    display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
-    gap: 20px;
-    align-items: center;
-}
-
-.homepage-video-copy {
-    max-width: 38rem;
-}
-
-.homepage-video-embed {
-    width: 100%;
-}
-
 .video-frame {
     position: relative;
     overflow: hidden;
@@ -1838,9 +1823,9 @@ footer a {
 .home-hero-panel {
     width: min(100%, 980px);
     display: grid;
-    gap: 18px;
-    justify-items: center;
-    text-align: center;
+    grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+    gap: 24px;
+    align-items: center;
     padding: clamp(30px, 4.5vw, 48px);
     border: 1px solid rgba(24, 52, 132, 0.1);
     border-radius: clamp(32px, 5vw, 44px);
@@ -1848,6 +1833,17 @@ footer a {
         linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 250, 255, 0.82)),
         var(--brand-gradient-soft);
     box-shadow: var(--shadow-card);
+}
+
+.home-hero-copy {
+    display: grid;
+    gap: 18px;
+    justify-items: start;
+    text-align: left;
+}
+
+.home-hero-media {
+    width: 100%;
 }
 
 .home-hero-panel h1 {
@@ -1880,7 +1876,7 @@ footer a {
 }
 
 .home-hero-panel .hero-actions {
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .home-hero-strip {
@@ -2145,7 +2141,6 @@ footer a {
     .home-pilot-fit-grid,
     .home-use-case-grid,
     .home-hero-strip,
-    .homepage-video-section,
     .demo-spotlight,
     .balanced-grid-3,
     .balanced-grid-2,
@@ -2180,8 +2175,18 @@ footer a {
     }
 
     .home-hero-panel {
+        grid-template-columns: 1fr;
         padding: 32px 24px;
         border-radius: 30px;
+    }
+
+    .home-hero-copy {
+        justify-items: center;
+        text-align: center;
+    }
+
+    .home-hero-panel .hero-actions {
+        justify-content: center;
     }
 
     .home-hero-panel h1 {
@@ -2553,7 +2558,6 @@ footer a {
     .home-workflow-shell,
     .home-pilot-layout,
     .content-duo,
-    .homepage-video-section,
     .demo-spotlight,
     .home-proof-band {
         grid-template-columns: 1fr;
