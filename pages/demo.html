@@ -90,6 +90,23 @@
             letter-spacing: 0.04em;
         }
 
+        .demo-start-note {
+            max-width: 28rem;
+            margin: -12px auto 26px;
+            padding: 12px 16px;
+            border: 1px solid rgba(24, 52, 132, 0.1);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.78);
+            color: var(--ink);
+            font-size: 0.95rem;
+            line-height: 1.55;
+            box-shadow: 0 10px 24px rgba(18, 41, 111, 0.05);
+        }
+
+        .demo-start-note strong {
+            color: var(--accent);
+        }
+
         .demo-or {
             display: flex;
             align-items: center;
@@ -196,6 +213,8 @@
                     <span class="qr-label">Scan to open WhatsApp</span>
                 </div>
 
+                <p class="demo-start-note">After scanning the QR code or tapping WhatsApp, send <strong>hello</strong> to start the demo.</p>
+
                 <div class="demo-or">or open on this device</div>
 
                 <a id="wa-link" href="#" class="btn btn-primary" style="margin-bottom: 16px;">
@@ -203,6 +222,7 @@
                 </a>
 
                 <ul class="demo-bullets">
+                    <li>Start by sending <strong>hello</strong> in WhatsApp</li>
                     <li>Takes about two minutes from start to PDF</li>
                     <li>Record by voice note, text, or photo — no typing required</li>
                     <li>Review and edit the draft before it is finalised</li>
