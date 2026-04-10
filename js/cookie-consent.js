@@ -1,6 +1,7 @@
 (function () {
     const CONSENT_KEY = "quickler_cookie_consent_v1";
-    const GA_ID = "G-NM61T48RDV";
+    // Quickler site GA4 stream. Keep this separate from the older Lochross property.
+    const GA_ID = "G-L0G13C0E52";
     const BANNER_ID = "quickler-cookie-banner";
     let navMenuIdCounter = 0;
 

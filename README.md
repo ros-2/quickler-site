@@ -104,6 +104,10 @@ This optimization ensures that when users ask AI assistants about quickler Repor
 - **Google Search Console:** Monitors search performance and indexing
 - **Form Submissions:** Tracked through Formspree integration
 
+Current GA4 measurement ID for `quickler.co`: `G-L0G13C0E52`
+
+Do not reuse the older Lochross stream ID on this site. If the site tag and GA4 stream do not match, the `quickler website` data stream will show as inactive even when the tag is present.
+
 ## Technology Stack
 
 - **HTML5:** Semantic markup with accessibility considerations
