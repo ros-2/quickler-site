@@ -10,34 +10,34 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact quickler | Site Reports And Custom Workflow Software</title>
-    <meta name="title" content="Contact quickler | Site Reports And Custom Workflow Software">
-    <meta name="description" content="Contact quickler about repeated reports, site workflows, compliance paperwork, or custom internal workflow software where better practical software would help.">
-    <meta name="keywords" content="contact quickler, repeated reporting workflow, site reporting pilot, custom workflow software contact, Scotland">
+    <title>Ask quickler | Quick Answers And Contact Form</title>
+    <meta name="title" content="Ask quickler | Quick Answers And Contact Form">
+    <meta name="description" content="Ask quickler a question through a limited on-page assistant, then jump straight to the contact form if you want to discuss your workflow properly.">
+    <meta name="keywords" content="ask quickler, quickler FAQ, contact quickler, site reporting pilot, AI agents, workflow agents, Scotland">
     <meta name="author" content="Philip Ross">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://quickler.co/pages/contact.html">
-    <meta property="og:title" content="Contact quickler | Site Reports And Custom Workflow Software">
-    <meta property="og:description" content="Contact quickler about repeated reports, site workflows, or custom workflow software.">
+    <meta property="og:title" content="Ask quickler | Quick Answers And Contact Form">
+    <meta property="og:description" content="Ask quickler a question through a limited on-page assistant, or jump straight to the contact form.">
     <meta property="og:locale" content="en_GB">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Contact quickler | Site Reports And Custom Workflow Software">
-    <meta name="twitter:description" content="Contact quickler about repeated reporting workflows or bespoke internal systems that need better software.">
+    <meta name="twitter:title" content="Ask quickler | Quick Answers And Contact Form">
+    <meta name="twitter:description" content="Ask quickler a question through a limited on-page assistant, or jump straight to the contact form.">
     <link rel="canonical" href="https://quickler.co/pages/contact.html">
     <link rel="alternate" hreflang="en-gb" href="https://quickler.co/pages/contact.html">
     <link rel="alternate" hreflang="x-default" href="https://quickler.co/pages/contact.html">
-    <meta name="quickler:agent-entry" content="contact-form">
+    <meta name="quickler:agent-entry" content="ask-quickler">
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "ContactPage",
-                "name": "Contact quickler",
+                "@type": "WebPage",
+                "name": "Ask quickler",
                 "url": "https://quickler.co/pages/contact.html",
-                "description": "Contact quickler about repeated site reports, compliance paperwork, or custom workflow software."
+                "description": "A limited on-page assistant for common quickler questions, with the contact form on the same page."
             },
             {
                 "@type": "BreadcrumbList",
@@ -51,7 +51,7 @@
                     {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": "Contact",
+                        "name": "Ask quickler",
                         "item": "https://quickler.co/pages/contact.html"
                     }
                 ]
@@ -62,7 +62,7 @@
 
     <script type="application/json" id="agent-contact-map">
     {
-        "page_type": "contact_form",
+        "page_type": "ask_quickler",
         "form_id": "contact-form",
         "submission_method": "POST",
         "preferred_fields_order": [
@@ -77,7 +77,7 @@
         ],
         "lane_options": [
             "Site Reports",
-            "Custom",
+            "AI Agents",
             "Unsure"
         ],
         "required_fields": ["name", "email", "message"],
@@ -90,6 +90,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/ask-quickler.css">
 </head>
 <body>
     <a href="#main-content" class="visually-hidden">Skip to main content</a>
@@ -105,26 +106,119 @@
         <div class="nav-menu" data-agent-role="lane-navigation">
             <a href="/" data-agent-target="home">Home</a>
             <a href="/pages/services.html" data-agent-target="site-reports">Site Reports</a>
-            <a href="/pages/custom.html" data-agent-target="custom">Custom</a>
-            <a href="/pages/faq.html" data-agent-target="faq">FAQ</a>
-            <a href="/pages/contact.html" data-agent-target="contact" aria-current="page">Contact</a>
+            <a href="/pages/custom.html" data-agent-target="custom">AI Agents</a>
+            <a href="/pages/contact.html" data-agent-target="contact" aria-current="page">Ask quickler</a>
         </div>
     </nav>
 
     <main id="main-content" data-agent-page="contact">
     <section id="top" aria-labelledby="contact-page-title">
+        <div class="page-shell ask-hero-shell">
+            <span class="eyebrow">Ask quickler</span>
+            <h1 id="contact-page-title">Ask one question, get a bounded answer, then jump to the contact form if you want a real conversation.</h1>
+            <p class="page-lede">This is deliberately limited. It does not call a live model, it does not burn tokens, and it only handles the common questions well. If your question needs real judgment, use the contact form underneath.</p>
+            <div class="hero-actions">
+                <a href="#ask-assistant" class="btn btn-primary" data-cta="ask-quickler-assistant">Ask a question now</a>
+                <a href="#contact-form-section" class="btn btn-secondary" data-cta="ask-quickler-contact-form">See contact form</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-tight" id="ask-assistant" aria-labelledby="ask-assistant-title">
+        <div class="ask-grid">
+            <div class="contact-panel ask-panel">
+                <span class="section-label">How It Works</span>
+                <h2 id="ask-assistant-title">A limited question router, not an open chatbot.</h2>
+                <p class="contact-copy">Type a question in plain English. The page groups similar phrasing into a small set of known intents and returns one of a few prepared answers. If it cannot answer properly, it sends people to the contact form.</p>
+                <ul>
+                    <li>No live LLM call, so there is no token leakage problem.</li>
+                    <li>Answer count is capped per visit to keep it bounded.</li>
+                    <li>It is useful for fit, scope, pilot, and positioning questions.</li>
+                    <li>If the question is unusual, specific, or commercially important, it points people to the form.</li>
+                    <li>If someone cannot be bothered with any of that, they can skip straight to the form.</li>
+                </ul>
+            </div>
+
+            <div class="contact-form-shell ask-assistant-shell">
+                <div class="ask-assistant-card" data-faq-assistant>
+                    <div class="ask-assistant-header">
+                        <strong>quickler assistant</strong>
+                        <span class="ask-assistant-counter" data-faq-remaining>4 answers left</span>
+                    </div>
+                    <div class="ask-assistant-log" data-faq-log aria-live="polite">
+                        <article class="ask-message ask-message-assistant">
+                            <p>Ask about fit, pilots, site reports, AI agents, or what quickler actually does.</p>
+                        </article>
+                    </div>
+                    <div class="ask-chip-row" aria-label="Suggested questions">
+                        <button type="button" class="ask-chip" data-faq-chip="Who is quickler for?">Who is quickler for?</button>
+                        <button type="button" class="ask-chip" data-faq-chip="What does quickler actually do?">What does quickler do?</button>
+                        <button type="button" class="ask-chip" data-faq-chip="How do pilots start?">How do pilots start?</button>
+                        <button type="button" class="ask-chip" data-faq-chip="What about AI agents?">What about AI agents?</button>
+                    </div>
+                    <form class="ask-input-row" data-faq-form>
+                        <label class="visually-hidden" for="faq-question">Ask quickler a question</label>
+                        <input type="text" id="faq-question" class="ask-input" placeholder="Ask a short question" maxlength="180" data-faq-input>
+                        <button type="submit" class="btn btn-primary ask-submit">Ask</button>
+                    </form>
+                    <p class="ask-note">When this page is unsure, it tells people to use the contact form rather than pretending.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-tight" aria-labelledby="quick-answers-title">
+        <div class="section-header section-header-centered">
+            <div>
+                <p class="section-label">Quick Answers</p>
+                <h2 id="quick-answers-title">The questions that matter before a first conversation.</h2>
+            </div>
+        </div>
+        <div class="card-link-grid">
+            <article class="card-link">
+                <span class="card-link-kicker">Fit</span>
+                <h3 class="card-link-title faq-question">Who is quickler for?</h3>
+                <p class="card-link-copy faq-answer">Teams that visit sites, gather job evidence, and still spend too much time turning that into formal reports, records, approvals, or paperwork later. That includes inspection, survey, maintenance, compliance, field service, and operations teams.</p>
+            </article>
+            <article class="card-link">
+                <span class="card-link-kicker">Product</span>
+                <h3 class="card-link-title faq-question">What does quickler actually do?</h3>
+                <p class="card-link-copy faq-answer">It helps teams turn notes, photos, voice notes, and other captured job information into finished reports or structured workflow outputs faster. On the AI-agent side, it also builds systems that load the right context before helping with repeated operational work.</p>
+            </article>
+            <article class="card-link">
+                <span class="card-link-kicker">Positioning</span>
+                <h3 class="card-link-title faq-question">Is this just another AI writing tool?</h3>
+                <p class="card-link-copy faq-answer">No. quickler is focused on repeated workflows where structure, evidence, memory, and review matter. The point is grounded workflow help, not open-ended content generation.</p>
+            </article>
+            <article class="card-link">
+                <span class="card-link-kicker">Audience</span>
+                <h3 class="card-link-title faq-question">Does quickler only work for engineers?</h3>
+                <p class="card-link-copy faq-answer">No. Engineers can be a good fit, but the better description is broader: quickler is for repeated workflows where the job happens first and the formal reporting or paperwork still gets rebuilt later.</p>
+            </article>
+            <article class="card-link">
+                <span class="card-link-kicker">Stage</span>
+                <h3 class="card-link-title faq-question">What stage is the product at?</h3>
+                <p class="card-link-copy faq-answer">quickler is in early pilot stage. The current focus is proving a few narrow workflow shapes properly rather than pretending to be a giant finished platform.</p>
+            </article>
+            <article class="card-link">
+                <span class="card-link-kicker">Pilot</span>
+                <h3 class="card-link-title faq-question">How do pilots start?</h3>
+                <p class="card-link-copy faq-answer">The starting point is one repeated workflow, a short explanation of how it runs now, and a few real examples if they can be shared. That is enough to judge whether a pilot makes sense.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="section-tight" id="contact-form-section" aria-labelledby="contact-form-section-title">
         <div class="contact-grid">
             <div class="contact-panel">
-                <span class="eyebrow">Contact quickler</span>
-                <h1 id="contact-page-title">Tell quickler what is not working.</h1>
-                <p class="contact-copy">Use this page for either side of quickler: repeated site reports or custom workflow software. If the fit is right, that turns into a focused conversation about one practical problem worth fixing first.</p>
+                <span class="eyebrow">Contact form</span>
+                <h2 id="contact-form-section-title">Tell quickler what is not working.</h2>
+                <p class="contact-copy">Use this when the limited assistant is not enough, or when you already know you want a proper reply. A good enquiry describes one workflow, how often it happens, where it goes wrong, and whether examples can be shared.</p>
                 <ul>
                     <li>Email directly: <a href="mailto:hello@quickler.co">hello@quickler.co</a></li>
-                    <li>Useful for repeated reporting, site visits, compliance paperwork, internal tools, dashboards, and awkward operational admin</li>
-                    <li>Field-reporting and site-workflow enquiries may turn into early pilot conversations with direct founder support</li>
+                    <li>Useful for repeated reporting, site visits, compliance paperwork, AI agents, and awkward operational admin</li>
                     <li>Typical response time: within one working day</li>
-                    <li>The best enquiries describe one workflow, how often it happens, where it goes wrong, and whether examples can be shared</li>
-                    <li>quickler is built around practical workflow improvement, not grand transformation language</li>
+                    <li>Field-reporting and workflow enquiries may turn into early pilot conversations with direct founder support</li>
                 </ul>
             </div>
 
@@ -150,7 +244,7 @@
                         <select id="lane" name="lane" data-agent-field="lane">
                             <option value="">Select a lane</option>
                             <option value="Site Reports">Site Reports</option>
-                            <option value="Custom">Custom</option>
+                            <option value="AI Agents">AI Agents</option>
                             <option value="Unsure">Unsure</option>
                         </select>
                     </div>
@@ -202,7 +296,7 @@
             <article class="card-link">
                 <span class="card-link-kicker">Current scope</span>
                 <h3 class="card-link-title">One workflow first</h3>
-                <p class="card-link-copy">Whether it becomes a pilot or a custom build, one repeated workflow is a far better starting point than a vague request to sort everything out at once.</p>
+                <p class="card-link-copy">Whether it becomes a pilot or an AI-agent build, one repeated workflow is a far better starting point than a vague request to sort everything out at once.</p>
             </article>
         </div>
     </section>
@@ -210,8 +304,8 @@
     <section class="section-tight" aria-labelledby="contact-helpful-links-title">
         <div class="section-header section-header-centered">
             <div>
-                <p class="section-label">Helpful Before Contacting</p>
-                <h2 id="contact-helpful-links-title">If you want to sanity-check the fit first.</h2>
+                <p class="section-label">Useful Pages</p>
+                <h2 id="contact-helpful-links-title">If you want to look around before getting in touch.</h2>
             </div>
         </div>
         <div class="balanced-grid-3">
@@ -220,15 +314,15 @@
                 <h3 class="card-link-title">See the repeated site-reporting fit</h3>
                 <p class="card-link-copy">Best for workflows where staff visit a site, gather evidence, and still write the formal report later.</p>
             </a>
-            <a class="card-link" href="/pages/projects.html">
-                <span class="card-link-kicker">Delivered Proof</span>
-                <h3 class="card-link-title">Read delivery proof first</h3>
-                <p class="card-link-copy">Use the delivered proof page if you want more confidence that quickler understands structured workflows and admin-heavy business processes.</p>
+            <a class="card-link" href="/pages/about.html">
+                <span class="card-link-kicker">About</span>
+                <h3 class="card-link-title">Read the founder story first</h3>
+                <p class="card-link-copy">Use the About page if you want the company timeline, delivered proof, and the thinking behind the current site reports and AI-agent direction.</p>
             </a>
-            <a class="card-link" href="/pages/faq.html">
-                <span class="card-link-kicker">FAQ</span>
-                <h3 class="card-link-title">Check the common questions</h3>
-                <p class="card-link-copy">A fast way to see current product stage, pilot expectations, and which workflows are the best early fit.</p>
+            <a class="card-link" href="#contact-form-section">
+                <span class="card-link-kicker">Contact form</span>
+                <h3 class="card-link-title">Jump straight to the form</h3>
+                <p class="card-link-copy">Use this if you already know the question is too specific for a bounded quick-answer tool.</p>
             </a>
         </div>
     </section>
@@ -242,6 +336,7 @@
         <p class="footer-note">Working days based on 7.5-hour calculation (37.5-hour working week)</p>
     </footer>
 
+    <script src="/js/faq-assistant.js"></script>
     <script src="/js/contact-form.js"></script>
     <script src="/js/analytics-events.js"></script>
 </body>
