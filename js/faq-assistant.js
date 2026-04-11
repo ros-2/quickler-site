@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const answers = {
         fit: 'quickler is a fit for teams with repeated workflows where the work happens first and the report, paperwork, or follow-up still gets rebuilt later.',
-        product: 'quickler has two main lanes: Site Reports for evidence-heavy reporting workflows, and AI Agents for broader workflows that need context, memory, and bounded judgment.',
+        product: 'quickler is about repeated workflows where the work happens first and the report, paperwork, or next action still gets rebuilt later.',
         pilots: 'Pilots start with one repeated workflow, a short explanation of how it runs now, and a few real examples if those can be shared.',
-        ai_agents: 'The AI Agents lane is for context-aware systems, not generic chatbot demos. The system should load the right files, rules, and workflow role before answering.',
+        ai_agents: 'Some quickler workflows need more context than a normal form or chatbot can hold. In those cases the system should load the right files, rules, and workflow role before doing useful work.',
         stage: 'quickler is early. The current focus is a few narrow workflows done properly rather than a wide platform with thin claims.',
         engineers: 'No. Engineers can be a fit, but the broader pattern is any repeated workflow where useful work gets followed by too much manual write-up or admin.',
         not_ai_writer: 'No. The goal is grounded workflow help with structure, evidence, memory, and review points, not open-ended AI copy generation.',

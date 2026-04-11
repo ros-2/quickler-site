@@ -21,12 +21,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://quickler.co/pages/custom.html</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://quickler.co/pages/projects.html</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>

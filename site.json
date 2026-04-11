@@ -4,15 +4,15 @@
   "site": {
     "name": "quickler",
     "url": "https://quickler.co/",
-    "description": "quickler builds workflow software for report-heavy and operations-heavy businesses. The public site is organised into Site Reports, Invoices & Purchase Orders, and Custom.",
+    "description": "quickler builds workflow software for report-heavy and operations-heavy businesses. The public site is organised into Workflows and Invoices & Purchase Orders.",
     "contact_email": "hello@quickler.co",
     "demo_url": "https://demo.lochross.com/",
     "agent_navigation": {
       "homepage_router": "https://quickler.co/#choose-quickler",
       "contact_page": "https://quickler.co/pages/contact.html",
       "preferred_flow": [
-        "choose matching lane",
-        "read lane page",
+        "choose matching route",
+        "read route page",
         "submit contact form if fit looks strong"
       ]
     }
@@ -26,11 +26,11 @@
   },
   "lanes": [
     {
-      "name": "quickler Site Reports",
-      "slug": "site-reports",
+      "name": "quickler Workflows",
+      "slug": "workflows",
       "url": "https://quickler.co/pages/services.html",
-      "category": "reporting software",
-      "description": "Early-pilot reporting software for inspection, survey, site visit, compliance, and maintenance teams that still rewrite reports later at a desk.",
+      "category": "workflow software",
+      "description": "Workflow systems for inspection, survey, site visit, compliance, maintenance, and document-heavy operational teams that still rebuild useful outputs later at a desk.",
       "best_fit": [
         "inspection teams",
         "survey teams",
@@ -39,11 +39,13 @@
         "maintenance teams"
       ],
       "queries": [
+        "workflow systems for operations teams",
         "site reporting software",
         "inspection reporting software",
         "survey report automation",
         "maintenance report software",
-        "compliance reporting workflow"
+        "compliance reporting workflow",
+        "document workflow software"
       ],
       "primary_cta": "Apply for an early pilot",
       "cta_url": "https://quickler.co/pages/contact.html"
@@ -68,27 +70,6 @@
       ],
       "case_study_url": "https://quickler.co/pages/project-po-workflow-platform.html",
       "demo_url": "https://demo.lochross.com/"
-    },
-    {
-      "name": "quickler Custom",
-      "slug": "custom",
-      "url": "https://quickler.co/pages/custom.html",
-      "category": "bespoke workflow software",
-      "description": "Custom workflow software, internal tools, dashboards, data handling systems, and process automation for teams with repeated admin friction.",
-      "best_fit": [
-        "SMEs with messy internal workflows",
-        "charities",
-        "publishers",
-        "operations-heavy teams",
-        "technical businesses"
-      ],
-      "queries": [
-        "custom workflow software",
-        "bespoke internal tools",
-        "workflow automation consultant Scotland",
-        "business process automation for SMEs"
-      ],
-      "cta_url": "https://quickler.co/pages/contact.html"
     }
   ],
   "proof": {
@@ -110,7 +91,7 @@
         {"name": "name", "required": true},
         {"name": "company", "required": false},
         {"name": "email", "required": true},
-        {"name": "lane", "required": false, "options": ["Site Reports", "Invoices & Purchase Orders", "Custom", "Unsure"]},
+        {"name": "lane", "required": false, "options": ["Workflows", "Invoices & Purchase Orders", "Unsure"]},
         {"name": "report_volume", "required": false},
         {"name": "report_type", "required": false},
         {"name": "sample_access", "required": false},
