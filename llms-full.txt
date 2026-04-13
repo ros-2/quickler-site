@@ -127,7 +127,7 @@ Primary case studies URL: https://quickler.co/pages/projects.html
 - **Companies House listing:** https://find-and-update.company-information.service.gov.uk/company/SC882439
 - **Founder:** Philip Ross
 - **Website:** https://quickler.co/
-- **Contact email:** hello@quickler.co
+- **Contact email:** philip@quickler.co
 
 ---
 

@@ -13,7 +13,7 @@
 - **Companies House:** https://find-and-update.company-information.service.gov.uk/company/SC882439
 - **Founder:** Philip Ross
 - **Website:** https://quickler.co/
-- **Contact:** hello@quickler.co
+- **Contact:** philip@quickler.co
 - **Demo:** https://demo.lochross.com/
 
 ## Proof
