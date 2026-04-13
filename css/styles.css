@@ -1780,6 +1780,146 @@ footer a {
     border-radius: 0 16px 16px 0;
 }
 
+.founder-page {
+    padding-top: clamp(28px, 4vw, 44px);
+}
+
+.founder-shell {
+    width: min(100%, 1180px);
+    margin: 0 auto;
+}
+
+.founder-hero {
+    max-width: 54rem;
+    display: grid;
+    gap: 14px;
+}
+
+.founder-title {
+    margin: 0;
+    max-width: 13ch;
+    font-size: clamp(2.5rem, 5.2vw, 4.9rem);
+    line-height: 0.96;
+    letter-spacing: -0.055em;
+    color: var(--accent);
+}
+
+.founder-standfirst {
+    margin: 0;
+    max-width: 44rem;
+    color: var(--ink);
+    font-size: 1.18rem;
+    line-height: 1.7;
+}
+
+.founder-meta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 26px;
+}
+
+.founder-meta-strip .detail-chip {
+    flex-wrap: wrap;
+    row-gap: 2px;
+    max-width: 100%;
+}
+
+.founder-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.8fr);
+    gap: clamp(24px, 4vw, 44px);
+    align-items: start;
+    margin-top: 30px;
+}
+
+.founder-article {
+    min-width: 0;
+}
+
+.founder-prose {
+    max-width: 44rem;
+    padding: clamp(26px, 3.8vw, 40px);
+    border: 1px solid rgba(24, 52, 132, 0.1);
+    border-radius: 32px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.93), rgba(247, 250, 255, 0.86)),
+        var(--brand-gradient-soft);
+    box-shadow: 0 18px 40px rgba(18, 41, 111, 0.08);
+}
+
+.founder-prose > * + * {
+    margin-top: 20px;
+}
+
+.founder-prose h3 {
+    margin-top: 34px;
+    color: var(--ink-strong);
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.founder-prose p {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.08rem;
+    line-height: 1.92;
+}
+
+.founder-lead {
+    color: var(--ink-strong);
+    font-size: 1.22rem;
+    line-height: 1.86;
+}
+
+.founder-pullquote {
+    margin: 30px 0;
+    padding: 8px 0 8px 22px;
+    border-left: 3px solid var(--highlight);
+}
+
+.founder-pullquote p {
+    color: var(--accent);
+    font-size: clamp(1.24rem, 2vw, 1.52rem);
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+}
+
+.founder-aside {
+    display: grid;
+    gap: 18px;
+    position: sticky;
+    top: 108px;
+}
+
+.founder-note-card {
+    display: grid;
+    gap: 12px;
+    padding: 22px 22px 20px;
+    border: 1px solid rgba(24, 52, 132, 0.1);
+    border-radius: 26px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 250, 255, 0.82)),
+        var(--brand-gradient-soft);
+    box-shadow: 0 14px 30px rgba(18, 41, 111, 0.07);
+}
+
+.founder-note-card .card-link-copy {
+    margin: 0;
+}
+
+.founder-note-card a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(47, 107, 255, 0.22);
+}
+
+.founder-note-card a:hover,
+.founder-note-card a:focus-visible {
+    border-bottom-color: var(--accent);
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -2263,6 +2403,14 @@ footer a {
         position: static;
     }
 
+    .founder-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .founder-aside {
+        position: static;
+    }
+
     .fit-grid,
     .proof-grid,
     .pricing-grid,
@@ -2512,8 +2660,30 @@ footer a {
     .page-lede,
     .detail-body p,
     .detail-body li,
-    .contact-copy {
+    .contact-copy,
+    .founder-prose p,
+    .founder-standfirst {
         font-size: 0.98rem;
+        line-height: 1.72;
+    }
+
+    .founder-title {
+        max-width: 11ch;
+        font-size: clamp(2rem, 8.5vw, 3.2rem);
+    }
+
+    .founder-prose {
+        padding: 24px;
+        border-radius: 24px;
+    }
+
+    .founder-pullquote {
+        padding-left: 18px;
+    }
+
+    .founder-pullquote p,
+    .founder-lead {
+        font-size: 1.08rem;
         line-height: 1.72;
     }
 
@@ -2651,6 +2821,20 @@ footer a {
     .card-link,
     .project-summary {
         padding: 20px;
+    }
+
+    .founder-prose {
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    .founder-note-card {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .founder-meta-strip {
+        gap: 8px;
     }
 
     h1 {
