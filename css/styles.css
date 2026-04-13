@@ -2208,11 +2208,16 @@ footer a {
         linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 250, 255, 0.8)),
         var(--brand-gradient-soft);
     box-shadow: 0 16px 34px rgba(18, 41, 111, 0.08);
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.home-funnel-card .btn {
-    margin-top: auto;
-    justify-self: start;
+.home-funnel-card:hover,
+.home-funnel-card:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 42px rgba(18, 41, 111, 0.12);
+    border-color: rgba(47, 107, 255, 0.18);
 }
 
 @media (max-width: 980px) {
