@@ -2189,37 +2189,6 @@ footer a {
     box-shadow: 0 14px 30px rgba(47, 107, 255, 0.2);
 }
 
-.home-funnel-grid {
-    width: min(100%, 1040px);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.home-funnel-card {
-    display: grid;
-    gap: 14px;
-    min-height: 100%;
-    padding: clamp(24px, 3vw, 30px);
-    border: 1px solid rgba(24, 52, 132, 0.1);
-    border-radius: 28px;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 250, 255, 0.8)),
-        var(--brand-gradient-soft);
-    box-shadow: 0 16px 34px rgba(18, 41, 111, 0.08);
-    color: inherit;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.home-funnel-card:hover,
-.home-funnel-card:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: 0 20px 42px rgba(18, 41, 111, 0.12);
-    border-color: rgba(47, 107, 255, 0.18);
-}
-
 @media (max-width: 980px) {
     nav {
         top: max(10px, env(safe-area-inset-top, 0px));
@@ -2283,7 +2252,6 @@ footer a {
     .home-pilot-steps,
     .home-proof-grid,
     .home-lane-grid,
-    .home-funnel-grid,
     .fork-grid,
     .router-grid,
     .invoice-showcase-grid,
@@ -2733,10 +2701,6 @@ footer a {
     .home-pilot-fit-grid,
     .home-proof-grid,
     .home-lane-grid,
-    .home-funnel-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .balanced-grid-3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
