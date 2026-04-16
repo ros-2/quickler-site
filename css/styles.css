@@ -756,6 +756,77 @@ section#top {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--card-padding);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(248, 251, 255, 0.74)),
+        var(--brand-gradient-soft);
+    box-shadow: var(--shadow-card);
+}
+
+.pricing-card h3 {
+    margin: 0 0 6px;
+}
+
+.pricing-desc {
+    flex: 1;
+    margin: 0 0 18px;
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.pricing-metric {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.pricing-metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink-strong);
+}
+
+.pricing-metric-label {
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+}
+
+.pricing-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-top: auto;
+    padding-top: 14px;
+}
+
+.pricing-price-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--ink-strong);
+}
+
+.pricing-price-suffix {
+    font-size: 0.92rem;
+    color: var(--ink);
+}
+
+.annual-banner {
+    text-align: center;
+    margin-top: 18px;
+    color: var(--ink);
+    font-size: 0.95rem;
+}
+
 .card-link-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     margin-top: 18px;
