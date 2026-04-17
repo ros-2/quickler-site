@@ -59,7 +59,7 @@
         <div class="card-link-grid">
             <article class="card-link">
                 <span class="card-link-kicker">Last updated</span>
-                <h3 class="card-link-title">15 April 2026</h3>
+                <h3 class="card-link-title">17 April 2026</h3>
                 <p class="card-link-copy">Covers the quickler website, the contact form, and the quickler workflow product (WhatsApp capture, dashboard, generated reports).</p>
             </article>
             <article class="card-link">
@@ -101,11 +101,14 @@
                     <li><strong>Hetzner Online GmbH</strong> (Germany) — server hosting for the workflow product.</li>
                     <li><strong>Twilio Inc.</strong> (United States / Ireland) — WhatsApp messaging gateway.</li>
                     <li><strong>Anthropic PBC</strong> (United States) — large-language-model processing of captured text and transcripts.</li>
-                    <li><strong>OpenAI, L.L.C.</strong> (United States) — speech-to-text transcription of voice notes via the Whisper API.</li>
+                    <li><strong>Groq, Inc.</strong> (United States) — primary speech-to-text transcription of voice notes via the Whisper model.</li>
+                    <li><strong>OpenAI, L.L.C.</strong> (United States) — fallback speech-to-text transcription of voice notes via the Whisper API, used when the primary provider is unavailable.</li>
                     <li><strong>GoCardless Ltd</strong> (United Kingdom) — direct-debit subscription billing.</li>
-                    <li><strong>GitHub, Inc.</strong> — hosting of the public website (GitHub Pages).</li>
-                    <li><strong>Formspree, Inc.</strong> — receiving and forwarding website contact-form submissions.</li>
-                    <li><strong>Google LLC</strong> — website analytics (loaded only after consent).</li>
+                    <li><strong>Functional Software, Inc. (trading as Sentry)</strong> (United States) — application error monitoring and diagnostics. Stack traces may incidentally include fragments of user input where an error occurs during processing.</li>
+                    <li><strong>GitHub, Inc.</strong> (United States) — hosting of the public website (GitHub Pages).</li>
+                    <li><strong>Formspree, Inc.</strong> (United States) — receiving and forwarding website contact-form submissions.</li>
+                    <li><strong>Zoho Corporation Pvt. Ltd.</strong> (India, with EU data-centre options) — email hosting for the <em>@quickler.co</em> mailbox and message forwarding.</li>
+                    <li><strong>Google LLC</strong> (United States) — website analytics (loaded only after consent); Google Fonts typeface hosting (the browser connects to Google servers on every page view to fetch the site typeface, which means Google may receive your IP address); and Gmail, which receives and stores email forwarded from the <em>@quickler.co</em> inbox for reading.</li>
                 </ul>
                 <p>Where customer-instructed routing is configured, finished report outputs may also be delivered to integrations chosen by the customer (for example Google Drive, SharePoint, Dropbox, email, or project-management systems).</p>
                 <p>Data may also be shared where reasonably necessary with email providers, professional advisers, or law-enforcement bodies where disclosure is required by law.</p>
