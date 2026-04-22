@@ -101,9 +101,9 @@
                     <li><strong>Hetzner Online GmbH</strong> (Germany) — server hosting for the workflow product.</li>
                     <li><strong>Twilio Inc.</strong> (United States / Ireland) — WhatsApp messaging gateway.</li>
                     <li><strong>Anthropic PBC</strong> (United States) — large-language-model processing of captured text and transcripts.</li>
-                    <li><strong>Groq, Inc.</strong> (United States) — primary speech-to-text transcription of voice notes via the Whisper model.</li>
-                    <li><strong>OpenAI, L.L.C.</strong> (United States) — fallback speech-to-text transcription of voice notes via the Whisper API, used when the primary provider is unavailable.</li>
-                    <li><strong>Langfuse GmbH</strong> (Germany / United States) — observability for AI calls. Only metadata is transmitted (firm identifier, session identifier, model name, token counts and timing). The content of engineer messages, transcripts, and generated reports is never sent to Langfuse.</li>
+                    <li><strong>Groq, Inc.</strong> (United States) — speech-to-text transcription of voice notes.</li>
+                    <li><strong>OpenAI, L.L.C.</strong> (United States) — speech-to-text transcription of voice notes.</li>
+                    <li><strong>Langfuse GmbH</strong> (Germany / United States) — AI service monitoring. Call metadata only; message content is not transmitted.</li>
                     <li><strong>GoCardless Ltd</strong> (United Kingdom) — direct-debit subscription billing.</li>
                     <li><strong>Functional Software, Inc. (trading as Sentry)</strong> (United States) — application error monitoring and diagnostics. Stack traces may incidentally include fragments of user input where an error occurs during processing.</li>
                     <li><strong>GitHub, Inc.</strong> (United States) — hosting of the public website (GitHub Pages).</li>
@@ -123,7 +123,7 @@
                 <ul>
                     <li><strong>UK-US Data Bridge</strong> (an extension of the EU-US Data Privacy Framework, in force since 12 October 2023) for transfers to US-based sub-processors that are certified under the Framework. Anthropic, Twilio, OpenAI, Sentry (Functional Software), GitHub, Formspree, and Google are relied on under this mechanism where their DPF certification applies.</li>
                     <li>The <strong>UK International Data Transfer Agreement</strong>, or the <strong>UK Addendum to the EU Standard Contractual Clauses</strong>, for transfers that are not covered by an adequacy decision or the Data Bridge.</li>
-                    <li>UK / EEA <strong>adequacy decisions</strong> for transfers within the EEA (for example, Hetzner hosting in Germany).</li>
+                    <li>UK / EEA <strong>adequacy decisions</strong> for transfers within the EEA.</li>
                 </ul>
 
                 <div class="detail-note">
@@ -131,7 +131,7 @@
                 </div>
 
                 <h3>Automated decisions and AI processing</h3>
-                <p>Messages, photos, and voice notes captured through the workflow product are processed by large-language models and speech-to-text services (Anthropic Claude, Groq Whisper, and, as fallback, OpenAI Whisper) to extract structured information and draft report content. Quickler does not make any solely automated decisions producing legal or similarly significant effects about you within the meaning of Article 22 UK GDPR. A Quickler customer's engineer or manager reviews, edits, and approves every report before it is issued, so the AI output never stands on its own as a binding decision. If you would prefer your data not to be processed by these services, contact <a href="mailto:philip@quickler.co">philip@quickler.co</a>; in practical terms the workflow product cannot function without them, so the alternative will be discontinuation of the service rather than a non-AI variant.</p>
+                <p>Messages, photos, and voice notes captured through the workflow product are processed by third-party AI and speech-to-text services to extract structured information and draft report content. Quickler does not make any solely automated decisions producing legal or similarly significant effects about you within the meaning of Article 22 UK GDPR. A Quickler customer's engineer or manager reviews, edits, and approves every report before it is issued, so the AI output never stands on its own as a binding decision. If you would prefer your data not to be processed by these services, contact <a href="mailto:philip@quickler.co">philip@quickler.co</a>; in practical terms the workflow product cannot function without them, so the alternative will be discontinuation of the service rather than a non-AI variant.</p>
 
                 <h3>Your rights</h3>
                 <p>Depending on the circumstances, you may have rights to access, correct, erase, restrict, or object to the use of your personal data, and to ask for a copy of the data held about you. These are the UK GDPR rights set out in Articles 15 to 22.</p>
