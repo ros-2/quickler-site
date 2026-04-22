@@ -1,4 +1,4 @@
-// Bounded on-page question router for Ask quickler.
+// Bounded on-page question router for the contact page.
 document.addEventListener('DOMContentLoaded', function () {
     const root = document.querySelector('[data-faq-assistant]');
     if (!root) return;

@@ -1,167 +1,73 @@
-# quickler Reports Website
+# quickler-site
 
-Public website for quickler Ltd and quickler Reports, a chat-first technical reporting product for survey teams, engineers, site inspectors, and compliance professionals.
+Static marketing site for Quickler Ltd, hosted on GitHub Pages at
+[quickler.co](https://quickler.co/). Vanilla HTML, CSS, JavaScript. No
+framework, no build step, no runtime.
 
-**Live Site:** [https://quickler.co/](https://quickler.co/)
+## Why it is static
 
-## Project Overview
+Two reasons. First, cost and availability: GitHub Pages with a CNAME is
+free and more reliable than anything we could host ourselves. Second,
+blast radius: the marketing site has nothing sensitive in it, so the
+cheapest and safest answer is the one that cannot be compromised at
+runtime. The actual product lives at `reports.quickler.co` and is
+`quickler-dashboard`.
 
-This is a static website built with vanilla HTML, CSS, and JavaScript, hosted on GitHub Pages. The site presents quickler Reports, supporting case studies, legal pages, and contact information for workflow enquiries.
-
-### Key Features
-
-- **Case study showcase** with delivered workflow projects demonstrating measured time savings
-- **Responsive design** optimized for mobile and desktop
-- **Fast loading times** with optimized assets and minimal dependencies
-- **Product-led branding** for quickler Reports and quickler Ltd
-- **Contact form** integration with Formspree
-- **Mobile-friendly navigation** with hamburger menu
-
-## Project Structure
+## Structure
 
 ```
-/
-├── assets/
-│   └── icons/          # Favicon and app icons (various sizes)
-├── css/
-│   └── styles.css      # Main stylesheet with responsive design
-├── docs/
-│   ├── about.txt       # Project documentation
-│   ├── llms.txt        # LLM optimization content
-│   └── google-analytics-tag.html  # Analytics setup reference
-├── js/
-│   ├── contact-form.js # Form submission handling
-│   └── navigation.js   # Mobile navigation functionality
-├── pages/
-│   ├── about.html      # About page
-│   ├── case-studies.html  # Case studies (coming soon)
-│   ├── contact.html    # Contact page with form
-│   ├── faq.html        # FAQ page
-│   ├── process.html    # Process explanation
-│   ├── projects.html   # Portfolio of completed projects
-│   ├── services.html   # Services offered
-│   └── testimonials.html  # Client testimonials
-│
-├── index.html          # Homepage
-├── robots.txt          # Search engine crawler instructions
-├── sitemap.xml         # Site structure for search engines
-├── site.webmanifest    # PWA manifest for app-like experience
-├── CNAME               # Custom domain configuration
-└── googlea7057464435666a5.html  # Google Search Console verification
+index.html                    homepage
+pages/                        about, contact, faq, process, projects,
+                              services, testimonials, case-studies
+css/styles.css                single stylesheet, CSS variables + Grid
+js/                           contact form + mobile nav, no framework
+assets/icons/                 favicons and PWA icons
+docs/llms.txt                 structured content for LLM crawlers
+sitemap.xml, robots.txt       SEO plumbing
+CNAME                         custom domain binding
 ```
 
-## Optimizations
+## Non-obvious bits a reviewer might ask about
 
-### SEO (Search Engine Optimization)
+**GA4 stream ID is pinned per domain.** `G-L0G13C0E52` is the
+`quickler.co` stream. Do not reuse the older Lochross stream ID; the
+data stream shows as inactive if the tag and stream do not match.
+Written down here because the mistake has been made once.
 
-The site is heavily optimized for search engines to ensure high visibility:
+**`docs/llms.txt` is intentional.** LLM crawlers pick it up and use it
+to answer questions about Quickler. Keep it factual and legally
+accurate; it is effectively a press release being indexed at a higher
+weight than the pages themselves. Cheaper than an SEO specialist.
 
-- **Meta Tags:** Comprehensive meta tags including title, description, keywords, and author
-- **Open Graph Tags:** Social media sharing optimization for Facebook, LinkedIn, etc.
-- **Twitter Cards:** Optimized previews when shared on Twitter
-- **Structured Data (Schema.org):**
-  - `SoftwareApplication` schema for business and product information
-  - `FAQPage` schema for common questions
-  - Helps search engines understand the content and display rich snippets
-- **Semantic HTML:** Proper use of heading hierarchy and semantic elements
-- **Canonical URLs:** Prevents duplicate content issues
-- **Hreflang Tags:** Indicates language/region targeting (en-GB)
-- **Sitemap.xml:** Complete site structure for efficient crawling
-- **Robots.txt:** Crawler directives and sitemap location
-- **Fast Loading:** Minimal dependencies and optimized assets improve rankings
-- **Mobile Responsive:** Mobile-friendly design is a ranking factor
-- **Internal Linking:** Strategic linking between related pages
+**Contact form uses Formspree.** One third-party dependency, chosen
+because it handles spam, CAPTCHA, and delivery without a backend. The
+tradeoff is that Formspree outages mean contact form outages. Low
+consequence given the volume; fine for now.
 
-### LLM Optimization (AI Assistant Optimization)
+**No analytics on conversion steps.** GA4 tracks pageviews but the
+actual funnel (signup, onboarding, first workflow run) lives in the
+dashboard app and is tracked there, not here. Do not bloat the
+marketing site with analytics for product metrics.
 
-The site is optimized for AI assistants like ChatGPT, Claude, and Perplexity:
+## Deploy
 
-- **llms.txt file:** Located in `/docs/llms.txt`, provides structured information for LLMs to understand:
-  - What the product does
-  - Who it is for
-  - Company and legal details
-  - Project results and proof
-  - Contact information
-- **Structured Data:** Schema.org markup helps LLMs extract accurate information
-- **FAQ Schema:** Enables LLMs to provide accurate answers to common questions
-- **Clear Content Hierarchy:** Well-organized content makes it easy for LLMs to parse
-- **Semantic HTML:** Proper markup helps LLMs understand content relationships
+Push to `main`. GitHub Pages auto-deploys. There is no preview
+environment; changes land on `quickler.co` within a minute or two of
+the push. If that becomes a problem, move to a PR-preview provider,
+not to a self-hosted pipeline.
 
-This optimization ensures that when users ask AI assistants about quickler Reports or quickler Ltd, the assistants can provide accurate, up-to-date information.
+## What stays in root
 
-### Performance Optimizations
+GitHub Pages and search engines expect these at the domain root. Do not
+move them:
 
-- **Font Loading:** Preconnect to Google Fonts and async loading with fallbacks
-- **Minimal JavaScript:** Only essential scripts, loaded at appropriate times
-- **CSS-Only Features:** Tabs and navigation use CSS instead of JavaScript where possible
-- **Optimized Images:** Proper icon sizes for different devices
-- **Cache Control:** HTTP cache headers for static assets
-- **No Framework Overhead:** Vanilla HTML/CSS/JS keeps the site lightweight
-
-### Analytics & Tracking
-
-- **Google Analytics 4:** Tracks visitor behavior and site performance
-- **Google Search Console:** Monitors search performance and indexing
-- **Form Submissions:** Tracked through Formspree integration
-
-Current GA4 measurement ID for `quickler.co`: `G-L0G13C0E52`
-
-Do not reuse the older Lochross stream ID on this site. If the site tag and GA4 stream do not match, the `quickler website` data stream will show as inactive even when the tag is present.
-
-## Technology Stack
-
-- **HTML5:** Semantic markup with accessibility considerations
-- **CSS3:** Custom properties (CSS variables), Flexbox, Grid
-- **JavaScript (ES6+):** Minimal vanilla JavaScript for interactivity
-- **Google Fonts:** Host Grotesk and DM Sans
-- **Formspree:** Contact form backend
-- **GitHub Pages:** Free, reliable hosting with HTTPS
-
-## Development
-
-### Local Development
-
-To run locally, simply open `index.html` in a web browser. For a local server:
-
-```bash
-# Using Python 3
-python -m http.server 8000
-
-# Using Node.js
-npx http-server
-
-# Using PHP
-php -S localhost:8000
-```
-
-Then visit `http://localhost:8000`
-
-### Making Changes
-
-1. Edit HTML files in root (index.html) or `/pages/` directory
-2. Update styles in `/css/styles.css`
-3. Modify scripts in `/js/` directory
-4. Test locally before committing
-5. Commit and push to main branch - GitHub Pages will auto-deploy
-
-### Important Notes
-
-**Do not move these files from root:**
-- `index.html` - GitHub Pages requires this in root
-- `robots.txt` - Must be at domain root for crawlers
-- `sitemap.xml` - Expected at domain root by search engines
-- `CNAME` - Required in root for custom domain
-- `googlea7057464435666a5.html` - Google verification must be at root
-- `site.webmanifest` - Referenced from HTML at root path
-
-## Contact
-
-For enquiries about the website or quickler Reports:
-- **Company:** quickler Ltd
-- **Email:** philipross@quickler.co
-- **Website:** [https://quickler.co/](https://quickler.co/)
-- **Registered office:** 5 South Charlotte Street, Edinburgh, EH2 4AN
+- `index.html`
+- `robots.txt`
+- `sitemap.xml`
+- `CNAME`
+- `site.webmanifest`
+- `googlea7057464435666a5.html` (Google Search Console verification)
 
 ## License
 
-© 2026 quickler Ltd. All rights reserved.
+Copyright 2026 Quickler Ltd. All rights reserved.
