@@ -151,3 +151,44 @@
         flex-direction: column;
     }
 }
+
+html.dark-mode .ask-assistant-log {
+    background: rgba(10, 10, 12, 0.9);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark-mode .ask-message {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark-mode .ask-message-assistant {
+    background: rgba(20, 20, 24, 0.9);
+    color: #c8d0e0;
+}
+
+html.dark-mode .ask-message-user {
+    background: rgba(91, 142, 240, 0.12);
+}
+
+html.dark-mode .ask-chip {
+    background: rgba(16, 16, 18, 0.9);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #c8d0e0;
+}
+
+html.dark-mode .ask-chip:hover,
+html.dark-mode .ask-chip:focus-visible {
+    background: rgba(91, 142, 240, 0.1);
+    border-color: rgba(91, 142, 240, 0.3);
+}
+
+html.dark-mode .ask-input {
+    background: rgba(10, 10, 12, 0.9);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #e8eaf0;
+}
+
+html.dark-mode .ask-assistant-counter {
+    background: rgba(91, 142, 240, 0.12);
+    color: #5b8ef0;
+}

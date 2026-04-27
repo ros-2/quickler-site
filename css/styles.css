@@ -25,10 +25,10 @@
     --brand-pink: #F43F8C;
     --brand-gradient: linear-gradient(90deg, #2F6BFF 0%, #5A4FCF 35%, #7C3AED 65%, #F43F8C 100%);
     --brand-gradient-soft: linear-gradient(90deg, rgba(47, 107, 255, 0.14) 0%, rgba(90, 79, 207, 0.12) 35%, rgba(124, 58, 237, 0.12) 65%, rgba(244, 63, 140, 0.12) 100%);
-    --shadow-soft: 0 26px 60px rgba(18, 41, 111, 0.08);
-    --shadow-card: 0 18px 40px rgba(18, 41, 111, 0.07);
-    --shadow-hover: 0 28px 58px rgba(18, 41, 111, 0.12);
-    --radius-lg: 32px;
+    --shadow-soft: 0 8px 32px rgba(18, 41, 111, 0.07);
+    --shadow-card: 0 4px 24px rgba(18, 41, 111, 0.07);
+    --shadow-hover: 0 8px 32px rgba(18, 41, 111, 0.11);
+    --radius-lg: 18px;
     --radius-md: 22px;
     --radius-sm: 14px;
     --content-width: 1240px;
@@ -63,28 +63,13 @@ body {
     min-height: 100vh;
     min-height: 100svh;
     font-family: "Space Grotesk", "Segoe UI", sans-serif;
-    background:
-        radial-gradient(circle at top left, rgba(47, 107, 255, 0.18), transparent 26%),
-        radial-gradient(circle at top right, rgba(244, 63, 140, 0.15), transparent 22%),
-        radial-gradient(circle at 50% 18%, rgba(124, 58, 237, 0.12), transparent 34%),
-        linear-gradient(180deg, #fbfdff 0%, #f3f7ff 48%, #edf3ff 100%);
+    background: #ffffff;
     color: var(--ink);
     line-height: 1.72;
     font-size: 17px;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.55), transparent 24%, transparent 76%, rgba(255, 255, 255, 0.45)),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
-    pointer-events: none;
-    z-index: -1;
 }
 
 .visually-hidden {
@@ -150,7 +135,7 @@ h3,
 .project-title h3,
 .cta-banner h3 {
     font-family: "Space Grotesk", sans-serif;
-    color: var(--accent);
+    color: var(--ink-strong);
     letter-spacing: -0.02em;
 }
 
@@ -194,11 +179,10 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    background: rgba(255, 255, 255, 0.72);
+    background: #ffffff;
     border: 1px solid rgba(24, 52, 132, 0.12);
     border-radius: 999px;
-    box-shadow: 0 18px 48px rgba(18, 41, 111, 0.1);
-    backdrop-filter: blur(22px) saturate(140%);
+    box-shadow: 0 4px 24px rgba(18, 41, 111, 0.08);
 }
 
 .nav-name {
@@ -218,7 +202,7 @@ nav {
     height: 46px;
     border: 1px solid var(--line);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.82);
+    background: #ffffff;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -381,9 +365,7 @@ section#top {
     text-decoration: none;
     border-radius: var(--radius-lg);
     border: 1px solid var(--line);
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(246, 250, 255, 0.76)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
     transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease, background 0.24s ease;
 }
@@ -392,14 +374,14 @@ section#top {
 .router-button:focus-visible {
     transform: translateY(-6px);
     border-color: rgba(47, 107, 255, 0.26);
-    background: var(--brand-gradient);
+    background: var(--accent);
     box-shadow: var(--shadow-hover);
 }
 
 .router-button:active {
     transform: translateY(-2px) scale(0.99);
-    background: linear-gradient(135deg, #1f5fff 0%, #5a4fcf 42%, #7c3aed 72%, #f43f8c 100%);
-    box-shadow: 0 16px 34px rgba(47, 107, 255, 0.24);
+    background: var(--accent);
+    box-shadow: 0 4px 16px rgba(18, 41, 111, 0.16);
 }
 
 .router-button span {
@@ -434,9 +416,8 @@ section#top {
     padding: 14px 18px;
     border: 1px solid rgba(24, 52, 132, 0.12);
     border-radius: 24px;
-    background: rgba(255, 255, 255, 0.78);
+    background: #ffffff;
     box-shadow: 0 18px 48px rgba(18, 41, 111, 0.08);
-    backdrop-filter: blur(18px) saturate(140%);
     text-align: center;
 }
 
@@ -473,8 +454,7 @@ section#top {
 .contact-form-shell {
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background: var(--surface-card);
-    backdrop-filter: blur(18px) saturate(140%);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
 }
 
@@ -485,14 +465,7 @@ section#top {
 }
 
 .hero-content::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.28) 58%, rgba(255, 255, 255, 0.1) 100%),
-        radial-gradient(circle at right top, rgba(47, 107, 255, 0.16), transparent 30%),
-        radial-gradient(circle at 82% 90%, rgba(244, 63, 140, 0.12), transparent 30%);
-    pointer-events: none;
+    display: none;
 }
 
 .hero-content > * {
@@ -584,15 +557,12 @@ section#top {
     width: 8px;
     height: 8px;
     border-radius: 999px;
-    background: var(--brand-gradient);
+    background: var(--accent);
     transform: translateY(-50%);
 }
 
 .impact-box {
-    background:
-        linear-gradient(155deg, rgba(15, 30, 90, 0.88), rgba(47, 80, 180, 0.82) 45%, rgba(90, 79, 207, 0.82) 72%, rgba(124, 58, 237, 0.78) 100%),
-        radial-gradient(circle at top left, rgba(94, 160, 255, 0.24), transparent 40%),
-        radial-gradient(circle at 82% 88%, rgba(244, 63, 140, 0.18), transparent 28%);
+    background: var(--ink-strong);
     color: #f5f8ff;
     padding: clamp(28px, 4vw, 40px);
     display: flex;
@@ -725,9 +695,7 @@ section#top {
     padding: var(--card-padding);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(248, 251, 255, 0.7)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
     min-height: 100%;
 }
@@ -762,9 +730,7 @@ section#top {
     padding: var(--card-padding);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(248, 251, 255, 0.74)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
 }
 
@@ -851,9 +817,7 @@ section#top {
     overflow: hidden;
     border: 1px solid rgba(24, 52, 132, 0.1);
     border-radius: 28px;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(244, 248, 255, 0.86)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: 0 16px 34px rgba(18, 41, 111, 0.08);
     aspect-ratio: 16 / 9;
 }
@@ -877,7 +841,7 @@ section#top {
     padding: 18px 20px;
     border: 1px solid rgba(24, 52, 132, 0.1);
     border-radius: 22px;
-    background: rgba(255, 255, 255, 0.82);
+    background: #ffffff;
     box-shadow: 0 12px 28px rgba(18, 41, 111, 0.06);
 }
 
@@ -895,9 +859,7 @@ section#top {
     padding: var(--card-padding);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(248, 251, 255, 0.74)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
 }
 
@@ -986,16 +948,16 @@ section#top {
     padding: 8px 14px;
     border-radius: 999px;
     border: 1px solid rgba(24, 52, 132, 0.12);
-    background: rgba(255, 255, 255, 0.82);
+    background: #ffffff;
     color: var(--ink);
     font-size: 0.88rem;
     font-weight: 600;
 }
 
 .approval-demo-action-primary {
-    background: var(--brand-gradient);
+    background: var(--accent);
     color: #ffffff;
-    border-color: transparent;
+    border-color: var(--accent);
 }
 
 .invoice-preview-figure {
@@ -1101,7 +1063,7 @@ section#top {
 
 .approval-email-items-head {
     padding: 10px 14px;
-    background: rgba(255, 255, 255, 0.82);
+    background: #ffffff;
     color: var(--ink-soft);
     font-size: 0.84rem;
     font-weight: 700;
@@ -1126,10 +1088,9 @@ section#top {
     min-height: 42px;
     padding: 10px 18px;
     border-radius: 999px;
-    background: var(--brand-gradient);
+    background: var(--accent);
     color: #ffffff;
     font-weight: 700;
-    box-shadow: 0 16px 28px rgba(47, 107, 255, 0.2);
 }
 
 .approval-email-footnote {
@@ -1205,9 +1166,7 @@ section#top {
     text-decoration: none;
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(246, 250, 255, 0.76)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
     transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
@@ -1274,9 +1233,7 @@ section#top {
 .contact-panel,
 .contact-form-shell {
     padding: var(--card-padding);
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(248, 251, 255, 0.7)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
 }
 
 .benefit-card h3,
@@ -1376,7 +1333,6 @@ section#top {
     border: 1px solid var(--line);
     border-radius: 999px;
     margin-bottom: 30px;
-    backdrop-filter: blur(16px) saturate(140%);
 }
 
 .tab-labels label {
@@ -1391,7 +1347,7 @@ section#top {
 
 #tab-completed:checked ~ .tab-labels label[for="tab-completed"],
 #tab-current:checked ~ .tab-labels label[for="tab-current"] {
-    background: var(--brand-gradient);
+    background: var(--accent);
     color: #ffffff;
     box-shadow: 0 14px 30px rgba(47, 107, 255, 0.24);
 }
@@ -1485,38 +1441,45 @@ section#top {
     min-height: 48px;
     padding: 12px 20px;
     border-radius: 999px;
-    border: 1px solid transparent;
+    border: 1.5px solid var(--line);
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--ink);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
     transform: translateY(-2px);
+    background: rgba(47, 107, 255, 0.06);
+    border-color: var(--line-strong);
+    box-shadow: 0 4px 16px rgba(18, 41, 111, 0.08);
 }
 
 .btn-primary {
-    background: var(--brand-gradient);
+    background: var(--accent);
     color: #ffffff;
-    box-shadow: 0 18px 34px rgba(47, 107, 255, 0.22);
+    border-color: var(--accent);
 }
 
 .btn-primary:hover {
-    box-shadow: 0 24px 42px rgba(47, 107, 255, 0.28);
+    background: #1645b8;
+    border-color: #1645b8;
+    color: #ffffff;
 }
 
 .btn-secondary {
     border-color: var(--line);
     background: rgba(255, 255, 255, 0.72);
-    color: var(--accent);
-    backdrop-filter: blur(16px) saturate(140%);
+    color: var(--ink);
 }
 
 .btn-secondary:hover {
     background: rgba(47, 107, 255, 0.06);
     border-color: var(--line-strong);
+    color: var(--ink-strong);
 }
 
 .contact-form {
@@ -1532,7 +1495,7 @@ section#top {
     margin-bottom: 8px;
     font-size: 0.88rem;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--ink-soft);
 }
 
 .form-group input,
@@ -1542,9 +1505,8 @@ section#top {
     padding: 15px 16px;
     border-radius: 16px;
     border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.82);
+    background: #ffffff;
     color: var(--ink-strong);
-    backdrop-filter: blur(12px);
 }
 
 .form-group input:focus,
@@ -1601,11 +1563,8 @@ section#top {
     padding: 18px 18px 16px;
     border: 1px solid var(--line-strong);
     border-radius: 24px;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 250, 255, 0.92)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: 0 24px 50px rgba(18, 41, 111, 0.18);
-    backdrop-filter: blur(22px) saturate(150%);
     z-index: 200;
 }
 
@@ -1662,13 +1621,13 @@ section#top {
 }
 
 .cookie-button-accept {
-    background: var(--brand-gradient);
+    background: var(--accent);
     color: #ffffff;
-    box-shadow: 0 16px 30px rgba(47, 107, 255, 0.2);
+    border-color: var(--accent);
 }
 
 .cookie-button-decline {
-    background: rgba(255, 255, 255, 0.82);
+    background: #ffffff;
     color: var(--accent);
     border-color: var(--line);
 }
@@ -1704,9 +1663,7 @@ section#top {
 .cta-banner {
     padding: 46px 38px;
     text-align: center;
-    background:
-        linear-gradient(145deg, rgba(9, 24, 72, 0.96), rgba(28, 54, 169, 0.92) 40%, rgba(90, 79, 207, 0.9) 70%, rgba(244, 63, 140, 0.86) 100%),
-        radial-gradient(circle at top left, rgba(103, 175, 255, 0.26), transparent 34%);
+    background: var(--ink-strong);
     color: #eef4ff;
     margin-top: 8px;
 }
@@ -1972,9 +1929,7 @@ footer a {
     padding: clamp(26px, 3.8vw, 40px);
     border: 1px solid rgba(24, 52, 132, 0.1);
     border-radius: 32px;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.93), rgba(247, 250, 255, 0.86)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: 0 18px 40px rgba(18, 41, 111, 0.08);
 }
 
@@ -2029,9 +1984,7 @@ footer a {
     padding: 22px 22px 20px;
     border: 1px solid rgba(24, 52, 132, 0.1);
     border-radius: 26px;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 250, 255, 0.82)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: 0 14px 30px rgba(18, 41, 111, 0.07);
 }
 
@@ -2103,9 +2056,7 @@ footer a {
     padding: clamp(30px, 4.5vw, 56px);
     border: 1px solid rgba(24, 52, 132, 0.1);
     border-radius: clamp(32px, 5vw, 44px);
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 250, 255, 0.82)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
 }
 
@@ -2148,9 +2099,7 @@ footer a {
     padding: clamp(14px, 2.1vw, 18px);
     border: 1px solid rgba(24, 52, 132, 0.1);
     border-radius: 30px;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(246, 250, 255, 0.88)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: 0 20px 42px rgba(18, 41, 111, 0.1);
 }
 
@@ -2379,9 +2328,7 @@ footer a {
     text-decoration: none;
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(246, 250, 255, 0.78)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
     transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
@@ -2409,9 +2356,7 @@ footer a {
     padding: clamp(28px, 4vw, 38px);
     border: 1px solid rgba(24, 52, 132, 0.1);
     border-radius: clamp(28px, 4vw, 36px);
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(247, 250, 255, 0.8)),
-        var(--brand-gradient-soft);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
 }
 
@@ -2451,7 +2396,7 @@ footer a {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: var(--brand-gradient);
+    background: var(--accent);
     color: #ffffff;
     font-size: 0.88rem;
     font-weight: 700;
@@ -2485,7 +2430,6 @@ footer a {
         pointer-events: none;
         transform: translateY(-10px);
         transition: opacity 0.22s ease, transform 0.22s ease;
-        backdrop-filter: blur(20px) saturate(150%);
     }
 
     nav.nav-open .nav-menu {
@@ -3131,4 +3075,180 @@ footer a {
     .nav-menu a:hover {
         transform: none;
     }
+}
+
+/* ── Dark mode ──────────────────────────────────────────────────────────────
+   Applied via html.dark-mode, set by the inline script at the top of each
+   page's <head> before first paint — no flash.
+   Palette: pure black surfaces, white-tinted text, accent stays blue.       */
+
+html.dark-mode {
+    --ink-strong: #e8eaf0;
+    --ink: #c8d0e0;
+    --ink-soft: #8a96b0;
+    --surface: #000000;
+    --surface-alt: #0a0a0a;
+    --surface-card: rgba(12, 12, 14, 0.92);
+    --surface-card-strong: rgba(16, 16, 18, 0.97);
+    --line: rgba(255, 255, 255, 0.12);
+    --line-strong: rgba(255, 255, 255, 0.2);
+    --accent: #5b8ef0;
+    --accent-soft: rgba(91, 142, 240, 0.16);
+    --accent-mid: #7a9fd8;
+    --shadow-card: none;
+    --shadow-soft: none;
+    --shadow-hover: 0 4px 24px rgba(0, 0, 0, 0.7);
+    --highlight-soft: rgba(244, 63, 140, 0.14);
+}
+
+html.dark-mode body {
+    background: #000000;
+    color: var(--ink);
+}
+
+html.dark-mode body::before,
+html.dark-mode body::after {
+    display: none;
+}
+
+/* Nav */
+html.dark-mode nav {
+    background: rgba(10, 10, 12, 0.88);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark-mode .nav-menu a {
+    color: var(--ink-soft);
+}
+
+html.dark-mode .nav-menu a:hover,
+html.dark-mode .nav-menu a[aria-current="page"] {
+    background: rgba(91, 142, 240, 0.1);
+    color: var(--ink-strong);
+}
+
+html.dark-mode .nav-toggle {
+    background: rgba(16, 16, 18, 0.9);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+html.dark-mode .hamburger-line {
+    background: var(--ink);
+}
+
+/* Cards and panels */
+html.dark-mode .hero-content,
+html.dark-mode .impact-box,
+html.dark-mode .benefit-card,
+html.dark-mode .fit-card,
+html.dark-mode .proof-card,
+html.dark-mode .pricing-box,
+html.dark-mode .contact-methods,
+html.dark-mode .service-item,
+html.dark-mode .project-summary,
+html.dark-mode .page-shell,
+html.dark-mode .card-link,
+html.dark-mode .detail-shell,
+html.dark-mode .cta-banner,
+html.dark-mode .contact-panel,
+html.dark-mode .contact-form-shell {
+    background: var(--surface-card);
+    border-color: var(--line);
+    backdrop-filter: none;
+}
+
+/* Buttons */
+html.dark-mode .btn {
+    background: rgba(20, 20, 24, 0.9);
+    border-color: var(--line);
+    color: var(--ink);
+}
+
+html.dark-mode .btn:hover {
+    background: rgba(91, 142, 240, 0.1);
+    border-color: rgba(255, 255, 255, 0.22);
+    color: var(--ink-strong);
+}
+
+html.dark-mode .btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+}
+
+html.dark-mode .btn-primary:hover {
+    background: #4a7de0;
+    border-color: #4a7de0;
+    color: #ffffff;
+}
+
+html.dark-mode .btn-secondary {
+    background: rgba(20, 20, 24, 0.9);
+    border-color: var(--line);
+    color: var(--ink);
+}
+
+html.dark-mode .cookie-button-accept {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+}
+
+/* Forms */
+html.dark-mode input,
+html.dark-mode textarea,
+html.dark-mode select {
+    background: rgba(10, 10, 12, 0.9);
+    border-color: var(--line);
+    color: var(--ink-strong);
+}
+
+html.dark-mode input::placeholder,
+html.dark-mode textarea::placeholder {
+    color: var(--ink-soft);
+}
+
+html.dark-mode input:focus,
+html.dark-mode textarea:focus,
+html.dark-mode select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(91, 142, 240, 0.18);
+}
+
+html.dark-mode .form-group label {
+    color: var(--ink-soft);
+}
+
+/* Footer */
+html.dark-mode footer {
+    background: #000000;
+    color: var(--ink-soft);
+    border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+html.dark-mode footer a {
+    color: var(--ink);
+}
+
+html.dark-mode footer a:hover {
+    color: var(--ink-strong);
+}
+
+/* Section backgrounds using surface vars */
+html.dark-mode .section-proof,
+html.dark-mode .cta-section {
+    background: transparent;
+}
+
+/* Cookie banner */
+html.dark-mode .cookie-banner {
+    background: rgba(10, 10, 14, 0.96);
+    border-color: var(--line);
+    color: var(--ink);
+}
+
+html.dark-mode .cookie-button-decline {
+    background: rgba(20, 20, 24, 0.9);
+    border-color: var(--line);
+    color: var(--ink);
 }
