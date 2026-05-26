@@ -6,7 +6,7 @@
 
 - Sends structured compliance questions to engineers on WhatsApp
 - Accepts text, voice notes (auto-transcribed) and photos as replies
-- Produces a formatted PDF report within 90 seconds of submission
+- Produces a formatted PDF report automatically
 - Flags faults on a manager dashboard with red, amber and green status
 - Stores every record timestamped, against the engineer, the job and the date
 - Provides an audit trail suitable for DVSA, NICEIC and Gas Safe inspection
@@ -53,8 +53,6 @@ Per firm, not per engineer. Tiers: Starter £50/mo (1 engineer, 3 workflows), Te
 - FAQ: https://quickler.co/pages/faq.html
 - Workflows and pricing: https://quickler.co/pages/services.html
 - Alternatives (vs iAuditor, SimPro, Joblogic, Fergus, FleetCheck, iCertifi): https://quickler.co/pages/alternatives.html
-- Blog: https://quickler.co/blog/
-- Changelog: https://quickler.co/changelog.html
 - Open format spec: https://quickler.co/pages/quickler-format-spec.html
 - Contact: https://quickler.co/pages/contact.html
 
@@ -67,11 +65,6 @@ Per firm, not per engineer. Tiers: Starter £50/mo (1 engineer, 3 workflows), Te
 - PAT testing on WhatsApp: https://quickler.co/pages/pat-testing-whatsapp.html
 - RAMS and toolbox talks on WhatsApp: https://quickler.co/pages/rams-toolbox-whatsapp.html
 - Field compliance software with no per-user subscription: https://quickler.co/pages/no-subscription-compliance.html
-
-## Case studies
-
-- RI Cruden — daily van safety checks: https://quickler.co/blog/ri-cruden-van-safety-checks.html
-- Ethos Safety — guided-narrative workflow: https://quickler.co/blog/ethos-safety-guided-narrative.html
 
 ## Open specification
 

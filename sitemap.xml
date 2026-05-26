@@ -57,13 +57,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quickler.co/changelog.html</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
     <loc>https://quickler.co/pages/eicr-from-whatsapp.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -106,24 +99,6 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://quickler.co/blog/</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://quickler.co/blog/ri-cruden-van-safety-checks.html</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://quickler.co/blog/ethos-safety-guided-narrative.html</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
   <url>
     <loc>https://quickler.co/pages/invoices-po.html</loc>
     <lastmod>2026-04-13</lastmod>
