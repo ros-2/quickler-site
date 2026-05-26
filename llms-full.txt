@@ -17,7 +17,7 @@ The product replaces three things at once: paper forms, separate field-service a
 Quickler is built for UK trades and inspection firms whose staff work in the field:
 
 - Electricians completing EICRs, periodic inspection reports and minor electrical works certificates
-- Gas Safe registered engineers completing CP12 landlord gas safety records, service records and breakdown reports
+- Gas Safe registered engineers completing CP12 landlord gas safety records
 - Structural engineers completing site inspection reports
 - Mechanical and electrical contractors completing maintenance and commissioning reports
 - Safety inspection firms completing audits and risk assessments
@@ -42,7 +42,7 @@ Quickler sends the EICR question set to the engineer on WhatsApp: circuit-by-cir
 
 ### CP12 — Landlord Gas Safety Record
 
-The Gas Safe registered engineer receives the appliance check sequence on WhatsApp. They reply with readings, observations and a photo of each appliance plate. Quickler produces the formatted CP12 PDF and stores it against the property. The Gas Safe engineer remains the accountable signatory.
+The Gas Safe registered engineer receives the appliance check sequence on WhatsApp. They reply with readings, observations and a photo of each appliance plate. Quickler produces the formatted CP12 PDF. The Gas Safe engineer remains the accountable signatory.
 
 ### Van safety checks — DVSA daily walkround
 
@@ -54,17 +54,15 @@ Structural engineers capture site notes, photos, sketches and measurements on Wh
 
 ## How it compares
 
-| Feature                          | Quickler          | iAuditor       | SimPro / Joblogic / Fergus |
-|----------------------------------|-------------------|----------------|----------------------------|
-| Engineer installs an app         | No (uses WhatsApp)| Yes            | Yes                        |
-| Per-user subscription            | No (per firm)     | Yes (per user) | Yes (per user)             |
-| Full field service management    | No                | Partial        | Yes                        |
-| Voice note input on site         | Yes               | No             | No                         |
-| Generates compliance PDF         | Yes               | Yes            | Yes (varies)               |
-| EU data residency                | Yes               | Configurable   | Configurable               |
-| Setup time to first live workflow| Under a week      | Days to weeks  | Weeks to months            |
+What we know is genuinely different about Quickler:
 
-Quickler is intentionally narrower than SimPro, Joblogic or Fergus. It does not handle scheduling, invoicing or full job management. It does one job well: turning a WhatsApp conversation into a formatted compliance report with no app install.
+- The engineer interface is WhatsApp (no separate app to install or learn)
+- Pricing is per firm, not per engineer
+- Voice notes are accepted and transcribed
+
+For comparison against specific competitors (iAuditor, SimPro, Joblogic, Fergus, FleetCheck, iCertifi) see https://quickler.co/pages/alternatives.html — we deliberately avoid feature-by-feature claims about products we have not used.
+
+Quickler is intentionally narrower than full field service management platforms. It does not handle scheduling, invoicing or full job management. It does one job well: turning a WhatsApp conversation into a formatted compliance report with no app install.
 
 ## Pricing
 
@@ -92,7 +90,7 @@ Pricing is per firm, not per engineer. Pay annually for 10% off. UK Direct Debit
 
 **Can I generate an EICR certificate from WhatsApp?** Yes. Quickler sends the EICR question set to the engineer on WhatsApp; they reply with readings, observations and photos; Quickler produces the formatted EICR PDF automatically. The qualifying electrician signs off.
 
-**Does Quickler work for Gas Safe registered engineers?** Yes. CP12 landlord gas safety records, service records and breakdown reports all run as Quickler workflows. The Gas Safe engineer remains the accountable signatory.
+**Does Quickler work for Gas Safe registered engineers?** Yes. CP12 landlord gas safety records run as Quickler workflows. The Gas Safe engineer remains the accountable signatory.
 
 **How does Quickler compare to iAuditor, SimPro, Joblogic or Fergus?** Quickler is narrower and lighter. It does not handle scheduling, invoicing or full job management. It does one job well: turning a WhatsApp conversation into a formatted compliance report with no app install.
 

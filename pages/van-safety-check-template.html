@@ -56,18 +56,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Is this DVSA-compliant?",
+          "name": "How does the fleet manager see defects?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The template covers every item required by the Senior Traffic Commissioner's Statutory Document No.4, records are timestamped and retained for the required period, and the driver's confirmation is captured as an explicit yes/no answer. The PDF and CSV exports are designed to be handed to a DVSA auditor as-is."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What if the driver does not have signal at the yard?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "WhatsApp queues the messages locally and delivers them when signal returns. The check is timestamped to the moment the driver sent each reply, not the moment it arrived at the server."
+            "text": "The dashboard shows one row per vehicle with red, amber or green status. A defect triggers an email and dashboard alert carrying the defect line and the driver's photo."
           }
         },
         {
@@ -75,15 +67,15 @@
           "name": "Can I edit the template for our specific fleet?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Each operator can add or remove items per vehicle type \u2014 for example HIAB lifting checks for tipper crews or refrigeration unit checks for chilled vans. Custom templates are part of standard onboarding."
+            "text": "Yes. Each operator's template is built during onboarding from the items they already check. Different vehicle types can have their own variants."
           }
         },
         {
           "@type": "Question",
-          "name": "How does the fleet manager see defects?",
+          "name": "What if the driver does not have signal at the yard?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The dashboard shows one row per vehicle with red, amber or green status updated live. Any defect triggers an immediate notification (email and dashboard alert) carrying the defect line plus the driver's photo. The vehicle row stays red until the manager marks the defect rectified."
+            "text": "WhatsApp queues the messages on the phone and delivers them when signal returns."
           }
         },
         {
@@ -91,7 +83,7 @@
           "name": "Does this also cover the weekly and six-weekly inspections?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The daily walkround is a separate workflow from the planned weekly and six-weekly maintenance inspections, which require a qualified inspector. Quickler can also run those as scheduled workflows if you want one platform for all three."
+            "text": "The daily walkround is a separate workflow from the planned weekly and six-weekly maintenance inspections, which require a qualified inspector. Talk to us if you want to run those alongside."
           }
         }
       ]
@@ -183,7 +175,7 @@
             <h2>Why this works better than a paper card or a driver app</h2>
             <p><strong>vs paper:</strong> no shoebox of dated cards to keep, no illegible handwriting, no driver forgetting to hand the card in. Every check has a timestamp the moment the driver sends it.</p>
             <p><strong>vs a driver app:</strong> the driver does not need to install or open anything new. The walkround runs in the WhatsApp chat already open on their phone.</p>
-            <div class="callout"><strong>Honest note:</strong> if you need full fleet management (service intervals, MOT diaries, fuel records, driver licence checks), a dedicated fleet platform is still the right pick. Quickler covers the daily walkround compliance specifically — see <a href="/pages/alternatives.html">where Quickler fits and where it does not</a>.</div>
+            <div class="callout"><strong>Honest note:</strong> if you need full fleet management beyond the daily walkround, a dedicated fleet platform is still the right pick. Quickler covers the daily walkround compliance specifically — see <a href="/pages/alternatives.html">where Quickler fits and where it does not</a>.</div>
         </div>
     </section>
 

@@ -56,18 +56,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Does Quickler check that the engineer is Gas Safe registered?",
+          "name": "Who signs the CP12?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quickler stores the engineer's registration number against their account and prints it on every CP12. It does not validate the registration in real time against the Gas Safe database \u2014 that remains the employing firm's responsibility, exactly as today."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What about service records and breakdown reports?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The same workflow pattern handles boiler service records and breakdown reports. Each becomes its own Quickler workflow with the appropriate question set; the registered engineer signs each one."
+            "text": "The Gas Safe registered engineer, exactly as on paper. Quickler does not bypass the registered-engineer requirement and does not validate registration in real time against the Gas Safe database \u2014 that remains the employing firm's responsibility."
           }
         },
         {
@@ -84,14 +76,6 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Records are retained in line with the customer's own retention policy. Export available on request."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does this work for non-domestic gas safety?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The same workflow pattern handles non-domestic gas safety records. Each non-domestic check tends to be more bespoke per site, so workflows are typically configured per customer rather than from a generic template."
           }
         }
       ]
@@ -165,21 +149,22 @@
     <section class="section-tight">
         <div class="long-form-body">
             <h2>Where the CP12 currently breaks down</h2>
-            <p>A CP12 is a short document: a handful of appliances with the same set of checks each: working pressure, flame picture, flue flow, spillage, safety device function, ventilation. The trouble is the volume: a busy landlord servicing portfolio runs many CP12s a month, each captured on a paper pad, each retyped into a Word template, each emailed back to the office two days late.</p>
+            <p>A CP12 is a short document with the same set of appliance checks repeated for each gas appliance in the property. The trouble is the volume: a busy landlord servicing portfolio runs many CP12s a month, each captured on a paper pad, each retyped into a Word template, each delayed before it reaches the office.</p>
         </div>
     </section>
 
     <section class="section-tight">
         <div class="long-form-body">
             <h2>The Quickler CP12 workflow</h2>
+            <p>Each firm's CP12 question set is built during onboarding from their existing CP12 template, so the output matches what the firm already issues. The high-level shape:</p>
             <ol>
-            <li>Property address and tenant contact go into the dashboard.</li>
-            <li>The Gas Safe registered engineer opens WhatsApp on site.</li>
-            <li>For each appliance: type, make, model, location, photo of the data plate, working pressure, operating pressure, flame picture, flue flow test, spillage test, safety device function, ventilation adequacy, any defects.</li>
-            <li>If the engineer reports a fault — at-risk or immediately dangerous — it is flagged on the dashboard the moment they send.</li>
-            <li>On completion, the CP12 PDF is generated automatically once the engineer submits. The engineer reviews and signs.</li>
-            <li>Signed PDF goes to the landlord and the tenant. Unsigned copy with the full audit trail stays in the dashboard.</li>
-         </ol>
+                <li>Property address and tenant contact go into the dashboard.</li>
+                <li>The Gas Safe registered engineer opens WhatsApp on site and answers the appliance checks one by one, with photos.</li>
+                <li>Defects flagged by the engineer appear on the dashboard.</li>
+                <li>On completion the CP12 PDF is generated automatically.</li>
+                <li>The Gas Safe registered engineer reviews and signs.</li>
+                <li>Signed PDF goes to the landlord; an audit-trail copy stays in the dashboard.</li>
+            </ol>
         </div>
     </section>
 
@@ -208,16 +193,12 @@
     <section class="section-tight">
         <div class="long-form-body">
             <h2>Frequently asked questions</h2>
-            <h3>Does Quickler check that the engineer is Gas Safe registered?</h3>
-            <p>Quickler stores the engineer's registration number against their account and prints it on every CP12. It does not validate the registration in real time against the Gas Safe database — that remains the employing firm's responsibility, exactly as today.</p>
-            <h3>What about service records and breakdown reports?</h3>
-            <p>The same workflow pattern handles boiler service records and breakdown reports. Each becomes its own Quickler workflow with the appropriate question set; the registered engineer signs each one.</p>
+            <h3>Who signs the CP12?</h3>
+            <p>The Gas Safe registered engineer, exactly as on paper. Quickler does not bypass the registered-engineer requirement and does not validate registration in real time against the Gas Safe database — that remains the employing firm's responsibility.</p>
             <h3>Can I keep using my existing CP12 template wording?</h3>
             <p>Yes. The first onboarding step is to translate the firm's existing CP12 template into a Quickler workflow. The PDF output matches the existing format the firm already issues.</p>
             <h3>How are records kept for the required period?</h3>
             <p>Records are retained in line with the customer's own retention policy. Export available on request.</p>
-            <h3>Does this work for non-domestic gas safety?</h3>
-            <p>The same workflow pattern handles non-domestic gas safety records. Each non-domestic check tends to be more bespoke per site, so workflows are typically configured per customer rather than from a generic template.</p>
         </div>
     </section>
 
