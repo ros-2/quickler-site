@@ -107,8 +107,8 @@
     <section class="section-tight">
         <div class="spec-body">
             <h2>Why a format</h2>
-            <p>Field compliance work — van checks, gas tightness tests, structural inspections, retrofit verifications — is recorded thousands of times a day across the UK by people whose phone is the only computer they carry.</p>
-            <p>Most of that data is captured in WhatsApp messages, voice notes and photos that never become structured records. The few systems that do capture it use proprietary apps engineers refuse to install.</p>
+            <p>Field compliance work — van checks, gas tightness tests, structural inspections, retrofit verifications — is recorded across the UK by people whose phone is the only computer they carry.</p>
+            <p>A lot of that data is captured in WhatsApp messages, voice notes and photos that never become structured records. The systems that do capture it often use proprietary apps engineers do not install.</p>
             <p>The Quickler Format is an open specification for <strong>how a compliance check should be recorded over messaging, and how the resulting report should be structured</strong>, so that:</p>
             <ul>
                 <li>Engineers do not need to install or learn an app</li>
@@ -165,19 +165,18 @@
             </ul>
 
             <h2>3. Report artefact</h2>
-            <p>Each completed check produces:</p>
+            <p>Each completed check produces a <strong>PDF report</strong> rendered from a deterministic template, containing:</p>
             <ul>
-                <li>A <strong>PDF report</strong> rendered from a deterministic template, containing:
-                    <ul>
-                        <li>Firm name, registration number, branding</li>
-                        <li>Engineer name, mobile number (E.164), date and time of completion</li>
-                        <li>Each field's label, value and any attached media (rendered inline)</li>
-                        <li>A SHA-256 hash of the underlying JSON record, printed in the footer</li>
-                    </ul>
-                </li>
-                <li>A <strong>JSON sidecar</strong> with the raw structured record, embedded in the PDF as an attachment per ISO 32000-1 §7.11</li>
+                <li>Firm name, registration number, branding</li>
+                <li>Engineer name, mobile number (E.164), date and time of completion</li>
+                <li>Each field's label, value and any attached media (rendered inline)</li>
             </ul>
-            <p>The hash makes the report tamper-evident: any third party can re-render the PDF from the JSON and compare hashes.</p>
+            <p>The specification reserves space for two additional features that are not required in v0.1 implementations and are not yet present in the reference implementation:</p>
+            <ul>
+                <li>A SHA-256 hash of the underlying JSON record, printed in the report footer (intended to make the report tamper-evident).</li>
+                <li>A JSON sidecar with the raw structured record, embedded in the PDF as an attachment per ISO 32000-1 §7.11.</li>
+            </ul>
+            <p>Both are tracked as open questions for v0.2.</p>
 
             <h2>Compliance levels</h2>
             <p>A vendor can claim:</p>
@@ -201,10 +200,20 @@
         </div>
     </section>
 
+    <section class="section-tight">
+        <div class="spec-body">
+            <h2>Conformance declarations</h2>
+            <p>Vendors implementing the format are listed here once a declaration is filed:</p>
+            <ul>
+                <li><em>None yet — be the first.</em></li>
+            </ul>
+        </div>
+    </section>
+
     <section class="cta-section">
         <div class="cta-content">
             <h2>Implementing the spec?</h2>
-            <p>Send a conformance declaration to <a href="mailto:philip@quickler.co">philip@quickler.co</a>. Vendors implementing the format are listed on this page.</p>
+            <p>Send a conformance declaration to <a href="mailto:philip@quickler.co">philip@quickler.co</a>.</p>
         </div>
     </section>
 
