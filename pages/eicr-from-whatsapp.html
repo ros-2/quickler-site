@@ -56,18 +56,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Is the EICR PDF accepted by NICEIC?",
+          "name": "Who signs the final EICR?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The PDF carries the full BS 7671 schedule, every observation, every reading, every photo, and the qualifying electrician's signature. Any NICEIC auditor can follow the evidence chain from the original WhatsApp messages through to the signed certificate. The qualifying electrician remains the accountable signatory, exactly as on paper."
+            "text": "The qualifying electrician, exactly as on paper. Quickler captures the data and produces the PDF; it does not sign anything itself. Every response, photo and timestamp is stored against the job so the evidence chain is intact."
           }
         },
         {
           "@type": "Question",
-          "name": "What stops the engineer skipping questions?",
+          "name": "Does the engineer have to answer every question?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The workflow does not advance until each required field has a valid response. The engineer can reply 'n/a' to non-required fields. They can revisit and correct any answer up to the point they mark the inspection complete."
+            "text": "The engineer can reply 'skip' or 'n/a' to any non-required field and move on."
           }
         },
         {
@@ -75,15 +75,7 @@
           "name": "How are photos handled?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Each photo question expects an image attached to the WhatsApp reply. The photo is linked to that question in the PDF and stored against the job. Resolution is preserved at the resolution the engineer uploads."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can the qualifying electrician make edits before signing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. The PDF is editable in the dashboard before the signature is applied. Common edits \u2014 code reclassification, observation rewording, summary text \u2014 take seconds. Edits are logged in the audit trail."
+            "text": "Each photo question expects an image attached to the WhatsApp reply. The photo is linked to that question in the record and stored against the job."
           }
         },
         {
@@ -178,7 +170,7 @@
             <li><strong>Engineer arrives on site.</strong> They open WhatsApp on the phone they already use. The first question — typically the earthing arrangement — lands automatically.</li>
             <li><strong>Circuit-by-circuit capture.</strong> Each circuit is its own micro-conversation: type, length, RCD trip times at IΔn and 5x IΔn, photo of the board, free-text observations. The engineer can reply by text or voice note. Voice notes are transcribed.</li>
             <li><strong>Codes are flagged live.</strong> If the engineer reports a C1, C2 or FI code, it appears on the dashboard the moment they hit send. The office can ring the customer the same hour rather than waiting for the report.</li>
-            <li><strong>PDF generation.</strong> When the engineer marks the inspection complete, the EICR PDF is produced from the data automatically once the engineer submits. The format matches the BS 7671 schedule the qualifying electrician expects.</li>
+            <li><strong>PDF generation.</strong> When the engineer marks the inspection complete, the EICR PDF is produced from the data automatically. The format is built from your firm's existing EICR template during onboarding.</li>
             <li><strong>Sign-off.</strong> The qualifying electrician reviews the PDF in any browser, edits if needed, and signs. The signed PDF goes to the customer; an unsigned copy stays in the dashboard with the full audit trail.</li>
          </ol>
         </div>
@@ -187,18 +179,15 @@
     <section class="section-tight">
         <div class="long-form-body">
             <h2>What the engineer sees</h2>
-            <p>They see WhatsApp. The same conversation interface they use to text their kids. No app to install, no login to forget, no menus to learn. Each question is a normal message; each reply is a normal reply. If they need to correct a previous answer, they message the field name and the new value — exactly how WhatsApp conversations already work.</p>
-         <div class="callout"><strong>Why this matters:</strong> the single biggest reason small electrical firms abandon iAuditor or similar tools is engineers refusing to open the app on site. WhatsApp is already open.</div>
+            <p>They see WhatsApp. The same conversation interface they already use every day. No app to install, no login to forget, no menus to learn. Each question is a normal message; each reply is a normal reply.</p>
         </div>
     </section>
 
     <section class="section-tight">
         <div class="long-form-body">
-            <h2>How it compares to iCertifi, iAuditor and paper</h2>
-            <p><strong>vs paper:</strong> no transcription, no lost notebooks, photos linked automatically, codes flagged in real time instead of next morning, full audit trail.</p>
-         <p><strong>vs iAuditor:</strong> no separate app install, per-firm pricing rather than per-user, voice note capture with auto-transcription. iAuditor wins on offline-first capture and template marketplace breadth.</p>
-         <p><strong>vs iCertifi:</strong> WhatsApp instead of an app, narrower certificate catalogue today but trivial engineer adoption. iCertifi wins on certificate-format breadth built up over years.</p>
-         <p>Full comparison: <a href="/pages/alternatives.html">Quickler vs iAuditor, SimPro, Joblogic, Fergus, FleetCheck, iCertifi</a>.</p>
+            <h2>How it compares to paper</h2>
+            <p>No transcription, no lost notebooks, photos linked automatically to the question they answer, codes flagged in real time instead of next morning, full audit trail.</p>
+            <p>For honest comparison against other tools, see <a href="/pages/alternatives.html">where Quickler fits and where it does not</a>.</p>
         </div>
     </section>
 
@@ -213,14 +202,12 @@
     <section class="section-tight">
         <div class="long-form-body">
             <h2>Frequently asked questions</h2>
-            <h3>Is the EICR PDF accepted by NICEIC?</h3>
-            <p>The PDF carries the full BS 7671 schedule, every observation, every reading, every photo, and the qualifying electrician's signature. Any NICEIC auditor can follow the evidence chain from the original WhatsApp messages through to the signed certificate. The qualifying electrician remains the accountable signatory, exactly as on paper.</p>
-            <h3>What stops the engineer skipping questions?</h3>
-            <p>The workflow does not advance until each required field has a valid response. The engineer can reply 'n/a' to non-required fields. They can revisit and correct any answer up to the point they mark the inspection complete.</p>
+            <h3>Who signs the final EICR?</h3>
+            <p>The qualifying electrician, exactly as on paper. Quickler captures the data and produces the PDF; it does not sign anything itself. Every response, photo and timestamp is stored against the job so the evidence chain is intact.</p>
+            <h3>Does the engineer have to answer every question?</h3>
+            <p>The engineer can reply "skip" or "n/a" to any non-required field and move on.</p>
             <h3>How are photos handled?</h3>
-            <p>Each photo question expects an image attached to the WhatsApp reply. The photo is linked to that question in the PDF and stored against the job. Resolution is preserved at the resolution the engineer uploads.</p>
-            <h3>Can the qualifying electrician make edits before signing?</h3>
-            <p>Yes. The PDF is editable in the dashboard before the signature is applied. Common edits — code reclassification, observation rewording, summary text — take seconds. Edits are logged in the audit trail.</p>
+            <p>Each photo question expects an image attached to the WhatsApp reply. The photo is linked to that question in the record and stored against the job.</p>
             <h3>Does Quickler need a Twilio account or Meta Business account?</h3>
             <p>No. Quickler runs the WhatsApp Business API integration on the customer's behalf. The contractor provides only their company details and the engineer phone numbers.</p>
         </div>

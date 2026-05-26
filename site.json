@@ -25,7 +25,7 @@
     "ico_registration": "C1910464",
     "founder": "Philip Ross"
   },
-  "primary_positioning": "WhatsApp field compliance reports for UK trades. No app for engineers to install. No per-user subscription. UK data residency.",
+  "primary_positioning": "WhatsApp field compliance reports for UK trades. No app for engineers to install. No per-user subscription. EU data residency.",
   "workflows": [
     {
       "name": "EICR",
@@ -94,7 +94,7 @@
     "free_trial": "https://app.quickler.co/signup"
   },
   "data_and_compliance": {
-    "data_residency": "UK",
+    "data_residency": "EU",
     "ico_registration": "C1910464",
     "data_processing_agreement": true,
     "customer_owns_data": true,
