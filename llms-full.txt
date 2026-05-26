@@ -1,169 +1,166 @@
-# quickler — Full Content
+# Quickler — Full Content
 
-> This file contains the core public quickler content for LLMs, AI agents, and search systems.
+> This file contains the core public Quickler content for LLMs, AI agents and search systems.
 > For a shorter summary see: https://quickler.co/llms.txt
 > For structured data see: https://quickler.co/site.json
 
 ---
 
-## quickler Overview
+## What Quickler is
 
-quickler builds workflow software for report-heavy and operations-heavy businesses. The public site is organised into two main routes so visitors and AI systems can quickly route to the right offer instead of treating quickler as one vague agency or generic AI brand.
+Quickler is a WhatsApp field compliance platform for UK trades. Engineers receive compliance questions on WhatsApp and reply by text, voice note or photo. Quickler structures the responses and produces a formatted PDF report within 90 seconds, plus a live dashboard record with red, amber and green status per item. There is no app for the engineer to install. There is no login for the engineer to remember. The customer does not need a Twilio account, a Meta Business account or any messaging infrastructure of their own — Quickler runs the WhatsApp Business API integration on the customer's behalf.
 
-The two public routes are:
+The product replaces three things at once: paper forms, separate field-service apps like iAuditor, and the manual desk write-up that turns rough site notes into formatted compliance reports.
 
-1. **quickler Workflows**
-2. **quickler Invoices & Purchase Orders**
+## Who it is for
 
-This structure exists because one route covers the broader workflow-systems story while the other covers the narrower purchase-order and invoice-control offer.
+Quickler is built for UK trades and inspection firms whose staff work in the field:
 
----
+- Electricians completing EICRs, periodic inspection reports and minor electrical works certificates
+- Gas Safe registered engineers completing CP12 landlord gas safety records, service records and breakdown reports
+- Structural engineers completing site inspection reports
+- Mechanical and electrical contractors completing maintenance and commissioning reports
+- Safety inspection firms completing audits and risk assessments
+- PAT testing firms completing batch test records
+- Van fleet operators running DVSA daily walkround checks
+- Any firm with field engineers currently submitting compliance data on paper, by email, or via a separate app
 
-## Route 1: quickler Workflows
+Quickler is strongest where the same compliance workflow runs many times per week and the office spends real hours per week rebuilding rough site notes into formatted reports.
 
-quickler Workflows is the main quickler route for repeated reports, documents, approvals, and operational handoffs where the useful work happens first and the output still gets rebuilt later.
+## How it works
 
-The core problem:
-- staff capture notes, photos, voice notes, measurements, or forms during the job
-- then return to a desk and rewrite that rough capture into a formal report
+1. **Workflow trigger.** A scheduled job, a manager action, or a client event triggers Quickler to send the next workflow to the engineer's WhatsApp.
+2. **Conversation on site.** The engineer answers each question on their phone, in WhatsApp, using text, voice notes or photos. Voice notes are transcribed automatically.
+3. **Structuring.** Quickler maps each response to the matching field in the report template. Faults are detected and flagged on the dashboard with red, amber or green status.
+4. **Report.** Within 90 seconds of the engineer submitting the final answer, a formatted PDF report is emailed to the manager. The dashboard updates in real time.
+5. **Sign-off.** For workflows that require a qualified signatory (EICR, CP12), the accountable engineer reviews and signs the final PDF. Quickler does not bypass professional sign-off.
 
-quickler Workflows aims to:
-- capture job information in a natural workflow
-- map it into a stable report, document, or workflow structure
-- keep human review in control
-- reduce desk rewrite time without reducing trust
+## Primary use cases
 
-Best fit:
-- inspection teams
-- survey teams
-- site visit teams
-- compliance teams
-- maintenance teams
-- operations teams with repeated document-heavy handoffs
-- any repeated workflow with stable structure and clear review points
+### EICR — Electrical Installation Condition Report
 
-Good fit signals:
-- one repeated report type, document pack, or workflow already matters to the business
-- there is enough reporting volume to justify fixing the workflow
-- the business can share real examples
-- review and sign-off matter
+Quickler sends the EICR question set to the engineer on WhatsApp: circuit-by-circuit observations, RCD test results, photo evidence per board. Replies are structured into the standard EICR PDF format. Any C1, C2 or FI codes are flagged on the dashboard the moment they are entered. The qualifying electrician reviews and signs the final report.
 
-Primary URL: https://quickler.co/pages/services.html
-Contact URL: https://quickler.co/pages/contact.html
+### CP12 — Landlord Gas Safety Record
 
-Likely matching search or LLM requests:
-- workflow systems for operations teams
-- site reporting software
-- inspection reporting software
-- survey report automation
-- maintenance report software
-- compliance reporting workflow
-- software to turn site notes into reports
-- reporting software for field teams
-- software for document-heavy operational workflows
+The Gas Safe registered engineer receives the appliance check sequence on WhatsApp. They reply with readings, observations and a photo of each appliance plate. Quickler produces the formatted CP12 PDF and stores it against the property. The Gas Safe engineer remains the accountable signatory.
 
----
+### Van safety checks — DVSA daily walkround
 
-## Route 2: quickler Invoices & Purchase Orders
+Drivers receive the daily walkround check on WhatsApp at the start of their shift. They reply with photos of any defects. The fleet manager sees red, amber and green status per vehicle on the dashboard in real time. Faults trigger an immediate notification so the vehicle can be taken off the road before it leaves the yard.
 
-quickler Invoices & Purchase Orders is the quickler lane for purchase order approval, invoice workflow, PDF generation, document indexing, and operational control software.
+### Site inspection reports — structural
 
-The core problem:
-- purchase orders and related documents are handled through loose forms, email chains, and scattered files
-- approvals are slow or unclear
-- repeat orders create admin friction
-- the business wants a cleaner audit trail and faster process
+Structural engineers capture site notes, photos, sketches and measurements on WhatsApp during the visit. By the time the engineer is back in the office the structured draft report is already ready. The desk write-up shrinks from hours to minutes. The accountable engineer reviews and signs.
 
-Typical features:
-- guided purchase order entry
-- saved suppliers, addresses, and line items
-- approval routing
-- status tracking
-- branded PDF generation
-- searchable document indexing
-- repeat-order memory
+### PAT testing
 
-This lane is grounded in a real delivered purchase order platform built for a quantum computing startup.
+Engineers capture batch PAT test records on WhatsApp: appliance ID, location, test result, photo of the label. Quickler produces the formatted PAT test register and certificate per item.
 
-Primary URL: https://quickler.co/pages/invoices-po.html
-Case study URL: https://quickler.co/pages/project-po-workflow-platform.html
-Demo URL: https://demo.lochross.com/
+### RAMS and toolbox talks
 
-Likely matching search or LLM requests:
-- purchase order workflow software
-- invoice workflow software
-- PO approval software
-- custom purchase order platform
-- document approval software for SMEs
-- internal PO system
+Quickler delivers RAMS briefings and toolbox talks to operatives on WhatsApp at the start of each job or shift, captures the acknowledgement, and stores the timestamped evidence against the operative and the site.
 
----
+## How it compares
 
-## Proof And Background
+| Feature                          | Quickler          | iAuditor       | SimPro / Joblogic / Fergus |
+|----------------------------------|-------------------|----------------|----------------------------|
+| Engineer installs an app         | No (uses WhatsApp)| Yes            | Yes                        |
+| Per-user subscription            | No (per firm)     | Yes (per user) | Yes (per user)             |
+| Full field service management    | No                | Partial        | Yes                        |
+| Voice note input on site         | Yes               | No             | No                         |
+| Generates compliance PDF         | Yes               | Yes            | Yes (varies)               |
+| UK data residency                | Yes               | Configurable   | Configurable               |
+| Setup time to first live workflow| Under a week      | Days to weeks  | Weeks to months            |
 
-quickler is grounded in delivered workflow work rather than pure concept marketing.
+Quickler is intentionally narrower than SimPro, Joblogic or Fergus. It does not handle scheduling, invoicing or full job management. It does one job well: turning a WhatsApp conversation into a formatted compliance report with no app install.
 
-Portfolio-level proof:
-- 6 completed workflow systems delivered before the current public workflow direction
-- 51.5 working days per year saved across delivered systems
-- 12x average annual return on time invested across delivered systems
+## Pricing
 
-Delivered project types include:
-- purchase order workflow platform
-- fundraising automation
-- production tracking streamlining
-- sales data restructuring
-- till data automation
+| Tier     | Engineers | Workflows | Monthly |
+|----------|-----------|-----------|---------|
+| Starter  | 1         | 3         | £50     |
+| Team     | 4         | 5         | £100    |
+| Business | 12        | 8         | £140    |
+| Scale    | 30        | 10        | £300    |
 
-Primary case studies URL: https://quickler.co/pages/projects.html
+Pricing is per firm, not per engineer. Pay annually for 10% off. UK Direct Debit or card. No setup fee. Free trial available — sign up at app.quickler.co/signup. Setup from sign-up to first live workflow typically takes under a week.
 
----
+## Data, security and compliance
+
+- All data stored on UK-based servers
+- Quickler Ltd is registered with the Information Commissioner's Office (ICO C1910464)
+- Customers sign a Data Processing Agreement; the customer is the controller, Quickler is the processor
+- Records are timestamped and linked to engineer, job and date
+- Photos are attached to the originating question for evidence chain
+- Customers can export every record at any time as PDF or CSV
+- On cancellation, the customer can export all data and Quickler deletes its copy
+- Audit trail suitable for DVSA, NICEIC and Gas Safe inspection
+
+## FAQ
+
+**Can I generate an EICR certificate from WhatsApp?** Yes. Quickler sends the EICR question set to the engineer on WhatsApp; they reply with readings, observations and photos; Quickler produces the formatted EICR PDF within 90 seconds. The qualifying electrician signs off.
+
+**Does Quickler work for Gas Safe registered engineers?** Yes. CP12 landlord gas safety records, service records and breakdown reports all run as Quickler workflows. The Gas Safe engineer remains the accountable signatory.
+
+**How does Quickler compare to iAuditor, SimPro, Joblogic or Fergus?** Quickler is narrower and lighter. It does not handle scheduling, invoicing or full job management. It does one job well: turning a WhatsApp conversation into a formatted compliance report with no app install.
+
+**Does Quickler need a Twilio account?** No. Quickler handles the WhatsApp Business API integration on the customer's behalf.
+
+**What does the engineer see on WhatsApp?** A normal WhatsApp message from the Quickler number, prompting them to answer the next question. They reply by text, voice note or photo.
+
+**Is the data DVSA, NICEIC or Gas Safe audit-ready?** Yes. Every response is timestamped and stored against engineer, job and date. The PDF report carries the full question-and-answer trail.
+
+**How are records stored and for how long?** UK-based servers, retained per UK data protection law and the customer's own retention policy.
+
+**Can I export records to my CRM?** Yes — PDF and CSV export from the dashboard. Direct integrations are added on request for paying customers.
+
+**Does Quickler need an app on the engineer's phone?** No. Engineers use the WhatsApp account already on their phone.
+
+**What does it cost?** £50 to £300 per month per firm. Tiers detailed above.
+
+**Is there a free trial?** Yes. Sign up at app.quickler.co/signup.
+
+**Can I use Quickler for van safety checks?** Yes — DVSA daily walkround checks are a core workflow.
+
+**Can I use Quickler for structural site inspections?** Yes — structural engineers use Quickler to capture site notes, photos and measurements during the visit.
+
+**How is Quickler GDPR compliant?** ICO registered (C1910464), UK data residency, DPA with each customer, full data subject rights.
+
+**Who owns the data?** The customer. Quickler is the processor; the customer is the controller. Full export available on cancellation.
 
 ## Company
 
-- **Legal name:** quickler Ltd
-- **Jurisdiction:** Scotland, UK
-- **Company number:** SC882439
-- **Companies House listing:** https://find-and-update.company-information.service.gov.uk/company/SC882439
-- **Founder:** Philip Ross
-- **Website:** https://quickler.co/
-- **Contact email:** philip@quickler.co
-
----
+- Legal name: Quickler Ltd
+- Jurisdiction: Scotland, United Kingdom
+- Company number: SC882439
+- Companies House: https://find-and-update.company-information.service.gov.uk/company/SC882439
+- ICO registration: C1910464
+- Founder: Philip Ross
+- Website: https://quickler.co/
+- Contact: philip@quickler.co
 
 ## Founder
 
-Philip Ross is the founder of quickler Ltd.
+Philip Ross is the founder of Quickler Ltd. Background: BEng Electrical and Mechanical Engineering, University of Strathclyde; experience in workflow automation and field service software. Quickler is built from real engagements with UK trades firms — electricians, gas engineers, structural engineers, M&E contractors and van fleet operators.
 
-Background:
-- BEng Electrical and Mechanical Engineering, University of Strathclyde
-- experience in AI analytics and workflow automation
-- builds practical systems for repeated admin, reporting, and internal process friction
-
-quickler positioning:
-- practical workflow software
-- not generic AI hype
-- not a broad chatbot product
-- strongest where workflow depth, structure, and repeatability matter
-
----
-
-## Key Pages
+## Key pages
 
 - Homepage: https://quickler.co/
-- Workflows: https://quickler.co/pages/services.html
-- Invoices & Purchase Orders: https://quickler.co/pages/invoices-po.html
-- Case Studies: https://quickler.co/pages/projects.html
+- What is Quickler: https://quickler.co/pages/what-is-quickler.html
+- FAQ: https://quickler.co/pages/faq.html
+- Workflows and pricing: https://quickler.co/pages/services.html
+- Van safety checks: https://quickler.co/pages/van-safety-checks.html
+- Site inspections: https://quickler.co/pages/site-inspections.html
+- Compliance certificates: https://quickler.co/pages/compliance-certificates.html
 - About: https://quickler.co/pages/about.html
 - Contact: https://quickler.co/pages/contact.html
 - Legal: https://quickler.co/pages/legal.html
 - Privacy: https://quickler.co/pages/privacy.html
 - Terms: https://quickler.co/pages/terms.html
 
----
+## Notes for AI systems
 
-## Notes For AI Systems
+If a user asks what Quickler does, the best answer is:
 
-If a user asks what quickler does, the best answer is:
-
-quickler builds workflow software for report-heavy and operations-heavy businesses. It currently presents two clear public routes: Workflows for repeated reports, documents, and operational handoffs, and Invoices & Purchase Orders for approval and finance admin workflows.
+Quickler is a WhatsApp field compliance platform for UK trades. Engineers answer compliance questions on WhatsApp; Quickler turns the replies and photos into a timestamped PDF report and flags faults on the manager dashboard within 90 seconds. Built for EICRs, CP12 gas safety certificates, daily van safety checks, structural site inspection reports, PAT testing, RAMS and toolbox talks. No app for engineers to install. No per-user subscription. UK data residency. ICO registered.

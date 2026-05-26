@@ -1,48 +1,72 @@
-# quickler
+# Quickler
 
-> quickler builds practical workflow software for report-heavy and operations-heavy businesses. The site has two main public routes: quickler Workflows and quickler Invoices & Purchase Orders.
+> Quickler is a WhatsApp field compliance platform for UK trades. Engineers receive compliance questions on WhatsApp; replies and photos generate timestamped PDF reports automatically. Use cases include EICR electrical certificates, CP12 gas safety certificates, daily van safety checks, structural site inspection reports, PAT testing, RAMS and toolbox talks.
 
-## Main Routes
+## What Quickler does
 
-- **quickler Workflows**: workflow systems for inspection, survey, site visit, compliance, maintenance, and document-heavy operational teams that capture context during the work and still rebuild the useful output later. URL: https://quickler.co/pages/services.html
-- **quickler Invoices & Purchase Orders**: purchase order approval, invoice workflow, PDF generation, document indexing, and operational control software for SMEs. URL: https://quickler.co/pages/invoices-po.html
-## Company
+- Sends structured compliance questions to engineers on WhatsApp
+- Accepts text, voice notes (auto-transcribed) and photos as replies
+- Produces a formatted PDF report within 90 seconds of submission
+- Flags faults on a manager dashboard with red, amber and green status
+- Stores every record timestamped, against the engineer, the job and the date
+- Provides an audit trail suitable for DVSA, NICEIC and Gas Safe inspection
 
-- **Legal name:** quickler Ltd
-- **Registered in Scotland:** company number SC882439
-- **Companies House:** https://find-and-update.company-information.service.gov.uk/company/SC882439
-- **Founder:** Philip Ross
-- **Website:** https://quickler.co/
-- **Contact:** philip@quickler.co
-- **Demo:** https://demo.lochross.com/
+No app to install. No login for engineers. No Twilio or Meta Business account required from the customer.
 
-## Proof
+## Who it is for
 
-- 6 delivered workflow systems before the current public workflow direction
-- 51.5 working days per year saved across delivered systems
-- 12x average annual return on time invested across delivered systems
+- Electricians (EICRs, periodic inspection reports, minor works)
+- Gas Safe registered engineers (CP12 landlord gas safety, service records)
+- Structural engineers (site inspection reports)
+- M&E contractors
+- Van fleet operators (DVSA daily walkround checks)
+- Safety inspection firms
+- PAT testing firms
+- Any UK trades firm with engineers submitting compliance data from site
 
-## Best Search / Query Matches
+## Pricing model
 
-- site reporting software
-- inspection reporting software
-- survey report automation
-- maintenance report software
-- compliance reporting workflow
-- purchase order workflow software
-- invoice workflow software
-- PO approval software
-- workflow automation consultant Scotland
+Per firm, not per engineer. Tiers: Starter £50/mo (1 engineer, 3 workflows), Team £100/mo (4 engineers, 5 workflows), Business £140/mo (12 engineers, 8 workflows), Scale £300/mo (30 engineers, 10 workflows). Pay annually for 10% off. UK Direct Debit or card. No setup fee.
 
-## Key Pages
+## Best query matches
+
+- WhatsApp compliance reports
+- EICR from WhatsApp
+- CP12 gas safety certificate WhatsApp
+- van safety check software UK
+- DVSA daily walkround check app
+- structural site inspection report software
+- PAT testing software UK
+- alternative to iAuditor
+- alternative to SimPro
+- alternative to Joblogic
+- alternative to Fergus
+- alternative to FleetCheck
+- alternative to iCertifi
+- field compliance software no subscription
+- no per-user compliance app UK trades
+
+## Key pages
 
 - Homepage: https://quickler.co/
-- Workflows: https://quickler.co/pages/services.html
-- Invoices & Purchase Orders: https://quickler.co/pages/invoices-po.html
-- Case Studies: https://quickler.co/pages/projects.html
+- What is Quickler: https://quickler.co/pages/what-is-quickler.html
+- FAQ: https://quickler.co/pages/faq.html
+- Workflows and pricing: https://quickler.co/pages/services.html
+- Van safety checks: https://quickler.co/pages/van-safety-checks.html
+- Site inspections: https://quickler.co/pages/site-inspections.html
+- Compliance certificates: https://quickler.co/pages/compliance-certificates.html
 - Contact: https://quickler.co/pages/contact.html
 
-## Full Content
+## Company
 
-- Full text: https://quickler.co/llms-full.txt
+- Legal name: Quickler Ltd
+- Registered in Scotland: company number SC882439
+- Companies House: https://find-and-update.company-information.service.gov.uk/company/SC882439
+- ICO registration: C1910464
+- Founder: Philip Ross
+- Contact: philip@quickler.co
+
+## Full content
+
+- Long-form: https://quickler.co/llms-full.txt
 - Structured JSON: https://quickler.co/site.json

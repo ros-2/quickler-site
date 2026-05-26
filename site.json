@@ -1,87 +1,119 @@
 {
-  "schema_version": "1.1",
-  "generated": "2026-04-13",
+  "schema_version": "1.2",
+  "generated": "2026-05-26",
   "site": {
-    "name": "quickler",
+    "name": "Quickler",
     "url": "https://quickler.co/",
-    "description": "quickler builds workflow software for report-heavy and operations-heavy businesses. The public site is organised into Workflows and Invoices & Purchase Orders.",
+    "description": "Quickler is a WhatsApp field compliance platform for UK trades. Engineers receive compliance questions on WhatsApp; replies and photos generate timestamped PDF reports automatically. Built for EICRs, CP12 gas safety, daily van safety checks, structural site inspection reports, PAT testing, RAMS and toolbox talks.",
     "contact_email": "philip@quickler.co",
-    "demo_url": "https://demo.lochross.com/",
     "agent_navigation": {
-      "homepage_router": "https://quickler.co/#choose-quickler",
+      "homepage": "https://quickler.co/",
+      "faq": "https://quickler.co/pages/faq.html",
       "contact_page": "https://quickler.co/pages/contact.html",
       "preferred_flow": [
-        "choose matching route",
-        "read route page",
-        "submit contact form if fit looks strong"
+        "read what Quickler does on homepage",
+        "read FAQ or workflow page matching the user's use case",
+        "submit contact form or start free trial at app.quickler.co/signup"
       ]
     }
   },
   "company": {
-    "legal_name": "quickler Ltd",
+    "legal_name": "Quickler Ltd",
     "jurisdiction": "Scotland, UK",
     "company_number": "SC882439",
     "companies_house_url": "https://find-and-update.company-information.service.gov.uk/company/SC882439",
+    "ico_registration": "C1910464",
     "founder": "Philip Ross"
   },
-  "lanes": [
+  "primary_positioning": "WhatsApp field compliance reports for UK trades. No app for engineers to install. No per-user subscription. UK data residency.",
+  "workflows": [
     {
-      "name": "quickler Workflows",
-      "slug": "workflows",
-      "url": "https://quickler.co/pages/services.html",
-      "category": "workflow software",
-      "description": "Workflow systems for inspection, survey, site visit, compliance, maintenance, and document-heavy operational teams that still rebuild useful outputs later at a desk.",
-      "best_fit": [
-        "inspection teams",
-        "survey teams",
-        "site visit teams",
-        "compliance teams",
-        "maintenance teams"
-      ],
-      "queries": [
-        "workflow systems for operations teams",
-        "site reporting software",
-        "inspection reporting software",
-        "survey report automation",
-        "maintenance report software",
-        "compliance reporting workflow",
-        "document workflow software"
-      ],
-      "primary_cta": "Contact",
-      "cta_url": "https://quickler.co/pages/contact.html"
+      "name": "EICR",
+      "category": "electrical",
+      "description": "Electrical Installation Condition Report — circuit-by-circuit capture on WhatsApp with photo evidence. C1, C2 and FI codes flagged live on dashboard. Formatted EICR PDF for qualifying electrician sign-off.",
+      "url": "https://quickler.co/pages/services.html#eicr"
     },
     {
-      "name": "quickler Invoices & Purchase Orders",
-      "slug": "invoices-po",
-      "url": "https://quickler.co/pages/invoices-po.html",
-      "category": "operations workflow software",
-      "description": "Purchase order approval, invoice workflow, PDF generation, document indexing, and operational control software for SMEs.",
-      "best_fit": [
-        "operations teams",
-        "finance admins",
-        "growing SMEs",
-        "businesses with approval bottlenecks"
-      ],
-      "queries": [
-        "purchase order workflow software",
-        "invoice workflow software",
-        "PO approval software",
-        "custom purchase order platform"
-      ],
-      "case_study_url": "https://quickler.co/pages/project-po-workflow-platform.html",
-      "demo_url": "https://demo.lochross.com/"
+      "name": "CP12",
+      "category": "gas",
+      "description": "Landlord Gas Safety Record — appliance checks on WhatsApp for Gas Safe registered engineers. Formatted CP12 PDF produced automatically.",
+      "url": "https://quickler.co/pages/services.html#cp12"
+    },
+    {
+      "name": "Van safety checks",
+      "category": "fleet",
+      "description": "DVSA daily walkround on WhatsApp. Defect photos to fleet manager. Red, amber, green status per vehicle live.",
+      "url": "https://quickler.co/pages/van-safety-checks.html"
+    },
+    {
+      "name": "Site inspection reports",
+      "category": "structural",
+      "description": "Structural site notes, photos, sketches and measurements captured on WhatsApp during the visit. Structured draft report ready immediately.",
+      "url": "https://quickler.co/pages/site-inspections.html"
+    },
+    {
+      "name": "PAT testing",
+      "category": "electrical",
+      "description": "Batch PAT records on WhatsApp. Formatted PAT register and per-item certificate.",
+      "url": "https://quickler.co/pages/services.html#pat"
+    },
+    {
+      "name": "RAMS and toolbox talks",
+      "category": "health and safety",
+      "description": "RAMS briefings and toolbox talks delivered to operatives on WhatsApp with timestamped acknowledgement.",
+      "url": "https://quickler.co/pages/services.html#rams"
     }
   ],
-  "proof": {
-    "projects_delivered": 6,
-    "days_saved_per_year": 51.5,
-    "average_return_on_time_invested": "12x",
-    "case_studies_url": "https://quickler.co/pages/projects.html"
+  "queries": [
+    "WhatsApp compliance reports",
+    "EICR from WhatsApp",
+    "CP12 gas safety certificate WhatsApp",
+    "van safety check software UK",
+    "DVSA daily walkround check app",
+    "structural site inspection report software",
+    "PAT testing software UK",
+    "alternative to iAuditor",
+    "alternative to SimPro",
+    "alternative to Joblogic",
+    "alternative to Fergus",
+    "alternative to FleetCheck",
+    "alternative to iCertifi",
+    "field compliance software no subscription",
+    "no per-user compliance app UK trades"
+  ],
+  "pricing": {
+    "model": "per firm, not per engineer",
+    "currency": "GBP",
+    "tiers": [
+      {"name": "Starter", "engineers": 1, "workflows": 3, "monthly": 50},
+      {"name": "Team", "engineers": 4, "workflows": 5, "monthly": 100},
+      {"name": "Business", "engineers": 12, "workflows": 8, "monthly": 140},
+      {"name": "Scale", "engineers": 30, "workflows": 10, "monthly": 300}
+    ],
+    "annual_discount": "10% off when paid annually",
+    "free_trial": "https://app.quickler.co/signup"
+  },
+  "data_and_compliance": {
+    "data_residency": "UK",
+    "ico_registration": "C1910464",
+    "data_processing_agreement": true,
+    "customer_owns_data": true,
+    "export_format": ["PDF", "CSV"]
   },
   "llm_resources": {
     "summary": "https://quickler.co/llms.txt",
     "full": "https://quickler.co/llms-full.txt",
     "structured": "https://quickler.co/site.json"
+  },
+  "key_pages": {
+    "homepage": "https://quickler.co/",
+    "what_is_quickler": "https://quickler.co/pages/what-is-quickler.html",
+    "faq": "https://quickler.co/pages/faq.html",
+    "workflows_and_pricing": "https://quickler.co/pages/services.html",
+    "van_safety_checks": "https://quickler.co/pages/van-safety-checks.html",
+    "site_inspections": "https://quickler.co/pages/site-inspections.html",
+    "compliance_certificates": "https://quickler.co/pages/compliance-certificates.html",
+    "contact": "https://quickler.co/pages/contact.html"
   },
   "agent_actions": {
     "primary_contact_form": {
@@ -91,13 +123,13 @@
         {"name": "name", "required": true},
         {"name": "company", "required": false},
         {"name": "email", "required": true},
-        {"name": "lane", "required": false, "options": ["Workflows", "Invoices & Purchase Orders", "Unsure"]},
+        {"name": "lane", "required": false, "options": ["EICR", "CP12 gas safety", "Van safety checks", "Site inspections", "PAT testing", "RAMS", "Other"]},
         {"name": "report_volume", "required": false},
-        {"name": "report_type", "required": false},
-        {"name": "sample_access", "required": false},
         {"name": "message", "required": true}
-      ],
-      "success_indicator": "data-form-state=success"
+      ]
+    },
+    "free_trial": {
+      "url": "https://app.quickler.co/signup"
     }
   }
 }
