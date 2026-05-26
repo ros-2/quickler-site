@@ -38,11 +38,11 @@ Quickler is strongest where the same compliance workflow runs many times per wee
 
 ### EICR — Electrical Installation Condition Report
 
-Quickler sends the EICR question set to the engineer on WhatsApp: circuit-by-circuit observations, RCD test results, photo evidence per board. Replies are structured into the standard EICR PDF format. Any C1, C2 or FI codes are flagged on the dashboard the moment they are entered. The qualifying electrician reviews and signs the final report.
+Quickler sends the EICR question set to the engineer on WhatsApp. The engineer replies with readings, observations and photos. Any C1, C2 or FI codes are flagged on the dashboard the moment they are entered. The qualifying electrician reviews the PDF and signs. Each firm's EICR question set is built from their existing template during onboarding.
 
 ### CP12 — Landlord Gas Safety Record
 
-The Gas Safe registered engineer receives the appliance check sequence on WhatsApp. They reply with readings, observations and a photo of each appliance plate. Quickler produces the formatted CP12 PDF. The Gas Safe engineer remains the accountable signatory.
+The Gas Safe registered engineer receives the appliance check sequence on WhatsApp and replies with readings, observations and photos. Quickler produces the formatted CP12 PDF. The Gas Safe engineer remains the accountable signatory. Each firm's CP12 question set is built from their existing template during onboarding.
 
 ### Van safety checks — DVSA daily walkround
 
