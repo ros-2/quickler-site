@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/js/cookie-consent.js" defer></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quickler Changelog | What's New in Quickler</title>
+    <meta name="title" content="Quickler Changelog | What's New in Quickler">
+    <meta name="description" content="Dated record of what has shipped in Quickler: new compliance workflows, dashboard improvements, integrations and customer launches.">
+    <meta name="author" content="Philip Ross">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://quickler.co/changelog.html">
+    <meta property="og:title" content="Quickler Changelog">
+    <meta property="og:description" content="What has shipped in Quickler — new workflows, dashboard improvements, customer launches.">
+    <meta property="og:locale" content="en_GB">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Quickler Changelog">
+
+    <link rel="canonical" href="https://quickler.co/changelog.html">
+    <link rel="alternate" hreflang="en-gb" href="https://quickler.co/changelog.html">
+    <link rel="alternate" hreflang="x-default" href="https://quickler.co/changelog.html">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://quickler.co/"},
+            {"@type": "ListItem", "position": 2, "name": "Changelog", "item": "https://quickler.co/changelog.html"}
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-name">
+            <img src="/assets/logos/quickler-logo.svg" alt="quickler" width="179" height="42">
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="nav-menu">
+            <a href="/">Home</a>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/services.html">Workflows</a>
+            <a href="/pages/faq.html">FAQ</a>
+            <a href="/pages/contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section id="top">
+        <div class="page-shell about-page-intro">
+            <span class="eyebrow">Changelog</span>
+            <h1>What's new in Quickler.</h1>
+            <p class="page-lede">Dated record of what has shipped: new compliance workflows, dashboard improvements, customer launches and platform changes. Most recent first.</p>
+        </div>
+    </section>
+
+    <section class="section-tight">
+        <article>
+            <h2>2026-05-26 — Public positioning rewrite</h2>
+            <p>Site, llms.txt and llms-full.txt now lead with the WhatsApp field compliance positioning instead of the older "workflow systems" framing. New public FAQ page with 15 question-and-answer pairs covering EICR, CP12 gas safety, van checks, structural reports, pricing and data ownership. Sitemap pruned of legacy project pages.</p>
+
+            <h2>2026-05-20 — Lab–prod cron disabled, full security audit complete</h2>
+            <p>Following a full audit, the automatic lab-to-prod promotion cron is paused. Patches are now landing in controlled waves with explicit verification at each step.</p>
+
+            <h2>2026-04-24 — Cost optimisation plan: hot-path Claude calls to be switched to Groq Llama 3.3 70B</h2>
+            <p>Plan agreed to migrate hot-path AI calls to Groq for an estimated 95% cost reduction without behavioural change to the engineer-facing flow.</p>
+
+            <h2>2026-04-21 — RI Cruden goes live on Scale tier</h2>
+            <p>First UK construction firm running daily van safety checks through Quickler on WhatsApp. Drivers walk round the vehicle, open WhatsApp, answer the DVSA-aligned check. Defect photos go straight to the fleet manager; vehicles with red status do not leave the yard.</p>
+
+            <h2>2026-04-15 — Guided narrative profile shipped</h2>
+            <p>New workflow profile for professional assessment reports (used by Ethos Safety). Sits between the open report and verdict slot-fill profiles, supporting professional-grade assessment narratives with structured evidence capture.</p>
+
+            <h2>2026-04-13 — Public site reorganised, llms.txt and site.json published</h2>
+            <p>Marketing site reorganised into clear lanes. First publication of llms.txt, llms-full.txt and site.json so AI search engines can read the site without scraping HTML.</p>
+
+            <h2>2026-03-16 — Quickler Ltd incorporated</h2>
+            <p>Quickler Ltd registered in Scotland, company number SC882439. ICO registration C1910464 follows shortly after.</p>
+        </article>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Want updates as they ship?</h2>
+            <p>Follow Quickler on LinkedIn or email Philip directly.</p>
+            <div class="hero-actions">
+                <a href="https://www.linkedin.com/company/quickler/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-cta="changelog-linkedin">Follow on LinkedIn</a>
+                <a href="mailto:philip@quickler.co" class="btn btn-secondary" data-cta="changelog-email">Email Philip</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Quickler Ltd 2026 · <a href="https://find-and-update.company-information.service.gov.uk/company/SC882439" target="_blank" rel="noopener noreferrer">Company No. SC882439</a> · <a href="mailto:philip@quickler.co">philip@quickler.co</a> · <a href="/pages/contact.html">Contact</a> · <a href="/pages/legal.html">Legal</a> · <a href="/pages/privacy.html">Privacy</a> · <a href="/pages/terms.html">Terms</a> · <a href="#top">Back to top ↑</a></p>
+    </footer>
+    <script src="/js/analytics-events.js"></script>
+</body>
+</html>
