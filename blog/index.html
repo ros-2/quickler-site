@@ -10,33 +10,32 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Quickler Changelog | What's New in Quickler</title>
-    <meta name="title" content="Quickler Changelog | What's New in Quickler">
-    <meta name="description" content="Dated record of what has shipped in Quickler: new compliance workflows, dashboard improvements, integrations and customer launches.">
+    <title>Quickler Blog | Field Notes on UK Compliance Workflows</title>
+    <meta name="title" content="Quickler Blog | Field Notes on UK Compliance Workflows">
+    <meta name="description" content="Field notes from building Quickler — case studies of UK trades firms running compliance workflows over WhatsApp, lessons from rolling out EICR, gas safety, van check and structural report flows.">
     <meta name="author" content="Philip Ross">
     <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://quickler.co/changelog.html">
-    <meta property="og:title" content="Quickler Changelog">
-    <meta property="og:description" content="What has shipped in Quickler — new workflows, dashboard improvements, customer launches.">
+    <meta property="og:url" content="https://quickler.co/blog/">
+    <meta property="og:title" content="Quickler Blog">
+    <meta property="og:description" content="Field notes from building Quickler — case studies of UK trades firms running compliance workflows over WhatsApp.">
     <meta property="og:locale" content="en_GB">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Quickler Changelog">
+    <meta name="twitter:title" content="Quickler Blog">
 
-    <link rel="canonical" href="https://quickler.co/changelog.html">
-    <link rel="alternate" hreflang="en-gb" href="https://quickler.co/changelog.html">
-    <link rel="alternate" hreflang="x-default" href="https://quickler.co/changelog.html">
+    <link rel="canonical" href="https://quickler.co/blog/">
+    <link rel="alternate" hreflang="en-gb" href="https://quickler.co/blog/">
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://quickler.co/"},
-            {"@type": "ListItem", "position": 2, "name": "Changelog", "item": "https://quickler.co/changelog.html"}
-        ]
+        "@type": "Blog",
+        "name": "Quickler Blog",
+        "url": "https://quickler.co/blog/",
+        "publisher": {"@type": "Organization", "name": "Quickler Ltd", "url": "https://quickler.co/"},
+        "inLanguage": "en-GB"
     }
     </script>
 
@@ -45,6 +44,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="/css/styles.css">
+
+    <style>
+        .post-list { max-width: 760px; margin: 0 auto; }
+        .post-card { padding: 1.4rem 0; border-bottom: 1px solid rgba(15, 23, 42, 0.08); }
+        .post-card:last-child { border-bottom: none; }
+        .post-meta { color: #67789e; font-size: 0.88rem; }
+        .post-card h2 { margin: 0.4rem 0 0.6rem; font-size: 1.4rem; }
+        .post-card h2 a { color: #0d1a3a; text-decoration: none; }
+        .post-card h2 a:hover { text-decoration: underline; }
+        .post-card p { margin: 0.4rem 0 0; }
+    </style>
 </head>
 <body>
     <nav aria-label="Primary">
@@ -70,44 +80,34 @@
 
     <section id="top">
         <div class="page-shell about-page-intro">
-            <span class="eyebrow">Changelog</span>
-            <h1>What's new in Quickler.</h1>
-            <p class="page-lede">Dated record of what has shipped: new compliance workflows, dashboard improvements, customer launches and platform changes. Most recent first.</p>
+            <span class="eyebrow">Blog</span>
+            <h1>Field notes on UK compliance workflows.</h1>
+            <p class="page-lede">Case studies, lessons from rollouts, observations on what actually changes when a UK trades firm puts its compliance reporting on WhatsApp instead of paper or a separate app. Updated as new things ship.</p>
         </div>
     </section>
 
     <section class="section-tight">
-        <article>
-            <h2>2026-05-26 — Public positioning rewrite</h2>
-            <p>Site, llms.txt and llms-full.txt now lead with the WhatsApp field compliance positioning instead of the older "workflow systems" framing. New public FAQ page with 15 question-and-answer pairs covering EICR, CP12 gas safety, van checks, structural reports, pricing and data ownership. Sitemap pruned of legacy project pages.</p>
-
-            <h2>2026-05-20 — Lab–prod cron disabled, full security audit complete</h2>
-            <p>Following a full audit, the automatic lab-to-prod promotion cron is paused. Patches are now landing in controlled waves with explicit verification at each step.</p>
-
-            <h2>2026-04-24 — Cost optimisation plan: hot-path Claude calls to be switched to Groq Llama 3.3 70B</h2>
-            <p>Plan agreed to migrate hot-path AI calls to Groq for an estimated 95% cost reduction without behavioural change to the engineer-facing flow.</p>
-
-            <h2>2026-04-21 — RI Cruden goes live on Scale tier</h2>
-            <p>First UK construction firm running daily van safety checks through Quickler on WhatsApp. Drivers walk round the vehicle, open WhatsApp, answer the DVSA-aligned check. Defect photos go straight to the fleet manager; vehicles with red status do not leave the yard.</p>
-
-            <h2>2026-04-15 — Guided narrative profile shipped</h2>
-            <p>New workflow profile for professional assessment reports (used by Ethos Safety). Sits between the open report and verdict slot-fill profiles, supporting professional-grade assessment narratives with structured evidence capture.</p>
-
-            <h2>2026-04-13 — Public site reorganised, llms.txt and site.json published</h2>
-            <p>Marketing site reorganised into clear lanes. First publication of llms.txt, llms-full.txt and site.json so AI search engines can read the site without scraping HTML.</p>
-
-            <h2>2026-03-16 — Quickler Ltd incorporated</h2>
-            <p>Quickler Ltd registered in Scotland, company number SC882439. ICO registration C1910464 follows shortly after.</p>
-        </article>
+        <div class="post-list">
+            <article class="post-card">
+                <p class="post-meta">Case study · 2026-05-26 · Van fleet compliance</p>
+                <h2><a href="/blog/ri-cruden-van-safety-checks.html">RI Cruden: daily van safety checks over WhatsApp from day one</a></h2>
+                <p>RI Cruden was the first construction firm to run daily van safety checks over Quickler. Every driver, every shift, in the WhatsApp chat already open on their phone. Three weeks in, here is what changed: who caught what, what the dashboard looked like, what the drivers said when the app idea was floated.</p>
+            </article>
+            <article class="post-card">
+                <p class="post-meta">Case study · 2026-05-26 · Structural assessment</p>
+                <h2><a href="/blog/ethos-safety-guided-narrative.html">Ethos Safety: the guided-narrative workflow for professional assessment reports</a></h2>
+                <p>Ethos Safety's site visits used to end with a long evening of report writing back at the office. The guided-narrative profile, built specifically for their professional assessment work, moves the heavy lifting onto site. The accountable engineer still signs every report — they just stop rewriting it from scratch.</p>
+            </article>
+        </div>
     </section>
 
     <section class="cta-section">
         <div class="cta-content">
-            <h2>Want updates as they ship?</h2>
-            <p>Follow Quickler on LinkedIn or email Philip directly.</p>
+            <h2>Want updates when a new post lands?</h2>
+            <p>Follow Quickler on LinkedIn — posts are announced there first.</p>
             <div class="hero-actions">
-                <a href="https://www.linkedin.com/company/quickler/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-cta="changelog-linkedin">Follow on LinkedIn</a>
-                <a href="mailto:philip@quickler.co" class="btn btn-secondary" data-cta="changelog-email">Email Philip</a>
+                <a href="https://www.linkedin.com/company/quickler/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Follow on LinkedIn</a>
+                <a href="mailto:philip@quickler.co" class="btn btn-secondary">Email Philip</a>
             </div>
         </div>
     </section>
