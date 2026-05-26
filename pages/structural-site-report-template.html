@@ -56,10 +56,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Does the report meet IStructE expectations?",
+          "name": "Who signs the final report?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The template structure follows the order IStructE members already use in site-visit reports \u2014 header, building description, elevations, internal, defects, conclusions, recommendations. The signed report is the engineer's professional output, exactly as today."
+            "text": "The accountable engineer, exactly as today. Quickler captures the data and produces the draft; the signature is the professional engineer's."
           }
         },
         {
@@ -67,7 +67,7 @@
           "name": "Can the firm customise the template?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Each firm's first onboarding step is to translate their existing site-visit report format into a Quickler workflow. Templates can vary per inspection type \u2014 full structural survey, defect-only inspection, party wall, monitoring visit."
+            "text": "Yes. Each firm's first onboarding step is to translate their existing site-visit report format into a Quickler workflow. Different inspection types can each have their own workflow."
           }
         },
         {
@@ -83,7 +83,7 @@
           "name": "What about CAD files or IFC models?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "v0.1 of the format does not yet handle CAD/IFC attachments inline \u2014 they are stored as job attachments. CAD/IFC handling is on the v0.2 roadmap for the open format spec at github.com/ros-2/compliance-workflow-spec."
+            "text": "CAD and IFC files are stored as job attachments rather than parsed inline. Direct parsing of those formats is not currently supported; speak to us if your workflow needs it."
           }
         },
         {
@@ -91,7 +91,7 @@
           "name": "Does this work for party wall inspections?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The party wall inspection is one of the workflow variants. The template captures the location, the works being assessed, the existing condition of each elevation, and the recommended schedule of condition."
+            "text": "Yes. The party wall workflow captures the location, the works being assessed, the existing condition of each elevation, and the recommended schedule of condition."
           }
         }
       ]
@@ -165,32 +165,33 @@
     <section class="section-tight">
         <div class="long-form-body">
             <h2>The problem the template solves</h2>
-            <p>A site visit produces dozens of photos, half a notebook of sketches, a recorded voice memo, and a head full of professional judgement. The engineer drives back, opens the office laptop, and rebuilds the inspection from this raw material into a formatted IStructE-style report. Most engineers count this as the slowest part of their working week.</p>
-         <p>The Quickler structural template captures the inspection in the same order the engineer walks the building. Photos, voice notes and measurements go into the right sections of the draft report as the engineer captures them. By the time they are back at the desk, the structured draft is ready to review and sign.</p>
+            <p>A site visit produces a lot of photos, a notebook of sketches, voice memos, and a head full of professional judgement. The engineer drives back, opens the office laptop, and rebuilds the inspection from this raw material into a formatted report. The desk write-up is often the slowest part of the job.</p>
+            <p>The Quickler structural template captures the inspection in the order the engineer walks the building. Photos, voice notes and measurements go into the right sections of the draft report as the engineer captures them. By the time they are back at the desk the structured draft is ready to review and sign.</p>
         </div>
     </section>
 
     <section class="section-tight">
         <div class="long-form-body">
             <h2>Template structure</h2>
+            <p>Each firm's template is built from their existing report format during onboarding. A typical structure covers:</p>
             <ol>
-            <li><strong>Project header.</strong> Client, address, date of visit, weather, instructing party, scope of inspection.</li>
-            <li><strong>Building description.</strong> Form of construction, age (estimated or known), occupancy, any prior reports referenced. Engineer captures by voice note; Quickler transcribes.</li>
-            <li><strong>Elevation walk.</strong> One subsection per elevation. Each carries: overall photo, defect photos with annotation, measurement readings (lean, deflection, crack width), engineer commentary.</li>
-            <li><strong>Internal walk.</strong> Room by room or zone by zone, captured in the same pattern.</li>
-            <li><strong>Specific defects.</strong> Each defect gets: location, photograph, measurement (if applicable), severity classification (cosmetic / monitoring / progressive / urgent), recommended action.</li>
-            <li><strong>Conclusions.</strong> Engineer's professional opinion captured as voice note, transcribed automatically.</li>
-            <li><strong>Recommended next actions.</strong> Captured as a structured list rather than free prose so the client can act on them.</li>
-            <li><strong>Sign-off.</strong> The accountable engineer reviews the draft in the dashboard, edits in place, and signs.</li>
-         </ol>
+                <li><strong>Project header.</strong> Client, address, date of visit, weather, instructing party, scope of inspection.</li>
+                <li><strong>Building description.</strong> Form of construction, age, occupancy, any prior reports referenced. Engineer captures by voice note; Quickler transcribes.</li>
+                <li><strong>Elevation walk.</strong> One subsection per elevation, with overall photo, defect photos, measurement readings, engineer commentary.</li>
+                <li><strong>Internal walk.</strong> Room by room or zone by zone, captured in the same pattern.</li>
+                <li><strong>Specific defects.</strong> Each defect gets location, photograph, measurement where applicable, severity classification using the firm's own scheme, recommended action.</li>
+                <li><strong>Conclusions.</strong> Engineer's professional opinion captured as voice note, transcribed automatically.</li>
+                <li><strong>Recommended next actions.</strong> Captured as a structured list rather than free prose so the client can act on them.</li>
+                <li><strong>Sign-off.</strong> The accountable engineer reviews the draft and signs.</li>
+            </ol>
         </div>
     </section>
 
     <section class="section-tight">
         <div class="long-form-body">
             <h2>What the engineer sees on site</h2>
-            <p>The engineer sees WhatsApp. Each section is prompted by a message. Photos taken in the phone camera are dropped into the chat in reply. Sketches are photographed. Voice notes are spoken straight into the chat — the transcription appears in the draft report before the engineer reaches the next elevation.</p>
-         <p>There is no app to open, no form to fill, no separate camera roll to pick from later. The phone the engineer already has becomes the inspection tool.</p>
+            <p>The engineer sees WhatsApp. Each section is prompted by a message. Photos taken in the phone camera are dropped into the chat in reply. Sketches are photographed. Voice notes are spoken straight into the chat and transcribed automatically.</p>
+            <p>There is no app to open, no form to fill, no separate camera roll to pick from later. The phone the engineer already has becomes the inspection tool.</p>
         </div>
     </section>
 
@@ -204,16 +205,16 @@
     <section class="section-tight">
         <div class="long-form-body">
             <h2>Frequently asked questions</h2>
-            <h3>Does the report meet IStructE expectations?</h3>
-            <p>The template structure follows the order IStructE members already use in site-visit reports — header, building description, elevations, internal, defects, conclusions, recommendations. The signed report is the engineer's professional output, exactly as today.</p>
+            <h3>Who signs the final report?</h3>
+            <p>The accountable engineer, exactly as today. Quickler captures the data and produces the draft; the signature is the professional engineer's.</p>
             <h3>Can the firm customise the template?</h3>
-            <p>Yes. Each firm's first onboarding step is to translate their existing site-visit report format into a Quickler workflow. Templates can vary per inspection type — full structural survey, defect-only inspection, party wall, monitoring visit.</p>
+            <p>Yes. Each firm's first onboarding step is to translate their existing site-visit report format into a Quickler workflow. Different inspection types (full structural survey, defect-only inspection, party wall, monitoring visit) can each have their own workflow.</p>
             <h3>How are measurements captured?</h3>
             <p>Numeric measurements (crack width, lean, deflection, dimension) are captured as typed responses. Photographic evidence of the measurement is captured alongside. Drawings and sketches are photographed and attached to the relevant defect.</p>
             <h3>What about CAD files or IFC models?</h3>
-            <p>v0.1 of the format does not yet handle CAD/IFC attachments inline — they are stored as job attachments. CAD/IFC handling is on the v0.2 roadmap for the open format spec at github.com/ros-2/compliance-workflow-spec.</p>
+            <p>CAD and IFC files are stored as job attachments rather than parsed inline. Direct parsing of those formats is not currently supported; speak to us if your workflow needs it.</p>
             <h3>Does this work for party wall inspections?</h3>
-            <p>Yes. The party wall inspection is one of the workflow variants. The template captures the location, the works being assessed, the existing condition of each elevation, and the recommended schedule of condition.</p>
+            <p>Yes. The party wall workflow captures the location, the works being assessed, the existing condition of each elevation, and the recommended schedule of condition.</p>
         </div>
     </section>
 

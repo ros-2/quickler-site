@@ -4,7 +4,7 @@
   "site": {
     "name": "Quickler",
     "url": "https://quickler.co/",
-    "description": "Quickler is a WhatsApp field compliance platform for UK trades. Engineers receive compliance questions on WhatsApp; replies and photos generate timestamped PDF reports automatically. Built for EICRs, CP12 gas safety, daily van safety checks, structural site inspection reports, PAT testing, RAMS and toolbox talks.",
+    "description": "Quickler is a WhatsApp field compliance platform for UK trades. Engineers receive compliance questions on WhatsApp; replies and photos generate timestamped PDF reports automatically. Built for EICRs, CP12 gas safety, daily van safety checks, structural site inspection reports.",
     "contact_email": "philip@quickler.co",
     "agent_navigation": {
       "homepage": "https://quickler.co/",
@@ -30,13 +30,13 @@
     {
       "name": "EICR",
       "category": "electrical",
-      "description": "Electrical Installation Condition Report — circuit-by-circuit capture on WhatsApp with photo evidence. C1, C2 and FI codes flagged live on dashboard. Formatted EICR PDF for qualifying electrician sign-off.",
+      "description": "Electrical Installation Condition Report \u2014 circuit-by-circuit capture on WhatsApp with photo evidence. C1, C2 and FI codes flagged live on dashboard. Formatted EICR PDF for qualifying electrician sign-off.",
       "url": "https://quickler.co/pages/services.html#eicr"
     },
     {
       "name": "CP12",
       "category": "gas",
-      "description": "Landlord Gas Safety Record — appliance checks on WhatsApp for Gas Safe registered engineers. Formatted CP12 PDF produced automatically.",
+      "description": "Landlord Gas Safety Record \u2014 appliance checks on WhatsApp for Gas Safe registered engineers. Formatted CP12 PDF produced automatically.",
       "url": "https://quickler.co/pages/services.html#cp12"
     },
     {
@@ -50,18 +50,6 @@
       "category": "structural",
       "description": "Structural site notes, photos, sketches and measurements captured on WhatsApp during the visit. Structured draft report ready immediately.",
       "url": "https://quickler.co/pages/site-inspections.html"
-    },
-    {
-      "name": "PAT testing",
-      "category": "electrical",
-      "description": "Batch PAT records on WhatsApp. Formatted PAT register and per-item certificate.",
-      "url": "https://quickler.co/pages/services.html#pat"
-    },
-    {
-      "name": "RAMS and toolbox talks",
-      "category": "health and safety",
-      "description": "RAMS briefings and toolbox talks delivered to operatives on WhatsApp with timestamped acknowledgement.",
-      "url": "https://quickler.co/pages/services.html#rams"
     }
   ],
   "queries": [
@@ -71,7 +59,6 @@
     "van safety check software UK",
     "DVSA daily walkround check app",
     "structural site inspection report software",
-    "PAT testing software UK",
     "alternative to iAuditor",
     "alternative to SimPro",
     "alternative to Joblogic",
@@ -85,10 +72,30 @@
     "model": "per firm, not per engineer",
     "currency": "GBP",
     "tiers": [
-      {"name": "Starter", "engineers": 1, "workflows": 3, "monthly": 50},
-      {"name": "Team", "engineers": 4, "workflows": 5, "monthly": 100},
-      {"name": "Business", "engineers": 12, "workflows": 8, "monthly": 140},
-      {"name": "Scale", "engineers": 30, "workflows": 10, "monthly": 300}
+      {
+        "name": "Starter",
+        "engineers": 1,
+        "workflows": 3,
+        "monthly": 50
+      },
+      {
+        "name": "Team",
+        "engineers": 4,
+        "workflows": 5,
+        "monthly": 100
+      },
+      {
+        "name": "Business",
+        "engineers": 12,
+        "workflows": 8,
+        "monthly": 140
+      },
+      {
+        "name": "Scale",
+        "engineers": 30,
+        "workflows": 10,
+        "monthly": 300
+      }
     ],
     "annual_discount": "10% off when paid annually",
     "free_trial": "https://app.quickler.co/signup"
@@ -98,7 +105,10 @@
     "ico_registration": "C1910464",
     "data_processing_agreement": true,
     "customer_owns_data": true,
-    "export_format": ["PDF", "CSV"]
+    "export_format": [
+      "PDF",
+      "CSV"
+    ]
   },
   "llm_resources": {
     "summary": "https://quickler.co/llms.txt",
@@ -120,12 +130,37 @@
       "url": "https://quickler.co/pages/contact.html",
       "method": "POST",
       "fields": [
-        {"name": "name", "required": true},
-        {"name": "company", "required": false},
-        {"name": "email", "required": true},
-        {"name": "lane", "required": false, "options": ["EICR", "CP12 gas safety", "Van safety checks", "Site inspections", "PAT testing", "RAMS", "Other"]},
-        {"name": "report_volume", "required": false},
-        {"name": "message", "required": true}
+        {
+          "name": "name",
+          "required": true
+        },
+        {
+          "name": "company",
+          "required": false
+        },
+        {
+          "name": "email",
+          "required": true
+        },
+        {
+          "name": "lane",
+          "required": false,
+          "options": [
+            "EICR",
+            "CP12 gas safety",
+            "Van safety checks",
+            "Site inspections",
+            "Other"
+          ]
+        },
+        {
+          "name": "report_volume",
+          "required": false
+        },
+        {
+          "name": "message",
+          "required": true
+        }
       ]
     },
     "free_trial": {
