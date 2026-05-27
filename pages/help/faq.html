@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/js/cookie-consent.js" defer></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Help: FAQ | Quickler</title>
+    <meta name="description" content="Frequently asked questions about Quickler: WhatsApp compliance reports, EICRs, CP12s, van checks, pricing, data and trials.">
+    <meta name="author" content="Philip Ross">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://quickler.co/pages/help/faq.html">
+    <meta property="og:title" content="Help: FAQ | Quickler">
+    <meta property="og:description" content="Frequently asked questions about Quickler: WhatsApp compliance reports, EICRs, CP12s, van checks, pricing, data and trials.">
+    <meta property="og:locale" content="en_GB">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Help: FAQ">
+    <meta name="twitter:description" content="Frequently asked questions about Quickler: WhatsApp compliance reports, EICRs, CP12s, van checks, pricing, data and trials.">
+
+    <link rel="canonical" href="https://quickler.co/pages/help/faq.html">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I generate an EICR certificate from WhatsApp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Quickler sends the EICR question set to your engineer on WhatsApp. They reply with readings, observations and photos against each circuit. Quickler structures the responses, flags any C1, C2 or FI codes on the manager dashboard, and emails a formatted EICR PDF to the office automatically. The qualifying electrician still signs off the document, but the data capture and write-up is handled automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Quickler work for Gas Safe registered engineers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. CP12 landlord gas safety records run as Quickler workflows. The engineer answers each appliance check on WhatsApp; Quickler produces the formatted CP12 PDF, timestamps it, and stores the record. The Gas Safe registered engineer remains the accountable signatory."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Quickler compare to iAuditor, SimPro, Joblogic or Fergus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quickler is narrower and lighter than full field service management platforms like SimPro, Joblogic or Fergus. It does not handle scheduling, invoicing or full job management. It does one job well: turning a WhatsApp conversation into a formatted compliance report with no app install. Compared to iAuditor, Quickler removes the separate app and uses the engineer's existing WhatsApp instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Quickler need a Twilio account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Quickler handles the WhatsApp Business API integration on the customer's behalf. Customers do not need a Twilio account, a Meta Business account or any messaging infrastructure of their own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the engineer see on WhatsApp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The engineer receives a normal WhatsApp message from the Quickler number, prompting them to answer the next question in the workflow. They reply by text, voice note or photo. There is no menu, no form, no app, just a chat conversation. Voice notes are transcribed automatically so engineers do not need to type long answers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my engineer need to install an app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. They need WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my engineer need a Quickler account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Quickler is admin-facing. Engineers just use WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my engineer loses signal mid-workflow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WhatsApp buffers the message and delivers it when signal returns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can multiple engineers run the same workflow at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Each run is independent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I retrigger a cancelled workflow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Send it to the same engineer again from the dashboard. Previous partial answers aren't re-used."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Quickler for daily van safety checks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Van safety checks are one of the core Quickler workflows. Each driver receives the DVSA-aligned check on WhatsApp at the start of their shift, replies with photos of any defects, and the fleet manager sees red, amber and green status per vehicle on the dashboard in real time. Faults trigger an immediate notification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Quickler for structural site inspection reports?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Structural engineers use Quickler to capture site inspection notes, photos and measurements on WhatsApp during the visit. The structured draft report is ready by the time the engineer is back in the office, so the desk write-up shrinks from hours to minutes. The accountable engineer reviews and signs off the final report."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the data DVSA, NICEIC or Gas Safe audit-ready?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every response is timestamped and stored against the engineer, the job and the date. Photos are attached to the originating question. The PDF report carries the full question-and-answer trail so that any auditor \u2014 DVSA for van checks, NICEIC for EICRs, Gas Safe for CP12s \u2014 can see the evidence chain from message to signed record."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I customise the report layout?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reports use a standard Quickler layout with your firm name. Custom layouts are on the roadmap \u2014 email us if you need one sooner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Quickler cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quickler is priced per firm, not per engineer. Tiers start at \u00a350 per month for sole traders, \u00a3100 per month for small teams, \u00a3140 per month for growing firms and \u00a3300 per month for established firms running multiple workflows. Billed monthly by UK Direct Debit. See the pricing page for full tier details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free trial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Sign up at app.quickler.co/signup. The trial covers one live workflow so a real engineer can run a real check and a real report comes out the other end. Setup from sign-up to first live workflow typically takes under a week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you integrate with other systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Records can be exported as PDF or CSV at any time. Direct integrations with job-management tools are added on request for paying customers and are on the roadmap."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are records stored and for how long?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Records are stored on EU servers, retained in line with UK data protection law and the customer's own retention policy. Customers can export or delete records on request. Photos and PDFs are linked to the engineer, job and date, and accessible from the Quickler dashboard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I export records to my CRM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Records can be exported on request as PDF or CSV. Direct CRM integrations are discussed case-by-case."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Quickler GDPR compliant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quickler is registered with the Information Commissioner's Office (ICO registration C1910464). Data is stored on EU servers, processed under a Data Processing Agreement with each customer, and retained according to the customer's own retention rules. Engineers and end users have the right to access, export or delete their data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns the data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The customer owns the data. Quickler is the processor; the customer is the controller. On cancellation the customer can export every record and Quickler will delete its copy. There is no lock-in on the data itself."
+      }
+    }
+  ]
+}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+      .help-shell { max-width: 1000px; margin: 0 auto; padding: 40px 28px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; }
+      .help-nav { position: sticky; top: 32px; align-self: start; }
+      .help-nav h3 { margin: 0 0 14px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; }
+      .help-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }
+      .help-nav a { display: block; padding: 7px 12px; border-radius: 6px; color: #334155; text-decoration: none; font-size: 0.92rem; }
+      .help-nav a:hover { background: rgba(15,23,42,0.05); color: #0d1a3a; }
+      .help-nav a.current { background: rgba(47,107,255,0.1); color: #2f6bff; font-weight: 600; }
+      .help-body h1 { margin: 0 0 10px; font-size: 1.8rem; }
+      .help-body h2 { margin-top: 32px; font-size: 1.2rem; color: #0d1a3a; }
+      .help-body h3 { margin-top: 22px; font-size: 1rem; color: #0d1a3a; }
+      .help-body p, .help-body li { line-height: 1.65; color: #334155; }
+      .help-body code { background: rgba(15,23,42,0.06); padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }
+      .help-body ol, .help-body ul { padding-left: 22px; }
+      .help-body .callout { background: rgba(59,130,246,0.06); border-left: 3px solid #3b82f6; padding: 14px 18px; border-radius: 4px; margin: 18px 0; }
+      @media (max-width: 720px) {
+        .help-shell { grid-template-columns: 1fr; gap: 20px; padding: 24px 18px; }
+        .help-nav { position: static; }
+      }
+    </style>
+</head>
+<body>
+    <nav aria-label="Primary">
+        <a href="/" class="nav-name">
+            <img src="/assets/logos/quickler-logo.svg" alt="quickler" width="179" height="42">
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" onclick="document.querySelector('nav').classList.toggle('nav-open')">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="nav-menu">
+            <a href="/">Home</a>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/services.html">Workflows</a>
+            <a href="/pages/faq.html">FAQ</a>
+            <a href="/pages/alternatives.html">Alternatives</a>
+            <a href="/pages/contact.html">Contact</a>
+            <a href="https://app.quickler.co/login">Login</a>
+        </div>
+    </nav>
+
+    <section id="top">
+      <div class="help-shell">
+        <aside class="help-nav">
+          <h3>Help centre</h3>
+          <ul>
+            <li><a href="/pages/help/index.html">Home</a></li>
+            <li><a href="/pages/help/getting-started.html">Getting started</a></li>
+            <li><a href="/pages/help/workflows.html">Workflows</a></li>
+            <li><a href="/pages/help/engineers.html">Engineers</a></li>
+            <li><a href="/pages/help/team.html">Team management</a></li>
+            <li><a href="/pages/help/plans.html">Plans &amp; billing</a></li>
+            <li><a href="/pages/help/privacy.html">Data &amp; privacy</a></li>
+            <li><a href="/pages/help/troubleshooting.html">Troubleshooting</a></li>
+            <li><a href="/pages/help/faq.html" class="current">FAQ</a></li>
+            <li><a href="/pages/help/contact.html">Contact</a></li>
+          </ul>
+        </aside>
+        <article class="help-body">
+          <h1>FAQ</h1>
+          <p>The most common questions about generating EICRs, gas safety certificates, van safety checks and site inspection reports from WhatsApp. If your question is not here, email <a href="mailto:philip@quickler.co">philip@quickler.co</a>.</p>
+          <h2>What Quickler is</h2>
+          <h3>Can I generate an EICR certificate from WhatsApp?</h3>
+          <p>Yes. Quickler sends the EICR question set to your engineer on WhatsApp. They reply with readings, observations and photos against each circuit. Quickler structures the responses, flags any C1, C2 or FI codes on the manager dashboard, and emails a formatted EICR PDF to the office automatically. The qualifying electrician still signs off the document, but the data capture and write-up is handled automatically.</p>
+          <h3>Does Quickler work for Gas Safe registered engineers?</h3>
+          <p>Yes. CP12 landlord gas safety records run as Quickler workflows. The engineer answers each appliance check on WhatsApp; Quickler produces the formatted CP12 PDF, timestamps it, and stores the record. The Gas Safe registered engineer remains the accountable signatory.</p>
+          <h3>How does Quickler compare to iAuditor, SimPro, Joblogic or Fergus?</h3>
+          <p>Quickler is narrower and lighter than full field service management platforms like SimPro, Joblogic or Fergus. It does not handle scheduling, invoicing or full job management. It does one job well: turning a WhatsApp conversation into a formatted compliance report with no app install. Compared to iAuditor, Quickler removes the separate app and uses the engineer's existing WhatsApp instead.</p>
+          <h2>How it works</h2>
+          <h3>Does Quickler need a Twilio account?</h3>
+          <p>No. Quickler handles the WhatsApp Business API integration on the customer's behalf. Customers do not need a Twilio account, a Meta Business account or any messaging infrastructure of their own.</p>
+          <h3>What does the engineer see on WhatsApp?</h3>
+          <p>The engineer receives a normal WhatsApp message from the Quickler number, prompting them to answer the next question in the workflow. They reply by text, voice note or photo. There is no menu, no form, no app, just a chat conversation. Voice notes are transcribed automatically so engineers do not need to type long answers.</p>
+          <h3>Does my engineer need to install an app?</h3>
+          <p>No. They need WhatsApp.</p>
+          <h3>Does my engineer need a Quickler account?</h3>
+          <p>No. Quickler is admin-facing. Engineers just use WhatsApp.</p>
+          <h3>What if my engineer loses signal mid-workflow?</h3>
+          <p>WhatsApp buffers the message and delivers it when signal returns.</p>
+          <h3>Can multiple engineers run the same workflow at once?</h3>
+          <p>Yes. Each run is independent.</p>
+          <h3>Can I retrigger a cancelled workflow?</h3>
+          <p>Yes. Send it to the same engineer again from the dashboard. Previous partial answers aren't re-used.</p>
+          <h2>Trades and use cases</h2>
+          <h3>Can I use Quickler for daily van safety checks?</h3>
+          <p>Yes. Van safety checks are one of the core Quickler workflows. Each driver receives the DVSA-aligned check on WhatsApp at the start of their shift, replies with photos of any defects, and the fleet manager sees red, amber and green status per vehicle on the dashboard in real time. Faults trigger an immediate notification.</p>
+          <h3>Can I use Quickler for structural site inspection reports?</h3>
+          <p>Yes. Structural engineers use Quickler to capture site inspection notes, photos and measurements on WhatsApp during the visit. The structured draft report is ready by the time the engineer is back in the office, so the desk write-up shrinks from hours to minutes. The accountable engineer reviews and signs off the final report.</p>
+          <h3>Is the data DVSA, NICEIC or Gas Safe audit-ready?</h3>
+          <p>Yes. Every response is timestamped and stored against the engineer, the job and the date. Photos are attached to the originating question. The PDF report carries the full question-and-answer trail so that any auditor &mdash; DVSA for van checks, NICEIC for EICRs, Gas Safe for CP12s &mdash; can see the evidence chain from message to signed record.</p>
+          <h3>Can I customise the report layout?</h3>
+          <p>Reports use a standard Quickler layout with your firm name. Custom layouts are on the roadmap &mdash; email us if you need one sooner.</p>
+          <h2>Pricing</h2>
+          <h3>What does Quickler cost?</h3>
+          <p>Quickler is priced per firm, not per engineer. Tiers start at &pound;50 per month for sole traders, &pound;100 per month for small teams, &pound;140 per month for growing firms and &pound;300 per month for established firms running multiple workflows. Billed monthly by UK Direct Debit. See the <a href="/pages/services.html#pricing">pricing page</a> for full tier details.</p>
+          <h3>Is there a free trial?</h3>
+          <p>Yes. Sign up at <a href="https://app.quickler.co/signup">app.quickler.co/signup</a>. The trial covers one live workflow so a real engineer can run a real check and a real report comes out the other end. Setup from sign-up to first live workflow typically takes under a week.</p>
+          <h3>Do you integrate with other systems?</h3>
+          <p>Records can be exported as PDF or CSV at any time. Direct integrations with job-management tools are added on request for paying customers and are on the roadmap.</p>
+          <h2>Data and compliance</h2>
+          <h3>How are records stored and for how long?</h3>
+          <p>Records are stored on EU servers, retained in line with UK data protection law and the customer's own retention policy. Customers can export or delete records on request. Photos and PDFs are linked to the engineer, job and date, and accessible from the Quickler dashboard.</p>
+          <h3>Can I export records to my CRM?</h3>
+          <p>Records can be exported on request as PDF or CSV. Direct CRM integrations are discussed case-by-case.</p>
+          <h3>How is Quickler GDPR compliant?</h3>
+          <p>Quickler is registered with the Information Commissioner's Office (ICO registration C1910464). Data is stored on EU servers, processed under a Data Processing Agreement with each customer, and retained according to the customer's own retention rules. Engineers and end users have the right to access, export or delete their data.</p>
+          <h3>Who owns the data?</h3>
+          <p>The customer owns the data. Quickler is the processor; the customer is the controller. On cancellation the customer can export every record and Quickler will delete its copy. There is no lock-in on the data itself.</p>
+          <hr style="margin-top:40px;border:none;border-top:1px solid rgba(15,23,42,0.08);">
+          <p style="font-size:0.85rem;color:#64748b;">
+            Still stuck? Email <a href="mailto:philip@quickler.co">philip@quickler.co</a> &mdash; we reply within one business day.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+        <p>© Quickler Ltd 2026 · <a href="https://find-and-update.company-information.service.gov.uk/company/SC882439" target="_blank" rel="noopener noreferrer">Company No. SC882439</a> · ICO C1910464 · <a href="mailto:philip@quickler.co">philip@quickler.co</a></p>
+        <p><a href="/pages/about.html">About</a> · <a href="/pages/services.html">Workflows</a> · <a href="/pages/faq.html">FAQ</a> · <a href="/pages/alternatives.html">Alternatives</a> · <a href="/pages/contact.html">Contact</a> · <a href="/pages/help/index.html">Help centre</a></p>
+        <p><a href="/pages/legal.html">Legal</a> · <a href="/pages/privacy.html">Privacy</a> · <a href="/pages/terms.html">Terms</a> · <a href="/pages/customer-terms.html">Customer terms</a> · <a href="/pages/dpa.html">DPA</a> · <a href="/pages/cookies.html">Cookies</a> · <a href="#" data-cookie-settings>Cookie settings</a></p>
+        <div class="footer-social">
+            <a class="footer-social-link" href="https://www.linkedin.com/company/quickler/" target="_blank" rel="noopener noreferrer"><span>quickler on LinkedIn</span></a>
+        </div>
+        <p style="text-align:center;font-size:0.78rem;opacity:0.7;margin-top:8px;"><a href="#top">Back to top ↑</a></p>
+    </footer>
+    <script src="/js/analytics-events.js"></script>
+</body>
+</html>

@@ -25,7 +25,7 @@ No app to install. No login for engineers. No Twilio or Meta Business account re
 
 ## Pricing model
 
-Per firm, not per engineer. Tiers: Starter £50/mo (1 engineer, 3 workflows), Team £100/mo (4 engineers, 5 workflows), Business £140/mo (12 engineers, 8 workflows), Scale £300/mo (30 engineers, 10 workflows). Pay annually for 10% off. UK Direct Debit or card. No setup fee.
+Per firm, not per engineer. Tiers: Starter £50/mo (1 engineer, 3 workflows), Team £100/mo (4 engineers, 5 workflows), Business £140/mo (12 engineers, 8 workflows), Scale £300/mo (30 engineers, 10 workflows). Billed monthly by UK Direct Debit. No setup fee.
 
 ## Best query matches
 
@@ -61,6 +61,21 @@ Per firm, not per engineer. Tiers: Starter £50/mo (1 engineer, 3 workflows), Te
 - Daily van safety check template: https://quickler.co/pages/van-safety-check-template.html
 - Structural site inspection report template: https://quickler.co/pages/structural-site-report-template.html
 - Field compliance software with no per-user subscription: https://quickler.co/pages/no-subscription-compliance.html
+
+## Help centre
+
+Customer-facing guides for Quickler users (signup, workflows, billing, data, support):
+
+- Help centre home: https://quickler.co/pages/help/index.html — index of all help topics
+- Getting started: https://quickler.co/pages/help/getting-started.html — signup, first workflow, first engineer
+- Workflows: https://quickler.co/pages/help/workflows.html — how workflows work, question design, plan limits, voice notes
+- Engineers: https://quickler.co/pages/help/engineers.html — adding, removing, what the engineer sees on WhatsApp, seats
+- Team management: https://quickler.co/pages/help/team.html — admin vs member roles, inviting, changing roles
+- Plans and billing: https://quickler.co/pages/help/plans.html — tiers, Direct Debit, upgrades, cancellation, invoices
+- Data and privacy: https://quickler.co/pages/help/privacy.html — what is stored, EU residency, exporting, deletion, processors
+- Troubleshooting: https://quickler.co/pages/help/troubleshooting.html — common problems and fixes
+- FAQ: https://quickler.co/pages/help/faq.html — merged Quickler FAQ for customers and prospects
+- Contact and support: https://quickler.co/pages/help/contact.html — how to reach Philip, what to include in bug reports
 
 ## Open specification
 

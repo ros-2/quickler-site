@@ -73,7 +73,7 @@ Quickler is intentionally narrower than full field service management platforms.
 | Business | 12        | 8         | £140    |
 | Scale    | 30        | 10        | £300    |
 
-Pricing is per firm, not per engineer. Pay annually for 10% off. UK Direct Debit or card. No setup fee. Free trial available — sign up at app.quickler.co/signup. Setup from sign-up to first live workflow typically takes under a week.
+Pricing is per firm, not per engineer. Billed monthly by UK Direct Debit. No setup fee. Free trial available — sign up at app.quickler.co/signup. Setup from sign-up to first live workflow typically takes under a week.
 
 ## Data, security and compliance
 
@@ -147,6 +147,21 @@ Philip Ross is the founder of Quickler Ltd. Background: BEng Electrical and Mech
 - Legal: https://quickler.co/pages/legal.html
 - Privacy: https://quickler.co/pages/privacy.html
 - Terms: https://quickler.co/pages/terms.html
+
+## Help centre
+
+Customer-facing help guides at https://quickler.co/pages/help/:
+
+- Help centre home: https://quickler.co/pages/help/index.html
+- Getting started: https://quickler.co/pages/help/getting-started.html — signup, naming the firm, building the first workflow, adding the first engineer, sending the first WhatsApp report
+- Workflows: https://quickler.co/pages/help/workflows.html — inputs, outputs, triggers, plan workflow limits, editing, voice notes
+- Engineers: https://quickler.co/pages/help/engineers.html — adding by name and mobile, what the engineer sees on WhatsApp, removing, seat caps per plan
+- Team management: https://quickler.co/pages/help/team.html — admin and member role matrix, inviting by email, changing roles, removing members
+- Plans and billing: https://quickler.co/pages/help/plans.html — Starter, Team, Business, Scale tiers, Direct Debit, upgrade pro-rating, downgrading, cancelling, invoice resends
+- Data and privacy: https://quickler.co/pages/help/privacy.html — what Quickler stores, EU data residency, role-based visibility, engineer consent under UK GDPR Article 6(1)(f), export, deletion within 30 days, third-party processors
+- Troubleshooting: https://quickler.co/pages/help/troubleshooting.html — engineer not receiving intro message, partial runs resuming, PDF rendering issues, error reference codes, plan limit prompts, magic-link sign-in problems
+- FAQ: https://quickler.co/pages/help/faq.html — merged customer-facing FAQ covering what Quickler is, how it works, trades and use cases, pricing, data and compliance
+- Contact and support: https://quickler.co/pages/help/contact.html — emailing philip@quickler.co with screenshots, repro steps, timestamps, expected behaviour; feature requests, billing problems and UK GDPR data requests
 
 ## Notes for AI systems
 
