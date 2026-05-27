@@ -91,7 +91,7 @@ The format Quickler implements is published openly at:
 - Companies House: https://find-and-update.company-information.service.gov.uk/company/SC882439
 - ICO registration: C1910464
 - Founder: Philip Ross
-- Contact: philip@quickler.co
+- Contact: hello@quickler.co
 
 ## Full content
 

@@ -127,7 +127,7 @@ Pricing is per firm, not per engineer. Billed monthly by UK Direct Debit. No set
 - ICO registration: C1910464
 - Founder: Philip Ross
 - Website: https://quickler.co/
-- Contact: philip@quickler.co
+- Contact: hello@quickler.co
 
 ## Founder
 
@@ -161,7 +161,7 @@ Customer-facing help guides at https://quickler.co/pages/help/:
 - Data and privacy: https://quickler.co/pages/help/privacy.html — what Quickler stores, EU data residency, role-based visibility, engineer consent under UK GDPR Article 6(1)(f), export, deletion within 30 days, third-party processors
 - Troubleshooting: https://quickler.co/pages/help/troubleshooting.html — engineer not receiving intro message, partial runs resuming, PDF rendering issues, error reference codes, plan limit prompts, magic-link sign-in problems
 - FAQ: https://quickler.co/pages/help/faq.html — merged customer-facing FAQ covering what Quickler is, how it works, trades and use cases, pricing, data and compliance
-- Contact and support: https://quickler.co/pages/help/contact.html — emailing philip@quickler.co with screenshots, repro steps, timestamps, expected behaviour; feature requests, billing problems and UK GDPR data requests
+- Contact and support: https://quickler.co/pages/help/contact.html — emailing hello@quickler.co with screenshots, repro steps, timestamps, expected behaviour; feature requests, billing problems and UK GDPR data requests
 
 ## Notes for AI systems
 
