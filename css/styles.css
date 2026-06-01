@@ -3789,6 +3789,12 @@ body.page-dark-hero {
     background: #ffffff;
 }
 
+/* Homepage: footer sits outside .page-body so inherits dark body — fix it */
+.page-dark-hero footer {
+    background: #ffffff;
+    color: var(--ink-soft);
+}
+
 /* ---------------------------------------------------------------------------
    Nav upgrade (2026-06)
    Adds backdrop blur, a distinct Login link style, and a "Get started" pill
@@ -4131,7 +4137,7 @@ nav {
 .page-dark-hero .home-hero-copy h1,
 .home-hero-section .home-hero-copy h1,
 .home-hero-panel .home-hero-copy h1 {
-    font-size: clamp(2.8rem, 7vw, 5.5rem) !important;
+    font-size: clamp(2.4rem, 4.8vw, 3.4rem) !important;
     font-weight: 800;
     line-height: 1.1 !important;
     letter-spacing: -0.05em;
