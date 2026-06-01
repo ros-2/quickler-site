@@ -3925,4 +3925,90 @@ nav {
         min-width: unset;
     }
 }
-/* cache-bust: 1780317678 */
+/* ---------------------------------------------------------------------------
+   Dark-hero overrides for sections below the hero (2026-06)
+   The numbers strip and proof cards sit in the dark-to-light gradient zone.
+   Give them dark-safe styling so they read correctly against the navy bg.
+   --------------------------------------------------------------------------- */
+
+/* Numbers strip: remove white card bg, use dark glass instead */
+.page-dark-hero .home-numbers-strip {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+.page-dark-hero .home-number-unit {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.page-dark-hero .home-number-desc {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.page-dark-hero .home-number-divider {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Proof cards: dark glass cards in the transition zone */
+.page-dark-hero .section-proof .proof-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.page-dark-hero .section-proof .proof-card strong {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.page-dark-hero .section-proof .proof-card p {
+    color: rgba(255, 255, 255, 0.58);
+}
+
+/* ---------------------------------------------------------------------------
+   Scroll reveal: start visible by default on page-dark-hero so content is
+   never invisible against the dark bg before the JS observer fires.
+   The observer still adds .is-visible which is a no-op (already visible).
+   --------------------------------------------------------------------------- */
+.page-dark-hero .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Inner-page hero band (About, Services, etc.)
+   Gives inner pages a consistent, sharp header treatment — dark navy bar,
+   short, full-bleed, white text — without needing the body gradient approach.
+   --------------------------------------------------------------------------- */
+.inner-hero {
+    background: #07122b;
+    padding: clamp(56px, 8vw, 96px) 0 clamp(40px, 6vw, 72px);
+    text-align: center;
+}
+
+.inner-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.55);
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.07);
+    margin-bottom: 20px;
+}
+
+.inner-hero h1 {
+    color: #ffffff;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    max-width: 760px;
+    margin: 0 auto 16px;
+}
+
+.inner-hero p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.65;
+}
+
