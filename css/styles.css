@@ -258,8 +258,6 @@ section {
     width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
     margin: 0 auto;
     padding: var(--section-space) 0;
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 840px;
 }
 
 body > section#top:first-of-type {
@@ -267,8 +265,6 @@ body > section#top:first-of-type {
 }
 
 section#top {
-    content-visibility: visible;
-    contain-intrinsic-size: auto;
 }
 
 .home-hero-section {
@@ -3399,11 +3395,11 @@ html.dark-mode .faq-question::after {
    h1 gradient text, and a soft body background wash.
    --------------------------------------------------------------------------- */
 
-/* A. Section labels / eyebrows — the pill badges gain a gradient border
-      so every section opener carries the brand signature. */
+/* A. Section labels / eyebrows + card kickers — gradient border on all pill badges */
 .hero-label,
 .section-label,
-.eyebrow {
+.eyebrow,
+.card-link-kicker {
     border: 1.5px solid transparent;
     background-clip: padding-box;
     position: relative;
@@ -3411,13 +3407,30 @@ html.dark-mode .faq-question::after {
 
 .hero-label::before,
 .section-label::before,
-.eyebrow::before {
+.eyebrow::before,
+.card-link-kicker::before {
     content: "";
     position: absolute;
     inset: -1.5px;
     border-radius: inherit;
     background: var(--brand-gradient);
     z-index: -1;
+}
+
+/* Section h2 headings: ink-strong by default, accent the lead word with gradient
+   on inner pages by using a span.gradient-word inside the h2 */
+.section-header h2 {
+    color: var(--ink-strong);
+    font-weight: 700;
+}
+
+/* Any h2 with class gradient-h2 gets the full gradient */
+.gradient-h2 {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 /* B. Funnel step numbers — gradient fill instead of flat accent. */
@@ -3975,24 +3988,39 @@ nav {
    short, full-bleed, white text — without needing the body gradient approach.
    --------------------------------------------------------------------------- */
 .inner-hero {
-    background: #07122b;
-    padding: clamp(56px, 8vw, 96px) 0 clamp(40px, 6vw, 72px);
+    width: 100%;
+    max-width: 100%;
+    background:
+        radial-gradient(ellipse 70% 80% at 80% 20%, rgba(124,58,237,0.2) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 10% 70%, rgba(47,107,255,0.12) 0%, transparent 55%),
+        #07122b;
+    padding: clamp(56px, 8vw, 96px) var(--page-gutter) clamp(40px, 6vw, 72px);
     text-align: center;
+    box-sizing: border-box;
 }
 
-/* page-shell is normally a white card — make it transparent inside inner-hero */
+/* page-shell is normally a white card — make it transparent inside inner-hero, centred */
 .inner-hero .page-shell {
     background: transparent;
     border: none;
     box-shadow: none;
     border-radius: 0;
+    max-width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .inner-hero .eyebrow {
-    color: rgba(255, 255, 255, 0.55);
-    border-color: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.7);
     background: rgba(255, 255, 255, 0.07);
+    border-color: transparent;
     margin-bottom: 20px;
+}
+
+.inner-hero .eyebrow::before {
+    background: linear-gradient(90deg, rgba(47,107,255,0.6), rgba(244,63,140,0.6));
 }
 
 .inner-hero h1 {
