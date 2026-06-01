@@ -3550,6 +3550,184 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
+   Global reading-width cap (2026-06)
+   Sections go to 1240px which is fine for layouts. But any section that is
+   single-column text needs a tighter cap. Rather than adding inline styles
+   everywhere, cap the section content-width token at a readable size for
+   known text-heavy pages, and add a utility class for any direct override.
+   --------------------------------------------------------------------------- */
+
+.reading-width {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* ---------------------------------------------------------------------------
+   Dark hero section (2026-06)
+   The hero gets a deep navy background so the page has a strong visual anchor.
+   White/light text, gradient accent on label. Media cards adapt to look
+   slightly elevated against the dark background.
+   --------------------------------------------------------------------------- */
+
+.home-hero-dark {
+    background: #07122b;
+    background-image:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(47, 107, 255, 0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(124, 58, 237, 0.12) 0%, transparent 55%);
+    border-radius: 0 0 32px 32px;
+    margin-top: -1px;
+}
+
+/* Override body background wash inside the dark hero */
+.home-hero-dark * {
+    --hero-bg: transparent;
+}
+
+/* H1 — white on dark, no gradient (gradient doesn't read on dark) */
+.home-hero-dark h1 {
+    color: #ffffff;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+}
+
+/* Body text */
+.home-hero-dark .hero-text {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* Hero label on dark — lighter pill with gradient text */
+.hero-label-dark {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.hero-label-dark::before {
+    display: none !important;
+}
+
+/* Credentials line */
+.hero-credentials-dark {
+    color: rgba(255, 255, 255, 0.45) !important;
+}
+
+/* Hero CTAs on dark background */
+.btn-hero-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 0.96rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    background: #ffffff;
+    color: #07122b;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+    opacity: 0.95;
+}
+
+.btn-hero-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 24px;
+    border-radius: 999px;
+    font-size: 0.96rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.17);
+    transform: translateY(-1px);
+    color: #ffffff;
+}
+
+/* Video/dashboard cards on dark — elevate with light border */
+.home-hero-dark .home-hero-video-card,
+.home-hero-dark .home-hero-dashboard-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.home-hero-dark .home-hero-video-meta {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.home-hero-dark .home-hero-video-kicker {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.home-hero-dark .home-hero-video-caption span {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.home-hero-dark .home-hero-video-caption a {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* Funnel strip on dark */
+.home-funnel-strip-dark {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: transparent !important;
+}
+
+.home-funnel-strip-dark .home-funnel-chip {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.home-funnel-strip-dark .home-funnel-chip strong {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.home-funnel-strip-dark .home-funnel-chip p {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Nav on dark page — keep the floating pill style but make it blend better */
+.home-hero-dark ~ nav,
+body:has(.home-hero-dark) nav {
+    background: rgba(7, 18, 43, 0.75);
+    border-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
+body:has(.home-hero-dark) nav .nav-menu a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body:has(.home-hero-dark) nav .nav-menu a:hover,
+body:has(.home-hero-dark) nav .nav-menu a[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+body:has(.home-hero-dark) .nav-login {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ---------------------------------------------------------------------------
    Nav upgrade (2026-06)
    Adds backdrop blur, a distinct Login link style, and a "Get started" pill
    CTA on the right side of the nav.
