@@ -3791,9 +3791,9 @@ body.page-dark-hero {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Inner pages: body is white; the inner-hero provides its own dark band */
+/* Inner pages: body is white; the inner-hero section provides its own dark band */
 .page-inner {
-    background: #ffffff;
+    background: #ffffff !important;
 }
 
 /* inner-hero is full-bleed dark — already has its own background */
