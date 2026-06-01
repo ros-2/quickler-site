@@ -3436,13 +3436,15 @@ html.dark-mode .faq-question::after {
     color: transparent;
 }
 
-/* D. Body background — a very soft gradient wash so the page has colour
-      without competing with content. */
+/* D. Body background — start dark (matching hero) then transition to white.
+      The dark hero section covers the top portion, so the body gradient
+      only shows below it. */
 body {
-    background: linear-gradient(160deg,
-        rgba(47, 107, 255, 0.04) 0%,
-        #ffffff 35%,
-        rgba(244, 63, 140, 0.03) 100%);
+    background: linear-gradient(180deg,
+        #07122b 0%,
+        #07122b 38%,
+        #f8f9fd 52%,
+        #ffffff 65%);
     background-attachment: fixed;
 }
 
@@ -3572,17 +3574,27 @@ body {
    --------------------------------------------------------------------------- */
 
 .home-hero-dark {
+    /* Break out of the content-width constraint so the background is full-bleed */
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-left: clamp(16px, 4vw, 60px);
+    padding-right: clamp(16px, 4vw, 60px);
+    padding-bottom: 0;
     background: #07122b;
     background-image:
         radial-gradient(ellipse 80% 60% at 70% 50%, rgba(47, 107, 255, 0.18) 0%, transparent 60%),
         radial-gradient(ellipse 50% 40% at 20% 80%, rgba(124, 58, 237, 0.12) 0%, transparent 55%);
     border-radius: 0 0 32px 32px;
-    margin-top: -1px;
+    overflow: hidden;
 }
 
-/* Override body background wash inside the dark hero */
-.home-hero-dark * {
-    --hero-bg: transparent;
+/* Inner shell constrains content width within the full-bleed section */
+.home-hero-dark .home-hero-shell {
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 /* H1 — white on dark, no gradient (gradient doesn't read on dark) */
