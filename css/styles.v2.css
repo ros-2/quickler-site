@@ -4091,11 +4091,16 @@ nav {
 .inner-hero {
     width: 100%;
     max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background:
-        radial-gradient(ellipse 70% 80% at 80% 20%, rgba(124,58,237,0.2) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 60% at 10% 70%, rgba(47,107,255,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 80% 60% at 75% 15%, rgba(124,58,237,0.22) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 90% 70%, rgba(244,63,140,0.14) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 30% at 10% 80%, rgba(47,107,255,0.1) 0%, transparent 60%),
         #07122b;
-    padding: clamp(56px, 8vw, 96px) var(--page-gutter) clamp(72px, 10vw, 120px);
+    padding: clamp(100px, 14vw, 160px) var(--page-gutter) clamp(80px, 12vw, 140px);
     text-align: center;
     box-sizing: border-box;
     position: relative;
@@ -4142,14 +4147,17 @@ nav {
     -webkit-background-clip: unset;
     background-clip: unset;
     -webkit-text-fill-color: unset;
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    max-width: 760px;
-    margin: 0 auto 16px;
+    font-size: clamp(2.4rem, 4.8vw, 3.4rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    max-width: 820px;
+    margin: 0 auto 20px;
 }
 
 .inner-hero p {
     color: rgba(255, 255, 255, 0.65);
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.65;
