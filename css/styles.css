@@ -3573,21 +3573,35 @@ body {
    slightly elevated against the dark background.
    --------------------------------------------------------------------------- */
 
+/* The section element has its width constrained by .home-hero-section and
+   the global section rule. Rather than fight cascade with !important, use a
+   ::before pseudo-element that bleeds outside the section bounds. */
 .home-hero-dark {
-    /* Break out of the content-width constraint so the background is full-bleed */
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin-left: calc(50% - 50vw) !important;
-    margin-right: calc(50% - 50vw) !important;
-    padding-left: clamp(16px, 4vw, 60px);
-    padding-right: clamp(16px, 4vw, 60px);
-    padding-bottom: 0;
+    background: transparent;
+    position: relative;
+    overflow: visible;
+}
+
+.home-hero-dark::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
     background: #07122b;
     background-image:
         radial-gradient(ellipse 80% 60% at 70% 50%, rgba(47, 107, 255, 0.18) 0%, transparent 60%),
         radial-gradient(ellipse 50% 40% at 20% 80%, rgba(124, 58, 237, 0.12) 0%, transparent 55%);
     border-radius: 0 0 32px 32px;
-    overflow: hidden;
+    z-index: 0;
+}
+
+/* All direct children sit above the pseudo-element background */
+.home-hero-dark > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* Inner shell constrains content width within the full-bleed section */
