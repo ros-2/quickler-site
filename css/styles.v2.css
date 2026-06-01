@@ -3799,17 +3799,22 @@ body.page-dark-hero {
     background: #07122b !important;
 }
 
-/* All content sections after the inner-hero are white and full-width —
-   overrides the constrained section width so dark body doesn't show at sides.
-   Inner content stays constrained via its own child divs. */
+/* All content sections after the inner-hero are white and full-width */
 .page-inner section:not(.inner-hero),
-.page-inner main,
 .page-inner footer {
     background: #ffffff;
     width: 100% !important;
     max-width: 100% !important;
     padding-left: var(--page-gutter);
     padding-right: var(--page-gutter);
+    box-sizing: border-box;
+}
+
+/* main is transparent so inner-hero inside it can show its own dark background */
+.page-inner main {
+    background: transparent;
+    width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box;
 }
 
