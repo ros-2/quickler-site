@@ -4107,3 +4107,323 @@ nav {
     color: rgba(255, 255, 255, 0.52) !important;
 }
 
+/* ===========================================================================
+   HOMEPAGE REDESIGN — startup-grade polish (2026-06)
+   Overrides all previous hero, numbers, funnel, and proof-card rules.
+   Order: hero → numbers → funnel chips → proof cards → buttons → mobile.
+   =========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   1. HERO H1 — dominant, bold, white, tight leading
+   --------------------------------------------------------------------------- */
+.page-dark-hero .home-hero-copy h1,
+.home-hero-section .home-hero-copy h1,
+.home-hero-panel .home-hero-copy h1 {
+    font-size: clamp(2.8rem, 7vw, 5.5rem) !important;
+    font-weight: 800;
+    line-height: 1.1 !important;
+    letter-spacing: -0.05em;
+    color: #ffffff;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    max-width: 14ch !important;
+    margin: 0;
+    text-wrap: balance;
+}
+
+/* ---------------------------------------------------------------------------
+   2. HERO BODY TEXT — readable at 1.15rem, muted white
+   --------------------------------------------------------------------------- */
+.page-dark-hero .home-hero-copy .hero-text,
+.home-hero-section .home-hero-copy .hero-text {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.65;
+    max-width: 40ch;
+    margin: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   3. HERO CREDENTIALS LINE
+   --------------------------------------------------------------------------- */
+.page-dark-hero .home-hero-copy .hero-credentials,
+.page-dark-hero .home-hero-copy .hero-credentials-dark {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.42);
+    margin: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   4. HERO LABEL (eyebrow pill) — gradient border, frosted background
+   --------------------------------------------------------------------------- */
+.hero-label-dark {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    position: relative;
+    /* Gradient border via background-clip trick */
+    background: rgba(7, 18, 43, 0.6) !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+}
+
+/* Gradient border ring using pseudo-element */
+.hero-label-dark::before {
+    display: block !important;
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    padding: 1.5px;
+    background: linear-gradient(90deg, #2F6BFF 0%, #5A4FCF 35%, #7C3AED 65%, #F43F8C 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Kill the bottom-bar afterthought from the earlier override */
+.home-hero-copy .hero-label::after {
+    display: none !important;
+}
+
+/* ---------------------------------------------------------------------------
+   5. HERO TWO-COLUMN LAYOUT — copy left-aligned, vertically centred
+   --------------------------------------------------------------------------- */
+.home-hero-panel {
+    align-items: center !important;
+    padding: clamp(40px, 5vw, 72px) clamp(32px, 4vw, 60px) !important;
+    gap: clamp(32px, 4vw, 56px) !important;
+    border-radius: clamp(28px, 4vw, 40px) !important;
+}
+
+.home-hero-copy {
+    gap: 24px !important;
+}
+
+/* ---------------------------------------------------------------------------
+   6. CTA BUTTONS — primary: full brand gradient; secondary: white outline
+   --------------------------------------------------------------------------- */
+.btn-hero-primary {
+    background: linear-gradient(90deg, #2F6BFF 0%, #5A4FCF 35%, #7C3AED 65%, #F43F8C 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 16px 32px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em;
+    box-shadow: 0 8px 28px rgba(124, 58, 237, 0.35) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 14px 36px rgba(124, 58, 237, 0.45) !important;
+    opacity: 1 !important;
+}
+
+.btn-hero-secondary {
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+    padding: 15px 28px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, background 0.2s ease !important;
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ---------------------------------------------------------------------------
+   7. NUMBERS STRIP — enormous gradient stats dominating the dark band
+   --------------------------------------------------------------------------- */
+.home-numbers-strip {
+    padding: clamp(40px, 6vw, 72px) clamp(24px, 4vw, 48px) !important;
+}
+
+.home-number-stat {
+    font-size: clamp(4.5rem, 10vw, 7rem) !important;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: 0.95;
+}
+
+/* In dark-band context, numbers are gradient and enormous */
+.dark-band .home-number-stat {
+    font-size: clamp(4.5rem, 10vw, 7rem) !important;
+}
+
+.dark-band .home-number-unit {
+    font-size: 1.1rem !important;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85) !important;
+    margin-top: 6px;
+}
+
+.dark-band .home-number-desc {
+    font-size: 0.85rem !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    max-width: 20ch;
+}
+
+/* ---------------------------------------------------------------------------
+   8. FUNNEL CHIPS — more visible on dark: brighter border, readable text
+   --------------------------------------------------------------------------- */
+.home-funnel-strip {
+    width: min(100%, 1000px) !important;
+}
+
+.home-funnel-chip,
+.page-dark-hero .home-funnel-chip,
+.dark-band .home-funnel-chip {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 24px !important;
+    padding: 24px 26px !important;
+    gap: 10px !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2) !important;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.home-funnel-chip:hover,
+.dark-band .home-funnel-chip:hover {
+    background: rgba(255, 255, 255, 0.09) !important;
+    border-color: rgba(255, 255, 255, 0.28) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Gradient number circles */
+.home-funnel-number {
+    background: linear-gradient(135deg, #2F6BFF 0%, #7C3AED 60%, #F43F8C 100%) !important;
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4) !important;
+    color: #ffffff !important;
+    font-size: 0.82rem !important;
+    font-weight: 800 !important;
+    width: 44px !important;
+    height: 44px !important;
+    flex-shrink: 0;
+}
+
+.home-funnel-chip strong,
+.dark-band .home-funnel-chip strong,
+.page-dark-hero .home-funnel-chip strong {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-size: 1.02rem !important;
+    font-weight: 700;
+}
+
+.home-funnel-chip p,
+.dark-band .home-funnel-chip p,
+.page-dark-hero .home-funnel-chip p {
+    color: rgba(255, 255, 255, 0.55) !important;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ---------------------------------------------------------------------------
+   9. PROOF CARDS — visible borders, elevation shadow, gradient headings
+   --------------------------------------------------------------------------- */
+.section-proof .proof-card,
+.proof-card {
+    border: 1px solid rgba(47, 107, 255, 0.15) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 4px 20px rgba(18, 41, 111, 0.08), 0 1px 4px rgba(18, 41, 111, 0.06) !important;
+    padding: 28px 28px !important;
+    background: #ffffff !important;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease !important;
+}
+
+.section-proof .proof-card:hover,
+.proof-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 40px rgba(18, 41, 111, 0.13), 0 2px 8px rgba(18, 41, 111, 0.08) !important;
+    border-color: rgba(124, 58, 237, 0.3) !important;
+}
+
+.section-proof .proof-card strong,
+.proof-card strong {
+    display: block;
+    margin-bottom: 12px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.15rem !important;
+    font-weight: 700;
+    line-height: 1.15;
+    background: linear-gradient(90deg, #2F6BFF 0%, #5A4FCF 35%, #7C3AED 65%, #F43F8C 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+}
+
+.fit-card-featured {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 255, 0.9)),
+        linear-gradient(135deg, rgba(47, 107, 255, 0.14), rgba(244, 63, 140, 0.09)) !important;
+    border-color: rgba(47, 107, 255, 0.2) !important;
+}
+
+/* ---------------------------------------------------------------------------
+   10a. TABLET H1 override — the earlier 721–1040px block shrinks h1 too aggressively
+   --------------------------------------------------------------------------- */
+@media (min-width: 721px) and (max-width: 1040px) {
+    .home-hero-panel .home-hero-copy h1,
+    .page-dark-hero .home-hero-copy h1 {
+        font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+   10. MOBILE — keep things readable and well-spaced below 720px
+   --------------------------------------------------------------------------- */
+@media (max-width: 720px) {
+    .page-dark-hero .home-hero-copy h1,
+    .home-hero-section .home-hero-copy h1 {
+        max-width: none;
+        font-size: clamp(2.4rem, 9vw, 3.2rem);
+    }
+
+    .page-dark-hero .home-hero-copy .hero-text,
+    .home-hero-section .home-hero-copy .hero-text {
+        font-size: 1.05rem;
+        max-width: none;
+    }
+
+    .dark-band .home-number-stat,
+    .home-number-stat {
+        font-size: clamp(3.8rem, 18vw, 5.5rem) !important;
+    }
+
+    .home-funnel-chip,
+    .dark-band .home-funnel-chip,
+    .page-dark-hero .home-funnel-chip {
+        padding: 18px 20px !important;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .section-proof .proof-card,
+    .proof-card {
+        padding: 22px 20px !important;
+    }
+}
+
+
