@@ -3750,8 +3750,9 @@ body.page-dark-hero {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Nav on dark hero page */
-.page-dark-hero nav {
+/* Dark nav — homepage (dark-hero) and all inner pages (page-inner) */
+.page-dark-hero nav,
+.page-inner nav {
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.14);
     backdrop-filter: blur(20px) saturate(140%);
@@ -3759,18 +3760,33 @@ body.page-dark-hero {
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
 }
 
-.page-dark-hero nav .nav-menu a {
+.page-dark-hero nav .nav-menu a,
+.page-inner nav .nav-menu a {
     color: rgba(255, 255, 255, 0.7);
 }
 
 .page-dark-hero nav .nav-menu a:hover,
-.page-dark-hero nav .nav-menu a[aria-current="page"] {
+.page-dark-hero nav .nav-menu a[aria-current="page"],
+.page-inner nav .nav-menu a:hover,
+.page-inner nav .nav-menu a[aria-current="page"] {
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
 }
 
-.page-dark-hero .nav-login {
+.page-dark-hero .nav-login,
+.page-inner .nav-login {
     color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Inner pages: body starts dark (for nav area), sections + footer are white */
+.page-inner {
+    background: #07122b;
+}
+
+.page-inner section:not(.inner-hero),
+.page-inner main,
+.page-inner footer {
+    background: #ffffff;
 }
 
 /* ---------------------------------------------------------------------------
