@@ -32,7 +32,7 @@
     --radius-md: 22px;
     --radius-sm: 14px;
     --content-width: 1240px;
-    --page-gutter: clamp(12px, 2.8vw, 20px);
+    --page-gutter: clamp(16px, 4vw, 28px);
     --section-space: clamp(60px, 8vw, 88px);
     --section-space-tight: clamp(22px, 3.2vw, 34px);
     --shell-padding: clamp(22px, 3vw, 36px);
@@ -451,10 +451,10 @@ section#top {
 .cta-banner,
 .contact-panel,
 .contact-form-shell {
-    border: 1px solid var(--line);
+    border: 1px solid var(--line-strong);
     border-radius: var(--radius-lg);
     background: #ffffff;
-    box-shadow: var(--shadow-card);
+    box-shadow: 0 4px 20px rgba(18, 41, 111, 0.08), 0 1px 4px rgba(18, 41, 111, 0.05);
 }
 
 .hero-content {
@@ -3747,10 +3747,11 @@ body.page-dark-hero {
 
 /* Nav on dark hero page */
 .page-dark-hero nav {
-    background: rgba(7, 18, 43, 0.75);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.14);
     backdrop-filter: blur(20px) saturate(140%);
     -webkit-backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
 }
 
 .page-dark-hero nav .nav-menu a {
@@ -4063,27 +4064,11 @@ nav {
     padding-bottom: clamp(20px, 3vw, 40px);
 }
 
-/* Funnel chip numbers: gradient */
-.home-funnel-number {
-    background: var(--brand-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1;
-    margin-bottom: 6px;
-    display: block;
-}
-
-/* On dark band, funnel numbers use brand gradient */
+/* On dark band, funnel number circles stay as circles — just brighter border glow */
 .dark-band .home-funnel-number {
-    background: linear-gradient(90deg, #2F6BFF, #F43F8C);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: var(--brand-gradient);
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35);
+    color: #ffffff;
 }
 
 /* Funnel chips on dark band: more visible */
