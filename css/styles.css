@@ -3791,11 +3791,12 @@ body.page-dark-hero {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Inner pages: body starts dark (for nav area), sections + footer are white */
+/* Inner pages: body is white; the inner-hero provides its own dark band */
 .page-inner {
-    background: #07122b;
+    background: #ffffff;
 }
 
+/* inner-hero is full-bleed dark — already has its own background */
 .page-inner section:not(.inner-hero),
 .page-inner main,
 .page-inner footer {
