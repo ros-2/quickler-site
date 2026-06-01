@@ -3793,16 +3793,24 @@ body.page-dark-hero {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Inner pages: white body — inner-hero and nav provide their own dark surfaces */
+/* Inner pages: dark navy body — nav floats seamlessly over the dark inner-hero
+   just like the homepage dark-band. Sections below inner-hero are white full-bleed. */
 .page-inner {
-    background: #ffffff !important;
+    background: #07122b !important;
 }
 
-/* inner-hero is full-bleed dark — already has its own background */
+/* All content sections after the inner-hero are white and full-width —
+   overrides the constrained section width so dark body doesn't show at sides.
+   Inner content stays constrained via its own child divs. */
 .page-inner section:not(.inner-hero),
 .page-inner main,
 .page-inner footer {
     background: #ffffff;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+    box-sizing: border-box;
 }
 
 /* Homepage: footer is full-width, fades from dark to white at the top */
