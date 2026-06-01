@@ -3986,6 +3986,14 @@ nav {
     text-align: center;
 }
 
+/* page-shell is normally a white card — make it transparent inside inner-hero */
+.inner-hero .page-shell {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
 .inner-hero .eyebrow {
     color: rgba(255, 255, 255, 0.55);
     border-color: rgba(255, 255, 255, 0.12);
