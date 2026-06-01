@@ -3481,3 +3481,23 @@ body {
         transition: none;
     }
 }
+
+/* 3. Eyebrow overflow fix — pill label clips on narrow viewports. */
+@media (max-width: 480px) {
+    .hero-label,
+    .section-label,
+    .eyebrow {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+    }
+}
+
+/* 4. H1 size at 1024px — the tablet/small-laptop hero was too dominant. */
+@media (min-width: 721px) and (max-width: 1040px) {
+    .home-hero-panel h1 {
+        font-size: clamp(1.9rem, 5.5vw, 2.8rem);
+    }
+}
