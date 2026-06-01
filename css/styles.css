@@ -3457,6 +3457,11 @@ body {
 }
 
 body.page-dark-hero {
+    background: #07122b;
+}
+
+/* Below-fold content on homepage sits on white */
+.page-body {
     background: #ffffff;
 }
 
