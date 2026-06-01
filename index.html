@@ -254,20 +254,13 @@
                 <div class="home-hero-panel">
                     <div class="home-hero-copy">
                         <span class="hero-label">WhatsApp field compliance for UK trades</span>
-                        <h1>WhatsApp field compliance reports for UK trades. No app. No paperwork.</h1>
-                        <p class="hero-text">Quickler sends compliance questions to your engineers on WhatsApp, turns their replies and photos into a timestamped PDF report, and flags faults on the manager dashboard automatically. Built for EICRs, gas safety checks, van inspections and site reports.</p>
-                        <p class="hero-credentials">No app to install. No per-user subscription. No new interface for engineers to learn — they already use WhatsApp every day.</p>
-                        <div class="home-hero-points" aria-label="Quickler funnel points">
-                            <span class="home-hero-point">1. Watch the real walkthrough</span>
-                            <span class="home-hero-point">2. Try the live demo</span>
-                            <span class="home-hero-point">3. Get in touch if the fit is obvious</span>
-                        </div>
+                        <h1 class="gradient-h1">WhatsApp field compliance reports for UK trades. No app. No paperwork.</h1>
+                        <p class="hero-text">Quickler turns your engineers' WhatsApp replies and photos into a timestamped PDF report and flags faults on the manager dashboard automatically. Built for EICRs, gas safety checks, van inspections and site reports.</p>
                         <div class="hero-actions">
-                            <a href="https://youtu.be/q8qgenxcM3w" class="btn btn-primary" data-cta="homepage-video-primary" target="_blank" rel="noopener noreferrer">Watch the video</a>
-                            <a href="/pages/demo.html" class="btn btn-secondary" data-cta="homepage-demo-primary">Try the demo</a>
-                            <a href="/pages/contact.html" class="btn btn-secondary" data-cta="homepage-contact-primary">Contact</a>
+                            <a href="/pages/demo.html" class="btn btn-primary" data-cta="homepage-demo-primary">Try the live demo</a>
+                            <a href="https://youtu.be/q8qgenxcM3w" class="btn btn-secondary" data-cta="homepage-video-primary" target="_blank" rel="noopener noreferrer">Watch the video</a>
                         </div>
-                        <p class="home-hero-trustline">If the video does not click, leave it there. If the demo fits, get in touch with one repeated workflow.</p>
+                        <p class="hero-credentials">No app to install. No per-user subscription. No new interface for engineers to learn — they already use WhatsApp every day.</p>
                     </div>
                     <div class="home-hero-media">
                         <div class="home-hero-video-card">
@@ -292,7 +285,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="home-hero-strip home-funnel-strip" aria-label="Homepage funnel steps">
+                <div class="home-hero-strip home-funnel-strip reveal-on-scroll" aria-label="Homepage funnel steps">
                     <article class="home-hero-chip home-funnel-chip">
                         <span class="home-funnel-number">01</span>
                         <strong>Watch the video</strong>
@@ -313,7 +306,7 @@
         </section>
 
         <section class="section-proof" aria-labelledby="homepage-fit-title">
-            <div class="balanced-grid-3">
+            <div class="balanced-grid-3 reveal-on-scroll">
                 <article class="proof-card fit-card-featured">
                     <strong>Best fit</strong>
                     <p>Field teams, inspectors, surveyors, maintenance teams, and compliance teams with repeatable reports or visit records that still get written up manually afterwards.</p>
@@ -340,5 +333,27 @@
         <p style="text-align:center;font-size:0.78rem;opacity:0.7;margin-top:8px;"><a href="#top">Back to top ↑</a></p>
     </footer>
     <script src="/js/analytics-events.js"></script>
+    <script>
+        // Scroll reveal for .reveal-on-scroll. Degrades gracefully: if the
+        // observer or reduced-motion is in play, everything is shown at once.
+        (function () {
+            var els = document.querySelectorAll('.reveal-on-scroll');
+            if (!els.length) return;
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce || !('IntersectionObserver' in window)) {
+                els.forEach(function (el) { el.classList.add('is-visible'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            els.forEach(function (el) { io.observe(el); });
+        })();
+    </script>
 </body>
 </html>

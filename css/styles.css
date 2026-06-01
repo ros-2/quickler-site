@@ -3361,3 +3361,123 @@ html.dark-mode .faq-question {
 html.dark-mode .faq-question::after {
     background: rgba(126, 171, 255, 0.14);
 }
+
+/* ---------------------------------------------------------------------------
+   Brand-gradient system (2026-06)
+   Applies the blue→indigo→violet→pink gradient as a consistent visual thread
+   across the whole site. Four uses: section labels, funnel step numbers,
+   h1 gradient text, and a soft body background wash.
+   --------------------------------------------------------------------------- */
+
+/* A. Section labels / eyebrows — the pill badges gain a gradient border
+      so every section opener carries the brand signature. */
+.hero-label,
+.section-label,
+.eyebrow {
+    border: 1.5px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.hero-label::before,
+.section-label::before,
+.eyebrow::before {
+    content: "";
+    position: absolute;
+    inset: -1.5px;
+    border-radius: inherit;
+    background: var(--brand-gradient);
+    z-index: -1;
+}
+
+/* B. Funnel step numbers — gradient fill instead of flat accent. */
+.home-funnel-number {
+    background: var(--brand-gradient);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.22);
+}
+
+/* C. H1 gradient text — first run of text in an h1 gets the gradient.
+      Applies only where the .gradient-h1 class is added to the h1. */
+.gradient-h1 {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* D. Body background — a very soft gradient wash so the page has colour
+      without competing with content. */
+body {
+    background: linear-gradient(160deg,
+        rgba(47, 107, 255, 0.04) 0%,
+        #ffffff 35%,
+        rgba(244, 63, 140, 0.03) 100%);
+    background-attachment: fixed;
+}
+
+/* ---------------------------------------------------------------------------
+   Homepage clear-wins enhancements (2026-06)
+   1. Deliberate brand-gradient accent on the homepage hero
+   2. Subtle scroll-reveal motion (honours the prefers-reduced-motion block
+      defined near the top of this file — no extra guard needed)
+   --------------------------------------------------------------------------- */
+
+/* 1. Signature gradient: hero label gets a gradient underscore, the primary
+      hero CTA carries the brand gradient instead of a flat accent. */
+.home-hero-copy .hero-label {
+    position: relative;
+    background: rgba(255, 255, 255, 0.62);
+    color: var(--brand-violet);
+}
+
+.home-hero-copy .hero-label::after {
+    content: "";
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    bottom: 4px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--brand-gradient);
+}
+
+.home-hero-copy .hero-actions .btn-primary {
+    background: var(--brand-gradient);
+    background-size: 160% 100%;
+    background-position: 0% 50%;
+    border-color: transparent;
+    transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 26px rgba(124, 58, 237, 0.22);
+}
+
+.home-hero-copy .hero-actions .btn-primary:hover {
+    background: var(--brand-gradient);
+    background-size: 160% 100%;
+    background-position: 100% 50%;
+    border-color: transparent;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 30px rgba(124, 58, 237, 0.3);
+}
+
+/* 2. Scroll reveal: elements start lifted + faded, settle when .is-visible
+      is added by the IntersectionObserver in js/navigation.js. */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
