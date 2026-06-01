@@ -2106,6 +2106,25 @@ footer a {
     box-shadow: 0 20px 42px rgba(18, 41, 111, 0.1);
 }
 
+.home-hero-dashboard-card {
+    display: grid;
+    gap: 12px;
+    padding: clamp(14px, 2.1vw, 18px);
+    border: 1px solid rgba(24, 52, 132, 0.1);
+    border-radius: 30px;
+    background: #ffffff;
+    box-shadow: 0 20px 42px rgba(18, 41, 111, 0.1);
+    overflow: hidden;
+}
+
+.home-hero-dashboard-img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(24, 52, 132, 0.08);
+    display: block;
+}
+
 .home-hero-video-meta {
     display: grid;
     gap: 8px;
