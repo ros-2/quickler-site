@@ -3984,9 +3984,21 @@ nav {
    --------------------------------------------------------------------------- */
 
 /* Stat numbers: full brand gradient on dark background — bold and colourful */
-.dark-band .home-number-stat {
-    background: linear-gradient(90deg, #2F6BFF 0%, #7C3AED 50%, #F43F8C 100%);
-    background-size: 200% 100%;
+/* Each stat gets a different slice of the brand gradient — together they read blue→violet→pink */
+.dark-band .home-number-item:nth-child(1) .home-number-stat {
+    background: linear-gradient(90deg, #2F6BFF 0%, #5A4FCF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dark-band .home-number-item:nth-child(3) .home-number-stat {
+    background: linear-gradient(90deg, #5A4FCF 0%, #7C3AED 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dark-band .home-number-item:nth-child(5) .home-number-stat {
+    background: linear-gradient(90deg, #7C3AED 0%, #F43F8C 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
