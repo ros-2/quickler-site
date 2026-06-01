@@ -2465,6 +2465,17 @@ footer a {
         padding: 14px 16px;
     }
 
+    /* In the mobile dropdown the pill CTA becomes a full-width tinted row */
+    .nav-cta-pill {
+        margin-left: 0 !important;
+        margin-top: 6px !important;
+        text-align: center;
+        padding: 14px 16px !important;
+        font-size: 0.92rem !important;
+        border-radius: 16px !important;
+        box-shadow: none !important;
+    }
+
     .hero,
     .contact-grid {
         grid-template-columns: 1fr;
@@ -3535,5 +3546,194 @@ body {
 @media (min-width: 721px) and (max-width: 1040px) {
     .home-hero-panel h1 {
         font-size: clamp(1.9rem, 5.5vw, 2.8rem);
+    }
+}
+
+/* ---------------------------------------------------------------------------
+   Nav upgrade (2026-06)
+   Adds backdrop blur, a distinct Login link style, and a "Get started" pill
+   CTA on the right side of the nav.
+   --------------------------------------------------------------------------- */
+
+nav {
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    background: rgba(255, 255, 255, 0.84);
+}
+
+.nav-login {
+    margin-left: 4px;
+    color: var(--ink-soft) !important;
+}
+
+.nav-cta-pill {
+    margin-left: 6px;
+    padding: 9px 18px !important;
+    background: var(--brand-gradient) !important;
+    color: #ffffff !important;
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+    font-size: 0.86rem !important;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease !important;
+}
+
+.nav-cta-pill:hover,
+.nav-cta-pill:focus-visible {
+    background: var(--brand-gradient) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.3) !important;
+    opacity: 0.92;
+    color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------------------------
+   Homepage proof numbers strip (2026-06)
+   Three large typographic stats between hero and proof cards.
+   The big numbers carry the brand gradient; each stat has a unit and a note.
+   --------------------------------------------------------------------------- */
+
+.home-numbers-section {
+    padding: 0 0 var(--section-space);
+}
+
+.home-numbers-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(24, 52, 132, 0.1);
+    border-radius: 24px;
+    padding: 36px 40px;
+    box-shadow: 0 4px 24px rgba(18, 41, 111, 0.06);
+    backdrop-filter: blur(12px);
+}
+
+.home-number-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    padding: 0 20px;
+}
+
+.home-number-stat {
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.home-number-unit {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink-strong);
+    letter-spacing: -0.01em;
+}
+
+.home-number-desc {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+    max-width: 16ch;
+    margin: 0 auto;
+}
+
+.home-number-divider {
+    width: 1px;
+    height: 64px;
+    background: rgba(24, 52, 132, 0.1);
+    flex-shrink: 0;
+    border-radius: 1px;
+}
+
+@media (max-width: 720px) {
+    .home-numbers-strip {
+        flex-direction: column;
+        padding: 28px 24px;
+        gap: 24px;
+    }
+
+    .home-number-divider {
+        width: 64px;
+        height: 1px;
+    }
+
+    .home-number-item {
+        padding: 0;
+    }
+
+    .home-number-desc {
+        max-width: 24ch;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+   Footer CTA zone (2026-06)
+   Converts the footer top into a second conversion point.
+   --------------------------------------------------------------------------- */
+
+.footer-cta-zone {
+    text-align: center;
+    padding: 48px 24px 40px;
+}
+
+.footer-cta-heading {
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    font-weight: 700;
+    color: var(--ink-strong);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.footer-cta-sub {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+}
+
+.footer-cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-cta-btn {
+    min-width: 160px;
+}
+
+.footer-cta-actions .btn-primary {
+    background: var(--brand-gradient);
+    border-color: transparent;
+    box-shadow: 0 8px 22px rgba(124, 58, 237, 0.22);
+}
+
+.footer-rule {
+    height: 1px;
+    background: rgba(24, 52, 132, 0.08);
+    margin: 0 0 24px;
+}
+
+@media (max-width: 480px) {
+    .footer-cta-zone {
+        padding: 36px 16px 28px;
+    }
+
+    .footer-cta-btn {
+        width: 100%;
+        min-width: unset;
     }
 }
