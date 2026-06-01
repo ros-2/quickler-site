@@ -3802,11 +3802,24 @@ body.page-dark-hero {
     background: #ffffff;
 }
 
-/* Homepage: footer sits outside .page-body — white bg with a top gradient fade from dark */
+/* Homepage: footer is full-width, fades from dark to white at the top */
 .page-dark-hero footer {
-    background: linear-gradient(to bottom, #07122b 0%, #ffffff 80px);
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-top: 0;
+    background: linear-gradient(to bottom, #07122b 0px, #ffffff 100px);
     color: var(--ink-soft);
     border-top: none;
+}
+
+.page-dark-hero .footer-cta-zone,
+.page-dark-hero footer > p,
+.page-dark-hero footer > .footer-social,
+.page-dark-hero footer > .footer-rule {
+    max-width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .page-dark-hero footer a {
@@ -3815,18 +3828,11 @@ body.page-dark-hero {
 
 .page-dark-hero footer .footer-cta-zone {
     background: transparent;
-}
-
-.page-dark-hero footer .footer-cta-heading {
-    color: #ffffff;
-}
-
-.page-dark-hero footer .footer-cta-sub {
-    color: rgba(255,255,255,0.6);
+    padding-top: 80px;
 }
 
 .page-dark-hero footer .footer-rule {
-    background: rgba(255,255,255,0.1);
+    background: rgba(24,52,132,0.1);
 }
 
 /* ---------------------------------------------------------------------------
