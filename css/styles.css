@@ -3444,12 +3444,7 @@ body {
 }
 
 body.page-dark-hero {
-    background: linear-gradient(180deg,
-        #07122b 0%,
-        #07122b 42%,
-        #f4f6fc 58%,
-        #ffffff 70%);
-    background-attachment: fixed;
+    background: #ffffff;
 }
 
 /* ---------------------------------------------------------------------------
@@ -3577,15 +3572,37 @@ body.page-dark-hero {
    slightly elevated against the dark background.
    --------------------------------------------------------------------------- */
 
-/* Dark hero: background lives on body.page-dark-hero so it's full-bleed.
-   The section itself is transparent, radial glows added via box decoration. */
+/* Full-bleed dark band wrapping hero + numbers. The section inside is
+   width-constrained but this wrapper is 100vw, giving true full-bleed dark. */
+.dark-band {
+    background:
+        radial-gradient(ellipse 80% 60% at 75% 15%, rgba(124,58,237,0.22) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 90% 70%, rgba(244,63,140,0.14) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 30% at 10% 80%, rgba(47,107,255,0.1) 0%, transparent 60%),
+        #07122b;
+    padding-bottom: clamp(40px, 6vw, 80px);
+    position: relative;
+}
+
+/* Soft fade at the bottom of the dark band into white */
+.dark-band::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, #ffffff);
+    pointer-events: none;
+}
+
 .home-hero-dark {
     background: transparent;
 }
 
-/* Rounded bottom edge to transition into white content below */
 .home-hero-section {
-    border-radius: 0 0 32px 32px;
+    border-radius: 0;
+    position: relative;
 }
 
 /* Make the hero panel transparent on dark pages — the card is normally
@@ -3792,12 +3809,11 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 0;
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(24, 52, 132, 0.1);
-    border-radius: 24px;
-    padding: 36px 40px;
-    box-shadow: 0 4px 24px rgba(18, 41, 111, 0.06);
-    backdrop-filter: blur(12px);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 48px 40px;
+    box-shadow: none;
 }
 
 .home-number-item {
@@ -3811,11 +3827,13 @@ nav {
 }
 
 .home-number-stat {
-    font-size: clamp(2.6rem, 6vw, 4rem);
-    font-weight: 700;
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 800;
     line-height: 1;
-    letter-spacing: -0.04em;
-    background: var(--brand-gradient);
+    letter-spacing: -0.05em;
+    background: linear-gradient(90deg, #2F6BFF 0%, #7C3AED 50%, #F43F8C 100%);
+    background-size: 300% 100%;
+    background-attachment: fixed;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -3823,24 +3841,25 @@ nav {
 }
 
 .home-number-unit {
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 700;
     color: var(--ink-strong);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    margin-top: 4px;
 }
 
 .home-number-desc {
-    font-size: 0.82rem;
+    font-size: 0.88rem;
     color: var(--ink-soft);
-    line-height: 1.4;
-    max-width: 16ch;
+    line-height: 1.45;
+    max-width: 18ch;
     margin: 0 auto;
 }
 
 .home-number-divider {
     width: 1px;
-    height: 64px;
-    background: rgba(24, 52, 132, 0.1);
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, rgba(24,52,132,0.15), transparent);
     flex-shrink: 0;
     border-radius: 1px;
 }
@@ -3926,53 +3945,27 @@ nav {
     }
 }
 /* ---------------------------------------------------------------------------
-   Dark-hero overrides for sections below the hero (2026-06)
-   The numbers strip and proof cards sit in the dark-to-light gradient zone.
-   Give them dark-safe styling so they read correctly against the navy bg.
+   Dark band overrides — numbers strip is inside .dark-band, needs white text
    --------------------------------------------------------------------------- */
 
-/* Numbers strip: remove white card bg, use dark glass instead */
-.page-dark-hero .home-numbers-strip {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+/* Stat numbers: white text on dark background */
+.dark-band .home-number-stat {
+    background: #ffffff;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.page-dark-hero .home-number-unit {
-    color: rgba(255, 255, 255, 0.9);
+.dark-band .home-number-unit {
+    color: rgba(255, 255, 255, 0.88);
 }
 
-.page-dark-hero .home-number-desc {
-    color: rgba(255, 255, 255, 0.5);
+.dark-band .home-number-desc {
+    color: rgba(255, 255, 255, 0.48);
 }
 
-.page-dark-hero .home-number-divider {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Proof cards: dark glass cards in the transition zone */
-.page-dark-hero .section-proof .proof-card {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.page-dark-hero .section-proof .proof-card strong {
-    color: rgba(255, 255, 255, 0.92);
-}
-
-.page-dark-hero .section-proof .proof-card p {
-    color: rgba(255, 255, 255, 0.58);
-}
-
-/* ---------------------------------------------------------------------------
-   Scroll reveal: start visible by default on page-dark-hero so content is
-   never invisible against the dark bg before the JS observer fires.
-   The observer still adds .is-visible which is a no-op (already visible).
-   --------------------------------------------------------------------------- */
-.page-dark-hero .reveal-on-scroll {
-    opacity: 1;
-    transform: none;
+.dark-band .home-number-divider {
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.15), transparent);
 }
 
 /* ---------------------------------------------------------------------------
@@ -4018,5 +4011,49 @@ nav {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.65;
+}
+
+/* ---------------------------------------------------------------------------
+   Homepage gradient accents — use the brand gradient boldly on proof cards
+   and section headings rather than just numbers.
+   --------------------------------------------------------------------------- */
+
+/* Proof card headings: gradient instead of flat accent blue */
+.section-proof .proof-card strong {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 1.25rem;
+}
+
+/* Numbers section: no extra padding needed, dark-band provides it */
+.home-numbers-section {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Funnel chip numbers: gradient */
+.home-funnel-number {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* On dark band, funnel numbers should be white gradient */
+.dark-band .home-funnel-number {
+    background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.55));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
