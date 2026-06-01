@@ -3588,6 +3588,14 @@ body.page-dark-hero {
     border-radius: 0 0 32px 32px;
 }
 
+/* Make the hero panel transparent on dark pages — the card is normally
+   white but on the dark hero we want text to sit directly on the navy bg */
+.page-dark-hero .home-hero-panel {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+}
+
 /* H1 — white on dark, no gradient (gradient doesn't read on dark) */
 .page-dark-hero .home-hero-copy h1 {
     color: #ffffff;
