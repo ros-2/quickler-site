@@ -3763,11 +3763,13 @@ body.page-dark-hero {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Dark nav — homepage (dark-hero) and all inner pages (page-inner) */
+/* Dark nav — homepage (dark-hero) and all inner pages (page-inner).
+   Solid dark background so the nav always reads as dark regardless
+   of whether there's a dark inner-hero behind it. */
 .page-dark-hero nav,
 .page-inner nav {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.14);
+    background: rgba(7, 18, 43, 0.88);
+    border-color: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(20px) saturate(140%);
     -webkit-backdrop-filter: blur(20px) saturate(140%);
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
@@ -3791,7 +3793,7 @@ body.page-dark-hero {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Inner pages: body is white; the inner-hero section provides its own dark band */
+/* Inner pages: white body — inner-hero and nav provide their own dark surfaces */
 .page-inner {
     background: #ffffff !important;
 }
