@@ -3823,7 +3823,17 @@ body.page-dark-hero {
 }
 
 .page-dark-hero footer a {
-    color: rgba(255,255,255,0.55);
+    color: var(--ink-soft);
+}
+
+.page-dark-hero footer .footer-cta-heading {
+    color: var(--ink-strong);
+}
+
+.page-dark-hero footer .btn-secondary {
+    color: var(--ink) !important;
+    border-color: var(--line-strong) !important;
+    background: transparent !important;
 }
 
 .page-dark-hero footer .footer-cta-zone {
@@ -4073,12 +4083,22 @@ nav {
     background:
         radial-gradient(ellipse 70% 80% at 80% 20%, rgba(124,58,237,0.2) 0%, transparent 60%),
         radial-gradient(ellipse 50% 60% at 10% 70%, rgba(47,107,255,0.12) 0%, transparent 55%),
-        linear-gradient(to bottom, #07122b 70%, #ffffff),
         #07122b;
-    padding: clamp(56px, 8vw, 96px) var(--page-gutter) clamp(56px, 8vw, 96px);
+    padding: clamp(56px, 8vw, 96px) var(--page-gutter) clamp(72px, 10vw, 120px);
     text-align: center;
     box-sizing: border-box;
     position: relative;
+}
+
+.inner-hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, #ffffff);
+    pointer-events: none;
 }
 
 /* page-shell is normally a white card — make it transparent inside inner-hero, centred */
