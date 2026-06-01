@@ -3501,7 +3501,24 @@ body {
     }
 }
 
-/* 3. Eyebrow overflow fix — pill label clips on narrow viewports. */
+/* 3. Inner-page width cap — sections go to 1240px which is too wide for
+      text-heavy content. Cap page-shell, contact, and single-panel wrappers
+      to a readable max-width, centred within the section. */
+.single-panel-layout {
+    width: 100%;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form-shell {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* Eyebrow overflow fix — pill label clips on narrow viewports. */
 @media (max-width: 480px) {
     .hero-label,
     .section-label,
