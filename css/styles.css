@@ -3948,9 +3948,10 @@ nav {
    Dark band overrides — numbers strip is inside .dark-band, needs white text
    --------------------------------------------------------------------------- */
 
-/* Stat numbers: white text on dark background */
+/* Stat numbers: full brand gradient on dark background — bold and colourful */
 .dark-band .home-number-stat {
-    background: #ffffff;
+    background: linear-gradient(90deg, #2F6BFF 0%, #7C3AED 50%, #F43F8C 100%);
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -4028,10 +4029,10 @@ nav {
     font-size: 1.25rem;
 }
 
-/* Numbers section: no extra padding needed, dark-band provides it */
+/* Numbers section: sits inside dark-band, tighter vertical padding */
 .home-numbers-section {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: clamp(20px, 3vw, 40px);
+    padding-bottom: clamp(20px, 3vw, 40px);
 }
 
 /* Funnel chip numbers: gradient */
@@ -4049,11 +4050,26 @@ nav {
     display: block;
 }
 
-/* On dark band, funnel numbers should be white gradient */
+/* On dark band, funnel numbers use brand gradient */
 .dark-band .home-funnel-number {
-    background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.55));
+    background: linear-gradient(90deg, #2F6BFF, #F43F8C);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Funnel chips on dark band: more visible */
+.dark-band .home-funnel-chip {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+.dark-band .home-funnel-chip strong {
+    color: rgba(255, 255, 255, 0.92) !important;
+    font-size: 1rem;
+}
+
+.dark-band .home-funnel-chip p {
+    color: rgba(255, 255, 255, 0.52) !important;
 }
 
