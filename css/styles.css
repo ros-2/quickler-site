@@ -3436,15 +3436,19 @@ html.dark-mode .faq-question::after {
     color: transparent;
 }
 
-/* D. Body background — start dark (matching hero) then transition to white.
-      The dark hero section covers the top portion, so the body gradient
-      only shows below it. */
+/* D. Body background — default is clean white. On the homepage the body
+      gets .page-dark-hero which makes the top dark (the hero area), then
+      transitions to white for all the content below. */
 body {
+    background: #ffffff;
+}
+
+body.page-dark-hero {
     background: linear-gradient(180deg,
         #07122b 0%,
-        #07122b 38%,
-        #f8f9fd 52%,
-        #ffffff 65%);
+        #07122b 42%,
+        #f4f6fc 58%,
+        #ffffff 70%);
     background-attachment: fixed;
 }
 
@@ -3573,46 +3577,19 @@ body {
    slightly elevated against the dark background.
    --------------------------------------------------------------------------- */
 
-/* The section element has its width constrained by .home-hero-section and
-   the global section rule. Rather than fight cascade with !important, use a
-   ::before pseudo-element that bleeds outside the section bounds. */
+/* Dark hero: background lives on body.page-dark-hero so it's full-bleed.
+   The section itself is transparent, radial glows added via box decoration. */
 .home-hero-dark {
     background: transparent;
-    position: relative;
-    overflow: visible;
 }
 
-.home-hero-dark::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 100%;
-    background: #07122b;
-    background-image:
-        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(47, 107, 255, 0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(124, 58, 237, 0.12) 0%, transparent 55%);
+/* Rounded bottom edge to transition into white content below */
+.home-hero-section {
     border-radius: 0 0 32px 32px;
-    z-index: 0;
-}
-
-/* All direct children sit above the pseudo-element background */
-.home-hero-dark > * {
-    position: relative;
-    z-index: 1;
-}
-
-/* Inner shell constrains content width within the full-bleed section */
-.home-hero-dark .home-hero-shell {
-    max-width: 1240px;
-    margin: 0 auto;
-    width: 100%;
 }
 
 /* H1 — white on dark, no gradient (gradient doesn't read on dark) */
-.home-hero-dark h1 {
+.page-dark-hero .home-hero-copy h1 {
     color: #ffffff;
     background: none;
     -webkit-background-clip: unset;
@@ -3621,7 +3598,7 @@ body {
 }
 
 /* Body text */
-.home-hero-dark .hero-text {
+.page-dark-hero .hero-text {
     color: rgba(255, 255, 255, 0.72);
 }
 
@@ -3637,7 +3614,7 @@ body {
 }
 
 /* Credentials line */
-.hero-credentials-dark {
+.page-dark-hero .hero-credentials-dark {
     color: rgba(255, 255, 255, 0.45) !important;
 }
 
@@ -3688,68 +3665,67 @@ body {
 }
 
 /* Video/dashboard cards on dark — elevate with light border */
-.home-hero-dark .home-hero-video-card,
-.home-hero-dark .home-hero-dashboard-card {
+.page-dark-hero .home-hero-video-card,
+.page-dark-hero .home-hero-dashboard-card {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.14);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.home-hero-dark .home-hero-video-meta {
+.page-dark-hero .home-hero-video-meta {
     color: rgba(255, 255, 255, 0.85);
 }
 
-.home-hero-dark .home-hero-video-kicker {
+.page-dark-hero .home-hero-video-kicker {
     color: rgba(255, 255, 255, 0.55);
 }
 
-.home-hero-dark .home-hero-video-caption span {
+.page-dark-hero .home-hero-video-caption span {
     color: rgba(255, 255, 255, 0.5);
 }
 
-.home-hero-dark .home-hero-video-caption a {
+.page-dark-hero .home-hero-video-caption a {
     color: rgba(255, 255, 255, 0.65);
 }
 
 /* Funnel strip on dark */
-.home-funnel-strip-dark {
+.page-dark-hero .home-funnel-strip {
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
     background: transparent !important;
 }
 
-.home-funnel-strip-dark .home-funnel-chip {
+.page-dark-hero .home-funnel-chip {
     background: rgba(255, 255, 255, 0.06) !important;
     border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
-.home-funnel-strip-dark .home-funnel-chip strong {
+.page-dark-hero .home-funnel-chip strong {
     color: rgba(255, 255, 255, 0.9) !important;
 }
 
-.home-funnel-strip-dark .home-funnel-chip p {
+.page-dark-hero .home-funnel-chip p {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Nav on dark page — keep the floating pill style but make it blend better */
-.home-hero-dark ~ nav,
-body:has(.home-hero-dark) nav {
+/* Nav on dark hero page */
+.page-dark-hero nav {
     background: rgba(7, 18, 43, 0.75);
     border-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px) saturate(140%);
     -webkit-backdrop-filter: blur(20px) saturate(140%);
 }
 
-body:has(.home-hero-dark) nav .nav-menu a {
+.page-dark-hero nav .nav-menu a {
     color: rgba(255, 255, 255, 0.7);
 }
 
-body:has(.home-hero-dark) nav .nav-menu a:hover,
-body:has(.home-hero-dark) nav .nav-menu a[aria-current="page"] {
+.page-dark-hero nav .nav-menu a:hover,
+.page-dark-hero nav .nav-menu a[aria-current="page"] {
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
 }
 
-body:has(.home-hero-dark) .nav-login {
+.page-dark-hero .nav-login {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
