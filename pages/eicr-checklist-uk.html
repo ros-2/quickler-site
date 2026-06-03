@@ -66,6 +66,15 @@
         .related-guides li a { display: inline-block; background: #fff; border: 1px solid #d0d7e2; border-radius: 6px; padding: 0.4rem 0.85rem; font-size: 0.88rem; color: #1a5296; text-decoration: none; transition: border-color 0.15s; }
         .related-guides li a:hover { border-color: #1a5296; }
         </style>
+
+        <style>
+        .quickler-callout { background: #f0f6ff; border: 1.5px solid #b8d0f0; border-radius: 10px; padding: 1.4rem 1.6rem; margin: 2.4rem 0 0; }
+        .quickler-callout strong { display: block; font-size: 1rem; color: #1a2332; margin-bottom: 0.5rem; }
+        .quickler-callout p { margin: 0 0 0.9rem; font-size: 0.92rem; color: #2a3a4a; line-height: 1.55; }
+        .quickler-callout code { background: #e0ecff; border-radius: 4px; padding: 0.25rem 0.5rem; font-family: inherit; font-size: 0.9rem; color: #1a3a6b; display: block; margin: 0.5rem 0 0.9rem; }
+        .quickler-callout a.callout-btn { display: inline-block; background: #1a5296; color: #fff; text-decoration: none; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; }
+        .quickler-callout a.callout-btn:hover { background: #153f75; }
+        </style>
 </head>
 <body class="page-inner">
     <nav aria-label="Primary">
@@ -100,8 +109,8 @@
                 </ul>
             </div>
 
-            <h2>What the visual inspection is. and what it is not</h2>
-            <p>The visual inspection is exactly what it sounds like: a check of the installation using observation alone. No test instruments, no live working. The electrician looks at the installation and forms a view about its condition against the requirements of BS 7671.</p>
+            <h2>What the visual inspection is and what it is not</h2>
+            <p>The visual inspection is a check of the installation using observation alone. No test instruments, no live working. The electrician looks at the installation and forms a view about its condition against the requirements of BS 7671.</p>
             <p>It is not a superficial walk-round. BS 7671 Regulation 641.1 requires that the visual inspection identifies anything that does not comply with the requirements of the regulations. That is a high bar. An electrician who looks at a consumer unit and notes only that it is present has not done the visual inspection.</p>
             <p>The visual inspection also does not substitute for testing. An installation can look fine and have dangerous insulation resistance values. An installation can look poor and test satisfactorily. Both parts of the EICR are required. Neither replaces the other.</p>
 
@@ -179,7 +188,7 @@
             <p>Some findings appear regularly. Knowing what to look for sharpens the inspection.</p>
             <p><strong>Missing or incorrect circuit labelling.</strong> Consumer units with blank or incorrect circuit labels are common in older properties. A C3 if the labelling is present but unclear; a C2 if circuits cannot be identified at all and the risk of accidental energisation is real.</p>
             <p><strong>Evidence of overheating.</strong> Discolouration around socket outlets, melted insulation near luminaire terminals, or scorch marks inside a consumer unit. Any visible evidence of overheating must be investigated and is unlikely to attract anything less than a C2.</p>
-            <p><strong>Cables without mechanical protection.</strong> Surface-run cables in areas subject to mechanical damage. garages, utility rooms, accessible ceiling voids. that lack conduit or other protection. The appropriate code depends on the severity of the exposure.</p>
+            <p><strong>Cables without mechanical protection.</strong> Surface-run cables in areas subject to mechanical damage, garages, utility rooms, accessible ceiling voids, that lack conduit or other protection. The appropriate code depends on the severity of the exposure.</p>
             <p><strong>Missing RCD protection.</strong> Circuits supplying socket outlets that may be used outdoors, or circuits in bathrooms, without RCD protection. Under current regulations this is C2 where the risk is significant.</p>
             <p><strong>Inadequate earthing and bonding.</strong> Absence of main protective bonding to gas or water services is a C2. Absence of supplementary bonding in a bathroom where it is required is a C2.</p>
             <p>What a visual inspection cannot do is tell you about the condition of concealed wiring. Cables buried in plaster, inside walls, or in inaccessible roof spaces cannot be visually inspected. This is where FI codes arise.</p>
@@ -187,12 +196,12 @@
             <h2>The difference between the visual inspection record and the schedule of test results</h2>
             <p>These are two separate parts of the EICR and they answer different questions.</p>
             <p>The visual inspection record captures what the electrician observed about the physical condition and compliance of the installation. It is qualitative. It contains observations with condition codes. It does not contain numbers.</p>
-            <p>The schedule of test results contains the measured values from electrical testing: insulation resistance, continuity, earth fault loop impedance, prospective fault current, RCD operating times, polarity. These are quantitative. They confirm that the installation performs as it should. or reveal that it does not.</p>
-            <p>Both are required for a valid EICR. Neither is optional. If testing cannot be completed. because the installation is in use, access is restricted, or a circuit cannot be safely de-energised. the scope of the inspection must be clearly stated, and the limitation must be declared on the report. An EICR with an undisclosed testing limitation is a deficient report.</p>
+            <p>The schedule of test results contains the measured values from electrical testing: insulation resistance, continuity, earth fault loop impedance, prospective fault current, RCD operating times, polarity. These are quantitative. They confirm that the installation performs as it should, or reveal that it does not.</p>
+            <p>Both are required for a valid EICR. Neither is optional. If testing cannot be completed, because the installation is in use, access is restricted, or a circuit cannot be safely de-energised, the scope of the inspection must be clearly stated, and the limitation must be declared on the report. An EICR with an undisclosed testing limitation is a deficient report.</p>
 
             <h2>How Quickler handles observation recording during the EICR</h2>
             <p>Recording observations on paper in a live installation is slow and error-prone. Engineers working in tight consumer unit cupboards, in lofts, or under floorboards cannot write and inspect at the same time.</p>
-            <p>Electricians using Quickler speak observations into WhatsApp as voice notes during the inspection. Voice notes are transcribed automatically. The dashboard flags C1 and C2 codes the moment they are entered. the office sees the condition in real time, not when the report comes back at the end of the day. Engineers can reply "skip" or "n/a" to non-required fields to keep the workflow moving without unnecessary pauses.</p>
+            <p>Electricians using Quickler speak observations into WhatsApp as voice notes during the inspection. Voice notes are transcribed automatically. The dashboard flags C1 and C2 codes the moment they are entered: the office sees the condition in real time, not when the report comes back at the end of the day. Engineers can reply "skip" or "n/a" to non-required fields to keep the workflow moving without unnecessary pauses.</p>
             <p>At the end of the inspection, the PDF is generated and sent to the client by one-click email. No retyping. No transferring notes from paper to a laptop at the van.</p>
 
             <h2>Frequently asked questions</h2>
@@ -201,16 +210,24 @@
             <p>The visual inspection checks the condition of the installation without testing. It covers switchgear and protective devices, wiring systems and their condition, accessories such as sockets and switches, presence of correct identification and labelling, signs of overheating or damage, and whether equipment is accessible for operation and maintenance.</p>
 
             <h3>What is the difference between the visual inspection record and the schedule of test results?</h3>
-            <p>The visual inspection record captures what the electrician observed about the physical condition and compliance of the installation. without applying test instruments. The schedule of test results records the measured values from electrical testing: insulation resistance, earth fault loop impedance, RCD operating times and so on.</p>
+            <p>The visual inspection record captures what the electrician observed about the physical condition and compliance of the installation, without applying test instruments. The schedule of test results records the measured values from electrical testing: insulation resistance, earth fault loop impedance, RCD operating times and so on.</p>
 
             <h3>Does a visual inspection alone make an EICR valid?</h3>
-            <p>No. A full EICR requires both the visual inspection and the schedule of test results. Visual inspection alone is not sufficient to issue an EICR. If testing cannot be completed. due to access or operational constraints. this must be noted and the scope of the inspection clearly stated on the report.</p>
+            <p>No. A full EICR requires both the visual inspection and the schedule of test results. Visual inspection alone is not sufficient to issue an EICR. If testing cannot be completed due to access or operational constraints, this must be noted and the scope of the inspection clearly stated on the report.</p>
 
             <h3>Can I record EICR observations verbally on site?</h3>
-            <p>Yes, provided the observation is accurately transcribed into the report. Some engineers use voice notes to capture observations as they go, then transfer them to the report. Electricians using Quickler can speak observations directly into WhatsApp. voice notes are transcribed automatically during the workflow.</p>
+            <p>Yes, provided the observation is accurately transcribed into the report. Some engineers use voice notes to capture observations as they go, then transfer them to the report. Electricians using Quickler can speak observations directly into WhatsApp: voice notes are transcribed automatically during the workflow.</p>
         </div>
     </section>
     
+
+            <div class="quickler-callout">
+                <strong>Try this in Quickler — free trial, no card required</strong>
+                <p>Paste this as your first workflow description when you sign up:</p>
+                <code>EICR checklist — each item answered on WhatsApp during the inspection, nothing written up afterwards.</code>
+                <p>Quickler builds the WhatsApp flow from your description. Engineers go live within a week.</p>
+                <a href="https://app.quickler.co/signup" class="callout-btn">Set up EICR checklists →</a>
+            </div>
     <section class="related-guides">
         <div class="long-form-body">
             <h3>Related guides</h3>
