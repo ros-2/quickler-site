@@ -87,18 +87,7 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://quickler.co/pages/invoices-po.html</loc>
-    <lastmod>2026-04-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://quickler.co/pages/projects.html</loc>
-    <lastmod>2026-04-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- invoices-po.html and projects.html are noindexed — Lochross freelance work, not Quickler product -->
   <url>
     <loc>https://quickler.co/pages/about.html</loc>
     <lastmod>2026-04-13</lastmod>
@@ -111,11 +100,25 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- project-po-workflow-platform.html is noindexed — Lochross freelance work, not Quickler product -->
+
   <url>
-    <loc>https://quickler.co/pages/project-po-workflow-platform.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://quickler.co/pages/eicr-software-uk.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quickler.co/pages/iauditor-alternative-uk.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quickler.co/pages/site-safety-inspection-uk.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://quickler.co/pages/legal.html</loc>
