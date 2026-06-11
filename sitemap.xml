@@ -15,6 +15,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://quickler.co/pages/global-field-compliance.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://quickler.co/pages/faq.html</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -253,5 +259,109 @@
   <url><loc>https://quickler.co/pages/compliance-software-uk-trades.html</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://quickler.co/pages/inspection-app-uk-no-training.html</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://quickler.co/pages/uk-field-compliance-reporting-guide.html</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+
+  <!-- Global expansion — core pages — batch 2026-06-11 -->
+  <url><loc>https://quickler.co/pages/field-inspection-software-us.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quickler.co/pages/eu-field-compliance-software.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quickler.co/pages/inspection-checklist-software-any-trade.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quickler.co/pages/field-compliance-software-australia-nz.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quickler.co/pages/field-compliance-software-ireland.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quickler.co/pages/whatsapp-inspection-app-global.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Global expansion — country hub pages — batch 2026-06-11 -->
+  <url><loc>https://quickler.co/pages/country-hub-united-states.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-canada.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-australia.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-new-zealand.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-ireland.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-singapore.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-india.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-uae.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-south-africa.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-germany.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-france.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-spain.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-italy.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-netherlands.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-belgium.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-portugal.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-brazil.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-mexico.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-japan.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-poland.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-sweden.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/country-hub-austria.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Global expansion — positioning articles — batch 2026-06-11 -->
+  <url><loc>https://quickler.co/pages/positioning-united-states.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-canada.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-australia.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-new-zealand.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-ireland.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-singapore.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-india.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-uae.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-south-africa.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-germany.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-france.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-spain.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-italy.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-netherlands.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-belgium.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-portugal.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-brazil.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-mexico.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-japan.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-poland.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-sweden.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/positioning-austria.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Global expansion — data-privacy articles — batch 2026-06-11 -->
+  <url><loc>https://quickler.co/pages/data-privacy-united-states.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-canada.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-australia.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-new-zealand.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-ireland.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-singapore.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-india.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-uae.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-south-africa.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-germany.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-france.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-spain.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-italy.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-netherlands.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-belgium.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-portugal.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-brazil.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-mexico.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-japan.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-poland.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-sweden.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/data-privacy-austria.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Global expansion — no-app-inspections articles — batch 2026-06-11 -->
+  <url><loc>https://quickler.co/pages/no-app-inspections-united-states.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-canada.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-australia.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-new-zealand.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-ireland.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-singapore.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-india.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-uae.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-south-africa.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-germany.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-france.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-spain.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-italy.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-netherlands.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-belgium.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-portugal.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-brazil.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-mexico.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-japan.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-poland.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-sweden.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/no-app-inspections-austria.html</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
 </urlset>

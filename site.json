@@ -4,7 +4,7 @@
   "site": {
     "name": "Quickler",
     "url": "https://quickler.co/",
-    "description": "Quickler is a WhatsApp field compliance platform for UK trades. Engineers receive compliance questions on WhatsApp; replies and photos generate timestamped PDF reports automatically. Built for EICRs, CP12 gas safety, daily van safety checks, structural site inspection reports.",
+    "description": "Quickler is a WhatsApp field compliance platform for UK and global trades. Engineers receive compliance questions on WhatsApp; replies and photos generate timestamped PDF reports automatically. Built for EICRs, CP12 gas safety, daily van safety checks, structural site inspection reports.",
     "contact_email": "hello@quickler.co",
     "agent_navigation": {
       "homepage": "https://quickler.co/",
@@ -25,7 +25,7 @@
     "ico_registration": "C1910464",
     "founder": "Philip Ross"
   },
-  "primary_positioning": "WhatsApp field compliance reports for UK trades. No app for engineers to install. No per-user subscription. EU data residency.",
+  "primary_positioning": "WhatsApp field compliance reports for UK and global trades. No app for engineers to install. No per-user subscription. EU data residency.",
   "workflows": [
     {
       "name": "EICR",
@@ -66,7 +66,7 @@
     "alternative to FleetCheck",
     "alternative to iCertifi",
     "field compliance software no subscription",
-    "no per-user compliance app UK trades"
+    "no per-user compliance app UK and global trades"
   ],
   "pricing": {
     "model": "per firm, not per engineer",
