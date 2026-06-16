@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+/* Long words (URLs, long compound terms, workflow names) were overflowing
+   their boxes on narrow mobile screens. Let text wrap inside any container
+   rather than push past its edges. */
+body {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 :root {
     --ink-strong: #0c1734;
     --ink: #213055;
@@ -2440,7 +2448,11 @@ footer a {
         padding: 14px;
         border: 1px solid var(--line);
         border-radius: 28px;
-        background: rgba(255, 255, 255, 0.92);
+        /* Solid white + high z-index. A translucent (0.92) background let
+           page content bleed through behind the links, which read as a
+           broken overlay on mobile. The menu must sit above everything. */
+        background: #ffffff;
+        z-index: 1100;
         box-shadow: var(--shadow-soft);
         flex-direction: column;
         align-items: stretch;
@@ -3144,6 +3156,15 @@ html.dark-mode body::after {
 html.dark-mode nav {
     background: rgba(10, 10, 12, 0.88);
     border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile dropdown in dark mode: solid dark panel so it matches the rest
+   of the chrome and content never bleeds through behind the links. */
+@media (max-width: 1040px) {
+    html.dark-mode .nav-menu {
+        background: #14141a;
+        border-color: rgba(255, 255, 255, 0.12);
+    }
 }
 
 html.dark-mode .nav-menu a {
