@@ -154,12 +154,30 @@
             color: #1a52d0;
             font-weight: 600;
         }
-        /* Country flag selector */
-        .country-flag-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.2rem 0 0.4rem; align-items: center; }
-        .country-flag-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; gap: 0.25rem; }
-        .country-flag-item img { border: 1px solid #e5e7eb; border-radius: 3px; display: block; width: 40px; height: 30px; }
+        /* Country selector, grouped by region */
+        .country-region { margin-top: 1.8rem; }
+        .country-region:first-of-type { margin-top: 1.2rem; }
+        .country-region-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 700;
+            color: #1a52d0;
+            margin: 0 0 0.85rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+        }
+        .country-flag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+            gap: 1rem 0.75rem;
+            margin: 0;
+            align-items: start;
+        }
+        .country-flag-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; gap: 0.35rem; }
+        .country-flag-item img { border: 1px solid #e5e7eb; border-radius: 3px; display: block; width: 40px; height: 30px; object-fit: cover; }
         .country-flag-item:hover img { border-color: #f43f8c; box-shadow: 0 1px 6px rgba(244,63,140,0.2); }
-        .country-flag-item span { font-size: 0.65rem; color: #6b7280; text-align: center; max-width: 44px; line-height: 1.2; }
+        .country-flag-item span { font-size: 0.7rem; color: #475569; text-align: center; line-height: 1.2; }
     </style>
 </head>
 <body class="page-inner">
@@ -409,31 +427,59 @@
     <div class="page-shell">
         <div class="section-header">
             <h2>By country</h2>
-            <p>Quickler resources tailored to field teams in your market.</p>
+            <p>Quickler resources tailored to field teams in your market, grouped by region.</p>
         </div>
-        <div class="country-flag-grid">
-            <a href="/pages/country-hub-united-states.html" class="country-flag-item"><img src="/assets/flags/united-states.svg" alt="US flag" width="40" height="30"><span>USA</span></a>
-            <a href="/pages/country-hub-canada.html" class="country-flag-item"><img src="/assets/flags/canada.svg" alt="Canadian flag" width="40" height="30"><span>Canada</span></a>
-            <a href="/pages/country-hub-australia.html" class="country-flag-item"><img src="/assets/flags/australia.svg" alt="Australian flag" width="40" height="30"><span>Australia</span></a>
-            <a href="/pages/country-hub-new-zealand.html" class="country-flag-item"><img src="/assets/flags/new-zealand.svg" alt="New Zealand flag" width="40" height="30"><span>NZ</span></a>
-            <a href="/pages/country-hub-ireland.html" class="country-flag-item"><img src="/assets/flags/ireland.svg" alt="Irish flag" width="40" height="30"><span>Ireland</span></a>
-            <a href="/pages/country-hub-singapore.html" class="country-flag-item"><img src="/assets/flags/singapore.svg" alt="Singapore flag" width="40" height="30"><span>Singapore</span></a>
-            <a href="/pages/country-hub-india.html" class="country-flag-item"><img src="/assets/flags/india.svg" alt="Indian flag" width="40" height="30"><span>India</span></a>
-            <a href="/pages/country-hub-uae.html" class="country-flag-item"><img src="/assets/flags/uae.svg" alt="UAE flag" width="40" height="30"><span>UAE</span></a>
-            <a href="/pages/country-hub-south-africa.html" class="country-flag-item"><img src="/assets/flags/south-africa.svg" alt="South African flag" width="40" height="30"><span>South Africa</span></a>
-            <a href="/pages/country-hub-germany.html" class="country-flag-item"><img src="/assets/flags/germany.svg" alt="German flag" width="40" height="30"><span>Germany</span></a>
-            <a href="/pages/country-hub-france.html" class="country-flag-item"><img src="/assets/flags/france.svg" alt="French flag" width="40" height="30"><span>France</span></a>
-            <a href="/pages/country-hub-spain.html" class="country-flag-item"><img src="/assets/flags/spain.svg" alt="Spanish flag" width="40" height="30"><span>Spain</span></a>
-            <a href="/pages/country-hub-italy.html" class="country-flag-item"><img src="/assets/flags/italy.svg" alt="Italian flag" width="40" height="30"><span>Italy</span></a>
-            <a href="/pages/country-hub-netherlands.html" class="country-flag-item"><img src="/assets/flags/netherlands.svg" alt="Dutch flag" width="40" height="30"><span>Netherlands</span></a>
-            <a href="/pages/country-hub-belgium.html" class="country-flag-item"><img src="/assets/flags/belgium.svg" alt="Belgian flag" width="40" height="30"><span>Belgium</span></a>
-            <a href="/pages/country-hub-portugal.html" class="country-flag-item"><img src="/assets/flags/portugal.svg" alt="Portuguese flag" width="40" height="30"><span>Portugal</span></a>
-            <a href="/pages/country-hub-brazil.html" class="country-flag-item"><img src="/assets/flags/brazil.svg" alt="Brazilian flag" width="40" height="30"><span>Brazil</span></a>
-            <a href="/pages/country-hub-mexico.html" class="country-flag-item"><img src="/assets/flags/mexico.svg" alt="Mexican flag" width="40" height="30"><span>Mexico</span></a>
-            <a href="/pages/country-hub-japan.html" class="country-flag-item"><img src="/assets/flags/japan.svg" alt="Japanese flag" width="40" height="30"><span>Japan</span></a>
-            <a href="/pages/country-hub-poland.html" class="country-flag-item"><img src="/assets/flags/poland.svg" alt="Polish flag" width="40" height="30"><span>Poland</span></a>
-            <a href="/pages/country-hub-sweden.html" class="country-flag-item"><img src="/assets/flags/sweden.svg" alt="Swedish flag" width="40" height="30"><span>Sweden</span></a>
-            <a href="/pages/country-hub-austria.html" class="country-flag-item"><img src="/assets/flags/austria.svg" alt="Austrian flag" width="40" height="30"><span>Austria</span></a>
+
+        <div class="country-region">
+            <h3 class="country-region-title">Europe</h3>
+            <div class="country-flag-grid">
+                <a href="/pages/country-hub-ireland.html" class="country-flag-item"><img src="/assets/flags/ireland.svg" alt="Irish flag" width="40" height="30"><span>Ireland</span></a>
+                <a href="/pages/country-hub-germany.html" class="country-flag-item"><img src="/assets/flags/germany.svg" alt="German flag" width="40" height="30"><span>Germany</span></a>
+                <a href="/pages/country-hub-france.html" class="country-flag-item"><img src="/assets/flags/france.svg" alt="French flag" width="40" height="30"><span>France</span></a>
+                <a href="/pages/country-hub-spain.html" class="country-flag-item"><img src="/assets/flags/spain.svg" alt="Spanish flag" width="40" height="30"><span>Spain</span></a>
+                <a href="/pages/country-hub-italy.html" class="country-flag-item"><img src="/assets/flags/italy.svg" alt="Italian flag" width="40" height="30"><span>Italy</span></a>
+                <a href="/pages/country-hub-netherlands.html" class="country-flag-item"><img src="/assets/flags/netherlands.svg" alt="Dutch flag" width="40" height="30"><span>Netherlands</span></a>
+                <a href="/pages/country-hub-belgium.html" class="country-flag-item"><img src="/assets/flags/belgium.svg" alt="Belgian flag" width="40" height="30"><span>Belgium</span></a>
+                <a href="/pages/country-hub-portugal.html" class="country-flag-item"><img src="/assets/flags/portugal.svg" alt="Portuguese flag" width="40" height="30"><span>Portugal</span></a>
+                <a href="/pages/country-hub-poland.html" class="country-flag-item"><img src="/assets/flags/poland.svg" alt="Polish flag" width="40" height="30"><span>Poland</span></a>
+                <a href="/pages/country-hub-sweden.html" class="country-flag-item"><img src="/assets/flags/sweden.svg" alt="Swedish flag" width="40" height="30"><span>Sweden</span></a>
+                <a href="/pages/country-hub-austria.html" class="country-flag-item"><img src="/assets/flags/austria.svg" alt="Austrian flag" width="40" height="30"><span>Austria</span></a>
+            </div>
+        </div>
+
+        <div class="country-region">
+            <h3 class="country-region-title">North America</h3>
+            <div class="country-flag-grid">
+                <a href="/pages/country-hub-united-states.html" class="country-flag-item"><img src="/assets/flags/united-states.svg" alt="US flag" width="40" height="30"><span>USA</span></a>
+                <a href="/pages/country-hub-canada.html" class="country-flag-item"><img src="/assets/flags/canada.svg" alt="Canadian flag" width="40" height="30"><span>Canada</span></a>
+                <a href="/pages/country-hub-mexico.html" class="country-flag-item"><img src="/assets/flags/mexico.svg" alt="Mexican flag" width="40" height="30"><span>Mexico</span></a>
+            </div>
+        </div>
+
+        <div class="country-region">
+            <h3 class="country-region-title">Asia and Middle East</h3>
+            <div class="country-flag-grid">
+                <a href="/pages/country-hub-india.html" class="country-flag-item"><img src="/assets/flags/india.svg" alt="Indian flag" width="40" height="30"><span>India</span></a>
+                <a href="/pages/country-hub-singapore.html" class="country-flag-item"><img src="/assets/flags/singapore.svg" alt="Singapore flag" width="40" height="30"><span>Singapore</span></a>
+                <a href="/pages/country-hub-japan.html" class="country-flag-item"><img src="/assets/flags/japan.svg" alt="Japanese flag" width="40" height="30"><span>Japan</span></a>
+                <a href="/pages/country-hub-uae.html" class="country-flag-item"><img src="/assets/flags/uae.svg" alt="UAE flag" width="40" height="30"><span>UAE</span></a>
+            </div>
+        </div>
+
+        <div class="country-region">
+            <h3 class="country-region-title">Oceania</h3>
+            <div class="country-flag-grid">
+                <a href="/pages/country-hub-australia.html" class="country-flag-item"><img src="/assets/flags/australia.svg" alt="Australian flag" width="40" height="30"><span>Australia</span></a>
+                <a href="/pages/country-hub-new-zealand.html" class="country-flag-item"><img src="/assets/flags/new-zealand.svg" alt="New Zealand flag" width="40" height="30"><span>New Zealand</span></a>
+            </div>
+        </div>
+
+        <div class="country-region">
+            <h3 class="country-region-title">Africa and South America</h3>
+            <div class="country-flag-grid">
+                <a href="/pages/country-hub-south-africa.html" class="country-flag-item"><img src="/assets/flags/south-africa.svg" alt="South African flag" width="40" height="30"><span>South Africa</span></a>
+                <a href="/pages/country-hub-brazil.html" class="country-flag-item"><img src="/assets/flags/brazil.svg" alt="Brazilian flag" width="40" height="30"><span>Brazil</span></a>
+            </div>
         </div>
     </div>
 </section>
@@ -461,8 +507,7 @@
         </div>
         <div class="footer-rule"></div>
         <p>© Quickler Ltd 2026 · <a href="https://find-and-update.company-information.service.gov.uk/company/SC882439" target="_blank" rel="noopener noreferrer">Company No. SC882439</a> · ICO C1910464 · <a href="mailto:hello@quickler.co">hello@quickler.co</a></p>
-        <p><a href="/pages/about.html">About</a> · <a href="/pages/services.html">Workflows</a> · <a href="/pages/guides.html">Guides</a>
-            <a href="/pages/help/index.html#contact-form-section">Contact</a> · <a href="/pages/help/index.html">Help</a></p>
+        <p><a href="/pages/about.html">About</a> · <a href="/pages/services.html">Workflows</a> · <a href="/pages/services.html#pricing">Pricing</a> · <a href="/pages/help/index.html">Support</a></p>
         <p><a href="/pages/legal.html">Legal</a> · <a href="/pages/privacy.html">Privacy</a> · <a href="/pages/terms.html">Terms</a> · <a href="/pages/customer-terms.html">Customer terms</a> · <a href="/pages/dpa.html">DPA</a> · <a href="/pages/cookies.html">Cookies</a> · <a href="#" data-cookie-settings>Cookie settings</a></p>
         <div class="footer-social">
             <a class="footer-social-link" href="https://www.linkedin.com/company/quickler/" target="_blank" rel="noopener noreferrer"><span>quickler on LinkedIn</span></a>
