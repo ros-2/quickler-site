@@ -2473,6 +2473,27 @@ footer a {
         padding: 14px 16px;
     }
 
+    /* The mobile dropdown is a SOLID WHITE box (see .nav-menu background
+       above). On dark-hero / inner pages the page-class rule forces nav
+       links to white text, which is correct over the dark hero on desktop
+       but renders white-on-white inside this white dropdown — the menu
+       reads as invisible. Force dark, readable link text here, scoped to
+       the mobile breakpoint so the desktop dark-hero nav is untouched. */
+    .page-dark-hero nav .nav-menu a,
+    .page-inner nav .nav-menu a,
+    .nav-menu a {
+        color: var(--ink, #0d1a3a);
+    }
+    .page-dark-hero nav .nav-menu a:hover,
+    .page-dark-hero nav .nav-menu a[aria-current="page"],
+    .page-inner nav .nav-menu a:hover,
+    .page-inner nav .nav-menu a[aria-current="page"],
+    .nav-menu a:hover,
+    .nav-menu a[aria-current="page"] {
+        background: rgba(47, 107, 255, 0.08);
+        color: var(--accent, #2f6bff);
+    }
+
     /* In the mobile dropdown the pill CTA becomes a full-width tinted row */
     .nav-cta-pill {
         margin-left: 0 !important;
