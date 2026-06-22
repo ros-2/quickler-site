@@ -1,0 +1,25 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "comment-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "custom-property-empty-line-before": null,
+    "no-descending-specificity": null,
+    "color-hex-length": "long",
+    "color-no-hex": [
+      true,
+      {
+        "message": "Use a design token (var(--...)) instead of a raw hex colour. Define new colours in src/css/tokens.css only.",
+        "severity": "warning"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/css/tokens.css"],
+      "rules": {
+        "color-no-hex": null
+      }
+    }
+  ]
+}

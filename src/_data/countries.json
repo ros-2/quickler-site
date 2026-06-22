@@ -1,0 +1,200 @@
+[
+  {
+    "slug": "australia",
+    "name": "Australia",
+    "flagAlt": "Australian flag",
+    "flagSrc": "/assets/flags/australia.svg",
+    "title": "Quickler for Field Teams in Australia | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Australia. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Australia, compliance reporting Australia, WhatsApp inspection, no app field compliance, digital records Australia"
+  },
+  {
+    "slug": "austria",
+    "name": "Austria",
+    "flagAlt": "Austrian flag",
+    "flagSrc": "/assets/flags/austria.svg",
+    "title": "Quickler for Field Teams in Austria | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Austria. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Austria, compliance reporting Austria, WhatsApp workflows Austria, digital records Austria, site safety Austria"
+  },
+  {
+    "slug": "belgium",
+    "name": "Belgium",
+    "flagAlt": "Belgian flag",
+    "flagSrc": "/assets/flags/belgium.svg",
+    "title": "Quickler for Field Teams in Belgium | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Belgium. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Belgium, WhatsApp compliance Belgium, digital checklists Belgium, site safety Belgium, field teams Belgium"
+  },
+  {
+    "slug": "brazil",
+    "name": "Brazil",
+    "flagAlt": "Brazilian flag",
+    "flagSrc": "/assets/flags/brazil.svg",
+    "title": "Quickler for Field Teams in Brazil | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Brazil. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Brazil, WhatsApp compliance Brazil, site safety checklists Brazil, digital records Brazil, no app inspection"
+  },
+  {
+    "slug": "canada",
+    "name": "Canada",
+    "flagAlt": "Canadian flag",
+    "flagSrc": "/assets/flags/canada.svg",
+    "title": "Quickler for Field Teams in Canada | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Canada. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Canada, WhatsApp compliance Canada, site safety checks Canada, digital records Canada, no-app inspections"
+  },
+  {
+    "slug": "france",
+    "name": "France",
+    "flagAlt": "French flag",
+    "flagSrc": "/assets/flags/france.svg",
+    "title": "Quickler for Field Teams in France | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for France. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection France, WhatsApp compliance France, digital checklists France, site safety France, EU GDPR field records"
+  },
+  {
+    "slug": "germany",
+    "name": "Germany",
+    "flagAlt": "German flag",
+    "flagSrc": "/assets/flags/germany.svg",
+    "title": "Quickler for Field Teams in Germany | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Germany. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Germany, WhatsApp compliance Germany, digital field records Germany, site safety Germany, DGUV inspection, field compliance software Germany"
+  },
+  {
+    "slug": "india",
+    "name": "India",
+    "flagAlt": "Indian flag",
+    "flagSrc": "/assets/flags/india.svg",
+    "title": "Quickler for Field Teams in India | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for India. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection India, WhatsApp compliance India, digital checklists India, site safety India, Quickler India"
+  },
+  {
+    "slug": "ireland",
+    "name": "Ireland",
+    "flagAlt": "Irish flag",
+    "flagSrc": "/assets/flags/ireland.svg",
+    "title": "Quickler for Field Teams in Ireland | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Ireland. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Ireland, WhatsApp compliance Ireland, site safety checklists Ireland, digital records Ireland, field compliance app Ireland"
+  },
+  {
+    "slug": "italy",
+    "name": "Italy",
+    "flagAlt": "Italian flag",
+    "flagSrc": "/assets/flags/italy.svg",
+    "title": "Quickler for Field Teams in Italy | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Italy. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Italy, compliance reporting Italy, WhatsApp field compliance, no-app inspections Italy, digital records Italy"
+  },
+  {
+    "slug": "japan",
+    "name": "Japan",
+    "flagAlt": "Japanese flag",
+    "flagSrc": "/assets/flags/japan.svg",
+    "title": "Quickler for Field Teams in Japan | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Japan. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Japan, compliance reporting Japan, WhatsApp field workflows, no app inspections Japan, digital site records Japan"
+  },
+  {
+    "slug": "mexico",
+    "name": "Mexico",
+    "flagAlt": "Mexican flag",
+    "flagSrc": "/assets/flags/mexico.svg",
+    "title": "Quickler for Field Teams in Mexico | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Mexico. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Mexico, compliance reporting Mexico, WhatsApp checklists, digital site records, no app inspections"
+  },
+  {
+    "slug": "netherlands",
+    "name": "Netherlands",
+    "flagAlt": "Dutch flag",
+    "flagSrc": "/assets/flags/netherlands.svg",
+    "title": "Quickler for Field Teams in Netherlands | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Netherlands. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Netherlands, WhatsApp compliance Netherlands, site safety checks Netherlands, digital records Netherlands"
+  },
+  {
+    "slug": "new-zealand",
+    "name": "New Zealand",
+    "flagAlt": "New Zealand flag",
+    "flagSrc": "/assets/flags/new-zealand.svg",
+    "title": "Quickler for Field Teams in New Zealand | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for New Zealand. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection New Zealand, WhatsApp compliance New Zealand, digital checklists New Zealand, site safety reports New Zealand"
+  },
+  {
+    "slug": "poland",
+    "name": "Poland",
+    "flagAlt": "Polish flag",
+    "flagSrc": "/assets/flags/poland.svg",
+    "title": "Quickler for Field Teams in Poland | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Poland. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Poland, WhatsApp compliance Poland, site safety Poland, digital checklists Poland, EU data hosting"
+  },
+  {
+    "slug": "portugal",
+    "name": "Portugal",
+    "flagAlt": "Portuguese flag",
+    "flagSrc": "/assets/flags/portugal.svg",
+    "title": "Quickler for Field Teams in Portugal | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Portugal. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Portugal, compliance reporting Portugal, WhatsApp workflows Portugal, digital records Portugal"
+  },
+  {
+    "slug": "singapore",
+    "name": "Singapore",
+    "flagAlt": "Singapore flag",
+    "flagSrc": "/assets/flags/singapore.svg",
+    "title": "Quickler for Field Teams in Singapore | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Singapore. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Singapore, compliance reporting Singapore, WhatsApp field teams, no app inspection, digital records Singapore"
+  },
+  {
+    "slug": "south-africa",
+    "name": "South Africa",
+    "flagAlt": "South African flag",
+    "flagSrc": "/assets/flags/south-africa.svg",
+    "title": "Quickler for Field Teams in South Africa | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for South Africa. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection South Africa, WhatsApp compliance, site safety checks, no app inspections, digital records South Africa"
+  },
+  {
+    "slug": "spain",
+    "name": "Spain",
+    "flagAlt": "Spanish flag",
+    "flagSrc": "/assets/flags/spain.svg",
+    "title": "Quickler for Field Teams in Spain | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Spain. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Spain, WhatsApp compliance Spain, digital checklists Spain, site safety Spain, field compliance software Spain"
+  },
+  {
+    "slug": "sweden",
+    "name": "Sweden",
+    "flagAlt": "Swedish flag",
+    "flagSrc": "/assets/flags/sweden.svg",
+    "title": "Quickler for Field Teams in Sweden | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for Sweden. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection Sweden, compliance reporting Sweden, WhatsApp workflows Sweden, digital records Sweden"
+  },
+  {
+    "slug": "uae",
+    "name": "United Arab Emirates",
+    "flagAlt": "UAE flag",
+    "flagSrc": "/assets/flags/uae.svg",
+    "title": "Quickler for Field Teams in United Arab Emirates | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for United Arab Emirates. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection UAE, WhatsApp compliance United Arab Emirates, site safety checklists UAE, no app field reporting"
+  },
+  {
+    "slug": "united-states",
+    "name": "United States",
+    "flagAlt": "US flag",
+    "flagSrc": "/assets/flags/united-states.svg",
+    "title": "Quickler for Field Teams in United States | Guides &amp; Resources",
+    "description": "Quickler field inspection and compliance resources for United States. WhatsApp-based workflows, no app required. Structured digital records on EU-hosted servers.",
+    "keywords": "field inspection United States, WhatsApp compliance United States, site safety checks, digital field records, no-app inspections"
+  }
+]

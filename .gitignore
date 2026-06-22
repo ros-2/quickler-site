@@ -1,0 +1,6 @@
+# Node / Eleventy build artefacts — not served directly yet (staged migration).
+node_modules/
+_site/
+
+# OS noise
+.DS_Store

@@ -1,0 +1,10 @@
+---
+pagination:
+  data: countries
+  size: 1
+  alias: country
+layout: layouts/country-hub.njk
+permalink: "/pages/country-hub-{{ country.slug }}.html"
+eleventyComputed:
+  title: "{{ country.title }}"
+---

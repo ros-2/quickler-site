@@ -1,0 +1,20 @@
+{
+  "name": "quickler-site",
+  "version": "1.0.0",
+  "description": "Quickler marketing site - Eleventy module-based build",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "format": "prettier --write \"src/**/*.{njk,css,js}\"",
+    "lint:css": "stylelint \"src/css/**/*.css\"",
+    "test:seo": "node tools/seo-diff.js",
+    "test:a11y": "pa11y-ci"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "prettier": "^3.3.3",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}
