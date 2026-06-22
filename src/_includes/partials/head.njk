@@ -1,0 +1,56 @@
+{#- Head module. Per-page SEO comes from front-matter / data: seo.title, seo.description,
+seo.keywords (opt), seo.author (default Philip Ross), seo.canonical, seo.ogType (default website),
+seo.ogLocale (default en_GB), seo.twitterCard (default summary), seo.twitterTitle,
+seo.twitterDescription, seo.hreflang [{lang,href}], seo.jsonld (raw string, opt). Favicon set + font
+preload are identical on every page -> defined ONCE here. -#}
+<head>
+  <script src="/js/cookie-consent.js" defer></script>
+
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ seo.title | safe }}</title>
+  {%- if seo.hasMetaTitle != false %}
+  <meta name="title" content="{{ seo.title | safe }}">
+  {%- endif %}
+  <meta name="description" content="{{ seo.description }}">
+  {%- if seo.keywords %}
+  <meta name="keywords" content="{{ seo.keywords }}">
+  {%- endif %}
+  <meta name="author" content="{{ seo.author or 'Philip Ross' }}">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="{{ seo.ogType or 'website' }}">
+  <meta property="og:url" content="{{ seo.canonical }}">
+  <meta property="og:title" content="{{ seo.ogTitle or seo.title | safe }}">
+  <meta property="og:description" content="{{ seo.ogDescription or seo.description }}">
+  <meta property="og:locale" content="{{ seo.ogLocale or 'en_GB' }}">
+
+  <meta name="twitter:card" content="{{ seo.twitterCard or 'summary' }}">
+  <meta name="twitter:title" content="{{ seo.twitterTitle or seo.title | safe }}">
+  <meta name="twitter:description" content="{{ seo.twitterDescription or seo.description }}">
+
+  <link rel="canonical" href="{{ seo.canonical }}">
+  {%- for alt in seo.hreflang %}
+  <link rel="alternate" hreflang="{{ alt.lang }}" href="{{ alt.href }}">
+  {%- endfor %}
+  {%- if seo.jsonld %}
+
+  <script type="application/ld+json">
+{{ seo.jsonld | safe }}
+  </script>
+  {%- endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/styles.v2.css">
+  {%- if headStyle %}
+  <style>{{ headStyle | safe }}</style>
+  {%- endif %}
+</head>

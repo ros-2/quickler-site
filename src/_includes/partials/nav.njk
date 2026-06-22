@@ -2,11 +2,7 @@
   <a href="/" class="nav-name">
     <img src="/assets/logos/quickler-logo-white.svg" alt="quickler" width="179" height="42">
   </a>
-  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" onclick="document.querySelector('nav').classList.toggle('nav-open')">
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-  </button>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" onclick="document.querySelector('nav').classList.toggle('nav-open')"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
   <div class="nav-menu">
     {%- for link in nav.links %}
     <a href="{{ link.href }}">{{ link.label }}</a>

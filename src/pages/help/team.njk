@@ -1,0 +1,82 @@
+---json
+{
+  "layout": "layouts/page.njk",
+  "permalink": "/pages/help/team.html",
+  "bodyClass": "page-inner",
+  "seo": {
+    "title": "Help: Team management | Quickler",
+    "description": "Team roles in Quickler: admins vs members, inviting team members, changing roles and removing access.",
+    "canonical": "https://quickler.co/pages/help/team.html",
+    "twitterTitle": "Help: Team management",
+    "ogType": "article",
+    "hasMetaTitle": false,
+    "lang": "en",
+    "jsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"TechArticle\",\n  \"headline\": \"Team management\",\n  \"description\": \"Team roles in Quickler: admins vs members, inviting team members, changing roles and removing access.\",\n  \"url\": \"https://quickler.co/pages/help/team.html\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Philip Ross\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Quickler Ltd\"\n  }\n}"
+  },
+  "headStyle": "\n      .help-shell { max-width: 1000px; margin: 0 auto; padding: 40px 28px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; }\n      .help-nav { position: sticky; top: 32px; align-self: start; }\n      .help-nav h3 { margin: 0 0 14px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; }\n      .help-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }\n      .help-nav a { display: block; padding: 7px 12px; border-radius: 6px; color: #334155; text-decoration: none; font-size: 0.92rem; }\n      .help-nav a:hover { background: rgba(15,23,42,0.05); color: #0d1a3a; }\n      .help-nav a.current { background: rgba(47,107,255,0.1); color: #2f6bff; font-weight: 600; }\n      .help-body h1 { margin: 0 0 10px; font-size: 1.8rem; }\n      .help-body h2 { margin-top: 32px; font-size: 1.2rem; color: #0d1a3a; }\n      .help-body h3 { margin-top: 22px; font-size: 1rem; color: #0d1a3a; }\n      .help-body p, .help-body li { line-height: 1.65; color: #334155; }\n      .help-body code { background: rgba(15,23,42,0.06); padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }\n      .help-body ol, .help-body ul { padding-left: 22px; }\n      .help-body .callout { background: rgba(59,130,246,0.06); border-left: 3px solid #3b82f6; padding: 14px 18px; border-radius: 4px; margin: 18px 0; }\n      @media (max-width: 720px) {\n        .help-shell { grid-template-columns: 1fr; gap: 20px; padding: 24px 18px; }\n        .help-nav { position: static; }\n      }\n    ",
+  "scripts": [
+    "/js/analytics-events.js"
+  ]
+}
+---
+<section id="top">
+      <div class="help-shell">
+        <aside class="help-nav">
+          <h3>Help centre</h3>
+          <ul>
+            <li><a href="/pages/help/index.html">Home</a></li>
+            <li><a href="/pages/help/getting-started.html">Getting started</a></li>
+            <li><a href="/pages/help/workflows.html">Workflows</a></li>
+            <li><a href="/pages/help/engineers.html">Engineers</a></li>
+            <li><a href="/pages/help/team.html" class="current">Team management</a></li>
+            <li><a href="/pages/help/plans.html">Plans &amp; billing</a></li>
+            <li><a href="/pages/help/privacy.html">Data &amp; privacy</a></li>
+            <li><a href="/pages/help/troubleshooting.html">Troubleshooting</a></li>
+            <li><a href="/pages/help/faq.html">FAQ</a></li>
+            <li><a href="/pages/help/contact.html">Contact</a></li>
+          </ul>
+        </aside>
+        <article class="help-body">
+          <h1>Team management</h1>
+          <p>Your firm can have multiple people on the dashboard. Each person is either an <strong>admin</strong> or a <strong>member</strong>.</p>
+
+          <h2>Roles</h2>
+          <table style="width:100%;border-collapse:collapse;margin:12px 0;">
+            <thead>
+              <tr style="border-bottom:2px solid rgba(15,23,42,0.1);">
+                <th style="text-align:left;padding:6px 4px;">Action</th>
+                <th style="text-align:center;padding:6px 4px;">Admin</th>
+                <th style="text-align:center;padding:6px 4px;">Member</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(15,23,42,0.06);"><td style="padding:6px 4px;">View engineers, workflows, submissions</td><td style="text-align:center;">Yes</td><td style="text-align:center;">Yes</td></tr>
+              <tr style="border-bottom:1px solid rgba(15,23,42,0.06);"><td style="padding:6px 4px;">Add or remove engineers</td><td style="text-align:center;">Yes</td><td style="text-align:center;">No</td></tr>
+              <tr style="border-bottom:1px solid rgba(15,23,42,0.06);"><td style="padding:6px 4px;">Create or edit workflows</td><td style="text-align:center;">Yes</td><td style="text-align:center;">No</td></tr>
+              <tr style="border-bottom:1px solid rgba(15,23,42,0.06);"><td style="padding:6px 4px;">Send workflows to engineers</td><td style="text-align:center;">Yes</td><td style="text-align:center;">No</td></tr>
+              <tr style="border-bottom:1px solid rgba(15,23,42,0.06);"><td style="padding:6px 4px;">Manage billing and plan</td><td style="text-align:center;">Yes</td><td style="text-align:center;">No</td></tr>
+              <tr style="border-bottom:1px solid rgba(15,23,42,0.06);"><td style="padding:6px 4px;">Invite or remove team members</td><td style="text-align:center;">Yes</td><td style="text-align:center;">No</td></tr>
+              <tr><td style="padding:6px 4px;">Change another person's role</td><td style="text-align:center;">Yes</td><td style="text-align:center;">No</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Inviting someone</h2>
+          <ol>
+            <li>Go to the <strong>Team</strong> section of the dashboard.</li>
+            <li>Enter their email address and click <strong>Invite</strong>.</li>
+            <li>They receive an email with a link. The link expires after 7 days.</li>
+          </ol>
+          <p>New team members join as admins by default. Change their role after they accept.</p>
+
+          <h2>Changing roles</h2>
+          <p>Click the role toggle next to a team member's name. You cannot demote yourself if you are the only admin.</p>
+
+          <h2>Removing someone</h2>
+          <p>Click <strong>Remove</strong> next to their name. They lose access immediately. Their historical actions (workflow sends, submissions) are preserved.</p>
+          <hr style="margin-top:40px;border:none;border-top:1px solid rgba(15,23,42,0.08);">
+          <p style="font-size:0.85rem;color:#64748b;">
+            Still stuck? Email <a href="mailto:hello@quickler.co">hello@quickler.co</a> &mdash; we reply within one business day.
+          </p>
+        </article>
+      </div>
+    </section>

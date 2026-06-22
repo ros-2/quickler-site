@@ -1,0 +1,7 @@
+# Eleventy templates: Prettier's HTML parser rewrites whitespace inside
+# attributes and between tags, which leaks into rendered output and breaks
+# byte-fidelity with the live pages during the staged migration. Format
+# these by hand; let Prettier own CSS/JS/JSON only.
+*.njk
+_site/
+node_modules/

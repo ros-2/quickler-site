@@ -1,0 +1,80 @@
+---json
+{
+  "layout": "layouts/page.njk",
+  "permalink": "/pages/help/privacy.html",
+  "bodyClass": "page-inner",
+  "seo": {
+    "title": "Help: Data & privacy | Quickler",
+    "description": "What data Quickler stores, where it lives, who can see it, exporting your records and deletion on close.",
+    "canonical": "https://quickler.co/pages/help/privacy.html",
+    "twitterTitle": "Help: Data & privacy",
+    "ogType": "article",
+    "hasMetaTitle": false,
+    "lang": "en",
+    "jsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"TechArticle\",\n  \"headline\": \"Data & privacy\",\n  \"description\": \"What data Quickler stores, where it lives, who can see it, exporting your records and deletion on close.\",\n  \"url\": \"https://quickler.co/pages/help/privacy.html\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Philip Ross\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Quickler Ltd\"\n  }\n}"
+  },
+  "headStyle": "\n      .help-shell { max-width: 1000px; margin: 0 auto; padding: 40px 28px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; }\n      .help-nav { position: sticky; top: 32px; align-self: start; }\n      .help-nav h3 { margin: 0 0 14px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; }\n      .help-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }\n      .help-nav a { display: block; padding: 7px 12px; border-radius: 6px; color: #334155; text-decoration: none; font-size: 0.92rem; }\n      .help-nav a:hover { background: rgba(15,23,42,0.05); color: #0d1a3a; }\n      .help-nav a.current { background: rgba(47,107,255,0.1); color: #2f6bff; font-weight: 600; }\n      .help-body h1 { margin: 0 0 10px; font-size: 1.8rem; }\n      .help-body h2 { margin-top: 32px; font-size: 1.2rem; color: #0d1a3a; }\n      .help-body h3 { margin-top: 22px; font-size: 1rem; color: #0d1a3a; }\n      .help-body p, .help-body li { line-height: 1.65; color: #334155; }\n      .help-body code { background: rgba(15,23,42,0.06); padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }\n      .help-body ol, .help-body ul { padding-left: 22px; }\n      .help-body .callout { background: rgba(59,130,246,0.06); border-left: 3px solid #3b82f6; padding: 14px 18px; border-radius: 4px; margin: 18px 0; }\n      @media (max-width: 720px) {\n        .help-shell { grid-template-columns: 1fr; gap: 20px; padding: 24px 18px; }\n        .help-nav { position: static; }\n      }\n    ",
+  "scripts": [
+    "/js/analytics-events.js"
+  ]
+}
+---
+<section id="top">
+      <div class="help-shell">
+        <aside class="help-nav">
+          <h3>Help centre</h3>
+          <ul>
+            <li><a href="/pages/help/index.html">Home</a></li>
+            <li><a href="/pages/help/getting-started.html">Getting started</a></li>
+            <li><a href="/pages/help/workflows.html">Workflows</a></li>
+            <li><a href="/pages/help/engineers.html">Engineers</a></li>
+            <li><a href="/pages/help/team.html">Team management</a></li>
+            <li><a href="/pages/help/plans.html">Plans &amp; billing</a></li>
+            <li><a href="/pages/help/privacy.html" class="current">Data &amp; privacy</a></li>
+            <li><a href="/pages/help/troubleshooting.html">Troubleshooting</a></li>
+            <li><a href="/pages/help/faq.html">FAQ</a></li>
+            <li><a href="/pages/help/contact.html">Contact</a></li>
+          </ul>
+        </aside>
+        <article class="help-body">
+          <h1>Data &amp; privacy</h1>
+
+          <h2>What we store</h2>
+          <ul>
+            <li>Firm details and branding.</li>
+            <li>Engineer names and mobile numbers.</li>
+            <li>Workflow definitions.</li>
+            <li>Submissions: text answers, photos, timestamps, generated PDFs.</li>
+            <li>Billing metadata (subscription ID, payment dates). Not card details.</li>
+          </ul>
+
+          <h2>Where it lives</h2>
+          <p>All data is stored on EU servers. No personal data leaves Europe.</p>
+
+          <h2>Who can see it</h2>
+          <ul>
+            <li><strong>Admins</strong> see everything in the firm.</li>
+            <li><strong>Members</strong> see engineers, workflows, and submissions. Cannot manage billing or delete admins.</li>
+            <li><strong>Engineers</strong> see only the WhatsApp chat.</li>
+            <li><strong>Quickler staff</strong> &mdash; access for support only. We don't read submissions unless you ask us to.</li>
+          </ul>
+
+          <p><strong>Engineer consent:</strong> Engineers are added by their employer. We process their mobile number and WhatsApp messages under the employer's legitimate interest in field reporting, in accordance with UK GDPR Article 6(1)(f).</p>
+
+          <h2>Exporting</h2>
+          <p>Click <strong>Download data</strong> on the dashboard. You get a ZIP with every engineer, workflow, and submission as JSON, plus photos. Available any time.</p>
+
+          <h2>Deletion</h2>
+          <p>Close your account and we delete your firm, engineers, and submissions within 30 days. Billing records are kept 7 years (HMRC requirement) but contain no operational data.</p>
+
+          <h2>Third-party processors</h2>
+          <p>We use third-party services for WhatsApp message delivery, payment processing, and infrastructure. None of these services receive your submission content beyond what is necessary to operate the product. Full details are in the <a href="https://quickler.co/pages/privacy.html">Privacy Policy</a>.</p>
+
+          <p>Full legal detail: <a href="https://quickler.co/pages/privacy.html">Privacy Policy</a> and <a href="https://quickler.co/pages/legal.html">Legal</a>.</p>
+          <hr style="margin-top:40px;border:none;border-top:1px solid rgba(15,23,42,0.08);">
+          <p style="font-size:0.85rem;color:#64748b;">
+            Still stuck? Email <a href="mailto:hello@quickler.co">hello@quickler.co</a> &mdash; we reply within one business day.
+          </p>
+        </article>
+      </div>
+    </section>

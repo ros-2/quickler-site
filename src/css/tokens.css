@@ -14,7 +14,6 @@
    ============================================================ */
 
 :root {
-
   /* ---- BRAND ------------------------------------------------
      Decisions locked with Philip 2026-06-22:
        blue  = #1a52d0 (the deeper one; app + site agree)
@@ -24,37 +23,40 @@
   --font: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --blue: #1a52d0;            /* THE Quickler blue. One blue. */
-  --blue-strong: #123e9e;    /* hover/active of blue */
-  --blue-soft: rgba(26, 82, 208, 0.10);
+  --blue: #1a52d0; /* THE Quickler blue. One blue. */
+  --blue-strong: #123e9e; /* hover/active of blue */
+  --blue-soft: rgba(26, 82, 208, 0.1);
 
   /* Gradient — accent use ONLY (hero flourish, key highlight).
      Not for text backgrounds that carry copy. */
-  --gradient: linear-gradient(90deg, #2F6BFF 0%, #5A4FCF 35%, #7C3AED 65%, #F43F8C 100%);
-  --pink: #F43F8C;           /* highlight accent, sparing */
+  --gradient: linear-gradient(90deg, #2f6bff 0%, #5a4fcf 35%, #7c3aed 65%, #f43f8c 100%);
+  --pink: #f43f8c; /* highlight accent, sparing */
 
   /* ---- INK (text) — always paired with a surface below ---- */
-  --ink-strong: #0c1734;     /* headings */
-  --ink: #213055;            /* body */
-  --ink-soft: #67789e;       /* secondary / labels */
-  --on-blue: #ffffff;        /* text that sits ON --blue */
-  --on-dark: #ffffff;        /* text on dark hero / gradient */
+  --ink-strong: #0c1734; /* headings */
+  --ink: #213055; /* body */
+  --ink-soft: #67789e; /* secondary / labels */
+  --on-blue: #ffffff; /* text that sits ON --blue */
+  --on-dark: #ffffff; /* text on dark hero / gradient */
   --on-dark-soft: rgba(255, 255, 255, 0.72);
 
   /* ---- SURFACES (backgrounds) ----------------------------- */
-  --surface: #f6f9ff;        /* page background */
-  --surface-alt: #edf2ff;    /* tinted band */
-  --surface-card: #ffffff;   /* card background (opaque - readable) */
-  --surface-dark: #0c1734;   /* dark hero band */
+  --surface: #f6f9ff; /* page background */
+  --surface-alt: #edf2ff; /* tinted band */
+  --surface-card: #ffffff; /* card background (opaque - readable) */
+  --surface-dark: #0c1734; /* dark hero band */
 
   /* ---- LINES / BORDERS ------------------------------------ */
-  --line: rgba(24, 52, 132, 0.10);
+  --line: rgba(24, 52, 132, 0.1);
   --line-strong: rgba(24, 52, 132, 0.18);
 
   /* ---- SEMANTIC STATES (single values, no per-page drift) -- */
-  --success: #16a34a;  --success-soft: rgba(22, 163, 74, 0.08);
-  --warning: #b45309;  --warning-soft: rgba(180, 83, 9, 0.08);
-  --danger:  #c0392b;  --danger-soft:  rgba(192, 57, 43, 0.08);
+  --success: #16a34a;
+  --success-soft: rgba(22, 163, 74, 0.08);
+  --warning: #b45309;
+  --warning-soft: rgba(180, 83, 9, 0.08);
+  --danger: #c0392b;
+  --danger-soft: rgba(192, 57, 43, 0.08);
 
   /* ---- SPACING — ONE discrete scale. Every gap/pad/margin is
      a multiple of these. No ad-hoc clamp soup. ------------- */
@@ -74,21 +76,21 @@
 
   /* ---- LAYOUT WIDTHS — a SMALL named set, not 11 of them.
      Stacked sections share an edge -> no ragged side margins. */
-  --width-page: 1200px;      /* standard section content width */
-  --width-prose: 760px;      /* text-heavy / single column */
-  --width-form: 640px;       /* forms */
+  --width-page: 1200px; /* standard section content width */
+  --width-prose: 760px; /* text-heavy / single column */
+  --width-form: 640px; /* forms */
   --gutter: clamp(16px, 4vw, 28px);
 
   /* ---- RADIUS — one scale, used by tokens only ------------ */
-  --radius-sm: 10px;         /* inputs, small chips */
-  --radius-md: 16px;         /* cards */
-  --radius-lg: 22px;         /* large panels */
-  --radius-pill: 999px;      /* buttons, pills */
+  --radius-sm: 10px; /* inputs, small chips */
+  --radius-md: 16px; /* cards */
+  --radius-lg: 22px; /* large panels */
+  --radius-pill: 999px; /* buttons, pills */
 
   /* ---- SHADOW — one scale ---------------------------------- */
   --shadow-sm: 0 2px 8px rgba(18, 41, 111, 0.06);
   --shadow-md: 0 4px 24px rgba(18, 41, 111, 0.08);
-  --shadow-lg: 0 18px 40px rgba(18, 41, 111, 0.10);
+  --shadow-lg: 0 18px 40px rgba(18, 41, 111, 0.1);
 
   /* ---- MOTION --------------------------------------------- */
   --transition: 0.2s ease;

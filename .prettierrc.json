@@ -1,10 +1,4 @@
 {
   "printWidth": 100,
-  "htmlWhitespaceSensitivity": "ignore",
-  "overrides": [
-    {
-      "files": "*.njk",
-      "options": { "parser": "html" }
-    }
-  ]
+  "htmlWhitespaceSensitivity": "ignore"
 }

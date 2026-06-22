@@ -1,0 +1,81 @@
+---json
+{
+  "layout": "layouts/page.njk",
+  "permalink": "/pages/help/troubleshooting.html",
+  "bodyClass": "page-inner",
+  "seo": {
+    "title": "Help: Troubleshooting | Quickler",
+    "description": "Common Quickler problems: engineer not receiving messages, partial runs, PDF issues, sign-in problems.",
+    "canonical": "https://quickler.co/pages/help/troubleshooting.html",
+    "twitterTitle": "Help: Troubleshooting",
+    "ogType": "article",
+    "hasMetaTitle": false,
+    "lang": "en",
+    "jsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"TechArticle\",\n  \"headline\": \"Troubleshooting\",\n  \"description\": \"Common Quickler problems: engineer not receiving messages, partial runs, PDF issues, sign-in problems.\",\n  \"url\": \"https://quickler.co/pages/help/troubleshooting.html\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Philip Ross\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Quickler Ltd\"\n  }\n}"
+  },
+  "headStyle": "\n      .help-shell { max-width: 1000px; margin: 0 auto; padding: 40px 28px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; }\n      .help-nav { position: sticky; top: 32px; align-self: start; }\n      .help-nav h3 { margin: 0 0 14px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; }\n      .help-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }\n      .help-nav a { display: block; padding: 7px 12px; border-radius: 6px; color: #334155; text-decoration: none; font-size: 0.92rem; }\n      .help-nav a:hover { background: rgba(15,23,42,0.05); color: #0d1a3a; }\n      .help-nav a.current { background: rgba(47,107,255,0.1); color: #2f6bff; font-weight: 600; }\n      .help-body h1 { margin: 0 0 10px; font-size: 1.8rem; }\n      .help-body h2 { margin-top: 32px; font-size: 1.2rem; color: #0d1a3a; }\n      .help-body h3 { margin-top: 22px; font-size: 1rem; color: #0d1a3a; }\n      .help-body p, .help-body li { line-height: 1.65; color: #334155; }\n      .help-body code { background: rgba(15,23,42,0.06); padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }\n      .help-body ol, .help-body ul { padding-left: 22px; }\n      .help-body .callout { background: rgba(59,130,246,0.06); border-left: 3px solid #3b82f6; padding: 14px 18px; border-radius: 4px; margin: 18px 0; }\n      @media (max-width: 720px) {\n        .help-shell { grid-template-columns: 1fr; gap: 20px; padding: 24px 18px; }\n        .help-nav { position: static; }\n      }\n    ",
+  "scripts": [
+    "/js/analytics-events.js"
+  ]
+}
+---
+<section id="top">
+      <div class="help-shell">
+        <aside class="help-nav">
+          <h3>Help centre</h3>
+          <ul>
+            <li><a href="/pages/help/index.html">Home</a></li>
+            <li><a href="/pages/help/getting-started.html">Getting started</a></li>
+            <li><a href="/pages/help/workflows.html">Workflows</a></li>
+            <li><a href="/pages/help/engineers.html">Engineers</a></li>
+            <li><a href="/pages/help/team.html">Team management</a></li>
+            <li><a href="/pages/help/plans.html">Plans &amp; billing</a></li>
+            <li><a href="/pages/help/privacy.html">Data &amp; privacy</a></li>
+            <li><a href="/pages/help/troubleshooting.html" class="current">Troubleshooting</a></li>
+            <li><a href="/pages/help/faq.html">FAQ</a></li>
+            <li><a href="/pages/help/contact.html">Contact</a></li>
+          </ul>
+        </aside>
+        <article class="help-body">
+          <h1>Troubleshooting</h1>
+
+          <h2>Engineer isn't receiving the intro message</h2>
+          <ul>
+            <li>Check the number. Country code matters &mdash; UK mobiles are <code>07</code> or <code>+447</code>.</li>
+            <li>WhatsApp must be installed on the same number as the mobile account.</li>
+            <li>If the engineer has blocked unknown numbers, ask them to unblock Quickler's sender.</li>
+            <li>Still nothing? Remove the engineer and re-add.</li>
+          </ul>
+
+          <h2>Engineer stopped halfway through</h2>
+          <p>Partial answers are saved. They can reply to the same WhatsApp chat at any time and pick up where they left off.</p>
+
+          <h2>PDF looks wrong</h2>
+          <ul>
+            <li><strong>Missing question:</strong> did you add it after the run started? Runs use the workflow version they were sent with.</li>
+            <li><strong>Photo sideways:</strong> WhatsApp sometimes strips rotation data. Ask the engineer to retake the photo held upright.</li>
+            <li><strong>Missing answer:</strong> the engineer may have skipped the question or replied with something the system couldn't parse. Check the run details on the dashboard.</li>
+          </ul>
+
+          <h2>Error page with a reference code</h2>
+          <p>We're notified automatically. If it's blocking you, email <a href="mailto:hello@quickler.co">hello@quickler.co</a> with the reference code.</p>
+
+          <h2>Hit the workflow or engineer limit</h2>
+          <p>Click the upgrade prompt on the dashboard. You pay the pro-rata difference for the rest of the cycle.</p>
+
+          <h2>Can't sign in</h2>
+          <ul>
+            <li>Magic links expire after 15 minutes. Request a new one.</li>
+            <li>Each link works once.</li>
+            <li>If you've requested several links in a short time, wait a few minutes before trying again.</li>
+          </ul>
+
+          <h2>Something else</h2>
+          <p>Email <a href="mailto:hello@quickler.co">hello@quickler.co</a>.</p>
+          <hr style="margin-top:40px;border:none;border-top:1px solid rgba(15,23,42,0.08);">
+          <p style="font-size:0.85rem;color:#64748b;">
+            Still stuck? Email <a href="mailto:hello@quickler.co">hello@quickler.co</a> &mdash; we reply within one business day.
+          </p>
+        </article>
+      </div>
+    </section>

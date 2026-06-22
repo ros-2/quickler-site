@@ -104,10 +104,7 @@
     "ico_registration": "C1910464",
     "data_processing_agreement": true,
     "customer_owns_data": true,
-    "export_format": [
-      "PDF",
-      "CSV"
-    ]
+    "export_format": ["PDF", "CSV"]
   },
   "llm_resources": {
     "summary": "https://quickler.co/llms.txt",
@@ -144,13 +141,7 @@
         {
           "name": "lane",
           "required": false,
-          "options": [
-            "EICR",
-            "CP12 gas safety",
-            "Van safety checks",
-            "Site inspections",
-            "Other"
-          ]
+          "options": ["EICR", "CP12 gas safety", "Van safety checks", "Site inspections", "Other"]
         },
         {
           "name": "report_volume",

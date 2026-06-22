@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="{{ seo.lang or 'en' }}">
+  {% include "partials/head.njk" %}
+  <body class="{{ bodyClass or 'page-inner' }}">
+    {% include "partials/nav.njk" %} {{ content | safe }} {% include "partials/footer.njk" %} {%-
+    for s in scripts %}
+    <script src="{{ s }}"></script>
+    {%- endfor %}
+  </body>
+</html>

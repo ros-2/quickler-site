@@ -55,6 +55,11 @@ ALLOWED = {
     # Poland's live page had twitter:card=summary; all 21 other country hubs
     # use summary_large_image. The module normalises Poland up to match.
     "pages/country-hub-poland.html": {"twitter"},
+    # These help pages had a raw "&" in twitter:title (invalid HTML). The
+    # module emits the correct &amp; encoding. Renders identically; valid HTML.
+    "pages/help/plans.html": {"twitter"},
+    "pages/help/privacy.html": {"twitter"},
+    "pages/help/contact.html": {"twitter"},
 }
 
 def main(argv):
