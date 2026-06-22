@@ -1,0 +1,158 @@
+---json
+{
+  "layout": "layouts/page.njk",
+  "permalink": "/pages/quickler-format-spec.html",
+  "bodyClass": "page-inner",
+  "seo": {
+    "title": "The Quickler Format for Field Compliance Reports | Open Spec v0.1",
+    "description": "Open specification for capturing any field compliance check (UK examples: EICR, CP12, van walkround, structural site report) over WhatsApp and producing a consistent, machine-readable PDF and JSON report. Rooted in UK compliance, works anywhere WhatsApp does. CC-BY-4.0.",
+    "canonical": "https://quickler.co/pages/quickler-format-spec.html",
+    "keywords": "quickler format spec, field compliance format, WhatsApp compliance specification, open spec UK trades, EICR JSON schema, CP12 JSON schema, van walkround data format",
+    "hasAuthor": true,
+    "hasTwitterDesc": false,
+    "hasTwitter": true,
+    "hasOg": true,
+    "twitterTitle": "The Quickler Format for Field Compliance Reports",
+    "ogType": "article",
+    "hasMetaTitle": true,
+    "ogTitle": "The Quickler Format for Field Compliance Reports — Open Spec v0.1",
+    "ogDescription": "Open specification for capturing any field compliance check over messaging and producing a consistent, machine-readable PDF and JSON report. Rooted in UK compliance, works anywhere WhatsApp does.",
+    "hreflang": [
+      {
+        "lang": "en-gb",
+        "href": "https://quickler.co/pages/quickler-format-spec.html"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://quickler.co/pages/quickler-format-spec.html"
+      }
+    ],
+    "lang": "en",
+    "jsonld": "{\n        \"@context\": \"https://schema.org\",\n        \"@graph\": [\n            {\n                \"@type\": \"TechArticle\",\n                \"headline\": \"The Quickler Format for Field Compliance Reports\",\n                \"description\": \"Open specification for capturing any field compliance check over messaging and producing a consistent, machine-readable PDF and JSON report. Rooted in UK compliance, works anywhere WhatsApp does.\",\n                \"author\": {\"@type\": \"Organization\", \"name\": \"Quickler Ltd\"},\n                \"publisher\": {\"@type\": \"Organization\", \"name\": \"Quickler Ltd\", \"url\": \"https://quickler.co/\"},\n                \"datePublished\": \"2026-04-01\",\n                \"dateModified\": \"2026-05-26\",\n                \"license\": \"https://creativecommons.org/licenses/by/4.0/\",\n                \"inLanguage\": \"en-GB\",\n                \"version\": \"0.1\"\n            },\n            {\n                \"@type\": \"BreadcrumbList\",\n                \"itemListElement\": [\n                    {\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://quickler.co/\"},\n                    {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Format Spec\", \"item\": \"https://quickler.co/pages/quickler-format-spec.html\"}\n                ]\n            }\n        ]\n    }"
+  },
+  "headStyle": "\n        .spec-body { max-width: 760px; margin: 0 auto; }\n        .spec-body h2 { margin-top: 2.4rem; }\n        .spec-body h3 { margin-top: 1.6rem; }\n        .spec-body pre { background: #0d1a3a; color: #e6ecff; padding: 1.2rem; border-radius: 12px; overflow-x: auto; font-size: 0.85rem; line-height: 1.5; }\n        .spec-body code { background: rgba(15, 23, 42, 0.06); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.92rem; }\n        .spec-body pre code { background: transparent; padding: 0; font-size: inherit; }\n        .spec-body ul { padding-left: 1.4rem; }\n        .spec-body li { margin-bottom: 0.4rem; }\n        .spec-meta { color: #67789e; font-size: 0.92rem; margin-top: 0.4rem; }\n    ",
+  "scripts": [
+    "/js/analytics-events.js"
+  ]
+}
+---
+<section id="top">
+        <div class="page-shell about-page-intro">
+            <span class="eyebrow">Open specification</span>
+            <h1>The Quickler Format for Field Compliance Reports.</h1>
+            <p class="spec-meta"><strong>Version 0.1</strong> · Published April 2026 · Last revised 2026-05-26 · Maintained by Quickler Ltd, Scotland · Contact <a href="mailto:hello@quickler.co">hello@quickler.co</a> · Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC-BY-4.0</a>.</p>
+        </div>
+    </section>
+
+    <section class="section-tight">
+        <div class="spec-body">
+            <h2>Why a format</h2>
+            <p>Field compliance work — van checks, gas tightness tests, structural inspections, retrofit verifications, and any inspection or checklist, not just one trade — is recorded by people whose phone is the only computer they carry. The format is rooted in UK compliance but works anywhere WhatsApp does, and is used across English-speaking markets including the UK, Ireland, the United States, Canada, Australia and New Zealand. (<a href="/pages/global-field-compliance.html">Quickler works in any country</a>.)</p>
+            <p>A lot of that data is captured in WhatsApp messages, voice notes and photos that never become structured records. The systems that do capture it often use proprietary apps engineers do not install.</p>
+            <p>The Quickler Format is an open specification for <strong>how a compliance check should be recorded over messaging, and how the resulting report should be structured</strong>, so that:</p>
+            <ul>
+                <li>Engineers do not need to install or learn an app</li>
+                <li>Office managers receive a consistent, machine-readable record</li>
+                <li>Building control officers, insurers and certifying bodies can read the report without a vendor-specific viewer</li>
+                <li>Any vendor can implement it; clients are not locked in</li>
+            </ul>
+            <p>This document is a working draft. Comments and pull requests are welcome.</p>
+
+            <h2>Scope</h2>
+            <p>The format covers three things:</p>
+            <ol>
+                <li><strong>The check definition</strong> — what the engineer is asked</li>
+                <li><strong>The capture conversation</strong> — how the engineer responds</li>
+                <li><strong>The report artefact</strong> — the PDF or JSON the office and third parties receive</li>
+            </ol>
+            <p>It does not cover scheduling, pricing or how engineers are dispatched — those are the vendor's problem.</p>
+
+            <h2>1. Check definition</h2>
+            <p>A <em>check</em> is a JSON object describing one repeated process. Example:</p>
+            <pre><code>{
+  "id": "weekly-van-check-2026-04",
+  "name": "Weekly van check",
+  "owner": {
+    "firm": "Example Trades Ltd",
+    "firm_id": "GB-CH-12345678"
+  },
+  "fields": [
+    { "key": "tyres",        "label": "Tyres OK?",        "type": "boolean", "required": true },
+    { "key": "lights",       "label": "Lights working?",  "type": "boolean", "required": true },
+    { "key": "fluid_levels", "label": "Fluid levels OK?", "type": "boolean", "required": true },
+    { "key": "odometer",     "label": "Odometer photo",   "type": "photo",   "required": true },
+    { "key": "fault_notes",  "label": "Any fault?",       "type": "text",    "required": false }
+  ]
+}</code></pre>
+
+            <h3>Field types</h3>
+            <ul>
+                <li><code>text</code> — free text</li>
+                <li><code>boolean</code> — yes / no</li>
+                <li><code>number</code> — numeric (whole or decimal)</li>
+                <li><code>photo</code> — one or more JPEG/HEIC images</li>
+                <li><code>voice</code> — one audio clip; transcribed automatically</li>
+                <li><code>signature</code> — captured as an SVG path or PNG</li>
+            </ul>
+
+            <h2>2. Capture conversation</h2>
+            <p>The engineer is messaged via WhatsApp (or any other compliant transport). The system asks one question per <code>field</code>, in order. The engineer replies in any combination of text, photo, voice. The system parses the reply into the typed value.</p>
+            <p>Compliant implementations MUST:</p>
+            <ul>
+                <li>Allow the engineer to skip non-required fields with a single reply (e.g. "skip" or "n/a")</li>
+                <li>Allow the engineer to correct a previous answer at any time before finalisation, by sending the field name and a new value</li>
+                <li>Respect WhatsApp's 24-hour session window — pre-approve a Meta Business template for any conversation that may span longer</li>
+            </ul>
+
+            <h2>3. Report artefact</h2>
+            <p>Each completed check produces a <strong>PDF report</strong> rendered from a deterministic template, containing:</p>
+            <ul>
+                <li>Firm name, registration number, branding</li>
+                <li>Engineer name, mobile number (E.164), date and time of completion</li>
+                <li>Each field's label, value and any attached media (rendered inline)</li>
+            </ul>
+            <p>The specification reserves space for two additional features that are not required in v0.1 implementations and are not yet present in the reference implementation:</p>
+            <ul>
+                <li>A SHA-256 hash of the underlying JSON record, printed in the report footer (intended to make the report tamper-evident).</li>
+                <li>A JSON sidecar with the raw structured record, embedded in the PDF as an attachment per ISO 32000-1 §7.11.</li>
+            </ul>
+            <p>Both are tracked as open questions for v0.2.</p>
+
+            <h2>Compliance levels</h2>
+            <p>A vendor can claim:</p>
+            <ul>
+                <li><strong>Quickler-Format Capture</strong> — supports section 1 and section 2</li>
+                <li><strong>Quickler-Format Reporting</strong> — supports section 3</li>
+                <li><strong>Quickler-Format Full</strong> — supports all three</li>
+            </ul>
+
+            <h2>Reference implementation</h2>
+            <p>A reference implementation is maintained by Quickler Ltd. To request access or discuss commercial use of the Quickler-Format mark, email <a href="mailto:hello@quickler.co">hello@quickler.co</a>.</p>
+
+            <h2>Open questions for v0.2</h2>
+            <ul>
+                <li>Schema for non-photo evidence (CAD files, IFC models)</li>
+                <li>Multi-engineer sign-off (one capture, two engineers attesting)</li>
+                <li>Localisation beyond English (multi-market: Welsh, Gaelic, Polish, French, Spanish and others, spanning UK and international trades languages)</li>
+            </ul>
+
+            <p class="spec-meta">This document is © 2026 Quickler Ltd, released under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC-BY-4.0</a>. Forks and derivative formats welcome — please cite the source.</p>
+        </div>
+    </section>
+
+    <section class="section-tight">
+        <div class="spec-body">
+            <h2>Conformance declarations</h2>
+            <p>Vendors implementing the format are listed here once a declaration is filed:</p>
+            <ul>
+                <li><em>None yet — be the first.</em></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Implementing the spec?</h2>
+            <p>Send a conformance declaration to <a href="mailto:hello@quickler.co">hello@quickler.co</a>.</p>
+        </div>
+    </section>

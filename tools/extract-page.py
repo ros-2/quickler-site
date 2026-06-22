@@ -38,6 +38,18 @@ def convert(relpath: str):
     if meta(doc, "keywords"): seo["keywords"] = meta(doc, "keywords")
     author = meta(doc, "author")
     if author and author != "Philip Ross": seo["author"] = author
+    # whether the live page emits an author meta at all (demo.html omits it)
+    seo["hasAuthor"] = author is not None
+    # robots: preserve a non-default directive (noindex/nofollow). Many pages
+    # are deliberately de-indexed (internal, redirects, demo) — must not flip
+    # them to index,follow.
+    robots = meta(doc, "robots")
+    if robots and robots != "index, follow": seo["robots"] = robots
+    # whether the live page emits twitter:description at all
+    seo["hasTwitterDesc"] = meta(doc, "twitter:description", "name") is not None
+    # whether the live page emits any twitter / og tags at all
+    seo["hasTwitter"] = meta(doc, "twitter:card", "name") is not None
+    seo["hasOg"] = meta(doc, "og:type", "property") is not None
     tc = meta(doc, "twitter:card", "name")
     if tc and tc != "summary": seo["twitterCard"] = tc
     tt = meta(doc, "twitter:title", "name")
