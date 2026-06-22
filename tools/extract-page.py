@@ -17,7 +17,9 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def meta(doc, name, attr="name"):
     m = re.search(rf'<meta\s+{attr}="{re.escape(name)}"\s+content="(.*?)"', doc, re.S)
-    return m.group(1) if m else None
+    # Decode HTML entities so values stored in front-matter are plain text;
+    # Nunjucks re-escapes them exactly once on output (avoids &amp;amp;).
+    return html.unescape(m.group(1)) if m else None
 
 def link(doc, rel):
     m = re.search(rf'<link\s+rel="{rel}"\s+href="(.*?)"', doc)
@@ -27,7 +29,7 @@ def convert(relpath: str):
     src = ROOT / relpath
     doc = src.read_text(encoding="utf-8")
 
-    title = re.search(r"<title>(.*?)</title>", doc, re.S).group(1)
+    title = html.unescape(re.search(r"<title>(.*?)</title>", doc, re.S).group(1))
     seo = {
         "title": title,
         "description": meta(doc, "description"),
@@ -46,6 +48,8 @@ def convert(relpath: str):
     if ol and ol != "en_GB": seo["ogLocale"] = ol
     ot = meta(doc, "og:type", "property")
     if ot and ot != "website": seo["ogType"] = ot
+    ola = meta(doc, "og:locale:alternate", "property")
+    if ola: seo["ogLocaleAlt"] = ola
     # does the live page actually emit <meta name="title">?
     seo["hasMetaTitle"] = meta(doc, "title", "name") is not None
     # og:title / og:description that differ from the page title/description

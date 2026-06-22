@@ -23,6 +23,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "_site"
 
+def _norm(v):
+    """Normalise HTML-entity encoding so cosmetically-identical values compare
+    equal. The live site is inconsistently encoded (raw & vs &amp;, raw ' vs
+    &#39;); the rebuild emits correct, consistent encoding. Decoding both sides
+    to plain text means the gate flags only REAL content differences, not
+    encoding improvements (per the 'unify, don't mirror' decision)."""
+    if isinstance(v, str):
+        return html.unescape(v)
+    if isinstance(v, list):
+        return [tuple(_norm(x) for x in t) if isinstance(t, tuple) else _norm(t) for t in v]
+    return v
+
 def extract(doc: str):
     seo = {}
     m = re.search(r"<title>(.*?)</title>", doc, re.S)
@@ -77,8 +89,8 @@ def main(argv):
             print(f"MISSING generated: {rel}")
             total_diffs += 1
             continue
-        a = extract(live.read_text(encoding="utf-8"))
-        b = extract(gen.read_text(encoding="utf-8"))
+        a = {k: _norm(v) for k, v in extract(live.read_text(encoding="utf-8")).items()}
+        b = {k: _norm(v) for k, v in extract(gen.read_text(encoding="utf-8")).items()}
         allowed = ALLOWED.get(str(rel), set())
         diffs = [k for k in a if a[k] != b[k] and k not in allowed]
         accepted = [k for k in a if a[k] != b[k] and k in allowed]

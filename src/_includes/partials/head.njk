@@ -13,9 +13,9 @@ preload are identical on every page -> defined ONCE here. -#}
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{ seo.title | safe }}</title>
+  <title>{{ seo.title }}</title>
   {%- if seo.hasMetaTitle != false %}
-  <meta name="title" content="{{ seo.title | safe }}">
+  <meta name="title" content="{{ seo.title }}">
   {%- endif %}
   <meta name="description" content="{{ seo.description }}">
   {%- if seo.keywords %}
@@ -26,12 +26,15 @@ preload are identical on every page -> defined ONCE here. -#}
 
   <meta property="og:type" content="{{ seo.ogType or 'website' }}">
   <meta property="og:url" content="{{ seo.canonical }}">
-  <meta property="og:title" content="{{ seo.ogTitle or seo.title | safe }}">
+  <meta property="og:title" content="{{ seo.ogTitle or seo.title }}">
   <meta property="og:description" content="{{ seo.ogDescription or seo.description }}">
   <meta property="og:locale" content="{{ seo.ogLocale or 'en_GB' }}">
+  {%- if seo.ogLocaleAlt %}
+  <meta property="og:locale:alternate" content="{{ seo.ogLocaleAlt }}">
+  {%- endif %}
 
   <meta name="twitter:card" content="{{ seo.twitterCard or 'summary' }}">
-  <meta name="twitter:title" content="{{ seo.twitterTitle or seo.title | safe }}">
+  <meta name="twitter:title" content="{{ seo.twitterTitle or seo.title }}">
   <meta name="twitter:description" content="{{ seo.twitterDescription or seo.description }}">
 
   <link rel="canonical" href="{{ seo.canonical }}">
