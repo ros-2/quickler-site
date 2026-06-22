@@ -2,6 +2,10 @@
     const CONSENT_KEY = "quickler_cookie_consent_v1";
     // Quickler site GA4 stream. Keep this separate from the older Lochross property.
     const GA_ID = "G-L0G13C0E52";
+    // Microsoft Clarity project ID — heatmaps + session recordings. Free.
+    // Set this to your real project ID from clarity.microsoft.com to switch it on.
+    // Left empty = Clarity simply does not load (GA still works).
+    const CLARITY_ID = "";
     const BANNER_ID = "quickler-cookie-banner";
     let navMenuIdCounter = 0;
 
@@ -38,7 +42,26 @@
         script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
         document.head.appendChild(script);
 
+        loadClarity();
+
         window.__quicklerAnalyticsLoaded = true;
+    }
+
+    // Microsoft Clarity — heatmaps, click maps, and session recordings.
+    // Only loads behind the same consent gate as GA, and only if CLARITY_ID is set.
+    function loadClarity() {
+        if (!CLARITY_ID) return;
+        if (window.clarity) return;
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () {
+                (c[a].q = c[a].q || []).push(arguments);
+            };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", CLARITY_ID);
     }
 
     function removeBanner() {
@@ -55,9 +78,9 @@
         banner.innerHTML = `
             <div class="cookie-banner-title">Cookie settings</div>
             <p class="cookie-banner-copy">
-                quickler uses analytics cookies only if you allow them.
-                They help me understand which pages are useful.
-                See the <a href="/pages/privacy.html">Privacy Policy</a>.
+                quickler uses analytics only if you allow them. They help me
+                see which pages are useful and how the site is used. See the
+                <a href="/pages/privacy.html">Privacy Policy</a>.
             </p>
             <div class="cookie-banner-actions">
                 <button type="button" class="cookie-button cookie-button-accept" data-cookie-action="accept">Accept analytics</button>
