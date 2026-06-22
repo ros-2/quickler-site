@@ -12,37 +12,53 @@ body {
     word-wrap: break-word;
 }
 
+/* COMPATIBILITY SHIM — the canonical palette now lives in tokens.css,
+   which is loaded BEFORE this file. This :root only ALIASES the legacy
+   names that the 4,000 rules below reference (--accent, --brand-*,
+   --content-width, etc) onto the canonical tokens. Change a value in
+   tokens.css and it flows through here to every rule.
+
+   Monochrome direction (Vanta/Touchmark): surfaces are true white/grey,
+   not blue-tinted; lines are neutral grey; --blue is the only chromatic
+   accent; the gradient/pink is a rare flourish. */
 :root {
-    --ink-strong: #0c1734;
-    --ink: #213055;
-    --ink-soft: #67789e;
-    --surface: #f6f9ff;
-    --surface-alt: #edf2ff;
-    --surface-card: rgba(255, 255, 255, 0.7);
-    --surface-card-strong: rgba(255, 255, 255, 0.86);
-    --line: rgba(24, 52, 132, 0.1);
-    --line-strong: rgba(24, 52, 132, 0.18);
-    --accent: #1a52d0;
-    --accent-soft: rgba(47, 107, 255, 0.1);
-    --accent-mid: #6070d8;
-    --highlight: #F43F8C;
-    --highlight-soft: rgba(244, 63, 140, 0.12);
-    --brand-blue: #2F6BFF;
-    --brand-indigo: #5A4FCF;
-    --brand-violet: #7C3AED;
-    --brand-pink: #F43F8C;
-    --brand-gradient: linear-gradient(90deg, #2F6BFF 0%, #5A4FCF 35%, #7C3AED 65%, #F43F8C 100%);
-    --brand-gradient-soft: linear-gradient(90deg, rgba(47, 107, 255, 0.14) 0%, rgba(90, 79, 207, 0.12) 35%, rgba(124, 58, 237, 0.12) 65%, rgba(244, 63, 140, 0.12) 100%);
-    --shadow-soft: 0 8px 32px rgba(18, 41, 111, 0.07);
-    --shadow-card: 0 4px 24px rgba(18, 41, 111, 0.07);
-    --shadow-hover: 0 8px 32px rgba(18, 41, 111, 0.11);
-    --radius-lg: 18px;
-    --radius-md: 22px;
-    --radius-sm: 14px;
-    --content-width: 1240px;
-    --page-gutter: clamp(16px, 4vw, 28px);
-    --section-space: clamp(60px, 8vw, 88px);
-    --section-space-tight: clamp(22px, 3.2vw, 34px);
+    /* ink: defer to tokens.css (--ink-strong/--ink/--ink-soft defined there) */
+    --ink-soft: var(--grey-500); /* neutralise the old blue-grey secondary */
+
+    /* surfaces -> true monochrome, opaque (no frosted blue tint) */
+    --surface: #ffffff;
+    --surface-alt: var(--grey-50);
+    --surface-card: #ffffff;
+    --surface-card-strong: #ffffff;
+
+    /* lines -> neutral grey hairlines, not navy-tinted */
+    --line: var(--grey-200);
+    --line-strong: var(--grey-300);
+
+    /* accent -> the ONE blue. Old --accent/--brand-blue both collapse to it. */
+    --accent: var(--blue);
+    --accent-soft: var(--blue-soft);
+    --accent-mid: var(--blue);
+    --brand-blue: var(--blue);
+
+    /* flourish -> pink/gradient, used sparingly */
+    --highlight: var(--pink);
+    --highlight-soft: rgba(244, 63, 140, 0.1);
+    --brand-indigo: #5a4fcf;
+    --brand-violet: #7c3aed;
+    --brand-pink: var(--pink);
+    --brand-gradient: var(--gradient);
+    --brand-gradient-soft: linear-gradient(90deg, rgba(47, 107, 255, 0.1) 0%, rgba(124, 58, 237, 0.08) 60%, rgba(244, 63, 140, 0.08) 100%);
+
+    /* shadows -> neutral, softer (monochrome reads cleaner with less colour) */
+    --shadow-soft: 0 6px 24px rgba(17, 19, 24, 0.06);
+    --shadow-card: 0 2px 12px rgba(17, 19, 24, 0.05);
+    --shadow-hover: 0 10px 32px rgba(17, 19, 24, 0.09);
+
+    /* radii: --radius-lg/md/sm come from tokens.css; no override here.
+       layout: legacy names the rules use, mapped to tokens.css scale */
+    --content-width: var(--width-page);
+    --page-gutter: var(--gutter);
     --shell-padding: clamp(22px, 3vw, 36px);
     --card-padding: clamp(20px, 2.5vw, 28px);
     --hero-padding: clamp(24px, 5vw, 58px);
@@ -71,10 +87,10 @@ html {
 body {
     min-height: 100vh;
     min-height: 100svh;
-    font-family: "Space Grotesk", "Segoe UI", sans-serif;
-    background: #ffffff;
+    font-family: var(--font);
+    background: var(--surface);
     color: var(--ink);
-    line-height: 1.72;
+    line-height: 1.7;
     font-size: 17px;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -114,7 +130,7 @@ a {
 }
 
 :focus-visible {
-    outline: 3px solid rgba(47, 107, 255, 0.42);
+    outline: 3px solid var(--blue);
     outline-offset: 3px;
 }
 
@@ -130,7 +146,7 @@ a {
     clip: auto;
     white-space: normal;
     border-radius: 999px;
-    background: #ffffff;
+    background: var(--surface-card);
     border: 1px solid var(--line-strong);
     box-shadow: var(--shadow-soft);
     z-index: 1000;
@@ -143,7 +159,7 @@ h3,
 .faq-question,
 .project-title h3,
 .cta-banner h3 {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: var(--font);
     color: var(--ink-strong);
     letter-spacing: -0.02em;
 }
@@ -188,8 +204,8 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    background: #ffffff;
-    border: 1px solid rgba(24, 52, 132, 0.18);
+    background: var(--surface-card);
+    border: 1px solid var(--line-strong);
     border-radius: 999px;
     box-shadow: 0 2px 12px rgba(18, 41, 111, 0.08);
 }
@@ -211,7 +227,7 @@ nav {
     height: 46px;
     border: 1px solid var(--line);
     border-radius: 999px;
-    background: #ffffff;
+    background: var(--surface-card);
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -257,7 +273,7 @@ nav {
 .nav-menu a:hover,
 .nav-menu a:focus-visible,
 .nav-menu a[aria-current="page"] {
-    background: rgba(47, 107, 255, 0.08);
+    background: var(--blue-soft);
     color: var(--accent);
     transform: translateY(-1px);
 }
@@ -355,7 +371,7 @@ section#top {
 .router-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    gap: var(--space-5);
 }
 
 .router-grid[role="list"] {
@@ -372,7 +388,7 @@ section#top {
     text-decoration: none;
     border-radius: var(--radius-lg);
     border: 1px solid var(--line);
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: var(--shadow-card);
     transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease, background 0.24s ease;
 }
@@ -380,7 +396,7 @@ section#top {
 .router-button:hover,
 .router-button:focus-visible {
     transform: translateY(-6px);
-    border-color: rgba(47, 107, 255, 0.26);
+    border-color: var(--blue);
     background: var(--accent);
     box-shadow: var(--shadow-hover);
 }
@@ -421,9 +437,9 @@ section#top {
     transform: translateX(-50%);
     width: min(calc(100% - 24px), 1180px);
     padding: 14px 18px;
-    border: 1px solid rgba(24, 52, 132, 0.12);
+    border: 1px solid var(--line);
     border-radius: 24px;
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: 0 18px 48px rgba(18, 41, 111, 0.08);
     text-align: center;
 }
@@ -461,7 +477,7 @@ section#top {
 .contact-form-shell {
     border: 1px solid var(--line-strong);
     border-radius: var(--radius-lg);
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: 0 4px 20px rgba(18, 41, 111, 0.08), 0 1px 4px rgba(18, 41, 111, 0.05);
 }
 
@@ -491,7 +507,7 @@ section#top {
     padding: 8px 13px;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.62);
-    border: 1px solid rgba(24, 52, 132, 0.08);
+    border: 1px solid var(--line);
     color: var(--accent);
     font-size: 0.72rem;
     font-weight: 700;
@@ -502,7 +518,7 @@ section#top {
 .hero-label,
 .section-label,
 .eyebrow {
-    margin-bottom: 18px;
+    margin-bottom: var(--space-4);
 }
 
 .hero-text,
@@ -570,7 +586,7 @@ section#top {
 
 .impact-box {
     background: var(--ink-strong);
-    color: #f5f8ff;
+    color: #ffffff;
     padding: clamp(28px, 4vw, 40px);
     display: flex;
     flex-direction: column;
@@ -582,7 +598,7 @@ section#top {
     font-size: 0.76rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(232, 241, 255, 0.72);
+    color: rgba(255, 255, 255, 0.72);
     max-width: 18ch;
 }
 
@@ -606,20 +622,19 @@ section#top {
     line-height: 0.9;
     font-weight: 500;
     color: #ffffff;
-    text-shadow: 0 0 24px rgba(126, 171, 255, 0.16);
 }
 
 .impact-explain {
     font-size: 1rem;
-    color: rgba(232, 241, 255, 0.82);
+    color: rgba(255, 255, 255, 0.82);
 }
 
 .section-header {
     display: flex;
     justify-content: space-between;
     align-items: end;
-    gap: 18px;
-    margin-bottom: 30px;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
 }
 
 .section-header > div:first-child {
@@ -665,20 +680,20 @@ section#top {
 .fit-grid,
 .card-link-grid {
     display: grid;
-    gap: 18px;
+    gap: var(--space-5);
 }
 
 .balanced-grid-3 {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    gap: var(--space-5);
     align-items: stretch;
 }
 
 .balanced-grid-2 {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: var(--space-5);
     align-items: stretch;
 }
 
@@ -691,7 +706,7 @@ section#top {
 .content-duo {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 18px;
+    gap: var(--space-5);
     align-items: stretch;
     max-width: 1100px;
     margin-left: auto;
@@ -702,18 +717,18 @@ section#top {
     padding: var(--card-padding);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: var(--shadow-card);
     min-height: 100%;
 }
 
 .section-frame .section-header {
-    margin-bottom: 24px;
+    margin-bottom: var(--space-5);
 }
 
 .section-header-centered {
     max-width: 44rem;
-    margin: 0 auto 30px;
+    margin: 0 auto var(--space-6);
     text-align: center;
 }
 
@@ -737,7 +752,7 @@ section#top {
     padding: var(--card-padding);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: var(--shadow-card);
 }
 
@@ -802,29 +817,29 @@ section#top {
 
 .card-link-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    margin-top: 18px;
+    margin-top: var(--space-5);
 }
 
 .invoice-showcase-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 18px;
-    margin-top: 18px;
+    gap: var(--space-5);
+    margin-top: var(--space-5);
 }
 
 .demo-spotlight {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: var(--space-5);
     align-items: stretch;
 }
 
 .video-frame {
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    border: 1px solid var(--line);
     border-radius: 28px;
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: 0 16px 34px rgba(18, 41, 111, 0.08);
     aspect-ratio: 16 / 9;
 }
@@ -846,9 +861,9 @@ section#top {
 
 .demo-spotlight-card {
     padding: 18px 20px;
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    border: 1px solid var(--line);
     border-radius: 22px;
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: 0 12px 28px rgba(18, 41, 111, 0.06);
 }
 
@@ -866,7 +881,7 @@ section#top {
     padding: var(--card-padding);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: var(--shadow-card);
 }
 
@@ -882,7 +897,7 @@ section#top {
 .approval-demo {
     padding: 20px;
     border-radius: 24px;
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    border: 1px solid var(--line);
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 12px 28px rgba(18, 41, 111, 0.06);
 }
@@ -918,7 +933,7 @@ section#top {
 
 .approval-demo-row {
     padding: 10px 0;
-    border-top: 1px solid rgba(24, 52, 132, 0.08);
+    border-top: 1px solid var(--line);
 }
 
 .approval-demo-row:first-of-type {
@@ -937,8 +952,8 @@ section#top {
 }
 
 .approval-demo-pill-approved {
-    background: rgba(26, 165, 96, 0.12);
-    color: #1a7a4b;
+    background: var(--success-soft);
+    color: var(--success-text);
 }
 
 .approval-demo-actions {
@@ -954,8 +969,8 @@ section#top {
     min-height: 38px;
     padding: 8px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(24, 52, 132, 0.12);
-    background: #ffffff;
+    border: 1px solid var(--line);
+    background: var(--surface-card);
     color: var(--ink);
     font-size: 0.88rem;
     font-weight: 600;
@@ -976,8 +991,8 @@ section#top {
     height: auto;
     display: block;
     border-radius: 24px;
-    border: 1px solid rgba(24, 52, 132, 0.1);
-    background: #ffffff;
+    border: 1px solid var(--line);
+    background: var(--surface-card);
     box-shadow: 0 14px 32px rgba(18, 41, 111, 0.08);
 }
 
@@ -997,8 +1012,8 @@ section#top {
 .approval-email-preview {
     padding: 20px;
     border-radius: 24px;
-    border: 1px solid rgba(24, 52, 132, 0.1);
-    background: #ffffff;
+    border: 1px solid var(--line);
+    background: var(--surface-card);
     box-shadow: 0 12px 28px rgba(18, 41, 111, 0.06);
 }
 
@@ -1026,8 +1041,8 @@ section#top {
     align-items: center;
     padding: 6px 12px;
     border-radius: 999px;
-    background: rgba(249, 171, 0, 0.16);
-    color: #996100;
+    background: var(--grey-100);
+    color: var(--grey-700);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -1046,9 +1061,9 @@ section#top {
 
 .approval-email-summary,
 .approval-email-items {
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    border: 1px solid var(--line);
     border-radius: 18px;
-    background: rgba(248, 251, 255, 0.76);
+    background: rgba(247, 248, 250, 0.76);
 }
 
 .approval-email-summary {
@@ -1059,7 +1074,7 @@ section#top {
 
 .approval-email-summary div {
     padding: 10px 14px;
-    border-top: 1px solid rgba(24, 52, 132, 0.08);
+    border-top: 1px solid var(--line);
     color: var(--ink);
 }
 
@@ -1070,7 +1085,7 @@ section#top {
 
 .approval-email-items-head {
     padding: 10px 14px;
-    background: #ffffff;
+    background: var(--surface-card);
     color: var(--ink-soft);
     font-size: 0.84rem;
     font-weight: 700;
@@ -1080,7 +1095,7 @@ section#top {
 
 .approval-email-item {
     padding: 10px 14px;
-    border-top: 1px solid rgba(24, 52, 132, 0.08);
+    border-top: 1px solid var(--line);
     color: var(--ink);
 }
 
@@ -1109,7 +1124,7 @@ section#top {
 .report-photos-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: var(--space-5);
     align-items: start;
 }
 
@@ -1120,8 +1135,8 @@ section#top {
     display: flex;
     flex-direction: column;
     border-radius: 28px;
-    border: 1px solid rgba(24, 52, 132, 0.1);
-    background: #ffffff;
+    border: 1px solid var(--line);
+    background: var(--surface-card);
     box-shadow: 0 14px 32px rgba(18, 41, 111, 0.08);
 }
 
@@ -1136,7 +1151,7 @@ section#top {
     object-fit: contain;
     display: block;
     padding: 16px 16px 0;
-    background: #f7faff;
+    background: var(--surface-alt);
 }
 
 .report-photo-card figcaption {
@@ -1159,8 +1174,8 @@ section#top {
 .fork-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-    margin-top: 18px;
+    gap: var(--space-5);
+    margin-top: var(--space-5);
 }
 
 .fork-card {
@@ -1173,7 +1188,7 @@ section#top {
     text-decoration: none;
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: var(--shadow-card);
     transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
@@ -1191,7 +1206,7 @@ section#top {
     padding: 7px 12px;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(24, 52, 132, 0.08);
+    border: 1px solid var(--line);
     color: var(--accent);
     font-size: 0.72rem;
     font-weight: 700;
@@ -1240,14 +1255,14 @@ section#top {
 .contact-panel,
 .contact-form-shell {
     padding: var(--card-padding);
-    background: #ffffff;
+    background: var(--surface-card);
 }
 
 .benefit-card h3,
 .fit-card h3,
 .service-title,
 .card-link-title {
-    margin-bottom: 12px;
+    margin-bottom: var(--space-3);
 }
 
 .benefit-card p,
@@ -1339,7 +1354,7 @@ section#top {
     background: rgba(255, 255, 255, 0.72);
     border: 1px solid var(--line);
     border-radius: 999px;
-    margin-bottom: 30px;
+    margin-bottom: var(--space-6);
 }
 
 .tab-labels label {
@@ -1375,8 +1390,8 @@ section#top {
 .project-summary {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 26px;
+    gap: var(--space-4);
+    padding: var(--card-padding);
 }
 
 .project-header {
@@ -1430,7 +1445,7 @@ section#top {
     padding: 9px 13px;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.64);
-    border: 1px solid rgba(24, 52, 132, 0.08);
+    border: 1px solid var(--line);
     color: var(--accent);
     font-size: 0.84rem;
     font-weight: 600;
@@ -1460,7 +1475,7 @@ section#top {
 
 .btn:hover {
     transform: translateY(-2px);
-    background: rgba(47, 107, 255, 0.06);
+    background: var(--blue-soft);
     border-color: var(--line-strong);
     box-shadow: 0 4px 16px rgba(18, 41, 111, 0.08);
 }
@@ -1472,8 +1487,8 @@ section#top {
 }
 
 .btn-primary:hover {
-    background: #1645b8;
-    border-color: #1645b8;
+    background: var(--blue-strong);
+    border-color: var(--blue-strong);
     color: #ffffff;
 }
 
@@ -1484,7 +1499,7 @@ section#top {
 }
 
 .btn-secondary:hover {
-    background: rgba(47, 107, 255, 0.06);
+    background: var(--blue-soft);
     border-color: var(--line-strong);
     color: var(--ink-strong);
 }
@@ -1494,7 +1509,7 @@ section#top {
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: var(--space-4);
 }
 
 .form-group label {
@@ -1512,7 +1527,7 @@ section#top {
     padding: 15px 16px;
     border-radius: 16px;
     border: 1px solid var(--line);
-    background: #ffffff;
+    background: var(--surface-card);
     color: var(--ink-strong);
 }
 
@@ -1520,8 +1535,8 @@ section#top {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: rgba(47, 107, 255, 0.35);
-    box-shadow: 0 0 0 4px rgba(47, 107, 255, 0.1);
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px var(--blue-soft);
 }
 
 .form-group textarea {
@@ -1570,7 +1585,7 @@ section#top {
     padding: 18px 18px 16px;
     border: 1px solid var(--line-strong);
     border-radius: 24px;
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: 0 24px 50px rgba(18, 41, 111, 0.18);
     z-index: 200;
 }
@@ -1634,7 +1649,7 @@ section#top {
 }
 
 .cookie-button-decline {
-    background: #ffffff;
+    background: var(--surface-card);
     color: var(--accent);
     border-color: var(--line);
 }
@@ -1671,7 +1686,7 @@ section#top {
     padding: 46px 38px;
     text-align: center;
     background: var(--ink-strong);
-    color: #eef4ff;
+    color: #ffffff;
     margin-top: 8px;
 }
 
@@ -1680,7 +1695,7 @@ section#top {
 }
 
 .cta-banner p {
-    color: rgba(238, 244, 255, 0.82);
+    color: rgba(255, 255, 255, 0.82);
     margin: 14px auto 26px;
     max-width: 40rem;
 }
@@ -1692,8 +1707,8 @@ section#top {
 
 footer {
     width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
-    margin: 24px auto 44px;
-    padding: 24px 0 0;
+    margin: var(--space-5) auto 44px;
+    padding: var(--space-5) 0 0;
     border-top: none;
     text-align: center;
     color: var(--ink-soft);
@@ -1716,7 +1731,7 @@ footer a {
     gap: 10px;
     padding: 10px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(10, 102, 194, 0.16);
+    border: 1px solid var(--line);
     background: rgba(255, 255, 255, 0.72);
     color: var(--accent);
     font-weight: 600;
@@ -1727,7 +1742,7 @@ footer a {
 .footer-social-link:focus-visible {
     transform: translateY(-1px);
     box-shadow: 0 12px 24px rgba(18, 41, 111, 0.08);
-    border-color: rgba(10, 102, 194, 0.32);
+    border-color: var(--line);
 }
 
 .footer-social-link img {
@@ -1749,7 +1764,7 @@ footer a {
 
 .page-shell + .page-shell,
 .detail-shell + .detail-shell {
-    margin-top: 18px;
+    margin-top: var(--space-4);
 }
 
 .about-page-intro {
@@ -1773,7 +1788,7 @@ footer a {
 .about-short-version-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: var(--space-5);
     max-width: 960px;
     margin: 0 auto;
     align-items: stretch;
@@ -1841,7 +1856,7 @@ footer a {
 }
 
 .detail-meta {
-    margin: 28px 0 26px;
+    margin: var(--space-5) 0;
 }
 
 .detail-chip-accent {
@@ -1934,9 +1949,9 @@ footer a {
 .founder-prose {
     max-width: 44rem;
     padding: clamp(26px, 3.8vw, 40px);
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    border: 1px solid var(--line);
     border-radius: 32px;
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: 0 18px 40px rgba(18, 41, 111, 0.08);
 }
 
@@ -1989,9 +2004,9 @@ footer a {
     display: grid;
     gap: 12px;
     padding: 22px 22px 20px;
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    border: 1px solid var(--line);
     border-radius: 26px;
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: 0 14px 30px rgba(18, 41, 111, 0.07);
 }
 
@@ -2002,7 +2017,7 @@ footer a {
 .founder-note-card a {
     color: var(--accent);
     text-decoration: none;
-    border-bottom: 1px solid rgba(47, 107, 255, 0.22);
+    border-bottom: 1px solid var(--blue);
 }
 
 .founder-note-card a:hover,
@@ -2013,22 +2028,22 @@ footer a {
 .contact-grid {
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: 24px;
+    gap: var(--space-5);
     align-items: stretch;
 }
 
 .contact-panel ul {
     list-style: none;
     display: grid;
-    gap: 12px;
-    margin-top: 24px;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
 }
 
 .contact-panel li {
     padding: 14px 16px;
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.64);
-    border: 1px solid rgba(24, 52, 132, 0.08);
+    border: 1px solid var(--line);
 }
 
 .contact-copy {
@@ -2050,7 +2065,7 @@ footer a {
 
 .home-hero-shell {
     display: grid;
-    gap: 20px;
+    gap: var(--space-5);
     justify-items: center;
 }
 
@@ -2061,9 +2076,9 @@ footer a {
     gap: clamp(24px, 3vw, 38px);
     align-items: start;
     padding: clamp(30px, 4.5vw, 56px);
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    border: 1px solid var(--line);
     border-radius: clamp(32px, 5vw, 44px);
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: var(--shadow-card);
 }
 
@@ -2091,7 +2106,7 @@ footer a {
     min-height: 36px;
     padding: 8px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    border: 1px solid var(--line);
     background: rgba(255, 255, 255, 0.7);
     color: var(--accent);
     font-size: 0.82rem;
@@ -2104,9 +2119,9 @@ footer a {
     display: grid;
     gap: 14px;
     padding: clamp(14px, 2.1vw, 18px);
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    border: 1px solid var(--line);
     border-radius: 30px;
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: 0 20px 42px rgba(18, 41, 111, 0.1);
 }
 
@@ -2114,9 +2129,9 @@ footer a {
     display: grid;
     gap: 12px;
     padding: clamp(14px, 2.1vw, 18px);
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    border: 1px solid var(--line);
     border-radius: 30px;
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: 0 20px 42px rgba(18, 41, 111, 0.1);
     overflow: hidden;
 }
@@ -2125,7 +2140,7 @@ footer a {
     width: 100%;
     height: auto;
     border-radius: 14px;
-    border: 1px solid rgba(24, 52, 132, 0.08);
+    border: 1px solid var(--line);
     display: block;
 }
 
@@ -2204,7 +2219,7 @@ footer a {
     width: min(100%, 980px);
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    gap: var(--space-5);
 }
 
 .home-hero-chip {
@@ -2212,7 +2227,7 @@ footer a {
     gap: 8px;
     min-height: 100%;
     padding: 22px 24px;
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    border: 1px solid var(--line);
     border-radius: 26px;
     background: rgba(255, 255, 255, 0.72);
     box-shadow: 0 14px 30px rgba(18, 41, 111, 0.07);
@@ -2233,7 +2248,7 @@ footer a {
     max-width: 48rem;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 26px;
+    margin-bottom: var(--space-5);
     text-align: center;
 }
 
@@ -2250,7 +2265,7 @@ footer a {
 .home-workflow-grid,
 .home-pilot-steps {
     display: grid;
-    gap: 18px;
+    gap: var(--space-5);
 }
 
 .home-fit-grid {
@@ -2274,7 +2289,7 @@ footer a {
 .home-workflow-shell {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: var(--space-5);
     align-items: stretch;
 }
 
@@ -2283,7 +2298,7 @@ footer a {
     border-radius: var(--radius-lg);
     background:
         linear-gradient(160deg, rgba(12, 23, 52, 0.98), rgba(24, 44, 113, 0.94) 40%, rgba(90, 79, 207, 0.9) 70%, rgba(124, 58, 237, 0.88) 100%);
-    color: #f5f8ff;
+    color: #ffffff;
     box-shadow: var(--shadow-card);
     padding: clamp(24px, 3vw, 34px);
     max-width: 48rem;
@@ -2297,7 +2312,7 @@ footer a {
 }
 
 .home-workflow-intro p {
-    color: rgba(232, 241, 255, 0.84);
+    color: rgba(255, 255, 255, 0.84);
     max-width: 34rem;
     margin-left: auto;
     margin-right: auto;
@@ -2310,7 +2325,7 @@ footer a {
 .home-pilot-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
-    gap: 18px;
+    gap: var(--space-5);
     align-items: start;
 }
 
@@ -2342,7 +2357,7 @@ footer a {
 .home-lane-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    gap: var(--space-5);
 }
 
 .home-lane-card {
@@ -2354,7 +2369,7 @@ footer a {
     text-decoration: none;
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: var(--shadow-card);
     transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
@@ -2362,7 +2377,7 @@ footer a {
 .home-lane-card:hover,
 .home-lane-card:focus-visible {
     transform: translateY(-5px);
-    border-color: rgba(47, 107, 255, 0.24);
+    border-color: var(--blue);
     box-shadow: var(--shadow-hover);
 }
 
@@ -2377,12 +2392,12 @@ footer a {
     margin: 0 auto;
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-    gap: 22px;
+    gap: var(--space-5);
     align-items: center;
     padding: clamp(28px, 4vw, 38px);
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    border: 1px solid var(--line);
     border-radius: clamp(28px, 4vw, 36px);
-    background: #ffffff;
+    background: var(--surface-card);
     box-shadow: var(--shadow-card);
 }
 
@@ -2451,7 +2466,7 @@ footer a {
         /* Solid white + high z-index. A translucent (0.92) background let
            page content bleed through behind the links, which read as a
            broken overlay on mobile. The menu must sit above everything. */
-        background: #ffffff;
+        background: var(--surface-card);
         z-index: 1100;
         box-shadow: var(--shadow-soft);
         flex-direction: column;
@@ -2490,8 +2505,8 @@ footer a {
     .page-inner nav .nav-menu a[aria-current="page"],
     .nav-menu a:hover,
     .nav-menu a[aria-current="page"] {
-        background: rgba(47, 107, 255, 0.08);
-        color: var(--accent, #2f6bff);
+        background: var(--blue-soft);
+        color: var(--accent, var(--blue));
     }
 
     /* In the mobile dropdown the pill CTA becomes a full-width tinted row */
@@ -3139,191 +3154,6 @@ footer a {
     }
 }
 
-/* ── Dark mode ──────────────────────────────────────────────────────────────
-   Applied via html.dark-mode, set by the inline script at the top of each
-   page's <head> before first paint — no flash.
-   Palette: pure black surfaces, white-tinted text, accent stays blue.       */
-
-html.dark-mode {
-    --ink-strong: #e8eaf0;
-    --ink: #c8d0e0;
-    --ink-soft: #8a96b0;
-    --surface: #000000;
-    --surface-alt: #0a0a0a;
-    --surface-card: rgba(12, 12, 14, 0.92);
-    --surface-card-strong: rgba(16, 16, 18, 0.97);
-    --line: rgba(255, 255, 255, 0.12);
-    --line-strong: rgba(255, 255, 255, 0.2);
-    --accent: #5b8ef0;
-    --accent-soft: rgba(91, 142, 240, 0.16);
-    --accent-mid: #7a9fd8;
-    --shadow-card: none;
-    --shadow-soft: none;
-    --shadow-hover: 0 4px 24px rgba(0, 0, 0, 0.7);
-    --highlight-soft: rgba(244, 63, 140, 0.14);
-}
-
-html.dark-mode body {
-    background: #000000;
-    color: var(--ink);
-}
-
-html.dark-mode body::before,
-html.dark-mode body::after {
-    display: none;
-}
-
-/* Nav */
-html.dark-mode nav {
-    background: rgba(10, 10, 12, 0.88);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Mobile dropdown in dark mode: solid dark panel so it matches the rest
-   of the chrome and content never bleeds through behind the links. */
-@media (max-width: 1040px) {
-    html.dark-mode .nav-menu {
-        background: #14141a;
-        border-color: rgba(255, 255, 255, 0.12);
-    }
-}
-
-html.dark-mode .nav-menu a {
-    color: var(--ink-soft);
-}
-
-html.dark-mode .nav-menu a:hover,
-html.dark-mode .nav-menu a[aria-current="page"] {
-    background: rgba(91, 142, 240, 0.1);
-    color: var(--ink-strong);
-}
-
-html.dark-mode .nav-toggle {
-    background: rgba(16, 16, 18, 0.9);
-    border-color: rgba(255, 255, 255, 0.12);
-}
-
-html.dark-mode .hamburger-line {
-    background: var(--ink);
-}
-
-/* Cards and panels */
-html.dark-mode .hero-content,
-html.dark-mode .impact-box,
-html.dark-mode .benefit-card,
-html.dark-mode .fit-card,
-html.dark-mode .proof-card,
-html.dark-mode .pricing-box,
-html.dark-mode .contact-methods,
-html.dark-mode .service-item,
-html.dark-mode .project-summary,
-html.dark-mode .page-shell,
-html.dark-mode .card-link,
-html.dark-mode .detail-shell,
-html.dark-mode .cta-banner,
-html.dark-mode .contact-panel,
-html.dark-mode .contact-form-shell {
-    background: var(--surface-card);
-    border-color: var(--line);
-    backdrop-filter: none;
-}
-
-/* Buttons */
-html.dark-mode .btn {
-    background: rgba(20, 20, 24, 0.9);
-    border-color: var(--line);
-    color: var(--ink);
-}
-
-html.dark-mode .btn:hover {
-    background: rgba(91, 142, 240, 0.1);
-    border-color: rgba(255, 255, 255, 0.22);
-    color: var(--ink-strong);
-}
-
-html.dark-mode .btn-primary {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #ffffff;
-}
-
-html.dark-mode .btn-primary:hover {
-    background: #4a7de0;
-    border-color: #4a7de0;
-    color: #ffffff;
-}
-
-html.dark-mode .btn-secondary {
-    background: rgba(20, 20, 24, 0.9);
-    border-color: var(--line);
-    color: var(--ink);
-}
-
-html.dark-mode .cookie-button-accept {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #ffffff;
-}
-
-/* Forms */
-html.dark-mode input,
-html.dark-mode textarea,
-html.dark-mode select {
-    background: rgba(10, 10, 12, 0.9);
-    border-color: var(--line);
-    color: var(--ink-strong);
-}
-
-html.dark-mode input::placeholder,
-html.dark-mode textarea::placeholder {
-    color: var(--ink-soft);
-}
-
-html.dark-mode input:focus,
-html.dark-mode textarea:focus,
-html.dark-mode select:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(91, 142, 240, 0.18);
-}
-
-html.dark-mode .form-group label {
-    color: var(--ink-soft);
-}
-
-/* Footer */
-html.dark-mode footer {
-    background: #000000;
-    color: var(--ink-soft);
-    border-top-color: rgba(255, 255, 255, 0.06);
-}
-
-html.dark-mode footer a {
-    color: var(--ink);
-}
-
-html.dark-mode footer a:hover {
-    color: var(--ink-strong);
-}
-
-/* Section backgrounds using surface vars */
-html.dark-mode .section-proof,
-html.dark-mode .cta-section {
-    background: transparent;
-}
-
-/* Cookie banner */
-html.dark-mode .cookie-banner {
-    background: rgba(10, 10, 14, 0.96);
-    border-color: var(--line);
-    color: var(--ink);
-}
-
-html.dark-mode .cookie-button-decline {
-    background: rgba(20, 20, 24, 0.9);
-    border-color: var(--line);
-    color: var(--ink);
-}
-
 /* FAQ accordion --------------------------------------------------------- */
 .faq-list {
     display: grid;
@@ -3332,8 +3162,8 @@ html.dark-mode .cookie-button-decline {
 }
 
 .faq-item {
-    background: #ffffff;
-    border: 1px solid rgba(24, 52, 132, 0.1);
+    background: var(--surface-card);
+    border: 1px solid var(--line);
     border-radius: 18px;
     box-shadow: 0 6px 18px rgba(18, 41, 111, 0.04);
     overflow: hidden;
@@ -3371,7 +3201,7 @@ html.dark-mode .cookie-button-decline {
     align-items: center;
     justify-content: center;
     border-radius: 999px;
-    background: rgba(47, 107, 255, 0.08);
+    background: var(--blue-soft);
     color: var(--accent);
     font-size: 1.2rem;
     font-weight: 400;
@@ -3414,20 +3244,6 @@ html.dark-mode .cookie-button-decline {
     .faq-item {
         border-radius: 16px;
     }
-}
-
-html.dark-mode .faq-item {
-    background: var(--surface);
-    border-color: var(--line);
-    box-shadow: none;
-}
-
-html.dark-mode .faq-question {
-    color: var(--ink-strong);
-}
-
-html.dark-mode .faq-question::after {
-    background: rgba(126, 171, 255, 0.14);
 }
 
 /* ---------------------------------------------------------------------------
@@ -3727,8 +3543,8 @@ body.page-dark-hero {
     font-weight: 700;
     text-decoration: none;
     letter-spacing: -0.01em;
-    background: #ffffff;
-    color: #07122b;
+    background: var(--surface-card);
+    color: var(--ink-strong);
     border: none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
@@ -3900,7 +3716,7 @@ body.page-dark-hero {
 }
 
 .page-dark-hero footer .footer-rule {
-    background: rgba(24,52,132,0.1);
+    background: var(--line);
 }
 
 /* ---------------------------------------------------------------------------
@@ -4079,7 +3895,7 @@ nav {
 
 .footer-rule {
     height: 1px;
-    background: rgba(24, 52, 132, 0.08);
+    background: var(--line);
     margin: 0 0 24px;
 }
 
@@ -4420,7 +4236,7 @@ nav {
 /* Funnel chips row below the video */
 .home-funnel-strip {
     display: flex;
-    gap: 16px;
+    gap: var(--space-4);
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
@@ -4563,8 +4379,8 @@ nav {
     border: 1px solid rgba(47, 107, 255, 0.15) !important;
     border-radius: 24px !important;
     box-shadow: 0 4px 20px rgba(18, 41, 111, 0.08), 0 1px 4px rgba(18, 41, 111, 0.06) !important;
-    padding: 28px 28px !important;
-    background: #ffffff !important;
+    padding: var(--card-padding) !important;
+    background: var(--surface-card) !important;
     transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease !important;
 }
 

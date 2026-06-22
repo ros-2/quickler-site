@@ -23,9 +23,20 @@
   --font: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --blue: #1a52d0; /* THE Quickler blue. One blue. */
-  --blue-strong: #123e9e; /* hover/active of blue */
-  --blue-soft: rgba(26, 82, 208, 0.1);
+  --blue: #1a52d0; /* THE Quickler blue. One blue. Accent ONLY. */
+  --blue-strong: #1645b8; /* hover/active of blue */
+  --blue-soft: rgba(26, 82, 208, 0.08); /* faint blue wash, sparing */
+
+  /* ---- GREY SCALE — the monochrome backbone (Vanta/Touchmark look).
+     Near-black to white. The site is built from THESE, with --blue as
+     the only chromatic accent and --pink as a rare flourish. -------- */
+  --grey-50: #f7f8fa; /* faintest panel tint */
+  --grey-100: #eef0f4; /* tinted band / hover */
+  --grey-200: #e2e5ec; /* hairlines, dividers */
+  --grey-300: #cbd0db; /* stronger border */
+  --grey-500: #6b7280; /* secondary text */
+  --grey-700: #374151; /* strong secondary */
+  --grey-900: #111318; /* near-black ink */
 
   /* Gradient — accent use ONLY (hero flourish, key highlight).
      Not for text backgrounds that carry copy. */
@@ -52,6 +63,7 @@
 
   /* ---- SEMANTIC STATES (single values, no per-page drift) -- */
   --success: #16a34a;
+  --success-text: #157f3c; /* darker green for text on --success-soft (AA pass) */
   --success-soft: rgba(22, 163, 74, 0.08);
   --warning: #b45309;
   --warning-soft: rgba(180, 83, 9, 0.08);
