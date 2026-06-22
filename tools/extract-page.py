@@ -62,6 +62,10 @@ def convert(relpath: str):
     if ot and ot != "website": seo["ogType"] = ot
     ola = meta(doc, "og:locale:alternate", "property")
     if ola: seo["ogLocaleAlt"] = ola
+    ogimg = meta(doc, "og:image", "property")
+    if ogimg: seo["ogImage"] = ogimg
+    ogimgalt = meta(doc, "og:image:alt", "property")
+    if ogimgalt: seo["ogImageAlt"] = ogimgalt
     # does the live page actually emit <meta name="title">?
     seo["hasMetaTitle"] = meta(doc, "title", "name") is not None
     # og:title / og:description that differ from the page title/description

@@ -31,6 +31,12 @@ preload are identical on every page -> defined ONCE here. -#}
   <meta property="og:url" content="{{ seo.canonical }}">
   <meta property="og:title" content="{{ seo.ogTitle or seo.title }}">
   <meta property="og:description" content="{{ seo.ogDescription or seo.description }}">
+  {%- if seo.ogImage %}
+  <meta property="og:image" content="{{ seo.ogImage }}">
+  {%- endif %}
+  {%- if seo.ogImageAlt %}
+  <meta property="og:image:alt" content="{{ seo.ogImageAlt }}">
+  {%- endif %}
   <meta property="og:locale" content="{{ seo.ogLocale or 'en_GB' }}">
   {%- if seo.ogLocaleAlt %}
   <meta property="og:locale:alternate" content="{{ seo.ogLocaleAlt }}">
@@ -63,5 +69,8 @@ preload are identical on every page -> defined ONCE here. -#}
   <link rel="stylesheet" href="/css/styles.v2.css">
   {%- if headStyle %}
   <style>{{ headStyle | safe }}</style>
+  {%- endif %}
+  {%- if headExtra %}
+  {{ headExtra | safe }}
   {%- endif %}
 </head>

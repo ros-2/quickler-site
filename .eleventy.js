@@ -17,8 +17,18 @@ module.exports = function (eleventyConfig) {
 
   // Root-level SEO/static files copied verbatim.
   ["robots.txt", "sitemap.xml", "llms.txt", "llms-full.txt", "CNAME",
-   "site.json", "site.webmanifest", "favicon.ico", "favicon.svg"].forEach(f =>
+   "site.json", "site.webmanifest", "favicon.ico", "favicon.svg",
+   "privacy.html"].forEach(f =>
     eleventyConfig.addPassthroughCopy(f));
+
+  // Static directories served verbatim (not module pages).
+  eleventyConfig.addPassthroughCopy("print");
+  eleventyConfig.addPassthroughCopy("docs");
+
+  // Redirect stub pages (meta-refresh, no nav/footer) — copy verbatim.
+  eleventyConfig.addPassthroughCopy("pages/contact.html");
+  eleventyConfig.addPassthroughCopy("pages/custom.html");
+  eleventyConfig.addPassthroughCopy("pages/dpa.html");
 
   return {
     dir: {
