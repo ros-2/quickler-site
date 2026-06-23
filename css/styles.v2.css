@@ -286,7 +286,7 @@ section {
 
 body > section#top:first-of-type {
     /* Just clear the floating nav pill; no cavernous gap above the hero. */
-    padding-top: clamp(20px, 3vw, 36px) !important;
+    padding-top: 16px !important;
 }
 
 section#top {
@@ -2818,7 +2818,7 @@ a.callout-btn {
     }
 
     body > section#top:first-of-type {
-        padding-top: 36px !important;
+        padding-top: 16px !important;
     }
 
     .hero-content,
@@ -3050,7 +3050,7 @@ a.callout-btn {
     }
 
     body > section#top:first-of-type {
-        padding-top: 36px !important;
+        padding-top: 16px !important;
     }
 
     .hero-content,
@@ -4285,9 +4285,8 @@ nav {
     align-items: center;
     text-align: center;
     gap: 24px;
-    /* Section#top already clears the floating nav. This wrapper only needs a
-       small top pad so the pill sits close under the nav (no dead band). */
-    padding: clamp(8px, 1.5vw, 16px) var(--page-gutter) clamp(40px, 6vw, 72px);
+    /* No top pad — section#top already clears the nav. Pill sits right up. */
+    padding: 0 var(--page-gutter) clamp(40px, 6vw, 72px);
     max-width: min(calc(100% - var(--page-gutter) * 2), 860px);
     margin: 0 auto;
 }
