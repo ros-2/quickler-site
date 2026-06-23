@@ -4,3 +4,5 @@ _site/
 
 # OS noise
 .DS_Store
+tools/shots/
+node_modules/

@@ -1,37 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <script src="/js/cookie-consent.js" defer></script>
-  <meta charset="UTF-8">
-  <link rel="icon" href="/assets/favicons/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ country.title | safe }}</title>
-  <meta name="title" content="{{ country.title | safe }}">
-  <meta name="description" content="{{ country.description }}">
-  <meta name="keywords" content="{{ country.keywords }}">
-  <meta name="author" content="Quickler Ltd">
-  <meta name="robots" content="index, follow">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://quickler.co/pages/country-hub-{{ country.slug }}.html">
-  <meta property="og:title" content="{{ country.title | safe }}">
-  <meta property="og:description" content="{{ country.description }}">
-  <meta property="og:locale" content="en_GB">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ country.title | safe }}">
-  <meta name="twitter:description" content="{{ country.description }}">
-  <link rel="canonical" href="https://quickler.co/pages/country-hub-{{ country.slug }}.html">
-  <link rel="alternate" hreflang="en" href="https://quickler.co/pages/country-hub-{{ country.slug }}.html">
-  <link rel="alternate" hreflang="x-default" href="https://quickler.co/pages/global-field-compliance.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"></noscript>
-  <link rel="stylesheet" href="/css/styles.v2.css">
-</head>
-<body id="top">
+<html lang="{{ seo.lang or 'en' }}">
+{% set seo = {
+  "title": country.title,
+  "description": country.description,
+  "keywords": country.keywords,
+  "author": "Quickler Ltd",
+  "canonical": "https://quickler.co/pages/country-hub-" + country.slug + ".html",
+  "twitterCard": "summary_large_image",
+  "hreflang": [
+    { "lang": "en", "href": "https://quickler.co/pages/country-hub-" + country.slug + ".html" },
+    { "lang": "x-default", "href": "https://quickler.co/pages/global-field-compliance.html" }
+  ],
+  "lang": "en"
+} %}
+{% include "partials/head.njk" %}
+<body id="top" class="page-shell">
 
 {% include "partials/nav.njk" %}
 
