@@ -3247,7 +3247,7 @@ a.callout-btn {
     }
 
     body > section#top:first-of-type {
-        padding-top: clamp(72px, 10vw, 108px) !important;
+        padding-top: 20px !important;
     }
 
     .hero {
