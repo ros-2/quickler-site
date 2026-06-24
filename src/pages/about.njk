@@ -1,8 +1,8 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/about.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
   "seo": {
     "title": "About quickler | Founder Story And Workflow Background",
     "description": "Why quickler exists, what Philip Ross built before it, when the company was formed, and how that work led to workflow systems grounded in real operations.",
@@ -27,137 +27,76 @@
     ],
     "lang": "en"
   },
-  "footerCta": {
-    "heading": "Ready to see if it fits?",
-    "sub": "Try the live demo on WhatsApp &mdash; takes two minutes.",
-    "actions": [
-      {
-        "href": "/pages/demo.html",
-        "class": "btn btn-primary footer-cta-btn",
-        "label": "Try the demo"
-      },
-      {
-        "href": "/pages/help/index.html#contact-form-section",
-        "class": "btn btn-secondary footer-cta-btn",
-        "label": "Get in touch"
-      }
-    ]
-  },
   "scripts": [
     "/js/analytics-events.js"
+  ],
+  "hero": {
+    "eyebrow": "About quickler",
+    "heading": "For teams that do the job first and still have to write it up later.",
+    "lede": "The visit happened. The facts were already there. But someone still had to rebuild the report from notes, files, and memory. quickler exists to remove that second pass.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "split",
+      "eyebrow": "The problem",
+      "heading": "The job is done. The write-up starts after.",
+      "text": "In a lot of businesses the useful work is already finished before the real admin begins. Notes, photos, files, approvals, and context all exist, but someone still has to turn them into the final output."
+    },
+    {
+      "type": "prose",
+      "eyebrow": "The background",
+      "heading": "It grew out of delivered systems.",
+      "text": "Before quickler was a company, Philip had already built workflow systems for charities, publishing, and commercial operations. That is where the pattern became too obvious to ignore: the work was done, but the write-up still had to be rebuilt afterwards."
+    },
+    {
+      "type": "split",
+      "eyebrow": "Founder",
+      "heading": "Why Philip Ross started it.",
+      "text": "Philip studied Electrical and Mechanical Engineering at the University of Strathclyde, then worked at Dijuno, an AI analytics startup. That mix of engineering, workflow design, and automation pushed him toward systems that are useful in practice, not just impressive in demos.",
+      "reverse": true
+    },
+    {
+      "type": "prose",
+      "eyebrow": "Proof",
+      "heading": "Real delivery came before the company.",
+      "text": "Before quickler went public, Philip had already delivered six workflow systems across charities, publishing, and commercial operations. Across that portfolio the measured saving came to 51.5 working days per year, an average return of roughly 12x on the time invested."
+    },
+    {
+      "type": "prose",
+      "eyebrow": "Timeline",
+      "heading": "Delivered systems came first.",
+      "text": "From November 2025 to February 2026 the work covered fundraising automation, production tracking, sales-data restructuring, till-data automation, and a purchase-order workflow platform. The company came out of that, not the other way around."
+    },
+    {
+      "type": "prose",
+      "eyebrow": "Timeline",
+      "heading": "quickler became explicit.",
+      "text": "Work on the quickler site started on 6 March 2026, the name was settled publicly on 9 March 2026, and quickler Ltd was incorporated on 16 March 2026 as SC882439."
+    },
+    {
+      "type": "tags",
+      "eyebrow": "Current focus",
+      "heading": "What quickler builds now.",
+      "text": "Field and evidence-heavy workflows: jobs where notes, photos, measurements, or files are gathered first and then have to become a structured report or record afterwards.",
+      "items": [
+        { "label": "Evidence-heavy workflows", "href": "/pages/demo.html", "strong": true },
+        { "label": "Context-aware systems", "href": "/pages/demo.html" },
+        { "label": "Approval and record flows", "href": "/pages/demo.html" }
+      ]
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Ready to see if it fits?",
+      "heading": "Try the live demo on WhatsApp.",
+      "text": "It takes about two minutes. Any business with one repeated report, one document-heavy process, or one awkward handoff is a strong fit.",
+      "actions": [
+        { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+        { "label": "Get in touch", "href": "/pages/help/index.html#contact-form-section", "style": "btn-secondary" }
+      ]
+    }
   ]
 }
 ---
-<section id="top" class="inner-hero">
-        <div class="page-shell about-page-intro">
-            <span class="eyebrow">About quickler</span>
-            <h1>quickler is for teams that do the job first and still have to write it up later.</h1>
-            <p>Philip kept seeing the same operational waste in different places: the visit happened, the facts were already there, but someone still had to rebuild the report, paperwork, or next action from notes, files, and memory. quickler exists to remove that second pass in workflows where it happens every week.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">Short Version</p>
-                <h2>The problem quickler is built around.</h2>
-                <p>The same pattern kept turning up: the work was done, but the write-up still had to be rebuilt afterwards.</p>
-            </div>
-        </div>
-        <div class="about-short-version-grid">
-            <article class="card-link">
-                <span class="card-link-kicker">The problem</span>
-                <h3 class="card-link-title">The job is done. The write-up starts after.</h3>
-                <p class="card-link-copy">In a lot of businesses, the useful work is already done before the real admin begins. Notes, photos, files, approvals, and context already exist, but someone still has to turn them into the final output.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">The background</span>
-                <h3 class="card-link-title">quickler grew out of delivered workflow systems</h3>
-                <p class="card-link-copy">Before quickler became a company, Philip had already built workflow systems for charities, publishing, and commercial operations. That is where the pattern became too obvious to ignore.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="content-duo">
-            <div class="section-frame">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">Founder</p>
-                        <h2>Why Philip Ross started it.</h2>
-                    </div>
-                </div>
-                <div class="detail-body">
-                    <p>Philip Ross studied Electrical and Mechanical Engineering at the University of Strathclyde and later worked at Dijuno, an AI analytics startup.</p>
-                    <p>That mix of engineering, workflow design, and automation work pushed him toward systems that are useful in practice, not just impressive in demos.</p>
-                    <p>The bias is simple: start with a real process, keep the scope narrow, and make the output more dependable rather than more theatrical.</p>
-                    <p><a href="/pages/about-detail.html">Read the founder background</a></p>
-                </div>
-            </div>
-            <div class="section-frame">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">Proof</p>
-                        <h2>Real delivery came before the company.</h2>
-                    </div>
-                </div>
-                <div class="detail-body">
-                    <p>Before quickler became a public company, Philip had already delivered six workflow systems across charities, publishing, and commercial operations.</p>
-                    <p>Across that portfolio, the measured saving came to 51.5 working days per year, with an average return of roughly 12x on time invested.</p>
-                    <p>The projects were varied, but the pattern was the same: repeated operational drag, too much reconstruction work, and too much admin between the job and the finished output.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">Timeline</p>
-                <h2>How the company took shape.</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-3">
-            <article class="card-link">
-                <span class="card-link-kicker">Nov 2025 to Feb 2026</span>
-                <h3 class="card-link-title">Delivered systems came first</h3>
-                <p class="card-link-copy">The early work covered fundraising automation, production tracking, sales-data restructuring, till-data automation, and a purchase-order workflow platform.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">6 March to 16 March 2026</span>
-                <h3 class="card-link-title">quickler became explicit</h3>
-                <p class="card-link-copy">Work on the quickler site started on 6 March 2026, the quickler name was settled publicly on 9 March 2026, and quickler Ltd was incorporated on 16 March 2026.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Now</span>
-                <h3 class="card-link-title">One repeated workflow is enough to start</h3>
-                <p class="card-link-copy">A strong fit is any business that can point to one repeated report, one document-heavy process, or one awkward internal handoff that still burns time after the real work is done.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">Current focus</p>
-                <h2>What quickler builds now.</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-3 about-builds-now">
-            <article class="card-link">
-                <span class="card-link-kicker">Field and reporting work</span>
-                <h3 class="card-link-title">Evidence-heavy workflows</h3>
-                <p class="card-link-copy">This includes jobs where notes, photos, measurements, or files are gathered first and then have to become a structured report or record afterwards.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Internal tools</span>
-                <h3 class="card-link-title">Context-aware workflow systems</h3>
-                <p class="card-link-copy">Some workflows need more than a form and more discipline than a chatbot. Those are still part of the same company story, not a separate identity.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Document and admin work</span>
-                <h3 class="card-link-title">Approval and record workflows</h3>
-                <p class="card-link-copy">The same approach also fits internal approval flows, document handling, and admin work that needs proper structure rather than another loose form.</p>
-            </article>
-        </div>
-    </section>

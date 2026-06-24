@@ -5265,8 +5265,11 @@ nav {
 
 .story {
     position: relative;
-    height: 100vh;
-    height: 100svh;
+    /* Exactly the scroll container's height (100% of it), NOT 100svh.
+       100svh on the panel vs the container's own height resolved to
+       slightly different pixels, leaving a ~14px white gap at the bottom
+       edge of every panel. height:100% locks them identical -- no gap. */
+    height: 100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;

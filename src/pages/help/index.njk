@@ -1,8 +1,34 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/help/index.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Support",
+    "heading": "How can we help?",
+    "lede": "Start with a guide below. If you can't find what you need, the contact form is further down and Philip replies in person within one business day."
+  },
+  "blocks": [
+    {
+      "type": "cards",
+      "eyebrow": "Guides",
+      "heading": "Find an answer fast",
+      "items": [
+        { "kicker": "Getting started", "title": "Signup to first report", "text": "How to sign up, configure your first workflow, and invite engineers.", "href": "/pages/help/getting-started.html" },
+        { "kicker": "Workflows", "title": "Questions, reports, limits", "text": "How workflows are structured, how questions are configured, and what limits apply.", "href": "/pages/help/workflows.html" },
+        { "kicker": "Engineers", "title": "Adding, removing, seats", "text": "How to add engineers to your firm, manage seats, and remove access.", "href": "/pages/help/engineers.html" },
+        { "kicker": "Team management", "title": "Admins, members, invitations", "text": "How to manage admin roles, invite members, and control access.", "href": "/pages/help/team.html" },
+        { "kicker": "Plans & billing", "title": "Pricing, Direct Debit, upgrades", "text": "How plans are structured, how Direct Debit works, and how to upgrade or cancel.", "href": "/pages/help/plans.html" },
+        { "kicker": "Data & privacy", "title": "Storage, exports, GDPR", "text": "Where data is stored, how to export records, and GDPR obligations.", "href": "/pages/help/privacy.html" },
+        { "kicker": "Troubleshooting", "title": "Common issues and fixes", "text": "Solutions to the most common problems with WhatsApp, reports, and account access.", "href": "/pages/help/troubleshooting.html" },
+        { "kicker": "FAQ", "title": "Frequently asked questions", "text": "Quick answers to the questions we hear most often.", "href": "/pages/help/faq.html" }
+      ]
+    },
+    {
+      "type": "raw",
+      "html": "<section id=\"contact-form-section\" aria-labelledby=\"contact-form-section-title\">\n        <div class=\"single-panel-layout\">\n            <div class=\"contact-form-shell\">\n                <div class=\"form-card-header\">\n                    <span class=\"eyebrow\">Get in touch</span>\n                    <h2 id=\"contact-form-section-title\">Still stuck? Tell us what is not working.</h2>\n                    <p class=\"contact-copy\">Email Philip directly: <a href=\"mailto:hello@quickler.co\">hello@quickler.co</a> or use the form below. He replies in person within one business day.</p>\n                </div>\n                <form class=\"contact-form\" id=\"contact-form\" action=\"https://formspree.io/f/mjknoeqd\" method=\"POST\" data-agent-form=\"quickler-contact\" data-async-form=\"quickler-contact\" data-form-state=\"idle\" data-success-message=\"Sent. Philip will reply in person.\" data-success-status=\"Form submitted successfully\" data-submit-button=\"#submit-btn\" aria-describedby=\"contact-form-help contact-form-status\">\n                    <div class=\"form-group\">\n                        <label for=\"name\">Your name</label>\n                        <input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Jane Smith\" autocomplete=\"name\" required data-agent-field=\"name\">\n                    </div>\n\n                    <div class=\"form-group\">\n                        <label for=\"company\">Company</label>\n                        <input type=\"text\" id=\"company\" name=\"company\" placeholder=\"Acme Inspections Ltd\" autocomplete=\"organization\" data-agent-field=\"company\">\n                    </div>\n\n                    <div class=\"form-group\">\n                        <label for=\"email\">Your email</label>\n                        <input type=\"email\" id=\"email\" name=\"email\" placeholder=\"you@example.com\" autocomplete=\"email\" inputmode=\"email\" required data-agent-field=\"email\">\n                    </div>\n\n                    <div class=\"form-group\">\n                        <label for=\"lane\">Which route fits best?</label>\n                        <select id=\"lane\" name=\"lane\" data-agent-field=\"lane\">\n                            <option value=\"\">Select a route</option>\n                            <option value=\"Workflows\">Workflows</option>\n                            <option value=\"Invoices &amp; Purchase Orders\">Invoices &amp; Purchase Orders</option>\n                            <option value=\"Unsure\">Unsure</option>\n                        </select>\n                    </div>\n\n                    <div class=\"form-group\">\n                        <label for=\"report-volume\">How often does this happen?</label>\n                        <input type=\"text\" id=\"report-volume\" name=\"report_volume\" placeholder=\"For example: 15 per week, 40 per month, or 8 jobs per day\" data-agent-field=\"report_volume\">\n                    </div>\n\n                    <div class=\"form-group\">\n                        <label for=\"report-type\">What workflow, report, record, or process should quickler start with?</label>\n                        <input type=\"text\" id=\"report-type\" name=\"report_type\" placeholder=\"For example: site inspection report, maintenance visit sheet, engineer job record, or grant application workflow\" data-agent-field=\"report_type\">\n                    </div>\n\n                    <div class=\"form-group\">\n                        <label for=\"sample-access\">Could you share examples of the current workflow or inputs?</label>\n                        <input type=\"text\" id=\"sample-access\" name=\"sample_access\" placeholder=\"For example: yes, anonymised examples / maybe / not yet\" data-agent-field=\"sample_access\">\n                    </div>\n\n                    <div class=\"form-group\">\n                        <label for=\"message\">Your enquiry</label>\n                        <textarea id=\"message\" name=\"message\" placeholder=\"What is the workflow, how is it handled now, where does it slow down or go wrong, and what would a better version look like?\" required data-agent-field=\"message\"></textarea>\n                    </div>\n\n                    <p class=\"visually-hidden\" id=\"contact-form-help\">Required fields are name, email, and message. If unsure which lane fits, choose Unsure and describe the workflow in the message field.</p>\n                    <p class=\"visually-hidden\" id=\"contact-form-status\" aria-live=\"polite\" data-agent-status=\"form-status\">Form ready</p>\n\n                    <div class=\"form-submit\">\n                        <button type=\"submit\" class=\"btn btn-primary\" id=\"submit-btn\">Send enquiry</button>\n                    </div>\n                    <p class=\"form-note\">By sending this form, you agree that quickler may use the details you provide to review your enquiry and reply to you. See the <a href=\"/pages/privacy.html\">Privacy Policy</a>.</p>\n                </form>\n            </div>\n        </div>\n    </section>"
+    }
+  ],
   "seo": {
     "title": "Support | Quickler",
     "description": "Quickler support. Guides for signup, workflows, billing, privacy and troubleshooting, plus a contact form. Philip replies in person within one business day.",
@@ -27,138 +53,9 @@
     "lang": "en",
     "jsonld": "{\n        \"@context\": \"https://schema.org\",\n        \"@type\": \"TechArticle\",\n        \"headline\": \"Quickler help centre\",\n        \"description\": \"Quickler help centre. Guides for signup, workflows, engineers, team management, plans, privacy, troubleshooting and FAQs.\",\n        \"url\": \"https://quickler.co/pages/help/index.html\",\n        \"author\": {\"@type\": \"Person\", \"name\": \"Philip Ross\"},\n        \"publisher\": {\"@type\": \"Organization\", \"name\": \"Quickler Ltd\"}\n    }"
   },
-  "footerCta": {
-    "heading": "Still stuck?",
-    "sub": "Email <a href=\"mailto:hello@quickler.co\" style=\"color:inherit;\">hello@quickler.co</a> — Philip replies in person within one business day.",
-    "actions": [
-      {
-        "href": "#contact-form-section",
-        "class": "btn btn-primary footer-cta-btn",
-        "label": "Get in touch"
-      }
-    ]
-  },
   "scripts": [
     "/js/contact-form.js",
     "/js/analytics-events.js"
   ]
 }
 ---
-<section id="top" class="inner-hero">
-        <div class="page-shell">
-            <span class="eyebrow">Support</span>
-            <h1>How can we help?</h1>
-            <p>Start with a guide below. If you can't find what you need, the contact form is at the bottom of this page and Philip replies in person within one business day.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="balanced-grid-3">
-            <article class="card-link">
-                <span class="card-link-kicker">Getting started</span>
-                <h3 class="card-link-title"><a href="/pages/help/getting-started.html" style="color:inherit;text-decoration:none;">Signup to first report</a></h3>
-                <p class="card-link-copy">How to sign up, configure your first workflow, and invite engineers.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Workflows</span>
-                <h3 class="card-link-title"><a href="/pages/help/workflows.html" style="color:inherit;text-decoration:none;">Questions, reports, limits</a></h3>
-                <p class="card-link-copy">How workflows are structured, how questions are configured, and what limits apply.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Engineers</span>
-                <h3 class="card-link-title"><a href="/pages/help/engineers.html" style="color:inherit;text-decoration:none;">Adding, removing, seats</a></h3>
-                <p class="card-link-copy">How to add engineers to your firm, manage seats, and remove access.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Team management</span>
-                <h3 class="card-link-title"><a href="/pages/help/team.html" style="color:inherit;text-decoration:none;">Admins, members, invitations</a></h3>
-                <p class="card-link-copy">How to manage admin roles, invite members, and control access.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Plans &amp; billing</span>
-                <h3 class="card-link-title"><a href="/pages/help/plans.html" style="color:inherit;text-decoration:none;">Pricing, Direct Debit, upgrades</a></h3>
-                <p class="card-link-copy">How plans are structured, how Direct Debit works, and how to upgrade or cancel.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Data &amp; privacy</span>
-                <h3 class="card-link-title"><a href="/pages/help/privacy.html" style="color:inherit;text-decoration:none;">Storage, exports, GDPR</a></h3>
-                <p class="card-link-copy">Where data is stored, how to export records, and GDPR obligations.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Troubleshooting</span>
-                <h3 class="card-link-title"><a href="/pages/help/troubleshooting.html" style="color:inherit;text-decoration:none;">Common issues and fixes</a></h3>
-                <p class="card-link-copy">Solutions to the most common problems with WhatsApp, reports, and account access.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">FAQ</span>
-                <h3 class="card-link-title"><a href="/pages/help/faq.html" style="color:inherit;text-decoration:none;">Frequently asked questions</a></h3>
-                <p class="card-link-copy">Quick answers to the questions we hear most often.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="section-tight" id="contact-form-section" aria-labelledby="contact-form-section-title">
-        <div class="single-panel-layout">
-            <div class="contact-form-shell">
-                <div class="form-card-header">
-                    <span class="eyebrow">Get in touch</span>
-                    <h2 id="contact-form-section-title">Still stuck? Tell us what is not working.</h2>
-                    <p class="contact-copy">Email Philip directly: <a href="mailto:hello@quickler.co">hello@quickler.co</a> or use the form below. He replies in person within one business day.</p>
-                </div>
-                <form class="contact-form" id="contact-form" action="https://formspree.io/f/mjknoeqd" method="POST" data-agent-form="quickler-contact" data-async-form="quickler-contact" data-form-state="idle" data-success-message="Sent. Philip will reply in person." data-success-status="Form submitted successfully" data-submit-button="#submit-btn" aria-describedby="contact-form-help contact-form-status">
-                    <div class="form-group">
-                        <label for="name">Your name</label>
-                        <input type="text" id="name" name="name" placeholder="Jane Smith" autocomplete="name" required data-agent-field="name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="company">Company</label>
-                        <input type="text" id="company" name="company" placeholder="Acme Inspections Ltd" autocomplete="organization" data-agent-field="company">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Your email</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" required data-agent-field="email">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="lane">Which route fits best?</label>
-                        <select id="lane" name="lane" data-agent-field="lane">
-                            <option value="">Select a route</option>
-                            <option value="Workflows">Workflows</option>
-                            <option value="Invoices &amp; Purchase Orders">Invoices &amp; Purchase Orders</option>
-                            <option value="Unsure">Unsure</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="report-volume">How often does this happen?</label>
-                        <input type="text" id="report-volume" name="report_volume" placeholder="For example: 15 per week, 40 per month, or 8 jobs per day" data-agent-field="report_volume">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="report-type">What workflow, report, record, or process should quickler start with?</label>
-                        <input type="text" id="report-type" name="report_type" placeholder="For example: site inspection report, maintenance visit sheet, engineer job record, or grant application workflow" data-agent-field="report_type">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="sample-access">Could you share examples of the current workflow or inputs?</label>
-                        <input type="text" id="sample-access" name="sample_access" placeholder="For example: yes, anonymised examples / maybe / not yet" data-agent-field="sample_access">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Your enquiry</label>
-                        <textarea id="message" name="message" placeholder="What is the workflow, how is it handled now, where does it slow down or go wrong, and what would a better version look like?" required data-agent-field="message"></textarea>
-                    </div>
-
-                    <p class="visually-hidden" id="contact-form-help">Required fields are name, email, and message. If unsure which lane fits, choose Unsure and describe the workflow in the message field.</p>
-                    <p class="visually-hidden" id="contact-form-status" aria-live="polite" data-agent-status="form-status">Form ready</p>
-
-                    <div class="form-submit">
-                        <button type="submit" class="btn btn-primary" id="submit-btn">Send enquiry</button>
-                    </div>
-                    <p class="form-note">By sending this form, you agree that quickler may use the details you provide to review your enquiry and reply to you. See the <a href="/pages/privacy.html">Privacy Policy</a>.</p>
-                </form>
-            </div>
-        </div>
-    </section>

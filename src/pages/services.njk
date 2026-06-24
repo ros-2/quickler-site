@@ -1,8 +1,73 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/services.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Quickler Workflows",
+    "heading": "EICR, gas safety, van checks, site reports &mdash; over WhatsApp.",
+    "lede": "Engineers answer questions on WhatsApp. Quickler turns replies and photos into a dashboard record, flags faults, and keeps a timestamped audit trail. Per firm pricing, no per-user subscription, no app to install.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "#pricing", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "steps",
+      "eyebrow": "How it works",
+      "heading": "Four steps from site to finished document.",
+      "items": [
+        { "title": "Capture on site", "text": "Staff send text, voice notes, photos and measurements to a workflow number while on site, not after they get back to the desk." },
+        { "title": "Extract structure", "text": "Quickler reads the messages, recognises the workflow you configured, and slots the content into the correct report structure." },
+        { "title": "Review, human sign-off", "text": "The responsible person checks the draft, edits anything, and signs off. Nothing ships without a human eye." },
+        { "title": "Output finished doc", "text": "Produce the PDF, document, or next workflow state. Evidence stays stored alongside so the record stands up later." }
+      ]
+    },
+    {
+      "type": "tags",
+      "eyebrow": "What you get",
+      "heading": "What you actually get.",
+      "text": "WhatsApp capture on site, templates per workflow, extraction tuned to the job, human sign-off, evidence kept with the record, and finished PDFs &mdash; on simple monthly pricing.",
+      "items": [
+        { "label": "WhatsApp capture", "href": "#how-it-works" },
+        { "label": "Templates per workflow", "href": "#how-it-works" },
+        { "label": "AI tuned to the job", "href": "#how-it-works" },
+        { "label": "Human sign-off", "href": "#how-it-works" },
+        { "label": "Evidence kept with the job", "href": "#how-it-works" },
+        { "label": "Finished PDFs", "href": "#how-it-works" },
+        { "label": "Unlimited users", "href": "#pricing" }
+      ]
+    },
+    {
+      "type": "tags",
+      "eyebrow": "Supported workflows",
+      "heading": "Compliance workflows Quickler runs over WhatsApp.",
+      "text": "Upload any inspection form once and Quickler runs it as a WhatsApp workflow. The repeat checks UK firms ask for most:",
+      "items": [
+        { "label": "EICR electrical", "href": "/pages/eicr-from-whatsapp.html" },
+        { "label": "CP12 gas safety", "href": "/pages/cp12-gas-safety-whatsapp.html" },
+        { "label": "Van safety checks", "href": "/pages/van-safety-check-template.html" },
+        { "label": "Site inspection reports", "href": "/pages/structural-site-report-template.html" },
+        { "label": "See every guide", "href": "/pages/guides.html", "strong": true }
+      ]
+    },
+    {
+      "type": "raw",
+      "heading": "Pricing",
+      "html": "<p class=\"story-eyebrow\">Pricing</p><h2 class=\"story-h2\">Pay for reports, not seats.</h2><p class=\"story-text story-text-centre\">One pound per completed report. Pick the monthly bundle that suits your team. Unlimited users and workflows on every plan. <a href=\"/pages/no-subscription-compliance.html\">Why per report, not per engineer</a>.</p><div id=\"pricing\" class=\"story-tags\"><div class=\"story-tag\"><strong>Quickler 50</strong> &mdash; 50 reports / month &middot; &pound;50/mo</div><div class=\"story-tag\"><strong>Quickler 100</strong> &mdash; 100 reports / month &middot; &pound;100/mo</div><div class=\"story-tag\"><strong>Quickler 250</strong> &mdash; 250 reports / month &middot; &pound;250/mo</div><div class=\"story-tag\"><strong>Quickler 500</strong> &mdash; 500 reports / month &middot; &pound;500/mo</div></div><p class=\"story-text story-text-centre\">Need more than 500 a month? <a href=\"mailto:hello@quickler.co\">Talk to us</a>. Billed monthly by UK Direct Debit.</p>"
+    },
+    {
+      "type": "cta",
+      "eyebrow": "See it for yourself",
+      "heading": "Ready to cut the desk rewrite?",
+      "text": "Try the demo, or get in touch with one repeated workflow to start with.",
+      "actions": [
+        { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+        { "label": "Get in touch", "href": "/pages/help/index.html#contact-form-section", "style": "btn-secondary" }
+      ]
+    }
+  ],
   "seo": {
     "title": "Quickler Workflows and Pricing | WhatsApp Field Compliance, Any Trade, Any Country",
     "description": "Quickler field compliance workflows over WhatsApp. Any inspection, any trade, any country. Structured digital records with PDF export. One pound per report, unlimited users, simple monthly bundles.",
@@ -30,320 +95,9 @@
     "lang": "en",
     "jsonld": "{\n        \"@context\": \"https://schema.org\",\n        \"@graph\": [\n            {\n                \"@type\": \"SoftwareApplication\",\n                \"name\": \"quickler Workflows\",\n                \"url\": \"https://quickler.co/pages/services.html\",\n                \"applicationCategory\": \"BusinessApplication\",\n                \"operatingSystem\": \"Web\",\n                \"description\": \"Workflow systems for field, inspection, survey, maintenance, compliance, and operations teams that capture context once and turn it into finished outputs faster.\",\n                \"publisher\": {\n                    \"@type\": \"Organization\",\n                    \"name\": \"quickler Ltd\",\n                    \"identifier\": \"SC882439\",\n                    \"url\": \"https://quickler.co/\"\n                }\n            },\n            {\n                \"@type\": \"BreadcrumbList\",\n                \"itemListElement\": [\n                    {\n                        \"@type\": \"ListItem\",\n                        \"position\": 1,\n                        \"name\": \"Home\",\n                        \"item\": \"https://quickler.co/\"\n                    },\n                    {\n                        \"@type\": \"ListItem\",\n                        \"position\": 2,\n                        \"name\": \"Workflows and Pricing\",\n                        \"item\": \"https://quickler.co/pages/services.html\"\n                    }\n                ]\n            }\n        ]\n    }"
   },
-  "headStyle": "\n        .pricing-grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n            gap: 18px;\n            margin-top: 36px;\n        }\n        .pricing-card {\n            background: #ffffff;\n            border: 1px solid rgba(15, 23, 42, 0.08);\n            border-radius: 18px;\n            padding: 28px 24px;\n            display: flex;\n            flex-direction: column;\n            gap: 18px;\n            box-shadow: 0 2px 14px rgba(15, 23, 42, 0.04);\n        }\n        .pricing-card h3 {\n            margin: 0;\n            font-size: 1.4rem;\n            color: #0d1a3a;\n        }\n        .pricing-desc {\n            color: #67789e;\n            font-size: 0.92rem;\n            line-height: 1.5;\n            margin: 0;\n        }\n        .pricing-metric {\n            display: flex;\n            flex-direction: column;\n            align-items: flex-start;\n            gap: 2px;\n        }\n        .pricing-metric-value {\n            font-size: 2.4rem;\n            font-weight: 800;\n            line-height: 1;\n            color: #0d1a3a;\n        }\n        .pricing-metric-label {\n            font-size: 0.78rem;\n            color: #67789e;\n            text-transform: uppercase;\n            letter-spacing: 0.04em;\n            font-weight: 600;\n        }\n        .pricing-price {\n            display: flex;\n            align-items: baseline;\n            gap: 4px;\n            border-top: 1px solid rgba(15, 23, 42, 0.06);\n            padding-top: 18px;\n            margin-top: 4px;\n        }\n        .pricing-price-value {\n            font-size: 1.8rem;\n            font-weight: 700;\n            color: #0d1a3a;\n        }\n        .pricing-price-suffix {\n            font-size: 0.88rem;\n            color: #67789e;\n        }\n        .annual-banner {\n            margin-top: 40px;\n            padding: 24px 28px;\n            background: linear-gradient(135deg, rgba(244, 63, 140, 0.08), rgba(124, 58, 237, 0.08));\n            border: 1px solid rgba(244, 63, 140, 0.2);\n            border-radius: 18px;\n            text-align: center;\n        }\n        .annual-banner p {\n            margin: 0;\n            color: #213055;\n            font-size: 1rem;\n            line-height: 1.6;\n        }\n        .annual-banner a {\n            color: #1a52d0;\n            font-weight: 600;\n        }\n        /* Country selector, grouped by region */\n        .country-region { margin-top: 1.8rem; }\n        .country-region:first-of-type { margin-top: 1.2rem; }\n        .country-region-title {\n            font-size: 0.8rem;\n            text-transform: uppercase;\n            letter-spacing: 0.06em;\n            font-weight: 700;\n            color: #1a52d0;\n            margin: 0 0 0.85rem;\n            padding-bottom: 0.4rem;\n            border-bottom: 1px solid rgba(15, 23, 42, 0.08);\n        }\n        .country-flag-grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));\n            gap: 1rem 0.75rem;\n            margin: 0;\n            align-items: start;\n        }\n        .country-flag-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; gap: 0.35rem; }\n        .country-flag-item img { border: 1px solid #e5e7eb; border-radius: 3px; display: block; width: 40px; height: 30px; object-fit: cover; }\n        .country-flag-item:hover img { border-color: #f43f8c; box-shadow: 0 1px 6px rgba(244,63,140,0.2); }\n        .country-flag-item span { font-size: 0.7rem; color: #475569; text-align: center; line-height: 1.2; }\n    ",
-  "footerCta": {
-    "heading": "Ready to see if it fits?",
-    "sub": "Try the live demo on WhatsApp &mdash; takes two minutes.",
-    "actions": [
-      {
-        "href": "/pages/demo.html",
-        "class": "btn btn-primary footer-cta-btn",
-        "label": "Try the demo"
-      },
-      {
-        "href": "/pages/help/index.html#contact-form-section",
-        "class": "btn btn-secondary footer-cta-btn",
-        "label": "Get in touch"
-      }
-    ]
-  },
   "scripts": [
-    "/js/analytics-events.js"
+    "/js/analytics-events.js",
+    "/js/scroll-reveal.js"
   ]
 }
 ---
-<section id="top" class="inner-hero">
-        <div class="page-shell">
-            <span class="eyebrow">Quickler Workflows</span>
-            <h1>EICR, gas safety, van checks, site reports — over WhatsApp.</h1>
-            <p>Engineers answer questions on WhatsApp. Quickler turns replies and photos into a dashboard record, flags faults, and keeps a timestamped audit trail. Per firm pricing, no per-user subscription, no app to install.</p>
-            <div class="hero-actions" style="margin-top: 28px; justify-content: center;">
-                <a href="/pages/demo.html" class="btn btn-hero-primary" data-cta="services-top-demo">Try the demo</a>
-                <a href="#pricing" class="btn btn-hero-secondary" data-cta="services-top-pricing">See pricing</a>
-                <a href="/pages/help/index.html#contact-form-section" class="btn btn-hero-secondary" data-cta="services-top-contact">Contact</a>
-            </div>
-            <p style="margin-top: 16px; font-size: 0.82rem; color: rgba(255,255,255,0.4);">Jump to: <a href="#eicr" style="color: rgba(255,255,255,0.55);">EICR</a> · <a href="#cp12" style="color: rgba(255,255,255,0.55);">Gas safety</a> · <a href="#van-checks" style="color: rgba(255,255,255,0.55);">Van checks</a> · <a href="#site-reports" style="color: rgba(255,255,255,0.55);">Site inspections</a></p>
-        </div>
-    </section>
-
-    <section class="section-tight" aria-labelledby="how-it-works-title">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">How It Works</p>
-                <h2 id="how-it-works-title">Four steps from site to finished document.</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-2">
-            <article class="card-link">
-                <span class="card-link-kicker">1. Capture</span>
-                <h3 class="card-link-title">Capture on site</h3>
-                <p class="card-link-copy">Staff send text, voice notes, photos, and measurements to a workflow number while they are on site, not after they get back to the desk.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">2. Extract</span>
-                <h3 class="card-link-title">Sort the facts into the right structure</h3>
-                <p class="card-link-copy">quickler reads the messages, recognises the workflow you configured, and slots the content into the correct report, record, or template structure.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">3. Review</span>
-                <h3 class="card-link-title">The engineer stays in charge</h3>
-                <p class="card-link-copy">The responsible person checks the draft, edits anything they want, and signs off. Nothing ships without a human eye.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">4. Output</span>
-                <h3 class="card-link-title">Finished report or admin pack</h3>
-                <p class="card-link-copy">Produce the PDF, the document, or the next workflow state. Store the evidence alongside it so the record stands up later.</p>
-            </article>
-        </div>
-    </section>
-
-
-    <section class="section-tight" aria-labelledby="what-you-get-title">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">What You Get</p>
-                <h2 id="what-you-get-title">What you actually get.</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-2">
-            <article class="card-link">
-                <span class="card-link-kicker">Capture</span>
-                <h3 class="card-link-title">WhatsApp input on site</h3>
-                <p class="card-link-copy">Staff can send text, voice notes, photos, and measurements from a tool they already use.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Structure</span>
-                <h3 class="card-link-title">Templates for each workflow</h3>
-                <p class="card-link-copy">Each workflow is shaped around the report, record, or admin pack you already produce.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Extraction</span>
-                <h3 class="card-link-title">AI tuned to the job</h3>
-                <p class="card-link-copy">The system pulls facts into the right structure instead of behaving like a generic chatbot.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Review</span>
-                <h3 class="card-link-title">Human sign-off stays in place</h3>
-                <p class="card-link-copy">The accountable person reviews and edits the draft before anything is finalised.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Evidence</span>
-                <h3 class="card-link-title">Files stay with the job</h3>
-                <p class="card-link-copy">Photos, voice notes, measurements, and other files stay attached to the record they belong to.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Output</span>
-                <h3 class="card-link-title">PDFs and finished records</h3>
-                <p class="card-link-copy">Reports and records can be produced in a format that is ready to send, file, or store.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Commercials</span>
-                <h3 class="card-link-title">Simple monthly pricing</h3>
-                <p class="card-link-copy">One pound per report. Unlimited users and workflows. No per-engineer licence, no setup fee on standard plans.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Access</span>
-                <h3 class="card-link-title">Direct contact with the founder</h3>
-                <p class="card-link-copy">While the product is still early, rollout and feedback stay close to the person building it.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="section-tight" aria-labelledby="fit-title">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">Fit</p>
-                <h2 id="fit-title">Where quickler fits best.</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-3">
-            <article class="card-link">
-                <span class="card-link-kicker">Good fit</span>
-                <h3 class="card-link-title">Repeated workflows with a stable shape</h3>
-                <p class="card-link-copy">Inspection reports, survey summaries, maintenance visit reports, site investigation records, QA packs, approval flows, and repeated document handling.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Not ideal</span>
-                <h3 class="card-link-title">No stable pattern</h3>
-                <p class="card-link-copy">If every case is materially different, or review and repeated structure are barely part of the job, this is probably not the right first fit.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Strongest start</span>
-                <h3 class="card-link-title">One real workflow, one real example</h3>
-                <p class="card-link-copy">The best enquiries describe one workflow, how often it happens, what gets captured during the job, and what should improve.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="section-tight" aria-labelledby="workflows-title">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">Supported workflows</p>
-                <h2 id="workflows-title">Compliance workflows Quickler runs over WhatsApp.</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-3">
-            <article id="eicr" class="card-link">
-                <span class="card-link-kicker">Electrical</span>
-                <h3 class="card-link-title"><a href="/pages/eicr-from-whatsapp.html">EICR — Electrical Installation Condition Report</a></h3>
-                <p class="card-link-copy">EICR capture on WhatsApp with photo evidence. C1, C2 and FI codes flagged on the dashboard the moment they are entered. Formatted EICR PDF for the qualifying electrician to sign off. <a href="/pages/eicr-from-whatsapp.html">Full guide →</a></p>
-            </article>
-            <article id="cp12" class="card-link">
-                <span class="card-link-kicker">Gas Safe</span>
-                <h3 class="card-link-title"><a href="/pages/cp12-gas-safety-whatsapp.html">CP12 — Landlord Gas Safety Record</a></h3>
-                <p class="card-link-copy">Appliance-by-appliance checks on WhatsApp with photo of each appliance plate. Formatted CP12 PDF produced for the Gas Safe registered engineer's signature. Stored against the property automatically. <a href="/pages/cp12-gas-safety-whatsapp.html">Full guide →</a></p>
-            </article>
-            <article id="van-checks" class="card-link">
-                <span class="card-link-kicker">Fleet</span>
-                <h3 class="card-link-title"><a href="/pages/van-safety-check-template.html">Van safety checks — DVSA daily walkround</a></h3>
-                <p class="card-link-copy">Drivers receive the walkround on WhatsApp at the start of every shift. Defect photos go straight to the fleet manager. Red, amber and green status per vehicle live on the dashboard. <a href="/pages/van-safety-check-template.html">Full template →</a></p>
-            </article>
-            <article id="site-reports" class="card-link">
-                <span class="card-link-kicker">Structural</span>
-                <h3 class="card-link-title"><a href="/pages/structural-site-report-template.html">Site inspection reports — structural</a></h3>
-                <p class="card-link-copy">Capture site notes, photos, sketches and measurements on WhatsApp during the visit. Structured draft report ready by the time the engineer is back at the desk. Accountable engineer reviews and signs. <a href="/pages/structural-site-report-template.html">Full template →</a></p>
-            </article>
-        </div>
-    </section>
-
-    <section id="pricing" class="section-tight" aria-labelledby="pricing-title">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">Pricing</p>
-                <h2 id="pricing-title">Pay for reports, not seats.</h2>
-                <p>One pound per completed report. Pick the monthly bundle that suits your team. Unlimited users, unlimited managers, unlimited workflows on every plan &mdash; you only pay for the reports you finish. UK customers can pay by UK Direct Debit; card is available everywhere. Rooted in UK compliance, <a href="/pages/global-field-compliance.html">Quickler works in any country</a> WhatsApp does, across English-speaking markets including the UK, Ireland, the United States, Canada, Australia and New Zealand.</p>
-            </div>
-        </div>
-        <div class="pricing-grid">
-
-            <div class="pricing-card">
-                <h3>Quickler 50</h3>
-                <p class="pricing-desc">For sole traders and one-person operations.</p>
-                <div class="pricing-metric">
-                    <span class="pricing-metric-value">50</span>
-                    <span class="pricing-metric-label">Reports / month</span>
-                </div>
-                <div class="pricing-price">
-                    <span class="pricing-price-value">&pound;50</span>
-                    <span class="pricing-price-suffix">/month</span>
-                </div>
-            </div>
-
-            <div class="pricing-card">
-                <h3>Quickler 100</h3>
-                <p class="pricing-desc">For small teams getting started.</p>
-                <div class="pricing-metric">
-                    <span class="pricing-metric-value">100</span>
-                    <span class="pricing-metric-label">Reports / month</span>
-                </div>
-                <div class="pricing-price">
-                    <span class="pricing-price-value">&pound;100</span>
-                    <span class="pricing-price-suffix">/month</span>
-                </div>
-            </div>
-
-            <div class="pricing-card">
-                <h3>Quickler 250</h3>
-                <p class="pricing-desc">For growing firms running several workflows.</p>
-                <div class="pricing-metric">
-                    <span class="pricing-metric-value">250</span>
-                    <span class="pricing-metric-label">Reports / month</span>
-                </div>
-                <div class="pricing-price">
-                    <span class="pricing-price-value">&pound;250</span>
-                    <span class="pricing-price-suffix">/month</span>
-                </div>
-            </div>
-
-            <div class="pricing-card">
-                <h3>Quickler 500</h3>
-                <p class="pricing-desc">For established firms with serious scale.</p>
-                <div class="pricing-metric">
-                    <span class="pricing-metric-value">500</span>
-                    <span class="pricing-metric-label">Reports / month</span>
-                </div>
-                <div class="pricing-price">
-                    <span class="pricing-price-value">&pound;500</span>
-                    <span class="pricing-price-suffix">/month</span>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="annual-banner">
-            <p>Need more than 500 reports a month? <a href="mailto:hello@quickler.co">Talk to us</a> &mdash; the same pound-per-report rate, billed to suit your volume. Billed monthly by UK Direct Debit. Why we charge <a href="/pages/no-subscription-compliance.html">per report, not per engineer</a>.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-    <div class="page-shell">
-        <div class="section-header">
-            <h2>By country</h2>
-            <p>Quickler resources tailored to field teams in your market, grouped by region.</p>
-        </div>
-
-        <div class="country-region">
-            <h3 class="country-region-title">Europe</h3>
-            <div class="country-flag-grid">
-                <a href="/pages/country-hub-ireland.html" class="country-flag-item"><img src="/assets/flags/ireland.svg" alt="Irish flag" width="40" height="30"><span>Ireland</span></a>
-                <a href="/pages/country-hub-germany.html" class="country-flag-item"><img src="/assets/flags/germany.svg" alt="German flag" width="40" height="30"><span>Germany</span></a>
-                <a href="/pages/country-hub-france.html" class="country-flag-item"><img src="/assets/flags/france.svg" alt="French flag" width="40" height="30"><span>France</span></a>
-                <a href="/pages/country-hub-spain.html" class="country-flag-item"><img src="/assets/flags/spain.svg" alt="Spanish flag" width="40" height="30"><span>Spain</span></a>
-                <a href="/pages/country-hub-italy.html" class="country-flag-item"><img src="/assets/flags/italy.svg" alt="Italian flag" width="40" height="30"><span>Italy</span></a>
-                <a href="/pages/country-hub-netherlands.html" class="country-flag-item"><img src="/assets/flags/netherlands.svg" alt="Dutch flag" width="40" height="30"><span>Netherlands</span></a>
-                <a href="/pages/country-hub-belgium.html" class="country-flag-item"><img src="/assets/flags/belgium.svg" alt="Belgian flag" width="40" height="30"><span>Belgium</span></a>
-                <a href="/pages/country-hub-portugal.html" class="country-flag-item"><img src="/assets/flags/portugal.svg" alt="Portuguese flag" width="40" height="30"><span>Portugal</span></a>
-                <a href="/pages/country-hub-poland.html" class="country-flag-item"><img src="/assets/flags/poland.svg" alt="Polish flag" width="40" height="30"><span>Poland</span></a>
-                <a href="/pages/country-hub-sweden.html" class="country-flag-item"><img src="/assets/flags/sweden.svg" alt="Swedish flag" width="40" height="30"><span>Sweden</span></a>
-                <a href="/pages/country-hub-austria.html" class="country-flag-item"><img src="/assets/flags/austria.svg" alt="Austrian flag" width="40" height="30"><span>Austria</span></a>
-            </div>
-        </div>
-
-        <div class="country-region">
-            <h3 class="country-region-title">North America</h3>
-            <div class="country-flag-grid">
-                <a href="/pages/country-hub-united-states.html" class="country-flag-item"><img src="/assets/flags/united-states.svg" alt="US flag" width="40" height="30"><span>USA</span></a>
-                <a href="/pages/country-hub-canada.html" class="country-flag-item"><img src="/assets/flags/canada.svg" alt="Canadian flag" width="40" height="30"><span>Canada</span></a>
-                <a href="/pages/country-hub-mexico.html" class="country-flag-item"><img src="/assets/flags/mexico.svg" alt="Mexican flag" width="40" height="30"><span>Mexico</span></a>
-            </div>
-        </div>
-
-        <div class="country-region">
-            <h3 class="country-region-title">Asia and Middle East</h3>
-            <div class="country-flag-grid">
-                <a href="/pages/country-hub-india.html" class="country-flag-item"><img src="/assets/flags/india.svg" alt="Indian flag" width="40" height="30"><span>India</span></a>
-                <a href="/pages/country-hub-singapore.html" class="country-flag-item"><img src="/assets/flags/singapore.svg" alt="Singapore flag" width="40" height="30"><span>Singapore</span></a>
-                <a href="/pages/country-hub-japan.html" class="country-flag-item"><img src="/assets/flags/japan.svg" alt="Japanese flag" width="40" height="30"><span>Japan</span></a>
-                <a href="/pages/country-hub-uae.html" class="country-flag-item"><img src="/assets/flags/uae.svg" alt="UAE flag" width="40" height="30"><span>UAE</span></a>
-            </div>
-        </div>
-
-        <div class="country-region">
-            <h3 class="country-region-title">Oceania</h3>
-            <div class="country-flag-grid">
-                <a href="/pages/country-hub-australia.html" class="country-flag-item"><img src="/assets/flags/australia.svg" alt="Australian flag" width="40" height="30"><span>Australia</span></a>
-                <a href="/pages/country-hub-new-zealand.html" class="country-flag-item"><img src="/assets/flags/new-zealand.svg" alt="New Zealand flag" width="40" height="30"><span>New Zealand</span></a>
-            </div>
-        </div>
-
-        <div class="country-region">
-            <h3 class="country-region-title">Africa and South America</h3>
-            <div class="country-flag-grid">
-                <a href="/pages/country-hub-south-africa.html" class="country-flag-item"><img src="/assets/flags/south-africa.svg" alt="South African flag" width="40" height="30"><span>South Africa</span></a>
-                <a href="/pages/country-hub-brazil.html" class="country-flag-item"><img src="/assets/flags/brazil.svg" alt="Brazilian flag" width="40" height="30"><span>Brazil</span></a>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to cut the desk rewrite?</h2>
-            <p>Try the demo, or get in touch with one repeated workflow to start with.</p>
-            <div class="hero-actions">
-                <a href="/pages/help/index.html#contact-form-section" class="btn btn-primary" data-cta="services-bottom-contact">Contact</a>
-                <a href="/pages/demo.html" class="btn btn-secondary" data-cta="services-bottom-demo">Try the demo</a>
-                <a href="#pricing" class="btn btn-secondary" data-cta="services-bottom-pricing">See pricing</a>
-            </div>
-        </div>
-    </section>

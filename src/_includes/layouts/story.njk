@@ -82,7 +82,7 @@
 {%- elif loop.index is odd %}{% set altcls = "story-feature" %}
 {%- else %}{% set altcls = "" %}{% endif %}
 {%- if b.type == "prose" %}
-<section class="story {{ altcls }} reveal-on-scroll">
+<section class="story {{ altcls }}">
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         {%- if b.heading %}<h2 class="story-h2">{{ b.heading | safe }}</h2>{% endif %}
@@ -90,7 +90,7 @@
     </div>
 </section>
 {%- elif b.type == "split" %}
-<section class="story {{ altcls }} reveal-on-scroll">
+<section class="story {{ altcls }}">
     <div class="story-split {{ 'story-split-reverse' if b.reverse }}">
         <div class="story-copy">
             {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
@@ -101,7 +101,7 @@
     </div>
 </section>
 {%- elif b.type == "steps" %}
-<section class="story {{ altcls }} reveal-on-scroll">
+<section class="story {{ altcls }}">
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         <h2 class="story-h2">{{ b.heading | safe }}</h2>
@@ -118,7 +118,7 @@
     </div>
 </section>
 {%- elif b.type == "cards" %}
-<section class="story {{ altcls }} reveal-on-scroll">
+<section class="story {{ altcls }}">
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         <h2 class="story-h2">{{ b.heading | safe }}</h2>
@@ -130,7 +130,7 @@
     </div>
 </section>
 {%- elif b.type == "tags" %}
-<section class="story {{ altcls }} reveal-on-scroll">
+<section class="story {{ altcls }}">
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         <h2 class="story-h2">{{ b.heading | safe }}</h2>
@@ -143,7 +143,7 @@
     </div>
 </section>
 {%- elif b.type == "cta" %}
-<section class="story story-cta {{ altcls }} reveal-on-scroll">
+<section class="story story-cta {{ altcls }}">
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         <h2 class="story-h2">{{ b.heading | safe }}</h2>
@@ -158,7 +158,7 @@
     </div>
 </section>
 {%- elif b.type == "video" %}
-<section class="story story-video-panel {{ altcls }} reveal-on-scroll">
+<section class="story story-video-panel {{ altcls }}">
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         {%- if b.heading %}<h2 class="story-h2">{{ b.heading | safe }}</h2>{% endif %}
@@ -168,7 +168,7 @@
     </div>
 </section>
 {%- elif b.type == "raw" %}
-<section class="story {{ altcls }} reveal-on-scroll"><div class="story-inner">{{ b.html | safe }}</div></section>
+<section class="story {{ altcls }}"><div class="story-inner">{{ b.html | safe }}</div></section>
 {%- endif %}
 {%- endfor %}
 
@@ -176,7 +176,7 @@
     other section, so it behaves identically on every device (no special
     'tail' region that broke on mobile). Any free-form page body renders
     inside it after the footer. -#}
-<section class="story story-footer reveal-on-scroll">
+<section class="story story-footer">
 {% include "partials/footer.njk" %}
 {{ content | safe }}
 </section>
