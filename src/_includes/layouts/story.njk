@@ -4,6 +4,20 @@
     `blocks`), and this renders them all in the unified .story
     frame. Change this file -> every page using it changes.
 
+    ARCHITECTURE -- proper full-page scroller:
+      <nav>            position:fixed, floats OVER everything.
+      <div .story-scroll>   the ONE scroll container. It owns the
+                       scrollbar and the snap (height:100svh,
+                       overflow-y:scroll, scroll-snap-type). Because
+                       snap lives here -- not on <html> -- the fixed
+                       nav can never be captured by it (the Firefox
+                       sticky-in-snap bug is structurally impossible).
+        <section .story>    each panel is exactly 100svh, snap-align
+                       start, content flex-centred. No nav-offset
+                       maths: the nav floats, panels are full-height.
+        <div .story-tail>   trailing non-snap region (SEO prose +
+                       footer). Scrolls normally after the panels.
+
     Front-matter contract:
       hero: { eyebrow?, heading, lede?, actions?[{label,href,style}], video? }
       blocks: [ ordered list, each { type: ..., feature?, ...fields } ]
@@ -17,13 +31,14 @@
           - tags:    { eyebrow?, heading, text?, items:[{label,href,strong?}], alt? }
           - raw:     { html, alt? }   (escape hatch for bespoke content)
       (footerCta in front-matter renders the closing CTA as today.)
+      Free-form page body (the {{ content }}) renders inside .story-tail.
    ============================================================ -#}
 <!DOCTYPE html>
 <html lang="{{ seo.lang or 'en' }}">
 {% include "partials/head.njk" %}
 <body class="{{ bodyClass or 'page-story' }}">
 {% include "partials/nav.njk" %}
-<main>
+<main class="story-scroll">
 
 {%- if hero %}
 <section id="top" class="story story-hero">
@@ -115,11 +130,15 @@
 {%- endif %}
 {%- endfor %}
 
-{#- Any free-form body content still renders after the blocks. -#}
+{#- Trailing region: free-form page body (SEO prose etc.) + the footer.
+    Lives INSIDE the scroll container but does NOT snap -- it scrolls
+    normally after the full-screen panels. -#}
+<div class="story-tail">
 {{ content | safe }}
+{% include "partials/footer.njk" %}
+</div>
 
 </main>
-{% include "partials/footer.njk" %}
 {%- for s in scripts %}
 <script src="{{ s }}"></script>
 {%- endfor %}

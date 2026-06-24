@@ -1,15 +1,18 @@
 // Compact the floating top nav once the page scrolls. Adds .nav-scrolled
-// (CSS shrinks padding + logo ~20%). The nav is already position:sticky,
-// so it stays pinned at the top -- this only changes its height. Runs on
-// every page (loaded from head.njk). Uses rAF so the scroll listener stays
-// cheap, and a small hysteresis so it does not flicker at the threshold.
+// (CSS shrinks padding + logo). The scroll happens inside the .story-scroll
+// container (the full-page scroller) when present, otherwise on the window
+// (normal article pages). Listens on whichever is the real scroller.
 (function () {
     function init() {
         var nav = document.querySelector("nav");
         if (!nav) return;
+        var scroller = document.querySelector(".story-scroll");
+        function getY() {
+            return scroller ? scroller.scrollTop : (window.scrollY || window.pageYOffset || 0);
+        }
         var ticking = false;
         function update() {
-            var y = window.scrollY || window.pageYOffset || 0;
+            var y = getY();
             if (y > 24) {
                 nav.classList.add("nav-scrolled");
             } else if (y < 8) {
@@ -17,7 +20,8 @@
             }
             ticking = false;
         }
-        window.addEventListener("scroll", function () {
+        var target = scroller || window;
+        target.addEventListener("scroll", function () {
             if (!ticking) {
                 window.requestAnimationFrame(update);
                 ticking = true;
