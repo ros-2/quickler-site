@@ -67,6 +67,21 @@ body {
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
+    /* Full-page scroll: each .story section fills the viewport and the
+       scroll snaps onto it -- "one panel per screen" on any device.
+       Only applied where the body opts in (.page-story) so long-form
+       article pages keep normal scrolling. */
+}
+html:has(body.page-story) {
+    scroll-snap-type: y mandatory;
+}
+/* On phones, sections stack taller than the screen (e.g. the 3 steps +
+   video). Mandatory snap would trap the scroll there, so soften to
+   proximity: it snaps when you're close but never fights tall content. */
+@media (max-width: 760px) {
+    html:has(body.page-story) {
+        scroll-snap-type: y proximity;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -5146,20 +5161,28 @@ nav {
    min-height that would clip), everything is single-column.
    ============================================================ */
 .story {
-    min-height: 88vh;
+    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* Each section is a snap target: the scroll lands squarely on it.
+       No scroll-snap-stop:always -- that would trap panels taller than a
+       short viewport. Align-only lets the browser skip past gracefully. */
+    scroll-snap-align: start;
 }
-.story-hero { min-height: 92vh; }
-/* The quiet SEO block is fine-print -- it does NOT need a full screen. */
-.story-seo { min-height: 0; }
+.story-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+/* The quiet SEO block is fine-print -- it does NOT need a full screen and
+   should not be a forced snap target. */
+.story-seo { min-height: 0; scroll-snap-align: none; }
 
-/* Phones: drop the full-screen min-height so short content isn't stranded
-   in a huge empty band; let sections size to their content + padding. */
+/* Phones: KEEP the full-screen panels -- the whole point is "one page per
+   screen on any device". Tighten type/padding instead of dropping height. */
 @media (max-width: 760px) {
-    .story { min-height: 0; padding-top: clamp(48px, 12vw, 72px); padding-bottom: clamp(48px, 12vw, 72px); }
-    .story-hero { min-height: 0; }
+    .story { padding-top: clamp(40px, 9vw, 64px); padding-bottom: clamp(40px, 9vw, 64px); }
     .story-h1 { font-size: clamp(2.1rem, 9vw, 3rem); }
     .story-video-embed { width: 100%; }
     /* Nav: keep the gradient bar tidy on small screens */
