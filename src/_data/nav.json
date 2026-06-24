@@ -7,5 +7,5 @@
     { "label": "Support", "href": "/pages/help/index.html" }
   ],
   "login": { "label": "Login", "href": "https://app.quickler.co/login" },
-  "cta": { "label": "Get started", "href": "/pages/demo.html" }
+  "cta": { "label": "Try on WhatsApp", "href": "/pages/demo.html" }
 }

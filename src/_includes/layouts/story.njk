@@ -6,7 +6,9 @@
 
     Front-matter contract:
       hero: { eyebrow?, heading, lede?, actions?[{label,href,style}], video? }
-      blocks: [ ordered list, each { type: ..., ...fields } ]
+      blocks: [ ordered list, each { type: ..., feature?, ...fields } ]
+        feature: true -> paint this ONE block as the gradient brand band
+                         (white text). Use at most once per page.
         types:
           - prose:   { eyebrow?, heading?, text|html, alt? }
           - split:   { eyebrow?, heading, text, reverse?, alt? }
@@ -46,7 +48,7 @@
 {%- endif %}
 
 {%- for b in blocks %}
-{%- set altcls = "story-alt" if b.alt else "" %}
+{%- set altcls = "story-feature" if b.feature else ("story-alt" if b.alt else "") %}
 {%- if b.type == "prose" %}
 <section class="story {{ altcls }} reveal-on-scroll">
     <div class="story-inner">
