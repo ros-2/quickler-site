@@ -219,7 +219,7 @@ nav {
     margin-inline: auto;
     z-index: 100;
     width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
-    padding: clamp(10px, 1.6vw, 12px) clamp(12px, 1.8vw, 14px) clamp(10px, 1.6vw, 12px) clamp(14px, 2vw, 18px);
+    padding: clamp(7px, 1.1vw, 8px) clamp(12px, 1.8vw, 14px) clamp(7px, 1.1vw, 8px) clamp(14px, 2vw, 18px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -236,12 +236,12 @@ nav {
    this brings it to ~60px (a clear 20% cut) by squeezing the vertical
    padding hard and shrinking the logo + menu type a touch. */
 nav.nav-scrolled {
-    padding-top: 7px !important;
-    padding-bottom: 7px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
     margin-top: clamp(4px, 1vw, 10px) !important;
     box-shadow: 0 4px 18px rgba(18, 41, 111, 0.18) !important;
 }
-nav.nav-scrolled .nav-name img { height: 30px; }
+nav.nav-scrolled .nav-name img { height: 26px; }
 nav.nav-scrolled .nav-menu a { padding-top: 7px; padding-bottom: 7px; }
 nav.nav-scrolled .nav-menu a.nav-cta-pill { padding-top: 7px !important; padding-bottom: 7px !important; }
 
@@ -252,7 +252,7 @@ nav.nav-scrolled .nav-menu a.nav-cta-pill { padding-top: 7px !important; padding
 }
 
 .nav-name img {
-    height: 38px;
+    height: 31px;
     width: auto;
 }
 
@@ -293,7 +293,7 @@ nav.nav-scrolled .nav-menu a.nav-cta-pill { padding-top: 7px !important; padding
     color: var(--ink-soft);
     font-size: 0.92rem;
     font-weight: 600;
-    padding: 10px 12px;
+    padding: 6px 12px;
     border-radius: 999px;
     white-space: nowrap;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
@@ -3182,12 +3182,12 @@ a.callout-btn {
 
 @media (min-width: 981px) and (max-width: 1200px) {
     nav {
-        padding: 10px 14px 10px 16px;
+        padding: 7px 14px 7px 16px;
         gap: 12px;
     }
 
     .nav-name img {
-        height: 34px;
+        height: 28px;
     }
 
     .nav-menu {
@@ -3196,7 +3196,7 @@ a.callout-btn {
 
     .nav-menu a {
         font-size: 0.9rem;
-        padding: 10px 11px;
+        padding: 6px 11px;
     }
 
     .hero {
@@ -3243,16 +3243,16 @@ a.callout-btn {
     }
 
     nav {
-        padding: 12px 18px 12px 22px;
+        padding: 8px 18px 8px 22px;
     }
 
     .nav-name img {
-        height: 42px;
+        height: 33px;
     }
 
     .nav-menu a {
         font-size: 0.98rem;
-        padding: 12px 16px;
+        padding: 7px 16px;
     }
 
     .hero {
@@ -3883,7 +3883,7 @@ nav {
 
 .nav-cta-pill {
     margin-left: 6px;
-    padding: 9px 18px !important;
+    padding: 7px 18px !important;
     background: var(--blue) !important;
     color: #ffffff !important;
     border-radius: 999px !important;
@@ -5120,9 +5120,12 @@ nav {
     background: var(--gradient) !important;
     border: none !important;
     border-radius: 999px !important;
-    /* Clip the gradient hard to the rounded corners so no colour bleeds
-       past the pill edge. */
-    overflow: hidden;
+    /* NOTE: do NOT use overflow:hidden here -- it clips the mobile
+       dropdown (.nav-menu is a child of nav) so the menu appears not to
+       open on real phones. The gradient already respects border-radius;
+       background-clip keeps it inside the rounded edge without clipping
+       descendants. */
+    background-clip: padding-box;
     box-shadow: 0 6px 20px rgba(47, 107, 255, 0.18) !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
