@@ -49,6 +49,10 @@ body {
     --brand-pink: var(--pink);
     --brand-gradient: var(--gradient);
     --brand-gradient-soft: linear-gradient(90deg, rgba(47, 107, 255, 0.1) 0%, rgba(124, 58, 237, 0.08) 60%, rgba(244, 63, 140, 0.08) 100%);
+    /* Vertical space the floating nav occupies at the top (its top offset +
+       height). Full-page snap panels subtract this so content centres in
+       the VISIBLE area below the nav, not behind it. */
+    --nav-zone: 96px;
 
     /* shadows -> neutral, softer (monochrome reads cleaner with less colour) */
     --shadow-soft: 0 6px 24px rgba(17, 19, 24, 0.06);
@@ -228,14 +232,18 @@ nav {
 }
 
 /* Compact-on-scroll: nav shrinks ~20% vertically once the page scrolls.
-   .nav-scrolled is toggled by the inline scroll handler in head.njk. */
+   .nav-scrolled is toggled by js/nav-compact.js. Base nav is ~75px tall;
+   this brings it to ~60px (a clear 20% cut) by squeezing the vertical
+   padding hard and shrinking the logo + menu type a touch. */
 nav.nav-scrolled {
-    padding-top: clamp(8px, 1.3vw, 10px);
-    padding-bottom: clamp(8px, 1.3vw, 10px);
-    margin-top: clamp(6px, 1.2vw, 12px);
-    box-shadow: 0 4px 18px rgba(18, 41, 111, 0.14);
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+    margin-top: clamp(4px, 1vw, 10px) !important;
+    box-shadow: 0 4px 18px rgba(18, 41, 111, 0.18) !important;
 }
 nav.nav-scrolled .nav-name img { height: 30px; }
+nav.nav-scrolled .nav-menu a { padding-top: 7px; padding-bottom: 7px; }
+nav.nav-scrolled .nav-menu a.nav-cta-pill { padding-top: 7px !important; padding-bottom: 7px !important; }
 
 .nav-name {
     display: inline-flex;
@@ -4781,7 +4789,7 @@ nav {
 /* How-it-works steps: aligned grid, no stagger */
 .story-steps {
     list-style: none;
-    margin: clamp(40px, 5vw, 64px) 0 0;
+    margin: clamp(28px, 3.5vw, 44px) 0 0;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -4793,7 +4801,7 @@ nav {
     background: var(--surface-card);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    padding: clamp(24px, 2.5vw, 34px);
+    padding: clamp(20px, 2.2vw, 30px);
 }
 .story-step-n {
     display: inline-flex;
@@ -5081,13 +5089,21 @@ nav {
    duplicate 'Watch the video' button). Clean 16:9 frame. */
 .story-video-embed {
     width: min(100%, 720px);
-    margin: clamp(28px, 4vw, 44px) auto 0;
+    margin: clamp(20px, 3vw, 32px) auto 0;
     aspect-ratio: 16 / 9;
     min-height: 0;
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     background: #000;
+}
+/* When the video sits inside the how-it-works steps panel, cap its height
+   so the heading + 3 steps + video all fit ONE screen (no overflow that
+   would break the full-page snap). 32vh keeps it generous but contained. */
+.story-steps + .story-video-embed {
+    max-height: 32vh;
+    width: auto;
+    aspect-ratio: 16 / 9;
 }
 .story-video-embed iframe {
     display: block;
@@ -5166,6 +5182,12 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* Reserve the nav's space at the top so flex-centred content sits in
+       the TRUE visual centre of the screen, not pulled up behind the
+       floating nav. Symmetric padding keeps each panel balanced. */
+    box-sizing: border-box;
+    padding-top: max(var(--nav-zone), clamp(72px, 11vh, 140px));
+    padding-bottom: clamp(72px, 11vh, 140px);
     /* Each section is a snap target: the scroll lands squarely on it.
        No scroll-snap-stop:always -- that would trap panels taller than a
        short viewport. Align-only lets the browser skip past gracefully. */
