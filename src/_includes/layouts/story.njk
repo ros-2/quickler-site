@@ -135,6 +135,16 @@
         </div>
     </div>
 </section>
+{%- elif b.type == "video" %}
+<section class="story story-video-panel {{ altcls }} reveal-on-scroll">
+    <div class="story-inner">
+        {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
+        {%- if b.heading %}<h2 class="story-h2">{{ b.heading | safe }}</h2>{% endif %}
+        <div class="story-video-embed">
+            <iframe src="https://www.youtube-nocookie.com/embed/{{ b.video }}?rel=0" title="Quickler walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
 {%- elif b.type == "raw" %}
 <section class="story {{ altcls }} reveal-on-scroll"><div class="story-inner">{{ b.html | safe }}</div></section>
 {%- endif %}

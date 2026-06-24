@@ -107,8 +107,6 @@ body.page-story {
     min-height: 0;
     overflow: hidden;
 }
-/* Anchor links (#top, in-page jumps) land below the floating nav. */
-.story-scroll { scroll-padding-top: clamp(84px, 12vh, 104px); }
 
 .visually-hidden {
     position: absolute;
@@ -5116,12 +5114,13 @@ nav {
     box-shadow: var(--shadow-lg);
     background: #000;
 }
-/* When the video sits inside the how-it-works steps panel, cap its height
-   so the heading + 3 steps + video all fit ONE screen (no overflow that
-   would break the full-page snap). 32vh keeps it generous but contained. */
-.story-steps + .story-video-embed {
-    max-height: 32vh;
-    width: auto;
+/* Standalone video panel: the walkthrough gets its OWN reel screen (a
+   composed "watch it work" moment) instead of being crammed under the 3
+   steps. Cap by height so the 16:9 frame always fits one viewport under
+   the heading, whatever the screen size. */
+.story-video-panel .story-video-embed {
+    width: min(100%, 860px);
+    max-height: min(60vh, calc((100vw - 2 * var(--gutter)) * 0.5625));
     aspect-ratio: 16 / 9;
 }
 .story-video-embed iframe {
@@ -5214,7 +5213,10 @@ nav {
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-    /* iOS momentum + stable gutter so content does not jump under the bar */
+    /* NO scroll-padding-top here: panels are full-bleed and snap to their
+       TRUE top edge. The nav floats OVER the panel, so an offset would make
+       the snap settle short of the panel top -- the "white gap / off-centre"
+       bug. Each panel reserves nav clearance via its own symmetric padding. */
     -webkit-overflow-scrolling: touch;
     scrollbar-gutter: stable;
 }
@@ -5227,7 +5229,10 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: clamp(72px, 11vh, 132px) var(--gutter) clamp(56px, 8vh, 96px);
+    /* SYMMETRIC vertical padding so content sits in the TRUE centre of the
+       full-bleed panel. Both top and bottom clear the floating nav-zone, so
+       the optical centre matches the geometric centre. */
+    padding: clamp(88px, 13vh, 120px) var(--gutter);
     scroll-snap-align: start;
     /* REEL FEEL: one flick = one panel. snap-stop:always forces the
        scroller to halt on every panel, even on a hard flick, so it lands
@@ -5307,17 +5312,17 @@ nav {
 /* Phones: panels stay full-height (one idea per screen on every device);
    tighten type + let tall panels scroll internally. */
 @media (max-width: 760px) {
-    .story { padding-top: clamp(84px, 14vw, 104px); padding-bottom: clamp(36px, 9vw, 56px); }
+    /* Symmetric, but a touch tighter than desktop so dense panels (3 step
+       cards) fit one phone screen. Top clears the floating nav. */
+    .story { padding: clamp(74px, 13vw, 92px) var(--gutter); }
     .story-h1 { font-size: clamp(2.1rem, 9vw, 3rem); }
     .story-video-embed { width: 100%; }
     nav { width: calc(100% - 24px); }
-    /* Reel principle: each panel is ONE composed screen. On phones the
-       3 step cards already tell the how-it-works story; the embedded video
-       on top pushes the panel taller than the screen, so drop it here. The
-       walkthrough video still shows on larger screens (and in the demo). */
-    .story-steps + .story-video-embed { display: none; }
-    /* Tighten the steps so the 3 cards sit comfortably in one screen. */
-    .story-steps { margin-top: clamp(14px, 3vw, 22px); gap: clamp(10px, 2.5vw, 16px); }
-    .story-step { padding: clamp(12px, 3.5vw, 18px); }
-    .story-step h3 { margin-bottom: 6px; }
+    /* Steps: 3 cards in one phone screen (video is its own panel). Tight
+       but readable -- compact padding + snug line-height on the body copy. */
+    .story-steps { margin-top: clamp(12px, 3vw, 20px); gap: 10px; }
+    .story-step { padding: 12px 16px; }
+    .story-step-n { width: 32px; height: 32px; margin-bottom: 8px; font-size: 1rem; }
+    .story-step h3 { font-size: 1.05rem; margin-bottom: 4px; }
+    .story-step p { font-size: 0.92rem; line-height: 1.4; }
 }
