@@ -62,8 +62,18 @@
 </section>
 {%- endif %}
 
+{#- Alternating colour rhythm so each reel panel is visually distinct and
+    "instagrammable" on its own: hero is white (index 0), then panels
+    alternate gradient / white / gradient / white down the page. A block can
+    still force its look with feature:true (gradient), alt:true (tinted) or
+    plain:true (white). The auto-rhythm uses loop.index (1-based): odd ->
+    gradient band, even -> white. -#}
 {%- for b in blocks %}
-{%- set altcls = "story-feature" if b.feature else ("story-alt" if b.alt else "") %}
+{%- if b.feature %}{% set altcls = "story-feature" %}
+{%- elif b.plain %}{% set altcls = "" %}
+{%- elif b.alt %}{% set altcls = "story-alt" %}
+{%- elif loop.index is odd %}{% set altcls = "story-feature" %}
+{%- else %}{% set altcls = "" %}{% endif %}
 {%- if b.type == "prose" %}
 <section class="story {{ altcls }} reveal-on-scroll">
     <div class="story-inner">
