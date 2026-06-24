@@ -106,6 +106,9 @@ body.page-story {
     height: 100svh;
     min-height: 0;
     overflow: hidden;
+    /* No white page background behind the floating nav: only the panels
+       paint, so there is never a white strip framing the pill. */
+    background: transparent;
 }
 
 .visually-hidden {
@@ -217,7 +220,7 @@ nav {
     margin-inline: auto;
     z-index: 100;
     width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
-    padding: clamp(7px, 1.1vw, 8px) clamp(12px, 1.8vw, 14px) clamp(7px, 1.1vw, 8px) clamp(14px, 2vw, 18px);
+    padding: clamp(10px, 1.6vw, 12px) clamp(12px, 1.8vw, 14px) clamp(10px, 1.6vw, 12px) clamp(14px, 2vw, 18px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -250,7 +253,7 @@ nav.nav-scrolled .nav-menu a.nav-cta-pill { padding-top: 7px !important; padding
 }
 
 .nav-name img {
-    height: 31px;
+    height: 38px;
     width: auto;
 }
 
@@ -291,7 +294,7 @@ nav.nav-scrolled .nav-menu a.nav-cta-pill { padding-top: 7px !important; padding
     color: var(--ink-soft);
     font-size: 0.92rem;
     font-weight: 600;
-    padding: 6px 12px;
+    padding: 10px 12px;
     border-radius: 999px;
     white-space: nowrap;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
@@ -2606,38 +2609,64 @@ a.callout-btn {
         display: inline-flex;
     }
 
+    /* FULL-SCREEN mobile menu: opens into a brand-gradient overlay that
+       fills the viewport, with large centred links you tap or close with the
+       cross (the burger toggles to an X). Works in any orientation and can
+       never run off-screen. Matches the reel/brand vibe. */
     .nav-menu {
         position: fixed;
-        top: calc(70px + env(safe-area-inset-top, 0px));
-        right: var(--page-gutter);
-        width: min(320px, calc(100vw - 24px));
-        padding: 14px;
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        /* Solid white + high z-index. A translucent (0.92) background let
-           page content bleed through behind the links, which read as a
-           broken overlay on mobile. The menu must sit above everything. */
-        background: var(--surface-card);
-        z-index: 1100;
-        box-shadow: var(--shadow-soft);
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100svh;
+        padding: max(72px, env(safe-area-inset-top, 0px)) 24px max(28px, env(safe-area-inset-bottom, 0px));
+        border: 0;
+        border-radius: 0;
+        background: var(--brand-gradient);
+        z-index: 1090;
+        box-shadow: none;
+        display: flex;
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(6px, 2vh, 18px);
+        overflow-y: auto;
         opacity: 0;
         pointer-events: none;
-        transform: translateY(-10px);
-        transition: opacity 0.22s ease, transform 0.22s ease;
+        transform: scale(1.02);
+        transition: opacity 0.25s ease, transform 0.25s ease;
     }
 
     nav.nav-open .nav-menu {
         opacity: 1;
         pointer-events: auto;
-        transform: translateY(0);
+        transform: scale(1);
     }
 
     .nav-menu a {
-        border-radius: 16px;
-        padding: 14px 16px;
+        border-radius: 999px;
+        padding: clamp(8px, 1.6vh, 14px) 22px;
+        color: #ffffff !important;
+        font-size: clamp(1.1rem, 4.5vw, 1.6rem);
+        font-weight: 700;
     }
+    .nav-menu a:hover,
+    .nav-menu a:focus-visible,
+    .nav-menu a[aria-current="page"] {
+        background: rgba(255, 255, 255, 0.16) !important;
+        color: #ffffff !important;
+    }
+    /* The CTA pill stays solid white inside the overlay so it stands out. */
+    .nav-menu a.nav-cta-pill {
+        background: #ffffff !important;
+        color: var(--blue-text) !important;
+        margin-top: clamp(6px, 1.5vh, 14px);
+    }
+    /* Burger turns into a close (X) when open. */
+    nav.nav-open .nav-toggle { z-index: 1100; }
+    nav.nav-open .hamburger-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    nav.nav-open .hamburger-line:nth-child(2) { opacity: 0; }
+    nav.nav-open .hamburger-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* The mobile dropdown is a SOLID WHITE box (see .nav-menu background
        above). On dark-hero / inner pages the page-class rule forces nav
@@ -3180,12 +3209,12 @@ a.callout-btn {
 
 @media (min-width: 981px) and (max-width: 1200px) {
     nav {
-        padding: 7px 14px 7px 16px;
+        padding: 10px 14px 10px 16px;
         gap: 12px;
     }
 
     .nav-name img {
-        height: 28px;
+        height: 34px;
     }
 
     .nav-menu {
@@ -3194,7 +3223,7 @@ a.callout-btn {
 
     .nav-menu a {
         font-size: 0.9rem;
-        padding: 6px 11px;
+        padding: 10px 11px;
     }
 
     .hero {
@@ -3241,16 +3270,16 @@ a.callout-btn {
     }
 
     nav {
-        padding: 8px 18px 8px 22px;
+        padding: 12px 18px 12px 22px;
     }
 
     .nav-name img {
-        height: 33px;
+        height: 42px;
     }
 
     .nav-menu a {
         font-size: 0.98rem;
-        padding: 7px 16px;
+        padding: 12px 16px;
     }
 
     .hero {
@@ -3881,7 +3910,7 @@ nav {
 
 .nav-cta-pill {
     margin-left: 6px;
-    padding: 7px 18px !important;
+    padding: 9px 18px !important;
     background: var(--blue) !important;
     color: #ffffff !important;
     border-radius: 999px !important;
@@ -5186,9 +5215,10 @@ nav {
 /* Hamburger (mobile) on the gradient */
 .nav-toggle { background: rgba(255, 255, 255, 0.18) !important; border-color: rgba(255,255,255,0.3) !important; }
 .hamburger-line { background: #ffffff !important; }
-/* Mobile dropdown stays a solid readable panel */
+/* Full-screen mobile menu uses the brand gradient (set in the 1040px
+   block above); this just keeps it gradient, not the old dark panel. */
 @media (max-width: 1040px) {
-    .nav-menu { background: var(--surface-dark) !important; }
+    .nav-menu { background: var(--brand-gradient) !important; }
 }
 
 /* ============================================================
@@ -5311,10 +5341,14 @@ nav {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     padding-top: clamp(88px, 13vh, 120px);
     background: var(--surface);
     scroll-snap-align: start;
+    /* If the footer + fine-print is taller than the screen (small phones,
+       landscape), let the tail scroll within itself so the bottom of the
+       footer is always reachable -- it was being cut off. */
+    overflow-y: auto;
 }
 
 /* Phones: panels stay full-height (one idea per screen on every device);
@@ -5333,4 +5367,23 @@ nav {
     .story-step-n { width: 32px; height: 32px; margin-bottom: 8px; font-size: 1rem; }
     .story-step h3 { font-size: 1.05rem; margin-bottom: 4px; }
     .story-step p { font-size: 0.92rem; line-height: 1.4; }
+}
+
+/* SHORT viewports (landscape phones, small windows): a full-screen-per-idea
+   panel can't fit when the screen is only ~400px tall. Let each panel size
+   to its content and scroll normally -- no forced 100svh that crops the
+   text, and the snap relaxes so nothing is stranded off-screen. */
+@media (max-height: 560px) {
+    .story {
+        height: auto;
+        min-height: 100svh;
+        padding: clamp(64px, 16vh, 84px) var(--gutter) clamp(28px, 8vh, 48px);
+        scroll-snap-align: none;
+    }
+    .story-scroll { scroll-snap-type: none; }
+    .story-tail { height: auto; min-height: 100svh; justify-content: flex-start; }
+    /* The down-arrow makes no sense when panels free-scroll. */
+    .story-next { display: none !important; }
+    /* Steps go horizontal-compact so the 3 cards don't tower. */
+    .story-steps { grid-template-columns: repeat(3, 1fr); }
 }
