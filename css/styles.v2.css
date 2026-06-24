@@ -4961,3 +4961,88 @@ nav {
 @media (max-width: 560px) {
     .video-lightbox-close { top: 8px; right: 8px; }
 }
+
+/* ============================================================
+   UNIFICATION: lift the older inner-page section styles to the
+   same calm/spacious .story standard. One change here updates
+   all 163 inner pages. Quiet surfaces, brighter blue, restraint;
+   no heavy purple/pink gradient heroes.
+   ============================================================ */
+
+/* Inner hero: was a full-screen dark gradient band. Make it a calm,
+   contained header consistent with the homepage -- not 100vh, no heavy
+   multi-radial purple wash. */
+.inner-hero {
+    min-height: 0 !important;
+    background: var(--surface-dark) !important;
+    padding: clamp(72px, 12vh, 130px) var(--gutter) clamp(48px, 7vh, 80px) !important;
+    display: block !important;
+}
+.inner-hero .page-shell {
+    max-width: var(--width-page);
+    margin: 0 auto;
+}
+
+/* Section rhythm: generous, symmetric -- match .story sections. */
+.section-tight {
+    padding-top: clamp(48px, 7vw, 88px);
+    padding-bottom: clamp(48px, 7vw, 88px);
+}
+
+/* Card grid items: clean white cards, neutral borders, blue on hover.
+   Drop the gradient kicker border. */
+.card-link {
+    background: var(--surface-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: clamp(22px, 2.4vw, 30px);
+    gap: var(--space-3);
+    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.card-link:hover {
+    border-color: var(--blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+.card-link-kicker {
+    border: none !important;
+    background: none !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--blue) !important;
+    -webkit-text-fill-color: var(--blue) !important;
+    padding: 0 !important;
+}
+.card-link-kicker::before { display: none !important; }
+.card-link-title { font-size: 1.2rem; line-height: 1.2; color: var(--ink-strong); }
+.card-link-copy { color: var(--ink-soft); line-height: 1.55; }
+
+/* Section headings: align with .story-h2 scale + the blue eyebrow. */
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--blue);
+}
+
+/* Hero video embedded directly (replaces the gradient placeholder + the
+   duplicate 'Watch the video' button). Clean 16:9 frame. */
+.story-video-embed {
+    width: min(100%, 720px);
+    margin: clamp(28px, 4vw, 44px) auto 0;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: #000;
+}
+.story-video-embed iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
