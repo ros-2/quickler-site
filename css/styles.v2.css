@@ -4610,11 +4610,12 @@ nav {
     text-align: center;
 }
 
-/* Hero: dark band, centred, with a media slot below */
+/* Hero: LIGHT band (lighter, airier feel), centred, video below. */
 .story-hero {
-    background: var(--surface-dark);
-    color: var(--on-dark);
-    padding-top: clamp(36px, 7vh, 88px);
+    background: var(--surface);
+    color: var(--ink);
+    padding-top: clamp(44px, 8vh, 104px);
+    padding-bottom: clamp(64px, 9vh, 120px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -4623,18 +4624,18 @@ nav {
 .story-hero .story-inner { max-width: 920px; }
 .story-h1 {
     font-size: clamp(2.6rem, 6vw, 4.6rem);
-    line-height: 1.03;
+    line-height: 1.05;
     font-weight: 800;
     letter-spacing: -0.04em;
-    color: var(--on-dark);
+    color: var(--ink-strong);
     margin: 0;
 }
 .story-lede {
     font-size: clamp(1.05rem, 1.8vw, 1.35rem);
-    line-height: 1.55;
-    color: var(--on-dark-soft);
+    line-height: 1.6;
+    color: var(--ink-soft);
     max-width: 44ch;
-    margin: clamp(20px, 3vw, 30px) auto 0;
+    margin: clamp(22px, 3vw, 32px) auto 0;
 }
 .story-actions {
     display: flex;
