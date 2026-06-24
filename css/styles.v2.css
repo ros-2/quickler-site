@@ -214,11 +214,15 @@ button {
 }
 
 nav {
-    position: sticky;
+    /* FIXED, not sticky: a sticky nav inside a scroll-snap container
+       detaches and scrolls away in Firefox. Fixed is positioned to the
+       viewport, immune to the snap container, pinned on every browser. */
+    position: fixed;
     top: max(10px, env(safe-area-inset-top, 0px));
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 100;
     width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
-    margin: clamp(10px, 2vw, 20px) auto 0;
     padding: clamp(10px, 1.6vw, 12px) clamp(12px, 1.8vw, 14px) clamp(10px, 1.6vw, 12px) clamp(14px, 2vw, 18px);
     display: flex;
     align-items: center;
