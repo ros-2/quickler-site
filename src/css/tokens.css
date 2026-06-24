@@ -23,9 +23,9 @@
   --font: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --blue: #1a52d0; /* THE Quickler blue. One blue. Accent ONLY. */
-  --blue-strong: #1645b8; /* hover/active of blue */
-  --blue-soft: rgba(26, 82, 208, 0.08); /* faint blue wash, sparing */
+  --blue: #2563eb; /* THE Quickler blue. Brighter, modern. AA on white. */
+  --blue-strong: #1d4fd0; /* hover/active of blue */
+  --blue-soft: rgba(37, 99, 235, 0.09); /* faint blue wash, sparing */
 
   /* ---- GREY SCALE — the monochrome backbone (Vanta/Touchmark look).
      Near-black to white. The site is built from THESE, with --blue as

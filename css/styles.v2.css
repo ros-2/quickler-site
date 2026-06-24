@@ -4687,32 +4687,46 @@ nav {
 .story-copy .story-h2 { max-width: 16ch; }
 .story-copy .story-text { max-width: 46ch; }
 
-/* Photo slots: clean placeholder until real photography lands */
-.story-media {
-    position: relative;
-    border-radius: var(--radius-lg);
-    min-height: clamp(280px, 38vw, 460px);
-    background:
-        linear-gradient(135deg, var(--grey-100), var(--grey-50));
-    border: 1px solid var(--line);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Photo slots: HIDDEN for now -- the placeholders were too dominant. Split
+   sections fall back to clean single-column copy. Re-enable here when real
+   photos land. The hero VIDEO panel stays (it's a real element). */
+.story-media:not(.story-media-video) {
+    display: none;
 }
+.story-split {
+    grid-template-columns: 1fr;
+    max-width: var(--width-prose);
+    text-align: center;
+}
+.story-split .story-copy { text-align: center; }
+.story-split .story-copy .story-h2,
+.story-split .story-copy .story-text {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hero video panel: contained (not a giant band), branded gradient + play. */
 .story-media-hero {
-    width: 100%;
-    max-width: var(--width-page);
-    margin: clamp(40px, 6vw, 72px) auto 0;
+    width: min(100%, 680px);
+    margin: clamp(28px, 4vw, 44px) auto 0;
+    min-height: clamp(190px, 24vw, 280px);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background:
+        radial-gradient(120% 120% at 20% 20%, rgba(255, 255, 255, 0.16), transparent 55%),
+        radial-gradient(120% 120% at 85% 85%, rgba(244, 63, 140, 0.38), transparent 55%),
+        var(--gradient);
 }
+/* Caption tags retired now that slots are branded gradient panels.
+   Kept as a hook for when real photos land (visually-hidden for a11y). */
 .story-media-tag {
-    font-size: 0.85rem;
-    color: var(--grey-500);
-    letter-spacing: 0.02em;
-    padding: 6px 14px;
-    border: 1px dashed var(--grey-300);
-    border-radius: var(--radius-pill);
-    background: var(--surface);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
 }
 
 /* How-it-works steps: aligned grid, no stagger */
@@ -4854,4 +4868,96 @@ nav {
 }
 @media (min-width: 861px) and (max-width: 1100px) {
     .story-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Video play button on the hero media panel */
+.story-media-video { cursor: pointer; border: none; padding: 0; }
+.story-play {
+    position: relative;
+    width: clamp(56px, 7vw, 76px);
+    height: clamp(56px, 7vw, 76px);
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: var(--shadow-lg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition);
+}
+.story-media-video:hover .story-play { transform: scale(1.06); }
+.story-play::after {
+    content: "";
+    border-style: solid;
+    border-width: 12px 0 12px 20px;
+    border-color: transparent transparent transparent var(--blue);
+    margin-left: 5px;
+}
+.story-media-video .story-media-tag {
+    position: absolute;
+    clip: auto;
+    width: auto;
+    height: auto;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* Video lightbox popup */
+.video-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--gutter);
+}
+.video-lightbox[hidden] { display: none; }
+.video-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 12, 24, 0.82);
+    backdrop-filter: blur(4px);
+}
+.video-lightbox-dialog {
+    position: relative;
+    width: min(960px, 100%);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+.video-lightbox-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+.video-lightbox-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.video-lightbox-close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-pill);
+    border: none;
+    background: #ffffff;
+    color: var(--ink-strong);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+}
+@media (max-width: 560px) {
+    .video-lightbox-close { top: 8px; right: 8px; }
 }
