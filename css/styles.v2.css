@@ -5252,6 +5252,17 @@ nav {
        the snap settle short of the panel top -- the "white gap / off-centre"
        bug. Each panel reserves nav clearance via its own symmetric padding. */
     -webkit-overflow-scrolling: touch;
+    /* Thin, transparent scrollbar. A classic Firefox/Win scrollbar paints a
+       light track down the right edge that reads as a white strip beside the
+       floating nav. Overlay-style + transparent track removes it. */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(120, 130, 160, 0.5) transparent;
+}
+.story-scroll::-webkit-scrollbar { width: 8px; }
+.story-scroll::-webkit-scrollbar-track { background: transparent; }
+.story-scroll::-webkit-scrollbar-thumb {
+    background: rgba(120, 130, 160, 0.5);
+    border-radius: 999px;
 }
 
 .story {
@@ -5335,20 +5346,18 @@ nav {
    last panel). Content sits at the bottom so the footer is in view on
    arrival; if the SEO prose makes it taller than one screen it simply
    scrolls within. */
+/* The trailing region (footer CTA + legal + SEO fine-print) flows at the
+   natural content height -- NOT a forced full-screen snap panel. It snaps
+   to its END so the reel settles with the footer bottom in view, and when
+   it is taller than the viewport the scroller simply scrolls all the way
+   down to it (snap to end, not start, is what makes the bottom reachable;
+   a start-aligned full-height tail stranded everything below one screen). */
 .story-tail {
-    min-height: 100vh;
-    min-height: 100svh;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: clamp(88px, 13vh, 120px);
+    padding-top: clamp(40px, 8vh, 96px);
+    padding-bottom: clamp(28px, 5vh, 56px);
     background: var(--surface);
-    scroll-snap-align: start;
-    /* If the footer + fine-print is taller than the screen (small phones,
-       landscape), let the tail scroll within itself so the bottom of the
-       footer is always reachable -- it was being cut off. */
-    overflow-y: auto;
+    scroll-snap-align: end;
 }
 
 /* Phones: panels stay full-height (one idea per screen on every device);
