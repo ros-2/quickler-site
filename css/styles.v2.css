@@ -5063,14 +5063,17 @@ nav {
     background: rgba(255, 255, 255, 0.16) !important;
     color: #ffffff !important;
 }
-/* CTA pill on the gradient: solid white so it stands out. */
-.nav-cta-pill {
+/* CTA pill on the gradient: solid white so it stands out.
+   Selector is .nav-menu a.nav-cta-pill so it beats the generic
+   ".nav-menu a { color: white }" rule above (which was bleaching
+   the pill text to white-on-white -- the "empty pill" bug). */
+.nav-menu a.nav-cta-pill {
     background: #ffffff !important;
-    color: var(--blue) !important;
+    color: var(--blue-text) !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
 }
-.nav-cta-pill:hover,
-.nav-cta-pill:focus-visible {
+.nav-menu a.nav-cta-pill:hover,
+.nav-menu a.nav-cta-pill:focus-visible {
     background: #ffffff !important;
     color: var(--blue-strong) !important;
     transform: translateY(-1px) !important;

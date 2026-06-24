@@ -15,25 +15,18 @@
             showAll(els);
             return;
         }
+        // Toggle: reveal when in view, re-hide when it leaves -- so the
+        // animation re-triggers on every scroll (down AND up), not once.
         var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("is-visible");
-                    io.unobserve(entry.target);
+                } else {
+                    entry.target.classList.remove("is-visible");
                 }
             });
-        }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+        }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
         els.forEach(function (el) { io.observe(el); });
-        // Anything already on-screen at load (e.g. landing mid-page) shows now.
-        requestAnimationFrame(function () {
-            els.forEach(function (el) {
-                var r = el.getBoundingClientRect();
-                if (r.top < window.innerHeight && r.bottom > 0) {
-                    el.classList.add("is-visible");
-                    io.unobserve(el);
-                }
-            });
-        });
     }
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", init);

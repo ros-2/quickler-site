@@ -10,7 +10,7 @@
         types:
           - prose:   { eyebrow?, heading?, text|html, alt? }
           - split:   { eyebrow?, heading, text, reverse?, alt? }
-          - steps:   { eyebrow?, heading, items:[{title,text}], alt? }
+          - steps:   { eyebrow?, heading, items:[{title,text}], video?, alt? }
           - cards:   { eyebrow?, heading, items:[{kicker,title,text,href}], alt? }
           - tags:    { eyebrow?, heading, text?, items:[{label,href,strong?}], alt? }
           - raw:     { html, alt? }   (escape hatch for bespoke content)
@@ -76,6 +76,11 @@
             <li class="story-step"><span class="story-step-n">{{ loop.index }}</span><h3>{{ it.title }}</h3><p>{{ it.text }}</p></li>
             {%- endfor %}
         </ol>
+        {%- if b.video %}
+        <div class="story-video-embed">
+            <iframe src="https://www.youtube-nocookie.com/embed/{{ b.video }}?rel=0" title="Quickler walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        {%- endif %}
     </div>
 </section>
 {%- elif b.type == "cards" %}

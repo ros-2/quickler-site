@@ -1,8 +1,59 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/index.html",
-  "bodyClass": "page-dark-hero",
+  "bodyClass": "page-story",
+  "hero": {
+    "heading": "Field compliance,<br>done on WhatsApp.",
+    "lede": "Your team already captures the job on their phone. Quickler turns those messages and photos into a finished compliance report. No app, no paperwork.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "split",
+      "eyebrow": "The problem",
+      "heading": "The job gets done on site. The paperwork waits until you get home.",
+      "text": "A few WhatsApp messages, a photo, a voice note: your team already records the work. Then someone has to sit down and write it all up into a proper report, certificate or record. That second pass is the bit that costs you evenings.",
+      "alt": true,
+      "mediaAlt": "Paper forms and a clipboard waiting to be written up"
+    },
+    {
+      "type": "split",
+      "reverse": true,
+      "eyebrow": "The shift",
+      "heading": "What if the messages just became the report?",
+      "text": "Quickler asks your engineer the right questions in WhatsApp, on site. Their answers and photos become a clean, timestamped report automatically. Faults are flagged. The finished report is ready to view and share the moment they submit.",
+      "mediaAlt": "A WhatsApp chat turning into a finished report"
+    },
+    {
+      "type": "steps",
+      "eyebrow": "How it works",
+      "heading": "Three steps. No training.",
+      "alt": true,
+      "video": "q8qgenxcM3w",
+      "items": [
+        { "title": "Your engineer answers on WhatsApp", "text": "Questions arrive in the app they already use. They reply on site and add photos, like any other chat." },
+        { "title": "Quickler builds the record", "text": "Replies and photos become a structured, timestamped compliance record automatically. Faults flagged." },
+        { "title": "You get the report", "text": "A finished web report is ready the moment they submit. Share the link with a client or regulator on demand." }
+      ]
+    },
+    {
+      "type": "tags",
+      "eyebrow": "What it handles",
+      "heading": "Any check your firm repeats.",
+      "text": "EICRs, gas certificates, van checks, site inspections, and any inspection form you already use. Upload it once; Quickler runs it as a WhatsApp workflow.",
+      "items": [
+        { "label": "EICR electrical", "href": "/pages/eicr-software-uk.html" },
+        { "label": "CP12 gas safety", "href": "/pages/cp12-gas-safety-software-uk.html" },
+        { "label": "Van checks", "href": "/pages/van-check-app-uk.html" },
+        { "label": "Site inspections", "href": "/pages/site-safety-inspection-uk.html" },
+        { "label": "Construction reports", "href": "/pages/construction-site-inspection-report-uk.html" },
+        { "label": "See every workflow", "href": "/pages/services.html", "strong": true }
+      ]
+    }
+  ],
   "seo": {
     "title": "Quickler | WhatsApp Compliance Reports for UK and Global Trades — EICR, Gas, Van Checks, Site Inspections",
     "description": "Quickler runs field compliance over WhatsApp. Your team answers inspection questions in the app they already use, and replies and photos become a structured report automatically. Built for EICRs, gas certificates, van checks and site inspections. No app to install, no per-user fee.",
@@ -57,123 +108,14 @@
 }
 ---
 <!-- ============================================================
-     SCROLL-NARRATIVE HOMEPAGE. One idea per section, generous
-     space, photo slots (.story-media) ready for real photography.
-     Refs: godaylight / planhat / mixpanel. Solid blue accent only.
+     Homepage is data-driven: hero + blocks[] live in the
+     front-matter above and render through layouts/story.njk
+     (the master template). The only hand-written body left is
+     the quiet SEO prose below, which story.njk drops in after
+     the blocks via {{ content }}.
      ============================================================ -->
 
-<!-- 1. HERO -->
-<section id="top" class="story story-hero">
-    <div class="story-inner">
-        <h1 class="story-h1">Field compliance,<br>done on WhatsApp.</h1>
-        <p class="story-lede">Your team already captures the job on their phone. Quickler turns those messages and photos into a finished compliance report. No app, no paperwork.</p>
-        <div class="story-actions">
-            <a href="/pages/demo.html" class="btn btn-primary" data-cta="homepage-demo-primary">Try the demo</a>
-        </div>
-    </div>
-    <div class="story-media-hero story-video-embed">
-        <iframe
-            src="https://www.youtube-nocookie.com/embed/q8qgenxcM3w?rel=0"
-            title="Quickler walkthrough"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
-    </div>
-</section>
-
-<!-- Video lightbox: opens the walkthrough in a popup overlay (not a new tab) -->
-<div class="video-lightbox" id="video-lightbox" hidden>
-    <div class="video-lightbox-backdrop" data-video-close></div>
-    <div class="video-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Quickler walkthrough video">
-        <button type="button" class="video-lightbox-close" data-video-close aria-label="Close video">&times;</button>
-        <div class="video-lightbox-frame" id="video-lightbox-frame"></div>
-    </div>
-</div>
-
-<!-- 2. THE PROBLEM -->
-<section class="story story-alt reveal-on-scroll">
-    <div class="story-split">
-        <div class="story-copy">
-            <p class="story-eyebrow">The problem</p>
-            <h2 class="story-h2">The job gets done on site. The paperwork waits until you get home.</h2>
-            <p class="story-text">A few WhatsApp messages, a photo, a voice note: your team already records the work. Then someone has to sit down and write it all up into a proper report, certificate or record. That second pass is the bit that costs you evenings.</p>
-        </div>
-        <div class="story-media" role="img" aria-label="Paper forms and a clipboard waiting to be written up">
-            <span class="story-media-tag">Photo: paperwork / clipboard at a desk</span>
-        </div>
-    </div>
-</section>
-
-<!-- 3. THE SHIFT -->
-<section class="story reveal-on-scroll">
-    <div class="story-split story-split-reverse">
-        <div class="story-copy">
-            <p class="story-eyebrow">The shift</p>
-            <h2 class="story-h2">What if the messages just became the report?</h2>
-            <p class="story-text">Quickler asks your engineer the right questions in WhatsApp, on site. Their answers and photos become a clean, timestamped report automatically. Faults are flagged. The finished report is ready to view and share the moment they submit.</p>
-        </div>
-        <div class="story-media story-media-chat" role="img" aria-label="A WhatsApp chat turning into a finished report">
-            <span class="story-media-tag">Photo: phone showing a real WhatsApp job</span>
-        </div>
-    </div>
-</section>
-
-<!-- 4. HOW IT WORKS -->
-<section class="story story-alt reveal-on-scroll" aria-labelledby="how-title">
-    <div class="story-inner">
-        <p class="story-eyebrow">How it works</p>
-        <h2 class="story-h2" id="how-title">Three steps. No training.</h2>
-        <ol class="story-steps">
-            <li class="story-step">
-                <span class="story-step-n">1</span>
-                <h3>Your engineer answers on WhatsApp</h3>
-                <p>Questions arrive in the app they already use. They reply on site and add photos, like any other chat.</p>
-            </li>
-            <li class="story-step">
-                <span class="story-step-n">2</span>
-                <h3>Quickler builds the record</h3>
-                <p>Replies and photos become a structured, timestamped compliance record automatically. Faults flagged.</p>
-            </li>
-            <li class="story-step">
-                <span class="story-step-n">3</span>
-                <h3>You get the report</h3>
-                <p>A finished web report is ready the moment they submit. Share the link with a client or regulator on demand.</p>
-            </li>
-        </ol>
-    </div>
-</section>
-
-<!-- 5. WHAT IT HANDLES -->
-<section class="story reveal-on-scroll" aria-labelledby="handles-title">
-    <div class="story-inner">
-        <p class="story-eyebrow">What it handles</p>
-        <h2 class="story-h2" id="handles-title">Any check your firm repeats.</h2>
-        <p class="story-text story-text-centre">EICRs, gas certificates, van checks, site inspections, and any inspection form you already use. Upload it once; Quickler runs it as a WhatsApp workflow.</p>
-        <div class="story-tags">
-            <a href="/pages/eicr-software-uk.html" class="story-tag">EICR electrical</a>
-            <a href="/pages/cp12-gas-safety-software-uk.html" class="story-tag">CP12 gas safety</a>
-            <a href="/pages/van-check-app-uk.html" class="story-tag">Van checks</a>
-            <a href="/pages/site-safety-inspection-uk.html" class="story-tag">Site inspections</a>
-            <a href="/pages/construction-site-inspection-report-uk.html" class="story-tag">Construction reports</a>
-            <a href="/pages/services.html" class="story-tag story-tag-strong">See every workflow</a>
-        </div>
-    </div>
-</section>
-
-<!-- 6. THE ONE GOAL: try the demo. No scattered directory of options. -->
-<section class="story story-alt story-cta reveal-on-scroll" aria-labelledby="next-title">
-    <div class="story-inner">
-        <p class="story-eyebrow">See it for yourself</p>
-        <h2 class="story-h2" id="next-title">Try it on WhatsApp in two minutes.</h2>
-        <p class="story-text story-text-centre">No sign-up, no install. Send a few messages and watch a real compliance report build itself. The fastest way to know if Quickler fits.</p>
-        <div class="story-actions">
-            <a href="/pages/demo.html" class="btn btn-primary" data-cta="homepage-demo-final">Try the live demo</a>
-        </div>
-    </div>
-</section>
-
-<!-- SEO prose: kept for search, restyled as quiet fine-print above the footer -->
+<!-- SEO prose: kept for search, quiet fine-print above the footer -->
 <section class="story-seo" aria-labelledby="seo-title">
     <div class="story-inner">
         <h2 id="seo-title" class="story-seo-title">Field compliance reporting for UK and global trades</h2>
@@ -181,28 +123,3 @@
         <p>It covers <a href="/pages/eicr-software-uk.html">EICR electrical inspection reports</a>, <a href="/pages/cp12-gas-safety-software-uk.html">CP12 gas safety certificates</a>, <a href="/pages/van-check-app-uk.html">daily van safety checks</a>, <a href="/pages/construction-site-inspection-report-uk.html">construction site inspection reports</a>, and any field compliance workflow a firm repeats. Teams switching from <a href="/pages/iauditor-alternative-uk.html">iAuditor or SafetyCulture</a> typically go live within a week. <a href="/pages/guides.html">All guides and templates</a>.</p>
     </div>
 </section>
-
-        </div><!-- /.page-body -->
-    </main>
-    <script>
-        // Scroll reveal for .reveal-on-scroll. Degrades gracefully: if the
-        // observer or reduced-motion is in play, everything is shown at once.
-        (function () {
-            var els = document.querySelectorAll('.reveal-on-scroll');
-            if (!els.length) return;
-            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (reduce || !('IntersectionObserver' in window)) {
-                els.forEach(function (el) { el.classList.add('is-visible'); });
-                return;
-            }
-            var io = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        io.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-            els.forEach(function (el) { io.observe(el); });
-        })();
-    </script>
