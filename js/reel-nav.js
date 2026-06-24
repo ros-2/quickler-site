@@ -1,13 +1,13 @@
 // Reel-style navigation for the full-page scroller.
 //
-// 1) Down-arrow (desktop affordance): injects a .story-next button into
-//    every .story panel except the last. Click smooth-scrolls to the next
-//    panel. CSS only shows it on hover/fine-pointer devices.
-// 2) Reel flick (touch): the scroller already uses scroll-snap mandatory +
-//    snap-stop:always, so a flick lands on exactly one panel. This adds a
-//    light guard so a very hard flick (momentum spanning >1 panel) is
-//    clamped back to the single next/prev panel -- the Instagram-reel feel
-//    of "one flick, one card".
+// 1) ONE fixed down-arrow (desktop affordance): a single button pinned to
+//    the viewport bottom-centre. It always points at the NEXT panel from
+//    wherever you are, and hides (.is-hidden) once you reach the last panel
+//    or scroll into the trailing footer region. Fixed positioning means it
+//    is identical on every panel and never clipped by tall content.
+// 2) Reel flick (touch): scroll-snap + snap-stop:always already land one
+//    panel per flick; a light momentum clamp keeps a very hard flick to a
+//    single step (Instagram-reel feel).
 (function () {
     var ARROW =
         '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
@@ -20,45 +20,56 @@
         var panels = Array.prototype.slice.call(scroller.querySelectorAll(".story"));
         if (!panels.length) return;
 
-        // 1) Inject the down-arrow into every panel but the last.
-        panels.forEach(function (panel, i) {
-            if (i === panels.length - 1) return;
-            var btn = document.createElement("button");
+        var canHover = window.matchMedia && window.matchMedia("(hover: hover)").matches;
+
+        // --- 1) Single fixed down-arrow (pointer devices only) ---
+        var btn = null;
+        if (canHover) {
+            btn = document.createElement("button");
             btn.type = "button";
             btn.className = "story-next";
             btn.setAttribute("aria-label", "Scroll to the next section");
             btn.innerHTML = ARROW;
+            document.body.appendChild(btn);
+
             btn.addEventListener("click", function () {
-                panels[i + 1].scrollIntoView({ behavior: "smooth", block: "start" });
+                var i = currentIndex();
+                if (i < panels.length - 1) {
+                    panels[i + 1].scrollIntoView({ behavior: "smooth", block: "start" });
+                }
             });
-            panel.appendChild(btn);
-        });
-
-        // 2) Reel-flick clamp on touch. If a flick's momentum would carry
-        //    the scroller more than one panel past where it started, pull it
-        //    back to a single step. Native snap handles the common case; this
-        //    only intervenes on hard flicks.
-        var canHover = window.matchMedia && window.matchMedia("(hover: hover)").matches;
-        if (canHover) return; // desktop: arrows + wheel, no flick clamp needed
-
-        var startIndex = 0;
-        function currentIndex() {
-            var y = scroller.scrollTop;
-            var h = scroller.clientHeight || 1;
-            return Math.round(y / h);
         }
-        scroller.addEventListener("touchstart", function () {
-            startIndex = currentIndex();
-        }, { passive: true });
+
+        function currentIndex() {
+            var h = scroller.clientHeight || 1;
+            return Math.round(scroller.scrollTop / h);
+        }
+
+        function updateArrow() {
+            if (!btn) return;
+            var h = scroller.clientHeight || 1;
+            // Hide once we are on (or past) the last panel -- i.e. when the
+            // bottom of the scroll has reached the last panel / the tail.
+            var nearEnd = scroller.scrollTop >= (panels.length - 1) * h - h * 0.25;
+            btn.classList.toggle("is-hidden", nearEnd);
+        }
+
+        // --- 2) Reel-flick clamp (touch only) ---
+        var startIndex = 0;
+        if (!canHover) {
+            scroller.addEventListener("touchstart", function () {
+                startIndex = currentIndex();
+            }, { passive: true });
+        }
 
         var settleTimer = null;
         scroller.addEventListener("scroll", function () {
+            updateArrow();
+            if (canHover) return;
             if (settleTimer) clearTimeout(settleTimer);
             settleTimer = setTimeout(function () {
                 var idx = currentIndex();
-                var maxStep = startIndex + 1;
-                var minStep = startIndex - 1;
-                var clamped = Math.max(minStep, Math.min(maxStep, idx));
+                var clamped = Math.max(startIndex - 1, Math.min(startIndex + 1, idx));
                 clamped = Math.max(0, Math.min(panels.length - 1, clamped));
                 if (clamped !== idx && panels[clamped]) {
                     panels[clamped].scrollIntoView({ behavior: "smooth", block: "start" });
@@ -66,6 +77,8 @@
                 startIndex = clamped;
             }, 90);
         }, { passive: true });
+
+        updateArrow();
     }
 
     if (document.readyState === "loading") {

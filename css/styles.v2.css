@@ -4908,25 +4908,26 @@ nav {
 .story-card p { color: var(--ink-soft); line-height: 1.5; margin: 0; }
 
 /* Quiet SEO block above the footer */
+/* SEO prose: present for search engines, but kept small + tight so the
+   footer panel fits one screen. Not a showcase screen -- quiet fine-print. */
 .story-seo {
     background: var(--surface);
-    border-top: 1px solid var(--line);
-    padding: clamp(40px, 6vw, 64px) var(--gutter);
+    padding: 0 var(--gutter) clamp(16px, 2.5vw, 28px);
 }
 .story-seo .story-inner { text-align: left; align-items: flex-start; max-width: var(--width-prose); }
 .story-seo-title {
-    font-size: 1.05rem;
+    font-size: 0.92rem;
     font-weight: 700;
     color: var(--ink-soft);
-    margin: 0 0 var(--space-4);
+    margin: 0 0 6px;
 }
 .story-seo p {
-    font-size: 0.92rem;
-    line-height: 1.65;
+    font-size: 0.8rem;
+    line-height: 1.5;
     color: var(--ink-soft);
-    margin: 0 0 var(--space-3);
+    margin: 0 0 6px;
 }
-.story-seo a { color: var(--blue); }
+.story-seo a { color: var(--blue-text); }
 
 /* Responsive: stack splits, steps and cards on narrow screens */
 @media (max-width: 860px) {
@@ -5211,6 +5212,9 @@ nav {
     height: 100svh;
     overflow-y: scroll;
     overflow-x: hidden;
+    /* Mandatory for the firm reel feel. Every region -- including the
+       trailing footer (.story-tail) -- is a full-height snap target, so
+       there is always a snap point to rest on and nothing gets trapped. */
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     /* NO scroll-padding-top here: panels are full-bleed and snap to their
@@ -5244,49 +5248,41 @@ nav {
     overflow-y: auto;
 }
 
-/* Down-arrow: a subtle cue + control on each panel that advances to the
-   next one. Shown on pointer devices (desktop/laptop) where there is no
-   flick gesture; on touch the reel-flick is the affordance, so it is
-   hidden there. JS (reel-nav.js) wires the click + hides it on the last
-   panel and on the feature band where white-on-gradient needs its own
-   colour. */
+/* Down-arrow: ONE button, position:fixed to the viewport bottom-centre.
+   Fixed (not per-panel absolute) so it is identical on every panel and can
+   never be clipped by a tall panel's content -- the bug where the arrow
+   was visible on some screens and missing on others. reel-nav.js keeps it
+   pointing at the next panel and hides it (.is-hidden) on the last one.
+   Always a solid white circle so it reads on white AND gradient panels.
+   Pointer devices only; touch users flick. */
 .story-next {
-    position: absolute;
+    position: fixed;
     left: 50%;
-    bottom: clamp(18px, 3.5vh, 36px);
+    bottom: calc(clamp(20px, 3.5vh, 38px) + env(safe-area-inset-bottom, 0px));
     transform: translateX(-50%);
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
     display: none;
     align-items: center;
     justify-content: center;
     border: 0;
     border-radius: 999px;
-    background: var(--surface-card);
-    color: var(--blue-text);
-    box-shadow: 0 6px 18px rgba(18, 41, 111, 0.16);
-    cursor: pointer;
-    z-index: 5;
-    animation: story-next-bob 1.8s ease-in-out infinite;
-    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-.story-next svg { width: 20px; height: 20px; }
-.story-next:hover,
-.story-next:focus-visible {
-    background: var(--blue);
-    color: #ffffff;
-    transform: translateX(-50%) translateY(2px);
-}
-/* On the gradient feature band the white pill would vanish -- invert. */
-.story-feature .story-next {
-    background: rgba(255, 255, 255, 0.16);
-    color: #ffffff;
-    box-shadow: none;
-}
-.story-feature .story-next:hover,
-.story-feature .story-next:focus-visible {
     background: #ffffff;
     color: var(--blue-text);
+    box-shadow: 0 8px 22px rgba(18, 41, 111, 0.22);
+    cursor: pointer;
+    z-index: 90;
+    animation: story-next-bob 1.8s ease-in-out infinite;
+    transition: opacity 0.25s ease, background 0.2s ease, color 0.2s ease;
+}
+.story-next svg { width: 22px; height: 22px; }
+.story-next:hover,
+.story-next:focus-visible {
+    color: var(--blue-strong);
+}
+.story-next.is-hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 @keyframes story-next-bob {
     0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -5300,13 +5296,26 @@ nav {
 @media (hover: hover) and (pointer: fine) {
     .story-next { display: inline-flex; }
 }
-/* Last panel and the trailing region never show a 'next'. */
-.story:last-of-type .story-next { display: none; }
 
 /* The trailing region (SEO fine-print + footer) is not a full-screen
    snap panel -- it flows normally at the end of the scroller. */
+/* The trailing region (SEO prose + footer) follows the reel format: it is
+   a full-height final panel and a snap target, so the reel lands on it
+   cleanly and the footer is always reachable (it was being trapped: a
+   short tail with no snap point let mandatory/near snap yank back up to the
+   last panel). Content sits at the bottom so the footer is in view on
+   arrival; if the SEO prose makes it taller than one screen it simply
+   scrolls within. */
 .story-tail {
-    scroll-snap-align: none;
+    min-height: 100vh;
+    min-height: 100svh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: clamp(88px, 13vh, 120px);
+    background: var(--surface);
+    scroll-snap-align: start;
 }
 
 /* Phones: panels stay full-height (one idea per screen on every device);
