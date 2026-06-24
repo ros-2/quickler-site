@@ -1,0 +1,120 @@
+{#- ============================================================
+    THE master template. One template every page uses.
+    A page supplies front-matter (hero + an ordered list of
+    `blocks`), and this renders them all in the unified .story
+    frame. Change this file -> every page using it changes.
+
+    Front-matter contract:
+      hero: { eyebrow?, heading, lede?, actions?[{label,href,style}], video? }
+      blocks: [ ordered list, each { type: ..., ...fields } ]
+        types:
+          - prose:   { eyebrow?, heading?, text|html, alt? }
+          - split:   { eyebrow?, heading, text, reverse?, alt? }
+          - steps:   { eyebrow?, heading, items:[{title,text}], alt? }
+          - cards:   { eyebrow?, heading, items:[{kicker,title,text,href}], alt? }
+          - tags:    { eyebrow?, heading, text?, items:[{label,href,strong?}], alt? }
+          - raw:     { html, alt? }   (escape hatch for bespoke content)
+      (footerCta in front-matter renders the closing CTA as today.)
+   ============================================================ -#}
+<!DOCTYPE html>
+<html lang="{{ seo.lang or 'en' }}">
+{% include "partials/head.njk" %}
+<body class="{{ bodyClass or 'page-story' }}">
+{% include "partials/nav.njk" %}
+<main>
+
+{%- if hero %}
+<section id="top" class="story story-hero">
+    <div class="story-inner">
+        {%- if hero.eyebrow %}<p class="story-eyebrow">{{ hero.eyebrow }}</p>{% endif %}
+        <h1 class="story-h1">{{ hero.heading | safe }}</h1>
+        {%- if hero.lede %}<p class="story-lede">{{ hero.lede | safe }}</p>{% endif %}
+        {%- if hero.actions %}
+        <div class="story-actions">
+            {%- for a in hero.actions %}
+            <a href="{{ a.href }}" class="btn {{ a.style or 'btn-primary' }}">{{ a.label }}</a>
+            {%- endfor %}
+        </div>
+        {%- endif %}
+    </div>
+    {%- if hero.video %}
+    <div class="story-media-hero story-video-embed">
+        <iframe src="https://www.youtube-nocookie.com/embed/{{ hero.video }}?rel=0" title="Quickler walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    {%- endif %}
+</section>
+{%- endif %}
+
+{%- for b in blocks %}
+{%- set altcls = "story-alt" if b.alt else "" %}
+{%- if b.type == "prose" %}
+<section class="story {{ altcls }} reveal-on-scroll">
+    <div class="story-inner">
+        {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
+        {%- if b.heading %}<h2 class="story-h2">{{ b.heading | safe }}</h2>{% endif %}
+        {%- if b.html %}{{ b.html | safe }}{% else %}<p class="story-text story-text-centre">{{ b.text | safe }}</p>{% endif %}
+    </div>
+</section>
+{%- elif b.type == "split" %}
+<section class="story {{ altcls }} reveal-on-scroll">
+    <div class="story-split {{ 'story-split-reverse' if b.reverse }}">
+        <div class="story-copy">
+            {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
+            <h2 class="story-h2">{{ b.heading | safe }}</h2>
+            <p class="story-text">{{ b.text | safe }}</p>
+        </div>
+        <div class="story-media" role="img" aria-label="{{ b.mediaAlt or '' }}"></div>
+    </div>
+</section>
+{%- elif b.type == "steps" %}
+<section class="story {{ altcls }} reveal-on-scroll">
+    <div class="story-inner">
+        {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
+        <h2 class="story-h2">{{ b.heading | safe }}</h2>
+        <ol class="story-steps">
+            {%- for it in b.items %}
+            <li class="story-step"><span class="story-step-n">{{ loop.index }}</span><h3>{{ it.title }}</h3><p>{{ it.text }}</p></li>
+            {%- endfor %}
+        </ol>
+    </div>
+</section>
+{%- elif b.type == "cards" %}
+<section class="story {{ altcls }} reveal-on-scroll">
+    <div class="story-inner">
+        {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
+        <h2 class="story-h2">{{ b.heading | safe }}</h2>
+        <div class="story-cards">
+            {%- for it in b.items %}
+            <a class="story-card" href="{{ it.href }}">{%- if it.kicker %}<span class="story-card-kicker">{{ it.kicker }}</span>{% endif %}<h3>{{ it.title }}</h3><p>{{ it.text }}</p></a>
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+{%- elif b.type == "tags" %}
+<section class="story {{ altcls }} reveal-on-scroll">
+    <div class="story-inner">
+        {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
+        <h2 class="story-h2">{{ b.heading | safe }}</h2>
+        {%- if b.text %}<p class="story-text story-text-centre">{{ b.text | safe }}</p>{% endif %}
+        <div class="story-tags">
+            {%- for it in b.items %}
+            <a href="{{ it.href }}" class="story-tag {{ 'story-tag-strong' if it.strong }}">{{ it.label }}</a>
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+{%- elif b.type == "raw" %}
+<section class="story {{ altcls }} reveal-on-scroll"><div class="story-inner">{{ b.html | safe }}</div></section>
+{%- endif %}
+{%- endfor %}
+
+{#- Any free-form body content still renders after the blocks. -#}
+{{ content | safe }}
+
+</main>
+{% include "partials/footer.njk" %}
+{%- for s in scripts %}
+<script src="{{ s }}"></script>
+{%- endfor %}
+</body>
+</html>

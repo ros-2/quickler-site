@@ -1909,7 +1909,7 @@ footer a {
 
 .quickler-callout a,
 .related-guides a {
-    color: var(--blue);
+    color: var(--blue-text);
 }
 
 .callout-template {
@@ -3488,18 +3488,21 @@ body.page-dark-hero {
     box-shadow: 0 10px 26px rgba(26, 82, 208, 0.3);
 }
 
-/* 2. Scroll reveal: elements start lifted + faded, settle when .is-visible
-      is added by the IntersectionObserver in js/navigation.js. */
+/* 2. Scroll reveal: elements ease in when they enter view. Once shown they
+      STAY shown (no flicker scrolling back up). A no-JS / no-observer
+      fallback keeps everything visible. */
 .reveal-on-scroll {
     opacity: 0;
     transform: translateY(18px);
     transition: opacity 0.6s ease, transform 0.6s ease;
-    will-change: opacity, transform;
 }
-
 .reveal-on-scroll.is-visible {
     opacity: 1;
     transform: none;
+}
+/* Safety net: if JS/observer never runs, never leave content hidden. */
+@media (scripting: none) {
+    .reveal-on-scroll { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -4816,7 +4819,7 @@ nav {
     letter-spacing: 0.1em;
     font-size: 0.72rem;
     font-weight: 700;
-    color: var(--blue);
+    color: var(--blue-text);
 }
 .story-card h3 {
     font-size: 1.25rem;
@@ -5018,7 +5021,7 @@ nav {
     letter-spacing: 0.12em;
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--blue);
+    color: var(--blue-text);
 }
 
 /* Hero video embedded directly (replaces the gradient placeholder + the
@@ -5038,4 +5041,73 @@ nav {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/* ============================================================
+   BRAND NAV: the top bar is the Quickler logo gradient with the
+   white wordmark on it. One consistent nav on every page.
+   ============================================================ */
+nav {
+    background: var(--gradient) !important;
+    border: none !important;
+    box-shadow: 0 6px 20px rgba(47, 107, 255, 0.18) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+.nav-menu a {
+    color: rgba(255, 255, 255, 0.92) !important;
+}
+.nav-menu a:hover,
+.nav-menu a:focus-visible,
+.nav-menu a[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.16) !important;
+    color: #ffffff !important;
+}
+/* CTA pill on the gradient: solid white so it stands out. */
+.nav-cta-pill {
+    background: #ffffff !important;
+    color: var(--blue) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
+}
+.nav-cta-pill:hover,
+.nav-cta-pill:focus-visible {
+    background: #ffffff !important;
+    color: var(--blue-strong) !important;
+    transform: translateY(-1px) !important;
+}
+.nav-login { color: rgba(255, 255, 255, 0.85) !important; }
+/* Hamburger (mobile) on the gradient */
+.nav-toggle { background: rgba(255, 255, 255, 0.18) !important; border-color: rgba(255,255,255,0.3) !important; }
+.hamburger-line { background: #ffffff !important; }
+/* Mobile dropdown stays a solid readable panel */
+@media (max-width: 1040px) {
+    .nav-menu { background: var(--surface-dark) !important; }
+}
+
+/* ============================================================
+   ONE ITEM PER SCREEN + device-agnostic. Each story section is
+   tall enough to fill most of the viewport on desktop/tablet, so
+   the visitor scrolls from one idea to the next rather than seeing
+   a crammed wall. On phones, content sizes itself (no forced
+   min-height that would clip), everything is single-column.
+   ============================================================ */
+.story {
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.story-hero { min-height: 92vh; }
+/* The quiet SEO block is fine-print -- it does NOT need a full screen. */
+.story-seo { min-height: 0; }
+
+/* Phones: drop the full-screen min-height so short content isn't stranded
+   in a huge empty band; let sections size to their content + padding. */
+@media (max-width: 760px) {
+    .story { min-height: 0; padding-top: clamp(48px, 12vw, 72px); padding-bottom: clamp(48px, 12vw, 72px); }
+    .story-hero { min-height: 0; }
+    .story-h1 { font-size: clamp(2.1rem, 9vw, 3rem); }
+    .story-video-embed { width: 100%; }
+    /* Nav: keep the gradient bar tidy on small screens */
+    nav { width: calc(100% - 24px); }
 }

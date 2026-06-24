@@ -23,9 +23,10 @@
   --font: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --blue: #2563eb; /* THE Quickler blue. Brighter, modern. AA on white. */
-  --blue-strong: #1d4fd0; /* hover/active of blue */
-  --blue-soft: rgba(37, 99, 235, 0.09); /* faint blue wash, sparing */
+  --blue: #2f6bff; /* THE Quickler blue -- straight from the logo. Fills/buttons. */
+  --blue-text: #1f54e0; /* deeper blue for SMALL text/links (comfortably AA). */
+  --blue-strong: #1f54e0; /* hover/active */
+  --blue-soft: rgba(47, 107, 255, 0.09); /* faint blue wash, sparing */
 
   /* ---- GREY SCALE — the monochrome backbone (Vanta/Touchmark look).
      Near-black to white. The site is built from THESE, with --blue as
