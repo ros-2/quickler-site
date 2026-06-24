@@ -1,0 +1,15 @@
+name: Mirror to GitLab
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch: {}
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone from GitHub
+        run: git clone --mirror https://github.com/ros-2/quickler-site.git repo
+      - name: Push to GitLab
+        run: |
+          cd repo
+          git push --mirror https://ros-22:${{ secrets.GITLAB_TOKEN }}@gitlab.com/ros-22/quickler-site-mirror.git
