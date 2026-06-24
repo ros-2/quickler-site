@@ -5222,7 +5222,6 @@ nav {
        the snap settle short of the panel top -- the "white gap / off-centre"
        bug. Each panel reserves nav clearance via its own symmetric padding. */
     -webkit-overflow-scrolling: touch;
-    scrollbar-gutter: stable;
 }
 
 .story {
@@ -5233,10 +5232,10 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* SYMMETRIC vertical padding so content sits in the TRUE centre of the
-       full-bleed panel. Both top and bottom clear the floating nav-zone, so
-       the optical centre matches the geometric centre. */
-    padding: clamp(88px, 13vh, 120px) var(--gutter);
+    /* Content shifts UP by roughly the nav height: less padding on top than
+       bottom. The floating pill then sits over content, not an empty strip,
+       and each panel reads optically centred under the bar. */
+    padding: clamp(40px, 7vh, 72px) var(--gutter) clamp(96px, 14vh, 132px);
     scroll-snap-align: start;
     /* REEL FEEL: one flick = one panel. snap-stop:always forces the
        scroller to halt on every panel, even on a hard flick, so it lands
