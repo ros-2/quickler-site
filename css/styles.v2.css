@@ -3444,15 +3444,7 @@ body.page-dark-hero {
 }
 
 .page-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    background: linear-gradient(to bottom, #ffffff, transparent);
-    pointer-events: none;
-    z-index: 1;
+    content: none;
 }
 
 /* ---------------------------------------------------------------------------
@@ -3792,15 +3784,15 @@ body.page-dark-hero {
     box-sizing: border-box;
 }
 
-/* Homepage: footer is full-width, fades from dark to white at the top */
+/* Homepage footer: clean solid surface, no clunky dark-to-light fade. */
 .page-dark-hero footer {
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding-top: 0;
-    background: linear-gradient(to bottom, #07122b 0px, #ffffff 100px);
+    background: var(--surface);
     color: var(--ink-soft);
-    border-top: none;
+    border-top: 1px solid var(--line);
 }
 
 .page-dark-hero .footer-cta-zone,
