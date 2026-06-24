@@ -106,10 +106,27 @@ body.page-story {
     height: 100svh;
     min-height: 0;
     overflow: hidden;
-    /* No white page background behind the floating nav: only the panels
-       paint, so there is never a white strip framing the pill. */
     background: transparent;
 }
+/* Gradient backdrop pinned behind the floating nav. Whatever panel is
+   behind the bar -- white OR gradient -- the top zone always reads as the
+   brand gradient, so the pill never sits on a white strip. It fades out
+   below the nav so panel content underneath is untouched. Sits below the
+   nav (z 80) and above the panels. */
+body.page-story::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 96px;
+    z-index: 80;
+    pointer-events: none;
+    background: var(--brand-gradient);
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+}
+body.page-story:has(nav.nav-scrolled)::before { height: 72px; }
 
 .visually-hidden {
     position: absolute;

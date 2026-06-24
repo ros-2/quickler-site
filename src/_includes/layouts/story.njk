@@ -29,6 +29,7 @@
           - steps:   { eyebrow?, heading, items:[{title,text}], video?, alt? }
           - cards:   { eyebrow?, heading, items:[{kicker,title,text,href}], alt? }
           - tags:    { eyebrow?, heading, text?, items:[{label,href,strong?}], alt? }
+          - cta:     { eyebrow?, heading, text?, actions:[{label,href,style?}], alt? }
           - raw:     { html, alt? }   (escape hatch for bespoke content)
       (footerCta in front-matter renders the closing CTA as today.)
       Free-form page body (the {{ content }}) renders inside .story-tail.
@@ -133,6 +134,21 @@
             <a href="{{ it.href }}" class="story-tag {{ 'story-tag-strong' if it.strong }}">{{ it.label }}</a>
             {%- endfor %}
         </div>
+    </div>
+</section>
+{%- elif b.type == "cta" %}
+<section class="story story-cta {{ altcls }} reveal-on-scroll">
+    <div class="story-inner">
+        {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
+        <h2 class="story-h2">{{ b.heading | safe }}</h2>
+        {%- if b.text %}<p class="story-text story-text-centre">{{ b.text | safe }}</p>{% endif %}
+        {%- if b.actions %}
+        <div class="story-actions">
+            {%- for a in b.actions %}
+            <a href="{{ a.href }}" class="btn {{ a.style or 'btn-primary' }}">{{ a.label }}</a>
+            {%- endfor %}
+        </div>
+        {%- endif %}
     </div>
 </section>
 {%- elif b.type == "video" %}
