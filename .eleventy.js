@@ -15,6 +15,30 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "js": "js" });
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
 
+  // Speed: minify the built CSS in-place after the build. Zero dependency —
+  // strips comments and collapses whitespace. The authored CSS stays readable;
+  // only the deployed _site/css/*.css is minified. Safe, conservative regex.
+  eleventyConfig.on("eleventy.after", async () => {
+    const fs = require("fs");
+    const path = require("path");
+    const dir = path.join(__dirname, "_site", "css");
+    if (!fs.existsSync(dir)) return;
+    for (const file of fs.readdirSync(dir)) {
+      if (!file.endsWith(".css")) continue;
+      const p = path.join(dir, file);
+      let css = fs.readFileSync(p, "utf8");
+      const before = css.length;
+      css = css
+        .replace(/\/\*[\s\S]*?\*\//g, "")      // comments
+        .replace(/\s*([{}:;,>])\s*/g, "$1")    // space around separators
+        .replace(/;}/g, "}")                    // trailing semicolons
+        .replace(/\s+/g, " ")                   // collapse whitespace
+        .trim();
+      fs.writeFileSync(p, css);
+      console.log(`[minify-css] ${file}: ${before} -> ${css.length} bytes`);
+    }
+  });
+
   // Root-level SEO/static files copied verbatim.
   ["robots.txt", "sitemap.xml", "llms.txt", "llms-full.txt", "CNAME",
    "site.json", "site.webmanifest", "favicon.ico", "favicon.svg",
