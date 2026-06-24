@@ -4,6 +4,12 @@
     `blocks`), and this renders them all in the unified .story
     frame. Change this file -> every page using it changes.
 
+    DESIGN RULE: max ~100 words per panel. Each screen is ONE composed
+    idea you could screenshot in isolation. If a section runs long, split
+    it into two panels rather than cramming -- there is no scroll within a
+    panel by design. Every screen (hero, blocks, footer) is a uniform
+    .story panel so behaviour is identical on every device.
+
     ARCHITECTURE -- proper full-page scroller:
       <nav>            position:fixed, floats OVER everything.
       <div .story-scroll>   the ONE scroll container. It owns the
@@ -166,12 +172,14 @@
 {%- endif %}
 {%- endfor %}
 
-{#- Trailing region: the footer (with its 'Ready to see if it fits?' CTA)
-    comes FIRST, then the quiet SEO fine-print sits at the very bottom. -#}
-<div class="story-tail">
+{#- Footer is its OWN reel panel -- a uniform full-screen .story like every
+    other section, so it behaves identically on every device (no special
+    'tail' region that broke on mobile). Any free-form page body renders
+    inside it after the footer. -#}
+<section class="story story-footer reveal-on-scroll">
 {% include "partials/footer.njk" %}
 {{ content | safe }}
-</div>
+</section>
 
 </main>
 {%- for s in scripts %}

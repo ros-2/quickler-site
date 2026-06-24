@@ -108,25 +108,6 @@ body.page-story {
     overflow: hidden;
     background: transparent;
 }
-/* Gradient backdrop pinned behind the floating nav. Whatever panel is
-   behind the bar -- white OR gradient -- the top zone always reads as the
-   brand gradient, so the pill never sits on a white strip. It fades out
-   below the nav so panel content underneath is untouched. Sits below the
-   nav (z 80) and above the panels. */
-body.page-story::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 96px;
-    z-index: 80;
-    pointer-events: none;
-    background: var(--brand-gradient);
-    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-}
-body.page-story:has(nav.nav-scrolled)::before { height: 72px; }
 
 .visually-hidden {
     position: absolute;
@@ -5356,25 +5337,17 @@ nav {
 
 /* The trailing region (SEO fine-print + footer) is not a full-screen
    snap panel -- it flows normally at the end of the scroller. */
-/* The trailing region (SEO prose + footer) follows the reel format: it is
-   a full-height final panel and a snap target, so the reel lands on it
-   cleanly and the footer is always reachable (it was being trapped: a
-   short tail with no snap point let mandatory/near snap yank back up to the
-   last panel). Content sits at the bottom so the footer is in view on
-   arrival; if the SEO prose makes it taller than one screen it simply
-   scrolls within. */
-/* The trailing region (footer CTA + legal + SEO fine-print) flows at the
-   natural content height -- NOT a forced full-screen snap panel. It snaps
-   to its END so the reel settles with the footer bottom in view, and when
-   it is taller than the viewport the scroller simply scrolls all the way
-   down to it (snap to end, not start, is what makes the bottom reachable;
-   a start-aligned full-height tail stranded everything below one screen). */
-.story-tail {
-    box-sizing: border-box;
-    padding-top: clamp(40px, 8vh, 96px);
-    padding-bottom: clamp(28px, 5vh, 56px);
+/* Footer panel: it IS a .story panel (full-screen, snaps, centred) like
+   every other section, so it behaves identically on every device. The
+   footer content just centres within it. */
+.story-footer {
     background: var(--surface);
-    scroll-snap-align: end;
+    text-align: center;
+}
+.story-footer footer {
+    width: 100%;
+    max-width: var(--width-page);
+    margin: 0 auto;
 }
 
 /* Phones: panels stay full-height (one idea per screen on every device);
