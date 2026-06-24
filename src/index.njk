@@ -54,118 +54,145 @@
   "headExtra": "<script type=\"application/json\" id=\"agent-site-map\">\n    {\n        \"page_type\": \"homepage\",\n        \"preferred_next_action\": \"book_or_contact\",\n        \"lanes\": [\n            {\n                \"id\": \"workflows\",\n                \"label\": \"quickler Workflows\",\n                \"url\": \"/pages/services.html\",\n                \"best_for\": [\"inspection reports\", \"survey reports\", \"maintenance reports\", \"site visits\", \"workflow automation\", \"document workflows\"]\n            }\n        ],\n        \"contact_url\": \"/pages/help/index.html#contact-form-section\"\n    }\n    </script>"
 }
 ---
-<section id="top" class="home-hero-section home-hero-dark">
-            <div class="home-hero-centre">
-                <h1 class="hero-label hero-label-dark hero-label-big">Field compliance over WhatsApp</h1>
-                <p class="hero-text">Your team runs inspections, certificates and safety checks over WhatsApp. Their replies and photos become a finished compliance report automatically. No app to install, no write-up at the end of the day.</p>
-                <div class="hero-actions">
-                    <a href="/pages/demo.html" class="btn btn-hero-primary" data-cta="homepage-demo-primary">Try the demo</a>
-                    <a href="https://youtu.be/q8qgenxcM3w" class="btn btn-hero-secondary" data-cta="homepage-video-primary" target="_blank" rel="noopener noreferrer">Watch the video</a>
-                </div>
-                <p class="hero-credentials hero-credentials-dark">No app. No per-user subscription. Engineers already use WhatsApp.</p>
+<!-- ============================================================
+     SCROLL-NARRATIVE HOMEPAGE. One idea per section, generous
+     space, photo slots (.story-media) ready for real photography.
+     Refs: godaylight / planhat / mixpanel. Solid blue accent only.
+     ============================================================ -->
 
-                <div class="home-hero-video-feature">
-                    <div class="video-frame">
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/q8qgenxcM3w?rel=0"
-                            title="quickler walkthrough video"
-                            loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            playsinline
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <div class="home-funnel-strip home-funnel-strip-dark" aria-label="Homepage funnel steps">
-                    <a href="https://youtu.be/q8qgenxcM3w" class="home-funnel-chip" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-                        <span class="home-funnel-number">01</span>
-                        <strong>Watch the video</strong>
-                        <p>See the workflow before you spend any more time on it.</p>
-                    </a>
-                    <a href="/pages/demo.html" class="home-funnel-chip" style="text-decoration:none;">
-                        <span class="home-funnel-number">02</span>
-                        <strong>Try the demo</strong>
-                        <p>Use the live WhatsApp flow and see whether it matches your reporting problem.</p>
-                    </a>
-                    <a href="/pages/help/index.html#contact-form-section" class="home-funnel-chip" style="text-decoration:none;">
-                        <span class="home-funnel-number">03</span>
-                        <strong>Get in touch</strong>
-                        <p>Bring one repeated workflow and one real example if you want to get started properly.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
+<!-- 1. HERO -->
+<section id="top" class="story story-hero">
+    <div class="story-inner">
+        <h1 class="story-h1">Field compliance,<br>done on WhatsApp.</h1>
+        <p class="story-lede">Your team already captures the job on their phone. Quickler turns those messages and photos into a finished compliance report. No app, no paperwork.</p>
+        <div class="story-actions">
+            <a href="/pages/demo.html" class="btn btn-primary" data-cta="homepage-demo-primary">Try the demo</a>
+            <a href="https://youtu.be/q8qgenxcM3w" class="btn btn-secondary" data-cta="homepage-video-primary" target="_blank" rel="noopener noreferrer">Watch the video</a>
         </div>
-        <div class="page-body">
+    </div>
+    <div class="story-media story-media-hero" role="img" aria-label="An engineer completing a compliance check on WhatsApp">
+        <span class="story-media-tag">Photo: engineer on site, phone in hand</span>
+    </div>
+</section>
 
-        <section class="section-tight" aria-labelledby="what-is-title">
-            <div class="page-shell" style="max-width:760px;">
-                <p class="section-label">What is Quickler?</p>
-                <h2 id="what-is-title">Your team already does the inspections. Quickler does the paperwork.</h2>
-                <p style="color:#444;line-height:1.7;">Most field teams already capture the job on their phone &mdash; a few WhatsApp messages, a photo, a voice note. The problem is what happens next: someone has to write it up into a proper report, certificate or compliance record. That is the bit Quickler removes.</p>
-                <p style="color:#444;line-height:1.7;margin-top:0.8rem;">A worker answers Quickler's questions in WhatsApp on site. Quickler turns those replies and photos into a clean, timestamped digital record automatically, flags any faults, and produces a PDF whenever a client or regulator needs one. No app to install, no per-user licence, no end-of-day desk work.</p>
-                <p style="color:#444;line-height:1.7;margin-top:0.8rem;"><strong>Who it is for:</strong> field teams, inspectors, surveyors, maintenance and compliance teams &mdash; any firm with a repeatable check or report that still gets written up by hand afterwards.</p>
-            </div>
-        </section>
+<!-- 2. THE PROBLEM -->
+<section class="story story-alt reveal-on-scroll">
+    <div class="story-split">
+        <div class="story-copy">
+            <p class="story-eyebrow">The problem</p>
+            <h2 class="story-h2">The job gets done on site. The paperwork waits until you get home.</h2>
+            <p class="story-text">A few WhatsApp messages, a photo, a voice note: your team already records the work. Then someone has to sit down and write it all up into a proper report, certificate or record. That second pass is the bit that costs you evenings.</p>
+        </div>
+        <div class="story-media" role="img" aria-label="Paper forms and a clipboard waiting to be written up">
+            <span class="story-media-tag">Photo: paperwork / clipboard at a desk</span>
+        </div>
+    </div>
+</section>
 
-        <section class="section-tight" aria-labelledby="hub-title">
-            <div class="page-shell">
-                <div class="section-header section-header-centered">
-                    <div>
-                        <p class="section-label">Where to next</p>
-                        <h2 id="hub-title">Find your way around.</h2>
-                    </div>
-                </div>
-                <div class="balanced-grid-3">
-                    <article class="card-link">
-                        <span class="card-link-kicker">See it work</span>
-                        <h3 class="card-link-title"><a href="/pages/demo.html" style="color:inherit;text-decoration:none;">Try the live demo</a></h3>
-                        <p class="card-link-copy">Two minutes on WhatsApp, no sign-up. The fastest way to understand what Quickler does.</p>
-                    </article>
-                    <article class="card-link">
-                        <span class="card-link-kicker">The workflows</span>
-                        <h3 class="card-link-title"><a href="/pages/services.html" style="color:inherit;text-decoration:none;">What Quickler runs</a></h3>
-                        <p class="card-link-copy">Van checks, EICRs, gas certificates, site inspections and more &mdash; every compliance workflow, explained.</p>
-                    </article>
-                    <article class="card-link">
-                        <span class="card-link-kicker">Pricing</span>
-                        <h3 class="card-link-title"><a href="/pages/services.html#pricing" style="color:inherit;text-decoration:none;">Simple monthly plans</a></h3>
-                        <p class="card-link-copy">One pound per report. Unlimited users and workflows. No per-seat fee.</p>
-                    </article>
-                    <article class="card-link">
-                        <span class="card-link-kicker">Switching</span>
-                        <h3 class="card-link-title"><a href="/pages/iauditor-alternative-uk.html" style="color:inherit;text-decoration:none;">Coming from iAuditor?</a></h3>
-                        <p class="card-link-copy">How Quickler compares to iAuditor and SafetyCulture, and why firms move across.</p>
-                    </article>
-                    <article class="card-link">
-                        <span class="card-link-kicker">By country</span>
-                        <h3 class="card-link-title"><a href="/pages/global-field-compliance.html" style="color:inherit;text-decoration:none;">Works anywhere</a></h3>
-                        <p class="card-link-copy">Quickler runs in any country WhatsApp does, with EU-hosted data. Find your market.</p>
-                    </article>
-                    <article class="card-link">
-                        <span class="card-link-kicker">Help</span>
-                        <h3 class="card-link-title"><a href="/pages/help/index.html" style="color:inherit;text-decoration:none;">Guides and support</a></h3>
-                        <p class="card-link-copy">Getting started, billing, privacy and troubleshooting &mdash; plus a way to reach Philip directly.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+<!-- 3. THE SHIFT -->
+<section class="story reveal-on-scroll">
+    <div class="story-split story-split-reverse">
+        <div class="story-copy">
+            <p class="story-eyebrow">The shift</p>
+            <h2 class="story-h2">What if the messages just became the report?</h2>
+            <p class="story-text">Quickler asks your engineer the right questions in WhatsApp, on site. Their answers and photos become a clean, timestamped record automatically. Faults are flagged. A PDF is ready whenever a client or regulator asks.</p>
+        </div>
+        <div class="story-media story-media-chat" role="img" aria-label="A WhatsApp chat turning into a finished report">
+            <span class="story-media-tag">Photo: phone showing a real WhatsApp job</span>
+        </div>
+    </div>
+</section>
 
-        <section class="section-use-cases" aria-labelledby="use-cases-title" style="max-width:900px;margin:2.5rem auto;padding:0 1.5rem;">
-            <h2 id="use-cases-title" style="font-size:1.25rem;margin-bottom:1.2rem;">Field compliance reporting for UK and global trades</h2>
-            <p style="color:#444;line-height:1.7;max-width:720px;">Quickler is a <strong>WhatsApp inspection app</strong> for field teams anywhere. Engineers use WhatsApp — which is already on their phones — to complete compliance checks on site. Quickler collects the responses and produces a clean, structured digital record automatically, which exports to a PDF report whenever one is needed. There is no separate app to install and no per-user licence fee. Because it runs entirely over WhatsApp, <a href="/pages/global-field-compliance.html">Quickler works in any country</a> — it is used in the UK, Europe and the United States.</p>
-            <p style="color:#444;line-height:1.7;max-width:720px;margin-top:0.8rem;">It covers <a href="/pages/eicr-software-uk.html">EICR electrical inspection reports</a>, <a href="/pages/cp12-gas-safety-software-uk.html">CP12 gas safety certificates</a>, <a href="/pages/van-check-app-uk.html">daily van safety checks</a>, <a href="/pages/construction-site-inspection-report-uk.html">construction site inspection reports</a>, and any other field compliance workflow a firm repeats regularly. Firms switching from <a href="/pages/iauditor-alternative-uk.html">iAuditor or SafetyCulture</a> typically go live within a week.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.2rem;">
-                <a href="/pages/van-check-app-uk.html" style="background:#f0f4fa;border:1px solid #d0d7e2;border-radius:6px;padding:0.35rem 0.8rem;font-size:0.87rem;color:#1a5296;text-decoration:none;">Van check app</a>
-                <a href="/pages/eicr-software-uk.html" style="background:#f0f4fa;border:1px solid #d0d7e2;border-radius:6px;padding:0.35rem 0.8rem;font-size:0.87rem;color:#1a5296;text-decoration:none;">EICR software</a>
-                <a href="/pages/cp12-gas-safety-software-uk.html" style="background:#f0f4fa;border:1px solid #d0d7e2;border-radius:6px;padding:0.35rem 0.8rem;font-size:0.87rem;color:#1a5296;text-decoration:none;">CP12 gas safety</a>
-                <a href="/pages/site-safety-inspection-uk.html" style="background:#f0f4fa;border:1px solid #d0d7e2;border-radius:6px;padding:0.35rem 0.8rem;font-size:0.87rem;color:#1a5296;text-decoration:none;">Site safety inspection</a>
-                <a href="/pages/iauditor-alternative-uk.html" style="background:#f0f4fa;border:1px solid #d0d7e2;border-radius:6px;padding:0.35rem 0.8rem;font-size:0.87rem;color:#1a5296;text-decoration:none;">iAuditor alternative</a>
-                <a href="/pages/guides.html" style="background:#f0f4fa;border:1px solid #d0d7e2;border-radius:6px;padding:0.35rem 0.8rem;font-size:0.87rem;color:#1a5296;text-decoration:none;">All guides →</a>
-            </div>
-        </section>
+<!-- 4. HOW IT WORKS -->
+<section class="story story-alt reveal-on-scroll" aria-labelledby="how-title">
+    <div class="story-inner">
+        <p class="story-eyebrow">How it works</p>
+        <h2 class="story-h2" id="how-title">Three steps. No training.</h2>
+        <ol class="story-steps">
+            <li class="story-step">
+                <span class="story-step-n">1</span>
+                <h3>Your engineer answers on WhatsApp</h3>
+                <p>Questions arrive in the app they already use. They reply on site and add photos, like any other chat.</p>
+            </li>
+            <li class="story-step">
+                <span class="story-step-n">2</span>
+                <h3>Quickler builds the record</h3>
+                <p>Replies and photos become a structured, timestamped compliance record automatically. Faults flagged.</p>
+            </li>
+            <li class="story-step">
+                <span class="story-step-n">3</span>
+                <h3>You get the PDF</h3>
+                <p>A finished report is ready the moment they submit. Share it with a client or regulator on demand.</p>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<!-- 5. WHAT IT HANDLES -->
+<section class="story reveal-on-scroll" aria-labelledby="handles-title">
+    <div class="story-inner">
+        <p class="story-eyebrow">What it handles</p>
+        <h2 class="story-h2" id="handles-title">Any check your firm repeats.</h2>
+        <p class="story-text story-text-centre">EICRs, gas certificates, van checks, site inspections, and any inspection form you already use. Upload it once; Quickler runs it as a WhatsApp workflow.</p>
+        <div class="story-tags">
+            <a href="/pages/eicr-software-uk.html" class="story-tag">EICR electrical</a>
+            <a href="/pages/cp12-gas-safety-software-uk.html" class="story-tag">CP12 gas safety</a>
+            <a href="/pages/van-check-app-uk.html" class="story-tag">Van checks</a>
+            <a href="/pages/site-safety-inspection-uk.html" class="story-tag">Site inspections</a>
+            <a href="/pages/construction-site-inspection-report-uk.html" class="story-tag">Construction reports</a>
+            <a href="/pages/services.html" class="story-tag story-tag-strong">See every workflow</a>
+        </div>
+    </div>
+</section>
+
+<!-- 6. WHO IT'S FOR / FIND YOUR WAY -->
+<section class="story story-alt reveal-on-scroll" aria-labelledby="next-title">
+    <div class="story-inner">
+        <p class="story-eyebrow">Where to next</p>
+        <h2 class="story-h2" id="next-title">Find your way around.</h2>
+        <div class="story-cards">
+            <a class="story-card" href="/pages/demo.html">
+                <span class="story-card-kicker">See it work</span>
+                <h3>Try the live demo</h3>
+                <p>Two minutes on WhatsApp, no sign-up.</p>
+            </a>
+            <a class="story-card" href="/pages/services.html">
+                <span class="story-card-kicker">The workflows</span>
+                <h3>What Quickler runs</h3>
+                <p>Every compliance workflow, explained.</p>
+            </a>
+            <a class="story-card" href="/pages/services.html#pricing">
+                <span class="story-card-kicker">Pricing</span>
+                <h3>Simple monthly plans</h3>
+                <p>One pound per report. Unlimited users.</p>
+            </a>
+            <a class="story-card" href="/pages/iauditor-alternative-uk.html">
+                <span class="story-card-kicker">Switching</span>
+                <h3>Coming from iAuditor?</h3>
+                <p>How Quickler compares, and why firms move.</p>
+            </a>
+            <a class="story-card" href="/pages/global-field-compliance.html">
+                <span class="story-card-kicker">By country</span>
+                <h3>Works anywhere</h3>
+                <p>Any country WhatsApp does. EU-hosted data.</p>
+            </a>
+            <a class="story-card" href="/pages/about.html">
+                <span class="story-card-kicker">The story</span>
+                <h3>Why Quickler exists</h3>
+                <p>Built by Philip Ross for field teams.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- SEO prose: kept for search, restyled as quiet fine-print above the footer -->
+<section class="story-seo" aria-labelledby="seo-title">
+    <div class="story-inner">
+        <h2 id="seo-title" class="story-seo-title">Field compliance reporting for UK and global trades</h2>
+        <p>Quickler is a WhatsApp inspection app for field teams. Engineers complete compliance checks on site using WhatsApp, already on their phones. Quickler turns the responses into a clean, structured record and a PDF report on demand. No separate app, no per-user licence. It runs in any country WhatsApp does and is used across the <a href="/pages/global-field-compliance.html">UK, Europe and the United States</a>.</p>
+        <p>It covers <a href="/pages/eicr-software-uk.html">EICR electrical inspection reports</a>, <a href="/pages/cp12-gas-safety-software-uk.html">CP12 gas safety certificates</a>, <a href="/pages/van-check-app-uk.html">daily van safety checks</a>, <a href="/pages/construction-site-inspection-report-uk.html">construction site inspection reports</a>, and any field compliance workflow a firm repeats. Teams switching from <a href="/pages/iauditor-alternative-uk.html">iAuditor or SafetyCulture</a> typically go live within a week. <a href="/pages/guides.html">All guides and templates</a>.</p>
+    </div>
+</section>
 
         </div><!-- /.page-body -->
     </main>
