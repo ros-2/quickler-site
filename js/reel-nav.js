@@ -33,12 +33,15 @@
             var hint = document.createElement("div");
             hint.className = "reel-hint";
             hint.setAttribute("aria-hidden", "true");
+            // A vertical pill on the right edge: an upward chevron that
+            // travels up the pill (the "swipe" animation) above a rotated
+            // SWIPE label. Reads as a TikTok-style flick affordance.
             hint.innerHTML =
-                '<span class="reel-hint-chevvy">' +
+                '<span class="reel-hint-arrow">' +
                 '<svg viewBox="0 0 24 24" focusable="false"><path fill="none" ' +
-                'stroke="currentColor" stroke-width="2.6" stroke-linecap="round" ' +
+                'stroke="currentColor" stroke-width="3" stroke-linecap="round" ' +
                 'stroke-linejoin="round" d="M6 14l6-6 6 6"/></svg></span>' +
-                '<span class="reel-hint-text">Flick up</span>';
+                '<span class="reel-hint-text">Swipe</span>';
             document.body.appendChild(hint);
             var killHint = function () {
                 hint.classList.add("is-gone");

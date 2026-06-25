@@ -23,7 +23,7 @@
   "blocks": [
     {
       "type": "raw",
-      "html": "<div class=\"demo-panel\"><div class=\"qr-card\"><div id=\"qr-canvas\"></div><span class=\"qr-label\">Scan to open WhatsApp</span></div><p class=\"demo-start-note\">After scanning the QR code or tapping WhatsApp, send <strong>hello</strong> to start the demo.</p><div class=\"demo-or\">or open on this device</div><a id=\"wa-link\" href=\"#\" class=\"btn btn-primary\">Open in WhatsApp</a></div>"
+      "html": "<div class=\"demo-panel\"><div class=\"qr-card\"><div id=\"qr-canvas\" data-wa=\"https://wa.me/447455741203\"></div><span class=\"qr-label\">Scan to open WhatsApp</span></div><p class=\"demo-start-note\">After scanning the QR code or tapping WhatsApp, send <strong>hello</strong> to start the demo.</p><div class=\"demo-or\">or open on this device</div><a id=\"wa-link\" href=\"https://wa.me/447455741203\" class=\"btn btn-primary\">Open in WhatsApp</a></div>"
     },
     {
       "type": "prose",
@@ -35,6 +35,7 @@
   "headStyle": "\n        .demo-panel { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; max-width: 420px; margin: 0 auto; }\n        .qr-card { display: inline-flex; flex-direction: column; align-items: center; gap: 18px; padding: 32px 36px 26px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface-card); box-shadow: var(--shadow-card); margin-bottom: 20px; }\n        #qr-canvas { width: 200px; height: 200px; }\n        #qr-canvas canvas, #qr-canvas img { width: 200px !important; height: 200px !important; border-radius: 8px; }\n        .qr-label { font-size: 0.85rem; font-weight: 600; color: var(--blue-text); letter-spacing: 0.04em; }\n        .demo-start-note { max-width: 28rem; margin: 0 auto 18px; padding: 12px 16px; border: 1px solid rgba(24,52,132,0.1); border-radius: 18px; background: var(--surface-card); color: var(--ink); font-size: 0.95rem; line-height: 1.55; }\n        .demo-start-note strong { color: var(--blue-text); }\n        .demo-or { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; color: var(--ink-soft); font-size: 0.8rem; width: 100%; max-width: 320px; }\n        .demo-or::before, .demo-or::after { content: \"\"; flex: 1; height: 1px; background: var(--line); }\n        .demo-bullets { list-style: none; padding: 0; margin: var(--space-5) auto 0; text-align: left; display: inline-block; }\n        .demo-bullets li { padding: 6px 0 6px 24px; font-size: 0.95rem; color: var(--ink); position: relative; line-height: 1.5; }\n        .demo-bullets li::before { content: \"\"; position: absolute; left: 0; top: 12px; width: 8px; height: 8px; border-radius: 50%; background: var(--brand-gradient); }\n        @media (max-width: 480px) { #qr-canvas, #qr-canvas canvas, #qr-canvas img { width: 170px !important; height: 170px !important; } }\n    ",
   "scripts": [
     "https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js",
+    "/js/demo-qr.js",
     "/js/analytics-events.js"
   ]
 }
