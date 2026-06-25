@@ -5484,6 +5484,53 @@ nav {
    none) so it scrolls like a normal article instead of forcing a viewport
    snap; min-height auto so it is exactly as tall as its text. Sits between
    the last reel panel and the footer. Crawlable, readable, indexable. */
+/* ARTICLE-AS-REEL panels: each long-form section is its own full-screen snap
+   card in the SAME look as the home page -- centred content, pink/white/photo
+   rhythm (the colour class is set in the template). They inherit .story
+   (snap + safe zone + centring) and .story-feature / .story-photo (white text)
+   exactly like every other panel. These rules only tune the article BODY text
+   so a denser section stays readable and centred. */
+.story-article .story-article-inner {
+    max-width: var(--width-prose, 720px);
+    width: 100%;
+    text-align: center;
+}
+.story-article-body {
+    line-height: 1.65;
+    font-size: clamp(1rem, 1.1vw, 1.08rem);
+    text-align: center;
+}
+.story-article-body p { margin: 0 0 0.9em; }
+.story-article-body p:last-child { margin-bottom: 0; }
+.story-article-body h3 { font-size: clamp(1.1rem, 2.2vw, 1.3rem); font-weight: 700; margin: 1em 0 0.35em; }
+.story-article-body a { text-decoration: underline; text-underline-offset: 2px; }
+/* Lists read better left-aligned even on a centred panel: centre the list block
+   but left-align its items. */
+.story-article-body ul, .story-article-body ol {
+    margin: 0.6em auto 0.9em; padding-left: 1.3em;
+    text-align: left; display: inline-block; max-width: 36em;
+}
+.story-article-body li { margin: 0.35em 0; }
+/* White text on gradient/photo article panels (inherits .story-feature /
+   .story-photo, but make links + h3 explicitly white too). */
+.story-feature .story-article-body,
+.story-photo .story-article-body { color: rgba(255,255,255,0.96); }
+.story-feature .story-article-body a,
+.story-photo .story-article-body a,
+.story-feature .story-article-body h3,
+.story-photo .story-article-body h3 { color: #ffffff; }
+/* Lede panel: bigger intro, always plain white panel (set in template). */
+.story-article-lede .story-article-body { font-size: clamp(1.2rem, 1.8vw, 1.5rem); color: var(--ink-soft, #44506b); line-height: 1.5; }
+/* Takeaways: ticked points. */
+.story-article-takeaways .story-article-body ul { list-style: none; padding-left: 0; }
+.story-article-takeaways .story-article-body li { position: relative; padding-left: 1.6em; margin: 0.6em 0; }
+.story-article-takeaways .story-article-body li::before {
+    content: ""; position: absolute; left: 0; top: 0.5em;
+    width: 8px; height: 8px; border-radius: 2px; background: currentColor; opacity: 0.8;
+}
+/* FAQ: question (h3) + answer pairs. */
+.story-article-faq .story-article-body h3 { margin-top: 1em; }
+
 .story-seo {
     scroll-snap-align: none;
     /* Soft tinted band so the article reads as a designed section, not a raw

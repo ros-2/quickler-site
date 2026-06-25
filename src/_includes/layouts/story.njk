@@ -198,12 +198,39 @@
 {%- endif %}
 {%- endfor %}
 
-{#- Optional long-form SEO region. A reel page (<=100-word panels) cannot
-    hold the 800+ words Google wants, so `seoBody` (raw HTML in front-matter)
-    renders as a normal, crawlable article AFTER the reel panels, BEFORE the
-    footer. It does NOT snap -- it scrolls like a normal document so the full
-    text is reachable. This is what lets reel + SEO live on one URL. -#}
-{%- if seoBody %}
+{#- Article as REEL PANELS, in the SAME look + rhythm as the home page:
+    pink (gradient) / white / photo, alternating, centred cards. The article's
+    sections become full-screen snap panels that continue the reel. Each panel
+    still holds full crawlable text (SEO preserved). The colour rhythm continues
+    from the page's blocks (offset by `blocks | length`) so the alternation does
+    not reset. Every Nth panel gets the page's photo (articlePhoto) so the
+    pink/white/photo pattern matches home. `articlePanels`: list of
+    { eyebrow?, heading?, html, kind? }. -#}
+{%- if articlePanels %}
+{%- set base = (blocks | length) or 0 %}
+{%- for ap in articlePanels %}
+{%- set n = base + loop.index %}
+{#- photo every 3rd panel (if the page has an articlePhoto); else alternate
+    gradient (odd) / white (even), exactly like the blocks loop. -#}
+{%- set usePhoto = articlePhoto and (loop.index0 % 3 == 2) and ap.kind != 'lede' and ap.kind != 'takeaways' %}
+{%- if usePhoto %}{% set acls = "story-photo" %}
+{%- elif ap.kind == 'lede' %}{% set acls = "" %}
+{%- elif n is odd %}{% set acls = "story-feature" %}
+{%- else %}{% set acls = "" %}{% endif %}
+<section class="story story-article story-article-{{ ap.kind or 'default' }} {{ acls }}"{% if usePhoto %} style="--bg-photo: url('{{ articlePhoto }}'); --scrim-edge: 0.92; --scrim-mid: 0.84"{% endif %}>
+    <div class="story-inner story-article-inner">
+        {%- if ap.eyebrow %}<p class="story-eyebrow">{{ ap.eyebrow }}</p>{% endif %}
+        {%- if ap.heading %}<h2 class="story-h2">{{ ap.heading | safe }}</h2>{% endif %}
+        <div class="story-article-body">{{ ap.html | safe }}</div>
+    </div>
+</section>
+{%- endfor %}
+{%- endif %}
+
+{#- Optional long-form SEO region (LEGACY fallback for pages not yet converted
+    to articlePanels). Raw HTML article rendered as a styled scroll region after
+    the reel panels, before the footer. Crawlable, visible, indexable. -#}
+{%- if seoBody and not articlePanels %}
 <section class="story-seo" aria-label="More detail">
     <div class="story-seo-inner">
         {{ seoBody | safe }}
