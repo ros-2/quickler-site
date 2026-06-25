@@ -4721,18 +4721,8 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* SAFE-ZONE CLIP: the content wrapper can never be taller than the safe
-       area (panel height minus the two safe bands). If a section's content
-       exceeds that, it scrolls WITHIN this box instead of spilling under the
-       nav or the arrow. This is what actually enforces the zone for tall
-       sections (steps, cards), not just the hero. */
     width: 100%;
-    max-height: calc(100dvh - var(--safe-top) - var(--safe-bottom));
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: none;
 }
-.story-inner::-webkit-scrollbar { display: none; }
 
 /* Hero: LIGHT band (lighter, airier feel), centred, video below. Uses the
    shared safe-zone padding from .story -- NO own padding override, so it
@@ -5517,9 +5507,11 @@ nav {
     justify-content: safe center;
     padding: var(--safe-top) var(--gutter) var(--safe-bottom);
     scroll-snap-align: start;
-    /* Too-tall content scrolls within the safe area instead of bleeding into
-       the bands. */
-    overflow-y: auto;
+    /* NO overflow-y here: a blanket overflow:auto on every panel captured the
+       wheel/touch so the .story-scroll container could not scroll at all
+       (only the button worked). Panels are transparent to scroll; the
+       container owns it. Only the contact-form panel opts into internal
+       scroll (rule below). */
 }
 
 /* Down-arrow: ONE button, position:fixed to the viewport bottom-centre.
