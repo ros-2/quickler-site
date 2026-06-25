@@ -26,6 +26,50 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => a.title.localeCompare(b.title));
   });
 
+  // Every indexable page, for the auto-generated sitemap. Excludes noindexed
+  // pages (robots contains "noindex"), utility/redirect pages, and the legal
+  // pages we do not want crawled as priorities. Keeps the sitemap from ever
+  // going stale: it is rebuilt from the live page set on every deploy.
+  eleventyConfig.addCollection("sitemapPages", (api) => {
+    const skipUrl = /\/(404|sitemap)\.html$/;
+    // Utility / thin / internal pages that should not be in the sitemap even
+    // though they are not formally noindexed.
+    const skipSlug = new Set([
+      "demo", "custom", "process", "process-detail", "products", "about-detail",
+    ]);
+    return api.getAll()
+      .filter((p) => {
+        const url = p.url || "";
+        if (!url.endsWith(".html")) return false;
+        if (skipUrl.test(url)) return false;
+        const robots = (p.data.seo && p.data.seo.robots) || p.data.robots || "";
+        if (/noindex/i.test(robots)) return false;
+        if (skipSlug.has(p.fileSlug)) return false;
+        // Pagination-generated pages (country-hub, continent) are emitted
+        // explicitly in the sitemap template from their data, because getAll()
+        // collapses each paginated template to a single entry. Skip them here.
+        if (/\/pages\/(country-hub|continent)-/.test(url)) return false;
+        return true;
+      })
+      .map((p) => {
+        const url = p.url === "/" ? "https://quickler.co/" : "https://quickler.co" + p.url;
+        // Home + core menu pages rank highest; guides next; everything else default.
+        const slug = p.fileSlug;
+        let priority = "0.6";
+        if (p.url === "/") priority = "1.0";
+        else if (["services", "pricing", "about", "guides", "help"].includes(slug)) priority = "0.9";
+        else if (/-uk$|^eicr|^cp12|^van|^dvsa|^fire|^near-miss|^risk|^coshh|^lone|^site-safety|^construction|^plumbing|^hvac|^facilities|^property|^inspection|^field-/.test(slug)) priority = "0.8";
+        return { loc: url, priority };
+      })
+      .sort((a, b) => a.loc.localeCompare(b.loc));
+  });
+
+  // ISO date (YYYY-MM-DD) for sitemap <lastmod>.
+  eleventyConfig.addFilter("isoDate", (d) => {
+    const dt = d instanceof Date ? d : new Date();
+    return dt.toISOString().slice(0, 10);
+  });
+
   // Pass static assets straight through, unchanged.
   eleventyConfig.addPassthroughCopy({ "assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "css": "css" });

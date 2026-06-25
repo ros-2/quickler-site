@@ -1,0 +1,34 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for p in collections.sitemapPages %}
+  <url>
+    <loc>{{ p.loc }}</loc>
+    <lastmod>{{ page.date | isoDate }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>{{ p.priority }}</priority>
+  </url>
+{%- endfor %}
+{#- Country-hub pages are pagination-generated, which getAll() collapses to a
+    single entry. Emit them directly from the countries data so all 22 are
+    listed. -#}
+{%- for c in countries %}
+  <url>
+    <loc>https://quickler.co/pages/country-hub-{{ c.slug }}.html</loc>
+    <lastmod>{{ page.date | isoDate }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+{%- endfor %}
+{%- for cont in continentList %}
+  <url>
+    <loc>https://quickler.co/pages/continent-{{ cont.slug }}.html</loc>
+    <lastmod>{{ page.date | isoDate }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+{%- endfor %}
+</urlset>
