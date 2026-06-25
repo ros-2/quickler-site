@@ -25,7 +25,13 @@
                        footer). Scrolls normally after the panels.
 
     Front-matter contract:
-      hero: { eyebrow?, heading, lede?, actions?[{label,href,style}], video? }
+      hero: { eyebrow, heading, lede?, actions?[{label,href,style}], video? }
+        EYEBROW IS THE HOUSE STYLE: every hero opens with a short eyebrow
+        (small uppercase blue label) above the heading, then heading, then
+        lede, then actions. The homepage is the reference. Always set an
+        eyebrow so heros stay consistent across the site -- a section tag
+        ("Pricing", "Support"), a category ("Guide . Electrical"), a market
+        ("France"), or a punchy line ("No app. No paperwork.").
       blocks: [ ordered list, each { type: ..., feature?, ...fields } ]
         feature: true -> paint this ONE block as the gradient brand band
                          (white text). Use at most once per page.
