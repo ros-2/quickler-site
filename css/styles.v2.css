@@ -5442,6 +5442,12 @@ nav {
 
 
 .story-scroll {
+    /* Safe-zone band heights, defined ONCE here and inherited by every .story
+       panel AND the fixed down-arrow, so content padding and arrow position
+       are always the same physical region. Generous on short screens (the vh
+       term) so a big hero never drops onto the arrow. */
+    --safe-top: clamp(96px, 14vh, 124px);
+    --safe-bottom: clamp(150px, 22vh, 180px);
     height: 100vh;
     height: 100dvh;
     overflow-y: scroll;
@@ -5483,20 +5489,20 @@ nav {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* SAFE ZONE. Every panel reserves a clear band top and bottom so content
-       (text + buttons) can never butt against the floating furniture:
-         --safe-top    = nav pill clearance  (pill height + its top gap)
-         --safe-bottom = down-arrow clearance (arrow height + its bottom gap)
-       Content is centred BETWEEN these bands, so the hero CTA sits above the
-       centred arrow and the heading sits below the pill -- no collisions.
-       Tune these two and every page updates. */
-    --safe-top: clamp(92px, 13vh, 120px);
-    --safe-bottom: clamp(92px, 13vh, 120px);
+    /* SAFE ZONE (enforced, single source of truth). The nav pill and the
+       down-arrow each occupy a fixed band at the top and bottom of the
+       VIEWPORT. --safe-top and --safe-bottom below are the heights of those
+       bands; the SAME variables position the arrow (.story-next reads
+       --safe-bottom) so the panel's reserved bottom space and the arrow are
+       physically the same region -- they can never disagree. 'safe center'
+       centres content BETWEEN the bands when it fits, and aligns it to the
+       top of the safe area (scrolling inside) when it does not, so content
+       never overlaps the nav above or the arrow below at ANY screen height. */
+    justify-content: safe center;
     padding: var(--safe-top) var(--gutter) var(--safe-bottom);
     scroll-snap-align: start;
-    /* If a panel's content is taller than the screen, let it scroll
-       within itself instead of bleeding into the next snap cell. */
+    /* Too-tall content scrolls within the safe area instead of bleeding into
+       the bands. */
     overflow-y: auto;
 }
 
