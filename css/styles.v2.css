@@ -5271,16 +5271,19 @@ nav {
    steps. Cap by height so the 16:9 frame always fits one viewport under
    the heading, whatever the screen size. */
 .story-video-panel .story-video-embed {
-    width: min(100%, 860px);
-    /* Cap the video so heading + video + BOTH safe bands fit one viewport.
-       Available height = 100dvh minus the two safe bands minus room for the
-       eyebrow + heading above (~200px). The video never pushes past the
-       safe-bottom band into the arrow. Width-derived 16:9 cap keeps it from
-       getting too wide on big screens. */
-    max-height: min(
+    /* Height is the binding constraint (must fit heading + video + both safe
+       bands in one viewport). Derive WIDTH from that height via 16:9 so the
+       frame is always a true 16:9 rectangle -- never wider than its height
+       warrants (the "width is odd" bug came from a fixed width + max-height
+       fighting the aspect-ratio). Width is also capped so it never exceeds
+       the column or gets too big on wide screens. */
+    height: min(
         calc(100dvh - var(--safe-top) - var(--safe-bottom) - 160px),
-        calc((100vw - 2 * var(--gutter)) * 0.5625)
+        calc((100vw - 2 * var(--gutter)) * 0.5625),
+        483px
     );
+    width: auto;
+    max-width: min(100%, 860px);
     aspect-ratio: 16 / 9;
 }
 /* The video panel stacks heading + video; if that stack is taller than the
