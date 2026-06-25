@@ -1,8 +1,45 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/project-po-workflow-platform.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Case Study",
+    "heading": "Bosonic PO workflow platform.",
+    "lede": "A custom purchase order platform for Bosonic with approvals, branded PDFs, and document control, built end to end in 36 hours.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "prose",
+      "eyebrow": "What it is",
+      "heading": "Purchase orders that actually reach done",
+      "text": "quickler built a custom purchase order platform for Bosonic, with guided form entry, saved vendors and addresses, and line-item memory for faster repeat orders. Approval routing, signature handling, branded PDF generation, and status tracking move each order from pending to approved or denied without it vanishing into an inbox."
+    },
+    {
+      "type": "cards",
+      "eyebrow": "What it included",
+      "heading": "The shape we built into Bosonic",
+      "items": [
+        { "kicker": "Approval email", "title": "A clear decision email", "text": "Instead of a vague forwarding chain, the approver gets a proper summary with the key details and one obvious next action." },
+        { "kicker": "Approval chain", "title": "Named approvers and status", "text": "Obvious ownership, proper status, generated PDFs, and a filing path people can trust." },
+        { "kicker": "Document output", "title": "A branded PO PDF", "text": "The system produces a clean finished document once the order has been checked and approved." }
+      ]
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Need faster reporting?",
+      "heading": "One repeated document workflow",
+      "text": "Get in touch if your team has one repeated report or document workflow that should be much closer to done before the day is over.",
+      "actions": [
+        { "label": "Contact", "href": "/pages/help/index.html#contact-form-section", "style": "btn-primary" }
+      ]
+    }
+  ],
+  "seoBody": "<p>quickler built a custom purchase order platform for Bosonic, with guided form entry, saved vendors and addresses, and line-item memory for faster repeat orders.</p><p>Approval routing by email, approver signature handling, branded PDF generation, and status tracking were added so the workflow could move from pending to approved or denied without disappearing into inboxes.</p><p>Paperless indexing links, history cloning, and setup automation were also integrated so new environments could start quickly with minimal manual steps.</p><p>Live demo: <a href=\"https://demo.lochross.com\">demo.lochross.com</a></p><h2>Bosonic is now the named proof point for the invoice and PO workflow.</h2><h3>The approver gets a clear decision email</h3><p>Instead of a vague forwarding chain, the approver gets a proper summary with the key details and one obvious next action.</p><p><strong>Vendor:</strong> North Star Lab Supplies Ltd. <strong>Bill to:</strong> Bosonic Ltd. <strong>Ship to:</strong> Bosonic Inc, Newark. <strong>Requested by:</strong> Samuel Snowden. <strong>Total:</strong> £1,248.00.</p><p>Items: Precision lab assembly kits (4), Instrument mounting fixtures (2). Illustrative Bosonic-flavoured demo content shown for proof of workflow shape.</p><h3>Named approvers, status, and clear document actions</h3><p>This is the operational shape quickler built into the Bosonic workflow: obvious ownership, proper status, generated PDFs, and a filing path people can trust.</p><p>PO-BOS-004, North Star Lab Supplies Ltd, Approved. Requested by Samuel Snowden. Approver Jack Shannon. Total £1,248.00. Document actions: PDF, Paperless, Clone.</p><h3>A finished PO PDF with Bosonic branding</h3><p>The output matters as much as the workflow. The system produces a clean finished document once the order has been checked and approved.</p><p>Document preview shown as workflow proof. <a href=\"/assets/docs/quickler-demo-po-shire.pdf\">Download example PDF</a>.</p><h2>Need faster reporting?</h2><p>Get in touch if your team has one repeated report or document workflow that should be much closer to done before the day is over.</p><p><a href=\"/pages/help/index.html#contact-form-section\">Contact</a></p>",
   "seo": {
     "title": "Bosonic PO Workflow Platform | quickler",
     "description": "Bosonic purchase order workflow platform with approvals, PDF generation, document indexing, and branded outputs. Built by quickler in 36 hours.",
@@ -34,131 +71,3 @@
   ]
 }
 ---
-<section id="top">
-        <div class="detail-shell">
-            <a class="detail-back" href="/pages/projects.html">← Back to case studies</a>
-            <span class="detail-kicker">Case Study</span>
-            <div class="case-study-brand">
-                <img src="/assets/logos/bosonic-logo-text.svg" alt="Bosonic" class="case-study-brand-logo">
-            </div>
-            <h1 class="detail-title">Bosonic PO workflow platform</h1>
-            <p class="detail-subtitle">Purchase orders, approvals, branded PDFs, and document control for Bosonic</p>
-
-            <div class="detail-meta">
-                <span class="detail-chip"><span class="detail-chip-label">Date</span> Feb 2026</span>
-                <span class="detail-chip"><span class="detail-chip-label">Build time</span> 36 hours</span>
-                <span class="detail-chip detail-chip-accent"><span class="detail-chip-label">Outcome</span> End-to-end PO workflow</span>
-            </div>
-
-            <div class="detail-body">
-                <p>quickler built a custom purchase order platform for Bosonic, with guided form entry, saved vendors and addresses, and line-item memory for faster repeat orders.</p>
-                <p>Approval routing by email, approver signature handling, branded PDF generation, and status tracking were added so the workflow could move from pending to approved or denied without disappearing into inboxes.</p>
-                <p>Paperless indexing links, history cloning, and setup automation were also integrated so new environments could start quickly with minimal manual steps.</p>
-                <p class="detail-note">Live demo: <a href="https://demo.lochross.com" target="_blank" rel="noopener">demo.lochross.com</a></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header">
-            <div>
-                <p class="section-label">What It Included</p>
-                <h2>Bosonic is now the named proof point for the invoice and PO workflow.</h2>
-            </div>
-        </div>
-        <div class="invoice-showcase-grid">
-            <article class="invoice-showcase-card">
-                <span class="card-link-kicker">Approval email</span>
-                <h3 class="invoice-showcase-title">The approver gets a clear decision email</h3>
-                <p class="invoice-showcase-copy">Instead of a vague forwarding chain, the approver gets a proper summary with the key details and one obvious next action.</p>
-
-                <div class="approval-email-preview" aria-label="Example Bosonic purchase order approval email">
-                    <div class="approval-email-header">
-                        <span class="approval-email-brand">Bosonic</span>
-                        <span class="approval-email-status">Pending</span>
-                    </div>
-                    <h4>Approval needed</h4>
-                    <p class="approval-email-subtitle">Hi Jack, please review PO-BOS-004.</p>
-                    <div class="approval-email-summary">
-                        <div><strong>Vendor:</strong> North Star Lab Supplies Ltd</div>
-                        <div><strong>Bill to:</strong> Bosonic Ltd</div>
-                        <div><strong>Ship to:</strong> Bosonic Inc, Newark</div>
-                        <div><strong>Requested by:</strong> Samuel Snowden</div>
-                        <div><strong>Total:</strong> £1,248.00</div>
-                    </div>
-                    <div class="approval-email-items">
-                        <div class="approval-email-items-head">
-                            <span>Items</span>
-                            <span>Qty</span>
-                        </div>
-                        <div class="approval-email-item">
-                            <span>Precision lab assembly kits</span>
-                            <span>4</span>
-                        </div>
-                        <div class="approval-email-item">
-                            <span>Instrument mounting fixtures</span>
-                            <span>2</span>
-                        </div>
-                    </div>
-                    <div class="approval-email-actions">
-                        <span class="approval-email-button">Decide now</span>
-                    </div>
-                    <p class="approval-email-footnote">Illustrative Bosonic-flavoured demo content shown for proof of workflow shape.</p>
-                </div>
-            </article>
-
-            <article class="invoice-showcase-card">
-                <span class="card-link-kicker">Approval chain</span>
-                <h3 class="invoice-showcase-title">Named approvers, status, and clear document actions</h3>
-                <p class="invoice-showcase-copy">This is the operational shape quickler built into the Bosonic workflow: obvious ownership, proper status, generated PDFs, and a filing path people can trust.</p>
-
-                <div class="approval-demo">
-                    <div class="approval-demo-header">
-                        <div>
-                            <strong>PO-BOS-004</strong>
-                            <span>North Star Lab Supplies Ltd</span>
-                        </div>
-                        <span class="approval-demo-pill approval-demo-pill-approved">Approved</span>
-                    </div>
-                    <div class="approval-demo-row">
-                        <span class="approval-demo-label">Requested by</span>
-                        <span class="approval-demo-value">Samuel Snowden</span>
-                    </div>
-                    <div class="approval-demo-row">
-                        <span class="approval-demo-label">Approver</span>
-                        <span class="approval-demo-value">Jack Shannon</span>
-                    </div>
-                    <div class="approval-demo-row">
-                        <span class="approval-demo-label">Total</span>
-                        <span class="approval-demo-value">£1,248.00</span>
-                    </div>
-                    <div class="approval-demo-actions">
-                        <span class="approval-demo-action approval-demo-action-primary">PDF</span>
-                        <span class="approval-demo-action">Paperless</span>
-                        <span class="approval-demo-action">Clone</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="invoice-showcase-card">
-                <span class="card-link-kicker">Document output</span>
-                <h3 class="invoice-showcase-title">A finished PO PDF with Bosonic branding</h3>
-                <p class="invoice-showcase-copy">The output matters as much as the workflow. The system produces a clean finished document once the order has been checked and approved.</p>
-                <figure class="invoice-preview-figure">
-                    <img src="/assets/photos/invoices/po-document-preview.svg" alt="Preview of a finished purchase order PDF produced by the Bosonic workflow">
-                </figure>
-                <div class="invoice-preview-actions">
-                    <a class="btn btn-secondary" href="/assets/docs/quickler-demo-po-shire.pdf" download>Download example PDF</a>
-                    <span class="invoice-preview-note">Document preview shown as workflow proof.</span>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Need faster reporting?</h2>
-            <p>Get in touch if your team has one repeated report or document workflow that should be much closer to done before the day is over.</p>
-            <a href="/pages/help/index.html#contact-form-section" class="btn btn-primary">Contact</a>
-        </div>
-    </section>

@@ -1,8 +1,38 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/products.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Other Product Ideas",
+    "heading": "Adjacent ideas, not the focus.",
+    "lede": "quickler Workflows is the main focus of the business. These are smaller adjacent ideas that came out of repeated admin and document problems in other sectors.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "cards",
+      "eyebrow": "Adjacent ideas",
+      "heading": "Two smaller products",
+      "items": [
+        { "kicker": "Publishing", "title": "Scripture verification system", "text": "Automated checking of Scripture references, quotations, and translation usage for Christian publishers and editors who need audit-ready review output.", "href": "/pages/scripture-verification.html" },
+        { "kicker": "Fundraising", "title": "Grant writing automation", "text": "Pre-fill grant applications with your organisation's information so teams spend less time re-entering the same material across multiple forms.", "href": "/pages/grant-automation.html" }
+      ]
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Main product",
+      "heading": "Want the workflow product instead?",
+      "text": "If your team repeats the same operational workflow and still rebuilds the useful output later, quickler Workflows is the better place to start.",
+      "actions": [
+        { "label": "Contact", "href": "/pages/help/index.html#contact-form-section", "style": "btn-primary" }
+      ]
+    }
+  ],
+  "seoBody": "<p>quickler Workflows is the main focus of the business. These are smaller adjacent ideas that came out of repeated admin and document problems in other sectors.</p><h3>Scripture verification system</h3><p>Automated checking of Scripture references, quotations, and translation usage for Christian publishers and editors who need audit-ready review output. <a href=\"/pages/scripture-verification.html\">Learn more</a></p><h3>Grant writing automation</h3><p>Pre-fill grant applications with your organisation's information so teams spend less time re-entering the same material across multiple forms. <a href=\"/pages/grant-automation.html\">Learn more</a></p><h2>Interested in the main workflow product instead?</h2><p>If your team repeats the same operational workflow and still rebuilds the useful output later, quickler Workflows is the better place to start. <a href=\"/pages/help/index.html#contact-form-section\">Contact</a></p>",
   "seo": {
     "title": "Other Product Ideas | quickler",
     "description": "Adjacent product ideas from quickler. The main company focus remains workflow systems for repeated operational work.",
@@ -33,36 +63,3 @@
   ]
 }
 ---
-<section id="top">
-        <div class="page-shell">
-            <span class="eyebrow">Other Product Ideas</span>
-            <h1>Adjacent ideas, not the main company focus.</h1>
-            <p class="page-lede">quickler Workflows is the main focus of the business. These are smaller adjacent ideas that came out of repeated admin and document problems in other sectors.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="card-link-grid">
-            <a class="card-link" href="/pages/scripture-verification.html">
-                <span class="card-link-kicker">Publishing</span>
-                <h3 class="card-link-title">Scripture verification system</h3>
-                <p class="card-link-copy">Automated checking of Scripture references, quotations, and translation usage for Christian publishers and editors who need audit-ready review output.</p>
-                <span class="card-link-arrow">Learn more →</span>
-            </a>
-
-            <a class="card-link" href="/pages/grant-automation.html">
-                <span class="card-link-kicker">Fundraising</span>
-                <h3 class="card-link-title">Grant writing automation</h3>
-                <p class="card-link-copy">Pre-fill grant applications with your organisation’s information so teams spend less time re-entering the same material across multiple forms.</p>
-                <span class="card-link-arrow">Learn more →</span>
-            </a>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Interested in the main workflow product instead?</h2>
-            <p>If your team repeats the same operational workflow and still rebuilds the useful output later, quickler Workflows is the better place to start.</p>
-            <a href="/pages/help/index.html#contact-form-section" class="btn btn-primary">Contact</a>
-        </div>
-    </section>

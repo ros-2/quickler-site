@@ -1,8 +1,46 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/help/workflows.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Help centre",
+    "heading": "Workflows, built once.",
+    "lede": "A workflow is a question-and-report template. Define the questions once; any engineer can run it any number of times, then Quickler builds the PDF.",
+    "actions": [
+      { "label": "Message us", "href": "/pages/help/index.html#contact-form-section", "style": "btn-primary" },
+      { "label": "All guides", "href": "/pages/help/index.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "cards",
+      "eyebrow": "Anatomy",
+      "heading": "Parts of a workflow",
+      "items": [
+        { "kicker": "Inputs", "title": "Questions", "text": "What the engineer answers: text, number, photo, voice note or yes/no." },
+        { "kicker": "Output", "title": "Report", "text": "The PDF generated automatically from the answers." },
+        { "kicker": "Trigger", "title": "Sends", "text": "Manual by default. Scale plan adds scheduled sends." }
+      ]
+    },
+    {
+      "type": "steps",
+      "eyebrow": "Writing good questions",
+      "heading": "Keep it tight on a phone",
+      "items": [
+        { "title": "Be direct", "text": "Photo of the gas meter reading, not a paragraph of preamble." },
+        { "title": "Only ask what the report needs", "text": "Every extra question is friction on a phone screen." },
+        { "title": "Prefer yes/no and photos", "text": "Pass/fail renders cleanly; one clear photo beats ten lines." }
+      ]
+    },
+    {
+      "type": "prose",
+      "eyebrow": "Limits and editing",
+      "heading": "No cap on runs",
+      "text": "Workflow counts scale by plan: Starter 3, Team 5, Business 8, Scale 10. There is no cap on runs. Edit questions any time; runs in progress keep their version, new runs pick up the changes. Voice notes in reply to text questions are transcribed automatically."
+    }
+  ],
+  "seoBody": "<p>A workflow is a question-and-report template. Define the questions once; any engineer can run it any number of times.</p><h2>Parts of a workflow</h2><ul><li><strong>Questions (inputs):</strong> what the engineer answers. Types: text, number, photo, voice note, yes/no.</li><li><strong>Report (output):</strong> the PDF generated from the answers.</li><li><strong>Trigger:</strong> manual by default. Scale plan adds scheduled sends.</li></ul><h2>Writing good questions</h2><ol><li><strong>Be direct.</strong> \"Photo of the gas meter reading\" not \"Please take a picture once you've confirmed which meter is in use.\"</li><li><strong>Only ask what the report needs.</strong> Every extra question is friction on a phone screen.</li><li><strong>Use yes/no where you can.</strong> \"Pass / fail\" renders cleanly; freeform text often doesn't.</li><li><strong>Use photos.</strong> One clear photo beats ten lines of description, especially for compliance.</li></ol><h2>Limits by plan</h2><ul><li>Starter: 3 workflows</li><li>Team: 5 workflows</li><li>Business: 8 workflows</li><li>Scale: 10 workflows</li></ul><p>No cap on runs. Send each workflow to as many engineers on as many jobs as you like.</p><h2>Editing</h2><p>Change questions any time. Runs already in progress keep the version they started with; new runs pick up the changes.</p><h2>Voice notes</h2><p>Engineers can send WhatsApp voice messages in reply to any text question. Quickler transcribes them automatically and includes the text in the report.</p><p>Still stuck? Email <a href=\"mailto:hello@quickler.co\">hello@quickler.co</a> and we reply within one business day.</p>",
   "seo": {
     "title": "Help: Workflows | Quickler",
     "description": "How Quickler workflows work: questions, reports, voice notes, plan limits and editing.",
@@ -17,74 +55,8 @@
     "lang": "en",
     "jsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"TechArticle\",\n  \"headline\": \"Workflows\",\n  \"description\": \"How Quickler workflows work: questions, reports, voice notes, plan limits and editing.\",\n  \"url\": \"https://quickler.co/pages/help/workflows.html\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Philip Ross\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Quickler Ltd\"\n  }\n}"
   },
-  "headStyle": "\n      .help-shell { max-width: 1000px; margin: 0 auto; padding: 40px 28px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; }\n      .help-nav { position: sticky; top: 32px; align-self: start; }\n      .help-nav h3 { margin: 0 0 14px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; }\n      .help-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }\n      .help-nav a { display: block; padding: 7px 12px; border-radius: 6px; color: #334155; text-decoration: none; font-size: 0.92rem; }\n      .help-nav a:hover { background: rgba(15,23,42,0.05); color: #0d1a3a; }\n      .help-nav a.current { background: rgba(47,107,255,0.1); color: #2f6bff; font-weight: 600; }\n      .help-body h1 { margin: 0 0 10px; font-size: 1.8rem; }\n      .help-body h2 { margin-top: 32px; font-size: 1.2rem; color: #0d1a3a; }\n      .help-body h3 { margin-top: 22px; font-size: 1rem; color: #0d1a3a; }\n      .help-body p, .help-body li { line-height: 1.65; color: #334155; }\n      .help-body code { background: rgba(15,23,42,0.06); padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }\n      .help-body ol, .help-body ul { padding-left: 22px; }\n      .help-body .callout { background: rgba(59,130,246,0.06); border-left: 3px solid #3b82f6; padding: 14px 18px; border-radius: 4px; margin: 18px 0; }\n      @media (max-width: 720px) {\n        .help-shell { grid-template-columns: 1fr; gap: 20px; padding: 24px 18px; }\n        .help-nav { position: static; }\n      }\n    ",
   "scripts": [
     "/js/analytics-events.js"
   ]
 }
 ---
-<section id="top">
-      <div class="help-shell">
-        <aside class="help-nav">
-          <h3>Help centre</h3>
-          <ul>
-            <li><a href="/pages/help/index.html">Home</a></li>
-            <li><a href="/pages/help/getting-started.html">Getting started</a></li>
-            <li><a href="/pages/help/workflows.html" class="current">Workflows</a></li>
-            <li><a href="/pages/help/engineers.html">Engineers</a></li>
-            <li><a href="/pages/help/team.html">Team management</a></li>
-            <li><a href="/pages/help/plans.html">Plans &amp; billing</a></li>
-            <li><a href="/pages/help/privacy.html">Data &amp; privacy</a></li>
-            <li><a href="/pages/help/troubleshooting.html">Troubleshooting</a></li>
-            <li><a href="/pages/help/faq.html">FAQ</a></li>
-            <li><a href="/pages/help/contact.html">Contact</a></li>
-          </ul>
-        </aside>
-        <article class="help-body">
-          <h1>Workflows</h1>
-          <p>A workflow is a question-and-report template. Define the questions once; any engineer can run it any number of times.</p>
-
-          <h2>Parts of a workflow</h2>
-          <ul>
-            <li><strong>Questions (inputs):</strong> what the engineer answers. Types: text, number, photo, voice note, yes/no.</li>
-            <li><strong>Report (output):</strong> the PDF generated from the answers.</li>
-            <li><strong>Trigger:</strong> manual by default. Scale plan adds scheduled sends.</li>
-          </ul>
-
-          <h2>Writing good questions</h2>
-          <ol>
-            <li><strong>Be direct.</strong> "Photo of the gas meter reading" not "Please take a picture once you've confirmed which meter is in use."</li>
-            <li><strong>Only ask what the report needs.</strong> Every extra question is friction on a phone screen.</li>
-            <li><strong>Use yes/no where you can.</strong> "Pass / fail" renders cleanly; freeform text often doesn't.</li>
-            <li><strong>Use photos.</strong> One clear photo beats ten lines of description, especially for compliance.</li>
-          </ol>
-
-          <h2>Limits by plan</h2>
-          <table style="width:100%;border-collapse:collapse;margin:12px 0;">
-            <thead>
-              <tr style="border-bottom:2px solid rgba(15,23,42,0.1);">
-                <th style="text-align:left;padding:6px 4px;">Plan</th>
-                <th style="text-align:right;padding:6px 4px;">Workflows</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom:1px solid rgba(15,23,42,0.06);"><td style="padding:6px 4px;">Starter</td><td style="text-align:right;">3</td></tr>
-              <tr style="border-bottom:1px solid rgba(15,23,42,0.06);"><td style="padding:6px 4px;">Team</td><td style="text-align:right;">5</td></tr>
-              <tr style="border-bottom:1px solid rgba(15,23,42,0.06);"><td style="padding:6px 4px;">Business</td><td style="text-align:right;">8</td></tr>
-              <tr><td style="padding:6px 4px;">Scale</td><td style="text-align:right;">10</td></tr>
-            </tbody>
-          </table>
-          <p>No cap on runs. Send each workflow to as many engineers on as many jobs as you like.</p>
-
-          <h2>Editing</h2>
-          <p>Change questions any time. Runs already in progress keep the version they started with; new runs pick up the changes.</p>
-
-          <h2>Voice notes</h2>
-          <p>Engineers can send WhatsApp voice messages in reply to any text question. Quickler transcribes them automatically and includes the text in the report.</p>
-          <hr style="margin-top:40px;border:none;border-top:1px solid rgba(15,23,42,0.08);">
-          <p style="font-size:0.85rem;color:#64748b;">
-            Still stuck? Email <a href="mailto:hello@quickler.co">hello@quickler.co</a> &mdash; we reply within one business day.
-          </p>
-        </article>
-      </div>
-    </section>

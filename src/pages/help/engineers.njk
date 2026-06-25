@@ -1,8 +1,42 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/help/engineers.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Help centre",
+    "heading": "Engineers run jobs on WhatsApp.",
+    "lede": "An engineer is anyone in the field answering workflows on WhatsApp. No app, no login, no laptop. Just a phone with WhatsApp.",
+    "actions": [
+      { "label": "Message us", "href": "/pages/help/index.html#contact-form-section", "style": "btn-primary" },
+      { "label": "All guides", "href": "/pages/help/index.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "steps",
+      "eyebrow": "Adding",
+      "heading": "Add an engineer in three steps.",
+      "items": [
+        { "title": "Add engineer", "text": "Click + Add engineer on the dashboard." },
+        { "title": "Enter details", "text": "Add their name and mobile number. Defaults to UK +44; use the picker for other countries." },
+        { "title": "Click Add", "text": "They receive a WhatsApp intro message." }
+      ]
+    },
+    {
+      "type": "prose",
+      "eyebrow": "What the engineer sees",
+      "heading": "A normal WhatsApp chat.",
+      "text": "When you send a workflow, they get a friendly intro and reply YES to start. Questions arrive one at a time. They answer with text, numbers, photos, or voice notes. When finished, the report is generated and emailed to you."
+    },
+    {
+      "type": "prose",
+      "eyebrow": "Removing and seats",
+      "heading": "Remove anyone, keep the records.",
+      "text": "Click the cross next to a name to remove them. Active runs finish but no new ones can be sent, and historical data is kept so reports stay complete. Each plan caps active engineers; the dashboard shows seats remaining. To add more, upgrade your plan."
+    }
+  ],
+  "seoBody": "<p>An engineer is anyone in the field answering workflows on WhatsApp. They don't need an app, a login, or a laptop, just a phone with WhatsApp.</p><h2>Adding</h2><ol><li>Click <strong>+ Add engineer</strong> on the dashboard.</li><li>Enter their name and mobile number (defaults to UK +44; use the picker for other countries).</li><li>Click <strong>Add</strong>. They receive a WhatsApp intro message.</li></ol><h2>What the engineer sees</h2><p>A normal WhatsApp chat. When you send a workflow, they get something like:</p><p><strong>Quickler</strong><br>Hi Tom, Acme Gas has asked you to run the <em>Annual Safety Check</em> at 14 Station Road. Ready to start? Reply YES when you're on site.</p><p>Questions arrive one at a time. The engineer replies with text, numbers, photos, or voice notes. When finished, the report is generated and emailed to you.</p><h2>Removing</h2><p>Click the cross next to their name. Active runs finish but no new ones can be sent. Historical data is kept so reports remain complete.</p><h2>Seats</h2><p>Each plan caps active engineers. The dashboard shows seats remaining. To add more, upgrade your plan.</p><p>Still stuck? Email <a href=\"mailto:hello@quickler.co\">hello@quickler.co</a>, we reply within one business day.</p>",
   "seo": {
     "title": "Help: Engineers | Quickler",
     "description": "How to add and remove engineers in Quickler, what they see on WhatsApp, and how seats work per plan.",
@@ -17,57 +51,8 @@
     "lang": "en",
     "jsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"TechArticle\",\n  \"headline\": \"Engineers\",\n  \"description\": \"How to add and remove engineers in Quickler, what they see on WhatsApp, and how seats work per plan.\",\n  \"url\": \"https://quickler.co/pages/help/engineers.html\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Philip Ross\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Quickler Ltd\"\n  }\n}"
   },
-  "headStyle": "\n      .help-shell { max-width: 1000px; margin: 0 auto; padding: 40px 28px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; }\n      .help-nav { position: sticky; top: 32px; align-self: start; }\n      .help-nav h3 { margin: 0 0 14px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; }\n      .help-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }\n      .help-nav a { display: block; padding: 7px 12px; border-radius: 6px; color: #334155; text-decoration: none; font-size: 0.92rem; }\n      .help-nav a:hover { background: rgba(15,23,42,0.05); color: #0d1a3a; }\n      .help-nav a.current { background: rgba(47,107,255,0.1); color: #2f6bff; font-weight: 600; }\n      .help-body h1 { margin: 0 0 10px; font-size: 1.8rem; }\n      .help-body h2 { margin-top: 32px; font-size: 1.2rem; color: #0d1a3a; }\n      .help-body h3 { margin-top: 22px; font-size: 1rem; color: #0d1a3a; }\n      .help-body p, .help-body li { line-height: 1.65; color: #334155; }\n      .help-body code { background: rgba(15,23,42,0.06); padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }\n      .help-body ol, .help-body ul { padding-left: 22px; }\n      .help-body .callout { background: rgba(59,130,246,0.06); border-left: 3px solid #3b82f6; padding: 14px 18px; border-radius: 4px; margin: 18px 0; }\n      @media (max-width: 720px) {\n        .help-shell { grid-template-columns: 1fr; gap: 20px; padding: 24px 18px; }\n        .help-nav { position: static; }\n      }\n    ",
   "scripts": [
     "/js/analytics-events.js"
   ]
 }
 ---
-<section id="top">
-      <div class="help-shell">
-        <aside class="help-nav">
-          <h3>Help centre</h3>
-          <ul>
-            <li><a href="/pages/help/index.html">Home</a></li>
-            <li><a href="/pages/help/getting-started.html">Getting started</a></li>
-            <li><a href="/pages/help/workflows.html">Workflows</a></li>
-            <li><a href="/pages/help/engineers.html" class="current">Engineers</a></li>
-            <li><a href="/pages/help/team.html">Team management</a></li>
-            <li><a href="/pages/help/plans.html">Plans &amp; billing</a></li>
-            <li><a href="/pages/help/privacy.html">Data &amp; privacy</a></li>
-            <li><a href="/pages/help/troubleshooting.html">Troubleshooting</a></li>
-            <li><a href="/pages/help/faq.html">FAQ</a></li>
-            <li><a href="/pages/help/contact.html">Contact</a></li>
-          </ul>
-        </aside>
-        <article class="help-body">
-          <h1>Engineers</h1>
-          <p>An engineer is anyone in the field answering workflows on WhatsApp. They don't need an app, a login, or a laptop &mdash; just a phone with WhatsApp.</p>
-
-          <h2>Adding</h2>
-          <ol>
-            <li>Click <strong>+ Add engineer</strong> on the dashboard.</li>
-            <li>Enter their name and mobile number (defaults to UK +44; use the picker for other countries).</li>
-            <li>Click <strong>Add</strong>. They receive a WhatsApp intro message.</li>
-          </ol>
-
-          <h2>What the engineer sees</h2>
-          <p>A normal WhatsApp chat. When you send a workflow, they get something like:</p>
-          <div class="callout" style="font-family: 'Space Grotesk', monospace;">
-            <strong>Quickler</strong><br>
-            Hi Tom &mdash; Acme Gas has asked you to run the <em>Annual Safety Check</em> at 14 Station Road. Ready to start? Reply YES when you're on site.
-          </div>
-          <p>Questions arrive one at a time. The engineer replies with text, numbers, photos, or voice notes. When finished, the report is generated and emailed to you.</p>
-
-          <h2>Removing</h2>
-          <p>Click the <strong>&#x2715;</strong> next to their name. Active runs finish but no new ones can be sent. Historical data is kept so reports remain complete.</p>
-
-          <h2>Seats</h2>
-          <p>Each plan caps active engineers. The dashboard shows seats remaining. To add more, upgrade your plan.</p>
-          <hr style="margin-top:40px;border:none;border-top:1px solid rgba(15,23,42,0.08);">
-          <p style="font-size:0.85rem;color:#64748b;">
-            Still stuck? Email <a href="mailto:hello@quickler.co">hello@quickler.co</a> &mdash; we reply within one business day.
-          </p>
-        </article>
-      </div>
-    </section>

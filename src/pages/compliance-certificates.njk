@@ -1,8 +1,54 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/compliance-certificates.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Compliance Certificates",
+    "heading": "Certificates from a WhatsApp chat.",
+    "lede": "The engineer answers the required questions on site and Quickler produces a structured PDF certificate automatically, in the manager's inbox without the administrative middle step.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "prose",
+      "eyebrow": "What it covers",
+      "heading": "Any trade that issues a certificate.",
+      "text": "Compliance certificates demonstrate that work meets a recognised standard: EICRs, gas safety certificates (CP12), and structural survey completion records. They form part of the audit trail required by insurers, regulators, and clients. Issuing one without a proper record of the underlying inspection creates liability."
+    },
+    {
+      "type": "steps",
+      "eyebrow": "Before and after",
+      "heading": "What the paper workflow costs.",
+      "items": [
+        { "title": "The paper way", "text": "Engineer fills a form on site, photographs it, emails the office. An administrator rekeys the data into a template, generates the certificate, then emails and files it." },
+        { "title": "With Quickler", "text": "Engineer answers WhatsApp questions on site, the certificate is generated automatically, and the PDF lands in the manager's inbox without the administrative middle step." }
+      ]
+    },
+    {
+      "type": "cards",
+      "eyebrow": "Manager approval",
+      "heading": "One-click approval. No login required.",
+      "items": [
+        { "kicker": "The email", "title": "Certificate, summary, and button", "text": "The manager receives the completed PDF, a summary of the key answers and any flagged items, and a single approval button in the email body." },
+        { "kicker": "One click", "title": "Approve from the email", "text": "Clicking approve marks the certificate signed off in the dashboard and timestamps it against the manager's account. No separate login required." }
+      ]
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Get started",
+      "heading": "See it build your certificate.",
+      "text": "Upload an example certificate you already use and Quickler builds the template from it automatically. No design work required.",
+      "actions": [
+        { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+        { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+      ]
+    }
+  ],
+  "seoBody": "<p>A compliance certificate is a formal document confirming that a system, installation, or item of equipment meets a defined standard. Quickler generates compliance certificates from a WhatsApp conversation: the engineer answers the required questions on site, and Quickler produces a structured PDF certificate automatically.</p><h2>Any trade that issues a certificate at the end of a job.</h2><p>Compliance certificates are used to demonstrate that work has been carried out to a recognised standard. Common uses include:</p><ul><li>Electrical installation condition reports (EICRs)</li><li>Gas safety certificates (CP12)</li><li>Structural survey completion records</li></ul><p>They form part of the audit trail required by insurers, regulators, and clients. In many sectors, issuing a certificate without a proper record of the underlying inspection creates liability.</p><h2>What the paper-based workflow costs.</h2><p>A typical paper-based certificate workflow involves:</p><ul><li>Engineer completes a paper form on site</li><li>Form is photographed or scanned and emailed to the office</li><li>Administrator checks the form, types data into a template, and generates the certificate</li><li>Certificate is emailed to the client and filed</li></ul><p>With Quickler: engineer answers WhatsApp questions on site, certificate is generated automatically, PDF is in the manager's inbox without the administrative middle step.</p><h2>One-click approval from the email. No login required.</h2><h3>Certificate, summary, and approval button</h3><p>The manager receives the completed PDF certificate as an attachment, a summary of the key answers and any flagged items, and a single approval button in the email body.</p><h3>Approve from the email. No login needed.</h3><p>Clicking approve marks the certificate as signed off in the dashboard and timestamps the approval against the manager's account. No separate login required.</p><h2>Common questions.</h2><h3>How does Quickler generate a certificate?</h3><p>Quickler maps each certificate field to a WhatsApp question. The engineer answers on site by text, voice note, or photo. The PDF is produced automatically on completion.</p><h3>Does the manager need to approve it?</h3><p>Approval is optional and configurable. Where enabled, the manager receives a one-click approval button in the email alongside the PDF. Approval is timestamped and stored.</p><h3>Is it legally valid?</h3><p>Quickler produces a timestamped, structured record of the inspection answers and associated evidence. Legal validity depends on the specific standard and the engineer's qualifications. Quickler provides the record, the engineer provides the professional judgement.</p><h3>What trades use this?</h3><p>Electrical installation firms (EICRs), Gas Safe registered firms (CP12), structural engineers, M&E contractors, and similar trades that issue a certificate at the end of a job.</p><h3>How is the certificate stored?</h3><p>The PDF is stored in the Quickler dashboard against the engineer and job, timestamped with submission and approval times. Available for download at any time.</p><h3>Can the certificate template be customised?</h3><p>Yes. Upload an example certificate you already use and Quickler builds the template from it automatically. No design work required.</p>",
   "seo": {
     "title": "WhatsApp Compliance Certificates | Quickler | UK and Global Trades",
     "description": "Generate compliance certificates from a WhatsApp conversation. Engineer answers questions on site. PDF certificate emailed to the manager automatically. One-click approval. For UK and global trades firms.",
@@ -35,106 +81,3 @@
   ]
 }
 ---
-<section id="top">
-        <div class="page-shell about-page-intro">
-            <span class="eyebrow">Compliance Certificates</span>
-            <h1>Generate compliance certificates from a WhatsApp conversation. PDF to the manager automatically.</h1>
-            <p class="page-lede">A compliance certificate is a formal document confirming that a system, installation, or item of equipment meets a defined standard. Quickler generates compliance certificates from a WhatsApp conversation: the engineer answers the required questions on site, and Quickler produces a structured PDF certificate automatically.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="content-duo">
-            <div class="section-frame">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">What it covers</p>
-                        <h2>Any trade that issues a certificate at the end of a job.</h2>
-                    </div>
-                </div>
-                <div class="detail-body">
-                    <p>Compliance certificates are used to demonstrate that work has been carried out to a recognised standard. Common uses include:</p>
-                    <ul>
-                        <li>Electrical installation condition reports (EICRs)</li>
-                        <li>Gas safety certificates (CP12)</li>
-                        <li>Structural survey completion records</li>
-                    </ul>
-                    <p>They form part of the audit trail required by insurers, regulators, and clients. In many sectors, issuing a certificate without a proper record of the underlying inspection creates liability.</p>
-                </div>
-            </div>
-            <div class="section-frame">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">Before and after</p>
-                        <h2>What the paper-based workflow costs.</h2>
-                    </div>
-                </div>
-                <div class="detail-body">
-                    <p>A typical paper-based certificate workflow involves:</p>
-                    <ul>
-                        <li>Engineer completes a paper form on site</li>
-                        <li>Form is photographed or scanned and emailed to the office</li>
-                        <li>Administrator checks the form, types data into a template, and generates the certificate</li>
-                        <li>Certificate is emailed to the client and filed</li>
-                    </ul>
-                    <p>With Quickler: engineer answers WhatsApp questions on site, certificate is generated automatically, PDF is in the manager's inbox without the administrative middle step.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">Manager approval</p>
-                <h2>One-click approval from the email. No login required.</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-3">
-            <article class="card-link">
-                <span class="card-link-kicker">The email</span>
-                <h3 class="card-link-title">Certificate, summary, and approval button</h3>
-                <p class="card-link-copy">The manager receives the completed PDF certificate as an attachment, a summary of the key answers and any flagged items, and a single approval button in the email body.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">One click</span>
-                <h3 class="card-link-title">Approve from the email. No login needed.</h3>
-                <p class="card-link-copy">Clicking approve marks the certificate as signed off in the dashboard and timestamps the approval against the manager's account. No separate login required.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">FAQ</p>
-                <h2>Common questions.</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-3">
-            <article class="card-link">
-                <h3 class="card-link-title">How does Quickler generate a certificate?</h3>
-                <p class="card-link-copy">Quickler maps each certificate field to a WhatsApp question. The engineer answers on site by text, voice note, or photo. The PDF is produced automatically on completion.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">Does the manager need to approve it?</h3>
-                <p class="card-link-copy">Approval is optional and configurable. Where enabled, the manager receives a one-click approval button in the email alongside the PDF. Approval is timestamped and stored.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">Is it legally valid?</h3>
-                <p class="card-link-copy">Quickler produces a timestamped, structured record of the inspection answers and associated evidence. Legal validity depends on the specific standard and the engineer's qualifications. Quickler provides the record — the engineer provides the professional judgement.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">What trades use this?</h3>
-                <p class="card-link-copy">Electrical installation firms (EICRs), Gas Safe registered firms (CP12), structural engineers, M&E contractors, and similar trades that issue a certificate at the end of a job.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">How is the certificate stored?</h3>
-                <p class="card-link-copy">The PDF is stored in the Quickler dashboard against the engineer and job, timestamped with submission and approval times. Available for download at any time.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">Can the certificate template be customised?</h3>
-                <p class="card-link-copy">Yes. Upload an example certificate you already use and Quickler builds the template from it automatically. No design work required.</p>
-            </article>
-        </div>
-    </section>

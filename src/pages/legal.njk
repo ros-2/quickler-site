@@ -1,8 +1,45 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/legal.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Legal",
+    "heading": "quickler legal information.",
+    "lede": "Website terms, privacy, cookies, and customer terms for the quickler workflow product. quickler Ltd is registered in Scotland (SC882439) and with the ICO (C1910464).",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "prose",
+      "eyebrow": "What this covers",
+      "heading": "The public legal documents",
+      "text": "This section covers the public website terms, privacy information, cookie policy, and customer terms for the quickler workflow product. Bespoke project agreements and NDAs are handled separately when needed."
+    },
+    {
+      "type": "cards",
+      "eyebrow": "Policies",
+      "heading": "Privacy, terms, and cookies",
+      "items": [
+        { "kicker": "Privacy", "title": "Privacy Policy", "text": "How quickler handles enquiry data, website analytics, and any future reporting-related data flows.", "href": "/pages/privacy.html" },
+        { "kicker": "Terms", "title": "Website Terms", "text": "Basic terms for browsing quickler.co and making enquiries through the site.", "href": "/pages/terms.html" },
+        { "kicker": "Cookies", "title": "Cookie Policy", "text": "What cookies or browser storage quickler uses, and how the consent controls work.", "href": "/pages/cookies.html" }
+      ]
+    },
+    {
+      "type": "cards",
+      "eyebrow": "For customers",
+      "heading": "Customer terms and bespoke work",
+      "items": [
+        { "kicker": "Customer Terms", "title": "Customer Terms + DPA", "text": "Product terms for paying customers, including the UK GDPR Article 28 data-processing schedule.", "href": "/pages/customer-terms.html" },
+        { "kicker": "Bespoke work", "title": "Project agreements and NDAs", "text": "Statements of work, NDAs, and bespoke commercial terms are handled case by case, not published as generic pages." }
+      ]
+    }
+  ],
+  "seoBody": "<p>This section covers the public website terms, privacy information, cookie policy, and customer terms for the quickler workflow product. quickler Ltd is registered in Scotland under company number <a href=\"https://find-and-update.company-information.service.gov.uk/company/SC882439\" target=\"_blank\" rel=\"noopener noreferrer\">SC882439</a> and with the ICO under registration C1910464. Bespoke project agreements and NDAs are handled separately when needed.</p>\n<h2>Privacy Policy</h2>\n<p><a href=\"/pages/privacy.html\">How quickler handles enquiry data, website analytics, and any future reporting-related data flows.</a></p>\n<h2>Website Terms</h2>\n<p><a href=\"/pages/terms.html\">Basic terms for browsing quickler.co and making enquiries through the site.</a></p>\n<h2>Customer Terms + DPA</h2>\n<p><a href=\"/pages/customer-terms.html\">Product terms for paying customers of the quickler workflow service, including the UK GDPR Article 28 data-processing schedule.</a></p>\n<h2>Cookie Policy</h2>\n<p><a href=\"/pages/cookies.html\">What cookies or browser storage quickler uses, and how the consent controls work.</a></p>\n<h2>Project agreements and NDAs</h2>\n<p>Project statements of work, NDAs, and bespoke commercial terms are handled case by case and are not published as generic website pages.</p>",
   "seo": {
     "title": "Legal | quickler",
     "description": "quickler legal pages for website terms, privacy, and cookie information.",
@@ -20,40 +57,3 @@
   ]
 }
 ---
-<section id="top">
-        <div class="page-shell">
-            <span class="eyebrow">Legal</span>
-            <h1>quickler legal information</h1>
-            <p class="page-lede">This section covers the public website terms, privacy information, cookie policy, and customer terms for the quickler workflow product. quickler Ltd is registered in Scotland under company number <a href="https://find-and-update.company-information.service.gov.uk/company/SC882439" target="_blank" rel="noopener noreferrer">SC882439</a> and with the ICO under registration C1910464. Bespoke project agreements and NDAs are handled separately when needed.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="card-link-grid">
-            <a class="card-link" href="/pages/privacy.html">
-                <span class="card-link-kicker">Privacy</span>
-                <h3 class="card-link-title">Privacy Policy</h3>
-                <p class="card-link-copy">How quickler handles enquiry data, website analytics, and any future reporting-related data flows.</p>
-            </a>
-            <a class="card-link" href="/pages/terms.html">
-                <span class="card-link-kicker">Terms</span>
-                <h3 class="card-link-title">Website Terms</h3>
-                <p class="card-link-copy">Basic terms for browsing quickler.co and making enquiries through the site.</p>
-            </a>
-            <a class="card-link" href="/pages/customer-terms.html">
-                <span class="card-link-kicker">Customer Terms</span>
-                <h3 class="card-link-title">Customer Terms + DPA</h3>
-                <p class="card-link-copy">Product terms for paying customers of the quickler workflow service, including the UK GDPR Article 28 data-processing schedule.</p>
-            </a>
-            <a class="card-link" href="/pages/cookies.html">
-                <span class="card-link-kicker">Cookies</span>
-                <h3 class="card-link-title">Cookie Policy</h3>
-                <p class="card-link-copy">What cookies or browser storage quickler uses, and how the consent controls work.</p>
-            </a>
-            <article class="card-link">
-                <span class="card-link-kicker">Bespoke work</span>
-                <h3 class="card-link-title">Project agreements and NDAs</h3>
-                <p class="card-link-copy">Project statements of work, NDAs, and bespoke commercial terms are handled case by case and are not published as generic website pages.</p>
-            </article>
-        </div>
-    </section>

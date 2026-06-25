@@ -1,8 +1,52 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/data-privacy-ireland.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Data and privacy in Ireland",
+    "heading": "Irish inspection data, kept in the EU.",
+    "lede": "Quickler hosts Irish inspection records on EU servers in Germany, aligns with GDPR, and turns each job into a structured digital record that beats paper for audit trails.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "prose",
+      "eyebrow": "Where the data lives",
+      "heading": "EU-hosted, inside the bloc",
+      "text": "Quickler hosts data on EU servers in Germany, running on Hetzner infrastructure. For an Irish firm that means inspection records, photos and dashboard data sit inside the European Union. One clear data path: WhatsApp in, structured record out. Rooted in UK compliance work, the product is country-agnostic and works anywhere WhatsApp works."
+    },
+    {
+      "type": "prose",
+      "eyebrow": "How it aligns with GDPR",
+      "heading": "The framework you already work under",
+      "text": "GDPR applies in Ireland through the Data Protection Act 2018, supervised by the Data Protection Commission. Quickler is built to align with GDPR and keep data inside the EU. This is general information, not legal advice: your firm still owns its lawful basis, retention periods and access decisions, managed against one structured record."
+    },
+    {
+      "type": "cards",
+      "eyebrow": "Paper versus a structured record",
+      "heading": "Why a digital record wins the audit trail",
+      "items": [
+        { "kicker": "Timestamped", "title": "Captured as work happens", "text": "Every answer, photo and voice note is dated and attributed as it is submitted over WhatsApp. A back-dated paper form carries none of that certainty." },
+        { "kicker": "Searchable", "title": "Live on a manager dashboard", "text": "A clean, machine-readable record with red, amber and green fault status. Show a regulator or client what happened on a site in seconds." },
+        { "kicker": "Portable", "title": "PDF export on demand", "text": "Export a PDF whenever a formal document is needed. The structured record is the source of truth; the PDF is the convenience copy." }
+      ]
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Common questions",
+      "heading": "No app, your own forms",
+      "text": "Workers answer over WhatsApp on the phone they already have, by text, voice note or photo. No app, no per-user fee. Upload any inspection or checklist form and Quickler builds it into a workflow.",
+      "actions": [
+        { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+        { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+      ]
+    }
+  ],
+  "seoBody": "<p>If your team runs inspections across sites in Ireland, the records they create are personal and operational data. This page sets out where Quickler keeps that data, how it aligns with GDPR, and why a clean structured digital record gives you a far stronger audit trail than a stack of paper forms.</p><h2>EU-hosted, inside the bloc</h2><p>Quickler hosts its data on EU servers in Germany, running on Hetzner infrastructure. For a firm operating in Ireland that means the inspection records, photos and dashboard data your team creates sit inside the European Union.</p><ul><li>Records and media stored on EU infrastructure in Germany.</li><li>No reliance on a national app store or a single phone network.</li><li>One clear data path: WhatsApp in, structured record out.</li></ul><p>Quickler is rooted in UK compliance work, but the product is country-agnostic. It works anywhere WhatsApp works, and the hosting choice keeps Irish data within the EU.</p><h2>The framework you already work under</h2><p>GDPR is the data-protection framework that applies in Ireland, given domestic effect through the Data Protection Act 2018 and supervised by the Data Protection Commission. Quickler is built to align with GDPR and to keep data inside the EU.</p><p>This page is general information rather than legal advice. Your firm still owns decisions that are specific to you: your lawful basis for processing, your retention periods, and who on your team can see which records. Quickler gives you a single structured record to manage those choices against, instead of paper scattered across vans and offices.</p><h2>Why a digital record wins the audit trail</h2><h3>Captured as the work happens</h3><p>Every answer, photo and voice note is dated and attributed as the field worker submits it over WhatsApp. A paper form filled in later, or back-dated in the van, carries none of that certainty.</p><h3>Live on a manager dashboard</h3><p>The output is a clean, machine-readable record with red, amber and green fault status, not a drawer of forms. When you need to show a regulator or client what happened on a given site, you find it in seconds.</p><h3>PDF export when you need a document</h3><p>A PDF can be exported from the record whenever a formal document is required. The structured record is the source of truth; the PDF is the convenience copy, not the other way round.</p><h2>Data and privacy questions from Irish firms</h2><h3>Where is the data stored?</h3><p>On EU servers in Germany, run on Hetzner infrastructure. Inspection records, photos and dashboard data stay inside the European Union.</p><h3>Is it GDPR-aligned for Ireland?</h3><p>Yes, Quickler is built to align with GDPR, the same framework that applies in Ireland under the Data Protection Act 2018. This is general information, not legal advice; confirm your own obligations with your adviser.</p><h3>Do workers install an app?</h3><p>No. Field workers answer over WhatsApp on the phone they already have, by text, voice note or photo. No app to install, no per-user fee. See our <a href=\"/pages/global-field-compliance.html\">field compliance overview</a> for how the workflow runs.</p><h3>Can it run our own forms?</h3><p>Yes. Upload any inspection or checklist form and Quickler builds it into a WhatsApp workflow, whether it is electrical, fire safety, plumbing, fleet or a site walk. Browse the <a href=\"/pages/services.html\">workflows</a> to see the range.</p>",
   "seo": {
     "title": "Field Inspection Data & Privacy in Ireland | Quickler",
     "description": "How Quickler handles field inspection data for Irish firms: EU-hosted on Hetzner servers in Germany, GDPR-aligned, and built so a clean structured digital record replaces paper for audit trails.",
@@ -36,97 +80,3 @@
   ]
 }
 ---
-<section id="top">
-        <div class="page-shell about-page-intro">
-            <span class="eyebrow">Data and privacy in Ireland</span>
-            <h1>Field inspection data and privacy in Ireland</h1>
-            <p class="page-lede">If your team runs inspections across sites in Ireland, the records they create are personal and operational data. This page sets out where Quickler keeps that data, how it aligns with GDPR, and why a clean structured digital record gives you a far stronger audit trail than a stack of paper forms.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="content-duo">
-            <div class="section-frame">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">Where the data lives</p>
-                        <h2>EU-hosted, inside the bloc</h2>
-                    </div>
-                </div>
-                <div class="detail-body">
-                    <p>Quickler hosts its data on EU servers in Germany, running on Hetzner infrastructure. For a firm operating in Ireland that means the inspection records, photos and dashboard data your team creates sit inside the European Union.</p>
-                    <ul>
-                        <li>Records and media stored on EU infrastructure in Germany.</li>
-                        <li>No reliance on a national app store or a single phone network.</li>
-                        <li>One clear data path: WhatsApp in, structured record out.</li>
-                    </ul>
-                    <p>Quickler is rooted in UK compliance work, but the product is country-agnostic. It works anywhere WhatsApp works, and the hosting choice keeps Irish data within the EU.</p>
-                </div>
-            </div>
-            <div class="section-frame">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">How it aligns with GDPR</p>
-                        <h2>The framework you already work under</h2>
-                    </div>
-                </div>
-                <div class="detail-body">
-                    <p>GDPR is the data-protection framework that applies in Ireland, given domestic effect through the Data Protection Act 2018 and supervised by the Data Protection Commission. Quickler is built to align with GDPR and to keep data inside the EU.</p>
-                    <p>This page is general information rather than legal advice. Your firm still owns decisions that are specific to you: your lawful basis for processing, your retention periods, and who on your team can see which records. Quickler gives you a single structured record to manage those choices against, instead of paper scattered across vans and offices.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">Paper versus a structured record</p>
-                <h2>Why a digital record wins the audit trail</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-3">
-            <article class="card-link">
-                <span class="card-link-kicker">Timestamped</span>
-                <h3 class="card-link-title">Captured as the work happens</h3>
-                <p class="card-link-copy">Every answer, photo and voice note is dated and attributed as the field worker submits it over WhatsApp. A paper form filled in later, or back-dated in the van, carries none of that certainty.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Searchable</span>
-                <h3 class="card-link-title">Live on a manager dashboard</h3>
-                <p class="card-link-copy">The output is a clean, machine-readable record with red, amber and green fault status, not a drawer of forms. When you need to show a regulator or client what happened on a given site, you find it in seconds.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Portable</span>
-                <h3 class="card-link-title">PDF export when you need a document</h3>
-                <p class="card-link-copy">A PDF can be exported from the record whenever a formal document is required. The structured record is the source of truth; the PDF is the convenience copy, not the other way round.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">Common questions</p>
-                <h2>Data and privacy questions from Irish firms</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-3">
-            <article class="card-link">
-                <h3 class="card-link-title">Where is the data stored?</h3>
-                <p class="card-link-copy">On EU servers in Germany, run on Hetzner infrastructure. Inspection records, photos and dashboard data stay inside the European Union.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">Is it GDPR-aligned for Ireland?</h3>
-                <p class="card-link-copy">Yes, Quickler is built to align with GDPR, the same framework that applies in Ireland under the Data Protection Act 2018. This is general information, not legal advice; confirm your own obligations with your adviser.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">Do workers install an app?</h3>
-                <p class="card-link-copy">No. Field workers answer over WhatsApp on the phone they already have, by text, voice note or photo. No app to install, no per-user fee. See our <a href="/pages/global-field-compliance.html">field compliance overview</a> for how the workflow runs.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">Can it run our own forms?</h3>
-                <p class="card-link-copy">Yes. Upload any inspection or checklist form and Quickler builds it into a WhatsApp workflow, whether it is electrical, fire safety, plumbing, fleet or a site walk. Browse the <a href="/pages/services.html">workflows</a> to see the range.</p>
-            </article>
-        </div>
-    </section>

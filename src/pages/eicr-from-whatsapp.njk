@@ -1,8 +1,52 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/eicr-from-whatsapp.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Guide",
+    "heading": "EICRs straight from WhatsApp.",
+    "lede": "A UK 2026 guide for electrical contractors who want to stop writing EICRs up at the desk. Every step from the engineer's first message to the qualifying electrician's signature.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "prose",
+      "eyebrow": "Why WhatsApp",
+      "heading": "Kill the second pass.",
+      "text": "EICRs are repetitive: the same questions in the same order across many properties. Data capture is fine on site. The write-up is the problem. WhatsApp closes the loop in real time. The engineer answers each circuit question as they walk the property, photos go to the right field, and the PDF is generated automatically once they submit the final answer."
+    },
+    {
+      "type": "steps",
+      "eyebrow": "The workflow",
+      "heading": "Booked to signed.",
+      "items": [
+        { "title": "Capture on site", "text": "The engineer opens WhatsApp and works through the EICR question set by text, voice note or photo. Voice notes are transcribed automatically." },
+        { "title": "Codes flagged live", "text": "Any C1, C2 or FI code appears on the dashboard at once, so the office can act the same day rather than waiting for the finished report." },
+        { "title": "PDF and sign-off", "text": "When the inspection is marked complete the PDF is produced from the data, and the qualifying electrician reviews and signs." }
+      ]
+    },
+    {
+      "type": "prose",
+      "eyebrow": "What it costs",
+      "heading": "Per firm, not per engineer.",
+      "text": "Starter is 50 pounds per month, Team is 100 pounds, and Business at 140 pounds is typically the right fit for an established firm running EICRs as one of several workflows. No setup fee. Setup to first live EICR usually takes under a week."
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Ready to try it?",
+      "heading": "Free trial, live in a week.",
+      "text": "Setup to first live workflow usually takes under a week.",
+      "actions": [
+        { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+        { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+      ]
+    }
+  ],
+  "seoBody": "<h2>Why electrical contractors run EICRs over WhatsApp</h2><p>EICRs are repetitive: the same question set in the same order across many properties. The data capture is fine on site. The problem is the write-up: the engineer drives back, transcribes their notebook into a Word template, attaches photos one by one, and emails it to the client days later.</p><p>WhatsApp closes the loop in real time. The engineer answers each circuit question in the chat as they walk the property. Photos go to the right field. The PDF is generated automatically once the engineer submits the final answer, the dashboard flags any C1, C2 or FI codes immediately, and the qualifying electrician reviews and signs.</p><h2>The workflow, step by step</h2><p>Each firm's EICR question set is built from their existing EICR template during onboarding, so the captured fields match what the firm already issues. The high-level shape:</p><ol><li><strong>Job is booked.</strong> The property address is registered in the dashboard.</li><li><strong>Engineer arrives on site.</strong> They open WhatsApp on the phone they already use and work through the EICR question set.</li><li><strong>Circuit-by-circuit capture.</strong> The engineer answers each circuit question by text, voice note or photo. Voice notes are transcribed automatically.</li><li><strong>Codes are flagged live.</strong> If the engineer reports a C1, C2 or FI code, it appears on the dashboard. The office can act on it the same day rather than waiting for the finished report.</li><li><strong>PDF generation.</strong> When the engineer marks the inspection complete, the EICR PDF is produced from the data automatically.</li><li><strong>Sign-off.</strong> The qualifying electrician reviews the PDF and signs.</li></ol><h2>What the engineer sees</h2><p>They see WhatsApp. The same conversation interface they already use every day. No app to install, no login to forget, no menus to learn. Each question is a normal message; each reply is a normal reply.</p><h2>How it compares to paper</h2><p>No transcription, no lost notebooks, photos linked automatically to the question they answer, codes flagged in real time instead of next morning, full audit trail.</p><p>For honest comparison against other tools, see <a href=\"/pages/alternatives.html\">where Quickler fits and where it does not</a>.</p><h2>What it costs</h2><p>Pricing is per firm, not per engineer. Starter is £50 per month (one engineer, three workflows). Team is £100 per month (four engineers, five workflows). For an established electrical firm running EICRs as one of several workflows, Business at £140 per month (twelve engineers, eight workflows) is typically the right fit. Billed monthly, with UK Direct Debit and other payment methods supported. Rooted in UK compliance, Quickler works anywhere WhatsApp does and is used across English-speaking markets including the UK, Ireland, the United States, Canada, Australia and New Zealand. <a href=\"/pages/global-field-compliance.html\">Quickler works in any country</a>. <a href=\"/pages/services.html#pricing\">Full pricing</a>.</p><p>There is no setup fee. Setup to first live EICR usually takes under a week. <a href=\"https://app.quickler.co/signup\">Start a free trial</a>.</p><h2>Frequently asked questions</h2><h3>Who signs the final EICR?</h3><p>The qualifying electrician, exactly as on paper. Quickler captures the data and produces the PDF; it does not sign anything itself. Every response, photo and timestamp is stored against the job so the evidence chain is intact.</p><h3>Does the engineer have to answer every question?</h3><p>The engineer can reply \"skip\" or \"n/a\" to any non-required field and move on.</p><h3>How are photos handled?</h3><p>Each photo question expects an image attached to the WhatsApp reply. The photo is linked to that question in the record and stored against the job.</p><h3>Does Quickler need a Twilio account or Meta Business account?</h3><p>No. Quickler runs the WhatsApp Business API integration on the customer's behalf. The contractor provides only their company details and the engineer phone numbers.</p><h2>Ready to try it?</h2><p>Free trial. Setup to first live workflow usually takes under a week. <a href=\"https://app.quickler.co/signup\">Start free trial</a>.</p>",
   "seo": {
     "title": "How to Generate an EICR from WhatsApp | UK 2026 Guide",
     "description": "Step-by-step guide for UK electrical contractors generating Electrical Installation Condition Reports (EICRs) from WhatsApp messages instead of paper or a separate app. How the workflow runs, what the PDF looks like, how the qualifying electrician signs off, and how it compares to iCertifi and iAuditor.",
@@ -27,88 +71,8 @@
     "lang": "en",
     "jsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"How to Generate an EICR from WhatsApp | UK 2026 Guide\",\n      \"description\": \"Step-by-step guide for UK electrical contractors generating Electrical Installation Condition Reports (EICRs) from WhatsApp messages instead of paper or a separate app. How the workflow runs, what the PDF looks like, how the qualifying electrician signs off, and how it compares to iCertifi and iAuditor.\",\n      \"author\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Quickler Ltd\"\n      },\n      \"publisher\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Quickler Ltd\",\n        \"url\": \"https://quickler.co/\"\n      },\n      \"datePublished\": \"2026-05-26\",\n      \"dateModified\": \"2026-05-26\",\n      \"inLanguage\": \"en-GB\"\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Who signs the final EICR?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"The qualifying electrician, exactly as on paper. Quickler captures the data and produces the PDF; it does not sign anything itself. Every response, photo and timestamp is stored against the job so the evidence chain is intact.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Does the engineer have to answer every question?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"The engineer can reply 'skip' or 'n/a' to any non-required field and move on.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"How are photos handled?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Each photo question expects an image attached to the WhatsApp reply. The photo is linked to that question in the record and stored against the job.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Does Quickler need a Twilio account or Meta Business account?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"No. Quickler runs the WhatsApp Business API integration on the customer's behalf. The contractor provides only their company details and the engineer phone numbers.\"\n          }\n        }\n      ]\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"Home\",\n          \"item\": \"https://quickler.co/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"How to Generate an EICR from WhatsApp\",\n          \"item\": \"https://quickler.co/pages/eicr-from-whatsapp.html\"\n        }\n      ]\n    }\n  ]\n}"
   },
-  "headStyle": "\n        .long-form-body { max-width: 760px; margin: 0 auto; }\n        .long-form-body h2 { margin-top: 2.4rem; }\n        .long-form-body h3 { margin-top: 1.6rem; }\n        .long-form-body ul, .long-form-body ol { padding-left: 1.4rem; }\n        .long-form-body li { margin-bottom: 0.4rem; }\n        .long-form-body p { margin: 0.8rem 0; }\n        .callout { background: rgba(244, 63, 140, 0.06); border-left: 3px solid #f43f8c; padding: 0.9rem 1.1rem; border-radius: 6px; margin: 1rem 0; }\n    ",
   "scripts": [
     "/js/analytics-events.js"
   ]
 }
 ---
-<section id="top">
-        <div class="page-shell about-page-intro">
-            <span class="eyebrow">Guide</span>
-            <h1>How to generate an EICR from WhatsApp.</h1>
-            <p class="page-lede">A UK 2026 guide for electrical contractors who want to stop writing EICRs up at the desk after every job. Every step from the engineer's first WhatsApp message through to the qualifying electrician's signature on the final PDF.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="long-form-body">
-            <h2>Why electrical contractors run EICRs over WhatsApp</h2>
-            <p>EICRs are repetitive: the same question set in the same order across many properties. The data capture is fine on site. The problem is the write-up: the engineer drives back, transcribes their notebook into a Word template, attaches photos one by one, and emails it to the client days later.</p>
-            <p>WhatsApp closes the loop in real time. The engineer answers each circuit question in the chat as they walk the property. Photos go to the right field. The PDF is generated automatically once the engineer submits the final answer, the dashboard flags any C1, C2 or FI codes immediately, and the qualifying electrician reviews and signs.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="long-form-body">
-            <h2>The workflow, step by step</h2>
-            <p>Each firm's EICR question set is built from their existing EICR template during onboarding, so the captured fields match what the firm already issues. The high-level shape:</p>
-            <ol>
-                <li><strong>Job is booked.</strong> The property address is registered in the dashboard.</li>
-                <li><strong>Engineer arrives on site.</strong> They open WhatsApp on the phone they already use and work through the EICR question set.</li>
-                <li><strong>Circuit-by-circuit capture.</strong> The engineer answers each circuit question by text, voice note or photo. Voice notes are transcribed automatically.</li>
-                <li><strong>Codes are flagged live.</strong> If the engineer reports a C1, C2 or FI code, it appears on the dashboard. The office can act on it the same day rather than waiting for the finished report.</li>
-                <li><strong>PDF generation.</strong> When the engineer marks the inspection complete, the EICR PDF is produced from the data automatically.</li>
-                <li><strong>Sign-off.</strong> The qualifying electrician reviews the PDF and signs.</li>
-            </ol>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="long-form-body">
-            <h2>What the engineer sees</h2>
-            <p>They see WhatsApp. The same conversation interface they already use every day. No app to install, no login to forget, no menus to learn. Each question is a normal message; each reply is a normal reply.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="long-form-body">
-            <h2>How it compares to paper</h2>
-            <p>No transcription, no lost notebooks, photos linked automatically to the question they answer, codes flagged in real time instead of next morning, full audit trail.</p>
-            <p>For honest comparison against other tools, see <a href="/pages/alternatives.html">where Quickler fits and where it does not</a>.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="long-form-body">
-            <h2>What it costs</h2>
-            <p>Pricing is per firm, not per engineer. Starter is £50 per month (one engineer, three workflows). Team is £100 per month (four engineers, five workflows). For an established electrical firm running EICRs as one of several workflows, Business at £140 per month (twelve engineers, eight workflows) is typically the right fit. Billed monthly, with UK Direct Debit and other payment methods supported. Rooted in UK compliance, Quickler works anywhere WhatsApp does and is used across English-speaking markets including the UK, Ireland, the United States, Canada, Australia and New Zealand. <a href="/pages/global-field-compliance.html">Quickler works in any country</a>. <a href="/pages/services.html#pricing">Full pricing</a>.</p>
-         <p>There is no setup fee. Setup to first live EICR usually takes under a week. <a href="https://app.quickler.co/signup">Start a free trial</a>.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="long-form-body">
-            <h2>Frequently asked questions</h2>
-            <h3>Who signs the final EICR?</h3>
-            <p>The qualifying electrician, exactly as on paper. Quickler captures the data and produces the PDF; it does not sign anything itself. Every response, photo and timestamp is stored against the job so the evidence chain is intact.</p>
-            <h3>Does the engineer have to answer every question?</h3>
-            <p>The engineer can reply "skip" or "n/a" to any non-required field and move on.</p>
-            <h3>How are photos handled?</h3>
-            <p>Each photo question expects an image attached to the WhatsApp reply. The photo is linked to that question in the record and stored against the job.</p>
-            <h3>Does Quickler need a Twilio account or Meta Business account?</h3>
-            <p>No. Quickler runs the WhatsApp Business API integration on the customer's behalf. The contractor provides only their company details and the engineer phone numbers.</p>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to try it?</h2>
-            <p>Free trial. Setup to first live workflow usually takes under a week.</p>
-            <div class="hero-actions">
-                <a href="https://app.quickler.co/signup" class="btn btn-primary">Start free trial</a>
-                <a href="/pages/faq.html" class="btn btn-secondary">Read the FAQ</a>
-                <a href="mailto:hello@quickler.co" class="btn btn-secondary">Email us</a>
-            </div>
-        </div>
-    </section>

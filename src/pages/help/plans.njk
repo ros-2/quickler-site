@@ -1,8 +1,54 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/help/plans.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Help centre",
+    "heading": "Plans and billing made simple.",
+    "lede": "Quickler is priced per firm, not per seat. Pick the plan that fits your number of engineers, pay by Direct Debit, and change tier whenever you need to.",
+    "actions": [
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-primary" },
+      { "label": "All guides", "href": "/pages/help/index.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "cards",
+      "eyebrow": "Plans",
+      "heading": "Priced per firm",
+      "items": [
+        { "kicker": "From £50/mo", "title": "Starter and Team", "text": "Starter covers 1 engineer and 3 workflows at £50. Team covers 4 engineers and 5 workflows at £100.", "href": "/pages/pricing.html" },
+        { "kicker": "From £140/mo", "title": "Business and Scale", "text": "Business covers 12 engineers and 8 workflows at £140. Scale covers 30 engineers and 10 workflows at £300.", "href": "/pages/pricing.html" }
+      ]
+    },
+    {
+      "type": "prose",
+      "eyebrow": "Payment",
+      "heading": "Direct Debit, no cards stored",
+      "text": "You authorise once and we draw monthly from your bank account. No card numbers are stored. You are protected by the Direct Debit Guarantee, so refunds are immediate if anything goes wrong."
+    },
+    {
+      "type": "steps",
+      "eyebrow": "Changing tier",
+      "heading": "Upgrade or downgrade anytime",
+      "items": [
+        { "title": "Upgrading", "text": "Hit a limit and the dashboard prompts you. You pay the pro-rata difference for the rest of the cycle; the new price applies from the next one." },
+        { "title": "Downgrading", "text": "Remove engineers until you fit the lower plan, then accept the prompt. The new price takes effect next cycle." }
+      ]
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Cancelling and invoices",
+      "heading": "Leave whenever you like",
+      "text": "Email us to cancel and your subscription ends at the next billing date. Export your data first. Every payment generates an invoice emailed to your primary admin.",
+      "actions": [
+        { "label": "Message us", "href": "/pages/help/index.html#contact-form-section", "style": "btn-primary" },
+        { "label": "Data and privacy", "href": "/pages/help/privacy.html", "style": "btn-secondary" }
+      ]
+    }
+  ],
+  "seoBody": "<p>Quickler is priced per firm, not per seat. Pick the plan that fits the number of engineers you have.</p><h2>Plans</h2><ul><li><strong>Starter</strong> &mdash; 1 engineer, 3 workflows, &pound;50 per month.</li><li><strong>Team</strong> &mdash; 4 engineers, 5 workflows, &pound;100 per month.</li><li><strong>Business</strong> &mdash; 12 engineers, 8 workflows, &pound;140 per month.</li><li><strong>Scale</strong> &mdash; 30 engineers, 10 workflows, &pound;300 per month.</li></ul><h2>Payment</h2><p>We collect by <strong>Direct Debit</strong>. You authorise once; we draw monthly from your bank account. No card numbers stored. You're protected by the Direct Debit Guarantee &mdash; refunds are immediate if anything goes wrong.</p><h2>Upgrading</h2><p>Hit a limit and the dashboard prompts you to upgrade. You pay the pro-rata difference for the rest of the current cycle; the new price applies from the next one.</p><h2>Downgrading</h2><p>Remove engineers until you fit within the lower plan, then accept the downgrade prompt. New price takes effect next cycle.</p><h2>Cancelling</h2><p>Email <a href=\"mailto:hello@quickler.co\">hello@quickler.co</a>. Your subscription ends at the next billing date. Export your data first &mdash; see <a href=\"/pages/help/privacy.html\">Data &amp; privacy</a>.</p><h2>Invoices</h2><p>Every payment generates an invoice emailed to your primary admin. Need a historical one resent? Email support.</p><p>Still stuck? Email <a href=\"mailto:hello@quickler.co\">hello@quickler.co</a> &mdash; we reply within one business day.</p>",
   "seo": {
     "title": "Help: Plans & billing | Quickler",
     "description": "Quickler pricing tiers, Direct Debit billing, upgrades, downgrades, cancelling and invoices.",
@@ -17,69 +63,8 @@
     "lang": "en",
     "jsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"TechArticle\",\n  \"headline\": \"Plans & billing\",\n  \"description\": \"Quickler pricing tiers, Direct Debit billing, upgrades, downgrades, cancelling and invoices.\",\n  \"url\": \"https://quickler.co/pages/help/plans.html\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Philip Ross\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Quickler Ltd\"\n  }\n}"
   },
-  "headStyle": "\n      .help-shell { max-width: 1000px; margin: 0 auto; padding: 40px 28px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; }\n      .help-nav { position: sticky; top: 32px; align-self: start; }\n      .help-nav h3 { margin: 0 0 14px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; }\n      .help-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }\n      .help-nav a { display: block; padding: 7px 12px; border-radius: 6px; color: #334155; text-decoration: none; font-size: 0.92rem; }\n      .help-nav a:hover { background: rgba(15,23,42,0.05); color: #0d1a3a; }\n      .help-nav a.current { background: rgba(47,107,255,0.1); color: #2f6bff; font-weight: 600; }\n      .help-body h1 { margin: 0 0 10px; font-size: 1.8rem; }\n      .help-body h2 { margin-top: 32px; font-size: 1.2rem; color: #0d1a3a; }\n      .help-body h3 { margin-top: 22px; font-size: 1rem; color: #0d1a3a; }\n      .help-body p, .help-body li { line-height: 1.65; color: #334155; }\n      .help-body code { background: rgba(15,23,42,0.06); padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }\n      .help-body ol, .help-body ul { padding-left: 22px; }\n      .help-body .callout { background: rgba(59,130,246,0.06); border-left: 3px solid #3b82f6; padding: 14px 18px; border-radius: 4px; margin: 18px 0; }\n      @media (max-width: 720px) {\n        .help-shell { grid-template-columns: 1fr; gap: 20px; padding: 24px 18px; }\n        .help-nav { position: static; }\n      }\n    ",
   "scripts": [
     "/js/analytics-events.js"
   ]
 }
 ---
-<section id="top">
-      <div class="help-shell">
-        <aside class="help-nav">
-          <h3>Help centre</h3>
-          <ul>
-            <li><a href="/pages/help/index.html">Home</a></li>
-            <li><a href="/pages/help/getting-started.html">Getting started</a></li>
-            <li><a href="/pages/help/workflows.html">Workflows</a></li>
-            <li><a href="/pages/help/engineers.html">Engineers</a></li>
-            <li><a href="/pages/help/team.html">Team management</a></li>
-            <li><a href="/pages/help/plans.html" class="current">Plans &amp; billing</a></li>
-            <li><a href="/pages/help/privacy.html">Data &amp; privacy</a></li>
-            <li><a href="/pages/help/troubleshooting.html">Troubleshooting</a></li>
-            <li><a href="/pages/help/faq.html">FAQ</a></li>
-            <li><a href="/pages/help/contact.html">Contact</a></li>
-          </ul>
-        </aside>
-        <article class="help-body">
-          <h1>Plans &amp; billing</h1>
-          <p>Quickler is priced per firm, not per seat. Pick the plan that fits the number of engineers you have.</p>
-
-          <h2>Plans</h2>
-          <table style="width:100%;border-collapse:collapse;margin:12px 0;">
-            <thead>
-              <tr style="border-bottom:2px solid rgba(15,23,42,0.1);">
-                <th style="text-align:left;padding:6px 4px;">Plan</th>
-                <th style="text-align:right;padding:6px 4px;">Engineers</th>
-                <th style="text-align:right;padding:6px 4px;">Workflows</th>
-                <th style="text-align:right;padding:6px 4px;">Per month</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom:1px solid rgba(15,23,42,0.06);"><td style="padding:6px 4px;">Starter</td><td style="text-align:right;">1</td><td style="text-align:right;">3</td><td style="text-align:right;">&pound;50</td></tr>
-              <tr style="border-bottom:1px solid rgba(15,23,42,0.06);"><td style="padding:6px 4px;">Team</td><td style="text-align:right;">4</td><td style="text-align:right;">5</td><td style="text-align:right;">&pound;100</td></tr>
-              <tr style="border-bottom:1px solid rgba(15,23,42,0.06);"><td style="padding:6px 4px;">Business</td><td style="text-align:right;">12</td><td style="text-align:right;">8</td><td style="text-align:right;">&pound;140</td></tr>
-              <tr><td style="padding:6px 4px;">Scale</td><td style="text-align:right;">30</td><td style="text-align:right;">10</td><td style="text-align:right;">&pound;300</td></tr>
-            </tbody>
-          </table>
-
-          <h2>Payment</h2>
-          <p>We collect by <strong>Direct Debit</strong>. You authorise once; we draw monthly from your bank account. No card numbers stored. You're protected by the Direct Debit Guarantee &mdash; refunds are immediate if anything goes wrong.</p>
-
-          <h2>Upgrading</h2>
-          <p>Hit a limit and the dashboard prompts you to upgrade. You pay the pro-rata difference for the rest of the current cycle; the new price applies from the next one.</p>
-
-          <h2>Downgrading</h2>
-          <p>Remove engineers until you fit within the lower plan, then accept the downgrade prompt. New price takes effect next cycle.</p>
-
-          <h2>Cancelling</h2>
-          <p>Email <a href="mailto:hello@quickler.co">hello@quickler.co</a>. Your subscription ends at the next billing date. Export your data first &mdash; see <a href="/pages/help/privacy.html">Data &amp; privacy</a>.</p>
-
-          <h2>Invoices</h2>
-          <p>Every payment generates an invoice emailed to your primary admin. Need a historical one resent? Email support.</p>
-          <hr style="margin-top:40px;border:none;border-top:1px solid rgba(15,23,42,0.08);">
-          <p style="font-size:0.85rem;color:#64748b;">
-            Still stuck? Email <a href="mailto:hello@quickler.co">hello@quickler.co</a> &mdash; we reply within one business day.
-          </p>
-        </article>
-      </div>
-    </section>

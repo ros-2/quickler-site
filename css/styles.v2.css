@@ -4737,26 +4737,33 @@ nav {
 }
 .story-hero .story-inner { max-width: 920px; }
 .story-h1 {
-    font-size: clamp(2.6rem, 6vw, 4.6rem);
-    line-height: 1.05;
+    /* Sized to fit the safe zone: vh-relative so on a short screen the heading
+       shrinks and never fills the band. min() against a vh value guarantees a
+       big multi-line heading still leaves empty space top and bottom. */
+    font-size: min(clamp(2.2rem, 5vw, 4rem), 8.5vh);
+    line-height: 1.06;
     font-weight: 800;
     letter-spacing: -0.04em;
     color: var(--ink-strong);
     margin: 0;
 }
 .story-lede {
-    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
-    line-height: 1.6;
+    font-size: min(clamp(1.05rem, 1.8vw, 1.35rem), 2.4vh);
+    line-height: 1.55;
     color: var(--ink-soft);
     max-width: 44ch;
-    margin: clamp(22px, 3vw, 32px) auto 0;
+    /* vh-relative top margin so the hero stack compresses on short screens,
+       keeping the bottom safe band empty. */
+    margin: min(clamp(18px, 3vw, 30px), 3vh) auto 0;
 }
 .story-actions {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-3);
     justify-content: center;
-    margin-top: clamp(24px, 3.5vw, 38px);
+    /* vh-relative so the buttons pull up on short screens, keeping the bottom
+       safe band empty. */
+    margin-top: min(clamp(20px, 3.5vw, 36px), 3.2vh);
 }
 
 /* Eyebrow + headings shared across story sections */
@@ -5465,8 +5472,14 @@ nav {
        panel AND the fixed down-arrow, so content padding and arrow position
        are always the same physical region. Generous on short screens (the vh
        term) so a big hero never drops onto the arrow. */
-    --safe-top: clamp(96px, 14vh, 124px);
-    --safe-bottom: clamp(150px, 22vh, 180px);
+    /* SAFE ZONE bands -- EMPTY space top and bottom that content never enters.
+       --safe-top clears the nav pill PLUS a breathing gap; --safe-bottom clears
+       the arrow PLUS a breathing gap. Content lives only in the middle zone
+       and is capped to it (see .story-inner max-height below), so there is
+       always visible empty space above and below the content on every panel. */
+    --safe-top: clamp(120px, 17vh, 168px);
+    --safe-bottom: clamp(120px, 17vh, 168px);
+    --safe-zone-h: calc(100dvh - var(--safe-top) - var(--safe-bottom));
     height: 100vh;
     height: 100dvh;
     overflow-y: scroll;
