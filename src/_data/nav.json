@@ -3,6 +3,7 @@
     { "label": "Home", "href": "/" },
     { "label": "Workflows", "href": "/pages/services.html" },
     { "label": "Pricing", "href": "/pages/pricing.html" },
+    { "label": "About", "href": "/pages/about.html" },
     { "label": "Support", "href": "/pages/help/index.html" }
   ],
   "login": { "label": "Login", "href": "https://app.quickler.co/login" },
