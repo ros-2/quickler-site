@@ -88,7 +88,11 @@
 {%- elif loop.index is odd %}{% set altcls = "story-feature" %}
 {%- else %}{% set altcls = "" %}{% endif %}
 {%- if b.type == "prose" %}
-<section class="story {{ altcls }}">
+{#- bgImage: a full-bleed photo behind this panel with a dark scrim over it so
+    the text stays legible. The panel forces the white-on-dark text styling
+    (story-photo reuses .story-feature's white text rules) regardless of the
+    alternating colour rhythm. -#}
+<section class="story {{ 'story-photo' if b.bgImage else altcls }}"{% if b.bgImage %} style="--bg-photo: url('{{ b.bgImage }}')"{% endif %}>
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         {%- if b.heading %}<h2 class="story-h2">{{ b.heading | safe }}</h2>{% endif %}
