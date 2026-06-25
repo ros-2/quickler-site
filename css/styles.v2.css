@@ -4734,12 +4734,13 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* The hero is the first screen and its content is moderate, so it does not
-       need the full safe-zone bands the denser panels use. Tighter, symmetric
-       bands let the heading + lede + button sit closer to the true vertical
-       centre of the viewport rather than reading as low on the page. */
-    padding-top: clamp(84px, 12vh, 120px);
-    padding-bottom: clamp(84px, 12vh, 120px);
+    /* The hero is the first screen and its content is moderate. Bias the
+       content ABOVE the centre line: the block is centred (justify-content
+       from .story) but a larger bottom band than top band lifts it up the
+       page by roughly a quarter of the viewport, which reads as a stronger,
+       higher-anchored opening screen. */
+    padding-top: clamp(72px, 9vh, 104px);
+    padding-bottom: clamp(180px, 34vh, 360px);
 }
 .story-hero .story-inner { max-width: 920px; }
 .story-h1 {
