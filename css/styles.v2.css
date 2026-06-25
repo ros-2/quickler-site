@@ -5463,14 +5463,19 @@ nav {
     height: 100dvh;
     overflow-y: scroll;
     overflow-x: hidden;
-    /* NO CSS scroll-snap. Snap on a container does not coexist with a
-       long-form tail (seoBody + footer): mandatory trapped you, proximity
-       kept re-grabbing the last panel at the boundary, so you could never
-       reach the bottom -- the "jumps back up" bug, in every snap mode. The
-       reel feel comes from full-height panels alone; reel-nav.js still does
-       one-flick-one-panel on touch via a settle clamp, but only within the
-       panels, leaving the long tail to scroll like a normal document. */
-    scroll-snap-type: none;
+    /* PROXIMITY snap restores the reel feel (one flick lands on one panel)
+       WITHOUT the bottom-jump. The earlier jump came from two now-fixed
+       causes: the footer was a full-height snap target, and the JS clamp
+       re-snapped in the long tail. Both are fixed -- the footer and seoBody
+       are scroll-snap-align:none (normal-flow), and reel-nav.js bails out of
+       its clamp once you enter the tail. So proximity snaps between the reel
+       panels but lets the long SEO text + footer scroll like a document, and
+       you can reach the very bottom. */
+    scroll-snap-type: y proximity;
+    /* NOTE: proximity (not mandatory) on purpose. Mandatory gives a stronger
+       reel snap but re-grabs at the tail boundary on some engines; proximity
+       snaps cleanly between panels and releases into the long-form tail so
+       the bottom stays reachable. */
     scroll-behavior: smooth;
     /* NO scroll-padding-top here: panels are full-bleed and snap to their
        TRUE top edge. The nav floats OVER the panel, so an offset would make
