@@ -5376,6 +5376,104 @@ nav {
     .reel-hint { animation: reel-hint-in 0.4s ease 0.3s forwards; }
 }
 
+/* Long-form SEO region inside a reel page. Opts OUT of snap (scroll-snap-align
+   none) so it scrolls like a normal article instead of forcing a viewport
+   snap; min-height auto so it is exactly as tall as its text. Sits between
+   the last reel panel and the footer. Crawlable, readable, indexable. */
+.story-seo {
+    scroll-snap-align: none;
+    background: #ffffff;
+    color: var(--ink);
+    padding: clamp(48px, 8vh, 96px) var(--gutter);
+}
+.story-seo-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.75;
+}
+.story-seo-inner h2 {
+    font-size: clamp(1.4rem, 3.2vw, 2rem);
+    margin: 2em 0 0.6em;
+    line-height: 1.2;
+}
+.story-seo-inner h2:first-child { margin-top: 0; }
+.story-seo-inner h3 {
+    font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+    margin: 1.6em 0 0.5em;
+}
+.story-seo-inner p { margin: 0 0 1.1em; }
+.story-seo-inner ul, .story-seo-inner ol { margin: 0 0 1.2em; padding-left: 1.3em; }
+.story-seo-inner li { margin: 0.35em 0; }
+.story-seo-inner a { color: var(--blue-text); }
+
+/* Clean, minimal contact form for the support reel panel. Two-up name/email
+   row, one message box, one button -- replaces the old eight-field Formspree
+   block that overflowed the panel. Sits inside a normal .story panel. */
+.contact-clean { width: 100%; max-width: 540px; margin: 0 auto; }
+.contact-clean-form { margin-top: 22px; display: flex; flex-direction: column; gap: 12px; text-align: left; }
+.ccf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.contact-clean-form input,
+.contact-clean-form textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--line-strong);
+    border-radius: 14px;
+    background: var(--surface-card);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.95rem;
+}
+.contact-clean-form textarea { resize: vertical; min-height: 84px; }
+.contact-clean-form input:focus,
+.contact-clean-form textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(47, 107, 255, 0.15);
+}
+.contact-clean-form .btn { width: 100%; margin-top: 4px; }
+.contact-clean-alt { margin-top: 14px; font-size: 0.9rem; color: var(--ink-soft); }
+.contact-clean-alt a { color: var(--blue-text); font-weight: 600; }
+@media (max-width: 460px) { .ccf-row { grid-template-columns: 1fr; } }
+
+/* Persistent video mini-player. The walkthrough iframe is re-parented here
+   by js/persist-video.js when its panel scrolls off, so playback continues
+   in a pinned corner; it docks back into the panel when you scroll to it. */
+.video-mini {
+    position: fixed;
+    right: max(14px, env(safe-area-inset-right, 0px));
+    bottom: max(14px, env(safe-area-inset-bottom, 0px));
+    z-index: 96;
+    width: min(320px, 42vw);
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 10px 32px rgba(10, 20, 60, 0.4);
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.video-mini.is-on { opacity: 1; transform: none; pointer-events: auto; }
+.video-mini iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-mini-close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    z-index: 2;
+    width: 26px;
+    height: 26px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+.video-mini-close:hover { background: rgba(0, 0, 0, 0.85); }
+@media (max-width: 540px) { .video-mini { width: 54vw; } }
+
 .story-scroll {
     height: 100vh;
     height: 100dvh;

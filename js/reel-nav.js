@@ -74,6 +74,51 @@
             });
         }
 
+        // --- Anchor nav inside the snap container ---
+        // A native #anchor jump sets scrollTop instantly and fights the
+        // scroll-snap engine, leaving the panel half-loaded with the nav
+        // clipping it. Intercept same-page anchor clicks and smooth-scroll
+        // the CONTAINER to the panel that holds the target instead.
+        function panelFor(el) {
+            while (el && el !== scroller) {
+                if (el.classList && el.classList.contains("story")) return el;
+                el = el.parentElement;
+            }
+            return null;
+        }
+        function scrollToHash(hash) {
+            if (!hash || hash === "#") return false;
+            var target;
+            try { target = scroller.querySelector(hash); } catch (e) { return false; }
+            if (!target) return false;
+            var panel = panelFor(target) || target;
+            panel.scrollIntoView({ behavior: "smooth", block: "start" });
+            return true;
+        }
+        document.addEventListener("click", function (e) {
+            var a = e.target.closest && e.target.closest('a[href*="#"]');
+            if (!a) return;
+            var url = a.getAttribute("href");
+            // Only same-page anchors (start with # or current path + #).
+            var hash = url.indexOf("#") === 0 ? url : null;
+            if (!hash && url.indexOf(location.pathname + "#") === 0) {
+                hash = url.slice(url.indexOf("#"));
+            }
+            if (!hash) return;
+            if (scrollToHash(hash)) {
+                e.preventDefault();
+                if (history.replaceState) history.replaceState(null, "", hash);
+                // Close the mobile menu if it was open.
+                var nav = document.querySelector("nav");
+                if (nav) nav.classList.remove("nav-open");
+            }
+        });
+        // Honour a hash already in the URL on load (e.g. arriving at
+        // services.html#pricing from another page).
+        if (location.hash) {
+            setTimeout(function () { scrollToHash(location.hash); }, 200);
+        }
+
         function currentIndex() {
             var h = scroller.clientHeight || 1;
             return Math.round(scroller.scrollTop / h);

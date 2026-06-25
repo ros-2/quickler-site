@@ -172,6 +172,19 @@
 {%- endif %}
 {%- endfor %}
 
+{#- Optional long-form SEO region. A reel page (<=100-word panels) cannot
+    hold the 800+ words Google wants, so `seoBody` (raw HTML in front-matter)
+    renders as a normal, crawlable article AFTER the reel panels, BEFORE the
+    footer. It does NOT snap -- it scrolls like a normal document so the full
+    text is reachable. This is what lets reel + SEO live on one URL. -#}
+{%- if seoBody %}
+<section class="story-seo" aria-label="More detail">
+    <div class="story-seo-inner">
+        {{ seoBody | safe }}
+    </div>
+</section>
+{%- endif %}
+
 {#- Footer is its OWN reel panel -- a uniform full-screen .story like every
     other section, so it behaves identically on every device (no special
     'tail' region that broke on mobile). Any free-form page body renders
