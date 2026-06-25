@@ -68,6 +68,15 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
 }
+/* On the reel pages, paint the document root with the brand gradient so a
+   sub-pixel / viewport-unit rounding gap at the very top or bottom edge can
+   NEVER show white (Firefox resolves svh shorter than the real viewport, so
+   the scroll host can fall a few px short -- whatever shows behind it is now
+   gradient, not the browser's default white). */
+html:has(body.page-story) {
+    background: var(--brand-gradient);
+    background-attachment: fixed;
+}
 
 @media (prefers-reduced-motion: reduce) {
     html {
@@ -103,7 +112,7 @@ body {
    is locked to the viewport; the nav floats fixed above it. */
 body.page-story {
     height: 100vh;
-    height: 100svh;
+    height: 100dvh;
     min-height: 0;
     overflow: hidden;
     background: transparent;
@@ -5237,7 +5246,7 @@ nav {
    ============================================================ */
 .story-scroll {
     height: 100vh;
-    height: 100svh;
+    height: 100dvh;
     overflow-y: scroll;
     overflow-x: hidden;
     /* Mandatory for the firm reel feel. Every region -- including the
