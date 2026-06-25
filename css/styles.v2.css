@@ -4857,8 +4857,10 @@ nav {
     margin: clamp(28px, 3.5vw, 44px) 0 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(20px, 3vw, 36px);
+    /* Flow by count: 3 steps -> 3 across, 4 steps -> 4 across on wide and
+       2x2 on narrower, so a 4-step panel never towers. */
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: clamp(16px, 2.5vw, 30px);
     width: 100%;
     text-align: left;
 }
@@ -4900,6 +4902,57 @@ nav {
     gap: var(--space-3);
     justify-content: center;
     margin-top: clamp(28px, 4vw, 44px);
+}
+
+/* Price cards: 4 tiers across, big price, gradient top accent. Used on the
+   services page pricing panel. Wraps to 2x2 then 1-col on small screens. */
+.story-prices {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(12px, 1.5vw, 20px);
+    width: 100%;
+    max-width: var(--width-page);
+    margin: clamp(24px, 3.5vw, 40px) auto 0;
+}
+.price-card {
+    position: relative;
+    background: var(--surface-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: clamp(20px, 2vw, 28px) clamp(14px, 1.5vw, 20px);
+    text-align: center;
+    overflow: hidden;
+}
+.price-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--brand-gradient);
+}
+.price-card .price-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--blue-text);
+}
+.price-card .price-figure {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--ink-strong);
+    line-height: 1.05;
+    margin: 8px 0 2px;
+}
+.price-card .price-figure span { font-size: 0.5em; font-weight: 700; color: var(--ink-soft); }
+.price-card .price-unit { font-size: 0.92rem; color: var(--ink-soft); }
+/* Keep 2x2 even on phones so the pricing panel stays short enough to fit
+   one screen (4 stacked cards would overflow). */
+@media (max-width: 860px) {
+    .story-prices { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .price-card { padding: 16px 10px; }
+    .price-card .price-figure { font-size: clamp(1.6rem, 7vw, 2.1rem); }
 }
 .story-tag {
     padding: 10px 20px;
@@ -5374,6 +5427,55 @@ nav {
     margin: 0 auto;
 }
 
+/* A panel holding a contact form is the ONE place internal scroll is fine:
+   a 7-field form can exceed one screen and users expect to scroll a form.
+   The .story panel wrapping a .story-form-shell gets a scrollable inner. */
+.story:has(.story-form-shell) { overflow-y: auto; }
+.story-form-shell {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: left;
+}
+.story-form-shell .form-card-header { text-align: center; margin-bottom: clamp(18px, 3vw, 28px); }
+.story-form-shell h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--ink-strong);
+    margin: 0;
+}
+.story-form-shell .form-group { margin-bottom: 16px; }
+.story-form-shell label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+}
+.story-form-shell input,
+.story-form-shell select,
+.story-form-shell textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    background: var(--surface-card);
+    color: var(--ink);
+    font: inherit;
+}
+.story-form-shell textarea { min-height: 96px; resize: vertical; }
+.story-form-shell input:focus,
+.story-form-shell select:focus,
+.story-form-shell textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px var(--blue-soft);
+}
+.story-form-shell .form-submit { margin-top: 8px; }
+.story-form-shell .form-note { font-size: 0.8rem; color: var(--ink-soft); margin-top: 12px; line-height: 1.5; }
+
 /* Phones: panels stay full-height (one idea per screen on every device);
    tighten type + let tall panels scroll internally. */
 @media (max-width: 760px) {
@@ -5385,11 +5487,11 @@ nav {
     nav { width: calc(100% - 24px); }
     /* Steps: 3 cards in one phone screen (video is its own panel). Tight
        but readable -- compact padding + snug line-height on the body copy. */
-    .story-steps { margin-top: clamp(12px, 3vw, 20px); gap: 10px; }
-    .story-step { padding: 12px 16px; }
-    .story-step-n { width: 32px; height: 32px; margin-bottom: 8px; font-size: 1rem; }
-    .story-step h3 { font-size: 1.05rem; margin-bottom: 4px; }
-    .story-step p { font-size: 0.92rem; line-height: 1.4; }
+    .story-steps { margin-top: clamp(10px, 2.5vw, 16px); gap: 8px; }
+    .story-step { padding: 10px 14px; display: flex; flex-direction: column; }
+    .story-step-n { width: 28px; height: 28px; margin-bottom: 6px; font-size: 0.95rem; }
+    .story-step h3 { font-size: 1rem; margin-bottom: 3px; }
+    .story-step p { font-size: 0.88rem; line-height: 1.35; }
 }
 
 /* SHORT viewports (landscape phones, small windows): a full-screen-per-idea
