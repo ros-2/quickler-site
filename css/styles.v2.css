@@ -5235,9 +5235,22 @@ nav {
    the heading, whatever the screen size. */
 .story-video-panel .story-video-embed {
     width: min(100%, 860px);
-    max-height: min(60vh, calc((100vw - 2 * var(--gutter)) * 0.5625));
+    /* Cap the video so heading + video + BOTH safe bands fit one viewport.
+       Available height = 100dvh minus the two safe bands minus room for the
+       eyebrow + heading above (~200px). The video never pushes past the
+       safe-bottom band into the arrow. Width-derived 16:9 cap keeps it from
+       getting too wide on big screens. */
+    max-height: min(
+        calc(100dvh - var(--safe-top) - var(--safe-bottom) - 160px),
+        calc((100vw - 2 * var(--gutter)) * 0.5625)
+    );
     aspect-ratio: 16 / 9;
 }
+/* The video panel stacks heading + video; if that stack is taller than the
+   safe area, anchor it to the top of the safe zone (not centre) so it never
+   overflows DOWN into the arrow -- it sits just under the nav and the video
+   shrinks to the height cap above. */
+.story-video-panel { justify-content: flex-start; }
 .story-video-embed iframe {
     display: block;
     width: 100%;
@@ -5453,19 +5466,13 @@ nav {
     height: 100dvh;
     overflow-y: scroll;
     overflow-x: hidden;
-    /* PROXIMITY snap restores the reel feel (one flick lands on one panel)
-       WITHOUT the bottom-jump. The earlier jump came from two now-fixed
-       causes: the footer was a full-height snap target, and the JS clamp
-       re-snapped in the long tail. Both are fixed -- the footer and seoBody
-       are scroll-snap-align:none (normal-flow), and reel-nav.js bails out of
-       its clamp once you enter the tail. So proximity snaps between the reel
-       panels but lets the long SEO text + footer scroll like a document, and
-       you can reach the very bottom. */
-    scroll-snap-type: y proximity;
-    /* NOTE: proximity (not mandatory) on purpose. Mandatory gives a stronger
-       reel snap but re-grabs at the tail boundary on some engines; proximity
-       snaps cleanly between panels and releases into the long-form tail so
-       the bottom stays reachable. */
+    /* MANDATORY snap = the Instagram/TikTok lock: every flick lands FULLY on
+       one panel, never resting half-way between two (proximity let it stop
+       mid-panel -- the bug the user saw). The long-form tail stays reachable
+       because the footer and seoBody are scroll-snap-align:none, so mandatory
+       has nothing to snap to there and releases into normal document scroll
+       for the SEO text + footer. */
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     /* NO scroll-padding-top here: panels are full-bleed and snap to their
        TRUE top edge. The nav floats OVER the panel, so an offset would make
@@ -5495,23 +5502,21 @@ nav {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    /* SAFE ZONE (enforced, single source of truth). The nav pill and the
-       down-arrow each occupy a fixed band at the top and bottom of the
-       VIEWPORT. --safe-top and --safe-bottom below are the heights of those
-       bands; the SAME variables position the arrow (.story-next reads
-       --safe-bottom) so the panel's reserved bottom space and the arrow are
-       physically the same region -- they can never disagree. 'safe center'
-       centres content BETWEEN the bands when it fits, and aligns it to the
-       top of the safe area (scrolling inside) when it does not, so content
-       never overlaps the nav above or the arrow below at ANY screen height. */
-    justify-content: safe center;
+    /* Centred content. SAFE ZONE: --safe-top / --safe-bottom (defined on
+       .story-scroll, also used to position the arrow) reserve clear bands so
+       content sits between the nav pill and the down-arrow. Plain 'center'
+       (NOT 'safe center' -- safe alignment broke wheel scrolling on the snap
+       container). */
+    justify-content: center;
     padding: var(--safe-top) var(--gutter) var(--safe-bottom);
     scroll-snap-align: start;
-    /* NO overflow-y here: a blanket overflow:auto on every panel captured the
-       wheel/touch so the .story-scroll container could not scroll at all
-       (only the button worked). Panels are transparent to scroll; the
-       container owns it. Only the contact-form panel opts into internal
-       scroll (rule below). */
+    /* snap-stop:always = one flick lands on exactly the next panel and HALTS,
+       even on a hard flick, so it can never skid to rest half-way between two
+       (the Instagram/TikTok feel). */
+    scroll-snap-stop: always;
+    /* Too-tall content scrolls within the panel rather than bleeding into the
+       next snap cell (this is the working baseline behaviour). */
+    overflow-y: auto;
 }
 
 /* Down-arrow: ONE button, position:fixed to the viewport bottom-centre.

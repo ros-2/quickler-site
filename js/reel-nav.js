@@ -150,9 +150,31 @@
             return last ? last.offsetTop + last.offsetHeight - scroller.clientHeight * 0.5 : Infinity;
         }
 
+        // Mandatory CSS snap gives the Instagram/TikTok lock between panels,
+        // but it also traps you at the last panel -- it will not release into
+        // the long-form tail (seoBody + footer), so the bottom is unreachable.
+        // Fix: toggle snap OFF once the last panel's bottom is near the top of
+        // the viewport (entering the tail), and back ON above it. So panels
+        // snap hard, and the tail scrolls like a normal document.
+        var lastPanel = panels[panels.length - 1];
+        function tailEntry() {
+            // Release snap as soon as you reach the LAST panel's top (not its
+            // bottom): from there down -- through the last panel into the
+            // seoBody + footer -- scroll is free, so mandatory can never pin
+            // you before the handler runs. Above it, panels snap hard.
+            return lastPanel ? lastPanel.offsetTop - 4 : Infinity;
+        }
+        var snapOn = true;
+        function updateSnap() {
+            var inTail = scroller.scrollTop >= tailEntry();
+            if (inTail && snapOn) { scroller.style.scrollSnapType = "none"; snapOn = false; }
+            else if (!inTail && !snapOn) { scroller.style.scrollSnapType = "y mandatory"; snapOn = true; }
+        }
+
         var settleTimer = null;
         scroller.addEventListener("scroll", function () {
             updateArrow();
+            updateSnap();
             if (canHover) return;
             // Once you are at/below the last panel, you are in the long-form
             // tail: do NOT clamp or re-snap. Let it scroll like a document so
