@@ -1,0 +1,34 @@
+---json
+{
+  "layout": "layouts/story.njk",
+  "permalink": "/pages/all.html",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Index",
+    "heading": "Every guide and article.",
+    "lede": "The complete list of Quickler guides, templates, comparisons and country pages. Browse everything in one place.",
+    "actions": [
+      { "label": "Guides overview", "href": "/pages/guides.html", "style": "btn-primary" },
+      { "label": "Support", "href": "/pages/help/index.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [],
+  "seo": {
+    "title": "All guides and articles | Quickler",
+    "description": "The complete index of Quickler guides, templates, comparisons and country pages.",
+    "canonical": "https://quickler.co/pages/all.html",
+    "lang": "en"
+  },
+  "scripts": ["/js/analytics-events.js"]
+}
+---
+<section class="story-seo" aria-label="All articles">
+  <div class="story-seo-inner">
+    <h2>All guides and articles</h2>
+    <ul class="all-index">
+      {%- for a in collections.allArticles %}
+      <li><a href="{{ a.url }}">{{ a.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

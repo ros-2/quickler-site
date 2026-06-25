@@ -1,0 +1,35 @@
+---json
+{
+  "layout": "layouts/story.njk",
+  "permalink": "/pages/workflows-regions.html",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Worldwide",
+    "heading": "Choose your region.",
+    "lede": "Quickler runs field compliance over WhatsApp anywhere WhatsApp does. Pick a continent, then a country, to find guides and resources for your market.",
+    "actions": [
+      { "label": "UK guides", "href": "/pages/guides.html", "style": "btn-primary" },
+      { "label": "Workflows", "href": "/pages/services.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [],
+  "seo": {
+    "title": "Quickler by Region | Field Compliance Worldwide",
+    "description": "Quickler field compliance resources by region. Pick your continent and country to find WhatsApp workflow guides for your market.",
+    "canonical": "https://quickler.co/pages/workflows-regions.html",
+    "lang": "en"
+  },
+  "scripts": ["/js/analytics-events.js"]
+}
+---
+<section class="story-seo" aria-label="Regions">
+  <div class="story-seo-inner">
+    <h2>Field compliance by region</h2>
+    <ul class="region-index">
+      {%- for cont in continentList %}
+      <li><a href="/pages/continent-{{ cont.slug }}.html">{{ cont.name }}</a> <span class="region-count">{{ cont.count }} countries</span></li>
+      {%- endfor %}
+    </ul>
+    <p><a href="/pages/guides.html">UK guides and templates &rarr;</a></p>
+  </div>
+</section>

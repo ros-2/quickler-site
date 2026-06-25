@@ -1,0 +1,38 @@
+---
+pagination:
+  data: continentList
+  size: 1
+  alias: cont
+layout: layouts/story.njk
+permalink: "/pages/continent-{{ cont.slug }}.html"
+bodyClass: page-story
+eleventyComputed:
+  hero:
+    eyebrow: "Quickler worldwide"
+    heading: "{{ cont.name }}."
+    lede: "Quickler runs field compliance over WhatsApp across {{ cont.name }}. Pick a country to see its guides and resources."
+    actions:
+      - label: "All regions"
+        href: "/pages/workflows-regions.html"
+        style: "btn-secondary"
+  seo:
+    title: "Quickler in {{ cont.name }} | Field Compliance by Country"
+    description: "Quickler field compliance resources across {{ cont.name }}. WhatsApp workflows, no app, structured digital records. Choose your country."
+    canonical: "https://quickler.co/pages/continent-{{ cont.slug }}.html"
+    lang: "en"
+  scripts:
+    - "/js/analytics-events.js"
+---
+<section class="story-seo" aria-label="Countries in {{ cont.name }}">
+  <div class="story-seo-inner">
+    <h2>Countries in {{ cont.name }}</h2>
+    <ul class="region-index">
+      {%- for c in countries %}
+      {%- if c.continent == cont.name %}
+      <li><a href="/pages/country-hub-{{ c.slug }}.html">{{ c.name }}</a></li>
+      {%- endif %}
+      {%- endfor %}
+    </ul>
+    <p><a href="/pages/workflows-regions.html">&larr; All regions</a></p>
+  </div>
+</section>

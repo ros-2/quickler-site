@@ -367,4 +367,11 @@
   <url><loc>https://app.quickler.co/</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://app.quickler.co/login</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 
+  <url><loc>https://quickler.co/pages/workflows-regions.html</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quickler.co/pages/continent-europe.html</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/continent-north-america.html</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/continent-south-america.html</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/continent-asia.html</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/continent-oceania.html</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://quickler.co/pages/continent-africa.html</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

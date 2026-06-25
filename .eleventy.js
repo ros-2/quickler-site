@@ -9,6 +9,23 @@
  * same paths as the current site (no URL changes, no redirects).
  */
 module.exports = function (eleventyConfig) {
+  // Complete index of every content page (reel pages under /pages/), so the
+  // guides/all-articles page can list ALL articles and none get orphaned.
+  // Excludes utility pages (demo, redirects) and the index pages themselves.
+  eleventyConfig.addCollection("allArticles", (api) => {
+    const skip = /\/(demo|guides|all|sitemap|404|legal|dpa)\.html$/;
+    return api.getAll()
+      .filter((p) => {
+        const url = p.url || "";
+        return url.startsWith("/pages/") && url.endsWith(".html") && !skip.test(url);
+      })
+      .map((p) => ({
+        url: p.url,
+        title: (p.data.seo && p.data.seo.title) || (p.data.hero && p.data.hero.heading) || p.fileSlug,
+      }))
+      .sort((a, b) => a.title.localeCompare(b.title));
+  });
+
   // Pass static assets straight through, unchanged.
   eleventyConfig.addPassthroughCopy({ "assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "css": "css" });
