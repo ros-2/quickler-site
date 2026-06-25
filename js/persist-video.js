@@ -36,9 +36,13 @@
 
         var docked = true;       // true = in its panel; false = in mini-player
         var dismissed = false;    // user closed the mini-player this visit
+        var seen = false;         // panel has been on-screen at least once
 
         function undock() {
-            if (!docked || dismissed) return;
+            // Never pop the mini-player until the user has actually reached
+            // the video panel once -- otherwise it shows on load because the
+            // panel starts below the fold (off-screen).
+            if (!docked || dismissed || !seen) return;
             mini.appendChild(iframe);
             mini.appendChild(close);
             mini.classList.add("is-on");
@@ -69,6 +73,7 @@
         var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (en) {
                 if (en.isIntersecting && en.intersectionRatio > 0.5) {
+                    seen = true;       // they have now reached the video panel
                     dismissed = false; // re-arm once they return to the panel
                     dock();
                 } else if (en.intersectionRatio < 0.15) {
