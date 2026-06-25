@@ -100,7 +100,16 @@
     </div>
 </section>
 {%- elif b.type == "split" %}
-<section class="story {{ altcls }}">
+<section class="story {{ 'story-photo' if b.bgImage else altcls }}"{% if b.bgImage %} style="--bg-photo: url('{{ b.bgImage }}'){% if b.bgDim %}; --scrim-edge: {{ b.bgDim }}; --scrim-mid: {{ b.bgDim - 0.08 }}{% endif %}"{% endif %}>
+    {%- if b.bgImage %}
+    {#- Photo-backed split: full-panel photo + scrim (like prose). The media
+        column is dropped; copy centres so the text reads over the photo. -#}
+    <div class="story-inner">
+        {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
+        <h2 class="story-h2">{{ b.heading | safe }}</h2>
+        <p class="story-text story-text-centre">{{ b.text | safe }}</p>
+    </div>
+    {%- else %}
     <div class="story-split {{ 'story-split-reverse' if b.reverse }}">
         <div class="story-copy">
             {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
@@ -109,6 +118,7 @@
         </div>
         <div class="story-media" role="img" aria-label="{{ b.mediaAlt or '' }}"></div>
     </div>
+    {%- endif %}
 </section>
 {%- elif b.type == "steps" %}
 <section class="story {{ altcls }}">

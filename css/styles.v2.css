@@ -4722,6 +4722,10 @@ nav {
 .story-photo .story-eyebrow,
 .story-photo .story-h2,
 .story-photo .story-text { text-shadow: 0 1px 14px rgba(7, 18, 43, 0.55); }
+/* Inline links over a photo scrim: white + underlined so they read on the
+   dark scrim (the default dark-blue link would vanish). */
+.story-photo .story-text a { color: #ffffff; text-decoration: underline; text-underline-offset: 3px; }
+.story-photo .story-text a:hover { color: rgba(255, 255, 255, 0.82); }
 /* A gradient panel can hold any block type. Keep its contents readable:
    the white step cards stay white (they pop nicely on the gradient), and
    the tag pills invert to white-outline. */
