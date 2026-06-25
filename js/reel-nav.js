@@ -20,6 +20,19 @@
         var panels = Array.prototype.slice.call(scroller.querySelectorAll(".story"));
         if (!panels.length) return;
 
+        // The footer is a .story element but opts OUT of snap (height:auto,
+        // scroll-snap-align:none) -- it is part of the free-scrolling tail, NOT
+        // a reel panel. Long-form .story-seo regions also sit in that tail and
+        // are not .story at all. The snap behaviour must key off the last REAL
+        // reel panel, not the footer: otherwise mandatory snap stays on through
+        // the whole tail and traps you at the last real panel, so the seoBody
+        // and footer (the bottom of the page) are unreachable. This is the
+        // "can't scroll to the bottom" bug on BOTH desktop and mobile.
+        var snapPanels = panels.filter(function (p) {
+            return !p.classList.contains("story-footer");
+        });
+        if (!snapPanels.length) snapPanels = panels;
+
         var canHover = window.matchMedia && window.matchMedia("(hover: hover)").matches;
 
         // --- 0) TikTok-style "flick up" hint (touch + home page only) ---
@@ -129,7 +142,7 @@
             var h = scroller.clientHeight || 1;
             // Hide once we are on (or past) the last panel -- i.e. when the
             // bottom of the scroll has reached the last panel / the tail.
-            var nearEnd = scroller.scrollTop >= (panels.length - 1) * h - h * 0.25;
+            var nearEnd = scroller.scrollTop >= (snapPanels.length - 1) * h - h * 0.25;
             btn.classList.toggle("is-hidden", nearEnd);
         }
 
@@ -156,7 +169,7 @@
         // interfering -- otherwise scrolling into the tail gets yanked back up
         // to the last panel (the "jumps back up at the bottom" bug).
         function tailTop() {
-            var last = panels[panels.length - 1];
+            var last = snapPanels[snapPanels.length - 1];
             return last ? last.offsetTop + last.offsetHeight - scroller.clientHeight * 0.5 : Infinity;
         }
 
@@ -166,7 +179,7 @@
         // Fix: toggle snap OFF once the last panel's bottom is near the top of
         // the viewport (entering the tail), and back ON above it. So panels
         // snap hard, and the tail scrolls like a normal document.
-        var lastPanel = panels[panels.length - 1];
+        var lastPanel = snapPanels[snapPanels.length - 1];
         function tailEntry() {
             // Release snap as soon as you reach the LAST panel's top (not its
             // bottom): from there down -- through the last panel into the
