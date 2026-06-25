@@ -4726,6 +4726,14 @@ nav {
    dark scrim (the default dark-blue link would vanish). */
 .story-photo .story-text a { color: #ffffff; text-decoration: underline; text-underline-offset: 3px; }
 .story-photo .story-text a:hover { color: rgba(255, 255, 255, 0.82); }
+/* Secondary (outline) button over a photo: white outline + white text so it
+   reads on the dark scrim instead of the light-pill-on-white look. */
+.story-photo .btn-secondary {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
+}
+.story-photo .btn-secondary:hover { background: rgba(255, 255, 255, 0.22); border-color: #ffffff; }
 /* A gradient panel can hold any block type. Keep its contents readable:
    the white step cards stay white (they pop nicely on the gradient), and
    the tag pills invert to white-outline. */

@@ -163,7 +163,7 @@
     </div>
 </section>
 {%- elif b.type == "cta" %}
-<section class="story story-cta {{ altcls }}">
+<section class="story story-cta {{ 'story-photo' if b.bgImage else altcls }}"{% if b.bgImage %} style="--bg-photo: url('{{ b.bgImage }}'){% if b.bgDim %}; --scrim-edge: {{ b.bgDim }}; --scrim-mid: {{ b.bgDim - 0.08 }}{% endif %}"{% endif %}>
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         <h2 class="story-h2">{{ b.heading | safe }}</h2>
