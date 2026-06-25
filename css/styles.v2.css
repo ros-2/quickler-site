@@ -4734,13 +4734,15 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* The hero is the first screen and its content is moderate. Bias the
-       content ABOVE the centre line: the block is centred (justify-content
-       from .story) but a larger bottom band than top band lifts it up the
-       page by roughly a quarter of the viewport, which reads as a stronger,
-       higher-anchored opening screen. */
-    padding-top: clamp(72px, 9vh, 104px);
-    padding-bottom: clamp(180px, 34vh, 360px);
+    /* Anchor the hero content to the TOP of the panel (not centred) and give
+       it a deliberate top offset, so it sits roughly a quarter of the viewport
+       higher than a vertically-centred block would. justify-content:flex-start
+       overrides the centred default from .story; the padding-top is the only
+       thing positioning it, so changing it directly moves the content up/down
+       predictably. */
+    justify-content: flex-start;
+    padding-top: clamp(140px, 22vh, 240px);
+    padding-bottom: clamp(80px, 12vh, 140px);
 }
 .story-hero .story-inner { max-width: 920px; }
 .story-h1 {
