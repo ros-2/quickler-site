@@ -1,0 +1,10 @@
+import { chromium } from "playwright";
+const EXE="/home/balnagowan/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell";
+const SC="/tmp/claude-1000/-home-balnagowan-quickler-engine/7ba1eac7-26e9-49f0-a6d1-8dd163346506/scratchpad/";
+const b=await chromium.launch({executablePath:EXE,args:["--no-sandbox","--disable-gpu"]});
+const pg=await b.newPage({viewport:{width:1440,height:520}});
+await pg.goto("https://quickler.co/?x=1",{waitUntil:"networkidle"});
+await pg.waitForTimeout(900);
+await pg.screenshot({path:SC+"live-top.png"});
+await b.close();
+console.log("shot saved");

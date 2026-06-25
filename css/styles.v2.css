@@ -73,8 +73,15 @@ html {
    NEVER show white (Firefox resolves svh shorter than the real viewport, so
    the scroll host can fall a few px short -- whatever shows behind it is now
    gradient, not the browser's default white). */
+/* Document root behind the reel is WHITE, not the brand gradient. Reason:
+   the floating nav is itself a gradient pill, and when the root was ALSO
+   gradient the pill camouflaged into it -- it read as a full-width gradient
+   bar instead of a distinct floating pill on the white hero. White root +
+   white hero means the pill floats clearly. Gradient panel seams are kept
+   white-gap-free by a 1px overlap on .story-feature (below), not by a
+   gradient root. */
 html:has(body.page-story) {
-    background: var(--brand-gradient);
+    background: #ffffff;
     background-attachment: fixed;
 }
 
