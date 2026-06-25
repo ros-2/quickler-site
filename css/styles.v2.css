@@ -4703,7 +4703,7 @@ nav {
    text sit, lighter in the middle so the photo still reads. */
 .story-photo {
     background-image:
-        linear-gradient(180deg, rgba(7, 18, 43, 0.82) 0%, rgba(7, 18, 43, 0.62) 45%, rgba(7, 18, 43, 0.82) 100%),
+        linear-gradient(180deg, rgba(7, 18, 43, 0.90) 0%, rgba(7, 18, 43, 0.80) 45%, rgba(7, 18, 43, 0.90) 100%),
         var(--bg-photo);
     background-size: cover, cover;
     background-position: center, center;
