@@ -236,18 +236,30 @@ nav {
     border: 1px solid var(--line-strong);
     border-radius: 999px;
     box-shadow: 0 2px 12px rgba(18, 41, 111, 0.08);
-    transition: padding 0.25s ease, box-shadow 0.25s ease, margin-top 0.25s ease;
+    transition: padding 0.25s ease, box-shadow 0.25s ease, margin-top 0.25s ease, width 0.25s ease, border-radius 0.25s ease, top 0.25s ease;
 }
 
 /* Compact-on-scroll: nav shrinks ~20% vertically once the page scrolls.
    .nav-scrolled is toggled by js/nav-compact.js. Base nav is ~75px tall;
    this brings it to ~60px (a clear 20% cut) by squeezing the vertical
    padding hard and shrinking the logo + menu type a touch. */
+/* SCROLLED state: the floating pill becomes a FULL-WIDTH bar pinned flush
+   to the very top -- spans edge to edge, square corners, slim. The resting
+   state stays the rounded floating pill. */
 nav.nav-scrolled {
-    padding-top: 4px !important;
-    padding-bottom: 4px !important;
-    margin-top: clamp(4px, 1vw, 10px) !important;
-    box-shadow: 0 4px 18px rgba(18, 41, 111, 0.18) !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 0 !important;
+    border-radius: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    padding-left: clamp(18px, 5vw, 64px) !important;
+    padding-right: clamp(14px, 4vw, 48px) !important;
+    box-shadow: 0 4px 18px rgba(18, 41, 111, 0.22) !important;
 }
 nav.nav-scrolled .nav-name img { height: 26px; }
 nav.nav-scrolled .nav-menu a { padding-top: 7px; padding-bottom: 7px; }
