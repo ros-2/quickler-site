@@ -5452,6 +5452,11 @@ nav {
 .contact-clean-form .btn { width: 100%; margin-top: 4px; }
 .contact-clean-alt { margin-top: 14px; font-size: 0.9rem; color: var(--ink-soft); }
 .contact-clean-alt a { color: var(--blue-text); font-weight: 600; }
+/* On a gradient (feature) panel the dark helper text + link are illegible.
+   Force them light so "Prefer email? hello@quickler.co" reads on the brand
+   gradient. */
+.story-feature .contact-clean-alt { color: rgba(255, 255, 255, 0.9); }
+.story-feature .contact-clean-alt a { color: #ffffff; text-decoration: underline; }
 @media (max-width: 460px) { .ccf-row { grid-template-columns: 1fr; } }
 
 

@@ -1,0 +1,15 @@
+import { chromium } from "playwright";
+import http from "node:http"; import { readFile } from "node:fs/promises";
+import { existsSync } from "node:fs"; import { extname, join } from "node:path";
+const ROOT=new URL("../_site/",import.meta.url).pathname;
+const T={".html":"text/html",".css":"text/css",".js":"text/javascript"};
+const s=http.createServer(async(rq,rs)=>{try{let p=rq.url.split("?")[0];if(p.endsWith("/"))p+="index.html";let f=join(ROOT,p);if(!existsSync(f)&&existsSync(f+".html"))f+=".html";rs.writeHead(200,{"content-type":T[extname(f)]||"text/plain"});rs.end(await readFile(f));}catch{rs.writeHead(404);rs.end("x");}});
+await new Promise(r=>s.listen(4586,r));
+const EXE="/home/balnagowan/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell";
+const b=await chromium.launch({executablePath:EXE,args:["--no-sandbox","--disable-gpu"]});
+const pg=await b.newPage({viewport:{width:1280,height:900}});
+await pg.goto("http://localhost:4586/pages/help/index.html",{waitUntil:"load"});
+await pg.waitForTimeout(400);
+const d=await pg.evaluate(()=>{const alt=document.querySelector('.contact-clean-alt');const a=alt.querySelector('a');const panel=alt.closest('.story');return {panelFeature:panel.classList.contains('story-feature'),altColor:getComputedStyle(alt).color,linkColor:getComputedStyle(a).color};});
+console.log(JSON.stringify(d));
+await b.close(); s.close();
