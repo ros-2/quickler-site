@@ -4741,7 +4741,7 @@ nav {
    up the screen, which is what "move it up" needs. */
 .story-hero .story-inner {
     max-width: 920px;
-    transform: translateY(-22vh);
+    transform: translateY(-11vh);
 }
 .story-h1 {
     /* Sized to fit the safe zone: vh-relative so on a short screen the heading
