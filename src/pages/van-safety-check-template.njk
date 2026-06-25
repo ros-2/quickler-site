@@ -1,8 +1,52 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/van-safety-check-template.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Template + how-to",
+    "heading": "Daily van walkround on WhatsApp.",
+    "lede": "UK fleet operators must evidence a daily walkround on every vehicle before it leaves the yard. Quickler runs the DVSA-aligned check over WhatsApp, with defect photos and live status per vehicle.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "prose",
+      "eyebrow": "The requirement",
+      "heading": "What the DVSA expects",
+      "text": "The driver inspects the vehicle before first use each day and reports any defects. The record should be dated, attributable to the driver, list items checked and defects found, and be retained. A standard walkround covers lights, brakes, steering, mirrors and glass, tyres and wheels, fluid levels, load security, exhaust and bodywork, plus required documents."
+    },
+    {
+      "type": "steps",
+      "eyebrow": "How it runs",
+      "heading": "The walkround in chat",
+      "items": [
+        { "title": "One item per message", "text": "The driver replies OK, defect, or attaches a photo. A defect prompts a photo and one line describing it." },
+        { "title": "PDF plus dashboard", "text": "Each completed walkround produces a timestamped PDF and a red, amber or green row per vehicle." },
+        { "title": "Defects alert the manager", "text": "Defect rows trigger an email and dashboard alert carrying the defect line and the driver's photo." }
+      ]
+    },
+    {
+      "type": "prose",
+      "eyebrow": "Why it works",
+      "heading": "Better than paper or a driver app",
+      "text": "vs paper: no shoebox of dated cards, no illegible handwriting, no forgotten hand-ins; every check is timestamped on send. vs a driver app: nothing new to install or open, it runs in the WhatsApp chat already on the phone. If you need full fleet management, a dedicated platform is still the right pick."
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Ready to try it?",
+      "heading": "Free trial, live in under a week",
+      "text": "Setup to first live workflow usually takes under a week.",
+      "actions": [
+        { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+        { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+      ]
+    }
+  ],
+  "seoBody": "<p>UK fleet operators are required to evidence a daily walkround check on every vehicle before it leaves the yard. The DVSA requirement covered here is UK-specific; the Quickler product behind it is not. Quickler runs any inspection or checklist over WhatsApp, not just one trade, and <a href=\"/pages/global-field-compliance.html\">works in any country</a> WhatsApp does. This page covers the DVSA-aligned template, how it runs over WhatsApp instead of a paper card or a separate app, and how the fleet manager sees defect status live.</p>\n<h2>What the DVSA expects</h2>\n<p>The DVSA expects the driver to inspect the vehicle before first use each day and to report any defects to the operator. The record should be dated, attributable to the driver, list the items checked and any defects found, and be retained for the period the operator is required to keep it. Operators should refer to current DVSA guidance for the exact record-keeping requirements applicable to their licence category.</p>\n<p>A standard walkround covers, at minimum: lights and indicators, brakes, steering, mirrors and glass, tyres and wheels, fluid levels, load security, exhaust and bodywork, plus a check that all required documents are present.</p>\n<h2>How the Quickler daily van check works</h2>\n<p>Every driver receives the walkround on WhatsApp at the start of their shift. Each item is a single chat message; the driver replies <em>OK</em>, <em>defect</em>, or attaches a photo. If the answer is <em>defect</em>, the driver is asked to attach a photo and one line describing it. The fleet manager sees the status live.</p>\n<p>The exact item list is built during onboarding from the items the operator already inspects, covering at minimum the DVSA categories listed above. The completed walkround produces a timestamped PDF carrying every answer and every photo, plus a row on the manager dashboard showing red, amber or green status per vehicle. Defect rows trigger an email and dashboard alert.</p>\n<h2>Why this works better than a paper card or a driver app</h2>\n<p><strong>vs paper:</strong> no shoebox of dated cards to keep, no illegible handwriting, no driver forgetting to hand the card in. Every check has a timestamp the moment the driver sends it.</p>\n<p><strong>vs a driver app:</strong> the driver does not need to install or open anything new. The walkround runs in the WhatsApp chat already open on their phone.</p>\n<p><strong>Honest note:</strong> if you need full fleet management beyond the daily walkround, a dedicated fleet platform is still the right pick. Quickler covers the daily walkround compliance specifically — see <a href=\"/pages/alternatives.html\">where Quickler fits and where it does not</a>.</p>\n<h2>Audit trail and DVSA evidence</h2>\n<p>Every check is stored: timestamp, driver, vehicle, every answer, every photo. Records are retained per the operator's policy and exportable as PDF or CSV.</p>\n<h2>Frequently asked questions</h2>\n<h3>How does the fleet manager see defects?</h3>\n<p>The dashboard shows one row per vehicle with red, amber or green status. A defect triggers an email and dashboard alert carrying the defect line and the driver's photo.</p>\n<h3>Can I edit the template for our specific fleet?</h3>\n<p>Yes. Each operator's template is built during onboarding from the items they already check. Different vehicle types can have their own variants.</p>\n<h3>What if the driver does not have signal at the yard?</h3>\n<p>WhatsApp queues the messages on the phone and delivers them when signal returns.</p>\n<h3>Does this also cover the weekly and six-weekly inspections?</h3>\n<p>The daily walkround is a separate workflow from the planned weekly and six-weekly maintenance inspections, which require a qualified inspector. Talk to us if you want to run those alongside.</p>",
   "seo": {
     "title": "Daily Van Safety Check Template UK | DVSA Walkround on WhatsApp",
     "description": "Free DVSA-aligned daily van safety check template UK fleet operators can run over WhatsApp. Quickler runs any inspection or checklist over WhatsApp, not just one trade, and works anywhere WhatsApp does. Drivers complete the walkround in WhatsApp at the start of every shift; defect photos go straight to the fleet manager; red, amber and green status per vehicle on the dashboard in real time.",
@@ -28,74 +72,8 @@
     "lang": "en",
     "jsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"Daily Van Safety Check Template UK | DVSA Walkround on WhatsApp\",\n      \"description\": \"Free DVSA-aligned daily van safety check template UK fleet operators can run over WhatsApp. Drivers complete the walkround in WhatsApp at the start of every shift; defect photos go straight to the fleet manager; red, amber and green status per vehicle on the dashboard in real time.\",\n      \"author\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Quickler Ltd\"\n      },\n      \"publisher\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Quickler Ltd\",\n        \"url\": \"https://quickler.co/\"\n      },\n      \"datePublished\": \"2026-05-26\",\n      \"dateModified\": \"2026-05-26\",\n      \"inLanguage\": \"en-GB\"\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"How does the fleet manager see defects?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"The dashboard shows one row per vehicle with red, amber or green status. A defect triggers an email and dashboard alert carrying the defect line and the driver's photo.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Can I edit the template for our specific fleet?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Yes. Each operator's template is built during onboarding from the items they already check. Different vehicle types can have their own variants.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"What if the driver does not have signal at the yard?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"WhatsApp queues the messages on the phone and delivers them when signal returns.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Does this also cover the weekly and six-weekly inspections?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"The daily walkround is a separate workflow from the planned weekly and six-weekly maintenance inspections, which require a qualified inspector. Talk to us if you want to run those alongside.\"\n          }\n        }\n      ]\n    },\n    {\n      \"@type\": \"BreadcrumbList\",\n      \"itemListElement\": [\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 1,\n          \"name\": \"Home\",\n          \"item\": \"https://quickler.co/\"\n        },\n        {\n          \"@type\": \"ListItem\",\n          \"position\": 2,\n          \"name\": \"Daily Van Safety Check Template UK\",\n          \"item\": \"https://quickler.co/pages/van-safety-check-template.html\"\n        }\n      ]\n    }\n  ]\n}"
   },
-  "headStyle": "\n        .long-form-body { max-width: 760px; margin: 0 auto; }\n        .long-form-body h2 { margin-top: 2.4rem; }\n        .long-form-body h3 { margin-top: 1.6rem; }\n        .long-form-body ul, .long-form-body ol { padding-left: 1.4rem; }\n        .long-form-body li { margin-bottom: 0.4rem; }\n        .long-form-body p { margin: 0.8rem 0; }\n        .callout { background: rgba(244, 63, 140, 0.06); border-left: 3px solid #f43f8c; padding: 0.9rem 1.1rem; border-radius: 6px; margin: 1rem 0; }\n    ",
   "scripts": [
     "/js/analytics-events.js"
   ]
 }
 ---
-<section id="top">
-        <div class="page-shell about-page-intro">
-            <span class="eyebrow">Template + how-to</span>
-            <h1>Daily van safety check template — DVSA walkround over WhatsApp.</h1>
-            <p class="page-lede">UK fleet operators are required to evidence a daily walkround check on every vehicle before it leaves the yard. The DVSA requirement covered here is UK-specific; the Quickler product behind it is not. Quickler runs any inspection or checklist over WhatsApp, not just one trade, and <a href="/pages/global-field-compliance.html">works in any country</a> WhatsApp does. This page covers the DVSA-aligned template, how it runs over WhatsApp instead of a paper card or a separate app, and how the fleet manager sees defect status live.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="long-form-body">
-            <h2>What the DVSA expects</h2>
-            <p>The DVSA expects the driver to inspect the vehicle before first use each day and to report any defects to the operator. The record should be dated, attributable to the driver, list the items checked and any defects found, and be retained for the period the operator is required to keep it. Operators should refer to current DVSA guidance for the exact record-keeping requirements applicable to their licence category.</p>
-            <p>A standard walkround covers, at minimum: lights and indicators, brakes, steering, mirrors and glass, tyres and wheels, fluid levels, load security, exhaust and bodywork, plus a check that all required documents are present.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="long-form-body">
-            <h2>How the Quickler daily van check works</h2>
-            <p>Every driver receives the walkround on WhatsApp at the start of their shift. Each item is a single chat message; the driver replies <em>OK</em>, <em>defect</em>, or attaches a photo. If the answer is <em>defect</em>, the driver is asked to attach a photo and one line describing it. The fleet manager sees the status live.</p>
-            <p>The exact item list is built during onboarding from the items the operator already inspects, covering at minimum the DVSA categories listed above. The completed walkround produces a timestamped PDF carrying every answer and every photo, plus a row on the manager dashboard showing red, amber or green status per vehicle. Defect rows trigger an email and dashboard alert.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="long-form-body">
-            <h2>Why this works better than a paper card or a driver app</h2>
-            <p><strong>vs paper:</strong> no shoebox of dated cards to keep, no illegible handwriting, no driver forgetting to hand the card in. Every check has a timestamp the moment the driver sends it.</p>
-            <p><strong>vs a driver app:</strong> the driver does not need to install or open anything new. The walkround runs in the WhatsApp chat already open on their phone.</p>
-            <div class="callout"><strong>Honest note:</strong> if you need full fleet management beyond the daily walkround, a dedicated fleet platform is still the right pick. Quickler covers the daily walkround compliance specifically — see <a href="/pages/alternatives.html">where Quickler fits and where it does not</a>.</div>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="long-form-body">
-            <h2>Audit trail and DVSA evidence</h2>
-            <p>Every check is stored: timestamp, driver, vehicle, every answer, every photo. Records are retained per the operator's policy and exportable as PDF or CSV.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="long-form-body">
-            <h2>Frequently asked questions</h2>
-            <h3>How does the fleet manager see defects?</h3>
-            <p>The dashboard shows one row per vehicle with red, amber or green status. A defect triggers an email and dashboard alert carrying the defect line and the driver's photo.</p>
-            <h3>Can I edit the template for our specific fleet?</h3>
-            <p>Yes. Each operator's template is built during onboarding from the items they already check. Different vehicle types can have their own variants.</p>
-            <h3>What if the driver does not have signal at the yard?</h3>
-            <p>WhatsApp queues the messages on the phone and delivers them when signal returns.</p>
-            <h3>Does this also cover the weekly and six-weekly inspections?</h3>
-            <p>The daily walkround is a separate workflow from the planned weekly and six-weekly maintenance inspections, which require a qualified inspector. Talk to us if you want to run those alongside.</p>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to try it?</h2>
-            <p>Free trial. Setup to first live workflow usually takes under a week.</p>
-            <div class="hero-actions">
-                <a href="https://app.quickler.co/signup" class="btn btn-primary">Start free trial</a>
-                <a href="/pages/faq.html" class="btn btn-secondary">Read the FAQ</a>
-                <a href="mailto:hello@quickler.co" class="btn btn-secondary">Email us</a>
-            </div>
-        </div>
-    </section>

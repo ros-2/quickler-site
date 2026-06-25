@@ -1,8 +1,52 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/van-safety-checks.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Van Safety Checks",
+    "heading": "Van safety checks via WhatsApp.",
+    "lede": "Engineers receive scheduled questions on their phone, reply by text or photo, and the completed record reaches the manager automatically. Rooted in UK fleet compliance, works anywhere WhatsApp does.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "prose",
+      "eyebrow": "Legal position",
+      "heading": "Why van safety records matter.",
+      "text": "UK employers have a legal duty of care under the Health and Safety at Work Act 1974. The practical requirement is not just that checks happen, but that they can be demonstrated to have happened. Most fleet insurance policies require evidence of regular pre-use inspections. \"We do daily checks\" is not the same as \"we can prove we do daily checks.\""
+    },
+    {
+      "type": "prose",
+      "eyebrow": "The check itself",
+      "heading": "What a van safety check covers.",
+      "text": "Tyres, lights, mirrors and windscreen, fluid levels, brakes, load security, and visible damage to bodywork. Quickler builds the check sequence from your existing form or checklist. Upload it and the workflow is configured automatically."
+    },
+    {
+      "type": "steps",
+      "eyebrow": "How it works",
+      "heading": "No paper. No chase.",
+      "items": [
+        { "title": "Scheduled WhatsApp message", "text": "At the configured time, Quickler prompts the engineer to begin. No manual trigger from the office." },
+        { "title": "Engineer replies on site", "text": "Each question answered by text or photo. The conversation guides them through every item in sequence." },
+        { "title": "Faults flagged, manager notified", "text": "Failed items are flagged red on the dashboard in real time, with a PDF emailed automatically." }
+      ]
+    },
+    {
+      "type": "cta",
+      "eyebrow": "See it run",
+      "heading": "Watch a van check happen.",
+      "text": "Try the demo conversation, or check per-firm pricing.",
+      "actions": [
+        { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+        { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+      ]
+    }
+  ],
+  "seoBody": "<p>A van safety check is a structured inspection confirming a company vehicle is roadworthy and safe for use. Quickler runs van safety checks via WhatsApp: the engineer receives questions on their phone, replies by text or photo, and the completed record goes to the manager automatically. It runs any inspection or checklist, not just one trade. Rooted in UK fleet compliance, it works anywhere WhatsApp does, and is used across English-speaking markets including the UK, Ireland, the United States, Canada, Australia and New Zealand. <a href=\"/pages/global-field-compliance.html\">Quickler works in any country</a>.</p>\n<h2>Why van safety records matter.</h2>\n<p>UK employers have a legal duty of care under the Health and Safety at Work Act 1974 and the Management of Health and Safety at Work Regulations 1999. The practical requirement is not just that checks happen — it is that checks can be demonstrated to have happened.</p>\n<p>Most fleet insurance policies also require evidence of regular pre-use inspections. DVSA guidance and industry codes in gas, electrical, and construction sectors expect documented checks as standard.</p>\n<p>\"We do daily checks\" is not the same as \"we can prove we do daily checks.\"</p>\n<h2>What a van safety check covers.</h2>\n<ul>\n<li>Tyres — condition and pressure</li>\n<li>Lights — front, rear, indicators</li>\n<li>Mirrors and windscreen</li>\n<li>Fluid levels — oil, coolant, screen wash</li>\n<li>Brakes</li>\n<li>Load security</li>\n<li>Visible damage to bodywork</li>\n</ul>\n<p>Quickler builds the check sequence from your existing form or checklist. Upload it and the workflow is configured automatically.</p>\n<h2>Five steps. No paper. No chase.</h2>\n<h3>Scheduled WhatsApp message</h3>\n<p>At the configured time — typically before the first job of the day — Quickler sends the engineer a WhatsApp message prompting them to begin the check. No manual trigger from the office.</p>\n<h3>Engineer replies on site</h3>\n<p>The engineer replies to each question by text — pass, fail, or a short description. The conversation guides them through every item in sequence.</p>\n<h3>Photos attached where required</h3>\n<p>Where the workflow requires photographic evidence — tyre condition, load securing, visible damage — the engineer attaches a photo in WhatsApp. Quickler links it to the relevant check automatically.</p>\n<h3>Faults flagged automatically</h3>\n<p>Quickler identifies any items marked as failed or requiring attention. Faults are flagged red in the manager's dashboard immediately.</p>\n<h3>Manager receives the record</h3>\n<p>The completed check — all responses, photos, and flagged faults — appears on the manager's dashboard in real time. A PDF is also emailed automatically.</p>\n<h2>Common questions.</h2>\n<h3>Is a van safety check a legal requirement?</h3>\n<p>UK employers have a duty of care to ensure company vehicles are roadworthy. Most fleet insurance policies require evidence of regular checks. Documented pre-use inspections are standard across gas, electrical, and construction sectors.</p>\n<h3>What happens if a fault is found?</h3>\n<p>The fault is flagged red on the dashboard, included in the PDF report with the engineer's description and any photo, and the manager is notified immediately. The timestamped record is the audit trail.</p>\n<h3>Can checks be scheduled automatically?</h3>\n<p>Yes. Quickler sends the check to the engineer at a configured time each day. No manual trigger is required from the manager.</p>\n<h3>Does the engineer need to install anything?</h3>\n<p>No. Engineers use WhatsApp, which they already have. There is nothing to install and no login to remember.</p>\n<h3>How are records stored?</h3>\n<p>Every check is timestamped and linked to the individual engineer. Records are stored on EU servers, accessible from the manager dashboard, and exportable as PDF at any time.</p>\n<h3>What if an engineer doesn't reply?</h3>\n<p>Quickler flags missed or incomplete checks automatically. Managers see outstanding items on the dashboard without having to chase individually.</p>",
   "seo": {
     "title": "WhatsApp Van Safety Checks | Quickler | Fleet Compliance (UK and beyond)",
     "description": "Run van safety checks via WhatsApp. Engineers reply to scheduled questions on site. Faults flagged automatically. PDF record to the manager automatically. Rooted in UK fleet compliance, works anywhere WhatsApp does.",
@@ -35,119 +79,3 @@
   ]
 }
 ---
-<section id="top">
-        <div class="page-shell about-page-intro">
-            <span class="eyebrow">Van Safety Checks</span>
-            <h1>WhatsApp van safety checks for fleet operators. Scheduled, automatic, and auditable.</h1>
-            <p class="page-lede">A van safety check is a structured inspection confirming a company vehicle is roadworthy and safe for use. Quickler runs van safety checks via WhatsApp: the engineer receives questions on their phone, replies by text or photo, and the completed record goes to the manager automatically. It runs any inspection or checklist, not just one trade. Rooted in UK fleet compliance, it works anywhere WhatsApp does, and is used across English-speaking markets including the UK, Ireland, the United States, Canada, Australia and New Zealand. <a href="/pages/global-field-compliance.html">Quickler works in any country</a>.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="content-duo">
-            <div class="section-frame">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">Legal position</p>
-                        <h2>Why van safety records matter.</h2>
-                    </div>
-                </div>
-                <div class="detail-body">
-                    <p>UK employers have a legal duty of care under the Health and Safety at Work Act 1974 and the Management of Health and Safety at Work Regulations 1999. The practical requirement is not just that checks happen — it is that checks can be demonstrated to have happened.</p>
-                    <p>Most fleet insurance policies also require evidence of regular pre-use inspections. DVSA guidance and industry codes in gas, electrical, and construction sectors expect documented checks as standard.</p>
-                    <p>"We do daily checks" is not the same as "we can prove we do daily checks."</p>
-                </div>
-            </div>
-            <div class="section-frame">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">The check itself</p>
-                        <h2>What a van safety check covers.</h2>
-                    </div>
-                </div>
-                <div class="detail-body">
-                    <ul>
-                        <li>Tyres — condition and pressure</li>
-                        <li>Lights — front, rear, indicators</li>
-                        <li>Mirrors and windscreen</li>
-                        <li>Fluid levels — oil, coolant, screen wash</li>
-                        <li>Brakes</li>
-                        <li>Load security</li>
-                        <li>Visible damage to bodywork</li>
-                    </ul>
-                    <p>Quickler builds the check sequence from your existing form or checklist. Upload it and the workflow is configured automatically.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">How it works</p>
-                <h2>Five steps. No paper. No chase.</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-3">
-            <article class="card-link">
-                <span class="card-link-kicker">Step 1</span>
-                <h3 class="card-link-title">Scheduled WhatsApp message</h3>
-                <p class="card-link-copy">At the configured time — typically before the first job of the day — Quickler sends the engineer a WhatsApp message prompting them to begin the check. No manual trigger from the office.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Step 2</span>
-                <h3 class="card-link-title">Engineer replies on site</h3>
-                <p class="card-link-copy">The engineer replies to each question by text — pass, fail, or a short description. The conversation guides them through every item in sequence.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Step 3</span>
-                <h3 class="card-link-title">Photos attached where required</h3>
-                <p class="card-link-copy">Where the workflow requires photographic evidence — tyre condition, load securing, visible damage — the engineer attaches a photo in WhatsApp. Quickler links it to the relevant check automatically.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Step 4</span>
-                <h3 class="card-link-title">Faults flagged automatically</h3>
-                <p class="card-link-copy">Quickler identifies any items marked as failed or requiring attention. Faults are flagged red in the manager's dashboard immediately.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Step 5</span>
-                <h3 class="card-link-title">Manager receives the record</h3>
-                <p class="card-link-copy">The completed check — all responses, photos, and flagged faults — appears on the manager's dashboard in real time. A PDF is also emailed automatically.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">FAQ</p>
-                <h2>Common questions.</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-3">
-            <article class="card-link">
-                <h3 class="card-link-title">Is a van safety check a legal requirement?</h3>
-                <p class="card-link-copy">UK employers have a duty of care to ensure company vehicles are roadworthy. Most fleet insurance policies require evidence of regular checks. Documented pre-use inspections are standard across gas, electrical, and construction sectors.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">What happens if a fault is found?</h3>
-                <p class="card-link-copy">The fault is flagged red on the dashboard, included in the PDF report with the engineer's description and any photo, and the manager is notified immediately. The timestamped record is the audit trail.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">Can checks be scheduled automatically?</h3>
-                <p class="card-link-copy">Yes. Quickler sends the check to the engineer at a configured time each day. No manual trigger is required from the manager.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">Does the engineer need to install anything?</h3>
-                <p class="card-link-copy">No. Engineers use WhatsApp, which they already have. There is nothing to install and no login to remember.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">How are records stored?</h3>
-                <p class="card-link-copy">Every check is timestamped and linked to the individual engineer. Records are stored on EU servers, accessible from the manager dashboard, and exportable as PDF at any time.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">What if an engineer doesn't reply?</h3>
-                <p class="card-link-copy">Quickler flags missed or incomplete checks automatically. Managers see outstanding items on the dashboard without having to chase individually.</p>
-            </article>
-        </div>
-    </section>

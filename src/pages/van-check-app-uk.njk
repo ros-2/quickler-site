@@ -1,8 +1,56 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/van-check-app-uk.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Guide · Fleet",
+    "heading": "Van checks that engineers finish.",
+    "lede": "Paper logs get lost and apps get abandoned. Compare paper, iAuditor and WhatsApp van checks, and see exactly what DVSA wants when they knock.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "prose",
+      "eyebrow": "The real problem",
+      "heading": "Friction, not attitude",
+      "text": "A walkaround check takes three minutes. The common failure at DVSA inspections is not dangerous vehicles, it is incomplete records. Paper goes missing in gloveboxes; apps demand a login then an update then another login. A single missing week undermines an otherwise tidy record, and \"it fell behind the seat\" carries no weight in an enforcement visit."
+    },
+    {
+      "type": "steps",
+      "eyebrow": "What DVSA looks for",
+      "heading": "Three things, every time",
+      "items": [
+        { "title": "Checks completed", "text": "A record per vehicle per day, with the driver's name and the time." },
+        { "title": "Defect reports", "text": "What was found, who found it, and when, with a photo where it matters." },
+        { "title": "Evidence of action", "text": "A defect with no follow-up is the most damaging record you can show. It proves you knew." }
+      ]
+    },
+    {
+      "type": "cards",
+      "eyebrow": "The three approaches",
+      "heading": "Paper, iAuditor, WhatsApp",
+      "items": [
+        { "kicker": "Paper", "title": "Works at sole-trader scale", "text": "Free and valid, but no search and no patterns. Finding a record across 30 vans takes half a day." },
+        { "kicker": "iAuditor", "title": "Needs an IT owner", "text": "Strong for firms with a rollout and per-seat budget. Without one, completion rates drop." },
+        { "kicker": "Quickler", "title": "Lives in WhatsApp", "text": "No app, no login. Checks arrive in the app engineers already use, with photos and timestamps." }
+      ]
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Get started",
+      "heading": "Live van checks in under a week",
+      "text": "Upload your existing paper form and Quickler builds the WhatsApp workflow. Engineers check in from day one. Pricing starts at £50 per month with no per-seat licensing.",
+      "actions": [
+        { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+        { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+      ]
+    }
+  ],
+  "seoBody": "<p>Most van fleets run on paper logs or expensive apps that engineers quietly stop using. This guide compares the three main approaches, paper, iAuditor, and WhatsApp, and explains what DVSA actually wants to see when they knock on the door.</p><p><strong>Key takeaways</strong></p><ul><li>Daily walkaround checks are a legal obligation for UK van operators, not a best practice.</li><li>Paper records are valid but get lost, and gaps look worse than no system at all.</li><li>iAuditor works well for firms with an IT manager. Firms without one see low completion rates.</li><li>WhatsApp-based checks remove login friction: engineers are already in the app.</li><li>DVSA wants a defect record, evidence of follow-up, and a named driver. Timestamp from the app gives you all three.</li></ul><h2>Why van checks go wrong</h2><p>A daily walkaround check takes three minutes. Both parties know this. The most common problem at DVSA inspections is not dangerous vehicles. It is incomplete records.</p><p>The gap is not attitude. It is friction. Paper forms go missing in gloveboxes. Apps require a login, then an update, then another login. By the time the screen loads, the van has started.</p><p>A single missing week undermines an otherwise tidy compliance record. DVSA will note the gap. \"It must have fallen behind the seat\" does not carry weight in an enforcement visit.</p><p>The typical pattern: a director buys a fleet app. Six weeks later completion rates are at 40%. The remaining 60% of checks are in the old paper book, which nobody has looked at since the app launched. Two incomplete systems instead of one.</p><p>Getting the record made is the hard part. Not the check.</p><h2>What DVSA actually looks for</h2><p>DVSA enforcement officers can inspect fleet records at any time. For vans and light commercial vehicles, the standard request covers three things.</p><p>First: evidence that daily walkaround checks were completed. A record per vehicle per day, with the driver's name and the time. A blank logbook for a Tuesday when the engineer was on site is not evidence.</p><p>Second: defect reports. When a fault is found, a cracked light, a tyre near the limit, a broken mirror, it must be recorded. The defect report shows what was found, who found it, and when.</p><p>Third: evidence of action. A defect with no follow-up is the most damaging record you can show DVSA. It proves you knew. Officers look for repair records or a signed-off confirmation that the defect was assessed.</p><p>For van fleets, there is no mandated retention period as strict as the 15-month rule for HGV operators. In practice, 3 months of accessible digital records and 12 months of archive covers the realistic enforcement window. Keeping 15 months costs nothing in a digital system.</p><p><strong>The practical test:</strong> If DVSA arrived today and asked for records for the last three months across all your vehicles, could you produce them within ten minutes? If the answer involves finding a folder or calling someone who might know where the logbook is, the system is not working.</p><h2>Paper: the honest assessment</h2><p>Paper still works. Many small fleets run on paper logbooks and have no enforcement problems. The conditions for it to work are specific.</p><p>The van must have a dedicated logbook kept inside it. The logbook must stay in the van. The driver must complete it every morning. When it is full, it must be filed in a known location. Someone must review it monthly.</p><p>That is five things that all have to happen. Most fleets manage three of them, most of the time.</p><p>Paper has no search capability. When DVSA asks about a specific vehicle on a specific date, finding the record means finding the logbook and leafing through it. With 10 vans this is manageable. With 30 vans it takes half a day.</p><p>Paper records cannot detect patterns. Van 7 may have had three separate tyre warnings in two months. Nobody will notice unless someone transcribes the logbooks. Nobody transcribes the logbooks.</p><h2>iAuditor: what it does well and where it falls short</h2><p>iAuditor (now SafetyCulture) is the market leader in digital inspection software. For firms with a structured IT rollout, a training budget, and engineers who sit in an office between jobs, it is a solid platform.</p><p>The failure mode is adoption. iAuditor requires a login, a profile, and familiarity with the interface. Engineers who spend their day on tools, not screens, treat new apps with indifference at best.</p><p>Per-seat licensing becomes expensive on a fleet of 15-30 engineers. The full feature set requires the premium tier.</p><p>For a firm with an operations manager who owns the rollout and checks completion daily, iAuditor works. For a firm where the director is also the operations manager and compliance is one of twelve things on the list, the overhead of managing iAuditor's adoption exceeds the benefit.</p><p>The app is only as good as the completion rate.</p><h2>WhatsApp-based van checks: how Quickler works</h2><p>Quickler runs walkaround checks through WhatsApp. Engineers receive a message at the start of each shift. They answer questions in the chat. There is no app to install, no login to remember, and no interface to learn.</p><p>The product is rooted in UK compliance but not limited to it. Quickler runs any inspection or checklist, not just one trade, and works anywhere WhatsApp does. It is used across English-speaking markets including the UK, Ireland, the United States, Canada, Australia and New Zealand. The DVSA detail below is the UK case; <a href=\"/pages/global-field-compliance.html\">Quickler works in any country</a>.</p><p>Every engineer already uses WhatsApp. A van check that arrives in the same app they used five minutes ago has near-zero friction compared to opening a separate inspection tool.</p><p>When a defect is found, the engineer photographs it through WhatsApp. The image attaches to the record. The dashboard shows red/amber/green status per vehicle. A red flag means a defect is open and unresolved, visible to the fleet manager without a phone call or a paper form.</p><p>Checks are scheduled. The trigger fires automatically. The record is timestamped, attributed to the named engineer, and stored on EU servers. If DVSA asks for three months of records, the export takes a minute.</p><p>Pricing starts at £50 per month for one engineer. Firms with 12-30 vans typically sit on the £140-£300 tiers. There is no per-seat licensing. A fixed monthly fee covers the whole firm.</p><p>Setup to first live check takes under a week. Upload an existing paper form and Quickler builds the workflow from it.</p><h2>Which to choose</h2><p>Paper suits a sole trader with one van who is disciplined about the logbook. It costs nothing and works at that scale.</p><p>iAuditor suits larger operations. 50+ staff, a dedicated compliance function, engineers already accustomed to using apps on site. The template depth and integrations are useful at that scale.</p><p>WhatsApp-based checks suit the middle: 5-30 vans, a firm where engineers are trades professionals not desk workers, a director who wants visibility without another system to manage.</p><p>The question to ask is: what is your current completion rate, and do you know it? If you do not know the number, the system is not giving you the oversight you think it is.</p><h2>Frequently asked questions</h2><h3>Are daily van walkaround checks a legal requirement in the UK?</h3><p>Yes. Under the Road Traffic Act 1988 and associated DVSA guidance, operators of commercial vehicles must ensure vehicles are roadworthy before use. The driver is responsible for a daily walkaround check. The check is a legal obligation. The record is the evidence it was done.</p><h3>What does DVSA ask for during a fleet inspection?</h3><p>DVSA enforcement officers can request records of daily walkaround checks, defect reports, and evidence of follow-up action. They expect at least 15 months of records for HGV operators and typically ask for a rolling 3-month sample for van fleets. Records must show who checked the vehicle, when, what was found, and what action was taken.</p><h3>Why do engineers stop using van check apps?</h3><p>Login friction, update prompts, and unfamiliar interfaces add time to a task engineers already resent. A walkaround check takes 3 minutes. If opening the app takes 2 minutes, they skip the app. WhatsApp is already open. That removes the friction entirely.</p><h3>How long should van check records be kept?</h3><p>DVSA guidance recommends at least 15 months for goods vehicles. For vans and light commercial vehicles, a minimum of 3 months is commonly cited. Keeping 12 months of digital records costs nothing and protects you in the event of an incident or enforcement visit.</p><h3>Related guides</h3><ul><li><a href=\"/pages/fleet-vehicle-inspection-checklist-uk.html\">Fleet vehicle inspection checklist</a></li><li><a href=\"/pages/van-defect-report-uk.html\">Van defect report template</a></li><li><a href=\"/pages/dvsa-walkaround-check-free-template-uk.html\">DVSA walkaround check template</a></li></ul>",
   "seo": {
     "title": "Van Check App UK 2026: Paper vs iAuditor vs WhatsApp",
     "description": "Compare paper logs, iAuditor, and WhatsApp-based van checks for UK fleet operators. What DVSA evidence looks like and what happens when you can't produce it.",
@@ -27,138 +75,8 @@
     "lang": "en",
     "jsonld": "{ \"@context\": \"https://schema.org\", \"@graph\": [\n      { \"@type\": \"Article\", \"headline\": \"Van Check App UK 2026: Paper vs iAuditor vs WhatsApp\", \"description\": \"Compare paper logs, iAuditor, and WhatsApp-based van checks for UK fleet operators. What DVSA evidence looks like and what happens when you can't produce it.\",\n        \"author\": {\"@type\": \"Organization\", \"name\": \"Quickler Ltd\"},\n        \"publisher\": {\"@type\": \"Organization\", \"name\": \"Quickler Ltd\", \"url\": \"https://quickler.co/\"},\n        \"datePublished\": \"2026-06-03\", \"dateModified\": \"2026-06-03\", \"inLanguage\": \"en-GB\" },\n      { \"@type\": \"FAQPage\", \"mainEntity\": [\n        {\"@type\": \"Question\", \"name\": \"Are daily van walkaround checks a legal requirement in the UK?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Under the Road Traffic Act 1988 and associated DVSA guidance, operators of commercial vehicles have a duty to ensure vehicles are roadworthy before use. For vans and light commercial vehicles, the driver is responsible for a daily walkaround check. The check itself is a legal obligation; the record is the evidence you were doing it.\"}},\n        {\"@type\": \"Question\", \"name\": \"What does DVSA ask for during a fleet inspection?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"DVSA enforcement officers can request records of daily walkaround checks, defect reports, and evidence of follow-up action. They expect at least 15 months of records for HGV operators and typically ask to see a rolling 3-month sample for van fleets. Records must show who checked the vehicle, when, what was found, and what action was taken.\"}},\n        {\"@type\": \"Question\", \"name\": \"Why do engineers stop using van check apps?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Most engineers stop using dedicated apps because login friction, update prompts, and unfamiliar interfaces add time to a task they already resent. A walkaround check takes 3 minutes. If opening the app takes 2 minutes, they skip the app. WhatsApp is already open on every engineer's phone, which removes the friction entirely.\"}},\n        {\"@type\": \"Question\", \"name\": \"How long should van check records be kept?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"DVSA guidance recommends keeping walkaround check records for at least 15 months for goods vehicles. For vans and light commercial vehicles, a minimum of 3 months is commonly cited, but keeping 12 months of digital records costs nothing and protects you in the event of an incident or enforcement visit.\"}\n        }\n      ]},\n      { \"@type\": \"BreadcrumbList\", \"itemListElement\": [\n        {\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://quickler.co/\"},\n        {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Van Check App UK\", \"item\": \"https://quickler.co/pages/van-check-app-uk.html\"}\n      ]}\n    ]}"
   },
-  "headStyle": "\n        .long-form-body { max-width: 760px; margin: 0 auto; }\n        .long-form-body h2 { margin-top: 2.4rem; }\n        .long-form-body h3 { margin-top: 1.6rem; }\n        .long-form-body ul, .long-form-body ol { padding-left: 1.4rem; }\n        .long-form-body li { margin-bottom: 0.4rem; }\n        .long-form-body p { margin: 0.8rem 0; }\n        .callout { background: rgba(244, 63, 140, 0.06); border-left: 3px solid #f43f8c; padding: 0.9rem 1.1rem; border-radius: 6px; margin: 1rem 0; }\n        .key-takeaways { background: #f0fdf4; border-left: 3px solid #22c55e; padding: 0.9rem 1.1rem; border-radius: 6px; margin: 1rem 0; }\n        .key-takeaways ul { margin: 0.4rem 0 0; }\n    ",
   "scripts": [
     "/js/analytics-events.js"
   ]
 }
 ---
-<section id="top">
-        <div class="page-shell about-page-intro">
-            <span class="eyebrow">Guide · Fleet</span>
-            <h1>Van check app UK 2026: paper vs iAuditor vs WhatsApp.</h1>
-            <p class="page-lede">Most van fleets run on paper logs or expensive apps that engineers quietly stop using. This guide compares the three main approaches. paper, iAuditor, and WhatsApp. and explains what DVSA actually wants to see when they knock on the door.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="long-form-body">
-            <div class="key-takeaways">
-                <strong>Key takeaways</strong>
-                <ul>
-                    <li>Daily walkaround checks are a legal obligation for UK van operators, not a best practice.</li>
-                    <li>Paper records are valid but get lost, and gaps look worse than no system at all.</li>
-                    <li>iAuditor works well for firms with an IT manager. Firms without one see low completion rates.</li>
-                    <li>WhatsApp-based checks remove login friction: engineers are already in the app.</li>
-                    <li>DVSA wants a defect record, evidence of follow-up, and a named driver. Timestamp from the app gives you all three.</li>
-                </ul>
-            </div>
-
-            <h2>Why van checks go wrong</h2>
-            <p>A daily walkaround check takes three minutes. Both parties know this. The most common problem at DVSA inspections is not dangerous vehicles. It is incomplete records.</p>
-            <p>The gap is not attitude. It is friction. Paper forms go missing in gloveboxes. Apps require a login, then an update, then another login. By the time the screen loads, the van has started.</p>
-            <p>A single missing week undermines an otherwise tidy compliance record. DVSA will note the gap. "It must have fallen behind the seat" does not carry weight in an enforcement visit.</p>
-            <p>The typical pattern: a director buys a fleet app. Six weeks later completion rates are at 40%. The remaining 60% of checks are in the old paper book, which nobody has looked at since the app launched. Two incomplete systems instead of one.</p>
-            <p>Getting the record made is the hard part. Not the check.</p>
-
-            <h2>What DVSA actually looks for</h2>
-            <p>DVSA enforcement officers can inspect fleet records at any time. For vans and light commercial vehicles, the standard request covers three things.</p>
-            <p>First: evidence that daily walkaround checks were completed. A record per vehicle per day, with the driver's name and the time. A blank logbook for a Tuesday when the engineer was on site is not evidence.</p>
-            <p>Second: defect reports. When a fault is found, a cracked light, a tyre near the limit, a broken mirror, it must be recorded. The defect report shows what was found, who found it, and when.</p>
-            <p>Third: evidence of action. A defect with no follow-up is the most damaging record you can show DVSA. It proves you knew. Officers look for repair records or a signed-off confirmation that the defect was assessed.</p>
-            <p>For van fleets, there is no mandated retention period as strict as the 15-month rule for HGV operators. In practice, 3 months of accessible digital records and 12 months of archive covers the realistic enforcement window. Keeping 15 months costs nothing in a digital system.</p>
-            <div class="callout">
-                <strong>The practical test:</strong> If DVSA arrived today and asked for records for the last three months across all your vehicles, could you produce them within ten minutes? If the answer involves finding a folder or calling someone who might know where the logbook is, the system is not working.
-            </div>
-
-            <h2>Paper: the honest assessment</h2>
-            <p>Paper still works. Many small fleets run on paper logbooks and have no enforcement problems. The conditions for it to work are specific.</p>
-            <p>The van must have a dedicated logbook kept inside it. The logbook must stay in the van. The driver must complete it every morning. When it is full, it must be filed in a known location. Someone must review it monthly.</p>
-            <p>That is five things that all have to happen. Most fleets manage three of them, most of the time.</p>
-            <p>Paper has no search capability. When DVSA asks about a specific vehicle on a specific date, finding the record means finding the logbook and leafing through it. With 10 vans this is manageable. With 30 vans it takes half a day.</p>
-            <p>Paper records cannot detect patterns. Van 7 may have had three separate tyre warnings in two months. Nobody will notice unless someone transcribes the logbooks. Nobody transcribes the logbooks.</p>
-
-            <h2>iAuditor: what it does well and where it falls short</h2>
-            <p>iAuditor (now SafetyCulture) is the market leader in digital inspection software. For firms with a structured IT rollout, a training budget, and engineers who sit in an office between jobs, it is a solid platform.</p>
-            <p>The failure mode is adoption. iAuditor requires a login, a profile, and familiarity with the interface. Engineers who spend their day on tools, not screens, treat new apps with indifference at best.</p>
-            <p>Per-seat licensing becomes expensive on a fleet of 15-30 engineers. The full feature set requires the premium tier.</p>
-            <p>For a firm with an operations manager who owns the rollout and checks completion daily, iAuditor works. For a firm where the director is also the operations manager and compliance is one of twelve things on the list, the overhead of managing iAuditor's adoption exceeds the benefit.</p>
-            <p>The app is only as good as the completion rate.</p>
-
-            <h2>WhatsApp-based van checks: how Quickler works</h2>
-            <p>Quickler runs walkaround checks through WhatsApp. Engineers receive a message at the start of each shift. They answer questions in the chat. There is no app to install, no login to remember, and no interface to learn.</p>
-            <p>The product is rooted in UK compliance but not limited to it. Quickler runs any inspection or checklist, not just one trade, and works anywhere WhatsApp does. It is used across English-speaking markets including the UK, Ireland, the United States, Canada, Australia and New Zealand. The DVSA detail below is the UK case; <a href="/pages/global-field-compliance.html">Quickler works in any country</a>.</p>
-            <p>Every engineer already uses WhatsApp. A van check that arrives in the same app they used five minutes ago has near-zero friction compared to opening a separate inspection tool.</p>
-            <p>When a defect is found, the engineer photographs it through WhatsApp. The image attaches to the record. The dashboard shows red/amber/green status per vehicle. A red flag means a defect is open and unresolved, visible to the fleet manager without a phone call or a paper form.</p>
-            <p>Checks are scheduled. The trigger fires automatically. The record is timestamped, attributed to the named engineer, and stored on EU servers. If DVSA asks for three months of records, the export takes a minute.</p>
-            <p>Pricing starts at £50 per month for one engineer. Firms with 12-30 vans typically sit on the £140-£300 tiers. There is no per-seat licensing. A fixed monthly fee covers the whole firm.</p>
-            <p>Setup to first live check takes under a week. Upload an existing paper form and Quickler builds the workflow from it.</p>
-
-            <h2>Which to choose</h2>
-            <p>Paper suits a sole trader with one van who is disciplined about the logbook. It costs nothing and works at that scale.</p>
-            <p>iAuditor suits larger operations. 50+ staff, a dedicated compliance function, engineers already accustomed to using apps on site. The template depth and integrations are useful at that scale.</p>
-            <p>WhatsApp-based checks suit the middle: 5-30 vans, a firm where engineers are trades professionals not desk workers, a director who wants visibility without another system to manage.</p>
-            <p>The question to ask is: what is your current completion rate, and do you know it? If you do not know the number, the system is not giving you the oversight you think it is.</p>
-
-            <h2>Frequently asked questions</h2>
-
-            <h3>Are daily van walkaround checks a legal requirement in the UK?</h3>
-            <p>Yes. Under the Road Traffic Act 1988 and associated DVSA guidance, operators of commercial vehicles must ensure vehicles are roadworthy before use. The driver is responsible for a daily walkaround check. The check is a legal obligation. The record is the evidence it was done.</p>
-
-            <h3>What does DVSA ask for during a fleet inspection?</h3>
-            <p>DVSA enforcement officers can request records of daily walkaround checks, defect reports, and evidence of follow-up action. They expect at least 15 months of records for HGV operators and typically ask for a rolling 3-month sample for van fleets. Records must show who checked the vehicle, when, what was found, and what action was taken.</p>
-
-            <h3>Why do engineers stop using van check apps?</h3>
-            <p>Login friction, update prompts, and unfamiliar interfaces add time to a task engineers already resent. A walkaround check takes 3 minutes. If opening the app takes 2 minutes, they skip the app. WhatsApp is already open. That removes the friction entirely.</p>
-
-            <h3>How long should van check records be kept?</h3>
-            <p>DVSA guidance recommends at least 15 months for goods vehicles. For vans and light commercial vehicles, a minimum of 3 months is commonly cited. Keeping 12 months of digital records costs nothing and protects you in the event of an incident or enforcement visit.</p>
-        </div>
-    </section>
-
-    
-
-            <div class="quickler-callout">
-                <strong>Try this in Quickler, free trial, no card required</strong>
-                <p>Copy and paste this into the workflow description when you sign up at <a href="https://app.quickler.co/signup" style="color:#1a5296;">app.quickler.co/signup</a>:</p>
-                <pre class="callout-template">Daily van safety check — copy and paste this at signup:
-
-Workflow name: Daily van check
-Questions:
-1. Driver name and date?
-2. Vehicle registration?
-3. Tyres — any damage or low pressure? (yes/no + photo if yes)
-4. Lights — all working front and rear? (yes/no)
-5. Mirrors — clean and adjusted? (yes/no)
-6. Windscreen — any chips or cracks? (yes/no + photo if yes)
-7. Fluid levels checked — oil, coolant, washer? (yes/no)
-8. Any warning lights on dashboard? (yes/no + description if yes)
-9. Load secured properly? (yes/no)
-10. Driver signature to confirm check completed?
-
-Quickler sends these questions one at a time on WhatsApp. Driver answers before leaving the yard. PDF record created automatically.</pre>
-                <p style="margin-top:0.9rem;">Quickler reads your description and builds the WhatsApp question sequence. Your engineers answer on site. PDF produced automatically.</p>
-                <a href="https://app.quickler.co/signup" class="callout-btn">Start van checks on WhatsApp →</a>
-            </div>
-    <section class="related-guides">
-        <div class="long-form-body">
-            <h3>Related guides</h3>
-            <ul>
-                <li><a href="/pages/fleet-vehicle-inspection-checklist-uk.html">Fleet vehicle inspection checklist</a></li>
-                <li><a href="/pages/van-defect-report-uk.html">Van defect report template</a></li>
-                <li><a href="/pages/dvsa-walkaround-check-free-template-uk.html">DVSA walkaround check template</a></li>
-            </ul>
-        </div>
-    </section>
-
-<section class="cta-section">
-        <div class="cta-content">
-            <h2>Live van checks in under a week</h2>
-            <p>Upload your existing form. Quickler builds the workflow. Engineers check in via WhatsApp from day one.</p>
-            <div class="hero-actions">
-                <a href="https://app.quickler.co/signup" class="btn btn-primary">Start free trial</a>
-                <a href="/pages/van-safety-checks.html" class="btn btn-secondary">See van safety checks</a>
-                <a href="/pages/alternatives.html" class="btn btn-secondary">Compare alternatives</a>
-            </div>
-        </div>
-    </section>

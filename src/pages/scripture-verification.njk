@@ -1,8 +1,54 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/scripture-verification.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Product",
+    "heading": "Scripture verification, audited.",
+    "lede": "A review-focused tool for Christian publishers who need accurate, auditable checking of Scripture references and quotations.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "prose",
+      "eyebrow": "The problem",
+      "heading": "Manual checking is slow",
+      "text": "Editorial teams still spend large amounts of time manually checking whether references exist, whether quotations match the stated translation, and whether deviations are acceptable or accidental. The work is essential, but it is slow, repetitive, and difficult to audit after the fact."
+    },
+    {
+      "type": "steps",
+      "eyebrow": "What the system does",
+      "heading": "Manuscript in, review document out",
+      "items": [
+        { "title": "Confirm and compare", "text": "Confirms that references exist and compares quoted text against the ESV word-for-word." },
+        { "title": "Detect and flag", "text": "Detects likely use of other translations and flags deviations with clear review signals." },
+        { "title": "Side-by-side", "text": "Produces side-by-side comparisons for editors in a separate verification document." }
+      ]
+    },
+    {
+      "type": "cards",
+      "eyebrow": "What it is and is not",
+      "heading": "Scope, set clearly",
+      "items": [
+        { "kicker": "Is", "title": "Editorial verification", "text": "An accuracy and traceability tool for Christian publishers, built for review." },
+        { "kicker": "Is not", "title": "Not a decision engine", "text": "Not a theological decision engine and not a replacement for human editors." }
+      ]
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Development status",
+      "heading": "Register interest",
+      "text": "The product is in development planning, with architecture and workflows defined and an initial customer use-case established. If this would materially reduce editorial checking time for your team, quickler would like to hear from you.",
+      "actions": [
+        { "label": "Contact", "href": "/pages/help/index.html#contact-form-section", "style": "btn-primary" }
+      ]
+    }
+  ],
+  "seoBody": "<h2>The problem</h2><p>Editorial teams still spend large amounts of time manually checking whether references exist, whether quotations match the stated translation, and whether deviations are acceptable or accidental.</p><p>The work is essential, but it is slow, repetitive, and difficult to audit after the fact.</p><h2>What the system does</h2><p>The system processes a manuscript and produces a separate verification document designed for editorial review.</p><ul><li>Confirms that references exist</li><li>Compares quoted text against the ESV word-for-word</li><li>Detects likely use of other translations</li><li>Flags deviations with clear review signals</li><li>Produces side-by-side comparisons for editors</li></ul><h2>What it is and is not</h2><ul><li>An editorial verification tool for Christian publishers</li><li>Designed for accuracy, traceability, and review</li><li>Not a theological decision engine</li><li>Not a replacement for human editors</li></ul><h2>Who it is for</h2><ul><li>Christian publishing houses</li><li>Theological editors and proof-readers</li><li>Publishers handling mixed-translation manuscripts</li></ul><h2>Development status</h2><p>The product is currently in development planning, with architecture and workflows defined and an initial customer use-case established.</p><p>If your organisation wants to discuss using the system, contact quickler and mention Scripture verification.</p><h2>Register interest</h2><p>If this would materially reduce editorial checking time for your team, quickler would like to hear from you.</p>",
   "seo": {
     "title": "Scripture Verification System | quickler",
     "description": "Automated checking of Scripture references, quotations, and translations for Christian publishers.",
@@ -33,48 +79,3 @@
   ]
 }
 ---
-<section id="top">
-        <div class="detail-shell">
-            <a class="detail-back" href="/pages/products.html">← Back to products</a>
-            <span class="detail-kicker">Product</span>
-            <h1 class="detail-title">Scripture verification system</h1>
-            <p class="detail-subtitle">A review-focused tool for Christian publishers who need accurate, auditable checking of Scripture references and quotations.</p>
-
-            <div class="detail-body">
-                <h3>The problem</h3>
-                <p>Editorial teams still spend large amounts of time manually checking whether references exist, whether quotations match the stated translation, and whether deviations are acceptable or accidental.</p>
-                <p>The work is essential, but it is slow, repetitive, and difficult to audit after the fact.</p>
-
-                <h3>What the system does</h3>
-                <p>The system processes a manuscript and produces a separate verification document designed for editorial review.</p>
-                <ul>
-                    <li>Confirms that references exist</li>
-                    <li>Compares quoted text against the ESV word-for-word</li>
-                    <li>Detects likely use of other translations</li>
-                    <li>Flags deviations with clear review signals</li>
-                    <li>Produces side-by-side comparisons for editors</li>
-                </ul>
-
-                <h3>What it is and is not</h3>
-                <ul>
-                    <li>An editorial verification tool for Christian publishers</li>
-                    <li>Designed for accuracy, traceability, and review</li>
-                    <li>Not a theological decision engine</li>
-                    <li>Not a replacement for human editors</li>
-                </ul>
-
-                <h3>Who it is for</h3>
-                <ul>
-                    <li>Christian publishing houses</li>
-                    <li>Theological editors and proof-readers</li>
-                    <li>Publishers handling mixed-translation manuscripts</li>
-                </ul>
-
-                <h3>Development status</h3>
-                <p>The product is currently in development planning, with architecture and workflows defined and an initial customer use-case established.</p>
-                <p class="detail-note">If your organisation wants to discuss using the system, contact quickler and mention Scripture verification.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section"><div class="cta-content"><h2>Register interest</h2><p>If this would materially reduce editorial checking time for your team, quickler would like to hear from you.</p><a href="/pages/help/index.html#contact-form-section" class="btn btn-primary">Contact</a></div></section>

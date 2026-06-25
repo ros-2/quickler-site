@@ -1,8 +1,56 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/whatsapp-business-compliance-uk.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Guide · How-to",
+    "heading": "WhatsApp compliance, done properly.",
+    "lede": "Personal WhatsApp, the Business app, and the Business API are three different things. Here is how UK firms use the API for compliance reporting without a Meta account.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "cards",
+      "eyebrow": "Three products",
+      "heading": "Not the same WhatsApp",
+      "items": [
+        { "kicker": "Personal", "title": "Consumer app", "text": "Built for friends and family. No API, no audit trail, no way to extract structured data." },
+        { "kicker": "Business app", "title": "Sole traders", "text": "Free app with a business profile and quick replies, but single phone, single number, no API." },
+        { "kicker": "Business API", "title": "Organisations", "text": "Programmatic interface for structured, scalable messaging, accessed through an approved provider." }
+      ]
+    },
+    {
+      "type": "prose",
+      "eyebrow": "Why not personal numbers",
+      "heading": "Data ownership and GDPR",
+      "text": "A conversation on an engineer's personal number is legally held by the engineer. If they leave, the records leave too. Data scattered across personal devices is not under the firm's control, which creates GDPR exposure and audit gaps for records that span years."
+    },
+    {
+      "type": "steps",
+      "eyebrow": "How Quickler sets it up",
+      "heading": "Live in under a week",
+      "items": [
+        { "title": "We run the API", "text": "Quickler manages the WhatsApp Business API account on the firm's behalf. No Meta account needed from you." },
+        { "title": "Engineers just chat", "text": "They receive a normal WhatsApp from a business number, reply, and send photos or voice notes. The infrastructure is invisible." },
+        { "title": "Data stays in the EU", "text": "Structured report data is stored on Hetzner servers in Germany, covered by a DPA, exportable to PDF and CSV." }
+      ]
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Get started",
+      "heading": "Run compliance over WhatsApp",
+      "text": "Quickler manages the API account. Engineers use normal WhatsApp. Records stored in the EU. Setup in under a week.",
+      "actions": [
+        { "label": "See how it works", "href": "/pages/demo.html", "style": "btn-primary" },
+        { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+      ]
+    }
+  ],
+  "seoBody": "<p class=\"eyebrow\">Guide · How-to</p><p><strong>Key takeaways</strong></p><ul><li>Personal WhatsApp and the WhatsApp Business app are not designed for business compliance reporting at scale.</li><li>The WhatsApp Business API is a programmatic interface accessed through an approved provider, not a consumer app.</li><li>Using a personal number for compliance records creates data ownership and GDPR problems when staff leave.</li><li>Engineers see a normal WhatsApp chat. The API infrastructure is invisible to them.</li></ul><h2>Three versions of WhatsApp and why the difference matters</h2><p>There are three distinct WhatsApp products. Most people have used only one. Understanding the difference matters when evaluating WhatsApp for compliance reporting.</p><p><strong>Personal WhatsApp</strong> is the consumer app. It is designed for individual use between friends, family, and informal groups. It has strong end-to-end encryption and deliberately minimal data portability. A conversation history lives on the device. Backups are optional and go to the user's personal Google Drive or iCloud. There is no business-grade audit trail, no API, and no way to extract structured data from conversations.</p><p><strong>WhatsApp Business app</strong> is a free app designed for small businesses. It adds a business profile, catalogue features, quick replies, and basic automated messages. It still operates from a single phone, linked to one number. It is not multi-user, has no API, and is not designed for high-volume or structured workflows. It suits a sole trader who wants customers to see a business name rather than a personal number. It does not suit a firm running compliance workflows across multiple engineers.</p><p><strong>WhatsApp Business API</strong> is a programmatic interface designed for organisations that need to send and receive messages at scale, with structured data, through software systems. It is not a consumer app. It is accessed through Meta-approved Business Solution Providers: software companies that have completed Meta's verification process and manage the API infrastructure on their clients' behalf.</p><h2>Why personal numbers are not suitable for compliance records</h2><p>The appeal of using a personal WhatsApp number for work is obvious. The app is already there. Everyone knows how to use it. No setup required.</p><p>The problem is data ownership. A conversation between a field engineer and a client on the engineer's personal number is, legally, held by the engineer. If the engineer leaves the firm, they take the conversation history with them. The firm has no copy. The compliance record — the inspection completed last Tuesday, the photo of the defect, the voice note describing the finding — is inaccessible.</p><p>This is a GDPR problem as much as a compliance one. Personal data collected in a business context must be under the controller's control. Data scattered across individual employees' personal devices is not under the firm's control. A subject access request for records held on a former employee's phone creates legal exposure that most firms would rather avoid.</p><p>There is also the continuity problem. A client number is only as stable as the employee holding it. Handover between engineers means starting a new WhatsApp thread, with no context from previous visits. For compliance records that span years, annual EICR records, gas safety history, ongoing inspection programmes, this creates gaps that are difficult to explain under audit.</p><h2>How the WhatsApp Business API works</h2><p>The API works through a registered business phone number, separate from any employee's personal number, linked to the organisation rather than to an individual. Messages sent through that number are routed through the API provider's infrastructure, processed by the firm's software system, and stored in the firm's data store.</p><p>From the engineer's perspective, the experience is indistinguishable from any other WhatsApp conversation. They receive a message from a business number, they reply, they send photos and voice notes. The fact that the replies are being processed by software, structured into report fields, and stored in a compliant data store is invisible to them.</p><p>The API supports automated messaging: sending prompts, questions, and structured forms, and handling incoming messages. This is what allows a compliance workflow. The system sends a series of questions, the engineer answers them, and the answers populate a structured report without the engineer ever leaving WhatsApp.</p><h2>What firms need to set up an API-based workflow</h2><p>Setting up a WhatsApp Business API integration requires: a Meta Business account for the provider; a dedicated phone number (not previously associated with a consumer WhatsApp account); approval of message templates by Meta; and connection of the number to the software platform managing the workflow.</p><p>This is not something most firms set up themselves. It requires technical work, Meta verification, and ongoing maintenance. The practical approach is to use a Business Solution Provider: a software firm that has already gone through Meta's verification process and manages the API account on their clients' behalf.</p><p>Quickler manages the WhatsApp Business API account on the firm's behalf. The firm's engineers are added to the system and begin receiving WhatsApp messages from a business number within days. No Meta Business account is needed from the firm. No technical setup by the client. The compliance workflow is ready to use in under a week.</p><h2>GDPR and data residency with WhatsApp API</h2><p>Message content sent through the WhatsApp Business API passes through Meta's infrastructure. Meta is a US company, which means message data is processed in the US under Meta's terms. This is a data transfer question under UK GDPR, one that Meta addresses through Standard Contractual Clauses in its Data Processing Agreement for API users.</p><p>The structured data extracted from conversations — the report fields, photos, timestamps, and inspection results — is stored by the software provider, not by WhatsApp. Where that data is stored is the firm's choice, through their choice of provider.</p><p>Quickler stores all structured report data on Hetzner servers in Germany. EU hosting satisfies both UK GDPR and EU GDPR requirements. Data does not sit in WhatsApp, which has no business-grade data retention or export capability. It sits in Quickler's database, covered by a Data Processing Agreement, accessible to the firm, and exportable to PDF and CSV on demand.</p><h2>What engineers experience</h2><p>For the engineer using a Quickler-powered workflow, none of the above is visible. They receive a WhatsApp message from a business number. The message asks a question: \"What is the property address?\" or \"Send a photo of the consumer unit.\" They reply. If they prefer to speak rather than type, they send a voice note, which is transcribed automatically.</p><p>The conversation guides them through the required fields for the job type. When they reach the end, the inspection is complete. The office can see the result in the dashboard. A PDF is ready. The engineer did not need to know anything about APIs, Meta Business accounts, or data hosting.</p><p>That invisibility is the point. The technology should remove friction, not create it. An engineer who has to understand WhatsApp infrastructure to complete a compliance report will not complete compliance reports.</p><h2>Frequently Asked Questions</h2><h3>What is the difference between WhatsApp, WhatsApp Business app, and WhatsApp Business API?</h3><p>Personal WhatsApp is for individual use. The WhatsApp Business app is a free app for small businesses: it adds a business profile and basic automation but still operates from a single phone and has no API. The WhatsApp Business API is a programmatic interface for organisations that need structured, scalable messaging. It is accessed through an approved Business Solution Provider, not a consumer app.</p><h3>Can a business use a personal WhatsApp number for compliance reporting?</h3><p>Using a personal number for compliance reporting creates problems with data ownership and GDPR. If the engineer leaves the firm, the number and conversation history leave with them. Records stored in a personal WhatsApp account are not under the firm's control. For compliance records that need to be retrieved or audited, a dedicated business number managed through the API is the appropriate approach.</p><h3>Do engineers need a Meta Business account to use Quickler?</h3><p>No. Quickler manages the WhatsApp Business API account on the firm's behalf. Engineers receive a normal WhatsApp chat from a business number. They do not need a Meta account, a Facebook account, or any setup beyond receiving the first message. From the engineer's perspective, it looks and works exactly like any other WhatsApp conversation.</p><h3>Where is WhatsApp conversation data stored when using the API?</h3><p>Message content passes through Meta's infrastructure. The structured data extracted from conversations — inspection records, report fields, photos — is stored by the software provider. Quickler stores this data on Hetzner servers in Germany (EU), covered by a Data Processing Agreement. Data is not stored in WhatsApp, which does not provide business-grade data retention or export.</p><p><strong>Want to run compliance workflows over WhatsApp, properly?</strong> Quickler manages the API account. Engineers use normal WhatsApp. Records stored in EU. Setup in under a week. <a href=\"/pages/demo.html\">See how it works.</a></p><h3>Related guides</h3><ul><li><a href=\"/pages/gdpr-field-reports-uk-sme.html\">GDPR for field reports</a></li><li><a href=\"/pages/digital-signature-field-reports-uk.html\">Digital signatures for field reports</a></li><li><a href=\"/pages/uk-field-compliance-reporting-guide.html\">UK field compliance reporting guide</a></li></ul>",
   "seo": {
     "title": "WhatsApp for Business Compliance Reporting: What UK Firms Need to Know",
     "description": "The difference between personal WhatsApp, WhatsApp Business app, and WhatsApp Business API — and how UK firms use the API for compliance reporting without needing a Meta Business account.",
@@ -27,102 +75,8 @@
     "lang": "en",
     "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[\n      {\"@type\":\"Article\",\"headline\":\"WhatsApp for Business Compliance Reporting: What UK Firms Need to Know\",\"description\":\"The difference between personal WhatsApp, WhatsApp Business app, and WhatsApp Business API — and how UK firms use the API for compliance reporting without needing a Meta Business account.\",\"author\":{\"@type\":\"Organization\",\"name\":\"Quickler Ltd\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Quickler Ltd\",\"url\":\"https://quickler.co/\"},\"datePublished\":\"2026-06-03\",\"dateModified\":\"2026-06-03\",\"inLanguage\":\"en-GB\"},\n      {\"@type\":\"FAQPage\",\"mainEntity\":[\n        {\"@type\":\"Question\",\"name\":\"What is the difference between WhatsApp, WhatsApp Business app, and WhatsApp Business API?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Personal WhatsApp is for individual use. The WhatsApp Business app is a free app designed for small businesses — it adds a business profile, quick replies, and automated messages, but still operates from a single phone and is not designed for multi-user or high-volume workflows. The WhatsApp Business API is a programmatic interface designed for larger organisations and software providers. It is accessed through an approved Business Solution Provider, not a consumer app.\"}},\n        {\"@type\":\"Question\",\"name\":\"Can a business use a personal WhatsApp number for compliance reporting?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Using a personal number for business compliance creates problems with auditability, data ownership, and GDPR. If the engineer leaves the firm, the number leaves with them, along with any conversation history. Records stored in a personal WhatsApp account are not under the firm's control. For compliance reporting that needs to be retrieved, audited, or handed over on request, a dedicated business number managed through the API is the appropriate solution.\"}},\n        {\"@type\":\"Question\",\"name\":\"Do engineers need a Meta Business account to use Quickler?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. Quickler manages the WhatsApp Business API account on the firm's behalf. Engineers receive a normal WhatsApp chat from a business number. They do not need a Meta account, a Facebook account, or any setup beyond receiving the first message. From the engineer's perspective, it looks and works exactly like any other WhatsApp conversation.\"}},\n        {\"@type\":\"Question\",\"name\":\"Where is WhatsApp conversation data stored when using the API?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Message content sent through the WhatsApp Business API passes through Meta's infrastructure. The structured data extracted from conversations — inspection records, report fields, photos — is stored by the software provider. Quickler stores this data on Hetzner servers in Germany (EU), covered by the firm's DPA and subject to standard GDPR protections. Data is not stored in WhatsApp itself, which does not provide business-grade data retention.\"}}\n      ]},\n      {\"@type\":\"BreadcrumbList\",\"itemListElement\":[\n        {\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://quickler.co/\"},\n        {\"@type\":\"ListItem\",\"position\":2,\"name\":\"WhatsApp for Business Compliance Reporting UK\",\"item\":\"https://quickler.co/pages/whatsapp-business-compliance-uk.html\"}\n      ]}\n    ]}"
   },
-  "headStyle": "\n        .long-form-body{max-width:760px;margin:0 auto}\n        .long-form-body h2{margin-top:2.4rem}\n        .long-form-body h3{margin-top:1.6rem}\n        .long-form-body ul,.long-form-body ol{padding-left:1.4rem}\n        .long-form-body li{margin-bottom:0.4rem}\n        .long-form-body p{margin:0.8rem 0}\n        .callout{background:rgba(244,63,140,0.06);border-left:3px solid #f43f8c;padding:0.9rem 1.1rem;border-radius:6px;margin:1rem 0}\n        .key-takeaways{background:#f0fdf4;border-left:3px solid #22c55e;padding:0.9rem 1.1rem;border-radius:6px;margin:1rem 0}\n        .key-takeaways ul{margin:0.4rem 0 0}\n        .checklist-box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:1.2rem 1.4rem;margin:1.2rem 0}\n        .checklist-box h3{margin-top:0}\n    ",
   "scripts": [
     "/js/analytics-events.js"
   ]
 }
 ---
-<main>
-        <div class="long-form-body">
-            <p class="eyebrow">Guide · How-to</p>
-            <h1>WhatsApp for Business Compliance Reporting: What UK Firms Need to Know</h1>
-
-            <div class="key-takeaways">
-                <strong>Key takeaways</strong>
-                <ul>
-                    <li>Personal WhatsApp and the WhatsApp Business app are not designed for business compliance reporting at scale.</li>
-                    <li>The WhatsApp Business API is a programmatic interface accessed through an approved provider. not a consumer app.</li>
-                    <li>Using a personal number for compliance records creates data ownership and GDPR problems when staff leave.</li>
-                    <li>Engineers see a normal WhatsApp chat. The API infrastructure is invisible to them.</li>
-                </ul>
-            </div>
-
-            <h2>Three versions of WhatsApp and why the difference matters</h2>
-            <p>There are three distinct WhatsApp products. Most people have used only one. Understanding the difference matters when evaluating WhatsApp for compliance reporting.</p>
-            <p><strong>Personal WhatsApp</strong> is the consumer app. It is designed for individual use between friends, family, and informal groups. It has strong end-to-end encryption and deliberately minimal data portability. A conversation history lives on the device. Backups are optional and go to the user's personal Google Drive or iCloud. There is no business-grade audit trail, no API, and no way to extract structured data from conversations.</p>
-            <p><strong>WhatsApp Business app</strong> is a free app designed for small businesses. It adds a business profile, catalogue features, quick replies, and basic automated messages. It still operates from a single phone, linked to one number. It is not multi-user, has no API, and is not designed for high-volume or structured workflows. It suits a sole trader who wants customers to see a business name rather than a personal number. It does not suit a firm running compliance workflows across multiple engineers.</p>
-            <p><strong>WhatsApp Business API</strong> is a programmatic interface designed for organisations that need to send and receive messages at scale, with structured data, through software systems. It is not a consumer app. It is accessed through Meta-approved Business Solution Providers: software companies that have completed Meta's verification process and manage the API infrastructure on their clients' behalf.</p>
-
-            <h2>Why personal numbers are not suitable for compliance records</h2>
-            <p>The appeal of using a personal WhatsApp number for work is obvious. The app is already there. Everyone knows how to use it. No setup required.</p>
-            <p>The problem is data ownership. A conversation between a field engineer and a client on the engineer's personal number is, legally, held by the engineer. If the engineer leaves the firm, they take the conversation history with them. The firm has no copy. The compliance record — the inspection completed last Tuesday, the photo of the defect, the voice note describing the finding — is inaccessible.</p>
-            <p>This is a GDPR problem as much as a compliance one. Personal data collected in a business context must be under the controller's control. Data scattered across individual employees' personal devices is not under the firm's control. A subject access request for records held on a former employee's phone creates legal exposure that most firms would rather avoid.</p>
-            <p>There is also the continuity problem. A client number is only as stable as the employee holding it. Handover between engineers means starting a new WhatsApp thread, with no context from previous visits. For compliance records that span years, annual EICR records, gas safety history, ongoing inspection programmes, this creates gaps that are difficult to explain under audit.</p>
-
-            <h2>How the WhatsApp Business API works</h2>
-            <p>The API works through a registered business phone number, separate from any employee's personal number, linked to the organisation rather than to an individual. Messages sent through that number are routed through the API provider's infrastructure, processed by the firm's software system, and stored in the firm's data store.</p>
-            <p>From the engineer's perspective, the experience is indistinguishable from any other WhatsApp conversation. They receive a message from a business number, they reply, they send photos and voice notes. The fact that the replies are being processed by software, structured into report fields, and stored in a compliant data store is invisible to them.</p>
-            <p>The API supports automated messaging: sending prompts, questions, and structured forms, and handling incoming messages. This is what allows a compliance workflow. The system sends a series of questions, the engineer answers them, and the answers populate a structured report without the engineer ever leaving WhatsApp.</p>
-
-            <h2>What firms need to set up an API-based workflow</h2>
-            <p>Setting up a WhatsApp Business API integration requires: a Meta Business account for the provider; a dedicated phone number (not previously associated with a consumer WhatsApp account); approval of message templates by Meta; and connection of the number to the software platform managing the workflow.</p>
-            <p>This is not something most firms set up themselves. It requires technical work, Meta verification, and ongoing maintenance. The practical approach is to use a Business Solution Provider: a software firm that has already gone through Meta's verification process and manages the API account on their clients' behalf.</p>
-            <p>Quickler manages the WhatsApp Business API account on the firm's behalf. The firm's engineers are added to the system and begin receiving WhatsApp messages from a business number within days. No Meta Business account is needed from the firm. No technical setup by the client. The compliance workflow is ready to use in under a week.</p>
-
-            <h2>GDPR and data residency with WhatsApp API</h2>
-            <p>Message content sent through the WhatsApp Business API passes through Meta's infrastructure. Meta is a US company, which means message data is processed in the US under Meta's terms. This is a data transfer question under UK GDPR, one that Meta addresses through Standard Contractual Clauses in its Data Processing Agreement for API users.</p>
-            <p>The structured data extracted from conversations — the report fields, photos, timestamps, and inspection results — is stored by the software provider, not by WhatsApp. Where that data is stored is the firm's choice, through their choice of provider.</p>
-            <p>Quickler stores all structured report data on Hetzner servers in Germany. EU hosting satisfies both UK GDPR and EU GDPR requirements. Data does not sit in WhatsApp, which has no business-grade data retention or export capability. It sits in Quickler's database, covered by a Data Processing Agreement, accessible to the firm, and exportable to PDF and CSV on demand.</p>
-
-            <h2>What engineers experience</h2>
-            <p>For the engineer using a Quickler-powered workflow, none of the above is visible. They receive a WhatsApp message from a business number. The message asks a question: "What is the property address?" or "Send a photo of the consumer unit." They reply. If they prefer to speak rather than type, they send a voice note, which is transcribed automatically.</p>
-            <p>The conversation guides them through the required fields for the job type. When they reach the end, the inspection is complete. The office can see the result in the dashboard. A PDF is ready. The engineer did not need to know anything about APIs, Meta Business accounts, or data hosting.</p>
-            <p>That invisibility is the point. The technology should remove friction, not create it. An engineer who has to understand WhatsApp infrastructure to complete a compliance report will not complete compliance reports.</p>
-
-            <h2>Frequently Asked Questions</h2>
-
-            <h3>What is the difference between WhatsApp, WhatsApp Business app, and WhatsApp Business API?</h3>
-            <p>Personal WhatsApp is for individual use. The WhatsApp Business app is a free app for small businesses: it adds a business profile and basic automation but still operates from a single phone and has no API. The WhatsApp Business API is a programmatic interface for organisations that need structured, scalable messaging. It is accessed through an approved Business Solution Provider, not a consumer app.</p>
-
-            <h3>Can a business use a personal WhatsApp number for compliance reporting?</h3>
-            <p>Using a personal number for compliance reporting creates problems with data ownership and GDPR. If the engineer leaves the firm, the number and conversation history leave with them. Records stored in a personal WhatsApp account are not under the firm's control. For compliance records that need to be retrieved or audited, a dedicated business number managed through the API is the appropriate approach.</p>
-
-            <h3>Do engineers need a Meta Business account to use Quickler?</h3>
-            <p>No. Quickler manages the WhatsApp Business API account on the firm's behalf. Engineers receive a normal WhatsApp chat from a business number. They do not need a Meta account, a Facebook account, or any setup beyond receiving the first message. From the engineer's perspective, it looks and works exactly like any other WhatsApp conversation.</p>
-
-            <h3>Where is WhatsApp conversation data stored when using the API?</h3>
-            <p>Message content passes through Meta's infrastructure. The structured data extracted from conversations — inspection records, report fields, photos — is stored by the software provider. Quickler stores this data on Hetzner servers in Germany (EU), covered by a Data Processing Agreement. Data is not stored in WhatsApp, which does not provide business-grade data retention or export.</p>
-
-            <div class="callout">
-                <strong>Want to run compliance workflows over WhatsApp, properly?</strong><br>
-                Quickler manages the API account. Engineers use normal WhatsApp. Records stored in EU. Setup in under a week. <a href="/pages/demo.html">See how it works.</a>
-            </div>
-        </div>
-    </main>
-
-
-            <div class="quickler-callout">
-                <strong>Try this in Quickler, free trial, no card required</strong>
-                <p>Copy and paste this into the workflow description when you sign up at <a href="https://app.quickler.co/signup" style="color:#1a5296;">app.quickler.co/signup</a>:</p>
-                <pre class="callout-template">Compliance via WhatsApp — copy and paste this at signup:
-
-Workflow name: Compliance check
-Description: Tell us which compliance check you want to run on WhatsApp. Include the trade, what items are inspected, how often, and whether a signed document is required at the end.
-
-Example: "Electrical contractor doing EICR periodic inspections on domestic properties. Need to record consumer unit condition, circuits, test results, any C1/C2/FI observations, and produce a signed certificate for the landlord."
-
-Engineers get the questions on their existing WhatsApp. No new app, no login.</pre>
-                <p style="margin-top:0.9rem;">Quickler reads your description and builds the WhatsApp question sequence. Your engineers answer on site. PDF produced automatically.</p>
-                <a href="https://app.quickler.co/signup" class="callout-btn">Start compliance on WhatsApp →</a>
-            </div>
-    <section class="related-guides">
-        <div class="long-form-body">
-            <h3>Related guides</h3>
-            <ul>
-                <li><a href="/pages/gdpr-field-reports-uk-sme.html">GDPR for field reports</a></li>
-                <li><a href="/pages/digital-signature-field-reports-uk.html">Digital signatures for field reports</a></li>
-                <li><a href="/pages/uk-field-compliance-reporting-guide.html">UK field compliance reporting guide</a></li>
-            </ul>
-        </div>
-    </section>

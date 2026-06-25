@@ -1,8 +1,51 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/site-inspections.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Site Inspections",
+    "heading": "Site inspections, captured on WhatsApp.",
+    "lede": "Engineers answer inspection questions by text, voice note, or photo on site. Quickler structures every reply and produces a structured web report or dashboard record automatically.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "prose",
+      "eyebrow": "What it covers",
+      "heading": "Structured capture for any inspection type.",
+      "text": "A site inspection covers structure or installation condition, progress against spec, defects and hazards, photographic evidence, compliance with drawings or standards, and actions required. Quickler builds the sequence from your existing form, spec, or compliance manual. Upload it and the workflow configures automatically."
+    },
+    {
+      "type": "cards",
+      "eyebrow": "On site",
+      "heading": "Speak, photograph, done.",
+      "items": [
+        { "kicker": "Voice notes", "title": "Engineers speak, Quickler transcribes", "text": "Typing on a building site is slow. The engineer describes conditions in a voice note and Quickler places the text in the correct section." },
+        { "kicker": "Photos", "title": "Attached in WhatsApp, filed automatically", "text": "Each photo is linked to the question it answers, appears inline in the PDF, and is stored against the inspection, not in anyone's phone." }
+      ]
+    },
+    {
+      "type": "prose",
+      "eyebrow": "The report",
+      "heading": "Dashboard and PDF, both automatic.",
+      "text": "The PDF lists every question and answer with inline photos, transcribed voice notes, engineer name, date, site reference, and a summary of red or amber items. Managers see a live dashboard with traffic light status, filterable by engineer, date, or site. No chasing forms."
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Get started",
+      "heading": "See it on your own inspection form.",
+      "text": "Upload your form, spec, or compliance manual and Quickler builds the inspection sequence from it.",
+      "actions": [
+        { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+        { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+      ]
+    }
+  ],
+  "seoBody": "<p>A site inspection is a structured visit to assess conditions, progress, or compliance. Quickler captures site inspection data through a WhatsApp conversation: engineers answer questions by text, voice note, or photo on site, and Quickler produces a structured web report or dashboard record automatically.</p><h2>Structured capture for any site inspection type.</h2><p>A site inspection typically covers some or all of the following:</p><ul><li>Condition of existing structure or installation</li><li>Progress against specification</li><li>Identification of defects, hazards, or non-conformances</li><li>Photographic evidence of specific items</li><li>Confirmation of compliance with drawings or standards</li><li>Notes on actions required or agreed</li></ul><p>Quickler builds the inspection sequence from your existing form, spec, or compliance manual. Upload it and the workflow is configured automatically.</p><h2>Engineers speak. Quickler transcribes.</h2><p>Typing on a building site is slow. Voice notes are fully supported across every inspection workflow.</p><p>The engineer speaks a voice note describing conditions, findings, or actions required. Quickler transcribes it automatically and places the text in the correct section of the report.</p><h2>Photos attached in WhatsApp. Filed in the report automatically.</h2><h3>Same as sending a photo to a colleague</h3><p>The engineer takes a photo and attaches it in the WhatsApp conversation. No separate upload. No emailing photos afterwards.</p><h3>Associated with the right section automatically</h3><p>Quickler links each photo to the specific inspection question it answers. In the PDF report it appears inline, in the correct section.</p><h3>In the dashboard record. Retrievable at any time.</h3><p>Photos are stored against the inspection, not in anyone's phone or personal chat. They are retrievable by job, site, date, or engineer from the manager dashboard.</p><h2>What the PDF inspection report looks like.</h2><p>The PDF report contains:</p><ul><li>Engineer name, date, time, and site reference</li><li>Every inspection question with the engineer's answer beneath it</li><li>Inline photos in the relevant sections</li><li>Transcribed voice notes presented as plain text</li><li>A summary of any items flagged red or amber</li></ul><p>The report is formatted consistently across all inspections, making it straightforward to compare reports from different dates or engineers on the same site.</p><h2>Dashboard and PDF, both automatic.</h2><p><strong>Live dashboard</strong> — inspection submissions appear as rows with traffic light status. Red means a defect or non-conformance requiring action. Amber means an item worth noting. Green means the inspection passed. Managers can filter by engineer, date, or site.</p><p><strong>PDF report</strong> — emailed to the manager automatically once the engineer completes the WhatsApp conversation. Stored in the dashboard and available for download at any time.</p><p>Managers do not need to chase engineers for forms or follow up on missing submissions.</p><h2>Common questions.</h2><h3>Does the engineer need training?</h3><p>No. Quickler asks the questions. Engineers reply as they would to any WhatsApp message. There is no new interface to learn and no separate app to install.</p><h3>What sectors does this cover?</h3><p>Structural engineering, M&E contracting, gas safety, electrical installation, general construction, facilities management, and any sector requiring documented site visits.</p><h3>Can the inspection form be customised?</h3><p>Yes. Upload your existing form, spec, or compliance manual and Quickler builds the inspection sequence from it automatically.</p><h3>What if a fault is found?</h3><p>Faults trigger a manager notification and are flagged on the record. The manager can resolve them in the dashboard.</p><h3>How are records stored?</h3><p>All records are stored on EU servers, timestamped, and linked to the engineer, job, and site. They are accessible from the manager dashboard and exportable as PDF.</p><h3>Can the same asset be tracked across multiple inspections?</h3><p>Yes. Quickler tracks fault history per asset across visits. Recurring faults on the same asset are surfaced automatically — they do not appear as separate unconnected events.</p>",
   "seo": {
     "title": "WhatsApp Site Inspections | Quickler | Field Compliance",
     "description": "Capture site inspection data via WhatsApp. Engineers reply by text, voice note, or photo on site. PDF report delivered to the manager automatically. Rooted in UK compliance, works anywhere WhatsApp does, for any inspection or checklist across M&E, structural, and safety firms.",
@@ -35,145 +78,3 @@
   ]
 }
 ---
-<section id="top">
-        <div class="page-shell about-page-intro">
-            <span class="eyebrow">Site Inspections</span>
-            <h1>WhatsApp site inspections for field teams. Capture on site. PDF to the manager automatically.</h1>
-            <p class="page-lede">A site inspection is a structured visit to assess conditions, progress, or compliance. Quickler captures site inspection data through a WhatsApp conversation: engineers answer questions by text, voice note, or photo on site, and Quickler produces a PDF report or dashboard record automatically.</p>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="content-duo">
-            <div class="section-frame">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">What it covers</p>
-                        <h2>Structured capture for any site inspection type.</h2>
-                    </div>
-                </div>
-                <div class="detail-body">
-                    <p>A site inspection typically covers some or all of the following:</p>
-                    <ul>
-                        <li>Condition of existing structure or installation</li>
-                        <li>Progress against specification</li>
-                        <li>Identification of defects, hazards, or non-conformances</li>
-                        <li>Photographic evidence of specific items</li>
-                        <li>Confirmation of compliance with drawings or standards</li>
-                        <li>Notes on actions required or agreed</li>
-                    </ul>
-                    <p>Quickler builds the inspection sequence from your existing form, spec, or compliance manual. Upload it and the workflow is configured automatically.</p>
-                </div>
-            </div>
-            <div class="section-frame">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">Voice notes</p>
-                        <h2>Engineers speak. Quickler transcribes.</h2>
-                    </div>
-                </div>
-                <div class="detail-body">
-                    <p>Typing on a building site is slow. Voice notes are fully supported across every inspection workflow.</p>
-                    <p>The engineer speaks a voice note describing conditions, findings, or actions required. Quickler transcribes it automatically and places the text in the correct section of the report.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">Photos</p>
-                <h2>Photos attached in WhatsApp. Filed in the report automatically.</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-3">
-            <article class="card-link">
-                <span class="card-link-kicker">Attached in WhatsApp</span>
-                <h3 class="card-link-title">Same as sending a photo to a colleague</h3>
-                <p class="card-link-copy">The engineer takes a photo and attaches it in the WhatsApp conversation. No separate upload. No emailing photos afterwards.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Linked to the question</span>
-                <h3 class="card-link-title">Associated with the right section automatically</h3>
-                <p class="card-link-copy">Quickler links each photo to the specific inspection question it answers. In the PDF report it appears inline, in the correct section.</p>
-            </article>
-            <article class="card-link">
-                <span class="card-link-kicker">Stored permanently</span>
-                <h3 class="card-link-title">In the dashboard record. Retrievable at any time.</h3>
-                <p class="card-link-copy">Photos are stored against the inspection, not in anyone's phone or personal chat. They are retrievable by job, site, date, or engineer from the manager dashboard.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="content-duo">
-            <div class="section-frame">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">The report</p>
-                        <h2>What the PDF inspection report looks like.</h2>
-                    </div>
-                </div>
-                <div class="detail-body">
-                    <p>The PDF report contains:</p>
-                    <ul>
-                        <li>Engineer name, date, time, and site reference</li>
-                        <li>Every inspection question with the engineer's answer beneath it</li>
-                        <li>Inline photos in the relevant sections</li>
-                        <li>Transcribed voice notes presented as plain text</li>
-                        <li>A summary of any items flagged red or amber</li>
-                    </ul>
-                    <p>The report is formatted consistently across all inspections, making it straightforward to compare reports from different dates or engineers on the same site.</p>
-                </div>
-            </div>
-            <div class="section-frame">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">Manager view</p>
-                        <h2>Dashboard and PDF, both automatic.</h2>
-                    </div>
-                </div>
-                <div class="detail-body">
-                    <p><strong>Live dashboard</strong> — inspection submissions appear as rows with traffic light status. Red means a defect or non-conformance requiring action. Amber means an item worth noting. Green means the inspection passed. Managers can filter by engineer, date, or site.</p>
-                    <p><strong>PDF report</strong> — emailed to the manager automatically once the engineer completes the WhatsApp conversation. Stored in the dashboard and available for download at any time.</p>
-                    <p>Managers do not need to chase engineers for forms or follow up on missing submissions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header section-header-centered">
-            <div>
-                <p class="section-label">FAQ</p>
-                <h2>Common questions.</h2>
-            </div>
-        </div>
-        <div class="balanced-grid-3">
-            <article class="card-link">
-                <h3 class="card-link-title">Does the engineer need training?</h3>
-                <p class="card-link-copy">No. Quickler asks the questions. Engineers reply as they would to any WhatsApp message. There is no new interface to learn and no separate app to install.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">What sectors does this cover?</h3>
-                <p class="card-link-copy">Structural engineering, M&E contracting, gas safety, electrical installation, general construction, facilities management, and any sector requiring documented site visits.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">Can the inspection form be customised?</h3>
-                <p class="card-link-copy">Yes. Upload your existing form, spec, or compliance manual and Quickler builds the inspection sequence from it automatically.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">What if a fault is found?</h3>
-                <p class="card-link-copy">Faults trigger a manager notification and are flagged on the record. The manager can resolve them in the dashboard.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">How are records stored?</h3>
-                <p class="card-link-copy">All records are stored on EU servers, timestamped, and linked to the engineer, job, and site. They are accessible from the manager dashboard and exportable as PDF.</p>
-            </article>
-            <article class="card-link">
-                <h3 class="card-link-title">Can the same asset be tracked across multiple inspections?</h3>
-                <p class="card-link-copy">Yes. Quickler tracks fault history per asset across visits. Recurring faults on the same asset are surfaced automatically — they do not appear as separate unconnected events.</p>
-            </article>
-        </div>
-    </section>

@@ -1,8 +1,55 @@
 ---json
 {
-  "layout": "layouts/page.njk",
+  "layout": "layouts/story.njk",
   "permalink": "/pages/projects.html",
-  "bodyClass": "page-inner",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Story Board",
+    "heading": "The work that led to quickler.",
+    "lede": "A timeline of delivery work. Repeated admin, reporting, approvals, and awkward workflows gradually pushed the business toward workflow systems.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "blocks": [
+    {
+      "type": "prose",
+      "eyebrow": "What These Prove",
+      "heading": "The same pattern, again and again.",
+      "text": "These are not all the same product, but they show the same pattern: useful work gets slowed down by repeated write-ups, awkward handoffs, approvals, and manual admin sitting between the job and the finished output. That pattern is what later shaped the quickler workflow systems direction."
+    },
+    {
+      "type": "cards",
+      "eyebrow": "Selected Builds",
+      "heading": "Where the time disappeared.",
+      "items": [
+        { "kicker": "Nov 2025 · Publishing house", "title": "Production tracking streamlining", "text": "Showed how much operational waste sits between source information and a usable reporting view. Build: 4 hours. Saves: 14 days a year.", "href": "/pages/project-production-tracking.html" },
+        { "kicker": "Dec 2025 · Charitable enterprise", "title": "Sales data restructuring", "text": "Made the reporting layer usable again and reinforced that structure matters as much as automation. Build: 20 hours. Saves: 14 days a year.", "href": "/pages/project-sales-data.html" },
+        { "kicker": "Feb 2026 · Bosonic", "title": "Bosonic PO workflow platform", "text": "Pulled approvals, documents, routing, and auditability into one flow. Build: 36 hours. An end-to-end PO workflow.", "href": "/pages/project-po-workflow-platform.html" }
+      ]
+    },
+    {
+      "type": "cards",
+      "eyebrow": "Next Step",
+      "heading": "If these patterns look familiar.",
+      "items": [
+        { "kicker": "Workflows", "title": "See the main workflow page", "text": "Best for site visits, inspections, maintenance, compliance paperwork, and repeated operational admin.", "href": "/pages/services.html" },
+        { "kicker": "Background", "title": "Read the founder story", "text": "How earlier delivery work and the current workflow direction fit together.", "href": "/pages/about.html" }
+      ]
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Contact",
+      "heading": "Need the same kind of reporting fix?",
+      "text": "If your team has the same repeated field-to-report pattern, get in touch. Describe one repeated job, report, or approval flow and why it is still painful now.",
+      "actions": [
+        { "label": "Message us", "href": "/pages/help/index.html#contact-form-section", "style": "btn-primary" },
+        { "label": "All guides", "href": "/pages/help/index.html", "style": "btn-secondary" }
+      ]
+    }
+  ],
+  "seoBody": "<p>Read this as a timeline. The earliest projects sit at the top and the most recent sits at the bottom, showing how repeated admin, reporting, approvals, and awkward business workflows gradually pushed the business toward workflow systems.</p><p>2025 to 2026 timeline. 6 systems delivered. Most recent at the bottom.</p><h2>These projects matter because they show repeated operational drag in the real world.</h2><p>They are not all the same product. They do show the same pattern: useful work gets slowed down by repeated write-ups, awkward handoffs, approvals, and manual admin sitting between the job and the finished output. That pattern is what later shaped the quickler workflow systems direction.</p><h3><a href=\"/pages/project-fundraising-charity.html\">Fundraising automation</a></h3><p>Nov 2025 · Charitable enterprise. One of the first sharp proofs that repeat-heavy documents could be drafted much faster when the right source information was already structured. Build: 2 hours. Saves: 6.5 days/year.</p><h3><a href=\"/pages/project-production-tracking.html\">Production tracking streamlining</a></h3><p>Nov 2025 · Publishing house. This showed how much operational waste can sit between source information and a usable reporting view. Build: 4 hours. Saves: 14 days/year.</p><h3><a href=\"/pages/project-fundraising-small-charity.html\">Fundraising automation</a></h3><p>Dec 2025 · Small local charity. A lighter intervention, but another confirmation that repeated paperwork can consume a surprising amount of useful time. Build: 0 hours. Saves: 5.5 days/year.</p><h3><a href=\"/pages/project-sales-data.html\">Sales data restructuring</a></h3><p>Dec 2025 · Charitable enterprise. This made the reporting layer usable again and reinforced that structure matters as much as automation. Build: 20 hours. Saves: 14 days/year.</p><h3><a href=\"/pages/project-till-data.html\">Till data automation</a></h3><p>Dec 2025 · Charitable enterprise. This added another pattern: repeatable source data and repeatable output handling are where the time disappears. Build: 7 hours. Saves: 11.5 days/year.</p><h3><a href=\"/pages/project-po-workflow-platform.html\">Bosonic PO workflow platform</a></h3><p>Feb 2026 · Bosonic. The most recent system pulled approvals, documents, routing, and auditability into one flow for Bosonic, strengthening the case for productising repeated business workflows. Build: 36 hours. Outcome: end-to-end PO workflow.</p><h2>If these patterns look familiar, go to the product pages next.</h2><h3><a href=\"/pages/services.html\">See the main workflow page</a></h3><p>Workflows. Best for site visits, inspections, maintenance work, compliance paperwork, document-heavy handoffs, and repeated operational admin.</p><h3><a href=\"/pages/about.html\">Read the founder story</a></h3><p>Background. See how earlier delivery work, the March 2026 company timeline, and the current workflow direction fit together.</p><h3><a href=\"/pages/help/index.html#contact-form-section\">Ask about one repeated workflow</a></h3><p>Contact. The best enquiries describe one repeated job, report, approval flow, or paperwork pack and why it is still painful now.</p><h2>Need the same kind of reporting fix?</h2><p>If your team has the same repeated field-to-report pattern, get in touch. These examples are here to support a buying decision, not to turn the site into a browsing exercise.</p>",
   "seo": {
     "title": "quickler Case Studies | Reporting, Approval, And Workflow Delivery Proof",
     "description": "Case studies and delivery proof behind quickler's focus on repeated reporting, approvals, structured outputs, and admin reduction.",
@@ -34,122 +81,3 @@
   ]
 }
 ---
-<section id="top">
-        <div class="page-shell">
-            <div class="section-header">
-                <div>
-                    <span class="eyebrow">Story Board</span>
-                    <h1>The work that led to quickler.</h1>
-                    <p class="page-lede">Read this as a timeline. The earliest projects sit at the top and the most recent sits at the bottom, showing how repeated admin, reporting, approvals, and awkward business workflows gradually pushed the business toward workflow systems.</p>
-                </div>
-                <div class="section-stats">
-                    <span class="section-stat"><strong>2025 → 2026</strong> timeline</span>
-                    <span class="section-stat"><strong>6 systems</strong> delivered</span>
-                    <span class="section-count">most recent at the bottom</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-tight">
-        <div class="section-header">
-            <div>
-                <p class="section-label">What These Prove</p>
-                <h2>These projects matter because they show repeated operational drag in the real world.</h2>
-                <p>They are not all the same product. They do show the same pattern: useful work gets slowed down by repeated write-ups, awkward handoffs, approvals, and manual admin sitting between the job and the finished output. That pattern is what later shaped the quickler workflow systems direction.</p>
-            </div>
-        </div>
-        <div class="card-link-grid">
-            <a class="card-link" href="/pages/project-fundraising-charity.html">
-                <span class="card-link-kicker">Nov 2025 · Charitable enterprise</span>
-                <h3 class="card-link-title">Fundraising automation</h3>
-                <p class="card-link-copy">One of the first sharp proofs that repeat-heavy documents could be drafted much faster when the right source information was already structured.</p>
-                <div class="metric-strip">
-                    <span class="metric-pill">Build: 2 hours</span>
-                    <span class="metric-pill">Saves: 6.5 days/year</span>
-                </div>
-            </a>
-            <a class="card-link" href="/pages/project-production-tracking.html">
-                <span class="card-link-kicker">Nov 2025 · Publishing house</span>
-                <h3 class="card-link-title">Production tracking streamlining</h3>
-                <p class="card-link-copy">This showed how much operational waste can sit between source information and a usable reporting view.</p>
-                <div class="metric-strip">
-                    <span class="metric-pill">Build: 4 hours</span>
-                    <span class="metric-pill">Saves: 14 days/year</span>
-                </div>
-            </a>
-            <a class="card-link" href="/pages/project-fundraising-small-charity.html">
-                <span class="card-link-kicker">Dec 2025 · Small local charity</span>
-                <h3 class="card-link-title">Fundraising automation</h3>
-                <p class="card-link-copy">A lighter intervention, but another confirmation that repeated paperwork can consume a surprising amount of useful time.</p>
-                <div class="metric-strip">
-                    <span class="metric-pill">Build: 0 hours</span>
-                    <span class="metric-pill">Saves: 5.5 days/year</span>
-                </div>
-            </a>
-            <a class="card-link" href="/pages/project-sales-data.html">
-                <span class="card-link-kicker">Dec 2025 · Charitable enterprise</span>
-                <h3 class="card-link-title">Sales data restructuring</h3>
-                <p class="card-link-copy">This made the reporting layer usable again and reinforced that structure matters as much as automation.</p>
-                <div class="metric-strip">
-                    <span class="metric-pill">Build: 20 hours</span>
-                    <span class="metric-pill">Saves: 14 days/year</span>
-                </div>
-            </a>
-            <a class="card-link" href="/pages/project-till-data.html">
-                <span class="card-link-kicker">Dec 2025 · Charitable enterprise</span>
-                <h3 class="card-link-title">Till data automation</h3>
-                <p class="card-link-copy">This added another pattern: repeatable source data and repeatable output handling are where the time disappears.</p>
-                <div class="metric-strip">
-                    <span class="metric-pill">Build: 7 hours</span>
-                    <span class="metric-pill">Saves: 11.5 days/year</span>
-                </div>
-            </a>
-            <a class="card-link" href="/pages/project-po-workflow-platform.html">
-                <span class="card-link-kicker">Feb 2026 · Bosonic</span>
-                <h3 class="card-link-title">Bosonic PO workflow platform</h3>
-                <p class="card-link-copy">The most recent system pulled approvals, documents, routing, and auditability into one flow for Bosonic, strengthening the case for productising repeated business workflows.</p>
-                <div class="metric-strip">
-                    <span class="metric-pill">Build: 36 hours</span>
-                    <span class="metric-pill">Outcome: end-to-end PO workflow</span>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <section class="section-tight" aria-labelledby="case-studies-next-title">
-        <div class="section-header">
-            <div>
-                <p class="section-label">Next Step</p>
-                <h2 id="case-studies-next-title">If these patterns look familiar, go to the product pages next.</h2>
-            </div>
-        </div>
-        <div class="card-link-grid">
-            <a class="card-link" href="/pages/services.html">
-                <span class="card-link-kicker">Workflows</span>
-                <h3 class="card-link-title">See the main workflow page</h3>
-                <p class="card-link-copy">Best for site visits, inspections, maintenance work, compliance paperwork, document-heavy handoffs, and repeated operational admin.</p>
-            </a>
-            <a class="card-link" href="/pages/about.html">
-                <span class="card-link-kicker">Background</span>
-                <h3 class="card-link-title">Read the founder story</h3>
-                <p class="card-link-copy">See how earlier delivery work, the March 2026 company timeline, and the current workflow direction fit together.</p>
-            </a>
-            <a class="card-link" href="/pages/help/index.html#contact-form-section">
-                <span class="card-link-kicker">Contact</span>
-                <h3 class="card-link-title">Ask about one repeated workflow</h3>
-                <p class="card-link-copy">The best enquiries describe one repeated job, report, approval flow, or paperwork pack and why it is still painful now.</p>
-            </a>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Need the same kind of reporting fix?</h2>
-            <p>If your team has the same repeated field-to-report pattern, get in touch. These examples are here to support a buying decision, not to turn the site into a browsing exercise.</p>
-            <div class="hero-actions">
-                <a href="/pages/help/index.html#contact-form-section" class="btn btn-primary" data-cta="case-studies-contact">Contact</a>
-                <a href="/pages/help/index.html#contact-form-section" class="btn btn-secondary" data-cta="case-studies-faq">See contact form</a>
-            </div>
-        </div>
-    </section>
