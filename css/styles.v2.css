@@ -4983,6 +4983,9 @@ nav {
 .story-tag:hover { border-color: var(--blue); color: var(--blue); }
 .story-tag-strong { background: var(--blue); border-color: var(--blue); color: var(--on-blue); }
 .story-tag-strong:hover { background: var(--blue-strong); border-color: var(--blue-strong); color: var(--on-blue); }
+/* Small count chip inside a region tag (e.g. "Europe 11"). */
+.story-tag-count { opacity: 0.6; font-weight: 700; margin-left: 4px; }
+.story-feature .story-tag-count { opacity: 0.75; }
 
 /* Nav cards */
 .story-cards {

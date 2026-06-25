@@ -12,7 +12,6 @@
       { "label": "Workflows", "href": "/pages/services.html", "style": "btn-secondary" }
     ]
   },
-  "blocks": [],
   "seo": {
     "title": "Quickler by Region | Field Compliance Worldwide",
     "description": "Quickler field compliance resources by region. Pick your continent and country to find WhatsApp workflow guides for your market.",
@@ -22,14 +21,27 @@
   "scripts": ["/js/analytics-events.js"]
 }
 ---
-<section class="story-seo" aria-label="Regions">
-  <div class="story-seo-inner">
-    <h2>Field compliance by region</h2>
-    <ul class="region-index">
+{#- Continent links as a real .story snap panel so each link is reliably
+    tappable on touch (links in a story-seo tail get snapped away). -#}
+<section class="story story-feature">
+  <div class="story-inner">
+    <p class="story-eyebrow">By continent</p>
+    <h2 class="story-h2">Field compliance by region.</h2>
+    <div class="story-tags">
       {%- for cont in continentList %}
-      <li><a href="/pages/continent-{{ cont.slug }}.html">{{ cont.name }}</a> <span class="region-count">{{ cont.count }} countries</span></li>
+      <a href="/pages/continent-{{ cont.slug }}.html" class="story-tag">{{ cont.name }} <span class="story-tag-count">{{ cont.count }}</span></a>
       {%- endfor %}
-    </ul>
-    <p><a href="/pages/guides.html">UK guides and templates &rarr;</a></p>
+    </div>
+  </div>
+</section>
+<section class="story story-cta">
+  <div class="story-inner">
+    <p class="story-eyebrow">In the UK?</p>
+    <h2 class="story-h2">Start with the UK library.</h2>
+    <p class="story-text story-text-centre">The UK is our home market. The full set of guides, templates and checklists lives here.</p>
+    <div class="story-actions">
+      <a href="/pages/guides.html" class="btn btn-primary">UK guides and templates</a>
+      <a href="/pages/services.html" class="btn btn-secondary">Workflows</a>
+    </div>
   </div>
 </section>

@@ -3,8 +3,59 @@ pagination:
   data: countries
   size: 1
   alias: country
-layout: layouts/country-hub.njk
+layout: layouts/story.njk
 permalink: "/pages/country-hub-{{ country.slug }}.html"
+bodyClass: page-story
 eleventyComputed:
   title: "{{ country.title }}"
+  hero:
+    eyebrow: "Quickler · {{ country.name }}"
+    heading: "Quickler for field teams in {{ country.name }}."
+    lede: "Field inspection and compliance reporting over WhatsApp. Structured digital records, no app required. Works anywhere WhatsApp does, with data hosted on EU servers."
+    actions:
+      - label: "Try the demo"
+        href: "/pages/demo.html"
+        style: "btn-primary"
+      - label: "Quickler anywhere"
+        href: "/pages/global-field-compliance.html"
+        style: "btn-secondary"
+  seo:
+    title: "{{ country.title }}"
+    description: "{{ country.description }}"
+    keywords: "{{ country.keywords }}"
+    author: "Quickler Ltd"
+    canonical: "https://quickler.co/pages/country-hub-{{ country.slug }}.html"
+    twitterCard: "summary_large_image"
+    lang: "en"
+    hreflang:
+      - lang: "en"
+        href: "https://quickler.co/pages/country-hub-{{ country.slug }}.html"
+      - lang: "x-default"
+        href: "https://quickler.co/pages/global-field-compliance.html"
+  scripts:
+    - "/js/analytics-events.js"
 ---
+{#- The three country resources rendered as a real .story snap panel (cards),
+    so each link is reliably tappable on touch. -#}
+<section class="story story-feature">
+  <div class="story-inner">
+    <p class="story-eyebrow">Resources</p>
+    <h2 class="story-h2">Resources for {{ country.name }}.</h2>
+    <div class="story-cards" style="--n: 3">
+      <a class="story-card" href="/pages/positioning-{{ country.slug }}.html"><span class="story-card-kicker">Positioning</span><h3>WhatsApp field compliance in {{ country.name }}</h3><p>How field firms in {{ country.name }} run inspections and checklists via WhatsApp, with no app to install.</p></a>
+      <a class="story-card" href="/pages/data-privacy-{{ country.slug }}.html"><span class="story-card-kicker">Data &amp; privacy</span><h3>Field inspection data and privacy in {{ country.name }}</h3><p>EU-hosted data, GDPR-aligned. How structured digital records compare to paper for audit trails in {{ country.name }}.</p></a>
+      <a class="story-card" href="/pages/no-app-inspections-{{ country.slug }}.html"><span class="story-card-kicker">Use case</span><h3>No-app site inspections for {{ country.name }} field teams</h3><p>How WhatsApp replaces paper and tablet apps for site safety and equipment checks.</p></a>
+    </div>
+  </div>
+</section>
+<section class="story story-cta">
+  <div class="story-inner">
+    <p class="story-eyebrow">Keep exploring</p>
+    <h2 class="story-h2">More guides and templates.</h2>
+    <p class="story-text story-text-centre">Browse the full UK library, choose another region, or run your own workflow over WhatsApp.</p>
+    <div class="story-actions">
+      <a href="/pages/guides.html" class="btn btn-primary">All guides</a>
+      <a href="/pages/workflows-regions.html" class="btn btn-secondary">Other regions</a>
+    </div>
+  </div>
+</section>

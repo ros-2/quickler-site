@@ -135,9 +135,19 @@
 
         // --- 2) Reel-flick clamp (touch only) ---
         var startIndex = 0;
+        // When a touch begins on (or inside) a link or button, the user is
+        // tapping, not flicking. The clamp's "settle back to a panel" scroll
+        // fires a smooth-scroll that steals the tap and reads as "the link
+        // does nothing / it jumps back up". Track that and skip the clamp for
+        // that gesture so every link -- including ones in the long-form tail --
+        // is reliably clickable. This is the whole-site fix for "can't click
+        // articles": it is independent of which panel the link sits in.
+        var touchedInteractive = false;
         if (!canHover) {
-            scroller.addEventListener("touchstart", function () {
+            scroller.addEventListener("touchstart", function (e) {
                 startIndex = currentIndex();
+                touchedInteractive = !!(e.target && e.target.closest &&
+                    e.target.closest('a, button, [role="button"], input, label, summary'));
             }, { passive: true });
         }
 
@@ -176,6 +186,9 @@
             updateArrow();
             updateSnap();
             if (canHover) return;
+            // The gesture started on a link/button: it is a tap, not a flick.
+            // Never re-snap, or we steal the tap and the link "does nothing".
+            if (touchedInteractive) return;
             // Once you are at/below the last panel, you are in the long-form
             // tail: do NOT clamp or re-snap. Let it scroll like a document so
             // the bottom and footer are reachable.

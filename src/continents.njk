@@ -23,16 +23,30 @@ eleventyComputed:
   scripts:
     - "/js/analytics-events.js"
 ---
-<section class="story-seo" aria-label="Countries in {{ cont.name }}">
-  <div class="story-seo-inner">
-    <h2>Countries in {{ cont.name }}</h2>
-    <ul class="region-index">
+{#- Country links rendered as a real .story snap panel (NOT a story-seo
+    tail). Links in the tail get snapped away on touch and cannot be tapped;
+    inside a proper panel they are reliably clickable. -#}
+<section class="story story-feature">
+  <div class="story-inner">
+    <p class="story-eyebrow">Countries</p>
+    <h2 class="story-h2">Countries in {{ cont.name }}.</h2>
+    <div class="story-tags">
       {%- for c in countries %}
       {%- if c.continent == cont.name %}
-      <li><a href="/pages/country-hub-{{ c.slug }}.html">{{ c.name }}</a></li>
+      <a href="/pages/country-hub-{{ c.slug }}.html" class="story-tag">{{ c.name }}</a>
       {%- endif %}
       {%- endfor %}
-    </ul>
-    <p><a href="/pages/workflows-regions.html">&larr; All regions</a></p>
+    </div>
+  </div>
+</section>
+<section class="story story-cta">
+  <div class="story-inner">
+    <p class="story-eyebrow">Elsewhere</p>
+    <h2 class="story-h2">Looking for a different market?</h2>
+    <p class="story-text story-text-centre">Browse every region, or jump straight to the UK guides and templates.</p>
+    <div class="story-actions">
+      <a href="/pages/workflows-regions.html" class="btn btn-primary">All regions</a>
+      <a href="/pages/guides.html" class="btn btn-secondary">UK guides</a>
+    </div>
   </div>
 </section>
