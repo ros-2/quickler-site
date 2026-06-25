@@ -4702,8 +4702,13 @@ nav {
    The scrim is a gradient: a touch heavier top/bottom where the eyebrow and
    text sit, lighter in the middle so the photo still reads. */
 .story-photo {
+    /* Scrim strength is per-panel: --scrim-edge (top/bottom, where text sits)
+       and --scrim-mid (centre). A block can dim its photo more by setting
+       --scrim-edge / --scrim-mid inline (higher = photo less present). */
+    --scrim-edge: 0.90;
+    --scrim-mid: 0.80;
     background-image:
-        linear-gradient(180deg, rgba(7, 18, 43, 0.90) 0%, rgba(7, 18, 43, 0.80) 45%, rgba(7, 18, 43, 0.90) 100%),
+        linear-gradient(180deg, rgba(7, 18, 43, var(--scrim-edge)) 0%, rgba(7, 18, 43, var(--scrim-mid)) 45%, rgba(7, 18, 43, var(--scrim-edge)) 100%),
         var(--bg-photo);
     background-size: cover, cover;
     background-position: center, center;
