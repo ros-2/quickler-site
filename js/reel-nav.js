@@ -22,6 +22,37 @@
 
         var canHover = window.matchMedia && window.matchMedia("(hover: hover)").matches;
 
+        // --- 0) TikTok-style "flick up" hint (touch + home page only) ---
+        // A pulsing cue pinned over the hero that says: this scrolls. It
+        // bounces a couple of times to draw the eye, lives ONLY on the first
+        // panel, and disappears the instant the user scrolls. Home only so
+        // it does not nag on every page; touch only because it is a flick
+        // affordance, not a desktop one.
+        var isHome = location.pathname === "/" || location.pathname === "/index.html";
+        if (!canHover && isHome) {
+            var hint = document.createElement("div");
+            hint.className = "reel-hint";
+            hint.setAttribute("aria-hidden", "true");
+            hint.innerHTML =
+                '<span class="reel-hint-chevvy">' +
+                '<svg viewBox="0 0 24 24" focusable="false"><path fill="none" ' +
+                'stroke="currentColor" stroke-width="2.6" stroke-linecap="round" ' +
+                'stroke-linejoin="round" d="M6 14l6-6 6 6"/></svg></span>' +
+                '<span class="reel-hint-text">Flick up</span>';
+            document.body.appendChild(hint);
+            var killHint = function () {
+                hint.classList.add("is-gone");
+                scroller.removeEventListener("scroll", killHint);
+                scroller.removeEventListener("touchstart", killHint);
+                setTimeout(function () { if (hint.parentNode) hint.parentNode.removeChild(hint); }, 600);
+            };
+            scroller.addEventListener("scroll", killHint, { passive: true });
+            scroller.addEventListener("touchstart", killHint, { passive: true });
+            // Auto-retire after a few bounces even if untouched, so it is a
+            // hint, not permanent furniture.
+            setTimeout(killHint, 9000);
+        }
+
         // --- 1) Single fixed down-arrow (pointer devices only) ---
         var btn = null;
         if (canHover) {
