@@ -4980,9 +4980,14 @@ nav {
 .story-cards {
     margin-top: clamp(40px, 5vw, 60px);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* Columns follow the card count (--n, set inline by the template) so a
+       2-card section is 2 columns and a 3-card section is 3 -- never an ugly
+       3+1 wrap. Capped at 3; the template keeps sections to 2-3 cards. */
+    grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr));
     gap: clamp(18px, 2.5vw, 28px);
     width: 100%;
+    max-width: min(100%, calc(var(--n, 3) * 340px));
+    margin-inline: auto;
     text-align: left;
 }
 .story-card {
@@ -5441,10 +5446,14 @@ nav {
     height: 100dvh;
     overflow-y: scroll;
     overflow-x: hidden;
-    /* Mandatory for the firm reel feel. Every region -- including the
-       trailing footer (.story-tail) -- is a full-height snap target, so
-       there is always a snap point to rest on and nothing gets trapped. */
-    scroll-snap-type: y mandatory;
+    /* NO CSS scroll-snap. Snap on a container does not coexist with a
+       long-form tail (seoBody + footer): mandatory trapped you, proximity
+       kept re-grabbing the last panel at the boundary, so you could never
+       reach the bottom -- the "jumps back up" bug, in every snap mode. The
+       reel feel comes from full-height panels alone; reel-nav.js still does
+       one-flick-one-panel on touch via a settle clamp, but only within the
+       panels, leaving the long tail to scroll like a normal document. */
+    scroll-snap-type: none;
     scroll-behavior: smooth;
     /* NO scroll-padding-top here: panels are full-bleed and snap to their
        TRUE top edge. The nav floats OVER the panel, so an offset would make
@@ -5475,16 +5484,17 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Content shifts UP by roughly the nav height: less padding on top than
-       bottom. The floating pill then sits over content, not an empty strip,
-       and each panel reads optically centred under the bar. */
-    padding: clamp(40px, 7vh, 72px) var(--gutter) clamp(96px, 14vh, 132px);
+    /* SAFE ZONE. Every panel reserves a clear band top and bottom so content
+       (text + buttons) can never butt against the floating furniture:
+         --safe-top    = nav pill clearance  (pill height + its top gap)
+         --safe-bottom = down-arrow clearance (arrow height + its bottom gap)
+       Content is centred BETWEEN these bands, so the hero CTA sits above the
+       centred arrow and the heading sits below the pill -- no collisions.
+       Tune these two and every page updates. */
+    --safe-top: clamp(92px, 13vh, 120px);
+    --safe-bottom: clamp(92px, 13vh, 120px);
+    padding: var(--safe-top) var(--gutter) var(--safe-bottom);
     scroll-snap-align: start;
-    /* REEL FEEL: one flick = one panel. snap-stop:always forces the
-       scroller to halt on every panel, even on a hard flick, so it lands
-       on exactly the next idea (like an Instagram/TikTok reel) rather
-       than skidding past two. */
-    scroll-snap-stop: always;
     /* If a panel's content is taller than the screen, let it scroll
        within itself instead of bleeding into the next snap cell. */
     overflow-y: auto;
@@ -5499,10 +5509,11 @@ nav {
    Pointer devices only; touch users flick. */
 .story-next {
     position: fixed;
-    /* Bottom-RIGHT, not centre: a centred down-arrow overlapped the hero's
-       centred "Try the demo" CTA. Tucked to the right corner it never
-       collides with panel content. */
-    right: calc(clamp(18px, 2.5vw, 34px) + env(safe-area-inset-right, 0px));
+    /* Bottom-CENTRE. It cannot collide with content because every .story
+       panel reserves --safe-bottom of clear space below its content, sized
+       to this arrow's band. */
+    left: 50%;
+    transform: translateX(-50%);
     bottom: calc(clamp(20px, 3.5vh, 38px) + env(safe-area-inset-bottom, 0px));
     width: 46px;
     height: 46px;
@@ -5529,8 +5540,8 @@ nav {
     pointer-events: none;
 }
 @keyframes story-next-bob {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(5px); }
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(5px); }
 }
 @media (prefers-reduced-motion: reduce) {
     .story-next { animation: none; }
@@ -5549,6 +5560,16 @@ nav {
 .story-footer {
     background: var(--surface);
     text-align: center;
+    /* The footer is NOT a full-height snap panel. It is normal-flow content
+       at the very end so the page ends ON it -- proximity snap has nothing to
+       grab here, so you can rest at the bottom instead of being pulled back
+       up (the "jumps back at the bottom" bug). Auto height, no snap. */
+    height: auto;
+    min-height: 0;
+    scroll-snap-align: none;
+    padding-top: clamp(48px, 9vh, 96px);
+    padding-bottom: clamp(40px, 7vh, 72px);
+    overflow-y: visible;
 }
 .story-footer footer {
     width: 100%;

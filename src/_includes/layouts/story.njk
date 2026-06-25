@@ -122,7 +122,7 @@
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         <h2 class="story-h2">{{ b.heading | safe }}</h2>
-        <div class="story-cards">
+        <div class="story-cards" style="--n: {{ b.items | length }}">
             {%- for it in b.items %}
             <a class="story-card" href="{{ it.href }}">{%- if it.kicker %}<span class="story-card-kicker">{{ it.kicker }}</span>{% endif %}<h3>{{ it.title }}</h3><p>{{ it.text }}</p></a>
             {%- endfor %}

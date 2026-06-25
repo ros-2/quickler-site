@@ -141,12 +141,26 @@
             }, { passive: true });
         }
 
+        // The last reel panel; everything below it (seoBody + footer) is the
+        // free-scrolling long-form tail. Its top is where the clamp must stop
+        // interfering -- otherwise scrolling into the tail gets yanked back up
+        // to the last panel (the "jumps back up at the bottom" bug).
+        function tailTop() {
+            var last = panels[panels.length - 1];
+            return last ? last.offsetTop + last.offsetHeight - scroller.clientHeight * 0.5 : Infinity;
+        }
+
         var settleTimer = null;
         scroller.addEventListener("scroll", function () {
             updateArrow();
             if (canHover) return;
+            // Once you are at/below the last panel, you are in the long-form
+            // tail: do NOT clamp or re-snap. Let it scroll like a document so
+            // the bottom and footer are reachable.
+            if (scroller.scrollTop >= tailTop()) return;
             if (settleTimer) clearTimeout(settleTimer);
             settleTimer = setTimeout(function () {
+                if (scroller.scrollTop >= tailTop()) return;
                 var idx = currentIndex();
                 var clamped = Math.max(startIndex - 1, Math.min(startIndex + 1, idx));
                 clamped = Math.max(0, Math.min(panels.length - 1, clamped));
