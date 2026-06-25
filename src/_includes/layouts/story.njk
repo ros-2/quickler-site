@@ -168,8 +168,14 @@
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         {%- if b.heading %}<h2 class="story-h2">{{ b.heading | safe }}</h2>{% endif %}
-        <div class="story-video-embed">
-            <iframe src="https://www.youtube-nocookie.com/embed/{{ b.video }}?rel=0" title="Quickler walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        {#- Lite facade: NO YouTube iframe loads on page load (the player is
+            ~1.5MB+ of JS over a dozen requests -- the slow-load cause). Show
+            just the thumbnail + play button; js/persist-video.js swaps in the
+            real autoplaying iframe on click, then keeps it playing as you
+            scroll past. -#}
+        <div class="story-video-embed yt-lite" data-yt="{{ b.video }}" role="button" tabindex="0" aria-label="Play the Quickler walkthrough video">
+            <img class="yt-lite-thumb" src="https://i.ytimg.com/vi/{{ b.video }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+            <button type="button" class="yt-lite-play" aria-label="Play video"><svg viewBox="0 0 68 48" width="68" height="48" aria-hidden="true"><path fill="#f00" d="M66.5 7.7a8 8 0 0 0-5.6-5.7C56 .6 34 .6 34 .6S12 .6 7.1 2a8 8 0 0 0-5.6 5.7A83 83 0 0 0 0 24a83 83 0 0 0 1.5 16.3 8 8 0 0 0 5.6 5.7C12 47.4 34 47.4 34 47.4s22 0 26.9-1.4a8 8 0 0 0 5.6-5.7A83 83 0 0 0 68 24a83 83 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></button>
         </div>
     </div>
 </section>

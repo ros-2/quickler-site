@@ -5268,6 +5268,39 @@ nav {
     border: 0;
 }
 
+/* Lite YouTube facade: thumbnail + play button shown until clicked. Nothing
+   loads from YouTube until then, so the page is fast. The .story-video-embed
+   box already sets the 16:9 frame, radius and shadow. */
+.yt-lite {
+    position: relative;
+    cursor: pointer;
+}
+.yt-lite-thumb {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* hqdefault has black bars on 16:9; scale up slightly to fill cleanly. */
+    transform: scale(1.02);
+}
+.yt-lite-play {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 68px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+    transition: transform 0.18s ease, opacity 0.18s ease;
+}
+.yt-lite-play svg path:first-child { transition: fill 0.18s ease; opacity: 0.92; }
+.yt-lite:hover .yt-lite-play { transform: scale(1.08); }
+.yt-lite:hover .yt-lite-play svg path:first-child { fill: #f00; opacity: 1; }
+.yt-lite:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
 /* ============================================================
    BRAND NAV: the top bar is the Quickler logo gradient with the
    white wordmark on it. One consistent nav on every page.
