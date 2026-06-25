@@ -4734,17 +4734,15 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* Anchor the hero content to the TOP of the panel (not centred) and give
-       it a deliberate top offset, so it sits roughly a quarter of the viewport
-       higher than a vertically-centred block would. justify-content:flex-start
-       overrides the centred default from .story; the padding-top is the only
-       thing positioning it, so changing it directly moves the content up/down
-       predictably. */
-    justify-content: flex-start;
-    padding-top: clamp(140px, 22vh, 240px);
-    padding-bottom: clamp(80px, 12vh, 140px);
 }
-.story-hero .story-inner { max-width: 920px; }
+/* The hero panel stays centred (from .story), but the content block is pulled
+   physically UP by ~22% of the viewport with a transform. This is independent
+   of flex/padding/overflow interactions -- it just moves the rendered pixels
+   up the screen, which is what "move it up" needs. */
+.story-hero .story-inner {
+    max-width: 920px;
+    transform: translateY(-22vh);
+}
 .story-h1 {
     /* Sized to fit the safe zone: vh-relative so on a short screen the heading
        shrinks and never fills the band. min() against a vh value guarantees a
