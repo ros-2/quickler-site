@@ -137,4 +137,88 @@
         var id = lite.getAttribute('data-yt') || '';
         track('video_play', { video_id: id, page_path: window.location.pathname });
     });
+
+    // ---- Rage clicks (frustration) ----
+    // 3+ clicks in the same ~30px spot within 1s = the user is jabbing at
+    // something that is not responding. Strong signal of a broken/confusing UI.
+    var clickBuf = [];
+    document.addEventListener('click', function (event) {
+        var t = performance.now();
+        clickBuf = clickBuf.filter(function (c) { return t - c.t < 1000; });
+        clickBuf.push({ x: event.clientX, y: event.clientY, t: t });
+        var near = clickBuf.filter(function (c) {
+            return Math.abs(c.x - event.clientX) < 30 && Math.abs(c.y - event.clientY) < 30;
+        });
+        if (near.length >= 3) {
+            clickBuf = [];
+            var el = event.target.closest('a,button,[role=button]') || event.target;
+            track('rage_click', {
+                label: (el.getAttribute && (el.getAttribute('data-cta') || el.textContent) || '').trim().slice(0, 60),
+                page_path: window.location.pathname
+            });
+        }
+    });
+
+    // ---- Dead clicks (confusion) ----
+    // A click on something that is NOT interactive (not a link/button/input).
+    // Often means a user expected something to be clickable and it was not.
+    document.addEventListener('click', function (event) {
+        if (event.target.closest('a,button,input,textarea,select,label,[role=button],[onclick],.yt-lite,[data-yt],summary,details')) return;
+        // Ignore clicks on empty page background; only count clicks on text/headings/cards.
+        var meaningful = event.target.closest('h1,h2,h3,p,li,.story-card,.story-inner,img,span');
+        if (!meaningful) return;
+        track('dead_click', {
+            tag: event.target.tagName.toLowerCase(),
+            text: (event.target.textContent || '').trim().slice(0, 50),
+            page_path: window.location.pathname
+        });
+    });
+
+    // ---- Copy events (what they take away) ----
+    // Fires when the visitor copies text. The WhatsApp number, email, or a
+    // pricing figure being copied is a strong intent signal.
+    document.addEventListener('copy', function () {
+        var sel = (window.getSelection ? window.getSelection().toString() : '').trim();
+        if (!sel) return;
+        track('text_copied', { snippet: sel.slice(0, 80), length: sel.length, page_path: window.location.pathname });
+    });
+
+    // ---- Form field engagement (started but abandoned?) ----
+    // First focus on any form field = the visitor began filling it. Combined
+    // with form_submit_attempt, you can see start-vs-submit drop-off.
+    var formStarted = {};
+    document.addEventListener('focusin', function (event) {
+        var field = event.target.closest('input,textarea,select');
+        if (!field) return;
+        var form = field.closest('form');
+        var fid = (form && form.id) || 'unknown_form';
+        if (formStarted[fid]) return;
+        formStarted[fid] = true;
+        track('form_start', { form_id: fid, page_path: window.location.pathname });
+    });
+
+    // ---- Internal navigation depth (how many pages this visit) ----
+    // Counts page views within the session via sessionStorage, so you can see
+    // bounce (1 page) vs genuine exploration (many pages).
+    try {
+        var depth = parseInt(sessionStorage.getItem('q_depth') || '0', 10) + 1;
+        sessionStorage.setItem('q_depth', String(depth));
+        track('page_in_session', { depth: depth, page_path: window.location.pathname });
+    } catch (e) { /* private mode: skip */ }
+
+    // ---- Landing context (how they arrived) ----
+    // Referrer host + any UTM tags, reported once per page. Tells you where the
+    // traffic actually comes from (search, a directory, a direct share).
+    (function () {
+        var params = new URLSearchParams(window.location.search);
+        var ref = '';
+        try { ref = document.referrer ? new URL(document.referrer).host : 'direct'; } catch (e) { ref = 'direct'; }
+        track('arrival', {
+            referrer_host: ref,
+            utm_source: params.get('utm_source') || '',
+            utm_medium: params.get('utm_medium') || '',
+            utm_campaign: params.get('utm_campaign') || '',
+            landing_path: window.location.pathname
+        });
+    })();
 })();
