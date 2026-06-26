@@ -5,7 +5,7 @@
     // Microsoft Clarity project ID — heatmaps + session recordings. Free.
     // Set this to your real project ID from clarity.microsoft.com to switch it on.
     // Left empty = Clarity simply does not load (GA still works).
-    const CLARITY_ID = "";
+    const CLARITY_ID = "xd0e3wnnxe";
     const BANNER_ID = "quickler-cookie-banner";
     let navMenuIdCounter = 0;
 
