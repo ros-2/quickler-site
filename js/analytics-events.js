@@ -71,4 +71,70 @@
         reel.addEventListener('scroll', function () { onScroll(reel); }, { passive: true });
     }
     window.addEventListener('scroll', function () { onScroll(document.documentElement); }, { passive: true });
+
+    // ---- Time on page (active engagement) ----
+    // Counts seconds the tab is actually visible (pauses when backgrounded), so
+    // you see real reading time, not idle tabs. Fires milestones and a final
+    // total on exit. Answers "how long did this visitor actually spend here".
+    var activeMs = 0, lastTick = null, milestones = [10, 30, 60, 120, 300], mHit = {};
+    function nowVisible() { return document.visibilityState === 'visible'; }
+    function tick() {
+        var t = performance.now();
+        if (lastTick !== null && nowVisible()) {
+            activeMs += t - lastTick;
+            var s = Math.round(activeMs / 1000);
+            for (var i = 0; i < milestones.length; i++) {
+                var m = milestones[i];
+                if (s >= m && !mHit[m]) { mHit[m] = true; track('time_on_page', { seconds: m, page_path: window.location.pathname }); }
+            }
+        }
+        lastTick = t;
+    }
+    setInterval(tick, 5000);
+    document.addEventListener('visibilitychange', tick);
+    // Final engaged-time on leave, so you get a total even for short visits.
+    function sendFinal() {
+        tick();
+        track('engaged_time_total', { seconds: Math.round(activeMs / 1000), page_path: window.location.pathname });
+    }
+    window.addEventListener('pagehide', sendFinal);
+    document.addEventListener('visibilitychange', function () { if (!nowVisible()) sendFinal(); });
+
+    // ---- Section views (what they actually READ) ----
+    // Each reel panel / major section reports once when it has been on screen
+    // for >=1.5s. Tells you which parts of a page get attention and which get
+    // skipped. Uses the section's eyebrow+heading as a human-readable label.
+    function sectionLabel(el) {
+        var eb = el.querySelector('.story-eyebrow');
+        var h = el.querySelector('.story-h2, .story-h1, h1, h2');
+        return ((eb ? eb.textContent + ' / ' : '') + (h ? h.textContent : (el.id || 'section'))).trim().slice(0, 90);
+    }
+    if ('IntersectionObserver' in window) {
+        var timers = new WeakMap(), seen = new WeakSet();
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting && !seen.has(e.target)) {
+                    timers.set(e.target, setTimeout(function () {
+                        if (seen.has(e.target)) return;
+                        seen.add(e.target);
+                        track('section_view', { section: sectionLabel(e.target), page_path: window.location.pathname });
+                    }, 1500));
+                } else if (!e.isIntersecting && timers.has(e.target)) {
+                    clearTimeout(timers.get(e.target));
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('section.story, section[id], .story-article').forEach(function (s) { io.observe(s); });
+    }
+
+    // ---- Video engagement (did they watch the walkthrough?) ----
+    // The lite-YouTube facade swaps in an iframe on click; we already know a
+    // click happened via the facade. Fire a video_play when a .yt-lite is
+    // activated so you can see how many visitors actually start a video.
+    document.addEventListener('click', function (event) {
+        var lite = event.target.closest('.yt-lite, [data-yt]');
+        if (!lite) return;
+        var id = lite.getAttribute('data-yt') || '';
+        track('video_play', { video_id: id, page_path: window.location.pathname });
+    });
 })();
