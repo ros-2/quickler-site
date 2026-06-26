@@ -5531,6 +5531,23 @@ nav {
 /* FAQ: question (h3) + answer pairs. */
 .story-article-faq .story-article-body h3 { margin-top: 1em; }
 
+/* Comparison tables inside article panels. Centred block, left-aligned cells,
+   subtle hairlines. Inherits white text on gradient/photo panels. */
+.story-article-body table {
+    margin: 0.8em auto; border-collapse: collapse; text-align: left;
+    font-size: clamp(0.9rem, 1.1vw, 1rem); max-width: 44em; width: 100%;
+}
+.story-article-body th,
+.story-article-body td {
+    padding: 0.5em 0.7em; border-bottom: 1px solid rgba(0,0,0,0.12);
+    vertical-align: top;
+}
+.story-article-body th { font-weight: 700; border-bottom-width: 2px; }
+.story-feature .story-article-body th,
+.story-feature .story-article-body td,
+.story-photo .story-article-body th,
+.story-photo .story-article-body td { border-color: rgba(255,255,255,0.28); }
+
 /* Related guides: internal-linking panel. Centred list of guide links, one per
    line, with an optional muted blurb. Inherits white text on gradient panels. */
 .story-related-list {

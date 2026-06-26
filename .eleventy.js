@@ -114,11 +114,20 @@ module.exports = function (eleventyConfig) {
   // qualify for Article rich results and signals authorship to AI crawlers.
   eleventyConfig.addFilter("articleSchema", (seo) => {
     if (!seo || !seo.canonical || !seo.title) return "";
+    // Freshness signals. datePublished from the page (seo.datePublished) when
+    // set, else a stable default; dateModified is the build date, so every
+    // rebuild/deploy refreshes it. AI engines and Google down-rank undated
+    // content, so an Article without these reads as possibly stale.
+    const buildDate = new Date().toISOString().slice(0, 10);
+    const published = seo.datePublished || seo.dateModified || buildDate;
+    const modified = seo.dateModified || buildDate;
     return JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Article",
       headline: _plain(seo.title).slice(0, 110),
       description: _plain(seo.description),
+      datePublished: published,
+      dateModified: modified,
       mainEntityOfPage: { "@type": "WebPage", "@id": seo.canonical },
       url: seo.canonical,
       author: { "@type": "Organization", name: "Quickler Ltd", url: "https://quickler.co" },

@@ -1,12 +1,12 @@
 # Quickler
 
-> Quickler is a WhatsApp field compliance platform for UK trades. Engineers receive compliance questions on WhatsApp; replies and photos generate timestamped PDF reports automatically. Use cases include EICR electrical certificates, CP12 gas safety certificates, daily van safety checks, structural site inspection reports.
+> Quickler is a WhatsApp-native field compliance platform for field-services firms. Engineers receive compliance questions on WhatsApp; replies, voice notes and photos generate a structured, timestamped web report automatically (exportable to PDF). Use cases include EICR electrical certificates, CP12 gas safety certificates, daily van safety checks, site safety and structural inspection reports. UK-first, designed to work anywhere WhatsApp does.
 
 ## What Quickler does
 
 - Sends structured compliance questions to engineers on WhatsApp
 - Accepts text, voice notes (auto-transcribed) and photos as replies
-- Produces a formatted PDF report automatically
+- Produces a structured, shareable web report automatically (exportable to PDF)
 - Flags faults on a manager dashboard with red, amber and green status
 - Stores every record timestamped, against the engineer, the job and the date
 - Provides an audit trail suitable for DVSA, NICEIC and Gas Safe inspection
@@ -21,7 +21,7 @@ No app to install. No login for engineers. No Twilio or Meta Business account re
 - M&E contractors
 - Van fleet operators (DVSA daily walkround checks)
 - Safety inspection firms
-- Any UK trades firm with engineers submitting compliance data from site
+- Any field-services firm with engineers submitting compliance data from site (UK-first, works in any country WhatsApp does)
 
 ## Pricing model
 
@@ -42,7 +42,7 @@ Per firm, not per engineer. Tiers: Starter £50/mo (1 engineer, 3 workflows), Te
 - alternative to FleetCheck
 - alternative to iCertifi
 - field compliance software no subscription
-- no per-user compliance app UK trades
+- no per-user compliance app for field teams
 
 ## Key pages
 
