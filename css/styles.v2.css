@@ -5531,6 +5531,21 @@ nav {
 /* FAQ: question (h3) + answer pairs. */
 .story-article-faq .story-article-body h3 { margin-top: 1em; }
 
+/* Related guides: internal-linking panel. Centred list of guide links, one per
+   line, with an optional muted blurb. Inherits white text on gradient panels. */
+.story-related-list {
+    list-style: none; margin: 0.8em auto 0; padding: 0;
+    text-align: left; display: inline-block; max-width: 38em;
+    line-height: 1.5;
+}
+.story-related-list li { margin: 0.7em 0; }
+.story-related-list a {
+    font-weight: 600; text-decoration: underline; text-underline-offset: 3px;
+    font-size: clamp(1.02rem, 1.3vw, 1.15rem);
+}
+.story-related-blurb { display: block; font-size: 0.92em; opacity: 0.72; margin-top: 0.15em; }
+.story-feature .story-related-list a { color: #ffffff; }
+
 .story-seo {
     scroll-snap-align: none;
     /* Soft tinted band so the article reads as a designed section, not a raw

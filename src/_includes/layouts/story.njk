@@ -227,6 +227,26 @@
 {%- endfor %}
 {%- endif %}
 
+{#- Related guides -- internal-linking cluster. A final reel panel that links to
+    the 3-4 topically-closest guides. Spreads link equity (Google reads tight
+    topical clusters as authority) and keeps readers on-site. Rendered in the
+    reel rhythm: it continues the alternation so it never clashes with the panel
+    before it. `relatedLinks`: [{ label, href, blurb? }] in front-matter. -#}
+{%- if relatedLinks and relatedLinks | length %}
+{%- set rn = ((blocks | length) or 0) + ((articlePanels | length) or 0) + 1 %}
+<section class="story story-article story-related {{ 'story-feature' if rn is odd }}">
+    <div class="story-inner story-article-inner">
+        <p class="story-eyebrow">Keep reading</p>
+        <h2 class="story-h2">Related guides</h2>
+        <ul class="story-related-list">
+            {%- for r in relatedLinks %}
+            <li><a href="{{ r.href }}">{{ r.label }}</a>{% if r.blurb %} <span class="story-related-blurb">{{ r.blurb }}</span>{% endif %}</li>
+            {%- endfor %}
+        </ul>
+    </div>
+</section>
+{%- endif %}
+
 {#- Optional long-form SEO region (LEGACY fallback for pages not yet converted
     to articlePanels). Raw HTML article rendered as a styled scroll region after
     the reel panels, before the footer. Crawlable, visible, indexable. -#}
