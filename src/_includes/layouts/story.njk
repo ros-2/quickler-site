@@ -253,6 +253,49 @@
 </section>
 
 </main>
+
+{#- Structured data (JSON-LD), generated from content already on the page so it
+    can never drift from what the reader sees. Organization + WebSite are emitted
+    on every story page (site identity for Google's knowledge panel and AI
+    crawlers). FAQPage is emitted only when an articlePanels FAQ block exists
+    (parsed from its <h3>/<p> pairs) -> FAQ rich results. Article is emitted for
+    guide pages (those with articlePanels) -> Article rich results. A page can
+    still override with its own seo.jsonld in the head. -#}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Quickler",
+  "legalName": "{{ site.company }}",
+  "url": "{{ site.domain }}",
+  "logo": "{{ site.domain }}/assets/icons/apple-touch-icon.png",
+  "email": "{{ site.email }}",
+  "sameAs": ["{{ site.linkedin }}"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Quickler",
+  "url": "{{ site.domain }}"
+}
+</script>
+{%- if articlePanels %}
+{%- set faqLd = articlePanels | faqSchema %}
+{%- if faqLd %}
+<script type="application/ld+json">
+{{ faqLd | safe }}
+</script>
+{%- endif %}
+{%- set articleLd = seo | articleSchema %}
+{%- if articleLd %}
+<script type="application/ld+json">
+{{ articleLd | safe }}
+</script>
+{%- endif %}
+{%- endif %}
+
 {%- for s in scripts %}
 <script src="{{ s }}"></script>
 {%- endfor %}

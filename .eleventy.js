@@ -70,6 +70,68 @@ module.exports = function (eleventyConfig) {
     return dt.toISOString().slice(0, 10);
   });
 
+  // ---- Structured data (JSON-LD) generated from content already on the page ----
+  // Strip tags + decode the handful of entities our content uses, to plain text.
+  const _plain = (html) =>
+    String(html || "")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+
+  // Build a schema.org FAQPage object from any articlePanels whose kind is
+  // "faq". The FAQ HTML is authored as repeated <h3>question</h3><p>answer</p>
+  // pairs, so we parse those into mainEntity Q/A nodes. Returns "" when there is
+  // no FAQ panel, so the template emits nothing. Gives Google FAQ rich results
+  // and feeds AI search engines clean Q/A pairs.
+  eleventyConfig.addFilter("faqSchema", (panels) => {
+    if (!Array.isArray(panels)) return "";
+    const faq = panels.find((p) => p && p.kind === "faq" && p.html);
+    if (!faq) return "";
+    const qa = [];
+    const re = /<h3[^>]*>([\s\S]*?)<\/h3>\s*((?:(?!<h3)[\s\S])*)/gi;
+    let m;
+    while ((m = re.exec(faq.html)) !== null) {
+      const q = _plain(m[1]);
+      const a = _plain(m[2]);
+      if (q && a) qa.push({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      });
+    }
+    if (!qa.length) return "";
+    return JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: qa,
+    });
+  });
+
+  // Build a schema.org Article object for a guide page from its own SEO fields.
+  // Marks the page as editorial content authored by Quickler, which helps it
+  // qualify for Article rich results and signals authorship to AI crawlers.
+  eleventyConfig.addFilter("articleSchema", (seo) => {
+    if (!seo || !seo.canonical || !seo.title) return "";
+    return JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: _plain(seo.title).slice(0, 110),
+      description: _plain(seo.description),
+      mainEntityOfPage: { "@type": "WebPage", "@id": seo.canonical },
+      url: seo.canonical,
+      author: { "@type": "Organization", name: "Quickler Ltd", url: "https://quickler.co" },
+      publisher: {
+        "@type": "Organization",
+        name: "Quickler",
+        url: "https://quickler.co",
+        logo: { "@type": "ImageObject", url: "https://quickler.co/assets/icons/apple-touch-icon.png" },
+      },
+      inLanguage: "en-GB",
+    });
+  });
+
   // Pass static assets straight through, unchanged.
   eleventyConfig.addPassthroughCopy({ "assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "css": "css" });
