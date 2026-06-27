@@ -70,6 +70,32 @@ module.exports = function (eleventyConfig) {
     return dt.toISOString().slice(0, 10);
   });
 
+  // ---- Pricing render helpers (single source of truth: src/_data/pricing.js) ----
+  // {% pricingCards %} renders the plan/bundle grid straight from pricing.plans,
+  // so a pricing change in the data file restyles every page that uses it. No
+  // hardcoded prices in markup.
+  const _pricing = require("./src/_data/pricing.js");
+  eleventyConfig.addShortcode("pricingCards", () => {
+    const cards = _pricing.plans
+      .map(
+        (p) =>
+          `<div class="price-card"><div class="price-name">${p.name}</div>` +
+          `<div class="price-figure"><span>${_pricing.currency}</span>${p.price}<span>/mo</span></div>` +
+          `<div class="price-unit">${p.quantity} ${p.quantityLabel.replace(/^[0-9]+\s*/, "")}</div>` +
+          (p.note ? `<div class="price-note">${p.note}</div>` : "") +
+          `</div>`
+      )
+      .join("");
+    return `<div id="plans" class="story-prices">${cards}</div>`;
+  });
+
+  // {% pricingTags %} renders the "every plan includes" items as tag chips.
+  eleventyConfig.addShortcode("pricingTags", () => {
+    return _pricing.included
+      .map((i) => `<span class="story-tag">${i}</span>`)
+      .join("");
+  });
+
   // ---- Structured data (JSON-LD) generated from content already on the page ----
   // Strip tags + decode the handful of entities our content uses, to plain text.
   const _plain = (html) =>

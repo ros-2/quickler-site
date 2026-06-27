@@ -196,6 +196,18 @@
 </section>
 {%- elif b.type == "raw" %}
 <section class="story {{ altcls }}"><div class="story-inner">{{ b.html | safe }}</div></section>
+{%- elif b.type == "pricing" %}
+{#- Pricing block: renders the bundle/plan grid from the single source of truth
+    (src/_data/pricing.js) via the {% pricingCards %} shortcode. A pricing change
+    in that data file updates every page using this block. eyebrow/heading/intro
+    are optional overrides. -#}
+<section class="story {{ altcls }}"><div class="story-inner">
+    <p class="story-eyebrow">{{ b.eyebrow or "Monthly bundles" }}</p>
+    <h2 class="story-h2">{{ b.heading or "Pick the bundle that fits." }}</h2>
+    {%- if b.intro %}<p class="story-text story-text-centre">{{ b.intro }}</p>{% endif %}
+    {% pricingCards %}
+    <p class="story-text story-text-centre">{{ pricing.overflowLine }} <a href="mailto:{{ site.email }}">Talk to us</a>. {{ pricing.billing }}</p>
+</div></section>
 {%- endif %}
 {%- endfor %}
 
