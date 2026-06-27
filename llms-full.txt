@@ -57,7 +57,7 @@ Structural engineers capture site notes, photos, sketches and measurements on Wh
 What we know is genuinely different about Quickler:
 
 - The engineer interface is WhatsApp (no separate app to install or learn)
-- Pricing is per firm, not per engineer
+- Pricing is per report, not per engineer or per seat
 - Voice notes are accepted and transcribed
 
 For comparison against specific competitors (iAuditor, SimPro, Joblogic, Fergus, FleetCheck, iCertifi) see https://quickler.co/pages/alternatives.html — we deliberately avoid feature-by-feature claims about products we have not used.
@@ -66,14 +66,14 @@ Quickler is intentionally narrower than full field service management platforms.
 
 ## Pricing
 
-| Tier     | Engineers | Workflows | Monthly |
-|----------|-----------|-----------|---------|
-| Starter  | 1         | 3         | £50     |
-| Team     | 4         | 5         | £100    |
-| Business | 12        | 8         | £140    |
-| Scale    | 30        | 10        | £300    |
+| Bundle       | Reports / month | Monthly |
+|--------------|-----------------|---------|
+| Quickler 50  | 50              | £50     |
+| Quickler 100 | 100             | £100    |
+| Quickler 250 | 250             | £250    |
+| Quickler 500 | 500             | £500    |
 
-Pricing is per firm, not per engineer. Billed monthly by UK Direct Debit. No setup fee. Free trial available — sign up at app.quickler.co/signup. Setup from sign-up to first live workflow typically takes under a week.
+Pricing is per report (one pound per completed report), not per engineer or per seat. Unlimited users, managers and workflows on every bundle. Over 500 reports a month: contact for custom pricing. 14-day free trial, no card required — sign up at app.quickler.co/signup. Billed monthly by UK Direct Debit. No setup fee. Setup from sign-up to first live workflow typically takes under a week.
 
 ## Data, security and compliance
 
@@ -106,7 +106,7 @@ Pricing is per firm, not per engineer. Billed monthly by UK Direct Debit. No set
 
 **Does Quickler need an app on the engineer's phone?** No. Engineers use the WhatsApp account already on their phone.
 
-**What does it cost?** £50 to £300 per month per firm. Tiers detailed above.
+**What does it cost?** One pound per completed report, in monthly bundles from £50 (50 reports) to £500 (500 reports). Unlimited users and workflows on every bundle. Details above.
 
 **Is there a free trial?** Yes. Sign up at app.quickler.co/signup.
 
@@ -157,7 +157,7 @@ Customer-facing help guides at https://quickler.co/pages/help/:
 - Workflows: https://quickler.co/pages/help/workflows.html — inputs, outputs, triggers, plan workflow limits, editing, voice notes
 - Engineers: https://quickler.co/pages/help/engineers.html — adding by name and mobile, what the engineer sees on WhatsApp, removing, seat caps per plan
 - Team management: https://quickler.co/pages/help/team.html — admin and member role matrix, inviting by email, changing roles, removing members
-- Plans and billing: https://quickler.co/pages/help/plans.html — Starter, Team, Business, Scale tiers, Direct Debit, upgrade pro-rating, downgrading, cancelling, invoice resends
+- Plans and billing: https://quickler.co/pages/help/plans.html — per-report bundles (Quickler 50/100/250/500), Direct Debit, upgrade pro-rating, downgrading, cancelling, invoice resends
 - Data and privacy: https://quickler.co/pages/help/privacy.html — what Quickler stores, EU data residency, role-based visibility, engineer consent under UK GDPR Article 6(1)(f), export, deletion within 30 days, third-party processors
 - Troubleshooting: https://quickler.co/pages/help/troubleshooting.html — engineer not receiving intro message, partial runs resuming, PDF rendering issues, error reference codes, plan limit prompts, magic-link sign-in problems
 - FAQ: https://quickler.co/pages/help/faq.html — merged customer-facing FAQ covering what Quickler is, how it works, trades and use cases, pricing, data and compliance
