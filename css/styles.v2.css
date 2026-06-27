@@ -4805,6 +4805,18 @@ nav {
     margin-top: min(clamp(20px, 3.5vw, 36px), 3.2vh);
 }
 
+/* Reassurance line under the hero CTAs (e.g. "14-day free trial. No card
+   required."). Small, muted, centred -- the standard SaaS trust nudge. */
+.story-action-note {
+    margin: 0.8em 0 0;
+    font-size: clamp(0.82rem, 1vw, 0.92rem);
+    color: var(--ink-soft, #5a6478);
+    opacity: 0.85;
+    text-align: center;
+}
+.story-feature .story-action-note,
+.story-photo .story-action-note { color: rgba(255,255,255,0.85); }
+
 /* Eyebrow + headings shared across story sections */
 .story-eyebrow {
     text-transform: uppercase;

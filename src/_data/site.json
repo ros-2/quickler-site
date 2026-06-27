@@ -7,8 +7,11 @@
   "email": "hello@quickler.co",
   "linkedin": "https://www.linkedin.com/company/quickler/",
   "loginUrl": "https://app.quickler.co/login",
+  "signupUrl": "https://app.quickler.co/signup",
+  "trialDays": 14,
+  "trialLine": "14-day free trial. No card required.",
   "whatsapp": "447455741203",
   "whatsappLink": "https://wa.me/447455741203",
   "googleVerification": "",
-  "version": "294"
+  "version": "295"
 }
