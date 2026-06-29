@@ -88,6 +88,16 @@ const shortSentence =
     ? `One pound per completed report, unlimited users and workflows. Bundles from ${CURRENCY}${plans[0].price} to ${CURRENCY}${topPlan.price}/mo. ${trialLine}`
     : `Plans from ${CURRENCY}${plans[0].price}/mo. ${trialLine}`;
 
+// A plain bundle list for guide prose: "Quickler 50 is £50 a month for 50
+// reports, ..." with the top tier closing on "talk to us for more". Reads
+// naturally mid-paragraph, no trailing full stop.
+const bundleList = plans
+  .map((p) => `${p.name} is ${CURRENCY}${p.price} a month for ${p.quantity} ${unit.plural}`)
+  .join(", ");
+
+// The per-report headline as a sentence fragment, for prose openers.
+const perReportLine = unit.perUnitLine;
+
 module.exports = {
   currency: CURRENCY,
   model,
@@ -100,4 +110,6 @@ module.exports = {
   billing,
   sentence,
   shortSentence,
+  bundleList,
+  perReportLine,
 };

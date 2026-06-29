@@ -58,7 +58,7 @@
     <div class="story-inner">
         {%- if hero.eyebrow %}<p class="story-eyebrow">{{ hero.eyebrow }}</p>{% endif %}
         <h1 class="story-h1">{{ hero.heading | safe }}</h1>
-        {%- if hero.lede %}<p class="story-lede">{{ hero.lede | safe }}</p>{% endif %}
+        {%- if hero.lede %}<p class="story-lede">{{ hero.lede | priceTokens | safe }}</p>{% endif %}
         {%- if hero.actions %}
         <div class="story-actions">
             {%- for a in hero.actions %}
@@ -97,7 +97,7 @@
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         {%- if b.heading %}<h2 class="story-h2">{{ b.heading | safe }}</h2>{% endif %}
-        {%- if b.html %}{{ b.html | safe }}{% else %}<p class="story-text story-text-centre">{{ b.text | safe }}</p>{% endif %}
+        {%- if b.html %}{{ b.html | priceTokens | safe }}{% else %}<p class="story-text story-text-centre">{{ b.text | priceTokens | safe }}</p>{% endif %}
     </div>
 </section>
 {%- elif b.type == "split" %}
@@ -108,14 +108,14 @@
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         <h2 class="story-h2">{{ b.heading | safe }}</h2>
-        <p class="story-text story-text-centre">{{ b.text | safe }}</p>
+        <p class="story-text story-text-centre">{{ b.text | priceTokens | safe }}</p>
     </div>
     {%- else %}
     <div class="story-split {{ 'story-split-reverse' if b.reverse }}">
         <div class="story-copy">
             {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
             <h2 class="story-h2">{{ b.heading | safe }}</h2>
-            <p class="story-text">{{ b.text | safe }}</p>
+            <p class="story-text">{{ b.text | priceTokens | safe }}</p>
         </div>
         <div class="story-media" role="img" aria-label="{{ b.mediaAlt or '' }}"></div>
     </div>
@@ -128,7 +128,7 @@
         <h2 class="story-h2">{{ b.heading | safe }}</h2>
         <ol class="story-steps">
             {%- for it in b.items %}
-            <li class="story-step"><span class="story-step-n">{{ loop.index }}</span><h3>{{ it.title }}</h3><p>{{ it.text }}</p></li>
+            <li class="story-step"><span class="story-step-n">{{ loop.index }}</span><h3>{{ it.title }}</h3><p>{{ it.text | priceTokens | safe }}</p></li>
             {%- endfor %}
         </ol>
         {%- if b.video %}
@@ -155,7 +155,7 @@
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         <h2 class="story-h2">{{ b.heading | safe }}</h2>
-        {%- if b.text %}<p class="story-text story-text-centre">{{ b.text | safe }}</p>{% endif %}
+        {%- if b.text %}<p class="story-text story-text-centre">{{ b.text | priceTokens | safe }}</p>{% endif %}
         <div class="story-tags">
             {%- for it in b.items %}
             <a href="{{ it.href }}" class="story-tag {{ 'story-tag-strong' if it.strong }}">{{ it.label }}</a>
@@ -168,7 +168,7 @@
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         <h2 class="story-h2">{{ b.heading | safe }}</h2>
-        {%- if b.text %}<p class="story-text story-text-centre">{{ b.text | safe }}</p>{% endif %}
+        {%- if b.text %}<p class="story-text story-text-centre">{{ b.text | priceTokens | safe }}</p>{% endif %}
         {%- if b.actions %}
         <div class="story-actions">
             {%- for a in b.actions %}
@@ -195,7 +195,7 @@
     </div>
 </section>
 {%- elif b.type == "raw" %}
-<section class="story {{ altcls }}"><div class="story-inner">{{ b.html | safe }}</div></section>
+<section class="story {{ altcls }}"><div class="story-inner">{{ b.html | priceTokens | safe }}</div></section>
 {%- elif b.type == "pricing" %}
 {#- Pricing block: renders the bundle/plan grid from the single source of truth
     (src/_data/pricing.js) via the {% pricingCards %} shortcode. A pricing change
@@ -234,7 +234,7 @@
     <div class="story-inner story-article-inner">
         {%- if ap.eyebrow %}<p class="story-eyebrow">{{ ap.eyebrow }}</p>{% endif %}
         {%- if ap.heading %}<h2 class="story-h2">{{ ap.heading | safe }}</h2>{% endif %}
-        <div class="story-article-body">{{ ap.html | safe }}</div>
+        <div class="story-article-body">{{ ap.html | priceTokens | safe }}</div>
     </div>
 </section>
 {%- endfor %}
@@ -266,7 +266,7 @@
 {%- if seoBody and not articlePanels %}
 <section class="story-seo" aria-label="More detail">
     <div class="story-seo-inner">
-        {{ seoBody | safe }}
+        {{ seoBody | priceTokens | safe }}
     </div>
 </section>
 {%- endif %}

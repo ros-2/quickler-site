@@ -96,6 +96,27 @@ module.exports = function (eleventyConfig) {
       .join("");
   });
 
+  // {{ someString | priceTokens }} resolves [[price:KEY]] placeholders against
+  // the pricing data file. This is the ONLY way to keep pricing single-sourced
+  // inside JSON front-matter (seoBody, block text, articlePanels HTML), because
+  // Nunjucks does NOT re-evaluate {{ pricing.* }} written inside a front-matter
+  // string — by the time the layout renders it, it is a literal. So guide prose
+  // carries stable [[price:...]] tokens; this filter fills them at build time.
+  // Add a new token by adding a key here that maps to a pricing.js value.
+  const _PRICE_TOKENS = {
+    bundles: _pricing.bundleList,        // "Quickler 50 is £50 a month for 50 reports, ..."
+    sentence: _pricing.sentence,         // full dense pricing sentence
+    short: _pricing.shortSentence,       // tight one-liner
+    trial: _pricing.trialLine,           // "14-day free trial. No card required."
+    perReport: _pricing.perReportLine,   // "One pound per completed report"
+    overflow: _pricing.overflowLine,     // "Need more than 500 reports a month? Talk to us."
+  };
+  eleventyConfig.addFilter("priceTokens", (str) =>
+    String(str || "").replace(/\[\[price:([a-zA-Z]+)\]\]/g, (m, key) =>
+      key in _PRICE_TOKENS ? _PRICE_TOKENS[key] : m
+    )
+  );
+
   // ---- Structured data (JSON-LD) generated from content already on the page ----
   // Strip tags + decode the handful of entities our content uses, to plain text.
   const _plain = (html) =>
