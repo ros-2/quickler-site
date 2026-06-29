@@ -11,7 +11,17 @@
 
     function getConsent() {
         try {
-            return window.localStorage.getItem(CONSENT_KEY);
+            const fromStorage = window.localStorage.getItem(CONSENT_KEY);
+            if (fromStorage) return fromStorage;
+        } catch (error) {
+            // fall through to the shared cookie
+        }
+        // Shared .quickler.co cookie - lets a choice made on any subdomain count here.
+        try {
+            const match = document.cookie.match(
+                new RegExp("(?:^|; )" + CONSENT_KEY + "=([^;]*)")
+            );
+            return match ? decodeURIComponent(match[1]) : null;
         } catch (error) {
             return null;
         }
@@ -20,6 +30,18 @@
     function setConsent(value) {
         try {
             window.localStorage.setItem(CONSENT_KEY, value);
+        } catch (error) {
+            // localStorage may be unavailable; the cookie below still carries consent.
+        }
+        // Also write a cookie scoped to the parent domain so the choice is shared
+        // with app.quickler.co / lab.quickler.co. The app reads this and never
+        // shows its own banner. One accept here counts everywhere.
+        try {
+            const oneYear = 365 * 24 * 60 * 60;
+            document.cookie =
+                CONSENT_KEY + "=" + value +
+                "; path=/; domain=.quickler.co; max-age=" + oneYear +
+                "; SameSite=Lax; Secure";
         } catch (error) {
             return;
         }
