@@ -1644,21 +1644,13 @@ section#top {
     right: auto;
     bottom: clamp(12px, 2vw, 20px);
     transform: translateX(-50%);
-    width: min(360px, calc(100vw - 24px));
-    padding: 18px 18px 16px;
+    width: min(320px, calc(100vw - 24px));
+    padding: 14px 16px;
     border: 1px solid var(--line-strong);
-    border-radius: 24px;
+    border-radius: 20px;
     background: var(--surface-card);
     box-shadow: 0 24px 50px rgba(18, 41, 111, 0.18);
     z-index: 200;
-}
-
-.cookie-banner-title {
-    margin-bottom: 8px;
-    color: var(--accent);
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
 }
 
 .cookie-banner-copy {
@@ -1715,14 +1707,6 @@ section#top {
     background: var(--surface-card);
     color: var(--accent);
     border-color: var(--line);
-}
-
-.cookie-button-settings {
-    background: transparent;
-    color: var(--ink-soft);
-    border-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
 }
 
 .cta-section {
@@ -2873,11 +2857,6 @@ a.callout-btn {
         border-radius: 16px;
     }
 
-    .cookie-banner-title {
-        margin-bottom: 6px;
-        font-size: 0.96rem;
-    }
-
     .cookie-banner-copy {
         font-size: 0.82rem;
         line-height: 1.42;
@@ -2892,13 +2871,6 @@ a.callout-btn {
         min-height: 38px;
         padding: 8px 12px;
         font-size: 0.8rem;
-    }
-
-    .cookie-button-settings {
-        width: 100%;
-        min-height: 30px;
-        padding-top: 2px;
-        padding-bottom: 0;
     }
 
     section {

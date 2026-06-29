@@ -98,16 +98,12 @@
         banner.id = BANNER_ID;
         banner.className = "cookie-banner";
         banner.innerHTML = `
-            <div class="cookie-banner-title">Cookie settings</div>
             <p class="cookie-banner-copy">
-                quickler uses analytics only if you allow them. They help us
-                see which pages are useful and how the site is used. See the
-                <a href="/pages/privacy.html">Privacy Policy</a>.
+                Allow analytics cookies? <a href="/pages/privacy.html">Privacy</a>.
             </p>
             <div class="cookie-banner-actions">
-                <button type="button" class="cookie-button cookie-button-accept" data-cookie-action="accept">Accept analytics</button>
-                <button type="button" class="cookie-button cookie-button-decline" data-cookie-action="decline">Decline</button>
-                <button type="button" class="cookie-button cookie-button-settings" data-cookie-action="close">Close</button>
+                <button type="button" class="cookie-button cookie-button-accept" data-cookie-action="accept">Yes</button>
+                <button type="button" class="cookie-button cookie-button-decline" data-cookie-action="decline">No</button>
             </div>
         `;
 
@@ -124,8 +120,6 @@
                 removeBanner();
             } else if (action === "decline") {
                 setConsent("denied");
-                removeBanner();
-            } else if (action === "close") {
                 removeBanner();
             }
         });
