@@ -42,7 +42,7 @@ preload are identical on every page -> defined ONCE here. -#}
       raster format (PNG/JPG -- SVG is not rendered by WhatsApp/LinkedIn/X).
       A relative seo.ogImage ("/assets/og/og-gas.jpg") is prefixed with the
       domain here so pages can stay path-relative. -#}
-  {%- set ogImg = seo.ogImage or (site.domain + "/assets/og/default.png") %}
+  {%- set ogImg = seo.ogImage or (site.domain + "/assets/og/default-v2.png") %}
   {%- if ogImg and (ogImg | first) == "/" %}{% set ogImg = site.domain + ogImg %}{% endif %}
   <meta property="og:image" content="{{ ogImg }}">
   <meta property="og:image:width" content="1200">
