@@ -5316,6 +5316,23 @@ nav {
     max-width: min(100%, 860px);
     aspect-ratio: 16 / 9;
 }
+/* Portrait (vertical Short): a 9:16 video letterboxes badly in the 16:9 box.
+   Render it 9:16 instead, height-capped to one viewport so it never dominates,
+   and derive the (narrow) width from that height. object-fit: cover on the
+   oardefault thumbnail means no black bars either. */
+.story-video-panel .story-video-embed.portrait {
+    height: min(
+        calc(100dvh - var(--safe-top) - var(--safe-bottom) - 160px),
+        520px
+    );
+    width: auto;
+    max-width: 100%;
+    aspect-ratio: 9 / 16;
+}
+.story-video-embed.portrait .yt-lite-thumb {
+    /* oardefault is the full vertical frame with no bars: no scale needed. */
+    transform: none;
+}
 /* The video panel stacks heading + video; if that stack is taller than the
    safe area, anchor it to the top of the safe zone (not centre) so it never
    overflows DOWN into the arrow -- it sits just under the nav and the video
