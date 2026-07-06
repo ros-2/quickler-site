@@ -5326,11 +5326,14 @@ nav {
    native. object-fit: cover crops the still to the box so there is never a
    grey bar, whatever the source frame's shape. */
 .story-video-panel .story-video-embed.portrait {
-    /* Fill the viewport height (minus nav + safe bands). Width follows from
-       9:16 and is capped only so it can never overflow the column. */
-    height: calc(100dvh - var(--safe-top) - var(--safe-bottom) - 96px);
+    /* The panel is already one viewport tall and padded by the safe bands, so
+       take its FULL usable height (100%, not another dvh-minus-bands calc that
+       double-subtracts and leaves dead space). Width follows 9:16; the video
+       is as tall as the screen allows and as wide as that height warrants. */
+    height: 100%;
     width: auto;
-    max-width: min(100%, calc((100dvh - var(--safe-top) - var(--safe-bottom) - 96px) * 0.5625));
+    max-width: 100%;
+    margin: 0 auto;
     aspect-ratio: 9 / 16;
 }
 .story-video-embed.portrait .yt-lite-thumb {
