@@ -5326,9 +5326,11 @@ nav {
    native. object-fit: cover crops the still to the box so there is never a
    grey bar, whatever the source frame's shape. */
 .story-video-panel .story-video-embed.portrait {
-    height: min(560px, calc(100dvh - var(--safe-top) - var(--safe-bottom) - 120px));
+    /* Fill the viewport height (minus nav + safe bands). Width follows from
+       9:16 and is capped only so it can never overflow the column. */
+    height: calc(100dvh - var(--safe-top) - var(--safe-bottom) - 96px);
     width: auto;
-    max-width: min(100%, 315px);
+    max-width: min(100%, calc((100dvh - var(--safe-top) - var(--safe-bottom) - 96px) * 0.5625));
     aspect-ratio: 9 / 16;
 }
 .story-video-embed.portrait .yt-lite-thumb {
