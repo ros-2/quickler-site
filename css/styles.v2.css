@@ -5326,15 +5326,24 @@ nav {
    native. object-fit: cover crops the still to the box so there is never a
    grey bar, whatever the source frame's shape. */
 .story-video-panel .story-video-embed.portrait {
-    /* The panel is already one viewport tall and padded by the safe bands, so
-       take its FULL usable height (100%, not another dvh-minus-bands calc that
-       double-subtracts and leaves dead space). Width follows 9:16; the video
-       is as tall as the screen allows and as wide as that height warrants. */
-    height: 100%;
+    /* A 9:16 video is bound by whichever runs out first: the panel's height OR
+       (on wide/short screens) a sensible width so it never becomes a lonely
+       hair-thin strip. Height is the usable panel height; width is capped so
+       on desktop and on landscape phones it stays a believable phone frame
+       rather than stretching to the full height of a short/wide viewport. */
+    height: min(100%, 78vh);
     width: auto;
-    max-width: 100%;
+    max-width: min(92vw, 46vh);
     margin: 0 auto;
     aspect-ratio: 9 / 16;
+}
+@media (min-width: 900px) {
+    /* Desktop: cap the phone frame so it reads as a deliberate phone mock, not
+       a full-height column flanked by dead space. */
+    .story-video-panel .story-video-embed.portrait {
+        height: min(72vh, 620px);
+        max-width: none;
+    }
 }
 .story-video-embed.portrait .yt-lite-thumb {
     object-fit: cover;
