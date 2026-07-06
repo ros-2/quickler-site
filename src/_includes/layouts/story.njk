@@ -183,17 +183,19 @@
     <div class="story-inner">
         {%- if b.eyebrow %}<p class="story-eyebrow">{{ b.eyebrow }}</p>{% endif %}
         {%- if b.heading %}<h2 class="story-h2">{{ b.heading | safe }}</h2>{% endif %}
+        {%- if b.text %}<p class="story-text story-text-centre">{{ b.text | priceTokens | safe }}</p>{% endif %}
         {#- Lite facade: NO YouTube iframe loads on page load (the player is
             ~1.5MB+ of JS over a dozen requests -- the slow-load cause). Show
             just the thumbnail + play button; js/persist-video.js swaps in the
             real autoplaying iframe on click, then keeps it playing as you
             scroll past. -#}
-        {#- portrait: vertical Shorts render 9:16, not 16:9. Use the Shorts-native
-            frame (oardefault) which is the full vertical still, not the pillarboxed
-            hqdefault, and let CSS shape the box. -#}
+        {#- portrait: a phone-shot demo. The box is a capped phone frame on desktop
+            and full-width on mobile (see CSS). Thumbnail is maxresdefault (exists
+            for both true Shorts and landscape-canvas uploads), object-fit: cover
+            crops it to the box cleanly. hqdefault is the onerror fallback. -#}
         <div class="story-video-embed yt-lite{% if b.portrait %} portrait{% endif %}" data-yt="{{ b.video }}" role="button" tabindex="0" aria-label="Play the Quickler walkthrough video">
             {%- if b.portrait %}
-            <img class="yt-lite-thumb" src="https://i.ytimg.com/vi/{{ b.video }}/oardefault.jpg" alt="" loading="lazy" width="405" height="720">
+            <img class="yt-lite-thumb" src="https://i.ytimg.com/vi/{{ b.video }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ b.video }}/hqdefault.jpg'" alt="" loading="lazy" width="405" height="720">
             {%- else %}
             <img class="yt-lite-thumb" src="https://i.ytimg.com/vi/{{ b.video }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
             {%- endif %}

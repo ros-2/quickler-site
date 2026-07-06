@@ -5320,18 +5320,28 @@ nav {
    Render it 9:16 instead, height-capped to one viewport so it never dominates,
    and derive the (narrow) width from that height. object-fit: cover on the
    oardefault thumbnail means no black bars either. */
+/* Portrait (phone-shot) demo. On DESKTOP it is a contained phone frame:
+   height-capped so it never becomes a lonely screen-tall column, width from
+   9:16, centred. On MOBILE the same 9:16 goes full column width and looks
+   native. object-fit: cover crops the still to the box so there is never a
+   grey bar, whatever the source frame's shape. */
 .story-video-panel .story-video-embed.portrait {
-    /* Fill the viewport height (minus nav + safe bands). No heading/eyebrow
-       above it now, so it can take nearly the whole screen. Width follows
-       from 9:16 and is capped so it never overflows a narrow column. */
-    height: calc(100dvh - var(--safe-top) - var(--safe-bottom) - 90px);
+    height: min(560px, calc(100dvh - var(--safe-top) - var(--safe-bottom) - 120px));
     width: auto;
-    max-width: min(100%, calc((100dvh - var(--safe-top) - var(--safe-bottom) - 90px) * 0.5625));
+    max-width: min(100%, 315px);
     aspect-ratio: 9 / 16;
 }
 .story-video-embed.portrait .yt-lite-thumb {
-    /* oardefault is the full vertical frame with no bars: no scale needed. */
+    object-fit: cover;
     transform: none;
+}
+@media (max-width: 640px) {
+    /* Mobile: let the phone frame use the column width; height follows 9:16. */
+    .story-video-panel .story-video-embed.portrait {
+        height: auto;
+        width: min(100%, 340px);
+        max-width: 100%;
+    }
 }
 /* The video panel stacks heading + video; if that stack is taller than the
    safe area, anchor it to the top of the safe zone (not centre) so it never
