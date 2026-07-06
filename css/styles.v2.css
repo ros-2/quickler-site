@@ -5321,12 +5321,12 @@ nav {
    and derive the (narrow) width from that height. object-fit: cover on the
    oardefault thumbnail means no black bars either. */
 .story-video-panel .story-video-embed.portrait {
-    height: min(
-        calc(100dvh - var(--safe-top) - var(--safe-bottom) - 160px),
-        520px
-    );
+    /* Fill the viewport height (minus nav + safe bands). No heading/eyebrow
+       above it now, so it can take nearly the whole screen. Width follows
+       from 9:16 and is capped so it never overflows a narrow column. */
+    height: calc(100dvh - var(--safe-top) - var(--safe-bottom) - 90px);
     width: auto;
-    max-width: 100%;
+    max-width: min(100%, calc((100dvh - var(--safe-top) - var(--safe-bottom) - 90px) * 0.5625));
     aspect-ratio: 9 / 16;
 }
 .story-video-embed.portrait .yt-lite-thumb {
