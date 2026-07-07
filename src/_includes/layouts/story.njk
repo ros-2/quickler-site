@@ -323,6 +323,33 @@
   "url": "{{ site.domain }}"
 }
 </script>
+{#- VideoObject for every video block on the page. Without this Google reports
+    "Discovered videos: 0" -- the lite facade shows a thumbnail, not a <video>/
+    <iframe> the crawler recognises, so a VideoObject is the only signal that a
+    real video lives here. name/description fall back to the block's own
+    heading/text, then to sensible site defaults, so a text-free video block
+    (e.g. the homepage hero video) still emits valid schema. -#}
+{%- for b in blocks %}
+{%- if b.type == "video" and b.video %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "{{ (b.videoName or b.heading or seo.title or 'Quickler demo') | striptags }}",
+  "description": "{{ (b.videoDescription or b.text or seo.description or 'A Quickler product demonstration: field compliance captured over WhatsApp and turned into a report automatically.') | striptags }}",
+  "thumbnailUrl": ["https://i.ytimg.com/vi/{{ b.video }}/maxresdefault.jpg", "https://i.ytimg.com/vi/{{ b.video }}/hqdefault.jpg"],
+  "uploadDate": "{{ b.videoUploadDate or '2026-07-06' }}",
+  "contentUrl": "https://www.youtube.com/watch?v={{ b.video }}",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/{{ b.video }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Quickler",
+    "logo": { "@type": "ImageObject", "url": "{{ site.domain }}/assets/icons/apple-touch-icon.png" }
+  }
+}
+</script>
+{%- endif %}
+{%- endfor %}
 {%- if articlePanels %}
 {%- set faqLd = articlePanels | faqSchema %}
 {%- if faqLd %}
