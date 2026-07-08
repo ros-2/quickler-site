@@ -1,7 +1,7 @@
-/* Eleventy config — Quickler module-based site build.
+/* Eleventy config - Quickler module-based site build.
  *
  * Output goes to _site/. During the staged migration, _site/ is NOT yet
- * what GitHub Pages serves — the live site is still the hand-written HTML
+ * what GitHub Pages serves - the live site is still the hand-written HTML
  * at the repo root. We build into _site/ and SEO-diff it against the
  * current live pages until a stage is proven, then cut over.
  *
@@ -100,16 +100,19 @@ module.exports = function (eleventyConfig) {
   // the pricing data file. This is the ONLY way to keep pricing single-sourced
   // inside JSON front-matter (seoBody, block text, articlePanels HTML), because
   // Nunjucks does NOT re-evaluate {{ pricing.* }} written inside a front-matter
-  // string — by the time the layout renders it, it is a literal. So guide prose
+  // string - by the time the layout renders it, it is a literal. So guide prose
   // carries stable [[price:...]] tokens; this filter fills them at build time.
   // Add a new token by adding a key here that maps to a pricing.js value.
   const _PRICE_TOKENS = {
-    bundles: _pricing.bundleList,        // "Quickler 50 is £50 a month for 50 reports, ..."
+    bundles: _pricing.bundleList,        // "£20 per active user per month with a free tier of 20 reports..."
     sentence: _pricing.sentence,         // full dense pricing sentence
     short: _pricing.shortSentence,       // tight one-liner
-    trial: _pricing.trialLine,           // "14-day free trial. No card required."
-    perReport: _pricing.perReportLine,   // "One pound per completed report"
-    overflow: _pricing.overflowLine,     // "Need more than 500 reports a month? Talk to us."
+    trial: _pricing.trialLine,           // "" (no trial; free tier replaces it)
+    free: _pricing.freeTier.line,        // "Free forever: 20 reports a month, up to 10 photos..."
+    freeShort: _pricing.freeTier.shortLine, // "Free forever: 20 reports a month. No card, no trial clock."
+    fairUse: _pricing.fairUse,           // fair-use clause backing every "unlimited" promise
+    perReport: _pricing.perReportLine,   // "£20 per active user per month"
+    overflow: _pricing.overflowLine,     // "Big team? Talk to us."
   };
   eleventyConfig.addFilter("priceTokens", (str) =>
     String(str || "").replace(/\[\[price:([a-zA-Z]+)\]\]/g, (m, key) =>
@@ -194,7 +197,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "js": "js" });
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
 
-  // Speed: minify the built CSS in-place after the build. Zero dependency —
+  // Speed: minify the built CSS in-place after the build. Zero dependency,
   // strips comments and collapses whitespace. The authored CSS stays readable;
   // only the deployed _site/css/*.css is minified. Safe, conservative regex.
   eleventyConfig.on("eleventy.after", async () => {
@@ -228,7 +231,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("print");
   eleventyConfig.addPassthroughCopy("docs");
 
-  // Redirect stub pages (meta-refresh, no nav/footer) — copy verbatim.
+  // Redirect stub pages (meta-refresh, no nav/footer) - copy verbatim.
   eleventyConfig.addPassthroughCopy("pages/contact.html");
   eleventyConfig.addPassthroughCopy("pages/custom.html");
   eleventyConfig.addPassthroughCopy("pages/dpa.html");
