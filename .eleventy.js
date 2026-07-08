@@ -80,13 +80,17 @@ module.exports = function (eleventyConfig) {
       .map(
         (p) =>
           `<div class="price-card"><div class="price-name">${p.name}</div>` +
-          `<div class="price-figure"><span>${_pricing.currency}</span>${p.price}<span>/mo</span></div>` +
-          `<div class="price-unit">${p.quantity} ${p.quantityLabel.replace(/^[0-9]+\s*/, "")}</div>` +
+          `<div class="price-figure"><span>${_pricing.currency}</span>${p.price}<span>${p.priceSuffix || "/mo"}</span></div>` +
+          `<div class="price-unit">${p.quantity ? p.quantity + " " : ""}${p.quantityLabel.replace(/^[0-9]+\s*/, "")}</div>` +
           (p.note ? `<div class="price-note">${p.note}</div>` : "") +
           `</div>`
       )
       .join("");
-    return `<div id="plans" class="story-prices">${cards}</div>`;
+    const n = _pricing.plans.length;
+    // Cap the grid width for a small plan set so two cards centre instead of
+    // stretching across the full page. --n drives the column count from data.
+    const style = n <= 2 ? ` style="--n:${n};max-width:620px"` : ` style="--n:${n}"`;
+    return `<div id="plans" class="story-prices"${style}>${cards}</div>`;
   });
 
   // {% pricingTags %} renders the "every plan includes" items as tag chips.

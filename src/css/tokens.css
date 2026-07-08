@@ -1,5 +1,5 @@
 /* ============================================================
-   QUICKLER DESIGN TOKENS — THE SINGLE SOURCE OF TRUTH
+   QUICKLER DESIGN TOKENS - THE SINGLE SOURCE OF TRUTH
    ------------------------------------------------------------
    Every colour, space, radius, shadow, and font on the site
    comes from here. Modules reference var(--token) ONLY. No
@@ -28,7 +28,7 @@
   --blue-strong: #1f54e0; /* hover/active */
   --blue-soft: rgba(47, 107, 255, 0.09); /* faint blue wash, sparing */
 
-  /* ---- GREY SCALE — the monochrome backbone (Vanta/Touchmark look).
+  /* ---- GREY SCALE - the monochrome backbone (Vanta/Touchmark look).
      Near-black to white. The site is built from THESE, with --blue as
      the only chromatic accent and --pink as a rare flourish. -------- */
   --grey-50: #f7f8fa; /* faintest panel tint */
@@ -39,12 +39,12 @@
   --grey-700: #374151; /* strong secondary */
   --grey-900: #111318; /* near-black ink */
 
-  /* Gradient — accent use ONLY (hero flourish, key highlight).
+  /* Gradient - accent use ONLY (hero flourish, key highlight).
      Not for text backgrounds that carry copy. */
   --gradient: linear-gradient(90deg, #2f6bff 0%, #5a4fcf 35%, #7c3aed 65%, #f43f8c 100%);
   --pink: #f43f8c; /* highlight accent, sparing */
 
-  /* ---- INK (text) — always paired with a surface below ---- */
+  /* ---- INK (text) - always paired with a surface below ---- */
   --ink-strong: #0c1734; /* headings */
   --ink: #213055; /* body */
   --ink-soft: #67789e; /* secondary / labels */
@@ -71,7 +71,7 @@
   --danger: #c0392b;
   --danger-soft: rgba(192, 57, 43, 0.08);
 
-  /* ---- SPACING — ONE discrete scale. Every gap/pad/margin is
+  /* ---- SPACING - ONE discrete scale. Every gap/pad/margin is
      a multiple of these. No ad-hoc clamp soup. ------------- */
   --space-1: 4px;
   --space-2: 8px;
@@ -83,24 +83,24 @@
   --space-8: 64px;
   --space-9: 96px;
 
-  /* Section vertical rhythm — symmetric top AND bottom. */
+  /* Section vertical rhythm - symmetric top AND bottom. */
   --section-space: clamp(56px, 8vw, 88px);
   --section-space-tight: clamp(28px, 4vw, 40px);
 
-  /* ---- LAYOUT WIDTHS — a SMALL named set, not 11 of them.
+  /* ---- LAYOUT WIDTHS - a SMALL named set, not 11 of them.
      Stacked sections share an edge -> no ragged side margins. */
   --width-page: 1200px; /* standard section content width */
   --width-prose: 760px; /* text-heavy / single column */
   --width-form: 640px; /* forms */
   --gutter: clamp(16px, 4vw, 28px);
 
-  /* ---- RADIUS — one scale, used by tokens only ------------ */
+  /* ---- RADIUS - one scale, used by tokens only ------------ */
   --radius-sm: 10px; /* inputs, small chips */
   --radius-md: 16px; /* cards */
   --radius-lg: 22px; /* large panels */
   --radius-pill: 999px; /* buttons, pills */
 
-  /* ---- SHADOW — one scale ---------------------------------- */
+  /* ---- SHADOW - one scale ---------------------------------- */
   --shadow-sm: 0 2px 8px rgba(18, 41, 111, 0.06);
   --shadow-md: 0 4px 24px rgba(18, 41, 111, 0.08);
   --shadow-lg: 0 18px 40px rgba(18, 41, 111, 0.1);

@@ -46,7 +46,7 @@ body {
     word-wrap: break-word;
 }
 
-/* COMPATIBILITY SHIM — the canonical palette now lives in tokens.css,
+/* COMPATIBILITY SHIM - the canonical palette now lives in tokens.css,
    which is loaded BEFORE this file. This :root only ALIASES the legacy
    names that the 4,000 rules below reference (--accent, --brand-*,
    --content-width, etc) onto the canonical tokens. Change a value in
@@ -2715,7 +2715,7 @@ a.callout-btn {
     /* The mobile dropdown is a SOLID WHITE box (see .nav-menu background
        above). On dark-hero / inner pages the page-class rule forces nav
        links to white text, which is correct over the dark hero on desktop
-       but renders white-on-white inside this white dropdown — the menu
+       but renders white-on-white inside this white dropdown - the menu
        reads as invisible. Force dark, readable link text here, scoped to
        the mobile breakpoint so the desktop dark-hero nav is untouched. */
     .page-dark-hero nav .nav-menu a,
@@ -3465,7 +3465,7 @@ a.callout-btn {
    h1 gradient text, and a soft body background wash.
    --------------------------------------------------------------------------- */
 
-/* A. Section labels / eyebrows + card kickers — gradient border on all pill badges */
+/* A. Section labels / eyebrows + card kickers - gradient border on all pill badges */
 .hero-label,
 .section-label,
 .eyebrow,
@@ -3503,13 +3503,13 @@ a.callout-btn {
     color: transparent;
 }
 
-/* B. Funnel step numbers — gradient fill instead of flat accent. */
+/* B. Funnel step numbers - gradient fill instead of flat accent. */
 .home-funnel-number {
     background: var(--brand-gradient);
     box-shadow: 0 8px 20px rgba(124, 58, 237, 0.22);
 }
 
-/* C. H1 gradient text — first run of text in an h1 gets the gradient.
+/* C. H1 gradient text - first run of text in an h1 gets the gradient.
       Applies only where the .gradient-h1 class is added to the h1. */
 .gradient-h1 {
     background: var(--brand-gradient);
@@ -3519,7 +3519,7 @@ a.callout-btn {
     color: transparent;
 }
 
-/* D. Body background — default is clean white. On the homepage the body
+/* D. Body background - default is clean white. On the homepage the body
       gets .page-dark-hero which makes the top dark (the hero area), then
       transitions to white for all the content below. */
 body {
@@ -3544,7 +3544,7 @@ body.page-dark-hero {
    Homepage clear-wins enhancements (2026-06)
    1. Deliberate brand-gradient accent on the homepage hero
    2. Subtle scroll-reveal motion (honours the prefers-reduced-motion block
-      defined near the top of this file — no extra guard needed)
+      defined near the top of this file - no extra guard needed)
    --------------------------------------------------------------------------- */
 
 /* 1. Signature gradient: hero label gets a gradient underscore, the primary
@@ -3606,7 +3606,7 @@ body.page-dark-hero {
     }
 }
 
-/* 3. Inner-page width cap — sections go to 1240px which is too wide for
+/* 3. Inner-page width cap - sections go to 1240px which is too wide for
       text-heavy content. Cap page-shell, contact, and single-panel wrappers
       to a readable max-width, centred within the section. */
 .single-panel-layout {
@@ -3623,7 +3623,7 @@ body.page-dark-hero {
     width: 100%;
 }
 
-/* Eyebrow overflow fix — pill label clips on narrow viewports. */
+/* Eyebrow overflow fix - pill label clips on narrow viewports. */
 @media (max-width: 480px) {
     .hero-label,
     .section-label,
@@ -3636,7 +3636,7 @@ body.page-dark-hero {
     }
 }
 
-/* 4. H1 size at 1024px — the tablet/small-laptop hero was too dominant. */
+/* 4. H1 size at 1024px - the tablet/small-laptop hero was too dominant. */
 @media (min-width: 721px) and (max-width: 1040px) {
     .home-hero-panel h1 {
         font-size: clamp(1.9rem, 5.5vw, 2.8rem);
@@ -3698,7 +3698,7 @@ body.page-dark-hero {
     position: relative;
 }
 
-/* Make the hero panel transparent on dark pages — the card is normally
+/* Make the hero panel transparent on dark pages - the card is normally
    white but on the dark hero we want text to sit directly on the navy bg */
 .page-dark-hero .home-hero-panel {
     background: transparent;
@@ -3706,7 +3706,7 @@ body.page-dark-hero {
     box-shadow: none;
 }
 
-/* H1 — white on dark, no gradient (gradient doesn't read on dark) */
+/* H1 - white on dark, no gradient (gradient doesn't read on dark) */
 .page-dark-hero .home-hero-copy h1 {
     color: #ffffff;
     background: none;
@@ -3720,7 +3720,7 @@ body.page-dark-hero {
     color: rgba(255, 255, 255, 0.72);
 }
 
-/* Hero label on dark — lighter pill with gradient text */
+/* Hero label on dark - lighter pill with gradient text */
 .hero-label-dark {
     background: rgba(255, 255, 255, 0.1) !important;
     border: 1px solid rgba(255, 255, 255, 0.18) !important;
@@ -3782,7 +3782,7 @@ body.page-dark-hero {
     color: #ffffff;
 }
 
-/* Video/dashboard cards on dark — elevate with light border */
+/* Video/dashboard cards on dark - elevate with light border */
 .page-dark-hero .home-hero-video-card,
 .page-dark-hero .home-hero-dashboard-card {
     background: rgba(255, 255, 255, 0.06);
@@ -3825,7 +3825,7 @@ body.page-dark-hero {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Dark nav — homepage (dark-hero) and all inner pages (page-inner).
+/* Dark nav - homepage (dark-hero) and all inner pages (page-inner).
    Solid dark background so the nav always reads as dark regardless
    of whether there's a dark inner-hero behind it. */
 .page-dark-hero nav,
@@ -3855,7 +3855,7 @@ body.page-dark-hero {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Inner pages: dark navy body — nav floats seamlessly over the dark inner-hero
+/* Inner pages: dark navy body - nav floats seamlessly over the dark inner-hero
    just like the homepage dark-band. Sections below inner-hero are white full-bleed. */
 .page-inner {
     background: #07122b !important;
@@ -4118,11 +4118,11 @@ nav {
     }
 }
 /* ---------------------------------------------------------------------------
-   Dark band overrides — numbers strip is inside .dark-band, needs white text
+   Dark band overrides - numbers strip is inside .dark-band, needs white text
    --------------------------------------------------------------------------- */
 
-/* Stat numbers: full brand gradient on dark background — bold and colourful */
-/* Each stat gets a different slice of the brand gradient — together they read blue→violet→pink */
+/* Stat numbers: full brand gradient on dark background - bold and colourful */
+/* Each stat gets a different slice of the brand gradient - together they read blue→violet→pink */
 .dark-band .home-number-item:nth-child(1) .home-number-stat {
     background: linear-gradient(90deg, #2F6BFF 0%, #5A4FCF 100%);
     -webkit-background-clip: text;
@@ -4156,8 +4156,8 @@ nav {
 
 /* ---------------------------------------------------------------------------
    Inner-page hero band (About, Services, etc.)
-   Gives inner pages a consistent, sharp header treatment — dark navy bar,
-   short, full-bleed, white text — without needing the body gradient approach.
+   Gives inner pages a consistent, sharp header treatment - dark navy bar,
+   short, full-bleed, white text - without needing the body gradient approach.
    --------------------------------------------------------------------------- */
 .inner-hero {
     width: 100%;
@@ -4188,7 +4188,7 @@ nav {
     pointer-events: none;
 }
 
-/* page-shell is normally a white card — make it transparent inside inner-hero, centred */
+/* page-shell is normally a white card - make it transparent inside inner-hero, centred */
 .inner-hero .page-shell {
     background: transparent;
     border: none;
@@ -4235,7 +4235,7 @@ nav {
 }
 
 /* ---------------------------------------------------------------------------
-   Homepage gradient accents — use the brand gradient boldly on proof cards
+   Homepage gradient accents - use the brand gradient boldly on proof cards
    and section headings rather than just numbers.
    --------------------------------------------------------------------------- */
 
@@ -4255,7 +4255,7 @@ nav {
     padding-bottom: clamp(20px, 3vw, 40px);
 }
 
-/* On dark band, funnel number circles stay as circles — just brighter border glow */
+/* On dark band, funnel number circles stay as circles - just brighter border glow */
 .dark-band .home-funnel-number {
     background: var(--brand-gradient);
     box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35);
@@ -4278,13 +4278,13 @@ nav {
 }
 
 /* ===========================================================================
-   HOMEPAGE REDESIGN — startup-grade polish (2026-06)
+   HOMEPAGE REDESIGN - startup-grade polish (2026-06)
    Overrides all previous hero, numbers, funnel, and proof-card rules.
    Order: hero → numbers → funnel chips → proof cards → buttons → mobile.
    =========================================================================== */
 
 /* ---------------------------------------------------------------------------
-   1. HERO H1 — dominant, bold, white, tight leading
+   1. HERO H1 - dominant, bold, white, tight leading
    --------------------------------------------------------------------------- */
 .page-dark-hero .home-hero-copy h1,
 .home-hero-section .home-hero-copy h1,
@@ -4304,7 +4304,7 @@ nav {
 }
 
 /* ---------------------------------------------------------------------------
-   2. HERO BODY TEXT — readable at 1.15rem, muted white
+   2. HERO BODY TEXT - readable at 1.15rem, muted white
    --------------------------------------------------------------------------- */
 .page-dark-hero .home-hero-copy .hero-text,
 .home-hero-section .home-hero-copy .hero-text {
@@ -4326,7 +4326,7 @@ nav {
 }
 
 /* ---------------------------------------------------------------------------
-   4. HERO LABEL (eyebrow pill) — gradient border, frosted background
+   4. HERO LABEL (eyebrow pill) - gradient border, frosted background
    --------------------------------------------------------------------------- */
 .hero-label-dark {
     display: inline-flex;
@@ -4367,7 +4367,7 @@ nav {
 }
 
 /* ---------------------------------------------------------------------------
-   5. HERO — centred single-column layout
+   5. HERO - centred single-column layout
    --------------------------------------------------------------------------- */
 .home-hero-centre {
     display: flex;
@@ -4375,7 +4375,7 @@ nav {
     align-items: center;
     text-align: center;
     gap: 24px;
-    /* No top pad — section#top already clears the nav. Pill sits right up. */
+    /* No top pad - section#top already clears the nav. Pill sits right up. */
     padding: 0 var(--page-gutter) clamp(40px, 6vw, 72px);
     max-width: min(calc(100% - var(--page-gutter) * 2), 860px);
     margin: 0 auto;
@@ -4415,7 +4415,7 @@ nav {
     margin: 0;
 }
 
-/* Featured video below the copy — full-width card with rounded corners */
+/* Featured video below the copy - full-width card with rounded corners */
 .home-hero-video-feature {
     width: 100%;
     max-width: 760px;
@@ -4454,7 +4454,7 @@ nav {
 }
 
 /* ---------------------------------------------------------------------------
-   6. CTA BUTTONS — primary: full brand gradient; secondary: white outline
+   6. CTA BUTTONS - primary: full brand gradient; secondary: white outline
    --------------------------------------------------------------------------- */
 .btn-hero-primary {
     background: var(--blue) !important;
@@ -4495,7 +4495,7 @@ nav {
 }
 
 /* ---------------------------------------------------------------------------
-   7. NUMBERS STRIP — enormous gradient stats dominating the dark band
+   7. NUMBERS STRIP - enormous gradient stats dominating the dark band
    --------------------------------------------------------------------------- */
 .home-numbers-strip {
     padding: clamp(40px, 6vw, 72px) clamp(24px, 4vw, 48px) !important;
@@ -4527,7 +4527,7 @@ nav {
 }
 
 /* ---------------------------------------------------------------------------
-   8. FUNNEL CHIPS — more visible on dark: brighter border, readable text
+   8. FUNNEL CHIPS - more visible on dark: brighter border, readable text
    --------------------------------------------------------------------------- */
 .home-funnel-strip {
     width: min(100%, 1000px) !important;
@@ -4582,7 +4582,7 @@ nav {
 }
 
 /* ---------------------------------------------------------------------------
-   9. PROOF CARDS — visible borders, elevation shadow, gradient headings
+   9. PROOF CARDS - visible borders, elevation shadow, gradient headings
    --------------------------------------------------------------------------- */
 .section-proof .proof-card,
 .proof-card {
@@ -4624,7 +4624,7 @@ nav {
 }
 
 /* ---------------------------------------------------------------------------
-   10a. TABLET H1 override — the earlier 721–1040px block shrinks h1 too aggressively
+   10a. TABLET H1 override - the earlier 721 to 1040px block shrinks h1 too aggressively
    --------------------------------------------------------------------------- */
 @media (min-width: 721px) and (max-width: 1040px) {
     .home-hero-panel .home-hero-copy h1,
@@ -4634,7 +4634,7 @@ nav {
 }
 
 /* ---------------------------------------------------------------------------
-   10. MOBILE — keep things readable and well-spaced below 720px
+   10. MOBILE - keep things readable and well-spaced below 720px
    --------------------------------------------------------------------------- */
 @media (max-width: 720px) {
     .page-dark-hero .home-hero-copy h1,
@@ -4980,7 +4980,7 @@ nav {
    services page pricing panel. Wraps to 2x2 then 1-col on small screens. */
 .story-prices {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(var(--n, 4), 1fr);
     gap: clamp(12px, 1.5vw, 20px);
     width: 100%;
     max-width: var(--width-page);

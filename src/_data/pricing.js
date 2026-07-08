@@ -44,16 +44,18 @@ const plans = [
   {
     name: "Free",
     price: 0,
+    priceSuffix: "/mo",
     quantity: 20,
-    quantityLabel: "reports / month",
+    quantityLabel: "reports a month",
     note: "Up to 10 photos per report. Unlimited users. Free forever.",
   },
   {
     name: "Paid",
     price: 20,
-    quantity: 1,
-    quantityLabel: "active user / month",
-    note: "Unlimited reports, photos and workflows. Dormant users free.",
+    priceSuffix: " per active user / mo",
+    quantity: 0,
+    quantityLabel: "Only pay for who works. Dormant users free.",
+    note: "Unlimited reports, photos and workflows.",
   },
 ];
 
