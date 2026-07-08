@@ -115,6 +115,8 @@ module.exports = function (eleventyConfig) {
     free: _pricing.freeTier.line,        // "Free forever: 20 reports a month, up to 10 photos..."
     freeShort: _pricing.freeTier.shortLine, // "Free forever: 20 reports a month. No card, no trial clock."
     fairUse: _pricing.fairUse,           // fair-use clause backing every "unlimited" promise
+    minimum: _pricing.minimumLine,       // "There is a £20 minimum each month..."
+    minimumShort: _pricing.minimumShort, // "£20 a month minimum, then £20 per active user above that."
     perReport: _pricing.perReportLine,   // "£20 per active user per month"
     overflow: _pricing.overflowLine,     // "Big team? Talk to us."
   };

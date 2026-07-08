@@ -99,6 +99,16 @@ const fairUse =
   "you off and we will not charge you by surprise. It is just a friendly " +
   "conversation about the right plan for how you actually use it.";
 
+// The monthly minimum. There is always one billable active user to keep the
+// account live, whether or not anyone files a report that month. So a paid
+// account never costs less than £20 in a month. State this plainly so the first
+// bill is never a surprise.
+const minimumLine =
+  "There is a £20 minimum each month. One active user is always charged to keep " +
+  "your account live, whether or not anyone files a report that month. Above " +
+  "that minimum you only pay for the people who actually worked.";
+const minimumShort = "£20 a month minimum, then £20 per active user above that.";
+
 // Overflow line for big teams.
 const overflowLine = "Big team? Talk to us.";
 
@@ -114,20 +124,20 @@ const trialLine = trial.days
 // A full, dense pricing sentence for prose / SEO bodies / FAQ answers.
 const sentence =
   model === "seat"
-    ? `${unit.perUnitLine}. An active user is someone who produced at least one report that month, so you add your whole team and only pay for who actually works. Dormant users are free. Everything is unlimited on a paid account: reports, photos, messages and workflows. ${freeTier.line} ${billing}`
+    ? `${unit.perUnitLine}. An active user is someone who produced at least one report that month, so you add your whole team and only pay for who actually works. ${minimumLine} Everything is unlimited on a paid account: reports, photos, messages and workflows. ${freeTier.line} ${billing}`
     : `Plans from ${CURRENCY}${plans[0].price}/mo. ${billing}`;
 
 // A short version for tight spots (meta descriptions, cards).
 const shortSentence =
   model === "seat"
-    ? `${unit.perUnitPrice} per active user per month, dormant users free. Only pay for who works. ${freeTier.shortLine}`
+    ? `${unit.perUnitPrice} per active user per month, ${CURRENCY}20 minimum. Only pay for who works. ${freeTier.shortLine}`
     : `Plans from ${CURRENCY}${plans[0].price}/mo.`;
 
 // A plain description for guide prose, reads naturally mid-paragraph, no
 // trailing full stop.
 const bundleList =
   model === "seat"
-    ? `${unit.perUnitPrice} per active user per month with a free tier of ${freeTier.reports} reports a month, dormant users always free`
+    ? `${unit.perUnitPrice} per active user per month with a ${CURRENCY}20 monthly minimum, plus a free tier of ${freeTier.reports} reports a month, extra dormant users always free`
     : plans.map((p) => `${p.name} at ${CURRENCY}${p.price} a month`).join(", ");
 
 // The pricing headline as a sentence fragment, for prose openers.
@@ -143,6 +153,8 @@ module.exports = {
   trialLine,
   freeTier,
   fairUse,
+  minimumLine,
+  minimumShort,
   overflowLine,
   billing,
   sentence,
