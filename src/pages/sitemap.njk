@@ -1,0 +1,40 @@
+---json
+{
+  "layout": "layouts/story.njk",
+  "permalink": "/pages/sitemap.html",
+  "bodyClass": "page-story",
+  "hero": {
+    "eyebrow": "Sitemap",
+    "heading": "Every page on quickler.co.",
+    "lede": "A full index of the Quickler site: the product pages, the pricing and help pages, and every field-compliance workflow guide. If you are looking for a specific inspection, certificate or audit, it is listed below.",
+    "actions": [
+      { "label": "Try the demo", "href": "/pages/demo.html", "style": "btn-primary" },
+      { "label": "See pricing", "href": "/pages/pricing.html", "style": "btn-secondary" }
+    ]
+  },
+  "seo": {
+    "title": "Sitemap | Every Page on Quickler",
+    "description": "A full human-readable index of every page on quickler.co: product, pricing, help and every field-compliance workflow guide.",
+    "canonical": "https://quickler.co/pages/sitemap.html",
+    "hasAuthor": true,
+    "hasTwitter": true,
+    "hasOg": true
+  }
+}
+---
+<section class="story story-alt">
+  <div class="story-inner" style="max-width:900px;text-align:left;">
+    <h2 class="story-h2" style="text-align:left;">All pages</h2>
+    <ul class="sitemap-list" style="columns:2;column-gap:48px;list-style:none;padding:0;line-height:1.9;">
+      {%- for p in collections.sitemapPages %}
+      <li style="break-inside:avoid;"><a href="{{ p.loc | replace('https://quickler.co', '') }}">{{ p.loc | replace('https://quickler.co/pages/', '') | replace('https://quickler.co/', 'Home') | replace('.html', '') | replace('-', ' ') }}</a></li>
+      {%- endfor %}
+      {%- for c in countries %}
+      <li style="break-inside:avoid;"><a href="/pages/country-hub-{{ c.slug }}.html">{{ c.name }} hub</a></li>
+      {%- endfor %}
+      {%- for cont in continentList %}
+      <li style="break-inside:avoid;"><a href="/pages/continent-{{ cont.slug }}.html">{{ cont.name }} hub</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
