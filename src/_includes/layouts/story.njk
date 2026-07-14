@@ -287,6 +287,26 @@
 {{ content | safe }}
 {%- endif %}
 
+{#- Auto related-links block. Driven by src/_data/relatedClusters.js keyed on
+    fileSlug: every workflow page gets internal links to its topical siblings.
+    This is the site's internal-linking layer -- it spreads link equity and
+    signals topic clusters to search engines, so pages are not link islands.
+    A page opts out by setting hideRelated: true in front-matter. -#}
+{%- set rel = relatedClusters[page.fileSlug] %}
+{%- if rel and not hideRelated %}
+<section class="story story-alt">
+    <div class="story-inner">
+        <p class="story-eyebrow">{{ rel.label }}</p>
+        <h2 class="story-h2">Related workflows</h2>
+        <div class="story-cards" style="--n: {{ rel.related | length }}">
+            {%- for it in rel.related %}
+            <a class="story-card" href="{{ it.href }}"><h3>{{ it.title }}</h3></a>
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+{%- endif %}
+
 {#- Footer is its OWN reel panel -- a uniform full-screen .story like every
     other section, so it behaves identically on every device (no special
     'tail' region that broke on mobile). -#}
