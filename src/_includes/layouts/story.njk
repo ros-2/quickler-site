@@ -358,7 +358,10 @@
   "name": "{{ (b.videoName or b.heading or seo.title or 'Quickler demo') | striptags }}",
   "description": "{{ (b.videoDescription or b.text or seo.description or 'A Quickler product demonstration: field compliance captured over WhatsApp and turned into a report automatically.') | striptags }}",
   "thumbnailUrl": ["https://i.ytimg.com/vi/{{ b.video }}/maxresdefault.jpg", "https://i.ytimg.com/vi/{{ b.video }}/hqdefault.jpg"],
-  "uploadDate": "{{ b.videoUploadDate or '2026-07-06' }}",
+  {#- uploadDate must be full ISO 8601 WITH a timezone offset. A bare
+      "YYYY-MM-DD" trips Google's "missing a time zone" / "invalid datetime"
+      warnings, so always emit date + time + offset. -#}
+  "uploadDate": "{{ b.videoUploadDate or '2026-07-06T09:00:00+01:00' }}",
   "contentUrl": "https://www.youtube.com/watch?v={{ b.video }}",
   "embedUrl": "https://www.youtube-nocookie.com/embed/{{ b.video }}",
   "publisher": {
