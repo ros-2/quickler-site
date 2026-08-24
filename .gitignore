@@ -6,3 +6,15 @@ _site/
 .DS_Store
 tools/shots/
 node_modules/
+
+# Dead build artefacts: /pages/*.html are HTML copies that nothing reads.
+# The live site is built by Eleventy from src/ into _site/ (see deploy.yml).
+# Only these four files under pages/ are real source, copied verbatim via
+# addPassthroughCopy in .eleventy.js; everything else in pages/ that has a
+# src/pages/*.njk is a stale artefact. Ignore new *.html here so nobody edits
+# a dead copy and thinks they fixed something (GDPR audit, 24 Aug 2026).
+/pages/**/*.html
+!/pages/contact.html
+!/pages/custom.html
+!/pages/dpa.html
+!/pages/help/contact.html
