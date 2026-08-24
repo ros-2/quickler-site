@@ -1,0 +1,154 @@
+======================================================================
+PRIVACY POLICY  (rendered from _site/pages/privacy.html)
+======================================================================
+# Privacy Policy
+detail-body">
+
+## What data quickler collects
+
+Quickler may collect your email address, the contents of your message, and any other information you choose to include when you contact the business. If you email directly, the same applies to the information in that email thread.
+
+The site also uses Google Analytics, which may collect information such as pages viewed, approximate location, device/browser information, referral source, and general usage patterns.
+
+For customers using the quickler workflow product, quickler also handles phone numbers, uploaded report examples, project identifiers, photos, voice notes, transcripts, generated report drafts, and routing information needed to deliver finished outputs to the correct destination. For paying customers, billing details (name, email, bank-mandate identifiers) are also processed via the payment provider.
+
+## Cookies
+
+Quickler uses a small local setting in your browser to remember whether you accepted or declined analytics cookies. If you accept, Google Analytics may set analytics cookies. If you decline, those analytics scripts are not loaded. A separate Cookie Policy (/pages/cookies.html) explains this in more detail.
+
+## How the data is used
+
+Your enquiry details are used to reply to you, understand the workflow problem you describe, assess whether quickler is a good fit, and if appropriate prepare next steps for a potential project.
+
+Website analytics are used to understand which pages are useful, where visitors are coming from, and how the site can be improved.
+
+For workflow product customers, the data is used to generate report drafts, ask follow-up questions, route finished outputs, maintain auditability, support the customer, and improve the reliability of the product. Aggregated and de-identified usage data may be used to improve the platform.
+
+## Legal basis
+
+For enquiries, the main basis is taking steps at your request before entering into a possible contract, together with legitimate interests in responding to business enquiries and running the business sensibly.
+
+For website analytics, quickler uses a cookie-consent prompt and only loads analytics after you actively allow them. Site security and basic hosting operations are handled under legitimate interests in protecting and operating the site.
+
+For the workflow product, quickler acts as processor for the paying customer firm. The customer firm relies on performance of its contract with the engineer (or its legitimate interests in administering its work) as the basis for sending WhatsApp check-ins. Quickler's own processing is carried out on documented instructions from the customer firm under Article 28 UK GDPR. For billing data, quickler relies on performance of contract and compliance with legal obligations (tax and accounting records).
+
+## Where engineer contact details come from
+
+Where you are an engineer receiving WhatsApp check-ins from a customer firm using quickler, your name and phone number were provided to quickler by that firm, not collected from you directly. The customer firm is the controller for that data. If you would like the source firm identified, or wish to object to the processing, contact hello@quickler.co (mailto:hello@quickler.co) and quickler will route the request to the relevant customer firm.
+
+## Who the data is shared with
+
+Quickler currently uses the following third-party services as processors or infrastructure providers:
+
+ 
+ - Hetzner Online GmbH (Germany) - server hosting for the workflow product.
+
+ - Twilio Inc. (United States / Ireland) - WhatsApp messaging gateway.
+
+ - WhatsApp Ireland Limited / Meta Platforms Ireland Limited (Ireland) - operator of the WhatsApp messaging service used to deliver and receive workflow messages. Meta is a separate controller for the WhatsApp transport layer; its handling of message metadata is governed by the WhatsApp Privacy Policy (https://www.whatsapp.com/legal/privacy-policy-eea).
+
+ - Anthropic PBC (United States) - large-language-model processing of captured text and transcripts.
+
+ - Groq, Inc. (United States) - speech-to-text transcription of voice notes.
+
+ - OpenAI, L.L.C. (United States) - speech-to-text transcription of voice notes.
+
+ - Langfuse GmbH (Germany / United States) - AI service monitoring. Call metadata only; message content is not transmitted.
+
+ - GoCardless Ltd (United Kingdom) - direct-debit subscription billing.
+
+ - Functional Software, Inc. (trading as Sentry) (United States) - application error monitoring and diagnostics. Stack traces may incidentally include fragments of user input where an error occurs during processing.
+
+ - GitHub, Inc. (United States) - hosting of the public website (GitHub Pages).
+
+ - Formspree, Inc. (United States) - receiving and forwarding website contact-form submissions.
+
+ - Zoho Corporation Pvt. Ltd. (India, with EU data-centre options) - email hosting for the @quickler.co mailbox and message forwarding.
+
+ - Google LLC (United States) - website analytics (anonymous, cookieless measurement runs for all visitors under Google Consent Mode; cookie-based analytics only after you accept cookies); Google Fonts typeface hosting (the browser connects to Google servers on every page view to fetch the site typeface, which means Google may receive your IP address); and Gmail, which receives and stores email forwarded from the @quickler.co inbox for reading.
+
+ - Resend (United States) - transactional email delivery. Report emails, including their PDF attachments, are sent to recipients through Resend.
+
+ - Backblaze, Inc. (United States) - encrypted off-site backup infrastructure. A continuous replica of the product databases is held for disaster recovery.
+
+ - Microsoft Corporation (Clarity) (United States) - anonymised usage analytics (heatmaps and session replay) on the marketing site, gated on cookie consent. It is not loaded on any dashboard page that displays captured records or resident data.
+
+ 
+Where customer-instructed routing is configured, finished report outputs may also be delivered to integrations chosen by the customer (for example Google Drive, SharePoint, Dropbox, email, or project-management systems).
+
+Data may also be shared where reasonably necessary with email providers, professional advisers, or law-enforcement bodies where disclosure is required by law.
+
+## How long data is kept
+
+Enquiry data is kept only as long as it is useful for handling the enquiry, any follow-up discussions, and ordinary business record-keeping. As a working rule, non-client enquiry records are normally not kept longer than 24 months after the last meaningful contact unless there is a good reason to keep them longer.
+
+For workflow product customers: engineer messages, photos, voice notes, and transcripts are kept while they are in active use and are automatically deleted after three years without further activity on that record. Approved, archived report PDFs are retained until the customer deletes them, as they are the customer's business record. Application logs are operational only and are not kept as a long-term record; they roll over when the service is updated and are not retained on a fixed schedule. Database backups are retained for 30 days. Removing an engineer from the Engineers list in the dashboard stops their conversations and cancels their scheduled messages, and takes them off the active roster within a 30-day restore window. It deliberately keeps their filed reports and records, so the customer's compliance history stays intact. Full erasure of an individual's captured data - their WhatsApp sessions, photos, voice notes and transcripts - is carried out on request by emailing hello@quickler.co (mailto:hello@quickler.co).
+
+## International transfers
+
+Some sub-processors are based outside the UK (notably in the EEA and the United States). Where personal data is transferred internationally, quickler relies on the following mechanisms, as appropriate to the destination country:
+
+ 
+ - UK-US Data Bridge (an extension of the EU-US Data Privacy Framework, in force since 12 October 2023) for transfers to US-based sub-processors that hold a current certification with the UK Extension active. Twilio, Google, Microsoft, Backblaze, GitHub, Sentry (listed on the register as Sentry.io), and Resend are relied on under this mechanism.
+
+ - The UK International Data Transfer Agreement, or the UK Addendum to the EU Standard Contractual Clauses, for transfers that are not covered by an adequacy decision or the Data Bridge. Anthropic, OpenAI, Groq, and Formspree are relied on under this mechanism, as they are not currently certified under the Framework.
+
+ - UK / EEA adequacy decisions for transfers within the EEA.
+
+ Where quickler processes personal data on behalf of a customer (for example, data captured via WhatsApp by the customer's engineers), the customer is the data controller and quickler is the data processor. The processing is governed by the data-processing terms set out in the Customer Terms (/pages/customer-terms.html). The standalone Data Processing Agreement is Schedule 1 of those terms and is published in full at quickler.co/pages/dpa.html (/pages/dpa.html). It is available to any customer, free or paying; a signable copy for a compliance or procurement team can be requested from hello@quickler.co (mailto:hello@quickler.co).
+
+## Automated decisions and AI processing
+
+Messages, photos, and voice notes captured through the workflow product are processed by third-party AI and speech-to-text services to extract structured information and draft report content. These services process your content under their business and API terms and do not use it to train their models. Quickler does not make any solely automated decisions producing legal or similarly significant effects about you within the meaning of Article 22 UK GDPR. A Quickler customer's engineer or manager reviews, edits, and approves every report before it is issued, so the AI output never stands on its own as a binding decision. If you would prefer your data not to be processed by these services, contact hello@quickler.co (mailto:hello@quickler.co); in practical terms the workflow product cannot function without them, so the alternative will be discontinuation of the service rather than a non-AI variant.
+
+## Special-category and health data
+
+Some customers use the workflow product to keep care and welfare records. When they do, the content they capture can include special-category data within the meaning of Article 9 UK GDPR - for example health information about a named person, such as weight, food and fluid intake, medication, or personal-care notes.
+
+In these cases the customer is the data controller and decides what to record and why; quickler is the data processor and handles that data only on the customer's documented instructions, under Schedule 1 of the Customer Terms (/pages/customer-terms.html). A customer who intends to capture special-category data must agree that in writing with quickler in advance, including the categories involved and the safeguards that apply, before that data is processed.
+
+If you are a person written about in these records - for example a resident of a care service that uses Quickler - the service you receive care from is the controller of your data. Requests to see, correct, or erase your information are usually made to them, and they can pass an erasure instruction to quickler. You can also contact quickler directly at hello@quickler.co (mailto:hello@quickler.co) and we will route your request to the right controller.
+
+## Your rights
+
+Depending on the circumstances, you may have rights to access, correct, erase, restrict, or object to the use of your personal data, and to ask for a copy of the data held about you. These are the UK GDPR rights set out in Articles 15 to 22.
+
+To exercise those rights, email hello@quickler.co (mailto:hello@quickler.co). Quickler will acknowledge within 72 hours and respond in full within one calendar month, as required by Article 12. Where you are a customer, the dashboard provides self-service export at Dashboard → Data Export at any time. Removing an engineer from your Engineers list stops their conversations and schedules but retains their filed reports and records, so your compliance history stays intact. Full erasure of an individual's data, including sessions, photos, voice notes and transcripts, is available on request by emailing hello@quickler.co (mailto:hello@quickler.co).
+
+You also have the right to complain to the UK Information Commissioner's Office if you believe your data has been handled improperly. The ICO's helpline is 0303 123 1113 and its website is ico.org.uk (https://ico.org.uk/).
+
+## Changes to this policy
+
+This page may be updated when the site, services, or data flows change. The latest version will always be published here.
+
+ 
+
+ 
+
+© Quickler Ltd 2026 · Company No. S
+
+
+======================================================================
+DPA PAGE  (rendered from _site/pages/dpa.html)
+======================================================================
+Data Processing Agreement | quickler
+
+ 
+
+ body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; max-width: 640px; margin: 4rem auto; padding: 0 1.5rem; color: #1a1a1a; line-height: 1.6; }
+ a { color: #2250b8; }
+ .cta { display: inline-block; margin: 0.5rem 0 1.5rem; font-weight: 600; }
+
+ 
+
+# Data Processing Agreement
+
+Quickler's Data Processing Agreement is Schedule 1 of our Customer Terms. It forms part of every customer contract where quickler processes personal data on the customer's behalf, and it satisfies the processor obligations in Article 28 of the UK GDPR.
+
+It applies to every customer, free tier or paid.
+
+Read Schedule 1 - Data Processing Terms (/pages/customer-terms.html#schedule-1-data-processing-terms)
+
+Need a countersigned copy for your compliance or procurement team? Email hello@quickler.co (mailto:hello@quickler.co).
+
+Quickler Ltd. ICO registration C1910464.
