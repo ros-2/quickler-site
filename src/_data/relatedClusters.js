@@ -237,6 +237,10 @@ const clusters = {
       ["care-at-home-housing-support-audit-scotland", "Care at home and housing support"],
       ["nursery-self-evaluation-scotland", "Nursery self-evaluation"],
       ["childminder-self-evaluation-scotland", "Childminder self-evaluation"],
+      ["care-inspectorate-self-evaluation-template-scotland", "Self-evaluation template"],
+      ["care-inspectorate-grades-explained-scotland", "Grades 1 to 6 explained"],
+      ["care-inspectorate-annual-return-scotland", "Annual return"],
+      ["care-inspectorate-complaints-notifications-scotland", "Complaints and notifications"],
     ],
   },
   general: {
