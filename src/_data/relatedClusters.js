@@ -213,6 +213,10 @@ const clusters = {
       ["goaudits-alternative-uk", "GoAudits alternative"],
       ["lumiform-alternative-uk", "Lumiform alternative"],
       ["fleetcheck-alternative-uk", "FleetCheck alternative"],
+      ["simpro-alternative-uk", "SimPro alternative"],
+      ["joblogic-alternative-uk", "Joblogic alternative"],
+      ["fergus-alternative-uk", "Fergus alternative"],
+      ["fieldwire-alternative-uk", "Fieldwire alternative"],
       ["iauditor-cost-uk", "iAuditor cost"],
       ["how-to-replace-iauditor-uk", "Replace iAuditor"],
       ["no-subscription-compliance", "Only pay for active users"],
@@ -234,6 +238,7 @@ const clusters = {
       ["facilities-management-inspection-software-uk", "Facilities management"],
       ["paperless-inspections-uk-trades", "Paperless inspections"],
       ["voice-notes-site-reports-uk", "Voice-note reporting"],
+      ["uk-compliance-inspection-frequency-guide", "Inspection frequency guide"],
     ],
   },
 };

@@ -1,7 +1,80 @@
+# Quickler wants to be read and cited by AI answer engines and search
+# crawlers. Everything is open. The named blocks below exist so there is zero
+# ambiguity for the crawlers that feed ChatGPT, Claude, Perplexity, Copilot,
+# Gemini and Apple Intelligence: they are explicitly welcome.
+
 User-agent: *
+Allow: /
+
+# --- AI answer-engine and AI-search crawlers (explicitly allowed) ---
+# OpenAI (ChatGPT browsing, ChatGPT search, training)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google AI (Gemini, AI Overviews, Vertex)
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence / Siri
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft Copilot / Bing generative
+User-agent: bingbot
+Allow: /
+
+# Common Crawl (feeds many downstream LLM corpora)
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# ByteDance / DuckDuckGo assist / Amazon
+User-agent: Bytespider
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://quickler.co/sitemap.xml
 
 # LLM-readable summary of this site
 # https://quickler.co/llms.txt
+# https://quickler.co/llms-full.txt
