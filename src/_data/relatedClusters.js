@@ -49,6 +49,10 @@ const clusters = {
   care: {
     label: "Care and CQC",
     pages: [
+      ["care-home-compliance-software-uk", "Care home compliance software"],
+      ["audit-management-system-care-homes-uk", "Audit management system for care"],
+      ["best-care-home-audit-software-uk", "Best care home audit software"],
+      ["care-home-compliance-case-study-uk", "Care compliance case study"],
       ["care-home-audit-software-uk", "Care home audit software"],
       ["care-home-compliance-checklist-monthly-uk", "Monthly compliance checklist"],
       ["cqc-compliance-audit-checklist-uk", "CQC audit checklist"],
