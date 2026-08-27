@@ -209,9 +209,12 @@ const clusters = {
     label: "Compare and switch",
     pages: [
       ["iauditor-alternative-uk", "iAuditor alternative"],
+      ["safetyculture-alternative-uk", "SafetyCulture alternative"],
+      ["goaudits-alternative-uk", "GoAudits alternative"],
+      ["lumiform-alternative-uk", "Lumiform alternative"],
+      ["fleetcheck-alternative-uk", "FleetCheck alternative"],
       ["iauditor-cost-uk", "iAuditor cost"],
       ["how-to-replace-iauditor-uk", "Replace iAuditor"],
-      ["safetyculture-alternative-uk", "SafetyCulture alternative"],
       ["no-subscription-compliance", "Only pay for active users"],
     ],
   },
