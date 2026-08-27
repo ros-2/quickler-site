@@ -243,6 +243,15 @@ const clusters = {
       ["care-inspectorate-complaints-notifications-scotland", "Complaints and notifications"],
     ],
   },
+  essays: {
+    label: "Essays",
+    pages: [
+      ["the-report-written-from-memory", "The report written from memory"],
+      ["what-an-inspection-is-really-testing", "What an inspection is really testing"],
+      ["why-the-app-doesnt-get-opened", "Why the app doesn't get opened"],
+      ["five-regulators-one-job-british-isles", "Five regulators, one job"],
+    ],
+  },
   general: {
     label: "Field compliance",
     pages: [
