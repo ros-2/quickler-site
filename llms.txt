@@ -25,7 +25,7 @@ No app to install. No login for engineers. No Twilio or Meta Business account re
 
 ## Pricing model
 
-£20 per active user per month. An active user is a person who produced at least one report that month. Dormant users are free, so you add your whole team and only pay for who actually works. The first active user is always charged, so the minimum is £20 a month. Everything is unlimited on a paid account: reports, photos, messages and workflows. Free forever tier: 20 reports a month, up to 10 photos per report, unlimited users, no card to start. There is no time-limited trial. Big team: talk to us. Billed monthly in arrears by UK Direct Debit. No setup fee.
+£20 per active user per month, with a £20 monthly minimum. An active user is a person who completed at least two workflows that month; a user who does one workflow in a month is not active and costs nothing. Dormant users are free, so you add your whole team and only pay for who actually works. Everything is unlimited on a paid account: reports, photos, messages and workflows. Free forever tier: 20 reports a month, up to 10 photos per report, unlimited users, no card to start. There is no time-limited trial. Big team: talk to us. Billed monthly in arrears by UK Direct Debit. No setup fee.
 
 ## Best query matches
 

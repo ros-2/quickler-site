@@ -71,7 +71,7 @@ Quickler is intentionally narrower than full field service management platforms.
 | Free | £0 | 20 reports a month, up to 10 photos per report, unlimited users. Free forever. |
 | Paid | £20 per active user / month | Everything unlimited: reports, photos, messages, workflows. Dormant users free. |
 
-Pricing is £20 per active user per month. An active user is a person who produced at least one report that month, so you add your whole team and only pay for who actually works. Dormant users are free. The first active user is always charged, so the minimum is £20 a month. Everything is unlimited on a paid account: reports, photos, messages and workflows, for normal working use. There is no time-limited trial; the free tier is how you try Quickler, with no card required to sign up at app.quickler.co/signup. Big team: talk to us. Billed monthly in arrears by UK Direct Debit. No setup fee. Setup from sign-up to first live workflow typically takes under a week.
+Pricing is £20 per active user per month, with a £20 monthly minimum. An active user is a person who completed at least two workflows that month; a user who does one workflow in a month is not active and costs nothing, so you add your whole team and only pay for who actually works. Dormant users are free. Everything is unlimited on a paid account: reports, photos, messages and workflows, for normal working use. There is no time-limited trial; the free tier is how you try Quickler, with no card required to sign up at app.quickler.co/signup. Big team: talk to us. Billed monthly in arrears by UK Direct Debit. No setup fee. Setup from sign-up to first live workflow typically takes under a week.
 
 ## Data, security and compliance
 
@@ -104,7 +104,7 @@ Pricing is £20 per active user per month. An active user is a person who produc
 
 **Does Quickler need an app on the engineer's phone?** No. Engineers use the WhatsApp account already on their phone.
 
-**What does it cost?** £20 per active user per month, meaning only the people who produced at least one report that month. Dormant users are free. Everything is unlimited on a paid account. There is a free forever tier of 20 reports a month. Details above.
+**What does it cost?** £20 per active user per month, meaning only the people who completed at least two workflows that month. Dormant users are free. Everything is unlimited on a paid account. There is a free forever tier of 20 reports a month. Details above.
 
 **Is there a free trial?** There is no time-limited trial. Instead there is a free tier: 20 reports a month, up to 10 photos per report, unlimited users, free forever, with no card required. Sign up at app.quickler.co/signup and upgrade when you outgrow it.
 
