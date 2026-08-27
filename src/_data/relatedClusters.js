@@ -56,7 +56,6 @@ const clusters = {
       ["care-home-audit-software-uk", "Care home audit software"],
       ["care-home-compliance-checklist-monthly-uk", "Monthly compliance checklist"],
       ["cqc-compliance-audit-checklist-uk", "CQC audit checklist"],
-      ["care-inspectorate-self-evaluation-scotland", "Care Inspectorate self-evaluation"],
       ["care-home-health-safety-audit-uk", "Care home H&S audit"],
       ["safeguarding-audit-care-home-uk", "Safeguarding audit"],
       ["accident-incident-riddor-care-home-uk", "RIDDOR in care"],
@@ -227,6 +226,17 @@ const clusters = {
       ["iauditor-cost-uk", "iAuditor cost"],
       ["how-to-replace-iauditor-uk", "Replace iAuditor"],
       ["no-subscription-compliance", "Only pay for active users"],
+    ],
+  },
+  scotland: {
+    label: "Care Inspectorate (Scotland)",
+    pages: [
+      ["care-inspectorate-compliance-software-scotland", "Care Inspectorate compliance software"],
+      ["care-inspectorate-self-evaluation-scotland", "Care Inspectorate self-evaluation"],
+      ["care-inspectorate-mock-inspection-checklist-scotland", "Mock inspection checklist"],
+      ["care-at-home-housing-support-audit-scotland", "Care at home and housing support"],
+      ["nursery-self-evaluation-scotland", "Nursery self-evaluation"],
+      ["childminder-self-evaluation-scotland", "Childminder self-evaluation"],
     ],
   },
   general: {
