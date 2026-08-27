@@ -13,7 +13,7 @@
 //   4. Rebuild. Every page that renders pricing via the shortcodes follows.
 //
 // CURRENT MODEL: per ACTIVE USER. £20 per active user per month. An active user
-// is a person who produced at least one report that month. Dormant users are
+// is a person who completed at least two workflows that month. Dormant users are
 // free. The first active user is always charged (£20 minimum). Everything is
 // unlimited on paid (reports, photos, messages, workflows). Free tier: 20
 // reports a month, up to 10 photos per report, unlimited users, free forever.
@@ -124,7 +124,7 @@ const trialLine = trial.days
 // A full, dense pricing sentence for prose / SEO bodies / FAQ answers.
 const sentence =
   model === "seat"
-    ? `${unit.perUnitLine}. An active user is someone who produced at least one report that month, so you add your whole team and only pay for who actually works. ${minimumLine} Everything is unlimited on a paid account: reports, photos, messages and workflows. ${freeTier.line} ${billing}`
+    ? `${unit.perUnitLine}. An active user is someone who completed at least two workflows that month, so you add your whole team and only pay for who actually works. ${minimumLine} Everything is unlimited on a paid account: reports, photos, messages and workflows. ${freeTier.line} ${billing}`
     : `Plans from ${CURRENCY}${plans[0].price}/mo. ${billing}`;
 
 // A short version for tight spots (meta descriptions, cards).
