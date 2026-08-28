@@ -41,7 +41,10 @@ eleventyComputed:
   <div class="story-inner">
     <p class="story-eyebrow">Resources</p>
     <h2 class="story-h2">Resources for {{ country.name }}.</h2>
-    <div class="story-cards" style="--n: 3">
+    <div class="story-cards" style="--n: {{ 4 if country.careLink else 3 }}">
+      {%- if country.careLink %}
+      <a class="story-card" href="{{ country.careLink }}"><span class="story-card-kicker">Care and {{ country.careRegulator }}</span><h3>{{ country.careRegulator }} compliance in {{ country.name }}</h3><p>Nursing home and residential care audits, medication, infection prevention, safeguarding and premises, captured over WhatsApp.</p></a>
+      {%- endif %}
       <a class="story-card" href="/pages/positioning-{{ country.slug }}.html"><span class="story-card-kicker">Positioning</span><h3>WhatsApp field compliance in {{ country.name }}</h3><p>How field firms in {{ country.name }} run inspections and checklists via WhatsApp, with no app to install.</p></a>
       <a class="story-card" href="/pages/data-privacy-{{ country.slug }}.html"><span class="story-card-kicker">Data &amp; privacy</span><h3>Field inspection data and privacy in {{ country.name }}</h3><p>EU-hosted data, GDPR-aligned. How structured digital records compare to paper for audit trails in {{ country.name }}.</p></a>
       <a class="story-card" href="/pages/no-app-inspections-{{ country.slug }}.html"><span class="story-card-kicker">Use case</span><h3>No-app site inspections for {{ country.name }} field teams</h3><p>How WhatsApp replaces paper and tablet apps for site safety and equipment checks.</p></a>

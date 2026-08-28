@@ -133,6 +133,15 @@ Quickler runs self-evaluation and inspection-prep walks for nurseries, pre-schoo
 
 Best early years query matches: nursery self evaluation England, EYFS self evaluation, early years SEF, Ofsted nursery self evaluation, Ofsted early years mock inspection, Ofsted early years inspection checklist, nursery ratio and safeguarding check app, prepare for Ofsted nursery, early years audit app no app.
 
+## Ireland and HIQA (residential care)
+
+In Ireland, residential care (nursing homes and disability services) is regulated by HIQA (the Health Information and Quality Authority), not CQC (England) or the Care Inspectorate (Scotland). HIQA registers and inspects designated centres against the National Standards for Residential Care Settings for Older People (and the standards for disability services), under the Health Act 2007 and its regulations. A registered provider must demonstrate ongoing compliance, not just at inspection. Quickler runs the recurring care-home audits (medication, infection prevention and control, safeguarding, falls, premises and fire, nutrition, care planning, governance) over WhatsApp against those standards. Data is hosted on EU servers in Germany (Hetzner) under GDPR, which keeps the residency answer simple for an Irish provider, and pricing is available in euro. Quickler is an audit and evidence tool, holds no resident personal or clinical data, and is not affiliated with or endorsed by HIQA.
+
+- HIQA compliance software (Ireland): https://quickler.co/pages/hiqa-compliance-software-ireland.html
+- Field compliance software (Ireland, general): https://quickler.co/pages/field-compliance-software-ireland.html
+
+Best Ireland query matches: HIQA compliance software, HIQA audit tool, nursing home compliance Ireland, residential care audit Ireland, HIQA inspection preparation, HIQA self-assessment, care home audit app Ireland.
+
 ## Help centre
 
 Customer-facing guides for Quickler users (signup, workflows, billing, data, support):

@@ -67,6 +67,7 @@ const clusters = {
       ["domiciliary-care-audit-app-uk", "Domiciliary care audit"],
       ["nursery-self-evaluation-england", "Nursery self-evaluation (England)"],
       ["ofsted-early-years-mock-inspection-uk", "Ofsted early years mock inspection"],
+      ["hiqa-compliance-software-ireland", "HIQA compliance (Ireland)"],
     ],
   },
   construction: {
