@@ -68,6 +68,8 @@ const clusters = {
       ["nursery-self-evaluation-england", "Nursery self-evaluation (England)"],
       ["ofsted-early-years-mock-inspection-uk", "Ofsted early years mock inspection"],
       ["hiqa-compliance-software-ireland", "HIQA compliance (Ireland)"],
+      ["care-inspectorate-wales-compliance-software", "CIW compliance (Wales)"],
+      ["rqia-compliance-software-northern-ireland", "RQIA compliance (NI)"],
     ],
   },
   construction: {
