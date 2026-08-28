@@ -5613,17 +5613,25 @@ nav {
    unreadable. Let the table scroll sideways inside itself (swipe the table,
    not the page) with a readable minimum column width, instead of squashing.
    -webkit-overflow-scrolling keeps it smooth on iOS Safari (~half of traffic). */
+/* Mobile: wrap each article table in a horizontal scroll container via a
+   pseudo-approach is not possible in pure CSS, so we make the table itself the
+   scroller. display:block + overflow-x lets it scroll; the cells keep a
+   readable min width through min-width on the cells, and the table box is
+   pinned to the viewport so overflow actually engages (it does not grow past
+   the screen). Half of traffic is mobile Safari, where the 4-column checklist
+   tables were otherwise crushed unreadable. */
 @media (max-width: 600px) {
     .story-article-body table {
         display: block;
-        width: 100%;
+        max-width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         white-space: nowrap;
     }
-    .story-article-body table thead,
-    .story-article-body table tbody { display: table; width: 100%; min-width: 34em; }
-    .story-article-body td, .story-article-body th { white-space: normal; }
+    .story-article-body td,
+    .story-article-body th { min-width: 8.5em; white-space: normal; }
+    .story-article-body td:first-child,
+    .story-article-body th:first-child { min-width: 7em; }
 }
 .story-feature .story-article-body th,
 .story-feature .story-article-body td,
