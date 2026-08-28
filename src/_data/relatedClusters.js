@@ -65,6 +65,8 @@ const clusters = {
       ["medication-storage-audit-care-uk", "Medication storage audit"],
       ["care-home-kitchen-food-hygiene-audit-uk", "Kitchen food hygiene audit"],
       ["domiciliary-care-audit-app-uk", "Domiciliary care audit"],
+      ["nursery-self-evaluation-england", "Nursery self-evaluation (England)"],
+      ["ofsted-early-years-mock-inspection-uk", "Ofsted early years mock inspection"],
     ],
   },
   construction: {

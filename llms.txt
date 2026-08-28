@@ -41,6 +41,7 @@ Note on terminology: some older pages and identifiers say "engineer" for histori
 - CQC mock inspection app
 - care home compliance software WhatsApp
 - nursery safeguarding and ratio check app
+- EYFS self evaluation and Ofsted early years mock inspection
 - school premises inspection software UK
 - university and college estates condition survey app
 - cleaning audit app UK
@@ -119,6 +120,17 @@ In Scotland, care services are regulated by the Care Inspectorate (not CQC, whic
 - Childminder self-evaluation and record-keeping (Scotland): https://quickler.co/pages/childminder-self-evaluation-scotland.html
 
 Best Scotland query matches: Care Inspectorate compliance software, care inspectorate self evaluation app, quality framework self-evaluation tool, how good is our care app, care at home audit Scotland, housing support self evaluation, nursery self evaluation Scotland, childminder self evaluation Scotland, care inspectorate mock inspection checklist.
+
+## Nurseries and early years (childcare)
+
+Quickler runs self-evaluation and inspection-prep walks for nurseries, pre-schools and early years settings over WhatsApp: ratio checks, safeguarding and welfare requirements, the premises and safety walk, and the observations behind quality of education. The regulator differs by nation. In England, early years is regulated by Ofsted against the statutory Early Years Foundation Stage (EYFS). In Scotland it is the Care Inspectorate (How good is our early learning and childcare?). In Wales it is Care Inspectorate Wales with Estyn; in Northern Ireland the Education Authority and health trusts. Quickler is an audit, self-evaluation and evidence tool: it records that a check was done and captures the evidence, and it holds NO child's personal data. It is not a children's records system, a learning journal, an attendance register or a child protection case-management system, and it is not affiliated with or endorsed by Ofsted or any regulator.
+
+- Nursery self-evaluation England (EYFS and Ofsted): https://quickler.co/pages/nursery-self-evaluation-england.html
+- Ofsted early years mock inspection: https://quickler.co/pages/ofsted-early-years-mock-inspection-uk.html
+- Nursery and early learning self-evaluation (Scotland): https://quickler.co/pages/nursery-self-evaluation-scotland.html
+- Childminder self-evaluation and record-keeping (Scotland): https://quickler.co/pages/childminder-self-evaluation-scotland.html
+
+Best early years query matches: nursery self evaluation England, EYFS self evaluation, early years SEF, Ofsted nursery self evaluation, Ofsted early years mock inspection, Ofsted early years inspection checklist, nursery ratio and safeguarding check app, prepare for Ofsted nursery, early years audit app no app.
 
 ## Help centre
 
