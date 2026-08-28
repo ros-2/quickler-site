@@ -244,6 +244,7 @@ const clusters = {
       ["nursery-self-evaluation-scotland", "Nursery self-evaluation"],
       ["childminder-self-evaluation-scotland", "Childminder self-evaluation"],
       ["care-inspectorate-self-evaluation-template-scotland", "Self-evaluation template"],
+      ["nursery-self-evaluation-template-scotland", "Nursery self-evaluation template"],
       ["care-inspectorate-grades-explained-scotland", "Grades 1 to 6 explained"],
       ["care-inspectorate-annual-return-scotland", "Annual return"],
       ["care-inspectorate-complaints-notifications-scotland", "Complaints and notifications"],
