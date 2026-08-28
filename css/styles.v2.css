@@ -2677,14 +2677,21 @@ a.callout-btn {
         overflow-y: auto;
         opacity: 0;
         pointer-events: none;
+        /* visibility:hidden takes the closed menu's links out of the tab order
+           and the accessibility tree, so keyboard and screen-reader users are
+           not dragged through six invisible links before the hero. Delayed so
+           the fade-out still animates. */
+        visibility: hidden;
         transform: scale(1.02);
-        transition: opacity 0.25s ease, transform 0.25s ease;
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
     }
 
     nav.nav-open .nav-menu {
         opacity: 1;
         pointer-events: auto;
+        visibility: visible;
         transform: scale(1);
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s;
     }
 
     .nav-menu a {
@@ -5602,6 +5609,22 @@ nav {
     vertical-align: top;
 }
 .story-article-body th { font-weight: 700; border-bottom-width: 2px; }
+/* Mobile: a dense multi-column checklist table crushed into ~360px is
+   unreadable. Let the table scroll sideways inside itself (swipe the table,
+   not the page) with a readable minimum column width, instead of squashing.
+   -webkit-overflow-scrolling keeps it smooth on iOS Safari (~half of traffic). */
+@media (max-width: 600px) {
+    .story-article-body table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+    .story-article-body table thead,
+    .story-article-body table tbody { display: table; width: 100%; min-width: 34em; }
+    .story-article-body td, .story-article-body th { white-space: normal; }
+}
 .story-feature .story-article-body th,
 .story-feature .story-article-body td,
 .story-photo .story-article-body th,
