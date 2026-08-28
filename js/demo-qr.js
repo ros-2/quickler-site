@@ -18,15 +18,32 @@
         if (typeof QRCode === "function") {
             // Clear any placeholder, then draw.
             canvas.innerHTML = "";
-            new QRCode(canvas, {
-                text: wa,
-                width: 200,
-                height: 200,
-                colorDark: "#0b1f4d",
-                colorLight: "#ffffff",
-                correctLevel: QRCode.CorrectLevel.M
-            });
+            try {
+                new QRCode(canvas, {
+                    text: wa,
+                    width: 200,
+                    height: 200,
+                    colorDark: "#0b1f4d",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.M
+                });
+            } catch (e) {
+                showFallback(canvas);
+            }
+        } else {
+            // QR library did not load (blocked CDN, network). Never leave a
+            // blank box: point the visitor straight at the button instead.
+            showFallback(canvas);
         }
+    }
+
+    function showFallback(canvas) {
+        // QR could not render: hide the empty card and the "scan" divider so
+        // the "Open in WhatsApp" button is cleanly the only call to action.
+        var card = canvas.closest(".qr-card");
+        if (card) { card.style.display = "none"; }
+        var divider = document.querySelector(".demo-or");
+        if (divider) { divider.style.display = "none"; }
     }
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", init);
