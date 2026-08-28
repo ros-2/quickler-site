@@ -233,6 +233,7 @@ const clusters = {
   scotland: {
     label: "Care Inspectorate (Scotland)",
     pages: [
+      ["care-home-compliance-software-scotland", "Care home compliance (Scotland)"],
       ["care-inspectorate-compliance-software-scotland", "Care Inspectorate compliance software"],
       ["care-inspectorate-self-evaluation-scotland", "Care Inspectorate self-evaluation"],
       ["care-inspectorate-mock-inspection-checklist-scotland", "Mock inspection checklist"],

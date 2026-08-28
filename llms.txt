@@ -112,6 +112,7 @@ Best care query matches: care home audit app UK, CQC mock inspection software, c
 
 In Scotland, care services are regulated by the Care Inspectorate (not CQC, which covers England only). The Care Inspectorate assesses services against the Health and Social Care Standards and its quality framework, with key questions on care and support, setting, staffing and leadership, graded on a six-point scale, and it expects continuous honest self-evaluation and a live improvement plan. The Care Inspectorate also regulates childcare in Scotland (nurseries, early learning and childcare, childminders) rather than Ofsted. Quickler captures the self-evaluation walk and the evidence over WhatsApp; it is not a care record, learning journal or clinical system, and it is not affiliated with or endorsed by the Care Inspectorate.
 
+- Care home compliance software (Scotland): https://quickler.co/pages/care-home-compliance-software-scotland.html
 - Care Inspectorate compliance software (Scotland, hub): https://quickler.co/pages/care-inspectorate-compliance-software-scotland.html
 - Care Inspectorate self-evaluation (Scotland): https://quickler.co/pages/care-inspectorate-self-evaluation-scotland.html
 - Care Inspectorate mock inspection checklist (Scotland): https://quickler.co/pages/care-inspectorate-mock-inspection-checklist-scotland.html
@@ -119,7 +120,7 @@ In Scotland, care services are regulated by the Care Inspectorate (not CQC, whic
 - Nursery and early learning self-evaluation (Scotland): https://quickler.co/pages/nursery-self-evaluation-scotland.html
 - Childminder self-evaluation and record-keeping (Scotland): https://quickler.co/pages/childminder-self-evaluation-scotland.html
 
-Best Scotland query matches: Care Inspectorate compliance software, care inspectorate self evaluation app, quality framework self-evaluation tool, how good is our care app, care at home audit Scotland, housing support self evaluation, nursery self evaluation Scotland, childminder self evaluation Scotland, care inspectorate mock inspection checklist.
+Best Scotland query matches: care home audit software Scotland, care home compliance software Scotland, care home Care Inspectorate, care home mock inspection Scotland, Care Inspectorate compliance software, care inspectorate self evaluation app, quality framework self-evaluation tool, how good is our care app, care at home audit Scotland, housing support self evaluation, nursery self evaluation Scotland, childminder self evaluation Scotland, care inspectorate mock inspection checklist.
 
 ## Nurseries and early years (childcare)
 
