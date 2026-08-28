@@ -5621,17 +5621,24 @@ nav {
    the screen). Half of traffic is mobile Safari, where the 4-column checklist
    tables were otherwise crushed unreadable. */
 @media (max-width: 600px) {
+    /* Constrain the article body to its own parent's width so a wide table
+       cannot stretch it. Then the table, as a block scroll container, scrolls
+       inside this width instead of pushing the whole column wider. */
+    .story-article-body { max-width: 100%; min-width: 0; }
     .story-article-body table {
         display: block;
-        max-width: 100%;
+        width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
     }
+    /* min-width on cells pushes the inner content wider than the box, which is
+       what makes the box actually scroll rather than crush the columns. */
+    .story-article-body table tbody,
+    .story-article-body table thead { display: table; width: max-content; min-width: 100%; }
     .story-article-body td,
-    .story-article-body th { min-width: 8.5em; white-space: normal; }
+    .story-article-body th { min-width: 7.5em; }
     .story-article-body td:first-child,
-    .story-article-body th:first-child { min-width: 7em; }
+    .story-article-body th:first-child { min-width: 6.5em; }
 }
 .story-feature .story-article-body th,
 .story-feature .story-article-body td,
