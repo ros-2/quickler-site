@@ -2,6 +2,14 @@
     const CONSENT_KEY = "quickler_cookie_consent_v1";
     // Quickler site GA4 stream.
     const GA_ID = "G-NM61T48RDV";
+    // Google Ads conversion tag. Shares the ONE gtag.js script and the ONE
+    // dataLayer with GA above: Google's own setup page says never to add a
+    // second Google tag to a page, and the snippet it hands you would have
+    // clobbered our Consent Mode defaults by calling gtag("js") again with no
+    // consent block. So the ID is registered as an extra config target on the
+    // existing tag instead. Ads storage stays DENIED until the visitor clicks
+    // "Yes", which is what Google's own EEA consent-mode guidance requires.
+    const ADS_ID = "AW-18306578924";
     // Microsoft Clarity project ID — heatmaps + session recordings. Free.
     // Clarity sets cookies, so it stays behind explicit consent (loaded on grant).
     const CLARITY_ID = "xd0e3wnnxe";
@@ -23,6 +31,8 @@
         if (window.__quicklerGtagScript) return;
         const script = document.createElement("script");
         script.async = true;
+        // One script tag, loaded under the GA ID. A gtag.js load serves every
+        // ID later named in a gtag("config") call, so Ads needs no second file.
         script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
         document.head.appendChild(script);
         window.__quicklerGtagScript = true;
@@ -45,6 +55,10 @@
         window.gtag("set", "url_passthrough", true);
         window.gtag("set", "ads_data_redaction", true);
         window.gtag("config", GA_ID, { anonymize_ip: true });
+        // Ads runs in the same cookieless state until consent: ad_storage and
+        // ad_personalization are denied in the default block above, and
+        // ads_data_redaction strips ad identifiers from those pings.
+        window.gtag("config", ADS_ID);
         loadGtagScript();
         if (prior === "granted") loadClarity();
         window.__quicklerConsentInit = true;
@@ -92,7 +106,14 @@
     // this upgrades it to full cookie-based tracking and loads Clarity.
     function grantAnalytics() {
         window.gtag("consent", "update", {
-            analytics_storage: "granted"
+            analytics_storage: "granted",
+            // Ads consent is granted by the same click. The banner asks about
+            // analytics cookies in general; if that wording ever needs to name
+            // advertising separately, split this into a second signal rather
+            // than granting it silently here.
+            ad_storage: "granted",
+            ad_user_data: "granted",
+            ad_personalization: "granted"
         });
         loadClarity();
     }
