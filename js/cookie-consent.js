@@ -31,9 +31,12 @@
         if (window.__quicklerGtagScript) return;
         const script = document.createElement("script");
         script.async = true;
-        // One script tag, loaded under the GA ID. A gtag.js load serves every
-        // ID later named in a gtag("config") call, so Ads needs no second file.
-        script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+        // One script tag, loaded under the ADS id. A single gtag.js load serves
+        // every id later named in a gtag("config") call, so Ads needs no second
+        // file -- but Google's "is my tag installed" checker reads the id in
+        // THIS url, and reported the tag missing while we loaded under G-...
+        // (2026-10-02). GA is still configured below and is unaffected.
+        script.src = "https://www.googletagmanager.com/gtag/js?id=" + ADS_ID;
         document.head.appendChild(script);
         window.__quicklerGtagScript = true;
     }
