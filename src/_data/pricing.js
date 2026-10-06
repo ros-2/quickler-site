@@ -12,9 +12,9 @@
 //   3. Update `unit`, `perUnitLine`, `included`, `trial` as needed.
 //   4. Rebuild. Every page that renders pricing via the shortcodes follows.
 //
-// CURRENT MODEL: per ACTIVE USER. £20 per active user per month. An active user
+// CURRENT MODEL: per ACTIVE USER. £50 per active user per month. An active user
 // is a person who completed at least two workflows that month. Dormant users are
-// free. The first active user is always charged (£20 minimum). Everything is
+// free. The first active user is always charged (£50 minimum). Everything is
 // unlimited on paid (reports, photos, messages, workflows). Free tier: 20
 // reports a month, up to 10 photos per report, unlimited users, free forever.
 // There is NO trial. Billed monthly in arrears by UK Direct Debit. No setup fee.
@@ -31,10 +31,10 @@ const model = "seat";
 
 // What one unit is, in the current model. Used in generated sentences.
 const unit = {
-  singular: "active user",              // "£20 per active user"
+  singular: "active user",              // "£50 per active user"
   plural: "active users",               // "only pay for active users"
-  perUnitPrice: "£20",                  // headline per-unit price, or "" if not per-unit
-  perUnitLine: "£20 per active user per month",
+  perUnitPrice: "£50",                  // headline per-unit price, or "" if not per-unit
+  perUnitLine: "£50 per active user per month",
 };
 
 // The plans/tiers. Keep the SAME shape if you switch model:
@@ -51,7 +51,7 @@ const plans = [
   },
   {
     name: "Paid",
-    price: 20,
+    price: 50,
     priceSuffix: " per active user / mo",
     quantity: 0,
     quantityLabel: "Only pay for who works. Dormant users free.",
@@ -101,13 +101,13 @@ const fairUse =
 
 // The monthly minimum. There is always one billable active user to keep the
 // account live, whether or not anyone files a report that month. So a paid
-// account never costs less than £20 in a month. State this plainly so the first
+// account never costs less than £50 in a month. State this plainly so the first
 // bill is never a surprise.
 const minimumLine =
-  "There is a £20 minimum each month. One active user is always charged to keep " +
+  "There is a £50 minimum each month. One active user is always charged to keep " +
   "your account live, whether or not anyone files a report that month. Above " +
   "that minimum you only pay for the people who actually worked.";
-const minimumShort = "£20 a month minimum, then £20 per active user above that.";
+const minimumShort = "£50 a month minimum, then £50 per active user above that.";
 
 // Overflow line for big teams.
 const overflowLine = "Big team? Talk to us.";
@@ -130,14 +130,14 @@ const sentence =
 // A short version for tight spots (meta descriptions, cards).
 const shortSentence =
   model === "seat"
-    ? `${unit.perUnitPrice} per active user per month, ${CURRENCY}20 minimum. Only pay for who works. ${freeTier.shortLine}`
+    ? `${unit.perUnitPrice} per active user per month, ${CURRENCY}50 minimum. Only pay for who works. ${freeTier.shortLine}`
     : `Plans from ${CURRENCY}${plans[0].price}/mo.`;
 
 // A plain description for guide prose, reads naturally mid-paragraph, no
 // trailing full stop.
 const bundleList =
   model === "seat"
-    ? `${unit.perUnitPrice} per active user per month with a ${CURRENCY}20 monthly minimum, plus a free tier of ${freeTier.reports} reports a month, extra dormant users always free`
+    ? `${unit.perUnitPrice} per active user per month with a ${CURRENCY}50 monthly minimum, plus a free tier of ${freeTier.reports} reports a month, extra dormant users always free`
     : plans.map((p) => `${p.name} at ${CURRENCY}${p.price} a month`).join(", ");
 
 // The pricing headline as a sentence fragment, for prose openers.

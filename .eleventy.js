@@ -108,16 +108,16 @@ module.exports = function (eleventyConfig) {
   // carries stable [[price:...]] tokens; this filter fills them at build time.
   // Add a new token by adding a key here that maps to a pricing.js value.
   const _PRICE_TOKENS = {
-    bundles: _pricing.bundleList,        // "£20 per active user per month with a free tier of 20 reports..."
+    bundles: _pricing.bundleList,        // "£50 per active user per month with a free tier of 20 reports..."
     sentence: _pricing.sentence,         // full dense pricing sentence
     short: _pricing.shortSentence,       // tight one-liner
     trial: _pricing.trialLine,           // "" (no trial; free tier replaces it)
     free: _pricing.freeTier.line,        // "Free forever: 20 reports a month, up to 10 photos..."
     freeShort: _pricing.freeTier.shortLine, // "Free forever: 20 reports a month. No card, no trial clock."
     fairUse: _pricing.fairUse,           // fair-use clause backing every "unlimited" promise
-    minimum: _pricing.minimumLine,       // "There is a £20 minimum each month..."
-    minimumShort: _pricing.minimumShort, // "£20 a month minimum, then £20 per active user above that."
-    perReport: _pricing.perReportLine,   // "£20 per active user per month"
+    minimum: _pricing.minimumLine,       // "There is a £50 minimum each month..."
+    minimumShort: _pricing.minimumShort, // "£50 a month minimum, then £50 per active user above that."
+    perReport: _pricing.perReportLine,   // "£50 per active user per month"
     overflow: _pricing.overflowLine,     // "Big team? Talk to us."
   };
   eleventyConfig.addFilter("priceTokens", (str) =>
