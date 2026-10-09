@@ -110,11 +110,11 @@
   img.src = "/assets/logos/holiday/" + row[0] + ".svg";
   img.title = row[1];
   // The holiday picture holds the word plus its extras in a wider box
-  // (viewBox -62 -32 1054 228 against the plain logo's 0 0 850 200). Scale it
+  // (viewBox -62 -32 W 228 against the plain logo's 0 0 850 200; each
+  // picture's W ends 14 units past its own drawing). Scale it
   // so the letters are the plain logo's size and sit where its letters sit;
   // the extras spill outside the box and nothing else on the page moves.
   img.style.transform = "scale(1.14)";
-  img.style.transformOrigin = "47.9% 114.29%";
   // On the coloured bar the logo sits in a white pill as tall as the bar,
   // filling its left end, and the bar gets a thin white edge so the two
   // read as one piece (Philip 2026-10-09). The pill reaches the bar's edges
@@ -130,12 +130,17 @@
   document.head.appendChild(css);
   nav.classList.add("nav-holiday");
   function fit() {
-    var cs = getComputedStyle(nav), h = img.offsetHeight || 38;
+    var cs = getComputedStyle(nav), h = img.offsetHeight || 38, k = h / 228;
+    var vbw = img.naturalHeight ? 228 * img.naturalWidth / img.naturalHeight : 1054;
+    var ox = 504.86 * k;  // the point the scale keeps fixed: the letters' own origin
+    img.style.transformOrigin = ox + "px 114.29%";
+    // the drawing's right edge after scaling, past the picture's own box
+    var spill = ox + 1.14 * ((vbw - 14) * k - ox) - vbw * k;
     a.style.marginTop = "-" + cs.paddingTop;
     a.style.marginBottom = "-" + cs.paddingBottom;
     a.style.marginLeft = "-" + cs.paddingLeft;
     a.style.paddingLeft = cs.paddingLeft;
-    a.style.paddingRight = Math.round(0.34 * h + 8) + "px";
+    a.style.paddingRight = Math.max(6, Math.round(spill + 0.3 * h)) + "px";
   }
   fit();
   window.addEventListener("resize", fit);
