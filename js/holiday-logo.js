@@ -124,9 +124,10 @@
   if (!nav || !a) return;
   var css = document.createElement("style");
   css.textContent =
-    "nav.nav-holiday{border:2px solid #fff !important}" +
-    "nav.nav-holiday.nav-scrolled{border-width:0 0 2px 0 !important}" +
-    "nav.nav-holiday .nav-name{background:#fff;border-radius:999px;align-self:stretch}";
+    "nav.nav-holiday{border:1px solid rgba(255,255,255,.55) !important}" +
+    "nav.nav-holiday.nav-scrolled{border-width:0 0 1px 0 !important}" +
+    "nav.nav-holiday .nav-name{border-radius:999px;align-self:stretch;" +
+    "background:linear-gradient(90deg,rgba(255,255,255,.96) 0,rgba(255,255,255,.96) calc(100% - 30px),rgba(255,255,255,0) 100%)}";
   document.head.appendChild(css);
   nav.classList.add("nav-holiday");
   function fit() {
@@ -136,11 +137,14 @@
     img.style.transformOrigin = ox + "px 114.29%";
     // the drawing's right edge after scaling, past the picture's own box
     var spill = ox + 1.14 * ((vbw - 14) * k - ox) - vbw * k;
-    a.style.marginTop = "-" + cs.paddingTop;
-    a.style.marginBottom = "-" + cs.paddingBottom;
-    a.style.marginLeft = "-" + cs.paddingLeft;
-    a.style.paddingLeft = cs.paddingLeft;
-    a.style.paddingRight = Math.max(6, Math.round(spill + 0.3 * h)) + "px";
+    // inset by INSET px from the bar's edge, as the WhatsApp pill is, so a
+    // rim of the bar's colour shows round it; the right end fades into the bar
+    var INSET = 4, pt = parseFloat(cs.paddingTop), pb = parseFloat(cs.paddingBottom), pl = parseFloat(cs.paddingLeft);
+    a.style.marginTop = -(pt - INSET) + "px";
+    a.style.marginBottom = -(pb - INSET) + "px";
+    a.style.marginLeft = -(pl - INSET) + "px";
+    a.style.paddingLeft = (pl - INSET) + "px";
+    a.style.paddingRight = Math.max(6, Math.round(spill + 0.3 * h)) + 26 + "px";
   }
   fit();
   window.addEventListener("resize", fit);
