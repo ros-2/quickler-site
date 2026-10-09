@@ -36,7 +36,6 @@
     ["valentines-day", "14 February: Valentine's Day", function (y) { return on(D(y, 2, 14), 6.5); }],
     ["patrick-hamilton", "29 February 1528: Patrick Hamilton, first martyr of the Scottish Reformation, burned at St Andrews", function (y) { return on(leap(y) ? D(y, 2, 29) : D(y, 2, 28), 4); }],
     ["st-davids-day", "1 March: St David's Day", function (y) { return on(D(y, 3, 1), 7); }],
-    ["forth-bridge", "4 March 1890: the Forth Bridge opens", function (y) { return on(D(y, 3, 4), 4); }],
     ["first-day-of-spring", "The first week of spring", function (y) { return span(D(y, 3, 1), D(y, 3, 7), 2); }],
     ["mothers-day", "Mothering Sunday", function (y) { return on(add(easter(y), -21), 7.5); }],
     ["st-patricks-day", "17 March: St Patrick's Day", function (y) { return on(D(y, 3, 17), 6); }],
