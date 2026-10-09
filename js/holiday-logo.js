@@ -109,4 +109,10 @@
   if (!img) return;
   img.src = "/assets/logos/holiday/" + row[0] + ".svg";
   img.title = row[1];
+  // The holiday picture holds the word plus its extras in a wider box
+  // (viewBox -12 -32 948 228 against the plain logo's 0 0 850 200). Scale it
+  // so the letters are the plain logo's size and sit where its letters sit;
+  // the extras spill outside the box and nothing else on the page moves.
+  img.style.transform = "scale(1.14)";
+  img.style.transformOrigin = "10.31% 114.29%";
 })();
