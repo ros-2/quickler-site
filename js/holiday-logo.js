@@ -110,9 +110,36 @@
   img.src = "/assets/logos/holiday/" + row[0] + ".svg";
   img.title = row[1];
   // The holiday picture holds the word plus its extras in a wider box
-  // (viewBox -12 -32 948 228 against the plain logo's 0 0 850 200). Scale it
+  // (viewBox -62 -32 1054 228 against the plain logo's 0 0 850 200). Scale it
   // so the letters are the plain logo's size and sit where its letters sit;
   // the extras spill outside the box and nothing else on the page moves.
   img.style.transform = "scale(1.14)";
-  img.style.transformOrigin = "10.31% 114.29%";
+  img.style.transformOrigin = "47.9% 114.29%";
+  // On the coloured bar the logo sits in a white pill as tall as the bar,
+  // filling its left end, and the bar gets a thin white edge so the two
+  // read as one piece (Philip 2026-10-09). The pill reaches the bar's edges
+  // by taking back the bar's own padding, so it follows the bar as it
+  // shrinks on scroll and on small screens.
+  var nav = img.closest("nav"), a = img.closest("a");
+  if (!nav || !a) return;
+  var css = document.createElement("style");
+  css.textContent =
+    "nav.nav-holiday{border:2px solid #fff !important}" +
+    "nav.nav-holiday.nav-scrolled{border-width:0 0 2px 0 !important}" +
+    "nav.nav-holiday .nav-name{background:#fff;border-radius:999px;align-self:stretch}";
+  document.head.appendChild(css);
+  nav.classList.add("nav-holiday");
+  function fit() {
+    var cs = getComputedStyle(nav), h = img.offsetHeight || 38;
+    a.style.marginTop = "-" + cs.paddingTop;
+    a.style.marginBottom = "-" + cs.paddingBottom;
+    a.style.marginLeft = "-" + cs.paddingLeft;
+    a.style.paddingLeft = cs.paddingLeft;
+    a.style.paddingRight = Math.round(0.34 * h + 8) + "px";
+  }
+  fit();
+  window.addEventListener("resize", fit);
+  window.addEventListener("scroll", function () { requestAnimationFrame(fit); }, { passive: true });
+  img.addEventListener("load", fit);
+  nav.addEventListener("transitionend", fit);
 })();
